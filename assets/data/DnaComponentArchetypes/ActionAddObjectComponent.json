@@ -1,0 +1,6 @@
+{
+    "type": "ActionAddObjectComponent",
+    "on_event": "seq",
+    "target":"",
+    "objects":[]
+}

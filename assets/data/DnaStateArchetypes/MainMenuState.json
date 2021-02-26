@@ -1,0 +1,204 @@
+{
+    "type": "MainMenuState",
+    "objects": [{
+            "type": "BackgroundObject"
+        },
+        {
+            "type": "SpriteObject",
+            "name": "Banner",
+            "asset_path": "assets/gui_elements/banner.png",
+            "scale_x": 1,
+            "scale_y": 1,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "BannerCenter",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 500,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": "Banner"
+            }]
+        },
+        {
+            "type":"TextObject",
+            "text":"MainMenu_HEAD",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "CenterTop",
+                "target": "BannerCenter"
+            }
+            
+            ]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "CenteredPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 500,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
+        },
+        {
+            "type": "PlayButtonObject",
+            "name": "PlayButton",
+            "components": [{
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "CenterBottom",
+                    "target": "CenteredPosition"
+                }
+            ]
+        },
+        {
+            "type": "TrophyButtonObject",
+            "name": "TrophyButton",
+            "components": [{
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "LeftCenter",
+                    "target": "CenteredPosition"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Accept",
+            "actions": [{
+                "type": "ActionStateSwitchComponent",
+                "target": "",
+                "on_event": "TrophyButtonPressed",
+                "next_state": "MonsterEditorState"
+            }]
+        },
+        {
+            "type": "SettingsButtonObject",
+            "name": "SettingsButton",
+            "components": [{
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightCenter",
+                    "target": "CenteredPosition"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [{
+                "type": "ActionStateSwitchComponent",
+                "on_event": "PlayButtonPressed",
+                "target": "",
+                "next_state": "LevelSelectState"
+            }]
+        },
+        {
+            "type": "MonsterObject",
+            "components": [{
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "LeftBottom",
+                    "target": ""
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [{
+                "type": "ActionStateSwitchComponent",
+                "on_event": "SettingsButtonPressed",
+                "target": "",
+                "next_state": "SettingsState"
+            }]
+        },
+
+        
+        {
+            "type": "HelpButtonObject",
+            "name": "HelpButton",
+            "components": [{
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightTop",
+                    "target": ""
+                },
+                {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "HelpPressed"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [{
+                "type": "ActionStateSwitchComponent",
+                "on_event": "HelpPressed",
+                "target": "",
+                "next_state": "MainMenuTutorialState"
+            }]
+        }
+        ,
+        {
+            "type": "InfoButtonObject",
+            "name": "InfoButton",
+            "components": [{
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "LeftTop",
+                    "target": ""
+                },
+                {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "InfoPressed"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [{
+                "type": "ActionStateSwitchComponent",
+                "on_event": "InfoPressed",
+                "target": "",
+                "next_state": "InfoState"
+            }]
+        }
+    ]
+}

@@ -1,0 +1,6 @@
+{
+    "type": "ActionResetUnsavedComponent",
+    "on_event": "seq",
+    "target": "",
+    "next_state": ""
+}

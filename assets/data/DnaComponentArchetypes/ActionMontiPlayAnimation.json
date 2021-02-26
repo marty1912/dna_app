@@ -1,0 +1,7 @@
+{
+    "type": "ActionMontiPlayAnimationComponent",
+    "on_event": "seq",
+    "target":"",
+    "animation":"wave",
+    "times":1
+}

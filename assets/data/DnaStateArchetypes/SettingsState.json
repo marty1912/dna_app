@@ -1,0 +1,353 @@
+{
+    "type": "SettingsState",
+    "objects": [{
+            "type": "BackgroundObject"
+        },
+       
+        {
+            "type": "SpriteObject",
+            "name": "Banner",
+            "asset_path": "assets/gui_elements/banner.png",
+            "scale_x": 1,
+            "scale_y": 1,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "BannerCenter",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 500,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": "Banner"
+            }]
+        },
+        {
+            "type":"TextObject",
+            "text":"SettingsState_HEAD",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "CenterTop",
+                "target": "BannerCenter"
+            }
+            
+            ]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterPosition01",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 700,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterTopPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 700,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": "CenterPosition01"
+            }]
+        },
+
+        {
+            "type":"TextObject",
+            "text":"SettingsState_LANG",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "LeftCenter",
+                "target": "CenterTopPosition"
+            }
+            
+            ]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "CenterTop_RightPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 500,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "RightCenter",
+                "target": "CenterTopPosition"
+            }]
+        },
+        {
+            "type":"TextObject",
+            "text":"LOCALE_NAME",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "CenterTop_RightPosition"
+            }
+            
+            ]
+        },
+        {
+            "type": "LeftArrowButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"},
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "LeftCenter",
+                    "target": "CenterTop_RightPosition"
+                },
+                {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "LANG_DEC"
+                }
+            ]
+        },
+        {
+            "type": "RightArrowButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"},
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightCenter",
+                    "target": "CenterTop_RightPosition"
+                },
+                {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "LANG_INC"
+                }
+            ]
+        },
+
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Language_Select",
+            "actions": [
+                {
+                    "type": "ActionSetLocaleComponent",
+                    "target":"",
+                    "on_event": "LANG_INC",
+                    "locale":"INC"
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "seq",
+                    "next_state":"SettingsState"
+                } ,
+                {
+                    "type": "ActionSetLocaleComponent",
+                    "target":"",
+                    "on_event": "LANG_DEC",
+                    "locale":"DEC"
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "seq",
+                    "next_state":"SettingsState"
+                } 
+            ]
+        },
+
+
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterMidPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 700,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterMid",
+                "target": "CenterPosition01"
+            }]
+        },
+        {
+            "type":"TextObject",
+            "text":"SETTINGS_MENUPOINT_DATA",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "LeftCenter",
+                "target": "CenterMidPosition"
+            }
+            
+            ]
+        },
+        {
+            "type": "DataButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"},
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightCenter",
+                    "target": "CenterMidPosition"
+                },
+                {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "SETTINGS_DATA_PRESSED"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+               
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "SETTINGS_DATA_PRESSED",
+                    "next_state":"SettingsDataState"
+                } 
+            ]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterBottomPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 700,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterBottom",
+                "target": "CenterPosition01"
+            }]
+        },
+
+
+        {
+            "type":"TextObject",
+            "text":"SETTINGS_MENUPOINT_AUDIO",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "LeftCenter",
+                "target": "CenterBottomPosition"
+            }
+            ]
+        },
+        {
+            "type": "SpeakerButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"},
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightCenter",
+                    "target": "CenterBottomPosition"
+                },
+                {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "AUDIO_SETTINGS_PRESSED"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "AUDIO_SETTINGS_PRESSED",
+                    "next_state":"SettingsAudioState"
+                } 
+            ]
+        },
+
+
+        {
+            "type": "AcceptButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"},
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightBottom",
+                    "target": ""
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Accept",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "AcceptButtonPressed",
+                    "next_state":"MainMenuState"
+                } 
+            ]
+        },
+        {
+            "type": "MainMenuButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"}
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_MainMenuButton",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "BtnMainMenuPressed",
+                    "next_state":"MainMenuState"
+                } 
+            ]
+        }
+       
+        
+
+
+
+
+        
+    ]
+}

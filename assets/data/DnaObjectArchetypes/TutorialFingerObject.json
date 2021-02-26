@@ -1,0 +1,7 @@
+{
+    "type": "SpriteObject",
+    "asset_path": "assets/images/finger.png",
+    "scale_x":1,
+    "scale_y":1,
+    "origin_where":"mid_top"
+}

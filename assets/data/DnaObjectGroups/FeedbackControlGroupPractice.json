@@ -1,0 +1,61 @@
+{
+    "type": "FeedbackControlGroupPractice",
+    "objects": [
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_INCORRECT",
+            "actions": [
+
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"NumberlineFeedbackIncorrect",
+                    "oneshot":false,
+                    "on_event":"TASK_INCORRECT",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"FeedbackText_INCORRECT",
+                    "on_event": "TASK_INCORRECT",
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionFireEventComponent",
+                    "event_name":"FEEDBACK_DONE",
+                    "oneshot":false,
+                    "target":""
+                }
+        ]},
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_CORRECT",
+            "actions": [
+
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"NumberlineFeedbackCorrect",
+                    "oneshot":false,
+                    "on_event":"TASK_CORRECT",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionSaveTrialComponent",
+                    "oneshot":false,
+                    "on_event": "TASK_CORRECT",
+                    "target":""
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"FeedbackText_CORRECT",
+                    "oneshot":false
+                },
+                
+                {
+                    "type": "ActionFireEventComponent",
+                    "event_name":"FEEDBACK_DONE",
+                    "oneshot":false,
+                    "target":""
+                }
+        ]}
+    ]
+}

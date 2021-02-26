@@ -1,0 +1,8 @@
+{
+    "type": "StaticTextObject",
+    "text":"TEXTBOX_TEST",
+    "settings":{
+        "fontsize":64,
+        "width":500
+    }
+}

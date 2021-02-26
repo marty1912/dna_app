@@ -1,0 +1,6 @@
+{
+    "type": "ActionFireEventComponent",
+    "on_event": "seq",
+    "target":"",
+    "event_name":""
+}

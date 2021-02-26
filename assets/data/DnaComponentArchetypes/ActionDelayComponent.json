@@ -1,0 +1,6 @@
+{
+    "type": "ActionDelayComponent",
+    "on_event": "seq",
+    "target": "",
+    "delay": 4
+}

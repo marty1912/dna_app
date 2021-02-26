@@ -1,0 +1,481 @@
+{
+    "type": "MainMenuState",
+    "objects": [{
+            "type": "BackgroundObject"
+        },
+        {
+            "type": "SpriteObject",
+            "name": "Banner",
+            "asset_path": "assets/gui_elements/banner.png",
+            "scale_x": 1,
+            "scale_y": 1,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "BannerCenter",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 500,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": "Banner"
+            }]
+        },
+        {
+            "type":"TextObject",
+            "text":"MainMenu_HEAD",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "CenterTop",
+                "target": "BannerCenter"
+            }
+            
+            ]
+        },
+        {
+            "type": "MonsterObject",
+            "components": [{
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "LeftBottom",
+                    "target": ""
+                }
+            ]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "CenteredPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 500,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
+        },
+        {
+            "type": "PlayButtonObject",
+            "name": "PlayButton",
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "CenterBottom",
+                    "target": "CenteredPosition"
+                }
+            ]
+        },
+        {
+            "type": "TrophyButtonObject",
+            "name": "TrophyButton",
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "LeftCenter",
+                    "target": "CenteredPosition"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Accept",
+            "actions": [{
+                "type": "ActionStateSwitchComponent",
+                "target": "",
+                "on_event": "TrophyButtonPressed",
+                "next_state": "MonsterEditorState"
+            }]
+        },
+        {
+            "type": "SettingsButtonObject",
+            "name": "SettingsButton",
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightCenter",
+                    "target": "CenteredPosition"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [{
+                "type": "ActionStateSwitchComponent",
+                "on_event": "PlayButtonPressed",
+                "target": "",
+                "next_state": "LevelSelectState"
+            }]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [{
+                "type": "ActionStateSwitchComponent",
+                "on_event": "SettingsButtonPressed",
+                "target": "",
+                "next_state": "SettingsState"
+            }]
+        },
+
+        {
+            "type": "HelpButtonObject",
+            "name": "HelpButton",
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightTop",
+                    "target": ""
+                }
+            ]
+        },
+
+        {
+            "type": "InfoButtonObject",
+            "name": "InfoButton",
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "LeftTop",
+                    "target": ""
+                }
+            ]
+        },
+
+
+
+
+
+
+        {
+            "type": "SpriteObject",
+            "name": "TextPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 600,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterBottom",
+                "target": ""
+            }]
+        },  
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"MainMenuTutorial_01",
+            "text":"MainMenuTutorial_01",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"MainMenuTutorial_02",
+            "text":"MainMenuTutorial_02",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"MainMenuTutorial_03",
+            "text":"MainMenuTutorial_03",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"MainMenuTutorial_04",
+            "text":"MainMenuTutorial_04",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"MainMenuTutorial_05",
+            "text":"MainMenuTutorial_05",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"MainMenuTutorial_06",
+            "text":"MainMenuTutorial_06",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"MainMenuTutorial_end",
+            "text":"MainMenuTutorial_end",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                {
+                    "type": "ActionDelayComponent",
+                    "delay": 0.1,
+                    "on_event": "onStart"
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"MainMenuTutorial_01",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "on_event":"same",
+                    "target":"MainMenuTutorial_01"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "PlayButton",
+                    "state":"HIGHLIGHT"
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"MainMenuTutorial_02",
+                    "from_locale":true
+                },
+
+                {
+                    "type": "ActionShowTextComponent",
+                    "on_event":"same",
+                    "target":"MainMenuTutorial_02"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "PlayButton",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "TrophyButton",
+                    "state":"HIGHLIGHT"
+                },
+                
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"MainMenuTutorial_03",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "on_event":"same",
+                    "target":"MainMenuTutorial_03"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "TrophyButton",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "SettingsButton",
+                    "state":"HIGHLIGHT"
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"MainMenuTutorial_04",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "on_event":"same",
+                    "target":"MainMenuTutorial_04"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "SettingsButton",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "InfoButton",
+                    "state":"HIGHLIGHT"
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"MainMenuTutorial_05",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "on_event":"same",
+                    "target":"MainMenuTutorial_05"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "InfoButton",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "HelpButton",
+                    "state":"HIGHLIGHT"
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"MainMenuTutorial_06",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "on_event":"same",
+                    "target":"MainMenuTutorial_06"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "TrophyButton",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "PlayButton",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "SettingsButton",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "HelpButton",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "InfoButton",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"MainMenuTutorial_end",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "on_event":"same",
+                    "target":"MainMenuTutorial_end"
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target": "",
+                    "next_state": "MainMenuState"
+                }
+               
+            ]
+
+        }
+    ]
+}

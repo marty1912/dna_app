@@ -1,0 +1,6 @@
+{
+    "type": "InfiniteScrollComponent",
+    "scroll_speed_x": 15,
+    "scroll_speed_y": 15,
+    "mode": "Circle"
+}

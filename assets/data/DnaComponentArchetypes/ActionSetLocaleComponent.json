@@ -1,0 +1,6 @@
+{
+    "type": "ActionSetLocaleComponent",
+    "on_event": "seq",
+    "target":"",
+    "locale":""
+}

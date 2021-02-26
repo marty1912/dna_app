@@ -1,0 +1,5 @@
+{
+    "type": "ActionDownloadDataComponent",
+    "on_event": "seq",
+    "target":""
+}

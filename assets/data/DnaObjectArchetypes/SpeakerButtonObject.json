@@ -1,0 +1,8 @@
+{
+    "type": "DnaButtonObject",
+    "path": "assets/gui_elements/buttonSpeaker.png",
+    "animated": true,
+    "width": 122,
+    "height": 128,
+    "components": []
+}

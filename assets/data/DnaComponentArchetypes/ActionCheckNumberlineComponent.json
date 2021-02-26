@@ -1,0 +1,6 @@
+{
+    "type": "ActionCheckNumberlineComponent",
+    "on_event": "seq",
+    "target":"",
+    "tolerance":0.3
+}

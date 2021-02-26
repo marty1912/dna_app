@@ -1,0 +1,213 @@
+{
+    "type": "MultiplicationTutorialState",
+    "objects": [{
+            "type": "BackgroundObject"
+        },
+        {
+            "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/KeyboardGroup.json"
+        },
+        {
+            "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/ArithmeticGroup.json"
+        },
+
+        {
+            "type": "SrtPlayerTextObject",
+            "name": "TutorialText_01",
+            "text": "MultiplicationTutorial_01",
+            "autostart": false,
+            "settings": {
+                "fontsize": 32,
+                "width": 500
+            },
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "TextPosition"
+            }]
+
+        },
+{
+            "type": "SrtPlayerTextObject",
+            "name": "TutorialText_02",
+            "text": "NumberlineTutorial_04",
+            "autostart": false,
+            "settings": {
+                "fontsize": 32,
+                "width": 500
+            },
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "TextPosition"
+            }]
+
+        },
+{
+            "type": "TutorialFingerObject",
+            "name": "TutorialFinger",
+            "components":[
+                {
+                    "type": "ActionHideComponent",
+                    "target":"TutorialFinger"
+                },
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "LeftBottom"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_AcceptButton",
+            "actions": [{
+                    "type": "ActionCheckArithmeticTaskComponent",
+                    "oneshot": false,
+                    "target": "ArithmeticHandler",
+                    "on_event": "AcceptButtonPressed"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state": "INACTIVE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "BackspaceButton",
+                    "state": "INACTIVE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionFireEventComponent",
+                    "target": "",
+                    "event_name": "KeyboardButtons_INACTIVE",
+                    "oneshot": false
+                },
+
+
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state": "NORMAL",
+                    "on_event": "FEEDBACK_DONE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "BackspaceButton",
+                    "state": "NORMAL",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionFireEventComponent",
+                    "target": "",
+                    "event_name": "KeyboardButtons_NORMAL",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionLoadTrialComponent",
+                    "oneshot": false,
+                    "target": ""
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Setup",
+            "actions": [{
+                    "type": "ActionSetTaskParamsComponent",
+                    "on_event":"onCreate",
+                    "params": [{
+                        "name": "ArithmeticHandler",
+                        "params": {
+                            "problem": "3x2=",
+                            "solution": 6
+                        }
+                    }, 
+                    { "name": "TotalTime" }
+                ]
+                }
+                ,
+                {"type":"ActionShowTextComponent",
+                "target":"TutorialText_01"},
+                {
+                    "type": "ActionAppearComponent",
+                    "target": "TutorialFinger"
+                }
+                ,{
+                    "type": "ActionMoveToAndPressComponent",
+                    "target": "TutorialFinger",
+                    "target_button": "Button_6"
+                }
+                ,{
+                    "type": "ActionMoveToAndPressComponent",
+                    "target": "TutorialFinger",
+                    "target_button": "AcceptButton"
+                }
+                ,{
+                    "type":"ActionSetButtonStateComponent",
+                    "target":"AcceptButton",
+                    "state":"INACTIVE"
+                },
+                {
+                    "type": "ActionMoveToComponent",
+                    "target": "TutorialFinger",
+                    "to_object": "AcceptButton",
+                    "speed":400,
+                    "to_y": 300
+                    
+                },
+                {"type":"ActionShowTextComponent",
+                "target":"TutorialText_02"},
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target": "",
+                    "next_state": "ArithmeticPracticeState"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Finish",
+            "actions": [{
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "on_event": "TrialHandler_all_fin",
+                    "state": "INACTIVE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "BackspaceButton",
+                    "state": "INACTIVE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionFireEventComponent",
+                    "target": "",
+                    "event_name": "KeyboardButtons_INACTIVE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target": "PracticeDoneText",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionFinishTaskComponent",
+                    "target": ""
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target": "",
+                    "next_state": "NEXT_TASK"
+                }
+            ]
+        }
+    ]
+}

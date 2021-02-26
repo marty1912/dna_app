@@ -1,0 +1,92 @@
+package dnaobject.objects;
+
+import Assertion.assert;
+import dnaEvent.DnaEventManager;
+import dnaEvent.DnaEventSubscriber;
+
+/**
+ * this is the actionHandler.
+ * in this object we have a list of components (actions) that we want to execute on some events or something
+ *
+ */
+class ActionHandlerObject implements DnaObject implements DnaEventSubscriber extends DnaObjectBase
+{
+	static final CODE_SEQUENTIAL = "seq";
+	static final CODE_SAME_TIME = "same";
+
+	/**
+	 * ctor
+	 */
+	public function new()
+	{
+		super("ActionHandlerObject");
+		m_inactive_actions_queue = new Array<DnaActionBase>();
+	}
+
+	private var m_inactive_actions_queue:Array<DnaActionBase>;
+
+	/**
+	 * adds an action to our queue and registers this object with the corresponding handler.
+	 * @param action - the action to add
+	 */
+	public function addAction(action:DnaActionBase)
+	{
+		if (action.on_event == CODE_SEQUENTIAL)
+		{
+			assert(this.m_inactive_actions_queue.length != 0); // , "sequential actions need a predecessor!");
+			var last_element = this.m_inactive_actions_queue[m_inactive_actions_queue.length - 1];
+			var last_element_ev_fin = last_element.getFinishedEventName();
+			action.on_event = last_element_ev_fin;
+		}
+		else if (action.on_event == CODE_SAME_TIME)
+		{
+			var last_element = this.m_inactive_actions_queue[m_inactive_actions_queue.length - 1];
+			action.on_event = last_element.on_event;
+		}
+		DnaEventManager.instance.addSubscriberForEvent(this, action.on_event);
+
+		this.m_inactive_actions_queue.push(action);
+	}
+
+	/**
+	 * @param jsonFile - the jsonFile object to read from. should be the output of jsonParse.
+	 */
+	override public function fromFile(jsonFile:Dynamic):Void
+	{
+		if (Reflect.hasField(jsonFile, "actions"))
+		{
+			var actions:Array<Dynamic> = jsonFile.actions;
+
+			for (action in actions)
+			{
+				var to_add = DnaComponentFactory.create(action.type);
+				to_add.fromFile(action);
+				addAction(cast(to_add, DnaActionBase));
+			}
+		}
+		super.fromFile(jsonFile);
+	};
+
+	/**
+	 * this is called whenever an event that is part of our inactive actions list is called..
+	 * @param event_key
+	 */
+	public function getNotified(event_key:String):Void
+	{
+		var index = 0;
+		while (index < this.m_inactive_actions_queue.length)
+		{
+			var action = m_inactive_actions_queue[index];
+
+			if (action.on_event == event_key)
+			{
+				this.addComponent(cast(action));
+				m_inactive_actions_queue.remove(action);
+				index--;
+			}
+			index++;
+		}
+
+		// we have two loops because some actions might fire on the same events..
+	}
+}

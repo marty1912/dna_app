@@ -1,0 +1,5 @@
+{
+    "type": "ActionShowTextComponent",
+    "on_event": "seq",
+    "target":""
+}

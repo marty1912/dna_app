@@ -1,0 +1,5 @@
+{
+    "type": "ActionUploadDataComponent",
+    "on_event": "seq",
+    "target":""
+}

@@ -1,0 +1,195 @@
+{
+    "type": "InfoState",
+    "objects": [
+        {
+            "type": "BackgroundObject"
+        },
+
+        {
+            "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/BannerGroup.json"
+        },
+
+        {
+            "type":"TextObject",
+            "text":"InfoState_HEAD",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "CenterTop",
+                "target": "BannerCenter"
+            }
+            
+            ]
+        },
+
+                {
+            "type": "SpriteObject",
+            "name": "CenterPosition01",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 700,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterTopPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 900,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": "CenterPosition01"
+            }]
+        },
+
+        {
+            "type":"TextObject",
+            "text":"INFO_STATE_ID",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "LeftCenter",
+                "target": "CenterTopPosition"
+            }
+            
+            ]
+        },
+        {
+            "type":"StaticTextObject",
+            "name":"Text_ID",
+            "use_literal_text":true,
+            "text":"<ID>",
+            "autostart":true,
+            "settings":{"char_per_sec":24,"width":700,"append_before":"@041911315","append_after":"@040","border":"OUTLINE","border_color":"0x911315"},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "RightCenter",
+                "target": "CenterTopPosition"
+            }
+            
+            ]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterMidPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 900,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": "CenterPosition01"
+            }]
+        },
+        {
+            "type":"TextObject",
+            "text":"INFO_STATE_C_ART",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "LeftCenter",
+                "target": "CenterMidPosition"
+            }
+            
+            ]
+        },
+        {
+            "type":"StaticTextObject",
+            "text":"CreditsArt",
+            "autostart":true,
+            "settings":{"char_per_sec":24,"width":700,"append_before":"@041911315","append_after":"@040","border":"OUTLINE","border_color":"0x911315"},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "RightCenter",
+                "target": "CenterMidPosition"
+            }
+            
+            ]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterBottomPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 900,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterBottom",
+                "target": "CenterPosition01"
+            }]
+        },
+{
+            "type":"TextObject",
+            "text":"INFO_STATE_C_SOUND",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "LeftCenter",
+                "target": "CenterBottomPosition"
+            }
+            
+            ]
+        },
+        {
+            "type":"StaticTextObject",
+            "text":"CreditsSound",
+            "autostart":true,
+            "settings":{"char_per_sec":24,"width":700,"append_before":"@041911315","append_after":"@040","border":"OUTLINE","border_color":"0x911315"},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "RightCenter",
+                "target": "CenterBottomPosition"
+            }
+            
+            ]
+        },
+        {
+            "type": "MainMenuButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"}
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_MainMenuButton",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "BtnMainMenuPressed",
+                    "next_state":"MainMenuState"
+                } 
+            ]
+        }
+
+       
+    ]
+}

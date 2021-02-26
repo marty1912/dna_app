@@ -1,0 +1,5 @@
+{
+    "type": "ActionShrinkComponent",
+    "on_event": "seq",
+    "target":""
+}

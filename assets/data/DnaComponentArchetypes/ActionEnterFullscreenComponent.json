@@ -1,0 +1,5 @@
+{
+    "type": "ActionEnterFullscreenComponent",
+    "on_event": "seq",
+    "target":""
+}

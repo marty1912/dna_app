@@ -1,0 +1,8 @@
+﻿1
+00:00:00,000 --> 00:00:04,507
+Super! Du hast die Aufgabe @00100FF00RICHTIG@000 gelöst!
+
+2
+00:00:04,607 --> 00:00:09,107
+Nun kannst du mit der nächsten Übungsaufgabe weitermachen.
+

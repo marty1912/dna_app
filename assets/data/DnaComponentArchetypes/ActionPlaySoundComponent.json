@@ -1,0 +1,6 @@
+{
+    "type": "ActionPlaySoundComponent",
+    "on_event": "seq",
+    "target": "",
+    "path":""
+}

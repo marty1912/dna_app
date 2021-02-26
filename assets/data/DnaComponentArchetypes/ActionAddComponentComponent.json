@@ -1,0 +1,6 @@
+{
+    "type": "ActionAddComponentComponent",
+    "on_event": "seq",
+    "target":"",
+    "components":[]
+}

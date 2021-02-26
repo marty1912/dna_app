@@ -1,0 +1,5 @@
+{
+    "type": "ActionRemoveObjectComponent",
+    "on_event": "seq",
+    "target":""
+}

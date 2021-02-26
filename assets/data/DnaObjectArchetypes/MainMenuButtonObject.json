@@ -1,0 +1,17 @@
+{
+    "type": "DnaButtonObject",
+    "path": "assets/gui_elements/buttonDecline.png",
+    "animated": true,
+    "width": 122,
+    "height": 128,
+    "components": [{
+            "type": "CmdEvtTrigComponent",
+            "event_name": "BtnMainMenuPressed"
+        },
+        {
+            "type": "PositionComponent",
+            "oneshot": true,
+            "position": "LeftTop"
+        }
+    ]
+}

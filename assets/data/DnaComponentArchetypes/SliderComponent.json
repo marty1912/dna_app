@@ -1,0 +1,5 @@
+{
+    "type": "SliderComponent",
+    "click_area_pad_x": 1,
+    "click_area_pad_y": 20
+}

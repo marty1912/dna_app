@@ -1,0 +1,8 @@
+﻿1
+00:00:00,000 --> 00:00:05,100
+Super! Du hast ein neues Körperteil für mich freigeschaltet!
+
+2
+00:00:05,200 --> 00:00:10,200
+Im Monti-Editor kannst du andere Körperteile auswählen.
+

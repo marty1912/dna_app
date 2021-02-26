@@ -1,0 +1,207 @@
+[
+
+   
+    {
+        "type": "MonsterPartComponent",
+        "unlocked":true,
+        "part_type": "hat",
+        "assets": [{
+            "name": "hat",
+            "path": "assets/images/monsterparts/test_01/hat.png"
+        }]
+    },
+    {
+        "type": "MonsterPartComponent",
+        "unlocked":true,
+        "part_type": "hat",
+        "assets": [{
+            "name": "hat",
+            "path": "assets/images/monsterparts/test_02/hat.png"
+        }]
+    },
+
+    
+    {
+        "type": "MonsterPartComponent",
+        "unlocked":true,
+        "part_type": "head",
+        "assets": [{
+                "name": "nose",
+                "path": "assets/images/monsterparts/test_01/nose.png"
+            },
+            {
+                "name": "head",
+                "path": "assets/images/monsterparts/test_01/head.png"
+            },
+            {
+                "name": "mouth_normal",
+                "path": "assets/images/monsterparts/test_01/mouth_normal.png"
+            },
+            {
+                "name": "mouth_open",
+                "path": "assets/images/monsterparts/test_01/mouth_open.png"
+            },
+            {
+                "name": "mouth_closed",
+                "path": "assets/images/monsterparts/test_01/mouth_closed.png"
+            },
+            {
+                "name": "eyes_normal",
+                "path": "assets/images/monsterparts/test_01/eyes_normal.png"
+            },
+            {
+                "name": "eyes_closed",
+                "path": "assets/images/monsterparts/test_01/eyes_closed.png"
+            }
+        ]
+    },
+    {
+        "type": "MonsterPartComponent",
+        "unlocked":true,
+        "part_type": "head",
+        "assets": [{
+                "name": "nose",
+                "path": "assets/images/monsterparts/test_02/nose.png"
+            },
+            {
+                "name": "head",
+                "path": "assets/images/monsterparts/test_02/head.png"
+            },
+            {
+                "name": "mouth_normal",
+                "path": "assets/images/monsterparts/test_02/mouth_normal.png"
+            },
+            {
+                "name": "mouth_open",
+                "path": "assets/images/monsterparts/test_02/mouth_open.png"
+            },
+            {
+                "name": "mouth_closed",
+                "path": "assets/images/monsterparts/test_02/mouth_closed.png"
+            },
+            {
+                "name": "eyes_normal",
+                "path": "assets/images/monsterparts/test_02/eyes_normal.png"
+            },
+            {
+                "name": "eyes_closed",
+                "path": "assets/images/monsterparts/test_02/eyes_closed.png"
+            }
+        ]
+    },
+
+
+
+
+
+    
+    {
+        "type": "MonsterPartComponent",
+        "unlocked":false,
+        "part_type": "arms",
+        "assets": [{
+                "name": "arm_l",
+                "path": "assets/images/monsterparts/test_01/arm_l.png"
+            },
+            {
+                "name": "hand_l",
+                "path": "assets/images/monsterparts/test_01/hand_l.png"
+            },
+            {
+                "name": "arm_r",
+                "path": "assets/images/monsterparts/test_01/arm_r.png"
+            },
+            {
+                "name": "hand_r",
+                "path": "assets/images/monsterparts/test_01/hand_r.png"
+            }
+        ]
+    },
+    {
+        "type": "MonsterPartComponent",
+        "unlocked":true,
+        "part_type": "arms",
+        "assets": [{
+                "name": "arm_l",
+                "path": "assets/images/monsterparts/test_02/arm_l.png"
+            },
+            {
+                "name": "hand_l",
+                "path": "assets/images/monsterparts/test_02/hand_l.png"
+            },
+            {
+                "name": "arm_r",
+                "path": "assets/images/monsterparts/test_02/arm_r.png"
+            },
+            {
+                "name": "hand_r",
+                "path": "assets/images/monsterparts/test_02/hand_r.png"
+            }
+        ]
+    },
+    {
+        "type": "MonsterPartComponent",
+        "part_type": "body",
+        "unlocked":true,
+        "assets": [{
+            "name": "body",
+            "path": "assets/images/monsterparts/test_01/body.png"
+        }]
+    },
+    {
+        "type": "MonsterPartComponent",
+        "part_type": "body",
+        "unlocked":true,
+        "assets": [{
+            "name": "body",
+            "path": "assets/images/monsterparts/test_02/body.png"
+        }]
+    },
+    {
+        "type": "MonsterPartComponent",
+        "part_type": "legs",
+        "unlocked":true,
+        "assets": [{
+                "name": "leg_l",
+                "path": "assets/images/monsterparts/test_01/leg_l.png"
+            },
+            {
+                "name": "foot_l",
+                "path": "assets/images/monsterparts/test_01/foot_l.png"
+            },
+            {
+                "name": "leg_r",
+                "path": "assets/images/monsterparts/test_01/leg_r.png"
+            },
+            {
+                "name": "foot_r",
+                "path": "assets/images/monsterparts/test_01/foot_r.png"
+            }
+        ]
+    },
+    {
+        "type": "MonsterPartComponent",
+        "part_type": "legs",
+        "unlocked":true,
+        "assets": [{
+                "name": "leg_l",
+                "path": "assets/images/monsterparts/test_02/leg_l.png"
+            },
+            {
+                "name": "foot_l",
+                "path": "assets/images/monsterparts/test_02/foot_l.png"
+            },
+            {
+                "name": "leg_r",
+                "path": "assets/images/monsterparts/test_02/leg_r.png"
+            },
+            {
+                "name": "foot_r",
+                "path": "assets/images/monsterparts/test_02/foot_r.png"
+            }
+        ]
+    }
+
+
+
+]

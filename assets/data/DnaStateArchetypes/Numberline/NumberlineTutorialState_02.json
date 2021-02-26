@@ -1,0 +1,263 @@
+{
+    "type": "NumberlineTutorialState",
+    "objects": [
+        {
+            "type": "BackgroundObject"
+        },
+        {
+            "type": "SpriteObject",
+            "name": "TextPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 600,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        {
+            "type": "NumberlineObject",
+            "name": "NumberlineObject",
+            "num_zero": 0,
+            "num_ref":3,
+            "num_target":5,
+            "num_max":15,
+            "origin_on_target":true,
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center"
+            }
+        ]
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"TutorialText_01",
+            "text":"NumberlineTutorial_03",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"TutorialText_02",
+            "text":"NumberlineTutorial_04",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "AcceptButtonObject",
+            "name": "AcceptButton",
+            "active":false,
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightBottom"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state":"INACTIVE"
+                }
+            ]
+        },
+        {
+            "type": "TutorialFingerObject",
+            "name": "TutorialFinger",
+            "components":[
+                {
+                    "type": "ActionHideComponent",
+                    "target":"TutorialFinger"
+                },
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "LeftBottom"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                {
+                    "type": "ActionDelayComponent",
+                    "delay": 0.1,
+                    "on_event": "onStart"
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"NumberlineTutorial_03",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "on_event":"same",
+                    "target":"TutorialText_01"
+                },
+                
+                {
+                    "type": "ActionAppearComponent",
+                    "target": "TutorialFinger"
+                },
+                {
+                    "type": "ActionDelayComponent",
+                    "target": "TutorialFinger",
+                    "delay": 0.2
+                },
+                {
+                    "type": "ActionMoveToComponent",
+                    "target": "TutorialFinger",
+                    "to_object": "NumberlineObject",
+                    "to_y": -50,
+                    "speed": 400
+                },
+                {
+                    "type": "ActionDelayComponent",
+                    "target": "TutorialFinger",
+                    "delay": 0.2
+                },
+                {
+                    "type": "ActionShrinkComponent",
+                    "target": "TutorialFinger",
+                    "to_x": 0.95,
+                    "to_y": 0.95
+
+                },{
+                    "type":"ActionPlaySoundComponent",
+                    "path" : "assets/sounds/kenney_interfacesounds/Audio/select_001.ogg"
+                },
+                {
+                    "type": "ActionSetSliderPosComponent",
+                    "target": "NumberlineObject",
+                    "on_event":"same",
+                    "pos_from_object": "TutorialFinger"
+
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionDelayComponent",
+                    "target": "TutorialFinger",
+                    "delay": 0.2
+                },
+                {
+                    "type": "ActionShrinkComponent",
+                    "target": "TutorialFinger",
+                    "to_x": 1,
+                    "to_y": 1
+
+                },
+                {
+                    "type": "ActionMoveToComponent",
+                    "target": "TutorialFinger",
+                    "to_object": "AcceptButton",
+                    "to_x":50,
+                    "speed": 400
+                },
+                {
+                    "type": "ActionDelayComponent",
+                    "target": "TutorialFinger",
+                    "delay": 0.2
+                },
+                {
+                    "type": "ActionShrinkComponent",
+                    "target": "TutorialFinger",
+                    "to_x": 0.95,
+                    "to_y": 0.95
+
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state":"PRESSED"
+                },
+                {
+                    "type": "ActionDelayComponent",
+                    "target": "TutorialFinger",
+                    "delay": 0.2
+                },
+                {
+                    "type": "ActionShrinkComponent",
+                    "target": "TutorialFinger",
+                    "to_x": 1,
+                    "to_y": 1
+
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionAddComponentComponent",
+                    "target":"NumberlineObject",
+                    "components":[{"type": "NumlineZoneComponent"}]
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"NumberlineTutorial_04",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "on_event":"same",
+                    "target":"TutorialText_02"
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target": "",
+                    "next_state": "NumberlinePracticeState_02"
+                }
+            ]
+
+        },
+        {
+            "type": "MainMenuButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"}
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_MainMenuButton",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "BtnMainMenuPressed",
+                    "next_state":"LevelSelectState"
+                } 
+            ]
+        },{"type":"TimerObject","name":"TotalTime"}
+    ]
+}

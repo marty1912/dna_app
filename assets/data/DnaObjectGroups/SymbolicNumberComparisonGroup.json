@@ -1,0 +1,159 @@
+{
+    "type": "SymbolicNumberComparisonGroup",
+    "objects": [
+
+        {
+            "type": "SpriteObject",
+            "name": "CenteredPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 100,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "LeftNumPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_from_screen_width": true,
+            "scale_x": 0.5,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "LeftCenter",
+                "target": ""
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "RightNumPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_from_screen_width": true,
+            "scale_x": 0.5,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "RightCenter",
+                "target": ""
+            }]
+        },
+
+        {
+            "type": "StaticTextObject",
+            "name": "NUM_LEFT",
+            "use_literal_text": true,
+            "text": "LEFT",
+            "autostart": true,
+            "settings": {
+                "char_per_sec": 500,
+                "width": 600,
+                "border": "OUTLINE",
+                "border_color": "0x911315",
+                "fontsize": 124
+            },
+            "components": [{
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target": "LeftNumPosition"
+                }
+
+            ]
+        },
+        {
+            "type": "StaticTextObject",
+            "name": "NUM_RIGHT",
+            "use_literal_text": true,
+            "text": "RIGHT",
+            "autostart": true,
+            "settings": {
+                "char_per_sec": 500,
+                "width": 400,
+                "border": "OUTLINE",
+                "border_color": "0x911315",
+                "fontsize": 124
+            },
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "RightNumPosition"
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "TextPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 600,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        {
+            "type": "EmptyButtonObject",
+            "name":"Clickarea_RIGHT",
+            "components": [{
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "ClickAreaComponent",
+                    "target": "RightNumPosition"
+                }, {
+                    "type": "PositionComponent",
+                    "target": "RightNumPosition",
+                    "position": "Center"
+                }, {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "RIGHT_NUM_SELECTED"
+                }
+            ]
+        },
+        {
+            "type": "EmptyButtonObject",
+            "name":"Clickarea_LEFT",
+            "components": [{
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "ClickAreaComponent",
+                    "target": "LeftNumPosition"
+                }, {
+                    "type": "PositionComponent",
+                    "target": "LeftNumPosition",
+                    "position": "Center"
+                }, {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "LEFT_NUM_SELECTED"
+                }
+            ]
+        },
+        {
+            "type": "SymbolicNumberComparisonTaskHandlerObject",
+            "name": "TaskHandler",
+            "target_num_left": "NUM_LEFT",
+            "target_num_right": "NUM_RIGHT"
+        },
+        {
+            "type": "TrialHandlerObject"
+        },
+        {
+            "type": "TimerObject",
+            "name": "TotalTime"
+        }
+    ]
+}

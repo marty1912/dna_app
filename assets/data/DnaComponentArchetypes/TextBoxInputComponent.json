@@ -1,0 +1,4 @@
+{
+    "type": "TextBoxInputComponent",
+    "max_input_len":6
+}

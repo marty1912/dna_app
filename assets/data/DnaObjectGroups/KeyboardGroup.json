@@ -1,0 +1,979 @@
+{"type": "KeyboardGroup",
+"objects":[{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 1,
+    "scale_y": 122,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "CenterBottom",
+        "target": ""
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_left",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.5,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftCenter",
+        "target": "KeyboardPosition"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_right",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.5,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "RightCenter",
+        "target": "KeyboardPosition"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_left_center",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.3,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "Center",
+        "target": "KeyboardPosition_left"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_right_center",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.3,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "Center",
+        "target": "KeyboardPosition_right"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_00",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.1,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftCenter",
+        "target": "KeyboardPosition_left"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_00_text",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.09,
+    "scale_y": 180,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftTop",
+        "target": "KeyboardPosition_00"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_01",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.1,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftCenter",
+        "target": "KeyboardPosition_left_center"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_01_text",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.09,
+    "scale_y": 180,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftTop",
+        "target": "KeyboardPosition_01"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_02",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.1,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "Center",
+        "target": "KeyboardPosition_left_center"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_02_text",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.09,
+    "scale_y": 180,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftTop",
+        "target": "KeyboardPosition_02"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_03",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.1,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "RightCenter",
+        "target": "KeyboardPosition_left_center"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_03_text",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.09,
+    "scale_y": 180,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftTop",
+        "target": "KeyboardPosition_03"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_04",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.1,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "RightCenter",
+        "target": "KeyboardPosition_left"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_04_text",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.09,
+    "scale_y": 180,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftTop",
+        "target": "KeyboardPosition_04"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_05",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.1,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftCenter",
+        "target": "KeyboardPosition_right"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_05_text",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.09,
+    "scale_y": 180,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftTop",
+        "target": "KeyboardPosition_05"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_06",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.1,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftCenter",
+        "target": "KeyboardPosition_right_center"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_06_text",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.09,
+    "scale_y": 180,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftTop",
+        "target": "KeyboardPosition_06"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_07",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.1,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "Center",
+        "target": "KeyboardPosition_right_center"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_07_text",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.09,
+    "scale_y": 180,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftTop",
+        "target": "KeyboardPosition_07"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_08",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.1,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "RightCenter",
+        "target": "KeyboardPosition_right_center"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_08_text",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.09,
+    "scale_y": 180,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftTop",
+        "target": "KeyboardPosition_08"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_09",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.1,
+    "scale_y": 200,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "RightCenter",
+        "target": "KeyboardPosition_right"
+    }]
+},
+{
+    "type": "SpriteObject",
+    "name": "KeyboardPosition_09_text",
+    "asset_path": "INVISIBLE_BOX",
+    "scale_from_screen_width": true,
+    "scale_x": 0.09,
+    "scale_y": 180,
+    "origin_where": "",
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": true,
+        "position": "LeftTop",
+        "target": "KeyboardPosition_09"
+    }]
+},
+
+{
+    "type": "EmptyButtonObject",
+    "name": "Button_0",
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": true,
+            "position": "Center",
+            "target": "KeyboardPosition_00"
+        },
+        {
+            "type": "CmdEvtTrigComponent",
+            "event_name": "KEY_0"
+        }
+    ]
+},
+{
+    "type": "StaticTextObject",
+    "text": "0",
+    "autostart": true,
+    "settings": {
+        "char_per_sec": 24,
+        "fontsize": 64
+    },
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": false,
+        "position": "Center",
+        "target": "KeyboardPosition_00_text"
+    }]
+},
+{
+    "type": "EmptyButtonObject",
+    "name": "Button_1",
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": true,
+            "position": "Center",
+            "target": "KeyboardPosition_01"
+        },
+        {
+            "type": "CmdEvtTrigComponent",
+            "event_name": "KEY_1"
+        }
+    ]
+},
+{
+    "type": "StaticTextObject",
+    "text": "1",
+    "autostart": true,
+    "settings": {
+        "char_per_sec": 24,
+        "fontsize": 64
+    },
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": false,
+            "position": "Center",
+            "target": "KeyboardPosition_01_text"
+        }
+
+    ]
+},
+{
+    "type": "EmptyButtonObject",
+    "name": "Button_2",
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": true,
+            "position": "Center",
+            "target": "KeyboardPosition_02"
+        },
+        {
+            "type": "CmdEvtTrigComponent",
+            "event_name": "KEY_2"
+        }
+    ]
+},
+{
+    "type": "StaticTextObject",
+    "text": "2",
+    "autostart": true,
+    "settings": {
+        "char_per_sec": 24,
+        "fontsize": 64
+    },
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": false,
+            "position": "Center",
+            "target": "KeyboardPosition_02_text"
+        }
+
+    ]
+},
+{
+    "type": "EmptyButtonObject",
+    "name": "Button_3",
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": true,
+            "position": "Center",
+            "target": "KeyboardPosition_03"
+        },
+        {
+            "type": "CmdEvtTrigComponent",
+            "event_name": "KEY_3"
+        }
+    ]
+},
+{
+    "type": "StaticTextObject",
+    "text": "3",
+    "autostart": true,
+    "settings": {
+        "char_per_sec": 24,
+        "fontsize": 64
+    },
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": false,
+            "position": "Center",
+            "target": "KeyboardPosition_03_text"
+        }
+
+    ]
+},
+{
+    "type": "EmptyButtonObject",
+    "name": "Button_4",
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": true,
+            "position": "Center",
+            "target": "KeyboardPosition_04"
+        },
+        {
+            "type": "CmdEvtTrigComponent",
+            "event_name": "KEY_4"
+        }
+    ]
+},
+{
+    "type": "StaticTextObject",
+    "text": "4",
+    "autostart": true,
+    "settings": {
+        "char_per_sec": 24,
+        "fontsize": 64
+    },
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": false,
+            "position": "Center",
+            "target": "KeyboardPosition_04_text"
+        }
+
+    ]
+},
+
+
+{
+    "type": "EmptyButtonObject",
+    "name": "Button_5",
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": true,
+            "position": "Center",
+            "target": "KeyboardPosition_05"
+        },
+        {
+            "type": "CmdEvtTrigComponent",
+            "event_name": "KEY_5"
+        }
+    ]
+},
+{
+    "type": "StaticTextObject",
+    "text": "5",
+    "autostart": true,
+    "settings": {
+        "char_per_sec": 24,
+        "fontsize": 64
+    },
+    "components": [{
+        "type": "PositionComponent",
+        "oneshot": false,
+        "position": "Center",
+        "target": "KeyboardPosition_05_text"
+    }]
+},
+{
+    "type": "EmptyButtonObject",
+    "name": "Button_6",
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": true,
+            "position": "Center",
+            "target": "KeyboardPosition_06"
+        },
+        {
+            "type": "CmdEvtTrigComponent",
+            "event_name": "KEY_6"
+        }
+    ]
+},
+{
+    "type": "StaticTextObject",
+    "text": "6",
+    "autostart": true,
+    "settings": {
+        "char_per_sec": 24,
+        "fontsize": 64
+    },
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": false,
+            "position": "Center",
+            "target": "KeyboardPosition_06_text"
+        }
+
+    ]
+},
+{
+    "type": "EmptyButtonObject",
+    "name": "Button_7",
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": true,
+            "position": "Center",
+            "target": "KeyboardPosition_07"
+        },
+        {
+            "type": "CmdEvtTrigComponent",
+            "event_name": "KEY_7"
+        }
+    ]
+},
+{
+    "type": "StaticTextObject",
+    "text": "7",
+    "autostart": true,
+    "settings": {
+        "char_per_sec": 24,
+        "fontsize": 64
+    },
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": false,
+            "position": "Center",
+            "target": "KeyboardPosition_07_text"
+        }
+
+    ]
+},
+{
+    "type": "EmptyButtonObject",
+    "name": "Button_8",
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": true,
+            "position": "Center",
+            "target": "KeyboardPosition_08"
+        },
+        {
+            "type": "CmdEvtTrigComponent",
+            "event_name": "KEY_8"
+        }
+    ]
+},
+{
+    "type": "StaticTextObject",
+    "text": "8",
+    "autostart": true,
+    "settings": {
+        "char_per_sec": 24,
+        "fontsize": 64
+    },
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": false,
+            "position": "Center",
+            "target": "KeyboardPosition_08_text"
+        }
+
+    ]
+},
+{
+    "type": "EmptyButtonObject",
+    "name": "Button_9",
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": true,
+            "position": "Center",
+            "target": "KeyboardPosition_09"
+        },
+        {
+            "type": "CmdEvtTrigComponent",
+            "event_name": "KEY_9"
+        }
+    ]
+},
+{
+    "type": "StaticTextObject",
+    "text": "9",
+    "autostart": true,
+    "settings": {
+        "char_per_sec": 24,
+        "fontsize": 64
+    },
+    "components": [{
+            "type": "PositionComponent",
+            "oneshot": false,
+            "position": "Center",
+            "target": "KeyboardPosition_09_text"
+        }
+
+    ]
+},
+
+
+{
+    "type": "ActionHandlerObject",
+    "name": "ActionHandler_KeyboardButtons_States",
+    "actions": [
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_0",
+            "state":"NORMAL",
+            "on_event":"KeyboardButtons_NORMAL"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_1",
+            "state":"NORMAL"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_2",
+            "state":"NORMAL"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_3",
+            "state":"NORMAL"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_4",
+            "state":"NORMAL"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_5",
+            "state":"NORMAL"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_6",
+            "state":"NORMAL"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_7",
+            "state":"NORMAL"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_8",
+            "state":"NORMAL"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_9",
+            "state":"NORMAL"
+        },
+    
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_0",
+            "state":"HIGHLIGHT",
+            "on_event":"KeyboardButtons_HIGHLIGHT"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_1",
+            "state":"HIGHLIGHT"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_2",
+            "state":"HIGHLIGHT"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_3",
+            "state":"HIGHLIGHT"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_4",
+            "state":"HIGHLIGHT"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_5",
+            "state":"HIGHLIGHT"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_6",
+            "state":"HIGHLIGHT"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_7",
+            "state":"HIGHLIGHT"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_8",
+            "state":"HIGHLIGHT"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_9",
+            "state":"HIGHLIGHT"
+        },
+
+
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_0",
+            "state":"INACTIVE",
+            "on_event":"KeyboardButtons_INACTIVE"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_1",
+            "state":"INACTIVE"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_2",
+            "state":"INACTIVE"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_3",
+            "state":"INACTIVE"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_4",
+            "state":"INACTIVE"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_5",
+            "state":"INACTIVE"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_6",
+            "state":"INACTIVE"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_7",
+            "state":"INACTIVE"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_8",
+            "state":"INACTIVE"
+        },
+        {
+            "type": "ActionSetButtonStateComponent", "oneshot":false,
+            "target": "Button_9",
+            "state":"INACTIVE"
+        }
+    ]
+
+},
+
+
+
+{
+    "type": "ActionHandlerObject",
+    "name": "ActionHandler_KeyboardButtons_USERBUTTON",
+    "actions": [
+        {
+            "type": "ActionRemoveComponentComponent", "oneshot":false,
+            "target": "Button_0",
+            "on_event":"KeyboardButtons_REMOVE_USERBUTTON",
+            "target_comp":"UserButtonComponent"
+        },
+        {
+            "type": "ActionRemoveComponentComponent", "oneshot":false,
+            "target": "Button_1",
+            "target_comp":"UserButtonComponent"
+        },
+        {
+            "type": "ActionRemoveComponentComponent", "oneshot":false,
+            "target": "Button_2",
+            "target_comp":"UserButtonComponent"
+        },
+        {
+            "type": "ActionRemoveComponentComponent", "oneshot":false,
+            "target": "Button_3",
+            "target_comp":"UserButtonComponent"
+        },
+        {
+            "type": "ActionRemoveComponentComponent", "oneshot":false,
+            "target": "Button_4",
+            "target_comp":"UserButtonComponent"
+        },
+        {
+            "type": "ActionRemoveComponentComponent", "oneshot":false,
+            "target": "Button_5",
+            "target_comp":"UserButtonComponent"
+        },
+        {
+            "type": "ActionRemoveComponentComponent", "oneshot":false,
+            "target": "Button_6",
+            "target_comp":"UserButtonComponent"
+        },
+        {
+            "type": "ActionRemoveComponentComponent", "oneshot":false,
+            "target": "Button_7",
+            "target_comp":"UserButtonComponent"
+        },
+        {
+            "type": "ActionRemoveComponentComponent", "oneshot":false,
+            "target": "Button_8",
+            "target_comp":"UserButtonComponent"
+        },
+        {
+            "type": "ActionRemoveComponentComponent", "oneshot":false,
+            "target": "Button_9",
+            "target_comp":"UserButtonComponent"
+        },
+    
+        
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "target": "Button_0",
+            "components":[{"type": "UserButtonComponent"}],
+            "on_event":"KeyboardButtons_ADD_USERBUTTON"
+        },
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "target": "Button_1",
+            "components":[{"type": "UserButtonComponent"}]
+        },
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "target": "Button_2",
+            "components":[{"type": "UserButtonComponent"}]
+        },
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "target": "Button_3",
+            "components":[{"type": "UserButtonComponent"}]
+        },
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "target": "Button_4",
+            "components":[{"type": "UserButtonComponent"}]
+        },
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "target": "Button_5",
+            "components":[{"type": "UserButtonComponent"}]
+        },
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "target": "Button_6",
+            "components":[{"type": "UserButtonComponent"}]
+        },
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "target": "Button_7",
+            "components":[{"type": "UserButtonComponent"}]
+        },
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "target": "Button_8",
+            "components":[{"type": "UserButtonComponent"}]
+        },
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "target": "Button_9",
+            "components":[{"type": "UserButtonComponent"}]
+        }
+
+    ]
+
+}
+
+]
+}
+

@@ -1,0 +1,223 @@
+{
+    "type": "UnlockState",
+    "objects": [{
+            "type": "BackgroundObject"
+        },
+        {
+            "type": "SpriteObject",
+            "name": "CenteredPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 500,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
+        },
+       
+        {
+            "type": "MonsterObject",
+            "name":"monti",
+            "components": [
+                {
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "Center",
+                    "target": "CenteredPosition"
+                }
+                ,   
+                {
+                    "type": "MonsterPartComponent",
+                    "part_type": "all_invisible",
+                    "assets": [
+                        {
+                            "name": "hat",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "nose",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "head",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "mouth_normal",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "mouth_open",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "arm_l",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "hand_l",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "arm_r",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "hand_r",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "body",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "leg_l",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "foot_l",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "leg_r",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "foot_r",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "eyes_normal",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "eyes_closed",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        },
+                        {
+                            "name": "mouth_closed",
+                            "path": "assets/images/monsterparts/invisible/invisible_rect.png"
+                        }
+                    ]
+                }
+                   
+                    
+            ]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "Banner",
+            "asset_path": "assets/gui_elements/banner.png",
+            "scale_x": 1,
+            "scale_y": 1,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "BannerCenter",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 500,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": "Banner"
+            }]
+        },
+        {
+            "type": "TextObject",
+            "name": "Text_HEAD",
+            "text": "UNLOCKSTATE_HEAD",
+            "autostart":true,
+            "settings":{"char_per_sec":24,"width":500},
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "CenterTop",
+                "target": "BannerCenter"
+            }]
+        },
+        {
+            "type": "PlayButtonObject",
+            "name": "PlaytButton",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterBottom",
+                "target": ""
+            },
+            {"type":"UserButtonComponent"}]
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"UnlockText",
+            "text":"NewUnlock",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "CenterTop",
+                    "target":"CenteredPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"UnlockText",
+                    "on_event":"onCreate"
+                }
+
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "on_event": "PlayButtonPressed",
+                    "target": "",
+                    "next_state": "LevelSelectState"
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "on_event": "NO_MORE_TO_UNLOCK",
+                    "target": "",
+                    "next_state": "LevelSelectState"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                {
+                    "type": "ActionUnlockComponent",
+                    "on_event": "onCreate",
+                    "target": "monti"
+                }
+            ]
+        }
+    ]
+}

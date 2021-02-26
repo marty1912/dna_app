@@ -1,0 +1,5 @@
+{
+    "type": "ActionUnlockComponent",
+    "on_event": "seq",
+    "target":""
+}

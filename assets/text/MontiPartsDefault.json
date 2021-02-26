@@ -1,0 +1,117 @@
+[
+
+    {
+        "type": "MonsterPartComponent",
+        "part_type": "hat",
+        "unlocked":true,
+        "assets": [{
+            "name": "hat",
+            "path": "assets/images/monsterparts/resized/hat.png"
+        }]
+    },
+    
+    {
+        "type": "MonsterPartComponent",
+        "part_type": "head",
+        "unlocked":true,
+        "assets": [{
+                "name": "nose",
+                "path": "assets/images/monsterparts/resized/nose.png"
+            },
+            {
+                "name": "head",
+                "path": "assets/images/monsterparts/resized/head.png"
+            },
+            {
+                "name": "mouth_normal",
+                "path": "assets/images/monsterparts/resized/mouth_normal.png"
+            },
+            {
+                "name": "mouth_open",
+                "path": "assets/images/monsterparts/resized/mouth_open.png"
+            },
+            {
+                "name": "mouth_closed",
+                "path": "assets/images/monsterparts/resized/mouth_closed.png"
+            },
+            {
+                "name": "eyes_normal",
+                "path": "assets/images/monsterparts/resized/eyes_normal.png"
+            },
+            {
+                "name": "eyes_closed",
+                "path": "assets/images/monsterparts/resized/eyes_closed.png"
+            }
+        ]
+    },
+
+
+
+
+
+    {
+        "type": "MonsterPartComponent",
+        "part_type": "arms",
+        "unlocked":true,
+        "assets": [{
+                "name": "arm_l",
+                "path": "assets/images/monsterparts/resized/arm_l.png"
+            },
+            {
+                "name": "hand_l",
+                "path": "assets/images/monsterparts/resized/hand_l.png"
+            },
+            {
+                "name": "arm_r",
+                "path": "assets/images/monsterparts/resized/arm_r.png"
+            },
+            {
+                "name": "hand_r",
+                "path": "assets/images/monsterparts/resized/hand_r.png"
+            }
+        ]
+    },
+
+
+
+
+    {
+        "type": "MonsterPartComponent",
+        "part_type": "body",
+        "unlocked":true,
+        "assets": [{
+                "name": "body",
+                "path": "assets/images/monsterparts/resized/body.png"
+            }
+
+        ]
+    },
+    
+
+
+    {
+        "type": "MonsterPartComponent",
+        "part_type": "legs",
+        "unlocked":true,
+        "assets": [{
+                "name": "leg_l",
+                "path": "assets/images/monsterparts/resized/leg_l.png"
+            },
+            {
+                "name": "foot_l",
+                "path": "assets/images/monsterparts/resized/foot_l.png"
+            },
+            {
+                "name": "leg_r",
+                "path": "assets/images/monsterparts/resized/leg_r.png"
+            },
+            {
+                "name": "foot_r",
+                "path": "assets/images/monsterparts/resized/foot_r.png"
+            }
+        ]
+    }
+
+
+
+]

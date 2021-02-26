@@ -1,0 +1,4 @@
+{
+    "type": "CmdStateSwitchComponent",
+    "next_state":"MainMenuState"
+}

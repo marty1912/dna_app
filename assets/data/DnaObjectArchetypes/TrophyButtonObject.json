@@ -1,0 +1,11 @@
+{
+    "type": "DnaButtonObject",
+    "path": "assets/gui_elements/buttonTrophy.png",
+    "animated": true,
+    "width": 122,
+    "height": 128,
+    "components": [{
+        "type": "CmdEvtTrigComponent",
+        "event_name": "TrophyButtonPressed"
+    }]
+}

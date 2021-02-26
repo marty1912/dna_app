@@ -1,0 +1,6 @@
+{
+    "type": "ActionMoveToAndPressComponent",
+    "on_event": "seq",
+    "target":"",
+    "target_button":""
+}

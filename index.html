@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	
+	<meta charset="utf-8">
+	
+	<title>DNA_DesignPOC</title>
+	
+	<meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	
+	
+	<link rel="shortcut icon" type="image/png" href="./favicon.png">
+    <link rel="manifest" href="manifest.json">
+	
+	
+	<script type="text/javascript" src="./DNA.js"></script>
+	
+	<script>
+		window.addEventListener ("touchmove", function (event) { event.preventDefault (); }, { capture: false, passive: false });
+		if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
+			var meta = document.getElementById ("viewport");
+			meta.setAttribute ('content', 'width=device-width, initial-scale=' + (2 / window.devicePixelRatio) + ', user-scalable=no');
+		}
+	</script>
+	
+	<style>
+		html,body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+		#openfl-content { background: #000000; width: 100%; height: 100%; }
+		@font-face {
+			font-family: 'DigitaltS-Plum';
+			src: url('assets/fonts/digitalts-fruits-font/DigitaltsPlum-1Gj32.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'DigitaltS-Orange';
+			src: url('assets/fonts/digitalts-fruits-font/DigitaltsOrange-nRAPg.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'DigitaltS-Lime';
+			src: url('assets/fonts/digitalts-fruits-font/DigitaltsLime-lgxmd.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Bitstream Vera Sans Bold';
+			src: url('assets/fonts/ttf-bitstream-vera-1.10/VeraBd.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Bitstream Vera Sans';
+			src: url('assets/fonts/ttf-bitstream-vera-1.10/Vera.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Bitstream Vera Serif';
+			src: url('assets/fonts/ttf-bitstream-vera-1.10/VeraSe.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Bitstream Vera Sans Oblique';
+			src: url('assets/fonts/ttf-bitstream-vera-1.10/VeraIt.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Bitstream Vera Sans Mono';
+			src: url('assets/fonts/ttf-bitstream-vera-1.10/VeraMono.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Bitstream Vera Sans Mono Oblique';
+			src: url('assets/fonts/ttf-bitstream-vera-1.10/VeraMoIt.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Bitstream Vera Sans Mono Bold';
+			src: url('assets/fonts/ttf-bitstream-vera-1.10/VeraMoBd.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Bitstream Vera Serif Bold';
+			src: url('assets/fonts/ttf-bitstream-vera-1.10/VeraSeBd.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Bitstream Vera Sans Mono Bold Oblique';
+			src: url('assets/fonts/ttf-bitstream-vera-1.10/VeraMoBI.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Bitstream Vera Sans Bold Oblique';
+			src: url('assets/fonts/ttf-bitstream-vera-1.10/VeraBI.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'ARBEI BERRY';
+			src: url('assets/fonts/a-arbei-berry-font/ArbeiBerry-YzXrO.otf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'ARBEI BERRY';
+			src: url('assets/fonts/a-arbei-berry-font/ArbeiBerry-rg3Ky.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Nokia Cellphone FC Small';
+			src: url('flixel/fonts/nokiafc22.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face {
+			font-family: 'Monsterrat';
+			src: url('flixel/fonts/monsterrat.ttf') format('truetype');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+	</style>
+	
+</head>
+<body>
+	
+	<noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
+	
+	<div id="openfl-content"></div>
+	
+	<script type="text/javascript">
+		lime.embed ("DNA", "openfl-content", 0, 0, { parameters: {} });
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+    "type": "TextObject",
+    "text":"TEXTBOX_TEST",
+    "settings":{
+        "fontsize":64,
+        "width":500,
+        "append_before": "@041911315",
+        "append_after": "@040"
+    }
+}

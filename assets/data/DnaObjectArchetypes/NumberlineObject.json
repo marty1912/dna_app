@@ -1,0 +1,37 @@
+{
+    "type": "NumberlineObject",
+    "horiz_line_w": 1000,
+    "horiz_line_h": 10,
+    "ref_line_w": 10,
+    "ref_line_h": 100,
+    "target_line_w": 10,
+    "target_line_h": 100,
+
+    "zero_line_w": 10,
+    "zero_line_h": 150,
+    "num_zero": 0,
+
+    "label_zero_color": "0xFF0066",
+    "label_ref_color": "0xFF0066",
+    "label_target_color": "0x33008b",
+
+    "horiz_line_color": "0xd3d3d3",
+    "slider_color": "0x33008b",
+    "zero_line_color": "0xFF0066",
+    "ref_line_color": "0xFF0066",
+
+    "num_ref": 2,
+    "num_max": 12,
+    "num_target": 7,
+    "label_size_zero": 60,
+    "label_size_ref": 60,
+    "label_size_target": 100,
+    "label_zero_off_x": 0,
+    "label_zero_off_y": -100,
+    "label_ref_off_x": 0,
+    "label_ref_off_y": -100,
+    "label_target_off_x": 0,
+    "label_target_off_y": -250,
+    "click_area_pad_x": 1,
+    "click_area_pad_y": 10
+}

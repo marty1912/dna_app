@@ -1,0 +1,315 @@
+{
+    "type": "NumberlineTutorialState",
+    "objects": [
+        {
+            "type": "BackgroundObject"
+        },
+        {
+            "type": "SpriteObject",
+            "name": "TextPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 600,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        {
+            "type": "NumberlineObject",
+            "name": "NumberlineObject",
+            "num_zero": 0,
+            "num_ref":2,
+            "num_target":7,
+            "num_max":12,
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center"
+            },
+            {
+                "type": "SliderComponent"
+            }
+        ]
+        },
+        {
+            "type": "TrialHandlerObject"
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"FeedbackTextCorrect",
+            "text":"NumberlineFeedbackCorrect",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"PracticeDoneText",
+            "text":"NumberlinePracticeDone",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"FeedbackTextIncorrect",
+            "text":"NumberlineFeedbackIncorrect",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_onAccept",
+            "actions": [
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "on_event": "EVENT_SLIDERPOS_SET",
+                    "oneshot":false,
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionCheckNumberlineComponent",
+                    "on_event": "AcceptButtonPressed",
+                    "target":"NumberlineObject",
+                    "tolerance":0.1,
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "on_event": "AcceptButtonPressed",
+                    "state":"INACTIVE",
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionRemoveComponentComponent",
+                    "target": "NumberlineObject",
+                    "on_event": "AcceptButtonPressed",
+                    "oneshot":false,
+                    "target_comp":"SliderComponent"
+                }  
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_setup",
+            "actions": [
+                {
+                    "type": "ActionLoadTrialComponent",
+                    "target":"",
+                    "on_event": "onCreate"
+                } 
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_fin",
+            "actions": [
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "on_event": "TrialHandler_all_fin" ,
+                    "state":"INACTIVE",
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionRemoveComponentComponent",
+                    "target": "NumberlineObject",
+                    "on_event": "TrialHandler_all_fin",
+                    "oneshot":false,
+                    "target_comp":"SliderComponent"
+                } ,
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "oneshot":false,
+                    "path":"NumberlinePracticeDone",
+                    "from_locale":true,
+                    "on_event": "TrialHandler_all_fin"
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"PracticeDoneText",
+                    "on_event":"same"
+                },
+                {
+                    "type": "ActionFinishTaskComponent",
+                    "target":""
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "next_state":"NEXT_TASK"
+                }  
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Correct",
+            "actions": [
+                {
+                    "type": "ActionAddComponentComponent",
+                    "target":"NumberlineObject",
+                    "on_event": "NUMLINE_CORRECT",
+                    "oneshot":false,
+                    "components":[{"type": "NumlineZoneComponent"}]
+                },
+
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "oneshot":false,
+                    "path":"NumberlineFeedbackCorrect",
+                    "on_event": "NUMLINE_CORRECT",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"FeedbackTextCorrect",
+                    "oneshot":false,
+                    "on_event": "NUMLINE_CORRECT"
+                },
+                {
+                    "type": "ActionSaveTrialComponent",
+                    "oneshot":false,
+                    "target":""
+                },
+                {
+                    "type": "ActionRemoveComponentComponent",
+                    "target":"NumberlineObject",
+                    "oneshot":false,
+                    "target_comp":"NumlineZoneComponent"
+                },
+                {
+                    "type": "ActionLoadTrialComponent",
+                    "oneshot":false,
+                    "target":""
+                } ,
+                {
+                    "type": "ActionAddComponentComponent",
+                    "target":"NumberlineObject",
+                    "oneshot":false,
+                    "components":[{"type": "SliderComponent"}]
+                }
+                
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Incorrect",
+            "actions": [
+                {
+                    "type": "ActionAddComponentComponent",
+                    "target":"NumberlineObject",
+                    "on_event": "NUMLINE_INCORRECT",
+                    "oneshot":false,
+                    "components":[{"type": "NumlineZoneComponent"}]
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "oneshot":false,
+                    "path":"NumberlineFeedbackIncorrect",
+                    "on_event": "NUMLINE_INCORRECT",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"FeedbackTextIncorrect",
+                    "oneshot":false,
+                    "on_event": "NUMLINE_INCORRECT"
+                },
+                {
+                    "type": "ActionRemoveComponentComponent",
+                    "target":"NumberlineObject",
+                    "oneshot":false,
+                    "target_comp":"NumlineZoneComponent"
+                },
+                {
+                    "type": "ActionLoadTrialComponent",
+                    "oneshot":false,
+                    "target":""
+                },
+                {
+                    "type": "ActionAddComponentComponent",
+                    "target":"NumberlineObject",
+                    "oneshot":false,
+                    "components":[{"type": "SliderComponent"}]
+                }
+              
+            ]
+        },
+        {
+            "type": "AcceptButtonObject",
+            "name": "AcceptButton",
+            "active":false,
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightBottom"
+                },
+                {"type":"UserButtonComponent"},
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state":"INACTIVE"
+                }
+            ]
+        },
+        {
+            "type": "MainMenuButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"}
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_MainMenuButton",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "BtnMainMenuPressed",
+                    "next_state":"LevelSelectState"
+                } 
+            ]
+        },{"type":"TimerObject","name":"TotalTime"}
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "type": "ActionAppearComponent",
+    "on_event": "seq",
+    "target":""
+}

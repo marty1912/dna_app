@@ -1,0 +1,234 @@
+{
+    "type": "NumberlineTutorialState",
+    "objects": [
+        {
+            "type": "BackgroundObject"
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "TextPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 600,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        {
+            "type": "NumberlineObject",
+            "name": "NumberlineObject",
+            "num_zero": 0,
+            "num_ref":2,
+            "num_target":7,
+            "num_max":12,
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center"
+            },
+            {
+                "type": "SliderComponent"
+            },
+            {
+                "type": "SliderTickComponent",
+                "ticks":[
+                    {"position":1,"color":"0xffffff","alpha":1},
+                    {"position":3,"color":"0xffffff","alpha":1},
+                    {"position":4,"color":"0xffffff","alpha":1},
+                    {"position":5,"color":"0xffffff","alpha":1},
+                    {"position":6,"color":"0xffffff","alpha":1},
+                    {"position":7,"color":"0xffffff","alpha":1},
+                    {"position":8,"color":"0xffffff","alpha":1},
+                    {"position":9,"color":"0xffffff","alpha":1},
+                    {"position":10,"color":"0xffffff","alpha":1},
+                    {"position":11,"color":"0xffffff","alpha":1},
+                    {"position":12,"color":"0xffffff","alpha":1}     
+                ]
+            }
+        ]
+        }
+        ,
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"FeedbackTextCorrect",
+            "text":"NumberlineFeedbackCorrect",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"FeedbackTextIncorrect",
+            "text":"NumberlineFeedbackIncorrect",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "on_event": "EVENT_SLIDERPOS_SET",
+                    "state":"NORMAL"
+                },
+                {
+                    "type": "ActionFinishTaskComponent",
+                    "on_event": "TaskEnd",
+                    "target": ""
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "on_event": "seq",
+                    "target": "",
+                    "next_state": "NEXT_TASK"
+                },
+                {
+                    "type": "ActionEnterFullscreenComponent",
+                    "on_event": "BtnMainMenuPressed"
+                },
+                {
+                    "type": "ActionCheckNumberlineComponent",
+                    "on_event": "AcceptButtonPressed",
+                    "target":"NumberlineObject",
+                    "tolerance":0.1,
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "on_event": "AcceptButtonPressed",
+                    "state":"INACTIVE"
+                },
+                {
+                    "type": "ActionRemoveComponentComponent",
+                    "target": "NumberlineObject",
+                    "on_event": "AcceptButtonPressed",
+                    "target_comp":"SliderComponent"
+                }  
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Correct",
+            "actions": [
+                {
+                    "type": "ActionAddComponentComponent",
+                    "target":"NumberlineObject",
+                    "on_event": "NUMLINE_CORRECT",
+                    "components":[{"type": "NumlineZoneComponent"}]
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"NumberlineFeedbackCorrect",
+                    "oneshot":false,
+                    "on_event": "NUMLINE_CORRECT",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"FeedbackTextCorrect",
+                    "on_event": "NUMLINE_CORRECT"
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target": "",
+                    "next_state": "NumberlineTutorialState_02"
+                }   
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Incorrect",
+            "actions": [
+                {
+                    "type": "ActionAddComponentComponent",
+                    "target":"NumberlineObject",
+                    "on_event": "NUMLINE_INCORRECT",
+                    "components":[{"type": "NumlineZoneComponent"}]
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "oneshot":false,
+                    "path":"NumberlineFeedbackIncorrect",
+                    "on_event": "NUMLINE_INCORRECT",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"FeedbackTextIncorrect",
+                    "on_event": "NUMLINE_INCORRECT"
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target": "",
+                    "next_state": "NumberlinePracticeState_01"
+                }   
+            ]
+        },
+        {
+            "type": "AcceptButtonObject",
+            "name": "AcceptButton",
+            "active":false,
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightBottom"
+                },
+                {"type":"UserButtonComponent"},
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state":"INACTIVE"
+                }
+            ]
+        },
+        {
+            "type": "MainMenuButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"}
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_MainMenuButton",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "BtnMainMenuPressed",
+                    "next_state":"LevelSelectState"
+                } 
+            ]
+        },{"type":"TimerObject","name":"TotalTime"}
+    ]
+}

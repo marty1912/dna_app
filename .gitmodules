@@ -1,0 +1,6 @@
+[submodule "Textbox"]
+	path = Textbox
+	url = https://github.com/marty1912/Textbox.git
+[submodule "dragonbones"]
+	path = dragonbones
+	url = https://github.com/openfl/dragonbones

@@ -1,0 +1,100 @@
+
+{"type": "KeyboardGroup",
+"objects":[
+{
+            "type": "SrtPlayerTextObject",
+            "name":"FeedbackText",
+            "text":"NumberlineFeedbackRealTask",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"FeedbackText_CORRECT",
+            "text":"NumberlineFeedbackCorrect",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+         {
+            "type": "SrtPlayerTextObject",
+            "name":"FeedbackText_INCORRECT",
+            "text":"NumberlineFeedbackIncorrect",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+ 
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"TaskDoneText",
+            "text":"NumberlineTaskDone",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"PracticeDoneText",
+            "text":"NumberlinePracticeDone",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        }
+        ]}

@@ -1,0 +1,5 @@
+{
+    "type": "ActionSetSliderPosComponent",
+    "on_event": "seq",
+    "target": ""
+}

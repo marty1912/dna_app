@@ -1,0 +1,6 @@
+{
+    "type": "ActionRemoveComponentComponent",
+    "on_event": "seq",
+    "target":"",
+    "target_comp":""
+}

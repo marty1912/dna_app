@@ -1,0 +1,31 @@
+{
+    "type": "FeedbackControlGroupRealTask",
+    "objects": [
+                {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Feedback",
+            "actions": [
+
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"NumberlineFeedbackRealTask",
+                    "oneshot":false,
+                    "on_event":"SHOW_FEEDBACK",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"FeedbackText",
+                    "oneshot":false,
+                    "on_event":"SHOW_FEEDBACK"
+                },
+                {
+                    "type": "ActionFireEventComponent",
+                    "event_name":"FEEDBACK_DONE",
+                    "oneshot":false,
+                    "target":""
+                }
+            ]
+        }
+    ]
+}

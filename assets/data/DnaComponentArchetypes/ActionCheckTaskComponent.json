@@ -1,0 +1,5 @@
+{
+    "type": "ActionCheckTaskComponent",
+    "on_event": "seq",
+    "target":""
+}

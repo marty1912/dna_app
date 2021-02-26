@@ -1,0 +1,6 @@
+{
+	"type": "ActionSetButtonStateComponent",
+	"on_event": "seq",
+	"target": "",
+	"state": "NORMAL"
+}

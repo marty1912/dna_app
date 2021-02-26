@@ -1,0 +1,32 @@
+{
+    "type": "TextBoxObject",
+    "asset_path": "assets/gui_elements/textBox.png",
+    "origin_where":"left_top",
+    "head":"HEAD_LEVEL_SELECT",
+    "body":"DESC_NUMLINE",
+    
+    "body_size":32,
+    "head_size":40,
+    "head_x":200,
+    "head_y":40,
+    "head_h":256,
+    "head_w":800,
+
+    "body_x":80,
+    "body_y":200,
+    "body_h":256,
+    "body_w":46,
+    "body_color":"0xFFFFFF",
+    "head_color":"0xFFFFFF",
+    "body_b_color":"0xa0522d",
+    "head_b_color":"0x911315",
+    "body_b_size":3,
+    "head_b_size":4,
+    "components": [
+    {
+        "type": "PositionComponent",
+        "oneshot":true,
+        "position":"Center"
+    }
+        ]
+}

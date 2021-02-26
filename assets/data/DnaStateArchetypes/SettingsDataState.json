@@ -1,0 +1,321 @@
+{
+    "type": "SettingsState",
+    "objects": [{
+            "type": "BackgroundObject"
+        },
+       
+        {
+            "type": "SpriteObject",
+            "name": "Banner",
+            "asset_path": "assets/gui_elements/banner.png",
+            "scale_x": 1,
+            "scale_y": 1,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "BannerCenter",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 500,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": "Banner"
+            }]
+        },
+        {
+            "type":"TextObject",
+            "text":"SettingsState_HEAD",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "CenterTop",
+                "target": "BannerCenter"
+            }
+            
+            ]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterPosition01",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 700,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterTopPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 700,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": "CenterPosition01"
+            }]
+        },
+
+        
+        
+        
+        {
+            "type":"TextObject",
+            "text":"SETTINGS_DELETE_DATA",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "LeftCenter",
+                "target": "CenterTopPosition"
+            }
+            
+            ]
+        },
+        {
+            "type": "DeleteButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"},
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightCenter",
+                    "target": "CenterTopPosition"
+                },
+                {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "DELETE_DATA"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                {
+                    "type": "ActionDeleteDataComponent",
+                    "target":"",
+                    "on_event": "DELETE_DATA"
+                } 
+            ]
+        },
+
+       
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterMidPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 700,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterMid",
+                "target": "CenterPosition01"
+            }]
+        },
+        
+
+        {
+            "type":"TextObject",
+            "text":"SETTINGS_UPLOAD_DATA",
+            "autostart":true,
+            "settings":{"char_per_sec":24},
+            "components":[{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "LeftCenter",
+                "target": "CenterMidPosition"
+            }
+            ]
+        },
+        {
+            "type": "UploadButtonObject",
+            "name":"UploadButton",
+            "components":[
+                {"type":"UserButtonComponent"},
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightCenter",
+                    "target": "CenterMidPosition"
+                },
+                {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "UPLOAD_DATA"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "UploadButton",
+                    "state":"INACTIVE",
+                    "on_event": "UPLOAD_DATA",
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionRemoveObjectComponent",
+                    "target": "UPLOAD_FEEDBACK",
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionUploadDataComponent",
+                    "target":"",
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "UploadButton",
+                    "state":"NORMAL",
+                    "oneshot":false
+                }
+            ]
+        },
+
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                {
+                    "type": "ActionAddObjectComponent",
+                    "target": "",
+                    "on_event": "UPLOAD_COMPLETE",
+                    "oneshot":false,
+                    "objects":[
+                        {
+                            "type": "SpriteObject",
+                            "name": "UPLOAD_FEEDBACK",
+                            "asset_path": "assets/gui_elements/green_check.png",
+                            "scale_x": 1,
+                            "scale_y": 1,
+                            "origin_where": "",
+                            "components": [{
+                                "type": "PositionComponent",
+                                "oneshot": true,
+                                "position": "RightBottom",
+                                "target": "CenterPosition01"
+                            }]
+                        }
+                    ]
+                },
+                {
+                    "type": "ActionAddObjectComponent",
+                    "target": "",
+                    "on_event": "UPLOAD_ERROR",
+                    "oneshot":false,
+                    "objects":[
+                        {
+                            "type": "SpriteObject",
+                            "name": "UPLOAD_FEEDBACK",
+                            "asset_path": "assets/gui_elements/red_x.png",
+                            "scale_x": 1,
+                            "scale_y": 1,
+                            "origin_where": "",
+                            "components": [{
+                                "type": "PositionComponent",
+                                "oneshot": true,
+                                "position": "RightBottom",
+                                "target": "CenterPosition01"
+                            }]
+                        }
+                    ]
+                }
+               
+            ]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterBottomPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 700,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterBottom",
+                "target": "CenterPosition01"
+            }]
+        },
+
+
+        
+
+
+        {
+            "type": "AcceptButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"},
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightBottom",
+                    "target": ""
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Accept",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "AcceptButtonPressed",
+                    "next_state":"SettingsState"
+                } 
+            ]
+        },
+        {
+            "type": "MainMenuButtonObject",
+            "components":[
+                {"type":"UserButtonComponent"}
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_MainMenuButton",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event": "BtnMainMenuPressed",
+                    "next_state":"SettingsState"
+                } 
+            ]
+        }
+       
+        
+
+
+
+
+        
+    ]
+}

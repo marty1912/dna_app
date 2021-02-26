@@ -1,0 +1,13 @@
+export/
+.idea/
+.srt~
+*.zip
+.temp
+.munit
+handler.php
+test
+report
+build
+__MACOSX
+*secret_key.txt
+*api_key.txt

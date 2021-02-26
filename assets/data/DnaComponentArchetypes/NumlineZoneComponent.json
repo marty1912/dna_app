@@ -1,0 +1,5 @@
+{
+    "type": "NumlineZoneComponent",
+    "color":"0x00FF00",
+    "tol":0.1
+}

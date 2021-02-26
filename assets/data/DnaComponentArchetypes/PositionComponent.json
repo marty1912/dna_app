@@ -1,0 +1,5 @@
+{
+    "type": "PositionComponent",
+    "oneshot": true,
+    "position":"Center"
+}

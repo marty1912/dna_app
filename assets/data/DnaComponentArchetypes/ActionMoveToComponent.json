@@ -1,0 +1,9 @@
+{
+    "type": "ActionMoveToComponent",
+    "on_event": "seq",
+    "target": "",
+    "to_x": 4,
+    "to_y": 3,
+    "to_object": "",
+    "speed": 4
+}

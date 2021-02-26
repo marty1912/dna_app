@@ -1,0 +1,5 @@
+{
+    "type": "ActionSetTaskParamsComponent",
+    "on_event": "seq",
+    "target": ""
+}

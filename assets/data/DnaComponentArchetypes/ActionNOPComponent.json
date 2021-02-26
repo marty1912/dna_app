@@ -1,0 +1,5 @@
+{
+    "type": "ActionNOPComponent",
+    "on_event": "seq",
+    "target":""
+}

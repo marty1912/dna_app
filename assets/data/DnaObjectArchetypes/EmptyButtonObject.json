@@ -1,0 +1,7 @@
+{
+    "type": "DnaButtonObject",
+    "path": "assets/gui_elements/buttonEmpty.png",
+    "animated": true,
+    "width": 122,
+    "height": 128
+}
