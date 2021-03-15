@@ -26,6 +26,7 @@ class LocaleDE implements Locale
 "NewUnlock" => ConfigFile.text("assets/text/de/NewUnlock.json"),
 "MainMenuTutorial_end" => ConfigFile.text("assets/text/de/MainMenuTutorial_end.json"),
 "LOCALE_NAME" => ConfigFile.text("assets/text/de/LOCALE_NAME.txt"),
+"FeedbackQuestion_Difficulty" => ConfigFile.text("assets/text/de/FeedbackQuestion_Difficulty.txt"),
 "MultiplicationTutorial_01" => ConfigFile.text("assets/text/de/MultiplicationTutorial_01.json"),
 "SRTTEXTBOX_TEST" => ConfigFile.text("assets/text/de/SRTTEXTBOX_TEST.json"),
 "NumberlineTutorial_03" => ConfigFile.text("assets/text/de/NumberlineTutorial_03.json"),

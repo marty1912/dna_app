@@ -1,0 +1,201 @@
+{
+    "type": "UserFeedbackGroup",
+    "objects": [
+        {
+            "type": "BackgroundObject"
+        },
+        {
+            "type": "SpriteObject",
+            "name": "TextPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 600,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "CenterPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 1200,
+            "scale_y": 300,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
+        },
+        
+        {
+            "type": "NumberlineObject",
+            "name": "FeedbackSliderObject",
+            "num_zero": 0,
+            "num_ref": 10,
+            "num_target": 1,
+            "num_max": 10,
+            "label_size_zero": 0,
+            "label_size_ref": 0,
+            "label_size_target": 0,
+            "ref_line_w": 10,
+            "ref_line_h": 100,
+            "target_line_w": 10,
+            "target_line_h": 100,
+            "zero_line_w": 10,
+            "zero_line_h": 100,
+            "horiz_line_color": "0xd3d3d3",
+            "slider_color": "0x33008b",
+            "zero_line_color": "0xd3d3d3",
+            "ref_line_color": "0xd3d3d3",
+            "components": [
+                {
+                    "type": "SliderComponent"
+                },
+                {
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterBottom",
+                "target": "CenterPosition"
+            }
+            ]
+        },
+        {
+            "type": "TrialHandlerObject"
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name": "FeedbackText",
+            "text": "NumberlineFeedbackRealTask",
+            "autostart": false,
+            "settings": {
+                "fontsize": 32,
+                "width": 500
+            },
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "TextPosition"
+            }]
+
+        },
+        {
+            "type": "TextObject",
+            "name": "TextFeedbackQuestion",
+            "text": "FeedbackQuestion_Difficulty",
+            "autostart": true,
+            "settings": {
+                "width": 500,
+                "char_per_sec": 24
+            },
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "TextPosition"
+            }]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_onAccept",
+            "actions": [{
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "on_event": "EVENT_SLIDERPOS_SET",
+                    "oneshot": false,
+                    "state": "NORMAL"
+                },
+                {
+                    "type": "ActionSaveTrialComponent",
+                    "oneshot": false,
+                    "on_event": "AcceptButtonPressed",
+                    "target": ""
+                }
+                ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_setup",
+            "actions": [{
+                "type": "ActionLoadTrialComponent",
+                "target": "",
+                "on_event": "onCreate"
+            }]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_fin",
+            "actions": [{
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "on_event": "TrialHandler_all_fin",
+                    "state": "INACTIVE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionRemoveComponentComponent",
+                    "target": "FeedbackSliderObject",
+                    "on_event": "TrialHandler_all_fin",
+                    "oneshot": false,
+                    "target_comp": "SliderComponent"
+                },
+                {
+                    "type": "ActionFinishTaskComponent",
+                    "target": ""
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target": "",
+                    "next_state": "NEXT_TASK"
+                }
+            ]
+        },
+        {
+            "type": "AcceptButtonObject",
+            "name": "AcceptButton",
+            "active": false,
+            "components": [{
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightBottom"
+                },
+                {
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state": "INACTIVE"
+                }
+            ]
+        },
+        {
+            "type": "MainMenuButtonObject",
+            "components": [{
+                "type": "UserButtonComponent"
+            }]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_MainMenuButton",
+            "actions": [{
+                "type": "ActionStateSwitchComponent",
+                "target": "",
+                "on_event": "BtnMainMenuPressed",
+                "next_state": "LevelSelectState"
+            }]
+        }, {
+            "type": "TimerObject",
+            "name": "TotalTime"
+        }
+
+
+
+    ]
+}
