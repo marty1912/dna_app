@@ -160,6 +160,13 @@ else if (type == "SymbolicNumberComparisonState")
 			state = new DnaState("SymbolicNumberComparisonState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbolicNumberComparisonState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "DifficultyFeedbackState")
+		{
+			state = new DnaState("DifficultyFeedbackState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Feedback/DifficultyFeedbackState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -169,6 +176,12 @@ else if (type == "SymbolicNumberComparisonState")
 		return state;
 	}
 }
+
+
+
+
+
+
 
 
 
