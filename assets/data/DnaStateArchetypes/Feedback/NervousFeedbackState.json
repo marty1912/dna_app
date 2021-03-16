@@ -1,5 +1,5 @@
 {
-    "type": "DifficultyFeedbackState",
+    "type": "NervousFeedbackState",
     "objects": [
  
         {
@@ -10,7 +10,7 @@
     {
             "type": "TextObject",
             "name": "TextFeedbackQuestion",
-            "text": "FeedbackQuestion_Difficulty",
+            "text": "FeedbackQuestion_Nervous",
             "autostart": true,
             "settings": {
                 "width": 500,

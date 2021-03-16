@@ -139,7 +139,8 @@
                 {
                     "type": "ActionAddObjectComponent",
                     "target":"",
-                    "objects":[{
+                    "objects":[
+                        {
                         "type":"TextObject",
                         "name":"TextIntroConfirm",
                         "text":"IntroText_03",

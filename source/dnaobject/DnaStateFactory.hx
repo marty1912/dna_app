@@ -167,6 +167,20 @@ else if (type == "DifficultyFeedbackState")
 			state = new DnaState("DifficultyFeedbackState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Feedback/DifficultyFeedbackState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NervousFeedbackState")
+		{
+			state = new DnaState("NervousFeedbackState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Feedback/NervousFeedbackState.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "MotivationFeedbackState")
+		{
+			state = new DnaState("MotivationFeedbackState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Feedback/MotivationFeedbackState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -176,6 +190,8 @@ else if (type == "DifficultyFeedbackState")
 		return state;
 	}
 }
+
+
 
 
 

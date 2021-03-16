@@ -23,7 +23,7 @@
             "name": "CenterPosition",
             "asset_path": "INVISIBLE_BOX",
             "scale_x": 1200,
-            "scale_y": 300,
+            "scale_y": 400,
             "origin_where": "",
             "components": [{
                 "type": "PositionComponent",
@@ -67,39 +67,6 @@
         },
         {
             "type": "TrialHandlerObject"
-        },
-        {
-            "type": "SrtPlayerTextObject",
-            "name": "FeedbackText",
-            "text": "NumberlineFeedbackRealTask",
-            "autostart": false,
-            "settings": {
-                "fontsize": 32,
-                "width": 500
-            },
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": false,
-                "position": "Center",
-                "target": "TextPosition"
-            }]
-
-        },
-        {
-            "type": "TextObject",
-            "name": "TextFeedbackQuestion",
-            "text": "FeedbackQuestion_Difficulty",
-            "autostart": true,
-            "settings": {
-                "width": 500,
-                "char_per_sec": 24
-            },
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": false,
-                "position": "Center",
-                "target": "TextPosition"
-            }]
         },
         {
             "type": "ActionHandlerObject",
