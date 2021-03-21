@@ -3,6 +3,7 @@ package osspec;
 import extension.eightsines.EsOrientation;
 import flixel.FlxG;
 import flixel.math.FlxPoint;
+import flixel.util.FlxSave;
 import osspec.OsSpecific;
 
 /**
@@ -57,9 +58,10 @@ class AndroidSpecific implements OsSpecific
 	 */
 	public function saveToStorage(data:Dynamic, filename:String):Void
 	{
-		var path = new haxe.io.Path(filename);
-		var datastring:String = haxe.Json.stringify(data);
-		sys.io.File.saveContent(path.toString(), datastring);
+		var save_slot:FlxSave = new FlxSave();
+		save_slot.bind(filename);
+		Reflect.setProperty(save_slot.data, filename, data);
+		save_slot.flush();
 	}
 
 	/**
@@ -71,9 +73,9 @@ class AndroidSpecific implements OsSpecific
 	{
 		try
 		{
-			var path = new haxe.io.Path(filename);
-			var datastring:String = sys.io.File.getContent(path.toString());
-			return haxe.Json.parse(datastring);
+			var save_slot:FlxSave = new FlxSave();
+			save_slot.bind(filename);
+			return Reflect.getProperty(save_slot.data, filename);
 		}
 		catch (e)
 		{

@@ -24,7 +24,17 @@ class Main extends Sprite
 
 		// addChild(new FlxGame(1280, 720, 1, 60, 60, true, false));
 		// with 0,0 we get the game to fill the screen.
-		addChild(new FlxGame(0, 0, 1, 60, 60, true, false));
+		var width = FlxG.stage.stageWidth;
+		var heigth = FlxG.stage.stageHeight;
+
+		if (width <= heigth)
+		{
+			var tmp = heigth;
+			heigth = width;
+			width = tmp;
+		}
+
+		addChild(new FlxGame(width, heigth, 1, 60, 60, true, false));
 
 		/*
 		 * these settings are used so the update loops will get the 
@@ -35,6 +45,6 @@ class Main extends Sprite
 		FlxG.maxElapsed = 0.3;
 
 		trace("now creating initial state.");
-		FlxG.switchState(DnaStateFactory.create("DifficultyFeedbackState"));
+		FlxG.switchState(DnaStateFactory.create("ArithmeticState"));
 	}
 }
