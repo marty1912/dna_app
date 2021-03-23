@@ -185,7 +185,7 @@
                 {
                     "type": "ActionStateSwitchComponent",
                     "target": "",
-                    "next_state": "MainMenuTutorialState"
+                    "next_state": "DemoExplanationState"
                 }
             ]
 

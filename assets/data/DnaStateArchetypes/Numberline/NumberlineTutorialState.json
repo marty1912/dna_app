@@ -3,6 +3,7 @@
     "objects": [
         {
             "type": "BackgroundObject"
+            , "background_path": "assets/images/backdrop_tasks.png"
         },
         {
             "type": "SpriteObject",
@@ -22,7 +23,7 @@
             "type": "NumberlineObject",
             "name": "NumberlineObject",
             "num_zero": 0,
-            "num_ref":2,
+            "num_ref":1,
             "num_target":7,
             "num_max":12,
             "origin_on_target":true,
@@ -34,7 +35,7 @@
             {
                 "type": "SliderTickComponent",
                 "ticks":[
-                    {"position":1,"color":"0xffffff","alpha":1},
+                    {"position":2,"color":"0xffffff","alpha":1},
                     {"position":3,"color":"0xffffff","alpha":1},
                     {"position":4,"color":"0xffffff","alpha":1},
                     {"position":5,"color":"0xffffff","alpha":1},

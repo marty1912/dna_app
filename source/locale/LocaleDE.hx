@@ -50,6 +50,7 @@ class LocaleDE implements Locale
 "6" => ConfigFile.text("assets/text/de/6.txt"),
 "NumberlineState_BODY" => ConfigFile.text("assets/text/de/NumberlineState_BODY.txt"),
 "SETTINGS_DELETE_DATA" => ConfigFile.text("assets/text/de/SETTINGS_DELETE_DATA.txt"),
+"DemoExplanationText01" => ConfigFile.text("assets/text/de/DemoExplanationText01.json"),
 "CreditsArt" => ConfigFile.text("assets/text/de/CreditsArt.txt"),
 "INFO_STATE_C_ART" => ConfigFile.text("assets/text/de/INFO_STATE_C_ART.txt"),
 "INFO_STATE_C_SOUND" => ConfigFile.text("assets/text/de/INFO_STATE_C_SOUND.txt"),

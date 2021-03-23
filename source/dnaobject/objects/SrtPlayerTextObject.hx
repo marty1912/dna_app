@@ -96,7 +96,21 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 		}
 		srt_text = LocaleManager.getInstance().getString(str_key);
 
-		var srt_json:Array<Dynamic> = Json.parse(srt_text);
+		var srt_json:Array<Dynamic>;
+		try
+		{
+			srt_json = Json.parse(srt_text);
+		}
+		catch (e)
+		{
+			srt_json = [
+				{
+					t_start: 0,
+					t_end: 100,
+					text: srt_text
+				}
+			];
+		}
 		for (entry in srt_json)
 		{
 			this.srt_list.push(new SrtEntry(entry.t_start, entry.t_end, append_before + entry.text + append_after));

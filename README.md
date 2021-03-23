@@ -1,4 +1,4 @@
-# Digital Numerical Assessment (DNA)
+# Digital Numeracy Assessment (DNA)
 
 The goal of this project is to create a psychological test that can be used to measure the mathematical abilities of elementary school children.
 It is written in [Haxe](https://haxe.org/) so it can easily be made available on multiple different platforms.

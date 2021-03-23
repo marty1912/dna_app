@@ -23,9 +23,6 @@
             "name":"monti",
             "components": [
                 {
-                    "type": "UserButtonComponent"
-                },
-                {
                     "type": "PositionComponent",
                     "oneshot": true,
                     "position": "Center",
@@ -153,6 +150,7 @@
         },
         {
             "type": "PlayButtonObject",
+            "path": "assets/gui_elements/buttonAccept.png",
             "name": "PlaytButton",
             "components": [{
                 "type": "PositionComponent",
@@ -199,13 +197,13 @@
                     "type": "ActionStateSwitchComponent",
                     "on_event": "PlayButtonPressed",
                     "target": "",
-                    "next_state": "LevelSelectState"
+                    "next_state": "MainMenuState"
                 },
                 {
                     "type": "ActionStateSwitchComponent",
                     "on_event": "NO_MORE_TO_UNLOCK",
                     "target": "",
-                    "next_state": "LevelSelectState"
+                    "next_state": "MainMenuState"
                 }
             ]
         },

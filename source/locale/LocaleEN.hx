@@ -10,9 +10,9 @@ class LocaleEN implements Locale
 	public final ERROR_NOT_FOUND:String = "STRING NOT FOUND IN LOCALE!!";
 	public final ERROR_INV_INPUT:String = "STRING KEY INVALID IN LOCALE!!";
 	public final translation_map:Map<String, String> = [
-		"SettingsState_HEAD" => "@011040100Settings@010",
-		"SettingsState_LANG" => "@011041100Language@010",
-		"LOCALE_NAME" => "@011041100English@010",
+		"SettingsState_HEAD" => "@041911315Settings@040",
+		"SettingsState_LANG" => "@041911315Language@040",
+		"LOCALE_NAME" => "@041911315English@040",
 		"TEXTBOX_TEST" => "Hello World!@011001500 How goes? @010@001FF0000Color test!@000 @02101FFFFThis@020 is a @03101FF0Fgood@030 old textbox test.",
 		"SRTTEXTBOX_TEST" =>
 		'[{"text":"Hello World! @011001500 How goes? @010","t_start":0,"t_end":7}, {"text":"Color test!","t_start":8,"t_end":10},{"text":"This is a good old textbox test.","t_start":12,"t_end":16}]'

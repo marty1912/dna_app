@@ -3,7 +3,7 @@
     "horiz_line_w": 1000,
     "horiz_line_h": 10,
     "ref_line_w": 10,
-    "ref_line_h": 100,
+    "ref_line_h": 150,
     "target_line_w": 10,
     "target_line_h": 100,
 
@@ -12,16 +12,16 @@
 
     "num_zero": 0,
 
-    "label_zero_color": "0xFF0066",
-    "label_ref_color": "0xFF0066",
-    "label_target_color": "0x33008b",
+    "label_zero_color": "0xFFFFFF",
+    "label_ref_color": "0xFFFFFF",
+    "label_target_color": "0xFFFF4D",
 
     "horiz_line_color": "0xd3d3d3",
-    "slider_color": "0x33008b",
-    "zero_line_color": "0xFF0066",
-    "ref_line_color": "0xFF0066",
+    "slider_color": "0xFFFF4D",
+    "zero_line_color": "0xFFFFFF",
+    "ref_line_color": "0xFFFFFF",
 
-    "num_ref": 2,
+    "num_ref": 1,
     "num_max": 12,
     "num_target": 7,
     "label_size_zero": 60,

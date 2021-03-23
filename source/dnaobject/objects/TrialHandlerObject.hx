@@ -65,7 +65,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		{
 			return;
 		}
-		if (this.trial_index >= this.trials.length - 1)
+		if (this.trial_index > this.trials.length - 1)
 		{
 			trace(this.trials);
 			DnaEventManager.instance.broadcastEvent(TRIALS_FIN);

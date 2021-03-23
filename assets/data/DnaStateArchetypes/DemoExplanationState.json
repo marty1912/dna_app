@@ -1,0 +1,78 @@
+{
+    "type": "DemoExplanationState",
+    "objects": [
+
+        {
+            "type": "BackgroundObject"
+        },
+        {
+            "type": "MonsterObject",
+            "name":"Monti",
+            "components": [
+
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "LeftBottom",
+                    "target": ""
+                }
+            ]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "TextPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 600,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        
+        {
+            "type": "SrtPlayerTextObject",
+            "name":"IntroText_01",
+            "text":"DemoExplanationText01",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                {
+                    "type": "ActionDelayComponent",
+                    "delay": 0.1,
+                    "on_event": "onStart"
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"IntroText_01"
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target": "",
+                    "next_state": "NumberlineTutorialState"
+                }
+                
+            ]
+
+        }
+                
+    ]
+}

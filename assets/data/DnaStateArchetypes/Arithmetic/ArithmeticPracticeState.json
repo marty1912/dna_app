@@ -3,6 +3,7 @@
     "objects": [
         {
             "type": "BackgroundObject"
+            , "background_path": "assets/images/backdrop_tasks.png"
         },
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/KeyboardGroup.json" },

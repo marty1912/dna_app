@@ -181,6 +181,13 @@ else if (type == "MotivationFeedbackState")
 			state = new DnaState("MotivationFeedbackState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Feedback/MotivationFeedbackState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "DemoExplanationState")
+		{
+			state = new DnaState("DemoExplanationState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/DemoExplanationState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -190,6 +197,10 @@ else if (type == "MotivationFeedbackState")
 		return state;
 	}
 }
+
+
+
+
 
 
 

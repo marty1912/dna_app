@@ -3,6 +3,7 @@
     "objects": [
         {
             "type": "BackgroundObject"
+            , "background_path": "assets/images/backdrop_tasks.png"
         },
         {
             "type": "SpriteObject",
@@ -106,8 +107,6 @@
                     "oneshot":false,
                     "state":"NORMAL"
                 },
-
-                
                 {
                     "type": "ActionSaveTrialComponent",
                     "oneshot":false,
