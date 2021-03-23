@@ -23,10 +23,10 @@
                 "target": "TextPosition"
             }]
         },
-{
+        {
             "type": "SpriteObject",
             "name": "Icon_easy",
-            "asset_path": "assets/images/smiley_happy.png",
+            "asset_path": "assets/images/rating_empty.png",
             "scale_x": 1,
             "scale_y": 1,
             "origin_where": "",
@@ -40,9 +40,39 @@
         ]
         },
         {
+            "type": "StaticTextObject",
+            "name": "TextFeedbackEasy",
+            "text": "FeedbackRatingEasy",
+            "autostart": true,
+            "settings": {
+                "border":"OUTLINE"
+            },
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "LeftBottom",
+                "target": "CenterPosition"
+            }]
+        },
+        {
+            "type": "StaticTextObject",
+            "name": "TextFeedbackHard",
+            "text": "FeedbackRatingHard",
+            "autostart": true,
+            "settings": {
+                "border":"OUTLINE"
+            },
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "RightBottom",
+                "target": "CenterPosition"
+            }]
+        },
+        {
             "type": "SpriteObject",
             "name": "Icon_hard",
-            "asset_path": "assets/images/smiley_unhappy.png",
+            "asset_path": "assets/images/rating_full.png",
             "scale_x": 1,
             "scale_y": 1,
             "origin_where": "",

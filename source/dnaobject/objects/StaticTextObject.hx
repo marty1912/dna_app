@@ -85,6 +85,7 @@ class StaticTextObject implements DnaObject implements ITextBox extends DnaObjec
 	{
 		// this.getChildren().remove(text_box);
 
+		trace("settext,", border_color);
 		var real_string:String;
 		if (use_literal_text)
 		{
@@ -137,8 +138,8 @@ class StaticTextObject implements DnaObject implements ITextBox extends DnaObjec
 			var width = Reflect.hasField(jsonFile.settings, "width") ? jsonFile.settings.width : default_width;
 			var n_lines = Reflect.hasField(jsonFile.settings, "n_lines") ? jsonFile.settings.n_lines : default_n_lines;
 			var color = Reflect.hasField(jsonFile.settings, "color") ? jsonFile.settings.color : default_color;
-			border = Reflect.hasField(jsonFile.settings, "border") ? jsonFile.settings.border : default_border;
-			border_color = Reflect.hasField(jsonFile.settings, "border_color") ? jsonFile.settings.border_color : default_border_color;
+			border = Reflect.hasField(jsonFile.settings, "border") ? jsonFile.settings.border : border;
+			border_color = Reflect.hasField(jsonFile.settings, "border_color") ? jsonFile.settings.border_color : border_color;
 
 			this.settings = new Settings(FlxAssets.FONT_DEFAULT, fontsize, width, FlxColor.fromString(color), n_lines, char_per_sec);
 		}

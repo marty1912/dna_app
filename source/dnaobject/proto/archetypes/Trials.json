@@ -1,5 +1,37 @@
 [
 	{
+		"type": "NumberlineTutorialState",
+		"desc_head": "NumberlineState_HEAD",
+		"desc_body": "NumberlineState_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+			[{
+				"name": "NumberlineObject",
+				"params": {
+					"zero": 0,
+					"ref": 1,
+					"max": 32,
+					"target": 9
+				}
+			}, {
+				"name": "TotalTime"
+			}],
+			[{
+				"name": "NumberlineObject",
+				"params": {
+					"zero": 0,
+					"ref": 3,
+					"max": 15,
+					"target": 8
+				}
+			}, {
+				"name": "TotalTime"
+			}]
+
+		]
+	},
+	{
 		"type": "AdditionTutorialState",
 		"desc_head": "ArithmeticState_HEAD",
 		"desc_body": "ArithmeticState_BODY",

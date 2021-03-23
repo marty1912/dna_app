@@ -27,9 +27,7 @@
 	<!-- Android Stuff -->
 	<!--<window orientation="landscape" if="cpp"/>-->
 	
-	<!--
-		<template path="./AndroidManifest.xml" rename="app/src/main/AndroidManifest.xml" />
-	--> 
+	<template path="./AndroidManifest.xml" rename="app/src/main/AndroidManifest.xml" />
 		<!-- 
 
 		<template path="./build.gradle" rename="build.gradle" /> 

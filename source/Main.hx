@@ -24,6 +24,7 @@ class Main extends Sprite
 
 		// addChild(new FlxGame(1280, 720, 1, 60, 60, true, false));
 		// with 0,0 we get the game to fill the screen.
+		// we want to force landscape mode. it does not really work as expected so here is our workaround:
 		var width = FlxG.stage.stageWidth;
 		var heigth = FlxG.stage.stageHeight;
 
@@ -45,6 +46,6 @@ class Main extends Sprite
 		FlxG.maxElapsed = 0.3;
 
 		trace("now creating initial state.");
-		FlxG.switchState(DnaStateFactory.create("ArithmeticState"));
+		FlxG.switchState(DnaStateFactory.create("NumberlineState"));
 	}
 }

@@ -23,7 +23,7 @@
             "name": "CenterPosition",
             "asset_path": "INVISIBLE_BOX",
             "scale_x": 1200,
-            "scale_y": 400,
+            "scale_y": 300,
             "origin_where": "",
             "components": [{
                 "type": "PositionComponent",

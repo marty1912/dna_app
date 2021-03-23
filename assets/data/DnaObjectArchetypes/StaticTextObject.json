@@ -2,7 +2,9 @@
     "type": "StaticTextObject",
     "text":"TEXTBOX_TEST",
     "settings":{
-        "fontsize":64,
-        "width":500
+        "width":500,
+        "border": "NONE",
+        "border_color": "0x911315",
+        "fontsize": 64
     }
 }
