@@ -61,11 +61,11 @@ class ActionCheckArithmeticTaskComponent implements DnaComponent extends DnaActi
 		var solution:Int = task_handler.getSolution();
 		if (answer == solution)
 		{
-			DnaEventManager.instance.broadcastEvent(DnaConstants.TASK_CORRECT);
+			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_CORRECT);
 		}
 		else
 		{
-			DnaEventManager.instance.broadcastEvent(DnaConstants.TASK_INCORRECT);
+			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_INCORRECT);
 		}
 	}
 

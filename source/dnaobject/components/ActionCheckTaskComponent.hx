@@ -59,11 +59,11 @@ class ActionCheckTaskComponent implements DnaComponent extends DnaActionBase
 		var correct:Bool = task_handler.isCorrect();
 		if (correct)
 		{
-			DnaEventManager.instance.broadcastEvent(DnaConstants.TASK_CORRECT);
+			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_CORRECT);
 		}
 		else
 		{
-			DnaEventManager.instance.broadcastEvent(DnaConstants.TASK_INCORRECT);
+			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_INCORRECT);
 		}
 	}
 

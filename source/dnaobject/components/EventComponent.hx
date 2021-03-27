@@ -25,7 +25,7 @@ class EventComponent implements DnaComponent extends DnaActionBase
 	{
 		if (Reflect.hasField(jsonFile, "event_name"))
 		{
-			this.event = new DnaEvent(jsonFile.event_name);
+			this.event = new DnaEvent(jsonFile.event_name, this.getParent().getParent().eventManager);
 		}
 		// assert(jsonFile.type == this.state_type);
 		var pre:Array<Dynamic> = jsonFile.pre;

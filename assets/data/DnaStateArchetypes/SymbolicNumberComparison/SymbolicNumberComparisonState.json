@@ -13,6 +13,7 @@
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/FeedbackControlGroupRealTask.json" },
 
+            
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_NumSelected",
@@ -118,7 +119,30 @@
                     "target":"",
                     "next_state":"NEXT_TASK"
                 }  
-        ] }
+        ] },
+            {"type":"SubStateObject",
+                "name":"fixation",
+                "state":"FixationState"},
+{
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Setup",
+            "actions": [
+                {
+                    "type": "ActionDelayComponent",
+                    "delay":2,
+                    "target":"",
+                    "on_event":"onCreate"
+                }, 
+                {
+                    "type": "ActionSwitchToSubStateComponent",
+                    "target":"fixation"
+                },  
+                {
+                    "type": "ActionFireEventComponent",
+                    "event_name":"test_EVENT"
+                }
+        ]
+        }
       
     ]
 }

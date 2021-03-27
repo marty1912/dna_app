@@ -2,9 +2,9 @@
     "type": "ArithmeticPracticeState",
     "objects": [
         {
-            "type": "BackgroundObject"
-            , "background_path": "assets/images/backdrop_tasks.png"
+            "type": "TaskBackgroundObject"
         },
+
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/KeyboardGroup.json" },
         { "type": "OBJECT_GROUP",

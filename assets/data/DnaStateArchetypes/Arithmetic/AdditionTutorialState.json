@@ -1,8 +1,8 @@
 {
     "type": "AdditionTutorialState",
-    "objects": [{
-            "type": "BackgroundObject"
-            , "background_path": "assets/images/backdrop_tasks.png"
+    "objects": [
+        {
+            "type": "TaskBackgroundObject"
         },
 
         {

@@ -36,7 +36,7 @@ class ActionFireEventComponent implements DnaComponent extends DnaActionBase
 	 */
 	override public function update(elapsed:Float)
 	{
-		DnaEventManager.instance.broadcastEvent(event_name);
+		this.getParent().getParent().eventManager.broadcastEvent(event_name);
 		this.finishAction();
 	}
 }

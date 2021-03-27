@@ -1,8 +1,11 @@
 {
     "type": "SubtractionTutorialState",
-    "objects": [{
-            "type": "BackgroundObject"
+    "objects": [
+{
+            "type": "TaskBackgroundObject"
         },
+
+
         {
             "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/KeyboardGroup.json"

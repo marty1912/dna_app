@@ -40,6 +40,11 @@ class DnaObjectFactory
 			obj = new BackgroundObject();
 			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/BackgroundObject.json"));
 		}
+		else if (type == 'TaskBackgroundObject')
+		{
+			obj = new BackgroundObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/TaskBackgroundObject.json"));
+		}
 		else if (type == 'MonsterObject')
 		{
 			obj = new MonsterObject();
@@ -217,10 +222,16 @@ class DnaObjectFactory
 			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/TimerObject.json"));
 		}
 		// // AUTOMATICALLY GENERATED
-else if (type == 'SymbolicNumberComparisonTaskHandlerObject')
+		else if (type == 'SymbolicNumberComparisonTaskHandlerObject')
+		{
+			obj = new SymbolicNumberComparisonTaskHandlerObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolicNumberComparisonTaskHandlerObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+else if (type == 'SubStateObject')
 {
-	obj = new SymbolicNumberComparisonTaskHandlerObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolicNumberComparisonTaskHandlerObject.json"));
+	obj = new SubStateObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SubStateObject.json"));
 }
 // INSERT_HERE
 		else
@@ -233,53 +244,5 @@ else if (type == 'SymbolicNumberComparisonTaskHandlerObject')
 		return obj;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

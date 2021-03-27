@@ -382,6 +382,6 @@ class MontiStateWave implements IState
 
 	public function exit():Void
 	{
-		// DnaEventManager.instance.broadcastEvent("MONTI_EXIT_STATE");
+		// this.getParent().eventManager.broadcastEvent("MONTI_EXIT_STATE");
 	}
 }

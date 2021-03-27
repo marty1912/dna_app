@@ -19,12 +19,12 @@ class DnaEventManager
 	 * this is the only instance that will ever exist
 	 *
 	 */
-	public static final instance:DnaEventManager = new DnaEventManager();
+	// public static final instance:DnaEventManager = new DnaEventManager();
 
 	/**
 	 * private ctor so nobody can create another singleton
 	 */
-	private function new()
+	public function new()
 	{
 		event_list = new Array<DnaEvent>();
 		event_subscribers = new StringMap<Array<DnaEventSubscriber>>();
@@ -59,7 +59,7 @@ class DnaEventManager
 		}
 		if (!already_exists)
 		{
-			event_list.push(new DnaEvent(event_name));
+			event_list.push(new DnaEvent(event_name, this));
 			var subscribers:Array<DnaEventSubscriber> = new Array<DnaEventSubscriber>();
 			event_subscribers.set(event_name, subscribers);
 		}

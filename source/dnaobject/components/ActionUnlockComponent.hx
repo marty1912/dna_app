@@ -45,7 +45,7 @@ class ActionUnlockComponent implements DnaComponent extends DnaActionBase
 		var unlock:Dynamic = DnaDataManager.instance.unlockNextMontyPart();
 		if (unlock == null)
 		{
-			DnaEventManager.instance.broadcastEvent("NO_MORE_TO_UNLOCK");
+			this.getParent().getParent().eventManager.broadcastEvent("NO_MORE_TO_UNLOCK");
 			this.finishAction();
 			return;
 		}

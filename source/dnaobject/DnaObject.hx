@@ -206,4 +206,9 @@ interface DnaObject extends IFlxDestroyable
 	 * the parent state of this object.
 	 */
 	private var m_parent_state:DnaState;
+
+	/**
+	 * register events in here
+	 */
+	public function registerEvents():Void;
 }

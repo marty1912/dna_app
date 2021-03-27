@@ -80,7 +80,7 @@ class ActionDownloadDataComponent implements DnaComponent extends DnaActionBase
 		trace("Download complete!!! event:", event);
 		trace("loader data:", loader.data);
 		DnaDataManager.instance.setTrials(Json.parse(loader.data));
-		DnaEventManager.instance.broadcastEvent("DOWNLOAD_COMPLETE");
+		this.getParent().getParent().eventManager.broadcastEvent("DOWNLOAD_COMPLETE");
 
 		this.finishAction();
 	}
@@ -89,7 +89,7 @@ class ActionDownloadDataComponent implements DnaComponent extends DnaActionBase
 	{
 		trace("event ioerror");
 		trace("e: ", e);
-		DnaEventManager.instance.broadcastEvent("DOWNLOAD_ERROR");
+		this.getParent().getParent().eventManager.broadcastEvent("DOWNLOAD_ERROR");
 		this.finishAction();
 	}
 
@@ -97,7 +97,7 @@ class ActionDownloadDataComponent implements DnaComponent extends DnaActionBase
 	{
 		trace("event secerror");
 		trace("e: ", e);
-		DnaEventManager.instance.broadcastEvent("DOWNLOAD_ERROR");
+		this.getParent().getParent().eventManager.broadcastEvent("DOWNLOAD_ERROR");
 		this.finishAction();
 	}
 

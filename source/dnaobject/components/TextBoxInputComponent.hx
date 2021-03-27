@@ -56,7 +56,7 @@ class TextBoxInputComponent implements DnaComponent implements DnaEventSubscribe
 		textbox.setText(new_text, true);
 		if (new_text.length == 0)
 		{
-			DnaEventManager.instance.broadcastEvent("TEXTINPUT_EMPTY");
+			this.getParent().getParent().eventManager.broadcastEvent("TEXTINPUT_EMPTY");
 		}
 	}
 
@@ -70,12 +70,12 @@ class TextBoxInputComponent implements DnaComponent implements DnaEventSubscribe
 		var current_text:String = textbox.getText();
 		if (current_text.length >= this.max_input_len)
 		{
-			DnaEventManager.instance.broadcastEvent("TEXTINPUT_FULL");
+			this.getParent().getParent().eventManager.broadcastEvent("TEXTINPUT_FULL");
 			return;
 		}
 		var new_text:String = current_text + char;
 		textbox.setText(new_text, true);
-		DnaEventManager.instance.broadcastEvent("TEXTINPUT_READY");
+		this.getParent().getParent().eventManager.broadcastEvent("TEXTINPUT_READY");
 	}
 
 	/**
@@ -86,9 +86,9 @@ class TextBoxInputComponent implements DnaComponent implements DnaEventSubscribe
 		super('TextBoxInputComponent');
 		for (num in 0...10)
 		{
-			DnaEventManager.instance.addSubscriberForEvent(this, DnaEventManager.KEY_EVENT_PREFIX + num);
+			this.getParent().getParent().eventManager.addSubscriberForEvent(this, DnaEventManager.KEY_EVENT_PREFIX + num);
 		}
-		DnaEventManager.instance.addSubscriberForEvent(this, DnaEventManager.KEY_EVENT_PREFIX + DnaConstants.KEY_BACKSPACE);
+		this.getParent().getParent().eventManager.addSubscriberForEvent(this, DnaEventManager.KEY_EVENT_PREFIX + DnaConstants.KEY_BACKSPACE);
 	}
 
 	/**

@@ -179,7 +179,7 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 
 		if (all_done)
 		{
-			DnaEventManager.instance.broadcastEvent(this.getEventFinName());
+			this.getParent().eventManager.broadcastEvent(this.getEventFinName());
 			this.running = false;
 			this.reset();
 		}

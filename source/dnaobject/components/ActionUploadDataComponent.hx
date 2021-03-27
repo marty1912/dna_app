@@ -78,7 +78,7 @@ class ActionUploadDataComponent implements DnaComponent extends DnaActionBase
 	{
 		trace("upload complete!!! event:", event);
 		trace("loader data:", loader.data);
-		DnaEventManager.instance.broadcastEvent("UPLOAD_COMPLETE");
+		this.getParent().getParent().eventManager.broadcastEvent("UPLOAD_COMPLETE");
 		this.finishAction();
 	}
 
@@ -86,7 +86,7 @@ class ActionUploadDataComponent implements DnaComponent extends DnaActionBase
 	{
 		trace("event ioerror");
 		trace("e: ", e);
-		DnaEventManager.instance.broadcastEvent("UPLOAD_ERROR");
+		this.getParent().getParent().eventManager.broadcastEvent("UPLOAD_ERROR");
 		this.finishAction();
 	}
 
@@ -94,7 +94,7 @@ class ActionUploadDataComponent implements DnaComponent extends DnaActionBase
 	{
 		trace("event secerror");
 		trace("e: ", e);
-		DnaEventManager.instance.broadcastEvent("UPLOAD_ERROR");
+		this.getParent().getParent().eventManager.broadcastEvent("UPLOAD_ERROR");
 		this.finishAction();
 	}
 

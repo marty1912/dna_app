@@ -43,7 +43,7 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 			var last_element = this.m_inactive_actions_queue[m_inactive_actions_queue.length - 1];
 			action.on_event = last_element.on_event;
 		}
-		DnaEventManager.instance.addSubscriberForEvent(this, action.on_event);
+		this.getParent().eventManager.addSubscriberForEvent(this, action.on_event);
 
 		this.m_inactive_actions_queue.push(action);
 	}

@@ -39,6 +39,6 @@ class CmdEvtTrigComponent implements DnaComponent implements Command extends Dna
 	 */
 	public override function execute()
 	{
-		DnaEventManager.instance.broadcastEvent(m_event_to_trigger);
+		this.getParent().getParent().eventManager.broadcastEvent(m_event_to_trigger);
 	}
 }

@@ -28,7 +28,7 @@ class MonsterEditorObject implements DnaObject implements DnaEventSubscriber ext
 
 		getPartListFromManager();
 		registerListeners();
-		DnaEventManager.instance.addSubscriberForEvent(this, SAVE_MONTI_DATA);
+		this.getParent().eventManager.addSubscriberForEvent(this, SAVE_MONTI_DATA);
 		getCurrentPartsFromManager();
 	}
 
@@ -104,8 +104,8 @@ class MonsterEditorObject implements DnaObject implements DnaEventSubscriber ext
 		{
 			// listeners for incrementing and decrementing the index..
 
-			DnaEventManager.instance.addSubscriberForEvent(this, typ + INC_INDEX_POSTFIX);
-			DnaEventManager.instance.addSubscriberForEvent(this, typ + DEC_INDEX_POSTFIX);
+			this.getParent().eventManager.addSubscriberForEvent(this, typ + INC_INDEX_POSTFIX);
+			this.getParent().eventManager.addSubscriberForEvent(this, typ + DEC_INDEX_POSTFIX);
 		}
 	}
 

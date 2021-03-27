@@ -43,7 +43,7 @@ class StaticTextObject implements DnaObject implements ITextBox extends DnaObjec
 	public function start():Void
 	{
 		this.text_box.alpha = 1;
-		DnaEventManager.instance.broadcastEvent(this.getEventFinName());
+		this.getParent().eventManager.broadcastEvent(this.getEventFinName());
 	}
 
 	public static final default_fontsize:Int = 32;

@@ -1,0 +1,10 @@
+{
+    "type": "FixationState",
+    "objects": [
+        {
+            "type": "TaskBackgroundObject"
+        }
+
+    ]
+}
+

@@ -54,7 +54,7 @@ class ActionShowTextComponent implements DnaComponent implements DnaEventSubscri
 		var target:ITextBox = cast(getParent().getParent().getObjectByName(m_target_name));
 		// target.setText("ALL_TASKS_DONE_BODY");
 		target.start();
-		DnaEventManager.instance.addSubscriberForEvent(this, target.getEventFinName());
+		this.getParent().getParent().eventManager.addSubscriberForEvent(this, target.getEventFinName());
 	}
 
 	/**

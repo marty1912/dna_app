@@ -22,8 +22,12 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	public function new()
 	{
 		super("TrialHandlerObject");
-		DnaEventManager.instance.addSubscriberForEvent(this, LOAD_TRIAL);
-		DnaEventManager.instance.addSubscriberForEvent(this, SAVE_TRIAL_DATA);
+	}
+
+	override public function registerEvents()
+	{
+		this.getParent().eventManager.addSubscriberForEvent(this, LOAD_TRIAL);
+		this.getParent().eventManager.addSubscriberForEvent(this, SAVE_TRIAL_DATA);
 	}
 
 	/**
@@ -68,7 +72,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		if (this.trial_index > this.trials.length - 1)
 		{
 			trace(this.trials);
-			DnaEventManager.instance.broadcastEvent(TRIALS_FIN);
+			this.getParent().eventManager.broadcastEvent(TRIALS_FIN);
 			return;
 		}
 		var current_trial:Array<Dynamic> = this.trials[trial_index];
@@ -95,14 +99,14 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		}
 		if (this.trials == null)
 		{
-			DnaEventManager.instance.broadcastEvent(TRIALS_FIN);
+			this.getParent().eventManager.broadcastEvent(TRIALS_FIN);
 		}
 		var trials_len = this.trials.length;
 
 		if (this.trial_index >= trials_len)
 		{
 			trace(this.trials);
-			DnaEventManager.instance.broadcastEvent(TRIALS_FIN);
+			this.getParent().eventManager.broadcastEvent(TRIALS_FIN);
 			return;
 		}
 		var current_trial:Array<Dynamic> = this.trials[trial_index];
@@ -116,7 +120,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 			}
 			task_object.setParams(params.params);
 		}
-		DnaEventManager.instance.broadcastEvent(LOAD_TRIAL_FIN);
+		this.getParent().eventManager.broadcastEvent(LOAD_TRIAL_FIN);
 	}
 
 	/**
@@ -138,7 +142,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		{
 			collectData();
 			this.trial_index++;
-			DnaEventManager.instance.broadcastEvent(SAVE_TRIAL_DATA_FIN);
+			this.getParent().eventManager.broadcastEvent(SAVE_TRIAL_DATA_FIN);
 		}
 	}
 }

@@ -6,8 +6,10 @@ import dnaEvent.DnaEventManager;
 import dnaobject.DnaObject;
 import dnaobject.objects.TrialHandlerObject;
 import flixel.FlxState;
+import flixel.FlxSubState;
 import flixel.util.FlxDestroyUtil.IFlxDestroyable;
 import haxe.Json;
+import haxe.Timer;
 import openfl.utils.Assets;
 
 /**
@@ -17,9 +19,11 @@ import openfl.utils.Assets;
  * For example we will add DnaObjects instead of FlxObjects.
  * Also each DnaObject will have a reference to its parent state so we can add stuff like sprites from our components and objects at runtime
  */
-class DnaState extends FlxState implements IFlxDestroyable
+class DnaState extends FlxSubState implements IFlxDestroyable
 {
 	public var m_json_file:String;
+
+	public var eventManager:DnaEventManager = new DnaEventManager();
 
 	/**
 	 * list of objects in this state.
@@ -38,6 +42,12 @@ class DnaState extends FlxState implements IFlxDestroyable
 	 */
 	public function new(type:String)
 	{
+		#if cpp
+		// run garbage collection on cpp targets.
+		cpp.vm.Gc.run(true);
+		cpp.vm.Gc.compact();
+		#end
+
 		super();
 		m_objects_list = new Array<DnaObject>();
 		this.state_type = type;
@@ -50,9 +60,13 @@ class DnaState extends FlxState implements IFlxDestroyable
 	 */
 	override public function create()
 	{
-		DnaEventManager.instance.clearEvents();
+		var t_start = Timer.stamp();
+		eventManager.clearEvents();
 		this.fromFile(this.m_json_file);
-		DnaEventManager.instance.broadcastEvent("onCreate");
+		eventManager.broadcastEvent("onCreate");
+		var t_end = Timer.stamp();
+
+		trace("create time:", t_start - t_end);
 	}
 
 	/**
@@ -60,7 +74,12 @@ class DnaState extends FlxState implements IFlxDestroyable
 	 */
 	override public function destroy():Void
 	{
+		trace("dtor called!");
 		super.destroy();
+		for (obj in this.getObjectList())
+		{
+			obj.destroy();
+		}
 	}
 
 	/**
@@ -162,8 +181,9 @@ class DnaState extends FlxState implements IFlxDestroyable
 			else
 			{
 				var to_add = DnaObjectFactory.create(obj.type);
-				to_add.fromFile(obj);
 				this.addObject(to_add);
+				trace("now adding:", to_add);
+				to_add.fromFile(obj);
 			}
 		}
 	}
@@ -179,7 +199,7 @@ class DnaState extends FlxState implements IFlxDestroyable
 		var start = haxe.Timer.stamp();
 		if (!m_onload_fired)
 		{
-			DnaEventManager.instance.broadcastEvent("onStart");
+			eventManager.broadcastEvent("onStart");
 			m_onload_fired = true;
 		}
 		// super.update(elapsed);

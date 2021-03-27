@@ -1,9 +1,10 @@
 {
     "type": "ArtithmeticState",
     "objects": [
-        {
-            "type": "BackgroundObject"
+{
+            "type": "TaskBackgroundObject"
         },
+
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/KeyboardGroup.json" },
         { "type": "OBJECT_GROUP",

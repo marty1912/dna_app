@@ -121,7 +121,7 @@ class TextObject implements DnaObject implements ITextBox extends DnaObjectBase
 			}
 			if (newStatus == textbox.Status.DONE)
 			{
-				DnaEventManager.instance.broadcastEvent(this.getEventFinName());
+				this.getParent().eventManager.broadcastEvent(this.getEventFinName());
 			}
 		});
 	}

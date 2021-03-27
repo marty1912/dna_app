@@ -20,8 +20,8 @@ class DnaActionBase implements DnaComponent extends DnaComponentBase
 		{
 			cast(this.m_parent_obj, ActionHandlerObject).addAction(this);
 		}
+		this.getParent().getParent().eventManager.broadcastEvent(getFinishedEventName());
 		this.m_parent_obj.removeComponent(this.id);
-		DnaEventManager.instance.broadcastEvent(getFinishedEventName());
 		// this.destroy();
 	}
 

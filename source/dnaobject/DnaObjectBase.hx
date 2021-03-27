@@ -441,6 +441,7 @@ class DnaObjectBase implements IFlxDestroyable
 	 */
 	public function setParent(parent:DnaState):Void
 	{
+		trace("set parent to:", parent);
 		if (this.m_parent_state == parent)
 		{
 			return;
@@ -461,6 +462,11 @@ class DnaObjectBase implements IFlxDestroyable
 			}
 		}
 		this.m_parent_state = parent;
+
+		if (this.m_parent_state != null)
+		{
+			registerEvents();
+		}
 	}
 
 	/**
@@ -476,4 +482,9 @@ class DnaObjectBase implements IFlxDestroyable
 	 * the parent state of this object.
 	 */
 	private var m_parent_state:DnaState;
+
+	/**
+	 * register events in here
+	 */
+	public function registerEvents():Void {}
 }

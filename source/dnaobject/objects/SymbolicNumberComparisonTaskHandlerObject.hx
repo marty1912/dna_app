@@ -41,12 +41,12 @@ class SymbolicNumberComparisonTaskHandlerObject implements DnaObject implements 
 		if (event_name == EVENTNAME_LEFT)
 		{
 			this.answer = getLeftNum();
-			DnaEventManager.instance.broadcastEvent(DnaConstants.TASK_ANSWERED_EVENT);
+			this.getParent().eventManager.broadcastEvent(DnaConstants.TASK_ANSWERED_EVENT);
 		}
 		else if (event_name == EVENTNAME_RIGHT)
 		{
 			this.answer = getRightNum();
-			DnaEventManager.instance.broadcastEvent(DnaConstants.TASK_ANSWERED_EVENT);
+			this.getParent().eventManager.broadcastEvent(DnaConstants.TASK_ANSWERED_EVENT);
 		}
 	}
 
@@ -142,12 +142,20 @@ class SymbolicNumberComparisonTaskHandlerObject implements DnaObject implements 
 	public function new()
 	{
 		super('SymbolicNumberComparisonTaskHandlerObject');
-		DnaEventManager.instance.addSubscriberForEvent(this, EVENTNAME_LEFT);
-		DnaEventManager.instance.addSubscriberForEvent(this, EVENTNAME_RIGHT);
 	}
 
 	public var target_num_left:String;
 	public var target_num_right:String;
+
+	/**
+	 * register events in here
+	 */
+	override public function registerEvents()
+	{
+		trace(this.getParent());
+		this.getParent().eventManager.addSubscriberForEvent(this, EVENTNAME_LEFT);
+		this.getParent().eventManager.addSubscriberForEvent(this, EVENTNAME_RIGHT);
+	}
 
 	/**
 		* fromFile()
@@ -166,6 +174,7 @@ class SymbolicNumberComparisonTaskHandlerObject implements DnaObject implements 
 		{
 			this.target_num_right = jsonFile.target_num_right;
 		}
+
 		super.fromFile(jsonFile);
 		return;
 	}

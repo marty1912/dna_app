@@ -1,0 +1,5 @@
+{
+    "type": "ActionSwitchToSubStateComponent",
+    "on_event": "seq",
+    "target": ""
+}

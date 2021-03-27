@@ -36,7 +36,7 @@ class ActionSetSliderPosComponent implements DnaComponent extends DnaActionBase
 
 	override public function finishAction()
 	{
-		DnaEventManager.instance.broadcastEvent("EVENT_SLIDERPOS_SET");
+		this.getParent().getParent().eventManager.broadcastEvent("EVENT_SLIDERPOS_SET");
 		super.finishAction();
 	}
 

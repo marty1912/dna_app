@@ -235,54 +235,55 @@ class DnaComponentFactory
 		}
 
 		// // AUTOMATICALLY GENERATED
+		else if (type == 'ActionCheckArithmeticTaskComponent')
+		{
+			comp = new ActionCheckArithmeticTaskComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCheckArithmeticTaskComponent.json"));
+		}
 
-else if (type == 'ActionCheckArithmeticTaskComponent')
-{
-	comp = new ActionCheckArithmeticTaskComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCheckArithmeticTaskComponent.json"));
-}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ActionSetTaskParamsComponent')
+		{
+			comp = new ActionSetTaskParamsComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSetTaskParamsComponent.json"));
+		}
 
-// // AUTOMATICALLY GENERATED
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ActionMoveToAndPressComponent')
+		{
+			comp = new ActionMoveToAndPressComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionMoveToAndPressComponent.json"));
+		}
 
-else if (type == 'ActionSetTaskParamsComponent')
-{
-	comp = new ActionSetTaskParamsComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSetTaskParamsComponent.json"));
-}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ActionNOPComponent')
+		{
+			comp = new ActionNOPComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionNOPComponent.json"));
+		}
 
-// // AUTOMATICALLY GENERATED
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ClickAreaComponent')
+		{
+			comp = new ClickAreaComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ClickAreaComponent.json"));
+		}
 
-else if (type == 'ActionMoveToAndPressComponent')
-{
-	comp = new ActionMoveToAndPressComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionMoveToAndPressComponent.json"));
-}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ActionCheckTaskComponent')
+		{
+			comp = new ActionCheckTaskComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCheckTaskComponent.json"));
+		}
 
-// // AUTOMATICALLY GENERATED
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ActionSwitchToSubStateComponent')
+		{
+			comp = new ActionSwitchToSubStateComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSwitchToSubStateComponent.json"));
+		}
 
-else if (type == 'ActionNOPComponent')
-{
-	comp = new ActionNOPComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionNOPComponent.json"));
-}
-
-// // AUTOMATICALLY GENERATED
-
-else if (type == 'ClickAreaComponent')
-{
-	comp = new ClickAreaComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ClickAreaComponent.json"));
-}
-
-// // AUTOMATICALLY GENERATED
-
-else if (type == 'ActionCheckTaskComponent')
-{
-	comp = new ActionCheckTaskComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCheckTaskComponent.json"));
-}
-
-// INSERT_HERE
+		// INSERT_HERE
 		else
 		{
 			trace("type:", type);
@@ -293,251 +294,3 @@ else if (type == 'ActionCheckTaskComponent')
 		return comp;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -14,16 +14,18 @@ class DnaEvent implements DnaEventSubscriber
 	public final id:Int;
 	public var name:String;
 	public var prequisite_events:Array<String>;
+	public var eventManager:DnaEventManager;
 
 	/**
 	 * ctor -
 	 * @param name - (unique) name of this event.
 	 */
-	public function new(name:String)
+	public function new(name:String, event_manager:DnaEventManager)
 	{
 		this.id = s_event_id++;
 		this.name = name;
 		this.prequisite_events = new Array<String>();
+		eventManager = event_manager;
 	}
 
 	/**
@@ -60,7 +62,7 @@ class DnaEvent implements DnaEventSubscriber
 		if (!already_have)
 		{
 			prequisite_events.push(event_name);
-			DnaEventManager.instance.addSubscriberForEvent(this, event_name);
+			eventManager.addSubscriberForEvent(this, event_name);
 		}
 	}
 
@@ -83,7 +85,7 @@ class DnaEvent implements DnaEventSubscriber
 		}
 		if (prequisite_events.length == 0)
 		{
-			DnaEventManager.instance.broadcastEvent(this.name);
+			eventManager.broadcastEvent(this.name);
 		}
 	}
 }

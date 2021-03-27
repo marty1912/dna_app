@@ -71,11 +71,11 @@ class ActionCheckNumberlineComponent implements DnaComponent extends DnaActionBa
 		var deviation:Float = range * tol;
 		if (selected >= target_num - deviation && selected <= target_num + deviation)
 		{
-			DnaEventManager.instance.broadcastEvent("NUMLINE_CORRECT");
+			this.getParent().getParent().eventManager.broadcastEvent("NUMLINE_CORRECT");
 		}
 		else
 		{
-			DnaEventManager.instance.broadcastEvent("NUMLINE_INCORRECT");
+			this.getParent().getParent().eventManager.broadcastEvent("NUMLINE_INCORRECT");
 		}
 	}
 
