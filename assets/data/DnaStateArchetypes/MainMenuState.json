@@ -34,6 +34,7 @@
         {
             "type":"TextObject",
             "text":"MainMenu_HEAD",
+            "name":"HEading",
             "autostart":true,
             "settings":{"char_per_sec":24},
             "components":[{

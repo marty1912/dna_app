@@ -32,6 +32,8 @@ class SpriteObject implements DnaObject extends DnaObjectBase
 	public function new()
 	{
 		super("SpriteObject");
+		sprite = new FlxSprite();
+		this.addChild(sprite);
 	}
 
 	/**
@@ -61,11 +63,11 @@ class SpriteObject implements DnaObject extends DnaObjectBase
 	 */
 	public function loadAsset()
 	{
+		trace("load asset..");
 		if (m_asset_path == "")
 		{
 			return;
 		}
-		sprite = new FlxSprite();
 		if (m_asset_path == "INVISIBLE_BOX")
 		{
 			sprite.makeGraphic(Std.int(m_scale_x), Std.int(m_scale_y), FlxColor.WHITE);
@@ -77,7 +79,7 @@ class SpriteObject implements DnaObject extends DnaObjectBase
 			sprite.loadGraphic(m_asset_path);
 			setScale(m_scale_x, m_scale_y);
 		}
-		this.addChild(sprite);
+		// this.addChild(sprite);
 	}
 
 	private var m_scale_from_screen_width:Bool = false;

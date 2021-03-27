@@ -359,7 +359,7 @@ class DnaObjectBase implements IFlxDestroyable
 			// adds the child
 			// this.getParent().add(child);
 			// always adds object as topmost for this object.
-			var top_most_pos = 0;
+			var top_most_pos = -1;
 			var parent_members = this.getParent().members;
 			for (child in this.getChildren())
 			{
@@ -368,6 +368,10 @@ class DnaObjectBase implements IFlxDestroyable
 				{
 					top_most_pos = index;
 				}
+			}
+			if (top_most_pos == -1)
+			{
+				top_most_pos = this.getParent().members.length - 1;
 			}
 			this.getParent().insert(top_most_pos + 1, child);
 		}

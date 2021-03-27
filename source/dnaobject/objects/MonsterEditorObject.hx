@@ -27,9 +27,21 @@ class MonsterEditorObject implements DnaObject implements DnaEventSubscriber ext
 		super("MonsterEditorObject");
 
 		getPartListFromManager();
-		registerListeners();
-		this.getParent().eventManager.addSubscriberForEvent(this, SAVE_MONTI_DATA);
+		unique_part_types = new Map<String, Int>();
+		for (part in available_parts)
+		{
+			if (!unique_part_types.exists(part.part_type))
+			{
+				unique_part_types.set(part.part_type, 0);
+			}
+		}
 		getCurrentPartsFromManager();
+	}
+
+	override public function registerEvents()
+	{
+		this.getParent().eventManager.addSubscriberForEvent(this, SAVE_MONTI_DATA);
+		this.registerListeners();
 	}
 
 	/**
@@ -92,14 +104,6 @@ class MonsterEditorObject implements DnaObject implements DnaEventSubscriber ext
 
 	public function registerListeners():Void
 	{
-		unique_part_types = new Map<String, Int>();
-		for (part in available_parts)
-		{
-			if (!unique_part_types.exists(part.part_type))
-			{
-				unique_part_types.set(part.part_type, 0);
-			}
-		}
 		for (typ => val in unique_part_types)
 		{
 			// listeners for incrementing and decrementing the index..

@@ -182,7 +182,6 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 			{
 				var to_add = DnaObjectFactory.create(obj.type);
 				this.addObject(to_add);
-				trace("now adding:", to_add);
 				to_add.fromFile(obj);
 			}
 		}

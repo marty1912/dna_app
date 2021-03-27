@@ -145,7 +145,7 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 	 */
 	public function startAnimation(name:String, times:Int)
 	{
-		trace("starting animation:", name);
+		// trace("starting animation:", name);
 		armatureGroup.forEach(_setAnimationProps);
 		armatureGroup.forEach(function(display:FlixelArmatureDisplay)
 		{
@@ -169,8 +169,6 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 			var comp:DnaComponent = DnaComponentFactory.create(part.type);
 			comp.fromFile(part);
 
-			trace(comp);
-			trace(part);
 			addComponent(comp);
 		}
 	}
