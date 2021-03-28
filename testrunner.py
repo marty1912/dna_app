@@ -43,6 +43,8 @@ def main():
         print("invalid number of args. quitting...")
         print("sys argv:",sys.argv)
         quit()
+
+    print("starting tests...")
     project_folder = sys.argv[1]
     test_folder = sys.argv[2]
     testbed_folder = sys.argv[3]
@@ -51,7 +53,7 @@ def main():
     os.makedirs(testbed_folder)
     project_paths = getFolderListWithout(project_folder,["test","export",".git",".vscode"])
     for path in project_paths:
-        print("copying:_",path)
+        #print("copying:_",path)
         if os.path.isfile(path):
             shutil.copy(path,testbed_folder)
         else:
@@ -61,6 +63,7 @@ def main():
     working_dir = os.getcwd()
 
     neko_bin_dir = "./export/neko/bin/"
+    index = 0
     for test in tests_list:
         os.chdir(working_dir)
 
@@ -70,19 +73,31 @@ def main():
         # use the test as our main 
         output = ""
         # build the test
-        subprocess.run(["lime","build","neko"])
+        build = subprocess.run(["lime","build","neko"],capture_output=True)
+        #print(build)
+
+        if build.returncode != 0:
+            print(build)
+            print("ERROR: build failed for test:",test)
+            return
+            
 
         os.chdir(neko_bin_dir)
 
         process = subprocess.Popen(["./DNA"],stdout=subprocess.PIPE,stderr=subprocess.PIPE)
         time.sleep(3)
-        print("now killing subprocess")
+        #print("now killing subprocess")
         process.terminate()
         out, err_out = process.communicate()
-        print("killed subprocess")
+        #print("killed subprocess")
         if len(err_out) != 0:
             print("output was:",out)
             print("error output was:",err_out)
+            print("ERROR: neko crashed for test:",test)
+            return
+
+        index+=1
+        print("done with test ",index,"/",len(tests_list))
 
 
 

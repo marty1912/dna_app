@@ -35,5 +35,8 @@ mv DnaObjectFactory.hx source/dnaobject/DnaObjectFactory.hx
 #echo "test build for html5.."
 #lime build html5 || echo "ERROR: HTML5 BUILD FAILED!!!"
 
-echo "starting lime.."
-lime test neko
+python3 genTests.py python_templates/TestTemplate.hx assets/data/DnaStateArchetypes/ test/tests/states/
+python3 testrunner.py . test/tests test/testbed
+
+#echo "starting lime.."
+#lime test neko

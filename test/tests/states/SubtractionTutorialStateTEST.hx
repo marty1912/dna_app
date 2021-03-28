@@ -1,4 +1,4 @@
-package test.tests;
+package python_templates;
 
 import dnadata.DnaDataManager;
 import dnaobject.DnaState;
@@ -46,6 +46,6 @@ class Main extends Sprite
 		FlxG.maxElapsed = 0.3;
 
 		trace("now creating initial state.");
-		FlxG.switchState(DnaStateFactory.create("MaiMenuState"));
+		FlxG.switchState(DnaStateFactory.create("SubtractionTutorialState"));
 	}
 }

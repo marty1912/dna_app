@@ -5,7 +5,7 @@ export/
 .temp
 .munit
 handler.php
-test
+test/testbed
 report
 build
 __MACOSX
