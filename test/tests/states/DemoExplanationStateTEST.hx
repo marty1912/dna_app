@@ -1,4 +1,4 @@
-package python_templates;
+package;
 
 import dnadata.DnaDataManager;
 import dnaobject.DnaState;
