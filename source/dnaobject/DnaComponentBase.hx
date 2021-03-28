@@ -86,7 +86,18 @@ class DnaComponentBase
 	public function setParent(parent:DnaObject):Void
 	{
 		this.m_parent_obj = parent;
+
+		if (this.m_parent_obj != null)
+		{
+			onHaveParent();
+		}
 	}
+
+	/**
+	 * onHaveParent() - this function is called when we have a valid state reference.
+	 * this is the function you want to override if you need to do stuff with the state.
+	 */
+	public function onHaveParent():Void {}
 
 	/**
 	 * this is the dna object that this component is a part of.

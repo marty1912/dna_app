@@ -84,6 +84,13 @@ class TextBoxInputComponent implements DnaComponent implements DnaEventSubscribe
 	public function new()
 	{
 		super('TextBoxInputComponent');
+	}
+
+	/**
+	 * overriden function where we will 
+	 */
+	override public function onHaveParent()
+	{
 		for (num in 0...10)
 		{
 			this.getParent().getParent().eventManager.addSubscriberForEvent(this, DnaEventManager.KEY_EVENT_PREFIX + num);

@@ -70,4 +70,6 @@ interface DnaComponent extends IFlxDestroyable
 	 * as a type cant change during runtime it is final.
 	 */
 	public final comp_type:String;
+
+	public function onHaveParent():Void;
 }
