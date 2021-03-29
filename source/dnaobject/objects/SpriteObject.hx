@@ -63,7 +63,6 @@ class SpriteObject implements DnaObject extends DnaObjectBase
 	 */
 	public function loadAsset()
 	{
-		trace("load asset..");
 		if (m_asset_path == "")
 		{
 			return;

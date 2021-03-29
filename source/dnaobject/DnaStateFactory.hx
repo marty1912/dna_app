@@ -126,71 +126,61 @@ class DnaStateFactory
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/ArithmeticState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "ArithmeticPracticeState")
+		else if (type == "ArithmeticPracticeState")
 		{
 			state = new DnaState("ArithmeticPracticeState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/ArithmeticPracticeState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "AdditionTutorialState")
+		else if (type == "AdditionTutorialState")
 		{
 			state = new DnaState("AdditionTutorialState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/AdditionTutorialState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "MultiplicationTutorialState")
+		else if (type == "MultiplicationTutorialState")
 		{
 			state = new DnaState("MultiplicationTutorialState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/MultiplicationTutorialState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "SubtractionTutorialState")
+		else if (type == "SubtractionTutorialState")
 		{
 			state = new DnaState("SubtractionTutorialState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/SubtractionTutorialState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "SymbolicNumberComparisonState")
+		else if (type == "SymbolicNumberComparisonState")
 		{
 			state = new DnaState("SymbolicNumberComparisonState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbolicNumberComparisonState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "DifficultyFeedbackState")
+		else if (type == "DifficultyFeedbackState")
 		{
 			state = new DnaState("DifficultyFeedbackState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Feedback/DifficultyFeedbackState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "NervousFeedbackState")
+		else if (type == "NervousFeedbackState")
 		{
 			state = new DnaState("NervousFeedbackState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Feedback/NervousFeedbackState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "MotivationFeedbackState")
+		else if (type == "MotivationFeedbackState")
 		{
 			state = new DnaState("MotivationFeedbackState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Feedback/MotivationFeedbackState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "DemoExplanationState")
+		else if (type == "DemoExplanationState")
 		{
 			state = new DnaState("DemoExplanationState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/DemoExplanationState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "FixationState")
+		else if (type == "FixationState")
 		{
 			state = new DnaState("FixationState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/FixationState.json");
@@ -201,256 +191,9 @@ else if (type == "FixationState")
 			trace("type:", type);
 			assert(false);
 		}
+		state.eventManager.clearEvents();
+		state.fromFile(state.m_json_file);
+		// state.eventManager.broadcastEvent("onCreate");
 		return state;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

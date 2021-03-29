@@ -51,8 +51,6 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 		super();
 		m_objects_list = new Array<DnaObject>();
 		this.state_type = type;
-		// trial_handler = cast(DnaObjectFactory.create("TrialHandlerObject"));
-		// this.addObject(trial_handler);
 	}
 
 	/**
@@ -61,8 +59,8 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 	override public function create()
 	{
 		var t_start = Timer.stamp();
-		eventManager.clearEvents();
-		this.fromFile(this.m_json_file);
+		// eventManager.clearEvents();
+		// this.fromFile(this.m_json_file);
 		eventManager.broadcastEvent("onCreate");
 		var t_end = Timer.stamp();
 

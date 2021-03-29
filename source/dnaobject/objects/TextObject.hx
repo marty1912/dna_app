@@ -106,7 +106,6 @@ class TextObject implements DnaObject implements ITextBox extends DnaObjectBase
 		}
 
 		this.text = append_before + real_string + append_after;
-		trace("this.text :", this.text);
 		this.text_box.setText(this.text);
 		this.addChild(text_box);
 		if (this.autostart)
@@ -157,18 +156,14 @@ class TextObject implements DnaObject implements ITextBox extends DnaObjectBase
 		}
 		if (Reflect.hasField(jsonFile, "text"))
 		{
-			trace("text:", jsonFile.text);
 			if (jsonFile.text == CODE_NEXT_TRIAL_DESC)
 			{
-				trace("have next trial body");
 				jsonFile.text = DnaDataManager.instance.getNextTrials().desc_body;
 			}
 			if (jsonFile.text == CODE_NEXT_TRIAL_HEAD)
 			{
-				trace("have next trial head");
 				jsonFile.text = DnaDataManager.instance.getNextTrials().desc_head;
 			}
-			trace("text:", jsonFile.text);
 			this.setText(jsonFile.text, this.use_literal_text);
 		}
 

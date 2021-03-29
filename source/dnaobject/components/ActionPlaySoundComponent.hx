@@ -36,6 +36,7 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 	 */
 	override public function destroy()
 	{
+		this.sound.destroy();
 		super.destroy();
 	}
 
@@ -58,7 +59,8 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 		{
 			path = LocaleManager.getInstance().getAudioPath(path);
 		}
-		sound = FlxG.sound.load(Assets.getSound(path));
+		sound = new FlxSound();
+		sound.loadEmbedded(Assets.getSound(path));
 		sound.onComplete = finishAction;
 	}
 
@@ -88,7 +90,6 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 
 	/**
 	 * @param numline_name - the name of the numberline to check.
-	 * @param tol - max allowed deviation as a ratio to the whole numberline len.
 	 */
 	public function setVolumeToSlider(numline_name:String)
 	{
