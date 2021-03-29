@@ -25,6 +25,10 @@ class ActionAppearComponent implements DnaComponent extends DnaActionBase
 	 */
 	override public function fromFile(jsonFile:Dynamic):Void
 	{
+		if (Reflect.hasField(jsonFile, "invert"))
+		{
+			this.invert = jsonFile.invert;
+		}
 		super.fromFile(jsonFile);
 	}
 
@@ -42,6 +46,7 @@ class ActionAppearComponent implements DnaComponent extends DnaActionBase
 			// invert is default to false. so default behaviour is to make stuff appear.
 			// if invert is true we hide instead of making things appear.
 			child.visible = !this.invert;
+			trace("set child to visible", !this.invert);
 		}
 		this.finishAction();
 	}

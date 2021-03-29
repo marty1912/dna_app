@@ -20,6 +20,7 @@ import flixel.math.FlxRect;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import haxe.DynamicAccess;
+import haxe.Timer;
 
 /**
  * class SymbolicNumberComparisonTaskHandlerObject
@@ -48,10 +49,15 @@ class SymbolicNumberComparisonTaskHandlerObject implements DnaObject implements 
 			this.answer = getRightNum();
 			this.getParent().eventManager.broadcastEvent(DnaConstants.TASK_ANSWERED_EVENT);
 		}
+		else if (event_name == DnaConstants.EVT_TASK_TIMEOUT)
+		{
+			this.getParent().eventManager.broadcastEvent(DnaConstants.TASK_ANSWERED_EVENT);
+		}
 	}
 
-	/**
+	/*
 	 * isCorrect() checks if the task was answered correctly 
+	 * 
 	 */
 	public function isCorrect():Bool
 	{
@@ -155,6 +161,7 @@ class SymbolicNumberComparisonTaskHandlerObject implements DnaObject implements 
 		trace(this.getParent());
 		this.getParent().eventManager.addSubscriberForEvent(this, EVENTNAME_LEFT);
 		this.getParent().eventManager.addSubscriberForEvent(this, EVENTNAME_RIGHT);
+		this.getParent().eventManager.addSubscriberForEvent(this, DnaConstants.EVT_TASK_TIMEOUT);
 	}
 
 	/**

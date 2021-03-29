@@ -53,6 +53,7 @@
 	<haxelib name="jslibs" />
 	<haxelib name="dragonbones" />
 	<haxelib name="uuid" />
+	<haxelib name="random" />
 	<haxelib name="howlerjs" />
 	<!-- TODO: PUSH NOTIFICATIONS!! https://github.com/Tw1ddle/samcodes-notifications-demo-->
 	

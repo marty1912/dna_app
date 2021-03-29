@@ -233,6 +233,12 @@ else if (type == 'SubStateObject')
 	obj = new SubStateObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SubStateObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'TaskTimeoutTimerObject')
+{
+	obj = new TaskTimeoutTimerObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/TaskTimeoutTimerObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -244,6 +250,8 @@ else if (type == 'SubStateObject')
 		return obj;
 	}
 }
+
+
 
 
 

@@ -57,8 +57,6 @@
             "settings": {
                 "char_per_sec": 500,
                 "width": 600,
-                "border": "OUTLINE",
-                "border_color": "0x911315",
                 "fontsize": 124
             },
             "components": [{
@@ -79,8 +77,6 @@
             "settings": {
                 "char_per_sec": 500,
                 "width": 400,
-                "border": "OUTLINE",
-                "border_color": "0x911315",
                 "fontsize": 124
             },
             "components": [{

@@ -1,6 +1,7 @@
 {
     "type": "MainMenuState",
-    "objects": [{
+    "objects": [
+        {
             "type": "BackgroundObject"
         },
         {
