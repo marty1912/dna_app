@@ -47,6 +47,18 @@
                 "target": ""
             }]
         },
+        {
+            "type":"RoundedRectangleObject",
+            "width":400,
+            "height":400,
+            "components": [
+                 {
+                    "type": "PositionComponent",
+                    "target": "LeftNumPosition",
+                    "position": "Center"
+                }            ]
+
+        },
 
         {
             "type": "StaticTextObject",
@@ -57,6 +69,7 @@
             "settings": {
                 "char_per_sec": 500,
                 "width": 600,
+                "color":"0x000000",
                 "fontsize": 124
             },
             "components": [{
@@ -69,6 +82,18 @@
             ]
         },
         {
+            "type":"RoundedRectangleObject",
+            "width":400,
+            "height":400,
+            "components": [
+                 {
+                    "type": "PositionComponent",
+                    "target": "RightNumPosition",
+                    "position": "Center"
+                }            ]
+
+        },
+        {
             "type": "StaticTextObject",
             "name": "NUM_RIGHT",
             "use_literal_text": true,
@@ -76,6 +101,7 @@
             "autostart": true,
             "settings": {
                 "char_per_sec": 500,
+                "color":"0x000000",
                 "width": 400,
                 "fontsize": 124
             },
@@ -86,6 +112,7 @@
                 "target": "RightNumPosition"
             }]
         },
+
         {
             "type": "SpriteObject",
             "name": "TextPosition",
@@ -100,16 +127,7 @@
                 "target": ""
             }]
         },
-        {
-"type":"RoundedRectangleObject",
-            "components": [
-                 {
-                    "type": "PositionComponent",
-                    "target": "RightNumPosition",
-                    "position": "Center"
-                }            ]
-
-        },
+        
         {
             "type": "EmptyButtonObject",
             "name":"Clickarea_RIGHT",
