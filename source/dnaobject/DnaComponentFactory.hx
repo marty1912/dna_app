@@ -283,7 +283,15 @@ class DnaComponentFactory
 			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSwitchToSubStateComponent.json"));
 		}
 
-		// INSERT_HERE
+		// // AUTOMATICALLY GENERATED
+
+else if (type == 'ActionCloseSubStateComponent')
+{
+	comp = new ActionCloseSubStateComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCloseSubStateComponent.json"));
+}
+
+// INSERT_HERE
 		else
 		{
 			trace("type:", type);
@@ -294,3 +302,6 @@ class DnaComponentFactory
 		return comp;
 	}
 }
+
+
+

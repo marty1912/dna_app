@@ -46,6 +46,6 @@ class Main extends Sprite
 		FlxG.maxElapsed = 0.3;
 
 		trace("now creating initial state.");
-		FlxG.switchState(DnaStateFactory.create("SymbolicNumberComparisonStimuliState"));
+		FlxG.switchState(DnaStateFactory.create("BlankTaskState"));
 	}
 }

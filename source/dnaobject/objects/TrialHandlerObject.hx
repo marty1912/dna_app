@@ -116,6 +116,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 			if (task_object == null)
 			{
 				trace("object not found! name:", params.name);
+				break;
 				return;
 			}
 			task_object.setParams(params.params);

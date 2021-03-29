@@ -1,8 +1,23 @@
 {
     "type": "FixationState",
     "objects": [
+
         {
             "type": "TaskBackgroundObject"
+        },
+        {
+            "type": "SpriteObject",
+            "name": "fixation",
+            "asset_path": "assets/images/fixation_cross.png",
+            "scale_x": 1,
+            "scale_y": 1,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
         }
 
     ]

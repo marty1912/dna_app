@@ -17,12 +17,28 @@ class SubStateObject implements DnaObject extends DnaObjectBase
 		super('SubStateObject');
 	}
 
+	override public function destroy()
+	{
+		this.sub_state.keep_alive = false;
+		this.sub_state.destroy();
+		super.destroy();
+	}
+
+	/**
+	 * this function will be called whenever we close our substate.
+	 */
+	public function onSubstateClose():Void
+	{
+		trace("substate closed");
+	}
+
 	override public function fromFile(jsonFile:Dynamic)
 	{
 		if (Reflect.hasField(jsonFile, "state"))
 		{
 			this.sub_state = DnaStateFactory.create(jsonFile.state);
-			this.sub_state.create();
+			this.sub_state.closeCallback = this.onSubstateClose;
+			this.sub_state.keep_alive = true;
 		}
 		super.fromFile(jsonFile);
 	}

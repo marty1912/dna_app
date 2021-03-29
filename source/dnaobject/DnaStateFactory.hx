@@ -185,6 +185,20 @@ class DnaStateFactory
 			state = new DnaState("FixationState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/FixationState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SymbolicNumberComparisonStimuliState")
+		{
+			state = new DnaState("SymbolicNumberComparisonStimuliState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbolicNumberComparisonStimuliState.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "BlankTaskState")
+		{
+			state = new DnaState("BlankTaskState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/BlankTaskState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -197,3 +211,6 @@ class DnaStateFactory
 		return state;
 	}
 }
+
+
+

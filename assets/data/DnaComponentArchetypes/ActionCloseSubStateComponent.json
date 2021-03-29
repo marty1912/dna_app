@@ -1,0 +1,5 @@
+{
+    "type": "ActionCloseSubStateComponent",
+    "on_event": "seq",
+    "target":""
+}

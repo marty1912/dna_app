@@ -22,6 +22,7 @@ import openfl.utils.Assets;
 class DnaState extends FlxSubState implements IFlxDestroyable
 {
 	public var m_json_file:String;
+	public var keep_alive:Bool = false;
 
 	public var eventManager:DnaEventManager = new DnaEventManager();
 
@@ -49,6 +50,7 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 		#end
 
 		super();
+		// this.persistentUpdate = true;
 		m_objects_list = new Array<DnaObject>();
 		this.state_type = type;
 	}
@@ -61,6 +63,7 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 		var t_start = Timer.stamp();
 		// eventManager.clearEvents();
 		// this.fromFile(this.m_json_file);
+		trace("create:", this.state_type);
 		eventManager.broadcastEvent("onCreate");
 		var t_end = Timer.stamp();
 
@@ -72,7 +75,12 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 	 */
 	override public function destroy():Void
 	{
-		trace("dtor called!");
+		trace("dtor called for", this.state_type);
+		if (this.keep_alive)
+		{
+			return;
+		}
+
 		super.destroy();
 		for (obj in this.getObjectList())
 		{

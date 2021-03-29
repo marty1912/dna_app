@@ -1,8 +1,8 @@
 {
-    "type": "SymbolicNumberComparisonState",
+    "type": "SymbolicNumberComparisonStimuliState",
     "objects": [
         {
-            "type": "BackgroundObject"
+            "type": "TaskBackgroundObject"
         },
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/BackButtonGroup.json" },
@@ -13,7 +13,7 @@
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/FeedbackControlGroupRealTask.json" },
 
-            
+
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_NumSelected",
@@ -24,49 +24,22 @@
                     "on_event": "EVT_TASK_ANSWERED"
                 },
                 {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_LEFT",
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_RIGHT",
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-               {
                     "type": "ActionCheckTaskComponent",
                     "oneshot":false,
                     "target":"TaskHandler"
                 },
                 {
-                    "type": "ActionFireEventComponent",
-                    "event_name":"SHOW_FEEDBACK",
-                    "oneshot":false,
-                    "target":""
-                },
-
-                
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "on_event":"FEEDBACK_DONE",
-                    "target": "Clickarea_LEFT",
-                    "state": "NORMAL",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_RIGHT",
-                    "state": "NORMAL",
-                    "oneshot": false
-                },
-                
-                {
                     "type": "ActionLoadTrialComponent",
                     "oneshot":false,
                     "target":""
-                } 
+                },
+                {
+                    "type": "ActionCloseSubStateComponent",
+                    "oneshot":false,
+                    "target":""
+                }
+                
+                
             ]
         },
         {
@@ -78,7 +51,20 @@
                     "oneshot":false,
                     "target":"",
                     "on_event":"onCreate"
-                }  
+                },  
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "Clickarea_LEFT",
+                    "state": "NORMAL",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "Clickarea_RIGHT",
+                    "state": "NORMAL",
+                    "oneshot": false
+                }
+                
         ]
         },
         {
@@ -119,30 +105,10 @@
                     "target":"",
                     "next_state":"NEXT_TASK"
                 }  
-        ] },
-            {"type":"SubStateObject",
-                "name":"fixation",
-                "state":"FixationState"},
-{
-            "type": "ActionHandlerObject",
-            "name": "ActionHandler_Setup",
-            "actions": [
-                {
-                    "type": "ActionDelayComponent",
-                    "delay":2,
-                    "target":"",
-                    "on_event":"onCreate"
-                }, 
-                {
-                    "type": "ActionSwitchToSubStateComponent",
-                    "target":"fixation"
-                },  
-                {
-                    "type": "ActionFireEventComponent",
-                    "event_name":"test_EVENT"
-                }
-        ]
-        }
+        ] }
+       
       
+        
+
     ]
 }
