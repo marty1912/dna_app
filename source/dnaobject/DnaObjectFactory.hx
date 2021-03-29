@@ -239,6 +239,12 @@ else if (type == 'TaskTimeoutTimerObject')
 	obj = new TaskTimeoutTimerObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/TaskTimeoutTimerObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'RoundedRectangleObject')
+{
+	obj = new RoundedRectangleObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/RoundedRectangleObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -250,6 +256,7 @@ else if (type == 'TaskTimeoutTimerObject')
 		return obj;
 	}
 }
+
 
 
 

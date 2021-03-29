@@ -1,0 +1,9 @@
+{"type":"RoundedRectangleObject",
+    "scale_from_screen_width": false,
+"width":200,
+    "scale_from_screen_height": false,
+"height":300,
+"radius":10,
+"color":"0xff55ff"
+
+}

@@ -101,6 +101,16 @@
             }]
         },
         {
+"type":"RoundedRectangleObject",
+            "components": [
+                 {
+                    "type": "PositionComponent",
+                    "target": "RightNumPosition",
+                    "position": "Center"
+                }            ]
+
+        },
+        {
             "type": "EmptyButtonObject",
             "name":"Clickarea_RIGHT",
             "components": [{
