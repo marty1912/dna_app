@@ -1,0 +1,17 @@
+{
+    "type": "FixationAndBlankSubstatesGroup",
+    "objects": [
+
+        {
+            "type": "TaskBackgroundObject",
+            "name":"blank_overlay"
+        },
+        {"type":"SubStateObject",
+                "name":"fixation",
+                "state":"FixationState"},
+        {"type":"SubStateObject",
+                "name":"blank",
+            "state":"BlankTaskState"}
+        
+    ]
+}
