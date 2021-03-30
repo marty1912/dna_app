@@ -1,0 +1,5 @@
+{
+    "type": "ActionCancelActionComponent",
+    "on_event": "seq",
+    "target":""
+}

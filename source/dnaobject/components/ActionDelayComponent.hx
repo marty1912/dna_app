@@ -31,6 +31,15 @@ class ActionDelayComponent implements DnaComponent extends DnaActionBase
 	}
 
 	/**
+	 *  we have to reset the delay time in here..
+	 */
+	override public function finishAction()
+	{
+		this.m_elapsed_time = 0;
+		super.finishAction();
+	}
+
+	/**
 	 * in this function we will make the object Delay..
 	 * @param elapsed
 	 */
@@ -39,6 +48,7 @@ class ActionDelayComponent implements DnaComponent extends DnaActionBase
 		this.m_elapsed_time += elapsed;
 		if (this.m_delay_time <= this.m_elapsed_time)
 		{
+			// reset time.
 			this.finishAction();
 		}
 	}

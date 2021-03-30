@@ -46,10 +46,10 @@ class ActionSetButtonStateComponent implements DnaComponent extends DnaActionBas
 	 * - PRESSED
 	 * - INACTIVE
 	 */
-	public function setState(string:String)
+	public function setState(string:String, target_name:String)
 	{
 		// with the first getParent we get the object. and with the 2nd the state.
-		var target:IStateMachine = cast(getParent().getParent().getObjectByName(m_target_name));
+		var target:IStateMachine = cast(getParent().getParent().getObjectByName(target_name));
 		if (string == "NORMAL")
 		{
 			target.setNextState(new ButtonStateNormal());
@@ -78,8 +78,17 @@ class ActionSetButtonStateComponent implements DnaComponent extends DnaActionBas
 	 */
 	override public function update(elapsed:Float)
 	{
-		setState(this.state);
+		doActionOnAllTargets();
 
 		this.finishAction();
+	}
+
+	/**
+	 * in here we will remove stuff..
+	 * @param target_name 
+	 */
+	override public function doActionPerTarget(target_name:String)
+	{
+		setState(this.state, target_name);
 	}
 }

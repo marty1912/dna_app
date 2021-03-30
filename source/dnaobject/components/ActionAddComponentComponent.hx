@@ -36,14 +36,9 @@ class ActionAddComponentComponent implements DnaComponent extends DnaActionBase
 		super.fromFile(jsonFile);
 	}
 
-	/**
-	 * in this function we will make the object appear..
-	 * @param elapsed
-	 */
-	override public function update(elapsed:Float)
+	override public function doActionPerTarget(target_name:String)
 	{
-		// we give the json to the state as a string because the from file things take strings..
-		var target:DnaObject = getParent().getParent().getObjectByName(m_target_name);
+		var target:DnaObject = getParent().getParent().getObjectByName(target_name);
 		trace("target name:", m_target_name);
 		// target.fromFile(componentJson);
 		for (comp_json in componentJson)
@@ -52,6 +47,17 @@ class ActionAddComponentComponent implements DnaComponent extends DnaActionBase
 			comp.fromFile(componentJson);
 			target.addComponent(comp);
 		}
+	}
+
+	/**
+	 * in this function we will make the object appear..
+	 * @param elapsed
+	 */
+	override public function update(elapsed:Float)
+	{
+		// we give the json to the state as a string because the from file things take strings..
+		doActionOnAllTargets();
+
 		this.finishAction();
 	}
 }

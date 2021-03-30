@@ -701,160 +701,25 @@
     "actions": [
         {
             "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_0",
+            "targets": [ "Button_0", "Button_1", "Button_2", "Button_3", "Button_4", "Button_5", "Button_6", "Button_7", "Button_8", "Button_9" ],
             "state":"NORMAL",
             "on_event":"KeyboardButtons_NORMAL"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_1",
-            "state":"NORMAL"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_2",
-            "state":"NORMAL"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_3",
-            "state":"NORMAL"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_4",
-            "state":"NORMAL"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_5",
-            "state":"NORMAL"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_6",
-            "state":"NORMAL"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_7",
-            "state":"NORMAL"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_8",
-            "state":"NORMAL"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_9",
-            "state":"NORMAL"
         },
     
         {
             "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_0",
+            "targets": [ "Button_0", "Button_1", "Button_2", "Button_3", "Button_4", "Button_5", "Button_6", "Button_7", "Button_8", "Button_9" ],
             "state":"HIGHLIGHT",
             "on_event":"KeyboardButtons_HIGHLIGHT"
         },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_1",
-            "state":"HIGHLIGHT"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_2",
-            "state":"HIGHLIGHT"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_3",
-            "state":"HIGHLIGHT"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_4",
-            "state":"HIGHLIGHT"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_5",
-            "state":"HIGHLIGHT"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_6",
-            "state":"HIGHLIGHT"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_7",
-            "state":"HIGHLIGHT"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_8",
-            "state":"HIGHLIGHT"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_9",
-            "state":"HIGHLIGHT"
-        },
-
 
         {
             "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_0",
+            "targets": [ "Button_0", "Button_1", "Button_2", "Button_3", "Button_4", "Button_5", "Button_6", "Button_7", "Button_8", "Button_9" ],
             "state":"INACTIVE",
             "on_event":"KeyboardButtons_INACTIVE"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_1",
-            "state":"INACTIVE"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_2",
-            "state":"INACTIVE"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_3",
-            "state":"INACTIVE"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_4",
-            "state":"INACTIVE"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_5",
-            "state":"INACTIVE"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_6",
-            "state":"INACTIVE"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_7",
-            "state":"INACTIVE"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_8",
-            "state":"INACTIVE"
-        },
-        {
-            "type": "ActionSetButtonStateComponent", "oneshot":false,
-            "target": "Button_9",
-            "state":"INACTIVE"
         }
+        
     ]
 
 },
@@ -867,108 +732,18 @@
     "actions": [
         {
             "type": "ActionRemoveComponentComponent", "oneshot":false,
-            "target": "Button_0",
+            "targets": [ "Button_0", "Button_1", "Button_2", "Button_3", "Button_4", "Button_5", "Button_6", "Button_7", "Button_8", "Button_9" ],
             "on_event":"KeyboardButtons_REMOVE_USERBUTTON",
             "target_comp":"UserButtonComponent"
         },
-        {
-            "type": "ActionRemoveComponentComponent", "oneshot":false,
-            "target": "Button_1",
-            "target_comp":"UserButtonComponent"
-        },
-        {
-            "type": "ActionRemoveComponentComponent", "oneshot":false,
-            "target": "Button_2",
-            "target_comp":"UserButtonComponent"
-        },
-        {
-            "type": "ActionRemoveComponentComponent", "oneshot":false,
-            "target": "Button_3",
-            "target_comp":"UserButtonComponent"
-        },
-        {
-            "type": "ActionRemoveComponentComponent", "oneshot":false,
-            "target": "Button_4",
-            "target_comp":"UserButtonComponent"
-        },
-        {
-            "type": "ActionRemoveComponentComponent", "oneshot":false,
-            "target": "Button_5",
-            "target_comp":"UserButtonComponent"
-        },
-        {
-            "type": "ActionRemoveComponentComponent", "oneshot":false,
-            "target": "Button_6",
-            "target_comp":"UserButtonComponent"
-        },
-        {
-            "type": "ActionRemoveComponentComponent", "oneshot":false,
-            "target": "Button_7",
-            "target_comp":"UserButtonComponent"
-        },
-        {
-            "type": "ActionRemoveComponentComponent", "oneshot":false,
-            "target": "Button_8",
-            "target_comp":"UserButtonComponent"
-        },
-        {
-            "type": "ActionRemoveComponentComponent", "oneshot":false,
-            "target": "Button_9",
-            "target_comp":"UserButtonComponent"
-        },
-    
         
         {
             "type": "ActionAddComponentComponent", "oneshot":false,
-            "target": "Button_0",
+            "targets": [ "Button_0", "Button_1", "Button_2", "Button_3", "Button_4", "Button_5", "Button_6", "Button_7", "Button_8", "Button_9" ],
             "components":[{"type": "UserButtonComponent"}],
             "on_event":"KeyboardButtons_ADD_USERBUTTON"
-        },
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "target": "Button_1",
-            "components":[{"type": "UserButtonComponent"}]
-        },
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "target": "Button_2",
-            "components":[{"type": "UserButtonComponent"}]
-        },
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "target": "Button_3",
-            "components":[{"type": "UserButtonComponent"}]
-        },
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "target": "Button_4",
-            "components":[{"type": "UserButtonComponent"}]
-        },
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "target": "Button_5",
-            "components":[{"type": "UserButtonComponent"}]
-        },
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "target": "Button_6",
-            "components":[{"type": "UserButtonComponent"}]
-        },
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "target": "Button_7",
-            "components":[{"type": "UserButtonComponent"}]
-        },
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "target": "Button_8",
-            "components":[{"type": "UserButtonComponent"}]
-        },
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "target": "Button_9",
-            "components":[{"type": "UserButtonComponent"}]
         }
+        
 
     ]
 

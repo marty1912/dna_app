@@ -299,6 +299,14 @@ else if (type == 'KeyboardInputComponent')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/KeyboardInputComponent.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'ActionCancelActionComponent')
+{
+	comp = new ActionCancelActionComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCancelActionComponent.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -310,6 +318,7 @@ else if (type == 'KeyboardInputComponent')
 		return comp;
 	}
 }
+
 
 
 

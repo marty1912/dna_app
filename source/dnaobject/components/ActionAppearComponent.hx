@@ -29,7 +29,21 @@ class ActionAppearComponent implements DnaComponent extends DnaActionBase
 		{
 			this.invert = jsonFile.invert;
 		}
+
 		super.fromFile(jsonFile);
+	}
+
+	override public function doActionPerTarget(target_name:String)
+	{
+		var target:DnaObject = getParent().getParent().getObjectByName(target_name);
+		trace("target:", target_name);
+		for (child in target.getChildren())
+		{
+			// invert is default to false. so default behaviour is to make stuff appear.
+			// if invert is true we hide instead of making things appear.
+			child.visible = !this.invert;
+			trace("set child to visible", !this.invert);
+		}
 	}
 
 	/**
@@ -40,14 +54,7 @@ class ActionAppearComponent implements DnaComponent extends DnaActionBase
 	{
 		// might look confusing at first.
 		// with the first getParent we get the object. and with the 2nd the state.
-		var target:DnaObject = getParent().getParent().getObjectByName(m_target_name);
-		for (child in target.getChildren())
-		{
-			// invert is default to false. so default behaviour is to make stuff appear.
-			// if invert is true we hide instead of making things appear.
-			child.visible = !this.invert;
-			trace("set child to visible", !this.invert);
-		}
+		doActionOnAllTargets();
 		this.finishAction();
 	}
 }

@@ -45,22 +45,20 @@
                 },
                 {
                     "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_LEFT",
+                    "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
                     "state": "INACTIVE",
                     "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_RIGHT",
-                    "state": "INACTIVE",
-                    "oneshot": false,
-                    "on_event":"same"
                 },
                 {
                     "type": "ActionAppearComponent",
                     "target": "blank_overlay",
                     "invert":false,
                     "oneshot": false
+                },
+ 
+                {"type":"ActionCancelActionComponent"
+                ,"target":"ActionHandler_OnSuccessful_load",
+                "oneshot":false
                 },
                 {
                     "type": "ActionSwitchToSubStateComponent",
@@ -90,16 +88,11 @@
                 },  
                 {
                     "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_LEFT",
+                    "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
                     "state": "NORMAL",
                     "oneshot": false
                 },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_RIGHT",
-                    "state": "NORMAL",
-                    "oneshot": false
-                },
+                
                 {
                     "type": "ActionFireEventComponent",
                     "oneshot":false,
@@ -107,71 +100,40 @@
                 },
                 {
                     "type": "ActionAppearComponent",
-                    "target": "NOISE_LEFT",
-                    "invert":true,
+                    "targets": ["NUM_LEFT","NUM_RIGHT"],
+                    "invert":false,
                     "oneshot": false
                 } ,
                 {
                     "type": "ActionAppearComponent",
-                    "target": "NOISE_RIGHT",
-                    "invert":true,
-                    "oneshot": false,
-                    "on_event":"same"
-                },
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "blank_overlay",
+                    "targets": ["NOISE_LEFT","NOISE_RIGHT","blank_overlay"],
                     "invert":true,
                     "oneshot": false
-                },
+                } ,
                 {
                     "type":"ActionDelayComponent",
-                    "delay": 0.5
+                    "delay": 0.5,
+                    "oneshot": false
                 }
                 ,
                 {
                     "type": "ActionAppearComponent",
-                    "target": "NOISE_LEFT",
+                    "targets": ["NOISE_LEFT","NOISE_RIGHT"],
                     "invert":false,
                     "oneshot": false
                 } ,
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "NOISE_RIGHT",
-                    "invert":false,
-                    "oneshot": false,
-                    "on_event":"same"
-                },
                 {
                     "type":"ActionDelayComponent",
-                    "delay": 0.1
-                } ,
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "NUM_LEFT",
-                    "invert":true,
+                    "delay": 0.1,
                     "oneshot": false
                 } ,
                 {
                     "type": "ActionAppearComponent",
-                    "target": "NUM_RIGHT",
-                    "invert":true,
-                    "oneshot": false,
-                    "on_event":"same"
-                } ,
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "NOISE_LEFT",
+                    "targets": ["NUM_LEFT","NUM_RIGHT","NOISE_LEFT","NOISE_RIGHT"],
                     "invert":true,
                     "oneshot": false
-                } ,
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "NOISE_RIGHT",
-                    "invert":true,
-                    "oneshot": false,
-                    "on_event":"same"
-                }
+                } 
+                
         ]
         },
         {
@@ -198,17 +160,12 @@
             "actions": [
                 {
                     "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_LEFT",
+                    "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
                     "state": "INACTIVE",
                     "on_event":"TrialHandler_all_fin",
                     "oneshot": false
                 },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_RIGHT",
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
+                
                 {
                     "type": "ActionPlaySoundComponent",
                     "path":"NumberlineTaskDone",

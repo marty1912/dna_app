@@ -26,6 +26,24 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 	private var m_inactive_actions_queue:Array<DnaActionBase>;
 
 	/**
+	 * aborts all running actions.
+	 * also might abort future actions that depend on the current action to finish.
+	 */
+	public function abortRunningActions()
+	{
+		for (comp in this.m_component_list)
+		{
+			if (comp.comp_type.indexOf("Action") == -1)
+			{
+				continue;
+			}
+			var action:DnaActionBase = cast comp;
+			action.canceled = true;
+			trace("action canceled!", action.comp_type);
+		}
+	}
+
+	/**
 	 * adds an action to our queue and registers this object with the corresponding handler.
 	 * @param action - the action to add
 	 */

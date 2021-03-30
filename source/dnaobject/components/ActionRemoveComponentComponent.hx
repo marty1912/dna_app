@@ -29,6 +29,16 @@ class ActionRemoveComponentComponent implements DnaComponent extends DnaActionBa
 	}
 
 	/**
+	 * in here we will remove stuff..
+	 * @param target_name 
+	 */
+	override public function doActionPerTarget(target_name:String)
+	{
+		var target:DnaObject = getParent().getParent().getObjectByName(target_name);
+		target.removeComponentByType(target_comp);
+	}
+
+	/**
 	 * in this function we will make the object appear..
 	 * @param elapsed
 	 */
@@ -36,8 +46,8 @@ class ActionRemoveComponentComponent implements DnaComponent extends DnaActionBa
 	{
 		// might look confusing at first.
 		// with the first getParent we get the object. and with the 2nd the state.
-		var target:DnaObject = getParent().getParent().getObjectByName(m_target_name);
-		target.removeComponentByType(target_comp);
+		doActionOnAllTargets();
+
 		this.finishAction();
 	}
 }
