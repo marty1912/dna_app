@@ -212,6 +212,7 @@ class ButtonStateInactive implements IState
 	public function new() {};
 
 	public var user_comp:DnaComponent = null;
+	public var keyboard_comp:DnaComponent = null;
 	public var parent:DnaButtonObject = null;
 
 	public function setParent(parent:IStateMachine):Void
@@ -225,6 +226,8 @@ class ButtonStateInactive implements IState
 	{
 		user_comp = parent.getComponentByType("UserButtonComponent");
 		parent.removeComponentByType("UserButtonComponent");
+		keyboard_comp = parent.getComponentByType("KeyboardInputComponent");
+		parent.removeComponentByType("KeyboardInputComponent");
 		// parent.button.alpha = 0.5;
 		// on 0 we will have normal behavior
 		parent.animCtrl.frameIndex = 3;
@@ -236,6 +239,10 @@ class ButtonStateInactive implements IState
 		if (user_comp != null)
 		{
 			parent.addComponent(user_comp);
+		}
+		if (keyboard_comp != null)
+		{
+			parent.addComponent(keyboard_comp);
 		}
 	}
 }

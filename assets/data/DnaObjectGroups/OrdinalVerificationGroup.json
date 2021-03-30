@@ -1,0 +1,127 @@
+{
+    "type": "OrdinalVerificationGroup",
+    "objects": [
+
+        {
+            "type": "SpriteObject",
+            "name": "CenterPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 100,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "CenterTopPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 400,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": "CenterPosition"
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "CenterBottomPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_from_screen_width":true,
+            "scale_x": 0.6,
+            "scale_y": 100,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterBottom",
+                "target": "CenterPosition"
+            }]
+        },
+        {
+            "type":"RoundedRectangleObject",
+            "width":400,
+            "height":200,
+            "components": [
+                 {
+                    "type": "PositionComponent",
+                    "target": "CenterTopPosition",
+                    "position": "Center"
+                }            ]
+
+        },
+        {
+            "type": "StaticTextObject",
+            "name": "TripletText",
+            "use_literal_text": true,
+            "text": "O-R-D",
+            "autostart": true,
+            "settings": {
+                "char_per_sec": 500,
+                "color":"0x000000",
+                "width": 400,
+                "fontsize": 124
+            },
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "CenterTopPosition"
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "TextPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 600,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        {
+            "type": "TrialHandlerObject"
+        },
+        {
+            "type": "TimerObject",
+            "name": "TotalTime"
+        },
+        {
+            "type": "DependentGroupObject",
+            "conditions": [
+                {
+                    "condition": "web",
+                    "obj": {
+                        "type": "OBJECT_GROUP",
+                        "path": "assets/data/DnaObjectGroups/KeyboardGroup.json"
+                    }
+                },
+                {
+                    "condition": "android",
+                    "obj": {
+                        "type": "OBJECT_GROUP",
+                        "path": "assets/data/DnaObjectGroups/OrdinalButtonGroup.json"
+                    }
+                },
+                {
+                    "condition": "desktop",
+                    "obj": {
+                        "type": "OBJECT_GROUP",
+                        "path": "assets/data/DnaObjectGroups/OrdinalButtonGroupDesktop.json"
+                    }
+                }
+            ]
+        }
+    ]
+}

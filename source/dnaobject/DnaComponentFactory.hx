@@ -291,6 +291,14 @@ else if (type == 'ActionCloseSubStateComponent')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCloseSubStateComponent.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'KeyboardInputComponent')
+{
+	comp = new KeyboardInputComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/KeyboardInputComponent.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -302,6 +310,11 @@ else if (type == 'ActionCloseSubStateComponent')
 		return comp;
 	}
 }
+
+
+
+
+
 
 
 

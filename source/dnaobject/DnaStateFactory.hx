@@ -191,6 +191,13 @@ class DnaStateFactory
 			state = new DnaState("BlankTaskState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/BlankTaskState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "OrdinalTaskState")
+		{
+			state = new DnaState("OrdinalTaskState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdinalTaskState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -203,6 +210,11 @@ class DnaStateFactory
 		return state;
 	}
 }
+
+
+
+
+
 
 
 

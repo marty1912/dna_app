@@ -1,0 +1,25 @@
+{
+    "type": "OrdinalButtonGroup",
+    "objects": [
+        {
+            "type": "DependentGroupObject",
+            "conditions": [
+                {
+                    "condition": "ORDINAL_LEFT",
+                    "obj": {
+                        "type": "OBJECT_GROUP",
+                        "path": "assets/data/DnaObjectGroups/OrdinalButtonGroup_LeftAccept.json"
+                    }
+                },
+                {
+                    "condition": "ORDINAL_RIGHT",
+                    "obj": {
+                        "type": "OBJECT_GROUP",
+                        "path": "assets/data/DnaObjectGroups/OrdinalButtonGroup_RightAccept.json"
+                    }
+                }
+                
+            ]
+        }
+    ]
+}

@@ -1,32 +1,61 @@
 {
     "type": "ArtithmeticState",
-    "objects": [
-{
+    "objects": [{
             "type": "TaskBackgroundObject"
         },
 
-        { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/KeyboardGroup.json" },
-        { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/ArithmeticGroup.json" },
-        { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/FeedbackGroup.json" },
-        { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/FeedbackControlGroupRealTask.json" },
+        {
+            "type": "DependentGroupObject",
+            "conditions": [
+                {
+                    "condition": "web",
+                    "obj": {
+                        "type": "OBJECT_GROUP",
+                        "path": "assets/data/DnaObjectGroups/KeyboardGroup.json"
+                    }
+                },
+                {
+                    "condition": "android",
+                    "obj": {
+                        "type": "OBJECT_GROUP",
+                        "path": "assets/data/DnaObjectGroups/KeyboardGroup.json"
+                    }
+                },
+                {
+                    "condition": "desktop",
+                    "obj": {
+                        "type": "OBJECT_GROUP",
+                        "path": "assets/data/DnaObjectGroups/KeyboardGroup.json"
+                    }
+                }
+            ]
+        },
+
+        {
+            "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/ArithmeticGroup.json"
+        },
+        {
+            "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/FeedbackGroup.json"
+        },
+        {
+            "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/FeedbackControlGroupRealTask.json"
+        },
 
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_AcceptButton",
-            "actions": [
-                {
+            "actions": [{
                     "type": "ActionSaveTrialComponent",
-                    "oneshot":false,
+                    "oneshot": false,
                     "on_event": "AcceptButtonPressed"
                 },
                 {
                     "type": "ActionCheckArithmeticTaskComponent",
-                    "oneshot":false,
-                    "target":"ArithmeticHandler"
+                    "oneshot": false,
+                    "target": "ArithmeticHandler"
                 },
                 {
                     "type": "ActionSetButtonStateComponent",
@@ -48,18 +77,18 @@
                 },
                 {
                     "type": "ActionFireEventComponent",
-                    "event_name":"SHOW_FEEDBACK",
-                    "oneshot":false,
-                    "target":""
+                    "event_name": "SHOW_FEEDBACK",
+                    "oneshot": false,
+                    "target": ""
                 },
 
 
-                
+
                 {
                     "type": "ActionSetButtonStateComponent",
                     "target": "AcceptButton",
                     "state": "NORMAL",
-                    "on_event":"FEEDBACK_DONE",
+                    "on_event": "FEEDBACK_DONE",
                     "oneshot": false
                 },
                 {
@@ -76,89 +105,92 @@
                 },
                 {
                     "type": "ActionLoadTrialComponent",
-                    "oneshot":false,
-                    "target":""
-                } 
+                    "oneshot": false,
+                    "target": ""
+                }
             ]
         },
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_Setup",
-            "actions": [
-                {
+            "actions": [{
                     "type": "ActionAddComponentComponent",
-                    "target":"AcceptButton",
-                    "oneshot":false,
-                    "on_event":"onCreate",
-                    "components":[{"type": "UserButtonComponent"}]
-                },
-                {
-                    "type": "ActionAddComponentComponent",
-                    "target":"BackspaceButton",
-                    "oneshot":false,
-                    "on_event":"onCreate",
-                    "components":[{"type": "UserButtonComponent"}]
-                },
-                {
-                    "type": "ActionFireEventComponent",
-                    "target":"",
-                    "oneshot":false,
-                    "on_event":"onCreate",
-                    "event_name":"KeyboardButtons_ADD_USERBUTTON"
-                },
-                {
-                    "type": "ActionLoadTrialComponent",
-                    "oneshot":false,
-                    "target":"",
-                    "on_event":"onCreate"
-                }  
-        ]
-        },
-        {
-            "type": "ActionHandlerObject",
-            "name": "ActionHandler_Finish",
-            "actions": [
-                {
-                    "type": "ActionSetButtonStateComponent",
                     "target": "AcceptButton",
-                    "on_event": "TrialHandler_all_fin" ,
-                    "state":"INACTIVE",
-                    "oneshot":false
+                    "oneshot": false,
+                    "on_event": "onCreate",
+                    "components": [{
+                        "type": "UserButtonComponent"
+                    }]
                 },
                 {
-                    "type": "ActionSetButtonStateComponent",
+                    "type": "ActionAddComponentComponent",
                     "target": "BackspaceButton",
-                    "state":"INACTIVE",
-                    "oneshot":false
+                    "oneshot": false,
+                    "on_event": "onCreate",
+                    "components": [{
+                        "type": "UserButtonComponent"
+                    }]
                 },
                 {
                     "type": "ActionFireEventComponent",
                     "target": "",
-                    "event_name":"KeyboardButtons_INACTIVE",
-                    "oneshot":false
+                    "oneshot": false,
+                    "on_event": "onCreate",
+                    "event_name": "KeyboardButtons_ADD_USERBUTTON"
+                },
+                {
+                    "type": "ActionLoadTrialComponent",
+                    "oneshot": false,
+                    "target": "",
+                    "on_event": "onCreate"
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Finish",
+            "actions": [{
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "on_event": "TrialHandler_all_fin",
+                    "state": "INACTIVE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "BackspaceButton",
+                    "state": "INACTIVE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionFireEventComponent",
+                    "target": "",
+                    "event_name": "KeyboardButtons_INACTIVE",
+                    "oneshot": false
                 },
                 {
                     "type": "ActionPlaySoundComponent",
-                    "path":"NumberlineTaskDone",
-                    "oneshot":false,
-                    "from_locale":true
+                    "path": "NumberlineTaskDone",
+                    "oneshot": false,
+                    "from_locale": true
                 },
                 {
                     "type": "ActionShowTextComponent",
-                    "target":"TaskDoneText",
-                    "on_event":"same",
-                    "oneshot":false
+                    "target": "TaskDoneText",
+                    "on_event": "same",
+                    "oneshot": false
                 },
                 {
                     "type": "ActionFinishTaskComponent",
-                    "target":""
+                    "target": ""
                 },
                 {
                     "type": "ActionStateSwitchComponent",
-                    "target":"",
-                    "next_state":"NEXT_TASK"
-                }  
-        ] }
-      
+                    "target": "",
+                    "next_state": "NEXT_TASK"
+                }
+            ]
+        }
+
     ]
 }

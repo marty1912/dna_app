@@ -179,17 +179,25 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 		var objects:Array<Dynamic> = jsonFile.objects;
 		for (obj in objects)
 		{
-			// trace(obj.type);
-			if (obj.type == DnaConstants.OBJECT_GROUP)
-			{
-				fromFile(Assets.getText(obj.path));
-			}
-			else
-			{
-				var to_add = DnaObjectFactory.create(obj.type);
-				this.addObject(to_add);
-				to_add.fromFile(obj);
-			}
+			objectFromFile(obj);
+		}
+	}
+
+	/**
+	 * adds a object group from file
+	 * @param path 
+	 */
+	public function objectFromFile(obj:Dynamic)
+	{
+		if (obj.type == DnaConstants.OBJECT_GROUP)
+		{
+			fromFile(Assets.getText(obj.path));
+		}
+		else
+		{
+			var to_add = DnaObjectFactory.create(obj.type);
+			this.addObject(to_add);
+			to_add.fromFile(obj);
 		}
 	}
 

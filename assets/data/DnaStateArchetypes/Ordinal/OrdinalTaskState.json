@@ -1,0 +1,174 @@
+{
+    "type": "OrdinalTaskState",
+    "objects": [
+
+        {
+            "type": "TaskBackgroundObject"
+        },
+        { "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/OrdinalVerificationGroup.json" },
+        { "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/FeedbackGroup.json" },
+        { "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/FeedbackControlGroupRealTask.json" },
+
+        {
+            "type": "TaskBackgroundObject",
+            "name":"blank_overlay"
+        },
+        {"type":"TaskTimeoutTimerObject",
+                "max_time":10},
+        {"type":"SubStateObject",
+                "name":"fixation",
+                "state":"FixationState"},
+        {"type":"SubStateObject",
+                "name":"blank",
+            "state":"BlankTaskState"},
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_onAnswer",
+            "actions": [
+                {
+                    "type": "ActionSaveTrialComponent",
+                    "oneshot":false,
+                    "on_event": "EVT_TASK_ANSWERED"
+                },
+                {
+                    "type": "ActionFireEventComponent",
+                    "oneshot":false,
+                    "event_name":"test_EVENT01"
+                },
+                {
+                    "type": "ActionCheckTaskComponent",
+                    "oneshot":false,
+                    "target":"TaskHandler"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "Clickarea_LEFT",
+                    "state": "INACTIVE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "Clickarea_RIGHT",
+                    "state": "INACTIVE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionAppearComponent",
+                    "target": "blank_overlay",
+                    "invert":false,
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionSwitchToSubStateComponent",
+                    "target":"blank",
+                    "oneshot":false,
+                    "duration_min":1000,
+                    "duration_max":2000
+                },
+                {
+                    "type": "ActionLoadTrialComponent",
+                    "oneshot":false,
+                    "target":""
+                }
+                
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_OnSuccessful_load",
+            "actions": [
+                {
+                    "type": "ActionSwitchToSubStateComponent",
+                    "oneshot":false,
+                    "target":"fixation",
+                    "duration":1000,
+                    "on_event":"TrialHandler_load_fin"
+                },  
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "Clickarea_LEFT",
+                    "state": "NORMAL",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "Clickarea_RIGHT",
+                    "state": "NORMAL",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionFireEventComponent",
+                    "oneshot":false,
+                    "event_name":"EVT_START_TRIAL_TIME"
+                },
+                {
+                    "type": "ActionAppearComponent",
+                    "target": "blank_overlay",
+                    "invert":true,
+                    "oneshot": false
+                }
+        ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Setup",
+            "actions": [
+                {
+                    "type": "ActionLoadTrialComponent",
+                    "oneshot":false,
+                    "target":"",
+                    "on_event":"onCreate"
+                },  
+                {
+                    "type": "ActionAppearComponent",
+                    "target": "blank_overlay",
+                    "invert":false,
+                    "oneshot": false
+                }
+        ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Finish",
+            "actions": [
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "Clickarea_LEFT",
+                    "state": "INACTIVE",
+                    "on_event":"TrialHandler_all_fin",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "Clickarea_RIGHT",
+                    "state": "INACTIVE",
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"NumberlineTaskDone",
+                    "oneshot":false,
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"TaskDoneText",
+                    "on_event":"same",
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionFinishTaskComponent",
+                    "target":""
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "next_state":"NEXT_TASK"
+                }  
+        ] }
+
+    ]
+}

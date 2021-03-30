@@ -245,6 +245,12 @@ else if (type == 'RoundedRectangleObject')
 	obj = new RoundedRectangleObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/RoundedRectangleObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'DependentGroupObject')
+{
+	obj = new DependentGroupObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DependentGroupObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -256,6 +262,11 @@ else if (type == 'RoundedRectangleObject')
 		return obj;
 	}
 }
+
+
+
+
+
 
 
 
