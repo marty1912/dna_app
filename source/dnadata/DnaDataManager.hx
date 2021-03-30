@@ -64,9 +64,9 @@ class DnaDataManager
 		trace(uuid);
 		if (uuid == null)
 		{
+			setupUUID();
 			setupTrials();
 			setupMonti();
-			setupUUID();
 		}
 		else
 		{

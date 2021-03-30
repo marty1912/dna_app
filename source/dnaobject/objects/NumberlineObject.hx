@@ -116,12 +116,18 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 	 */
 	public function getData():Dynamic
 	{
+		var selected:Null<Float> = null;
+		if (this.slider.alpha != 0)
+		{
+			trace("slider alpha is not 0 but:", this.slider.alpha);
+			selected = getSliderNum();
+		}
 		var current_trial:Dynamic = {
 			zero: getNumZero(),
 			ref: getNumRef(),
 			max: getNumMax(),
 			target: getNumTarget(),
-			selected_num: getSliderNum()
+			selected_num: selected
 		};
 		return current_trial;
 	}
@@ -233,7 +239,9 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 		// this one is put at the ref_offset_rel
 		// we calculate the relative position on the number line based on the max, ref and zero value of the numberline
 		var ref_offset_rel:Float = (m_num_ref - m_num_zero) / (m_num_max - m_num_zero);
-		m_ref_line.setPosition(axis.x + (axis.width * ref_offset_rel) - (m_ref_line.width / 2), -(m_ref_line.height / 2));
+		// m_ref_line.setPosition(axis.x + (axis.width * ref_offset_rel) - (m_ref_line.width / 2), -(m_ref_line.height / 2));
+		// we want to have the left side of the lines be the exact measures
+		m_ref_line.setPosition(axis.x + (axis.width * ref_offset_rel), -(m_ref_line.height / 2));
 
 		// setup label positions.
 		m_label_zero.setPosition(m_zero_line.getPosition().x

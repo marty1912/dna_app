@@ -17,7 +17,34 @@
 
         {
             "type": "ActionHandlerObject",
-            "name": "ActionHandler_onAccept",
+            "name": "ActionHandler_Timeout",
+            "actions": [
+                
+                {
+                    "type": "ActionDelayComponent",
+                    "oneshot":false,
+                    "delay":8,
+                    "on_event":"EVT_START_TRIAL_TIME",
+                    "target":""
+                },{
+                    "type": "ActionFireEventComponent",
+                    "oneshot":false,
+                    "event_name":"TASK_ANSWERED",
+                    "target":""
+                },
+                {
+                    "type": "ActionCancelActionComponent",
+                    "oneshot":false,
+                    "on_event": "TASK_ANSWERED",
+                    "target":"ActionHandler_Timeout"
+                }
+
+            ]},
+         
+
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_onAnswered",
             "actions": [
                 
                 {
@@ -97,7 +124,13 @@
                 },{
                     "type":"ActionAddComponentComponent",
                     "target":"NumberlineObject",
+                    "oneshot":false,
                     "components":[{"type":"SliderComponent"}]
+                },
+                {
+                    "type": "ActionFireEventComponent",
+                    "oneshot":false,
+                    "event_name":"EVT_START_TRIAL_TIME"
                 }
                 ]},
         {
@@ -114,29 +147,18 @@
                 {
                     "type": "ActionRemoveComponentComponent",
                     "target": "NumberlineObject",
-                    "on_event": "TrialHandler_all_fin",
                     "oneshot":false,
                     "target_comp":"SliderComponent"
                 }  ,
                 {
-                    "type": "ActionPlaySoundComponent",
-                    "path":"NumberlineTaskDone",
-                    "oneshot":false,
-                    "from_locale":true,
-                    "on_event": "TrialHandler_all_fin"
-                },
-                {
-                    "type": "ActionShowTextComponent",
-                    "target":"PracticeDoneText",
-                    "on_event":"same"
-                },
-                {
                     "type": "ActionFinishTaskComponent",
+                    "oneshot":false,
                     "target":""
                 },
                 {
                     "type": "ActionStateSwitchComponent",
                     "target":"",
+                    "oneshot":false,
                     "next_state":"NEXT_TASK"
                 }  
             ]

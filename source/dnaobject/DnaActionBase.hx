@@ -17,14 +17,14 @@ class DnaActionBase implements DnaComponent extends DnaComponentBase
 	public function finishAction()
 	{
 		// trace(this.comp_type, "finish action, canceled:", canceled);
-		if (!this.oneshot)
-		{
-			cast(this.m_parent_obj, ActionHandlerObject).addAction(this);
-		}
 		if (this.getParent() == null)
 		{
 			trace(this.id, "parent null", this.getParent());
-			// return;
+			return;
+		}
+		if (!this.oneshot)
+		{
+			cast(this.getParent(), ActionHandlerObject).addAction(this);
 		}
 		if (!canceled)
 		{
