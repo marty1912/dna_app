@@ -1,6 +1,36 @@
 [
 
 {
+		"type": "NonSymbolCompState",
+		"desc_head": "SymbolicNumberComparison_HEAD",
+		"desc_body": "SymbolicNumberComparison_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+[{
+				"name": "TaskHandler",
+				"params": {
+					"img_left": "assets/images/dots/test_2.png",
+					"img_right": "assets/images/dots/test_1.png",
+					"solution": "assets/images/dots/test_2.png"
+				}
+			}, {
+				"name": "TotalTime"
+			}],
+			[{
+				"name": "TaskHandler",
+				"params": {
+					"img_left": "assets/images/dots/test_1.png",
+					"img_right": "assets/images/dots/test_2.png",
+					"solution": "assets/images/dots/test_2.png"
+				}
+			}, {
+				"name": "TotalTime"
+			}]
+
+		]
+	},
+{
 		"type": "SymbolicNumberComparisonState",
 		"desc_head": "SymbolicNumberComparison_HEAD",
 		"desc_body": "SymbolicNumberComparison_BODY",

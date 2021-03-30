@@ -79,12 +79,15 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		for (params in current_trial)
 		{
 			var task_object:TaskObject = cast(getParent().getObjectByName(params.name));
-			if (task_object == null)
+			try
 			{
-				trace("WARNING: task_object not found in state! ", params.name);
+				params.data = task_object.getData();
+			}
+			catch (e)
+			{
+				trace("WARNING: failed to get Data for:", params.name);
 				continue;
 			}
-			params.data = task_object.getData();
 		}
 	}
 
@@ -113,13 +116,16 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		for (params in current_trial)
 		{
 			var task_object:TaskObject = cast(getParent().getObjectByName(params.name));
-			if (task_object == null)
+			try
 			{
-				trace("object not found! name:", params.name);
+				task_object.setParams(params.params);
+			}
+			catch (e)
+			{
+				trace("WARNING: Failed to set Params for: ", params.name);
 				break;
 				return;
 			}
-			task_object.setParams(params.params);
 		}
 		this.getParent().eventManager.broadcastEvent(LOAD_TRIAL_FIN);
 	}

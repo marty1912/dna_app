@@ -198,6 +198,13 @@ else if (type == "OrdinalTaskState")
 			state = new DnaState("OrdinalTaskState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdinalTaskState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NonSymbolCompState")
+		{
+			state = new DnaState("NonSymbolCompState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbolCompState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -210,6 +217,12 @@ else if (type == "OrdinalTaskState")
 		return state;
 	}
 }
+
+
+
+
+
+
 
 
 

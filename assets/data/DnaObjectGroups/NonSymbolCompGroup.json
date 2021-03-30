@@ -1,0 +1,198 @@
+{
+    "type": "NonSymbolCompGroup",
+    "objects": [
+
+        {
+            "type": "SpriteObject",
+            "name": "CenteredPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 100,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "LeftNumPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_from_screen_width": true,
+            "scale_x": 0.5,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "LeftCenter",
+                "target": ""
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "RightNumPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_from_screen_width": true,
+            "scale_x": 0.5,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "RightCenter",
+                "target": ""
+            }]
+        },
+        {
+            "type":"RoundedRectangleObject",
+            "width":400,
+            "height":400,
+            "components": [
+                 {
+                    "type": "PositionComponent",
+                    "target": "LeftNumPosition",
+                    "position": "Center"
+                }            ]
+
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "NUM_LEFT",
+            "asset_path":"assets/images/dots/test_1.png",
+            "components": [{
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target": "LeftNumPosition"
+                }
+
+            ]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "NOISE_LEFT",
+            "asset_path":"assets/images/noise_circle.png",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "LeftNumPosition"
+            }]
+        },
+        {
+            "type":"RoundedRectangleObject",
+            "width":400,
+            "height":400,
+            "components": [
+                 {
+                    "type": "PositionComponent",
+                    "target": "RightNumPosition",
+                    "position": "Center"
+                }            ]
+
+        },
+        {
+            "type": "SpriteObject",
+            "name": "NUM_RIGHT",
+            "asset_path":"assets/images/dots/test_2.png",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "RightNumPosition"
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "NOISE_RIGHT",
+            "asset_path":"assets/images/noise_circle.png",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "RightNumPosition"
+            }]
+        },
+
+        {
+            "type": "SpriteObject",
+            "name": "TextPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 600,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": ""
+            }]
+        },
+        
+        {
+            "type": "EmptyButtonObject",
+            "name":"Clickarea_RIGHT",
+            "components": [
+                {
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "KeyboardInputComponent",
+                    "keys":["RIGHT"]
+                },
+                {
+                    "type": "ClickAreaComponent",
+                    "target": "RightNumPosition"
+                }, {
+                    "type": "PositionComponent",
+                    "target": "RightNumPosition",
+                    "position": "Center"
+                }, {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "RIGHT_NUM_SELECTED"
+                }
+            ]
+        },
+        {
+            "type": "EmptyButtonObject",
+            "name":"Clickarea_LEFT",
+            "components": [{
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "KeyboardInputComponent",
+                    "keys":["LEFT"]
+                },
+                {
+                    "type": "ClickAreaComponent",
+                    "target": "LeftNumPosition"
+                }, {
+                    "type": "PositionComponent",
+                    "target": "LeftNumPosition",
+                    "position": "Center"
+                }, {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "LEFT_NUM_SELECTED"
+                }
+            ]
+        },
+       {
+            "type": "NonSymbolCompTaskHandlerObject",
+            "name": "TaskHandler",
+            "target_img_left": "NUM_LEFT",
+            "target_img_right": "NUM_RIGHT"
+        }, 
+        {
+            "type": "TrialHandlerObject"
+        },
+        {
+            "type": "TimerObject",
+            "name": "TotalTime"
+        }
+    ]
+}

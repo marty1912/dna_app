@@ -257,6 +257,12 @@ else if (type == 'OrdinalTaskHandlerObject')
 	obj = new OrdinalTaskHandlerObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdinalTaskHandlerObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'NonSymbolCompTaskHandlerObject')
+{
+	obj = new NonSymbolCompTaskHandlerObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NonSymbolCompTaskHandlerObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -268,6 +274,12 @@ else if (type == 'OrdinalTaskHandlerObject')
 		return obj;
 	}
 }
+
+
+
+
+
+
 
 
 

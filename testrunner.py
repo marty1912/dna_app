@@ -76,6 +76,8 @@ def main():
         build = subprocess.run(["lime","build","neko"],capture_output=True)
         #print(build)
 
+        print("running test: ",test,"(",index+1,"/",len(tests_list),")")
+
         if build.returncode != 0:
             print(build)
             print("ERROR: build failed for test:",test)
@@ -97,7 +99,9 @@ def main():
             return
 
         index+=1
-        print("done with test ",index,"/",len(tests_list))
+
+    print("ALL TESTS DONE! SUCCESS!")
+
 
 
 

@@ -18,6 +18,23 @@ class SpriteObject implements DnaObject extends DnaObjectBase
 	private var m_scale_y:Float = 1;
 	var sprite:FlxSprite;
 
+	/**
+	 * getter for asset path.
+	 */
+	public function setAssetPath(value:String)
+	{
+		m_asset_path = value;
+		this.loadAsset();
+	}
+
+	/**
+	 * getter for asset path.
+	 */
+	public function getAssetPath()
+	{
+		return m_asset_path;
+	}
+
 	public function setScale(x, y)
 	{
 		sprite.scale.x = x;
