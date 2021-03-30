@@ -90,6 +90,12 @@
                 "target": ""
             }]
         },
+
+        {
+            "type":"OrdinalTaskHandlerObject",
+            "name":"TaskHandler",
+            "target_triplet":"TripletText"
+        },
         {
             "type": "TrialHandlerObject"
         },

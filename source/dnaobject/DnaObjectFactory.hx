@@ -251,6 +251,12 @@ else if (type == 'DependentGroupObject')
 	obj = new DependentGroupObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DependentGroupObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'OrdinalTaskHandlerObject')
+{
+	obj = new OrdinalTaskHandlerObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdinalTaskHandlerObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -262,6 +268,7 @@ else if (type == 'DependentGroupObject')
 		return obj;
 	}
 }
+
 
 
 

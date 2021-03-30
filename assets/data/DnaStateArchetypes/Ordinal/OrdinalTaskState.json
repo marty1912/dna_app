@@ -17,7 +17,7 @@
             "name":"blank_overlay"
         },
         {"type":"TaskTimeoutTimerObject",
-                "max_time":10},
+                "max_time":2},
         {"type":"SubStateObject",
                 "name":"fixation",
                 "state":"FixationState"},
@@ -65,8 +65,8 @@
                     "type": "ActionSwitchToSubStateComponent",
                     "target":"blank",
                     "oneshot":false,
-                    "duration_min":1000,
-                    "duration_max":2000
+                    "duration_min":2000,
+                    "duration_max":3000
                 },
                 {
                     "type": "ActionLoadTrialComponent",
@@ -84,7 +84,7 @@
                     "type": "ActionSwitchToSubStateComponent",
                     "oneshot":false,
                     "target":"fixation",
-                    "duration":1000,
+                    "duration":500,
                     "on_event":"TrialHandler_load_fin"
                 },  
                 {

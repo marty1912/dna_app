@@ -131,8 +131,13 @@
         {
             "type": "EmptyButtonObject",
             "name":"Clickarea_RIGHT",
-            "components": [{
+            "components": [
+                {
                     "type": "UserButtonComponent"
+                },
+                {
+                    "type": "KeyboardInputComponent",
+                    "keys":["RIGHT"]
                 },
                 {
                     "type": "ClickAreaComponent",
@@ -152,6 +157,10 @@
             "name":"Clickarea_LEFT",
             "components": [{
                     "type": "UserButtonComponent"
+                },
+                {
+                    "type": "KeyboardInputComponent",
+                    "keys":["LEFT"]
                 },
                 {
                     "type": "ClickAreaComponent",

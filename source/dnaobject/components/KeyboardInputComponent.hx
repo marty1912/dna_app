@@ -96,6 +96,7 @@ class KeyboardInputComponent implements DnaComponent extends DnaComponentBase
 			return;
 		}
 
+		#if FLX_KEYBOARD
 		if (FlxG.keys.anyPressed(this.keys_list))
 		{
 			this.setStatus(FlxButton.PRESSED);
@@ -104,5 +105,6 @@ class KeyboardInputComponent implements DnaComponent extends DnaComponentBase
 		{
 			this.setStatus(FlxButton.NORMAL);
 		}
+		#end
 	}
 }
