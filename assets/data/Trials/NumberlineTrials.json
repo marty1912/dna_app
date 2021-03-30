@@ -1,0 +1,58 @@
+[{
+		"type": "NumberlineState",
+		"desc_head": "NumberlineState_HEAD",
+		"desc_body": "NumberlineState_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+			[{
+				"name": "NumberlineObject",
+				"params": {
+					"zero": 0,
+					"ref": 1,
+					"max": 20,
+					"target": 19 
+				}
+			}, {
+				"name": "TotalTime"
+			}],
+[{
+				"name": "NumberlineObject",
+				"params": {
+					"zero": 0,
+					"ref": 1,
+					"max": 20,
+					"target": 18 
+				}
+			}, {
+				"name": "TotalTime"
+			}],
+[{
+				"name": "NumberlineObject",
+				"params": {
+					"zero": 0,
+					"ref": 1,
+					"max": 20,
+					"target": 17 
+				}
+			}, {
+				"name": "TotalTime"
+			}]
+			
+
+		]
+	},
+	{
+		"type": "SAVE",
+		"done": false,
+		"saved": false
+	},
+	{
+		"type": "REDIRECT",
+		"done": false,
+		"saved": false,
+		"to": {
+			"type": "UnlockState"
+		}
+	}
+]

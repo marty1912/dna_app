@@ -1,0 +1,41 @@
+[{
+		"type": "OrdinalTaskState",
+		"desc_head": "OrdTask_HEAD",
+		"desc_body": "OrdTask_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+			[{
+				"name": "TaskHandler",
+				"params": {
+					"triplet": "3-2-1",
+					"solution": "IN_ORDER"
+				}
+			}, {
+				"name": "TotalTime"
+			}],
+			[{
+				"name": "TaskHandler",
+				"params": {
+					"triplet": "3-1-2",
+					"solution": "MIXED_ORDER"
+				}
+			}, {
+				"name": "TotalTime"
+			}]
+		]
+	},
+	{
+		"type": "SAVE",
+		"done": false,
+		"saved": false
+	},
+	{
+		"type": "REDIRECT",
+		"done": false,
+		"saved": false,
+		"to": {
+			"type": "UnlockState"
+		}
+	}
+]

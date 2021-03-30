@@ -1,7 +1,6 @@
 package dnadata;
 
 import Assertion.assert;
-import dnaobject.proto.archetypes.TaskTrials;
 import flixel.util.FlxSave;
 import haxe.DynamicAccess;
 import haxe.Json;
@@ -140,7 +139,8 @@ class DnaDataManager
 	 */
 	public function setupTrials()
 	{
-		setTrials(Json.parse(TaskTrials.Trials));
+		setTrials(TaskTrials.instance.getAllTrials());
+		// setTrials(Json.parse(TaskTrials.Trials));
 	}
 
 	/**
@@ -148,6 +148,7 @@ class DnaDataManager
 	 */
 	public function setTrials(value:Dynamic)
 	{
+		trace("set trials:", value);
 		m_trials = value;
 		storeData(TRIALS_KEY, value);
 	}

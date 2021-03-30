@@ -1,0 +1,44 @@
+[{
+		"type": "NonSymbolCompState",
+		"desc_head": "NonSymbolicNumberComparison_HEAD",
+		"desc_body": "NonSymbolicNumberComparison_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+[{
+				"name": "TaskHandler",
+				"params": {
+					"img_left": "assets/images/dots/test_2.png",
+					"img_right": "assets/images/dots/test_1.png",
+					"solution": "assets/images/dots/test_2.png"
+				}
+			}, {
+				"name": "TotalTime"
+			}],
+			[{
+				"name": "TaskHandler",
+				"params": {
+					"img_left": "assets/images/dots/test_1.png",
+					"img_right": "assets/images/dots/test_2.png",
+					"solution": "assets/images/dots/test_2.png"
+				}
+			}, {
+				"name": "TotalTime"
+			}]
+
+		]
+	},
+	{
+		"type": "SAVE",
+		"done": false,
+		"saved": false
+	},
+	{
+		"type": "REDIRECT",
+		"done": false,
+		"saved": false,
+		"to": {
+			"type": "UnlockState"
+		}
+	}
+]

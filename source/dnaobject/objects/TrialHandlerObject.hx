@@ -55,6 +55,10 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	public function setTrials(trials:Array<Dynamic>)
 	{
 		trace(trials);
+		if (randomize)
+		{
+			trials = Random.shuffle(trials);
+		}
 		this.trials = trials;
 	}
 
@@ -89,6 +93,21 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 				continue;
 			}
 		}
+	}
+
+	public var randomize:Bool = true;
+
+	/**
+	 * override so we can have parameters like random order and stuff.
+	 * @param jsonFile 
+	 */
+	override public function fromFile(jsonFile:Dynamic)
+	{
+		if (Reflect.hasField(jsonFile, "randomize"))
+		{
+			randomize = jsonFile.randomize;
+		}
+		super.fromFile(jsonFile);
 	}
 
 	/**

@@ -101,6 +101,38 @@
             {"type":"UserButtonComponent"}]
         },
         {
+            "type": "EmptyButtonObject",
+            "name": "IncTrialsComponent",
+            "components": [
+                {
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "RightBottom",
+                "target": "CenteredPosition"
+            },
+            {"type":"UserButtonComponent"},
+            {"type":"CmdEvtTrigComponent",
+            "event_name":"SET_NEXT_TRIAL_BLOCK"}
+        ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_TRIAL_BLOCK",
+            "actions": [
+                {
+                    "type": "ActionSetNextTrialBlockComponent",
+                    "target":"",
+                    "oneshot":false,
+                    "on_event": "SET_NEXT_TRIAL_BLOCK"
+                }, 
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "next_state":"LevelSelectState"
+                } 
+            ]
+        },
+        {
             "type": "MainMenuButtonObject",
             "components":[
                 {"type":"UserButtonComponent"}

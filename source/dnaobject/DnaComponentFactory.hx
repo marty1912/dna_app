@@ -307,6 +307,14 @@ else if (type == 'ActionCancelActionComponent')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCancelActionComponent.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'ActionSetNextTrialBlockComponent')
+{
+	comp = new ActionSetNextTrialBlockComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSetNextTrialBlockComponent.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -318,6 +326,8 @@ else if (type == 'ActionCancelActionComponent')
 		return comp;
 	}
 }
+
+
 
 
 
