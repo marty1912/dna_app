@@ -29,6 +29,7 @@ class KeyboardInputComponent implements DnaComponent extends DnaComponentBase
 
 	override public function fromFile(jsonFile:Dynamic)
 	{
+		trace(jsonFile);
 		if (Reflect.hasField(jsonFile, "keys"))
 		{
 			var keys:Array<Dynamic> = jsonFile.keys;

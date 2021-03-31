@@ -20,6 +20,7 @@ class Main extends Sprite
 		OsManager.get_instance().toLandscapeMode();
 		DnaDataManager.instance.deleteAllData(); // debug
 		DnaDataManager.instance.init();
+
 		super();
 
 		// addChild(new FlxGame(1280, 720, 1, 60, 60, true, false));
@@ -37,6 +38,7 @@ class Main extends Sprite
 
 		addChild(new FlxGame(width, heigth, 1, 60, 60, true, false));
 
+		FlxG.sound.muteKeys = null;
 		/*
 		 * these settings are used so the update loops will get the 
 		 * correct time that elapsed. therefore anabling everything to stay in

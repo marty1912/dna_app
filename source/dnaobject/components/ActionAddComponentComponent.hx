@@ -33,6 +33,7 @@ class ActionAddComponentComponent implements DnaComponent extends DnaActionBase
 		{
 			componentJson = jsonFile.components;
 		}
+		trace(jsonFile);
 		super.fromFile(jsonFile);
 	}
 
@@ -43,6 +44,7 @@ class ActionAddComponentComponent implements DnaComponent extends DnaActionBase
 		// target.fromFile(componentJson);
 		for (comp_json in componentJson)
 		{
+			trace(comp_json);
 			var comp:DnaComponent = DnaComponentFactory.create(comp_json.type);
 			comp.fromFile(comp_json);
 			target.addComponent(comp);

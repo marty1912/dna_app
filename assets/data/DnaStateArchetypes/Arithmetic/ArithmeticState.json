@@ -11,7 +11,7 @@
                     "condition": "web",
                     "obj": {
                         "type": "OBJECT_GROUP",
-                        "path": "assets/data/DnaObjectGroups/KeyboardGroup.json"
+                        "path": "assets/data/DnaObjectGroups/KeyboardGroupPC.json"
                     }
                 },
                 {
@@ -25,7 +25,7 @@
                     "condition": "desktop",
                     "obj": {
                         "type": "OBJECT_GROUP",
-                        "path": "assets/data/DnaObjectGroups/KeyboardGroup.json"
+                        "path": "assets/data/DnaObjectGroups/KeyboardGroupPC.json"
                     }
                 }
             ]
@@ -58,52 +58,6 @@
                     "target": "ArithmeticHandler"
                 },
                 {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "BackspaceButton",
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionFireEventComponent",
-                    "target": "",
-                    "event_name": "KeyboardButtons_INACTIVE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionFireEventComponent",
-                    "event_name": "SHOW_FEEDBACK",
-                    "oneshot": false,
-                    "target": ""
-                },
-
-
-
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state": "NORMAL",
-                    "on_event": "FEEDBACK_DONE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "BackspaceButton",
-                    "state": "NORMAL",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionFireEventComponent",
-                    "target": "",
-                    "event_name": "KeyboardButtons_NORMAL",
-                    "oneshot": false
-                },
-                {
                     "type": "ActionLoadTrialComponent",
                     "oneshot": false,
                     "target": ""
@@ -113,23 +67,13 @@
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_Setup",
-            "actions": [{
-                    "type": "ActionAddComponentComponent",
-                    "target": "AcceptButton",
-                    "oneshot": false,
-                    "on_event": "onCreate",
-                    "components": [{
-                        "type": "UserButtonComponent"
-                    }]
-                },
+            "actions": [
                 {
-                    "type": "ActionAddComponentComponent",
-                    "target": "BackspaceButton",
+                    "type": "ActionFireEventComponent",
+                    "target": "",
                     "oneshot": false,
                     "on_event": "onCreate",
-                    "components": [{
-                        "type": "UserButtonComponent"
-                    }]
+                    "event_name": "ArithmeticButtons_ADD_USERBUTTON"
                 },
                 {
                     "type": "ActionFireEventComponent",
@@ -150,18 +94,18 @@
             "type": "ActionHandlerObject",
             "name": "ActionHandler_Finish",
             "actions": [{
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "on_event": "TrialHandler_all_fin",
-                    "state": "INACTIVE",
-                    "oneshot": false
+                    "type": "ActionDelayComponent",
+                    "delay":10,
+                    "oneshot": false,
+                    "on_event":"onCreate"
                 },
                 {
                     "type": "ActionSetButtonStateComponent",
-                    "target": "BackspaceButton",
+                    "targets": ["BackspaceButton","AcceptButton"],
                     "state": "INACTIVE",
                     "oneshot": false
                 },
+                
                 {
                     "type": "ActionFireEventComponent",
                     "target": "",

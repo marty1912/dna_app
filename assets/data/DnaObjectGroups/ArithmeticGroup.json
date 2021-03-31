@@ -1,6 +1,8 @@
 
 {"type": "KeyboardGroup",
 "objects":[
+
+    
         {
             "type": "SpriteObject",
             "name": "CenteredPosition",
@@ -15,6 +17,15 @@
                 "target": ""
             }]
         },
+        { "type": "DependentGroupObject",
+            "conditions": [
+                { "condition": "web",
+                    "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/ArithmeticAdditionalButtonGroupPC.json" } },
+                { "condition": "android",
+                    "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/ArithmeticAdditionalButtonGroup.json" } },
+                { "condition": "desktop",
+                    "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/ArithmeticAdditionalButtonGroupPC.json" } }
+            ] },
 
         {
             "type": "SpriteObject",
@@ -92,21 +103,6 @@
             ]
         },
         {
-            "type": "LeftArrowButtonObject",
-            "name": "BackspaceButton",
-            "components": [{
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "RightCenter",
-                    "target": ""
-                },
-                {
-                    "type": "CmdEvtTrigComponent",
-                    "event_name": "KEY_BACKSPACE"
-                }
-            ]
-        },
-        {
             "type": "SpriteObject",
             "name": "TextPosition",
             "asset_path": "INVISIBLE_BOX",
@@ -120,46 +116,6 @@
                 "target": ""
             }]
         },
-
-        
-        {
-            "type": "AcceptButtonObject",
-            "name": "AcceptButton",
-            "active": false,
-            "components": [{
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "CenterBottom",
-                    "target": "CenteredPosition"
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state": "INACTIVE",
-                    "on_event": ""
-                }
-            ]
-        },
-       {
-            "type": "ActionHandlerObject",
-            "name": "ActionHandler_AcceptButtonACTIVATE",
-            "actions": [
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state": "INACTIVE",
-                    "oneshot": false,
-                    "on_event": "TEXTINPUT_EMPTY"
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state": "NORMAL",
-                    "oneshot": false,
-                    "on_event": "TEXTINPUT_READY"
-                }]
-       },
-
         {
             "type": "ArithmeticTaskHandlerObject",
             "name": "ArithmeticHandler",
@@ -167,7 +123,8 @@
             "target_answer": "Text_Answer"
         },
         {
-            "type": "TrialHandlerObject"
+            "type": "TrialHandlerObject",
+            "reload_on_fin":true
 
         },
         {"type":"TimerObject","name":"TotalTime"}

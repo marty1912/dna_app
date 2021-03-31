@@ -76,6 +76,12 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		if (this.trial_index > this.trials.length - 1)
 		{
 			trace(this.trials);
+			Assertion.assert(false);
+			if (this.reload_on_fin)
+			{
+				resetTrials();
+				return collectData();
+			}
 			this.getParent().eventManager.broadcastEvent(TRIALS_FIN);
 			return;
 		}
@@ -98,6 +104,12 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	public var randomize:Bool = true;
 
 	/**
+	 * wheter or not to reload the trials when we finish.
+	 * if this is set to true we will never have the all_fin event.
+	 */
+	public var reload_on_fin:Bool = false;
+
+	/**
 	 * override so we can have parameters like random order and stuff.
 	 * @param jsonFile 
 	 */
@@ -107,7 +119,21 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		{
 			randomize = jsonFile.randomize;
 		}
+		if (Reflect.hasField(jsonFile, "reload_on_fin"))
+		{
+			reload_on_fin = jsonFile.reload_on_fin;
+		}
+
 		super.fromFile(jsonFile);
+	}
+
+	/**
+	 * this function resets the trials and starts them again (we do the same trials another time)
+	 */
+	public function resetTrials()
+	{
+		this.setTrials(this.trials);
+		this.trial_index = 0;
 	}
 
 	/**
@@ -129,6 +155,11 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		if (this.trial_index >= trials_len)
 		{
 			trace(this.trials);
+			if (this.reload_on_fin)
+			{
+				resetTrials();
+				return loadNextTrial();
+			}
 			this.getParent().eventManager.broadcastEvent(TRIALS_FIN);
 			return;
 		}

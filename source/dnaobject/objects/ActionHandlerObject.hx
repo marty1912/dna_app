@@ -77,6 +77,7 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 
 			for (action in actions)
 			{
+				trace(action);
 				var to_add = DnaComponentFactory.create(action.type);
 				to_add.fromFile(action);
 				addAction(cast(to_add, DnaActionBase));

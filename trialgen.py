@@ -84,6 +84,23 @@ def genNumLineTrials(ranges=[x for x in range(32,64+1,6)],targets=[x for x in ra
 
     return trials
 
+def genAdditionTrials(numbers=[2,3,4,5,6,7,8,9]):
+    '''
+    '''
+    trials = []
+
+    for num_1 in numbers:
+        for num_2 in numbers:
+            if(num_1 == num_2):
+                continue
+
+            solution = num_1+num_2
+            trials.append([num_1,num_2,solution])
+
+    return trials
+
+
+
 
 
 
@@ -120,6 +137,8 @@ def main():
         trials = genOrdinalNumberVerificationTrials()
     elif mode == "numline":
         trials = genNumLineTrials()
+    elif mode == "add":
+        trials = genAdditionTrials()
 
     template_file = sys.argv[2]
 

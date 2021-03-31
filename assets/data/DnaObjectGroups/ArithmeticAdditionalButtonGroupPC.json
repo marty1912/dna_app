@@ -1,0 +1,89 @@
+{"type": "ArithmeticAdditionalButtonGroupPC",
+"objects":[
+        
+        {
+            "type": "LeftArrowButtonObject",
+            "path": "assets/gui_elements/buttonInvisible.png",
+            "name": "BackspaceButton",
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "RightCenter",
+                    "target": ""
+                },
+                {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "KEY_BACKSPACE"
+                }
+            ]
+        },
+                
+        {
+            "type": "AcceptButtonObject",
+            "path": "assets/gui_elements/buttonInvisible.png",
+            "name": "AcceptButton",
+            "active": false,
+            "components": [{
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "CenterBottom",
+                    "target": "CenteredPosition"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state": "INACTIVE",
+                    "on_event": ""
+                }
+            ]
+        },
+       {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_AcceptButtonACTIVATE",
+            "actions": [
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state": "INACTIVE",
+                    "oneshot": false,
+                    "on_event": "TEXTINPUT_EMPTY"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state": "NORMAL",
+                    "oneshot": false,
+                    "on_event": "TEXTINPUT_READY"
+                }]
+        },
+        {
+    "type": "ActionHandlerObject",
+    "name": "ActionHandler_ArithmeticButtons_USERBUTTON",
+    "actions": [
+        {
+            "type": "ActionRemoveComponentComponent", "oneshot":false,
+            "targets": [ "AcceptButton", "BackspaceButton"],
+            "on_event":"ArithmeticButtons_REMOVE_USERBUTTON",
+            "target_comp":"KeyboardInputComponent"
+        },
+        
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "targets": [ "AcceptButton"],
+            "components":[{"type": "KeyboardInputComponent", "keys":["ENTER"] }],
+            "on_event":"ArithmeticButtons_ADD_USERBUTTON"
+        },
+        {
+            "type": "ActionAddComponentComponent", "oneshot":false,
+            "targets": [ "BackspaceButton"],
+            "components":[{"type": "KeyboardInputComponent", "keys":["BACKSPACE"] }],
+            "on_event":"ArithmeticButtons_ADD_USERBUTTON"
+        }        
+        
+
+    ]
+}
+]
+        
+    }
