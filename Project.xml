@@ -56,6 +56,7 @@
 	<haxelib name="random" />
 	<haxelib name="howlerjs" />
 	<haxelib name="console.hx" />
+	<haxelib name="FileSaver" />
 	<!-- TODO: PUSH NOTIFICATIONS!! https://github.com/Tw1ddle/samcodes-notifications-demo-->
 	
 	

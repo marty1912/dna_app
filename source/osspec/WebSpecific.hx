@@ -6,6 +6,7 @@ import flixel.system.scaleModes.FillScaleMode;
 import flixel.system.scaleModes.RatioScaleMode;
 import flixel.util.FlxSave;
 import js.FullScreenApi;
+import js.html.FileSaver;
 import osspec.OsSpecific;
 
 /**
@@ -26,6 +27,17 @@ class WebSpecific implements OsSpecific
 	public function getServerUrl():String
 	{
 		return "http://localhost:8000/student_data/api/";
+	}
+
+	/**
+	 * saveFile. lets the user save a file. (only really used for javascript)
+	 * @param content 
+	 * @param filename 
+	 */
+	public function saveFile(content:String, filename:String):Void
+	{
+		var blob:js.html.Blob = new js.html.Blob([content], {type: "text/plain;charset=utf-8"});
+		FileSaver.saveAs(blob, filename);
 	}
 
 	/**

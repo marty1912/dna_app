@@ -17,6 +17,13 @@ class DesktopSpecific implements OsSpecific
 	public function new() {};
 
 	/**
+	 * saveFile. lets the user save a file. (only really used for javascript)
+	 * @param content 
+	 * @param filename 
+	 */
+	public function saveFile(content:String, filename:String):Void {}
+
+	/**
 	 * this returns the server URL. this will differ for example from web to others.
 	 * @return String
 	 */

@@ -23,6 +23,15 @@ interface OsSpecific
 	public function toLandscapeMode():Void;
 
 	/**
+	 * saveFile. lets the user save a file. (only really used for javascript)
+	 * @param content 
+	 * @param filename 
+	 */
+	public function saveFile(content:String, filename:String):Void;
+
+	/**
+	 * [Description]
+	 * @return /**
 	 * public function getInputPosition() -
 	 * this function returns the current mouse or touch position for the specific target.
 	 * @return FlxPoint - the position of the mouse or the touch or whatever we have
