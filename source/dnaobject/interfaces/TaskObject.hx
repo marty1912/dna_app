@@ -24,7 +24,11 @@ interface TaskObject
 
 	/**
 	 * returns wheter or not the task was answered correctly (should be possible to say for most taskObjects.)
-	 * @return Bool
+	 * 
+	 * @return String. either 
+	 * DnaConstants.TASK_CORRECT
+	 * DnaConstants.TASK_INCORRECT
+	 * DnaConstants.TASK_TIMEDOUT_FEEDBACK
 	 */
-	public function isCorrect():Bool;
+	public function isCorrect():String;
 }

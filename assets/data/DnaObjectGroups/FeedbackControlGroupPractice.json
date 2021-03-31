@@ -28,6 +28,31 @@
         ]},
         {
             "type": "ActionHandlerObject",
+            "name": "ActionHandler_INCORRECT",
+            "actions": [
+
+                {
+                    "type": "ActionPlaySoundComponent",
+                    "path":"NumberlineFeedbackIncorrect",
+                    "oneshot":false,
+                    "on_event":"TASK_TIMED_OUT_FEEDBACK",
+                    "from_locale":true
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"FeedbackText_TIMEOUT",
+                    "on_event":"TASK_TIMED_OUT_FEEDBACK",
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionFireEventComponent",
+                    "event_name":"FEEDBACK_DONE",
+                    "oneshot":false,
+                    "target":""
+                }
+        ]},
+        {
+            "type": "ActionHandlerObject",
             "name": "ActionHandler_CORRECT",
             "actions": [
 
@@ -39,14 +64,9 @@
                     "from_locale":true
                 },
                 {
-                    "type": "ActionSaveTrialComponent",
-                    "oneshot":false,
-                    "on_event": "TASK_CORRECT",
-                    "target":""
-                },
-                {
                     "type": "ActionShowTextComponent",
                     "target":"FeedbackText_CORRECT",
+                    "on_event":"TASK_CORRECT",
                     "oneshot":false
                 },
                 
@@ -57,5 +77,6 @@
                     "target":""
                 }
         ]}
+
     ]
 }

@@ -59,11 +59,11 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject ext
 	 * returns the answer string that the user gave
 	 * @return String
 	 */
-	public function getAnswer():Int
+	public function getAnswer():String
 	{
 		var answer_textbox:ITextBox = cast this.getParent().getObjectByName(target_answer);
 		var answer_str:String = answer_textbox.getText();
-		return Std.parseInt(answer_str);
+		return answer_str;
 	}
 
 	/**
@@ -93,17 +93,21 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject ext
 	/**
 	 * checks if the task was answered correctly
 	 */
-	public function isCorrect():Bool
+	public function isCorrect():String
 	{
-		var answer:Int = getAnswer();
+		var answer:String = getAnswer();
 		var solution:Int = getSolution();
-		if (answer == solution)
+		if (answer == "")
 		{
-			return true;
+			return DnaConstants.TASK_TIMED_OUT_FEEDBACK;
+		}
+		if (Std.parseInt(answer) == solution)
+		{
+			return DnaConstants.TASK_CORRECT;
 		}
 		else
 		{
-			return false;
+			return DnaConstants.TASK_INCORRECT;
 		}
 	}
 

@@ -102,6 +102,7 @@
         },
         {
             "type": "EmptyButtonObject",
+            "path": "assets/gui_elements/buttonRight.png",
             "name": "IncTrialsComponent",
             "components": [
                 {
@@ -129,24 +130,6 @@
                     "type": "ActionStateSwitchComponent",
                     "target":"",
                     "next_state":"LevelSelectState"
-                } 
-            ]
-        },
-        {
-            "type": "MainMenuButtonObject",
-            "components":[
-                {"type":"UserButtonComponent"}
-            ]
-        },
-        {
-            "type": "ActionHandlerObject",
-            "name": "ActionHandler_MainMenuButton",
-            "actions": [
-                {
-                    "type": "ActionStateSwitchComponent",
-                    "target":"",
-                    "on_event": "BtnMainMenuPressed",
-                    "next_state":"MainMenuState"
                 } 
             ]
         },

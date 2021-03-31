@@ -21,6 +21,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 */
 	public function new()
 	{
+		this.log_color = "0xFF0000";
 		super("TrialHandlerObject");
 	}
 
@@ -67,8 +68,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 */
 	public function collectData()
 	{
-		trace("collectData", this.trials);
-		trace("collectData", this.trial_index);
+		trace("\033[1;31m collectData", this.trials, "index", this.trial_index, "\033[0m");
 		if (this.trials == null)
 		{
 			return;
@@ -115,6 +115,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 */
 	public function loadNextTrial()
 	{
+		trace("load next trial", this.trials, "index", this.trial_index, "");
 		if (this.trials == null)
 		{
 			this.getTrialsFromManager();

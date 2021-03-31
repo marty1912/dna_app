@@ -29,7 +29,10 @@ class ActionFireEventComponent implements DnaComponent extends DnaActionBase
 			event_name = jsonFile.event_name;
 		}
 		super.fromFile(jsonFile);
+		this.jsonFile = jsonFile;
 	}
+
+	public var jsonFile:Dynamic;
 
 	/**
 	 * in here we will set the slider position and make it visible (if not the case)

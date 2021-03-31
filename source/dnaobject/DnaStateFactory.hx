@@ -205,6 +205,34 @@ else if (type == "NonSymbolCompState")
 			state = new DnaState("NonSymbolCompState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbolCompState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "OrdinalTaskPracticeState")
+		{
+			state = new DnaState("OrdinalTaskPracticeState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdinalTaskPracticeState.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NonSymbolCompPracticeState")
+		{
+			state = new DnaState("NonSymbolCompPracticeState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbolCompPracticeState.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SymbolicNumberComparisonPracticeState")
+		{
+			state = new DnaState("SymbolicNumberComparisonPracticeState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbolicNumberComparisonPracticeState.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NumberlinePracticeStateAdult")
+		{
+			state = new DnaState("NumberlinePracticeStateAdult");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Numberline/NumberlinePracticeStateAdult.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -217,6 +245,12 @@ else if (type == "NonSymbolCompState")
 		return state;
 	}
 }
+
+
+
+
+
+
 
 
 

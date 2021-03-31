@@ -44,7 +44,7 @@ class ActionAddComponentComponent implements DnaComponent extends DnaActionBase
 		for (comp_json in componentJson)
 		{
 			var comp:DnaComponent = DnaComponentFactory.create(comp_json.type);
-			comp.fromFile(componentJson);
+			comp.fromFile(comp_json);
 			target.addComponent(comp);
 		}
 	}

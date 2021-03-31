@@ -3,12 +3,14 @@ package dnaobject.components;
 import Assertion.assert;
 import constants.DnaConstants;
 import dnaEvent.DnaEventManager;
+import dnaEvent.DnaEventSubscriber;
 import dnaobject.DnaComponent;
 import dnaobject.DnaComponentBase;
 import dnaobject.interfaces.Slideable;
 import dnaobject.interfaces.TaskObject;
 import dnaobject.objects.ArithmeticTaskHandlerObject;
 import dnaobject.objects.NumberlineObject;
+import dnaobject.objects.TimerObject;
 import flixel.FlxG;
 import flixel.math.FlxMath;
 import flixel.math.FlxRect;
@@ -19,8 +21,23 @@ import osspec.OsManager;
 /**
  * ActionCheckTask Component - this action checks wheter a task is correct or not and fires the events TASK_CORRECT or TASK_INCORRECT
  */
-class ActionCheckTaskComponent implements DnaComponent extends DnaActionBase
+class ActionCheckTaskComponent implements DnaComponent implements DnaEventSubscriber extends DnaActionBase
 {
+	/**
+	 * in here we will get notified for a timeout.
+	 * @param event_name 
+	 */
+	public function getNotified(event_name:String)
+	{
+		trace("got notified:", event_name);
+		if (event_name == DnaConstants.EVT_TASK_TIMEOUT)
+		{
+			this.timeout = true;
+		}
+	}
+
+	public var timeout:Bool = false;
+
 	/**
 	 * ctor
 	 */
@@ -47,6 +64,14 @@ class ActionCheckTaskComponent implements DnaComponent extends DnaActionBase
 	}
 
 	/**
+	 * in here we will register for the task timeout event.
+	 */
+	override public function onHaveParent()
+	{
+		getParent().getParent().eventManager.addSubscriberForEvent(this, DnaConstants.EVT_TASK_TIMEOUT);
+	}
+
+	/**
 	 * this function checks if the numline result lies within the tolerance.
 	 * if it is within the specified tolerance the event "NUMLINE_CORRECT" is broadcast.
 	 * otherwise "NUMLINE_INCORRECT"
@@ -56,14 +81,18 @@ class ActionCheckTaskComponent implements DnaComponent extends DnaActionBase
 	public function checkTask(target_name:String)
 	{
 		var task_handler:TaskObject = cast(getParent().getParent().getObjectByName(target_name));
-		var correct:Bool = task_handler.isCorrect();
-		if (correct)
+		var correct:String = task_handler.isCorrect();
+		if (correct == DnaConstants.TASK_CORRECT)
 		{
 			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_CORRECT);
 		}
-		else
+		else if (correct == DnaConstants.TASK_INCORRECT)
 		{
 			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_INCORRECT);
+		}
+		else
+		{
+			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_TIMED_OUT_FEEDBACK);
 		}
 	}
 

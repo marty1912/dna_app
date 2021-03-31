@@ -40,7 +40,7 @@ class TimerObject implements DnaObject implements TaskObject extends DnaObjectBa
 		* @return Bool
 				throw "not implemented for timers"
 	 */
-	public function isCorrect():Bool
+	public function isCorrect():String
 		throw "not implemented for timers";
 
 	/**

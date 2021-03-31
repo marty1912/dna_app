@@ -12,18 +12,10 @@
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/FeedbackControlGroupRealTask.json" },
 
-        {
-            "type": "TaskBackgroundObject",
-            "name":"blank_overlay"
-        },
+        { "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/FixationAndBlankSubstates.json" },
         {"type":"TaskTimeoutTimerObject",
                 "max_time":3.1},
-        {"type":"SubStateObject",
-                "name":"fixation",
-                "state":"FixationState"},
-        {"type":"SubStateObject",
-                "name":"blank",
-            "state":"BlankTaskState"},
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_onAnswer",

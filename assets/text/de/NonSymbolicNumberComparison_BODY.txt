@@ -1,0 +1,1 @@
+In dieser Aufgabe musst du aus zwei Punktwolken, diejenige mit den meisten Punkten auswählen.

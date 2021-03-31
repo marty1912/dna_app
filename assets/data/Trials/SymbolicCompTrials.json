@@ -1,5 +1,35 @@
 [
 {
+		"type": "SymbolicNumberComparisonPracticeState",
+		"desc_head": "SymbolicNumberComparison_HEAD",
+		"desc_body": "SymbolicNumberComparison_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+[{
+				"name": "TaskHandler",
+				"params": {
+					"num_left": "3",
+					"num_right": "1",
+					"solution": 3
+				}
+			}, {
+				"name": "TotalTime"
+			}],
+			[{
+				"name": "TaskHandler",
+				"params": {
+					"num_left": "5",
+					"num_right": "2",
+					"solution": 5
+				}
+			}, {
+				"name": "TotalTime"
+			}]
+
+		]
+	},
+{
 		"type": "SymbolicNumberComparisonState",
 		"desc_head": "SymbolicNumberComparison_HEAD",
 		"desc_body": "SymbolicNumberComparison_BODY",
@@ -39,7 +69,7 @@
 		"done": false,
 		"saved": false,
 		"to": {
-			"type": "UnlockState"
+			"type": "LevelSelectState"
 		}
 	}
 ]

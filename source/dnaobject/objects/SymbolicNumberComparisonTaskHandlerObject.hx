@@ -59,14 +59,18 @@ class SymbolicNumberComparisonTaskHandlerObject implements DnaObject implements 
 	 * isCorrect() checks if the task was answered correctly 
 	 * 
 	 */
-	public function isCorrect():Bool
+	public function isCorrect():String
 	{
 		if (Std.parseInt(getAnswer()) == getSolution())
 		{
-			return true;
+			return DnaConstants.TASK_CORRECT;
+		}
+		else if (this.getAnswer() == "")
+		{
+			return DnaConstants.TASK_TIMED_OUT_FEEDBACK;
 		}
 
-		return false;
+		return DnaConstants.TASK_INCORRECT;
 	}
 
 	/**

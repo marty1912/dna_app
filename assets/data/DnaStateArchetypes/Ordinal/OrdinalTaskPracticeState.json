@@ -1,35 +1,30 @@
 {
-    "type": "SymbolicNumberComparisonStimuliState",
+    "type": "OrdinalTaskPracticeState",
     "objects": [
 
         {
             "type": "TaskBackgroundObject"
         },
         { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/SymbolicNumberComparisonGroup.json" },
+            "path": "assets/data/DnaObjectGroups/OrdinalVerificationGroup.json" },
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/FeedbackGroup.json" },
         { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/FeedbackControlGroupRealTask.json" },
-
+            "path": "assets/data/DnaObjectGroups/FeedbackControlGroupPractice.json" },
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/FixationAndBlankSubstates.json" },
 
         {"type":"TaskTimeoutTimerObject",
-                "max_time":1.5},
+                "max_time":2},
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_onAnswer",
             "actions": [
                 {
-                    "type": "ActionSaveTrialComponent",
-                    "oneshot":false,
-                    "on_event": "EVT_TASK_ANSWERED"
-                },
-                {
                     "type": "ActionFireEventComponent",
                     "oneshot":false,
-                    "event_name":"test_EVENT01"
+                    "event_name":"test_EVENT01",
+                    "on_event": "EVT_TASK_ANSWERED"
                 },
                 {
                     "type": "ActionCheckTaskComponent",
@@ -55,12 +50,20 @@
                     "oneshot": false
                 },
 
+
+                {
+                    "type": "ActionSaveTrialComponent",
+                    "oneshot":false,
+                    "name":"mytrialsaver",
+                    "on_event": "TASK_CORRECT"
+                },
                 {
                     "type": "ActionSwitchToSubStateComponent",
                     "target":"blank",
                     "oneshot":false,
-                    "duration_min":1000,
-                    "duration_max":2000
+                    "duration_min":2000,
+                    "duration_max":3000,
+                    "on_event": "FEEDBACK_DONE"
                 },
                 {
                     "type": "ActionLoadTrialComponent",
@@ -112,7 +115,7 @@
             "actions": [
                 {
                     "type": "ActionLoadTrialComponent",
-                    "oneshot":false,
+                    "oneshot":true,
                     "target":"",
                     "on_event":"onCreate"
                 },  
@@ -120,7 +123,7 @@
                     "type": "ActionAppearComponent",
                     "target": "blank_overlay",
                     "invert":false,
-                    "oneshot": false
+                    "oneshot":true 
                 }
         ]
         },

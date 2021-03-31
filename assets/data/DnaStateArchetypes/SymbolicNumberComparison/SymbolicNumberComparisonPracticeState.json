@@ -1,5 +1,5 @@
 {
-    "type": "SymbolicNumberComparisonStimuliState",
+    "type": "SymbolicNumberComparisonPracticeState",
     "objects": [
 
         {
@@ -10,7 +10,7 @@
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/FeedbackGroup.json" },
         { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/FeedbackControlGroupRealTask.json" },
+            "path": "assets/data/DnaObjectGroups/FeedbackControlGroupPractice.json" },
 
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/FixationAndBlankSubstates.json" },
@@ -22,14 +22,10 @@
             "name": "ActionHandler_onAnswer",
             "actions": [
                 {
-                    "type": "ActionSaveTrialComponent",
-                    "oneshot":false,
-                    "on_event": "EVT_TASK_ANSWERED"
-                },
-                {
                     "type": "ActionFireEventComponent",
                     "oneshot":false,
-                    "event_name":"test_EVENT01"
+                    "event_name":"test_EVENT01",
+                    "on_event": "EVT_TASK_ANSWERED"
                 },
                 {
                     "type": "ActionCheckTaskComponent",
@@ -55,12 +51,22 @@
                     "oneshot": false
                 },
 
+
+                
+                {
+                    "type": "ActionSaveTrialComponent",
+                    "name":"mytrialsaver",
+                    "oneshot":false,
+                    "on_event": "TASK_CORRECT"
+                },
+
                 {
                     "type": "ActionSwitchToSubStateComponent",
                     "target":"blank",
                     "oneshot":false,
                     "duration_min":1000,
-                    "duration_max":2000
+                    "duration_max":2000,
+                    "on_event": "FEEDBACK_DONE"
                 },
                 {
                     "type": "ActionLoadTrialComponent",

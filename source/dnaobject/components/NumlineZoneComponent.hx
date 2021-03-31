@@ -141,13 +141,14 @@ class NumlineZoneComponent implements DnaComponent extends DnaComponentBase
 	 */
 	public function setupPos()
 	{
-		trace("setup pos");
+		trace("setup pos, tol", tol);
 		var parent:Slideable = cast(this.getParent());
 		var target_num:Float = parent.getNumTarget();
 		var max_deviation:Float = (parent.getNumMax() - parent.getNumZero()) * tol;
 		var deviation_pix:Float = parent.getPosFromValue(target_num + max_deviation).x - parent.getPosFromValue(target_num).x;
 		var pos = parent.getPosFromValue(parent.getNumTarget());
 		zone.setWidth(deviation_pix * 2);
+		zone.updateGraphic();
 		zone.setPosition(pos.x, pos.y);
 		trace("pos:", pos);
 

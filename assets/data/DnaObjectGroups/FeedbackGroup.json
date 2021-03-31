@@ -59,6 +59,26 @@
                 
         },
  
+{
+            "type": "SrtPlayerTextObject",
+            "name":"FeedbackText_TIMEOUT",
+            "text":"NumberlineFeedbackTimeout",
+            "autostart":false,
+            "settings":{
+                "fontsize":32,
+                "width":500
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "Center",
+                    "target":"TextPosition"
+                }
+            ]
+                
+        },
+
         {
             "type": "SrtPlayerTextObject",
             "name":"TaskDoneText",

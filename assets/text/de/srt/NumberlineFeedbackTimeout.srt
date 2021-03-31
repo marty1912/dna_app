@@ -1,0 +1,12 @@
+﻿1
+00:00:00,000 --> 00:00:03,507
+Ups!
+
+2
+00:00:03,607 --> 00:00:07,107
+Da hast du wohl etwas zu lange gebraucht.
+
+3
+00:00:07,107 --> 00:00:11,107
+Versuch es einfach noch einmal und achte auf die Zeit!
+

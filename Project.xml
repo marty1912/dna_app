@@ -55,6 +55,7 @@
 	<haxelib name="uuid" />
 	<haxelib name="random" />
 	<haxelib name="howlerjs" />
+	<haxelib name="console.hx" />
 	<!-- TODO: PUSH NOTIFICATIONS!! https://github.com/Tw1ddle/samcodes-notifications-demo-->
 	
 	

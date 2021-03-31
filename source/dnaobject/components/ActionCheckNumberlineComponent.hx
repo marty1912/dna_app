@@ -1,6 +1,7 @@
 package dnaobject.components;
 
 import Assertion.assert;
+import constants.DnaConstants;
 import dnaEvent.DnaEventManager;
 import dnaobject.DnaComponent;
 import dnaobject.DnaComponentBase;
@@ -69,13 +70,17 @@ class ActionCheckNumberlineComponent implements DnaComponent extends DnaActionBa
 		var target_num:Float = numline.getNumTarget();
 		var range:Float = max - min;
 		var deviation:Float = range * tol;
-		if (selected >= target_num - deviation && selected <= target_num + deviation)
+		if (numline.slider.alpha == 0)
 		{
-			this.getParent().getParent().eventManager.broadcastEvent("NUMLINE_CORRECT");
+			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_TIMED_OUT_FEEDBACK);
+		}
+		else if (selected >= target_num - deviation && selected <= target_num + deviation)
+		{
+			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_CORRECT);
 		}
 		else
 		{
-			this.getParent().getParent().eventManager.broadcastEvent("NUMLINE_INCORRECT");
+			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_INCORRECT);
 		}
 	}
 

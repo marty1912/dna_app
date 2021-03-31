@@ -19,6 +19,8 @@ import flixel.util.FlxDestroyUtil;
  */
 class DnaObjectBase implements IFlxDestroyable
 {
+	public var log_color:String = "0xFFFFFF";
+
 	/**
 	 * this is the name of the object. it is used so we are able to find it
 	 * in case we need to do something with it

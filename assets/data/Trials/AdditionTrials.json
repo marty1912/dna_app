@@ -53,7 +53,7 @@
 		"done": false,
 		"saved": false,
 		"to": {
-			"type": "UnlockState"
+			"type": "LevelSelectState"
 		}
 	}
 ]

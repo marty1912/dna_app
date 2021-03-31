@@ -1,0 +1,192 @@
+{
+    "type": "NumberlineState",
+    "objects": [
+{
+            "type": "TaskBackgroundObject"
+        },
+        
+        { "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/NumberlineGroup.json" },
+        { "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/FeedbackGroup.json" },
+        { "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/FeedbackControlGroupPractice.json" },
+            
+        { "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/FixationAndBlankSubstates.json" },
+
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Timeout",
+            "actions": [
+                
+                {
+                    "type": "ActionDelayComponent",
+                    "oneshot":false,
+                    "delay":8,
+                    "on_event":"EVT_START_TRIAL_TIME",
+                    "target":""
+                },{
+                    "type": "ActionFireEventComponent",
+                    "oneshot":false,
+                    "event_name":"TASK_ANSWERED",
+                    "target":""
+                },
+                {
+                    "type": "ActionCancelActionComponent",
+                    "oneshot":false,
+                    "on_event": "TASK_ANSWERED",
+                    "target":"ActionHandler_Timeout"
+                }
+
+            ]},
+         
+
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_onAnswered",
+            "actions": [
+                
+                
+
+                {
+                    "type": "ActionRemoveComponentComponent",
+                    "target": "NumberlineObject",
+                    "oneshot":false,
+                    "on_event": "TASK_ANSWERED",
+                    "target_comp":"SliderComponent"
+                } ,
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state":"INACTIVE",
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionCheckNumberlineComponent",
+                    "target":"NumberlineObject",
+                    "tolerance":0.05,
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionAddComponentComponent",
+                    "target":"NumberlineObject",
+                    "oneshot":false,
+                    "components":[{"type": "NumlineZoneComponent", "tol":0.05 }]
+                },
+                
+                
+                
+                {
+                    "type": "ActionSaveTrialComponent",
+                    "oneshot":false,
+                    "on_event": "TASK_CORRECT",
+                    "target":""
+                },
+
+                {
+                    "type": "ActionRemoveComponentComponent",
+                    "target":"NumberlineObject",
+                    "on_event": "FEEDBACK_DONE",
+                    "oneshot":false,
+                    "target_comp":"NumlineZoneComponent"
+                },{
+                    "type": "ActionAppearComponent",
+                    "target": "blank_overlay",
+                    "invert":false,
+                    "oneshot": false
+                },
+                {
+                    "type": "ActionSwitchToSubStateComponent",
+                    "target":"blank",
+                    "oneshot":false,
+                    "duration_min":4000,
+                    "duration_max":5000
+                },
+                {
+                    "type": "ActionLoadTrialComponent",
+                    "oneshot":false,
+                    "target":""
+                }
+                
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_setup",
+            "actions": [
+                {
+                    "type": "ActionLoadTrialComponent",
+                    "target":"",
+                    "on_event": "onCreate",
+                    "oneshot":false
+                } ,
+                {
+                    "type": "ActionAppearComponent",
+                    "target": "blank_overlay",
+                    "invert":false,
+                    "oneshot": false
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_OnSuccessful_load",
+            "actions": [
+                {
+                    "type": "ActionSwitchToSubStateComponent",
+                    "oneshot":false,
+                    "target":"fixation",
+                    "duration":500,
+                    "on_event":"TrialHandler_load_fin"
+                },{
+                    "type": "ActionAppearComponent",
+                    "target": "blank_overlay",
+                    "invert":true,
+                    "oneshot": false
+                },{
+                    "type":"ActionAddComponentComponent",
+                    "target":"NumberlineObject",
+                    "oneshot":false,
+                    "components":[{"type":"SliderComponent"}]
+                },
+                {
+                    "type": "ActionFireEventComponent",
+                    "oneshot":false,
+                    "event_name":"EVT_START_TRIAL_TIME"
+                }
+                ]},
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_fin",
+            "actions": [
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "on_event": "TrialHandler_all_fin" ,
+                    "state":"INACTIVE",
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionRemoveComponentComponent",
+                    "target": "NumberlineObject",
+                    "oneshot":false,
+                    "target_comp":"SliderComponent"
+                }  ,
+                {
+                    "type": "ActionFinishTaskComponent",
+                    "oneshot":false,
+                    "target":""
+                },
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "oneshot":false,
+                    "next_state":"NEXT_TASK"
+                }  
+            ]
+        }
+        
+
+    ]
+}

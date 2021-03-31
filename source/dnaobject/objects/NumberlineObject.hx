@@ -45,7 +45,7 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 	/**
 	 * checks if the task was answered correctly
 	 */
-	public function isCorrect():Bool
+	public function isCorrect():String
 		throw "not applicable for Numline!!";
 
 	public function getSliderNum():Float

@@ -56,17 +56,9 @@ class ActionCheckArithmeticTaskComponent implements DnaComponent extends DnaActi
 	 */
 	public function checkArithmeticTask(target_name:String)
 	{
-		var task_handler:ArithmeticTaskHandlerObject = cast(getParent().getParent().getObjectByName(target_name));
-		var answer:Int = task_handler.getAnswer();
-		var solution:Int = task_handler.getSolution();
-		if (answer == solution)
-		{
-			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_CORRECT);
-		}
-		else
-		{
-			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_INCORRECT);
-		}
+		var task_handler:TaskObject = cast(getParent().getParent().getObjectByName(target_name));
+		var correct = task_handler.isCorrect();
+		this.getParent().getParent().eventManager.broadcastEvent(correct);
 	}
 
 	/**
