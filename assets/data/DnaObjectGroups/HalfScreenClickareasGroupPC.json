@@ -1,0 +1,50 @@
+{
+    "type": "HalfScreenClickareasGroupPC",
+    "objects": [
+
+        
+        {
+            "type": "EmptyButtonObject",
+            "name":"Clickarea_RIGHT",
+            "components": [
+                {
+                    "type": "KeyboardInputComponent",
+                    "keys":["RIGHT"]
+                },
+                {
+                    "type": "ClickAreaComponent",
+                    "target": "RightNumPosition"
+                }, {
+                    "type": "PositionComponent",
+                    "target": "RightNumPosition",
+                    "position": "Center"
+                }, {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "RIGHT_NUM_SELECTED"
+                }
+            ]
+        },
+        {
+            "type": "EmptyButtonObject",
+            "name":"Clickarea_LEFT",
+            "components": [
+                {
+                    "type": "KeyboardInputComponent",
+                    "keys":["LEFT"]
+                },
+                {
+                    "type": "ClickAreaComponent",
+                    "target": "LeftNumPosition"
+                }, {
+                    "type": "PositionComponent",
+                    "target": "LeftNumPosition",
+                    "position": "Center"
+                }, {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "LEFT_NUM_SELECTED"
+                }
+            ]
+        }
+        
+    ]
+}

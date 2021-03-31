@@ -39,6 +39,8 @@ class Main extends Sprite
 		addChild(new FlxGame(width, heigth, 1, 60, 60, true, false));
 
 		FlxG.sound.muteKeys = null;
+		FlxG.sound.volumeUpKeys = null;
+		FlxG.sound.volumeDownKeys = null;
 		/*
 		 * these settings are used so the update loops will get the 
 		 * correct time that elapsed. therefore anabling everything to stay in

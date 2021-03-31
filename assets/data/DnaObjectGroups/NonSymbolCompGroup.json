@@ -134,53 +134,13 @@
             }]
         },
         
-        {
-            "type": "EmptyButtonObject",
-            "name":"Clickarea_RIGHT",
-            "components": [
-                {
-                    "type": "UserButtonComponent"
-                },
-                {
-                    "type": "KeyboardInputComponent",
-                    "keys":["RIGHT"]
-                },
-                {
-                    "type": "ClickAreaComponent",
-                    "target": "RightNumPosition"
-                }, {
-                    "type": "PositionComponent",
-                    "target": "RightNumPosition",
-                    "position": "Center"
-                }, {
-                    "type": "CmdEvtTrigComponent",
-                    "event_name": "RIGHT_NUM_SELECTED"
-                }
-            ]
-        },
-        {
-            "type": "EmptyButtonObject",
-            "name":"Clickarea_LEFT",
-            "components": [{
-                    "type": "UserButtonComponent"
-                },
-                {
-                    "type": "KeyboardInputComponent",
-                    "keys":["LEFT"]
-                },
-                {
-                    "type": "ClickAreaComponent",
-                    "target": "LeftNumPosition"
-                }, {
-                    "type": "PositionComponent",
-                    "target": "LeftNumPosition",
-                    "position": "Center"
-                }, {
-                    "type": "CmdEvtTrigComponent",
-                    "event_name": "LEFT_NUM_SELECTED"
-                }
-            ]
-        },
+            { "type": "DependentGroupObject",
+            "conditions": [
+                { "condition": "web", "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/HalfScreenClickareasGroupPC.json" } },
+                { "condition": "android", "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/HalfScreenClickareasGroup.json" } },
+                { "condition": "desktop", "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/HalfScreenClickareasGroupPC.json" } }
+            ] },
+        
        {
             "type": "NonSymbolCompTaskHandlerObject",
             "name": "TaskHandler",

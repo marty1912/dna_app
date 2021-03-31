@@ -4,32 +4,12 @@
             "type": "TaskBackgroundObject"
         },
 
-        {
-            "type": "DependentGroupObject",
+        { "type": "DependentGroupObject",
             "conditions": [
-                {
-                    "condition": "web",
-                    "obj": {
-                        "type": "OBJECT_GROUP",
-                        "path": "assets/data/DnaObjectGroups/KeyboardGroupPC.json"
-                    }
-                },
-                {
-                    "condition": "android",
-                    "obj": {
-                        "type": "OBJECT_GROUP",
-                        "path": "assets/data/DnaObjectGroups/KeyboardGroup.json"
-                    }
-                },
-                {
-                    "condition": "desktop",
-                    "obj": {
-                        "type": "OBJECT_GROUP",
-                        "path": "assets/data/DnaObjectGroups/KeyboardGroupPC.json"
-                    }
-                }
-            ]
-        },
+                { "condition": "web", "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/KeyboardGroupPC.json" } },
+                { "condition": "android", "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/KeyboardGroup.json" } },
+                { "condition": "desktop", "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/KeyboardGroupPC.json" } }
+            ] },
 
         {
             "type": "OBJECT_GROUP",
@@ -47,7 +27,8 @@
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_AcceptButton",
-            "actions": [{
+            "actions": [
+                {
                     "type": "ActionSaveTrialComponent",
                     "oneshot": false,
                     "on_event": "AcceptButtonPressed"
@@ -134,7 +115,9 @@
                     "next_state": "NEXT_TASK"
                 }
             ]
-        }
+        },
+
+        { "type": "TrialHandlerObject", "reload_on_fin":true}
 
     ]
 }

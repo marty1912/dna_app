@@ -124,7 +124,7 @@
                     "condition": "desktop",
                     "obj": {
                         "type": "OBJECT_GROUP",
-                        "path": "assets/data/DnaObjectGroups/OrdinalButtonGroupDesktop.json"
+                        "path": "assets/data/DnaObjectGroups/OrdinalButtonGroupPC.json"
                     }
                 }
             ]

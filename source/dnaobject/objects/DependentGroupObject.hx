@@ -4,6 +4,7 @@ import Assertion.assert;
 import constants.DnaConstants;
 import dnaEvent.DnaEventManager;
 import dnaEvent.DnaEventSubscriber;
+import dnadata.DnaDataManager;
 import dnadata.TaskTrials;
 import dnaobject.DnaObject;
 import dnaobject.interfaces.ITextBox;
@@ -162,8 +163,7 @@ class ConditionORDINAL_LEFT extends Condition
 {
 	override public function check()
 	{
-		// TODO check in the data!
-		return true;
+		return !DnaDataManager.instance.retrieveData(DnaDataManager.ORD_TASK_COND);
 	}
 }
 
@@ -171,7 +171,6 @@ class ConditionORDINAL_RIGHT extends Condition
 {
 	override public function check()
 	{
-		// TODO check in the data!
-		return false;
+		return DnaDataManager.instance.retrieveData(DnaDataManager.ORD_TASK_COND);
 	}
 }

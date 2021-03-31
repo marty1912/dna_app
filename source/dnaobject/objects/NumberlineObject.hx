@@ -16,6 +16,7 @@ import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.text.FlxText;
+import flixel.util.FlxCollision;
 import flixel.util.FlxColor;
 import haxe.DynamicAccess;
 
@@ -151,8 +152,8 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 	 */
 	public function updateLabelTexts():Void
 	{
-		m_label_zero.text = Std.string(m_num_zero);
-		m_label_zero.color = label_zero_color;
+		m_label_zero.text = ""; // Std.string(m_num_zero);
+		m_label_zero.color = FlxColor.TRANSPARENT; // label_zero_color;
 		m_label_ref.text = Std.string(m_num_ref);
 		m_label_ref.color = label_ref_color;
 		m_label_target.text = Std.string(m_num_target);
@@ -307,7 +308,7 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 	private var zero_line_color:FlxColor;
 	private var ref_line_color:FlxColor;
 	private var slider_color:FlxColor;
-	private var label_zero_color:FlxColor;
+	private var label_zero_color:FlxColor = FlxColor.TRANSPARENT;
 	private var label_ref_color:FlxColor;
 	private var label_target_color:FlxColor;
 

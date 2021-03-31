@@ -5,8 +5,12 @@
             "type": "TaskBackgroundObject"
         },
 
-        { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/KeyboardGroup.json" },
+        { "type": "DependentGroupObject",
+            "conditions": [
+                { "condition": "web", "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/KeyboardGroupPC.json" } },
+                { "condition": "android", "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/KeyboardGroup.json" } },
+                { "condition": "desktop", "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/KeyboardGroupPC.json" } }
+            ] },
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/ArithmeticGroup.json" },
         { "type": "OBJECT_GROUP",
@@ -26,13 +30,7 @@
                 },
                 {
                     "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "BackspaceButton",
+                    "targets": ["AcceptButton","BackspaceButton"],
                     "state": "INACTIVE",
                     "oneshot": false
                 },
@@ -43,18 +41,17 @@
                     "oneshot": false
                 },
 
+                {
+                    "type": "ActionSaveTrialComponent",
+                    "oneshot": false,
+                    "on_event": "TASK_CORRECT"
+                },
 
                 {
                     "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
+                    "targets": ["AcceptButton","BackspaceButton"],
                     "state": "NORMAL",
                     "on_event":"FEEDBACK_DONE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "BackspaceButton",
-                    "state": "NORMAL",
                     "oneshot": false
                 },
                 {
@@ -75,18 +72,11 @@
             "name": "ActionHandler_Setup",
             "actions": [
                 {
-                    "type": "ActionAddComponentComponent",
-                    "target":"AcceptButton",
-                    "oneshot":false,
-                    "on_event":"onCreate",
-                    "components":[{"type": "UserButtonComponent"}]
-                },
-                {
-                    "type": "ActionAddComponentComponent",
-                    "target":"BackspaceButton",
-                    "oneshot":false,
-                    "on_event":"onCreate",
-                    "components":[{"type": "UserButtonComponent"}]
+                    "type": "ActionFireEventComponent",
+                    "target": "",
+                    "oneshot": false,
+                    "on_event": "onCreate",
+                    "event_name": "ArithmeticButtons_ADD_USERBUTTON"
                 },
                 {
                     "type": "ActionFireEventComponent",
@@ -109,17 +99,12 @@
             "actions": [
                 {
                     "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
+                    "targets": ["AcceptButton","BackspaceButton"],
                     "on_event": "TrialHandler_all_fin" ,
                     "state":"INACTIVE",
                     "oneshot":false
                 },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "BackspaceButton",
-                    "state":"INACTIVE",
-                    "oneshot":false
-                },
+                
                 {
                     "type": "ActionFireEventComponent",
                     "target": "",
@@ -147,7 +132,8 @@
                     "target":"",
                     "next_state":"NEXT_TASK"
                 }  
-        ] }
+        ] },
+        { "type": "TrialHandlerObject", "reload_on_fin":false}
       
     ]
 }

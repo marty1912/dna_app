@@ -14,14 +14,18 @@ import uuid.Uuid;
 class DnaDataManager
 {
 	public final PART_UUID:String = "participant_uuid";
-	public final TRIALS_KEY:String = "trials";
-	public final MONTI_KEY:String = "monti";
-	public final ALL_MONTI_PARTS_KEY:String = "all_monti_parts";
-	public final SAVE_ALL_BEFORE:String = "SAVE";
-	public final REDIRECT:String = "REDIRECT";
+
+	public static final ORD_TASK_COND:String = "ord_task_right_inorder";
+
+	public static final TRIALS_KEY:String = "trials";
+	public static final MONTI_KEY:String = "monti";
+	public static final ALL_MONTI_PARTS_KEY:String = "all_monti_parts";
+	public static final SAVE_ALL_BEFORE:String = "SAVE";
+	public static final REDIRECT:String = "REDIRECT";
 
 	public var persistent_storage:Dynamic;
-	public final save_slot_name:String = "save_slot.json";
+
+	public static final save_slot_name:String = "save_slot.json";
 
 	/**
 	 * this is the only instance that will ever exist
@@ -64,6 +68,7 @@ class DnaDataManager
 		if (uuid == null)
 		{
 			setupUUID();
+			setupRandomConditions();
 			setupTrials();
 			setupMonti();
 		}
@@ -79,6 +84,12 @@ class DnaDataManager
 	public function setupUUID()
 	{
 		storeData(PART_UUID, Uuid.v4());
+	}
+
+	public function setupRandomConditions()
+	{
+		var ord_task_right_inorder:Bool = Random.bool();
+		storeData(ORD_TASK_COND, ord_task_right_inorder);
 	}
 
 	/**

@@ -122,11 +122,6 @@
             "target_problem": "Text_Problem",
             "target_answer": "Text_Answer"
         },
-        {
-            "type": "TrialHandlerObject",
-            "reload_on_fin":true
-
-        },
         {"type":"TimerObject","name":"TotalTime"}
 
 

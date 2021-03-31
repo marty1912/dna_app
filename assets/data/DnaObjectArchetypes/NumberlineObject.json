@@ -1,6 +1,6 @@
 {
     "type": "NumberlineObject",
-    "horiz_line_w": 1000,
+    "horiz_line_w": 1024,
     "horiz_line_h": 10,
     "ref_line_w": 10,
     "ref_line_h": 150,
@@ -12,7 +12,7 @@
 
     "num_zero": 0,
 
-    "label_zero_color": "0xFFFFFF",
+    "label_zero_color": "0x00FFFFFF",
     "label_ref_color": "0xFFFFFF",
     "label_target_color": "0xFFFF4D",
 

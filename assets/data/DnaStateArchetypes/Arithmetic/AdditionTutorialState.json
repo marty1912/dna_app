@@ -211,5 +211,7 @@
                 }
             ]
         }
+
+        , { "type": "TrialHandlerObject", "reload_on_fin":false} 
     ]
 }

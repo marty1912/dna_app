@@ -132,6 +132,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 */
 	public function resetTrials()
 	{
+		trace("reset Trials!!");
 		this.setTrials(this.trials);
 		this.trial_index = 0;
 	}

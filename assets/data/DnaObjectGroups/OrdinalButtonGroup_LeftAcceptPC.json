@@ -1,0 +1,41 @@
+{
+    "type": "OrdinalButtonGroup",
+    "objects": [
+
+        {
+            "type":"EmptyButtonObject",
+            "path": "assets/gui_elements/buttonDecline.png",
+            "name":"Clickarea_RIGHT",
+            "components": [
+                 {
+                    "type": "PositionComponent",
+                    "target": "CenterBottomPosition",
+                    "position": "RightCenter"
+                }          ,
+                {
+                "type": "CmdEvtTrigComponent",
+                "event_name": "ANSWER_MIXED_ORDER"
+                }
+            , { "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] }
+
+              ]
+        },
+        {
+            "type":"EmptyButtonObject",
+            "path": "assets/gui_elements/buttonAccept.png",
+            "name":"Clickarea_LEFT",
+            "components": [
+                 {
+                    "type": "PositionComponent",
+                    "target": "CenterBottomPosition",
+                    "position": "LeftCenter"
+                }            ,
+                {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "ANSWER_IN_ORDER"
+                }
+            , { "type": "KeyboardInputComponent", "keys": ["S","LEFT"] } 
+            ]
+        }
+    ]
+}
