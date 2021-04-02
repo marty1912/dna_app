@@ -1,6 +1,8 @@
 [	
 	{
 		"type": "ArithmeticPracticeState",
+
+        "name":"AdditionPractice",
 		"desc_head": "ArithmeticState_HEAD",
 		"desc_body": "ArithmeticState_BODY",
 		"done": false,
@@ -14,6 +16,7 @@
 	},
 	{
 		"type": "ArithmeticState",
+        "name":"Addition",
 		"desc_head": "ArithmeticState_HEAD",
 		"desc_body": "ArithmeticState_BODY",
 		"done": false,

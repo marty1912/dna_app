@@ -1,6 +1,7 @@
 [
 	{
 		"type": "NonSymbolCompPracticeState",
+        "name":"DotCompPractice",
 		"desc_head": "NonSymbolicNumberComparison_HEAD",
 		"desc_body": "NonSymbolicNumberComparison_BODY",
 		"done": false,
@@ -33,6 +34,7 @@
 
 		"type": "NonSymbolCompState",
 		"desc_head": "NonSymbolicNumberComparison_HEAD",
+        "name":"DotComp",
 		"desc_body": "NonSymbolicNumberComparison_BODY",
 		"done": false,
 		"saved": false,

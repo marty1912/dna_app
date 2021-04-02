@@ -13,3 +13,4 @@ __MACOSX
 *secret_key.txt
 *api_key.txt
 __pycache__
+csv_data

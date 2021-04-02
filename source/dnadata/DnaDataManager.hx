@@ -6,6 +6,7 @@ import haxe.DynamicAccess;
 import haxe.Json;
 import osspec.OsManager;
 import textparsemacro.ConfigFile;
+import thx.csv.Csv;
 import uuid.Uuid;
 
 /**
@@ -115,8 +116,7 @@ class DnaDataManager
 		// trace(persistent_storage.data);
 	}
 
-	/**
-	 * storeData - this stores some data permanently.
+	/** storeData - this stores some data permanently.
 	 * @param key
 	 * @param value
 	 */

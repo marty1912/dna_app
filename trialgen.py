@@ -99,6 +99,18 @@ def genAdditionTrials(numbers=[2,3,4,5,6,7,8,9]):
 
     return trials
 
+def genAdditionTrials(numbers=[x for x in range(1,100)]):
+    '''
+    '''
+    trials = []
+
+    for num_1 in numbers:
+        solution = num_1
+        trials.append([num_1,solution])
+
+    return trials
+
+
 
 
 
@@ -138,6 +150,8 @@ def main():
     elif mode == "numline":
         trials = genNumLineTrials()
     elif mode == "add":
+        trials = genAdditionTrials()
+    elif mode == "speed":
         trials = genAdditionTrials()
 
     template_file = sys.argv[2]

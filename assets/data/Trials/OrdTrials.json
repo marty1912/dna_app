@@ -1,6 +1,7 @@
 [
 	{
 		"type": "OrdinalTaskPracticeState",
+        "name":"OrdinalTaskPractice",
 		"desc_head": "OrdTask_HEAD",
 		"desc_body": "OrdTask_BODY",
 		"done": false,
@@ -16,6 +17,7 @@
 	},
 	{
 		"type": "OrdinalTaskState",
+        "name":"OrdinalTaskReal",
 		"desc_head": "OrdTask_HEAD",
 		"desc_body": "OrdTask_BODY",
 		"done": false,

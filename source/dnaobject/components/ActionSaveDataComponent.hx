@@ -76,6 +76,7 @@ class ActionSaveDataComponent implements DnaComponent extends DnaActionBase
 	public function saveData():Void
 	{
 		trace("now saving data.");
+
 		var body:String = Json.stringify(DnaDataManager.instance.getAllData());
 		OsManager.get_instance().saveFile(body, "data.json");
 	}

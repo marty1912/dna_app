@@ -163,22 +163,23 @@
                     "type": "EmptyButtonObject",
                     "path": "assets/gui_elements/buttonData.png",
                     "name": "IncTrialsComponent",
-                    "components": [{
-                            "type": "PositionComponent",
-                            "oneshot": true,
-                            "position": "LeftBottom",
-                            "target": "CenteredPosition"
-                        },
-                        {
-                            "type": "UserButtonComponent"
-                        },
-                        {
-                            "type": "CmdEvtTrigComponent",
-                            "event_name": "SAVEDATA"
-                        }
-                    ]
+                    "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftBottom", "target": "CenteredPosition" },
+                        { "type": "UserButtonComponent" },
+                        { "type": "CmdEvtTrigComponent", "event_name": "SAVEDATA" } ]
                 }
             }
+            ,
+            { "condition": "desktop",
+                    "obj": {
+                    "type": "EmptyButtonObject",
+                    "path": "assets/gui_elements/buttonData.png",
+                    "name": "IncTrialsComponent",
+                    "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftBottom", "target": "CenteredPosition" },
+                        { "type": "UserButtonComponent" },
+                        { "type": "CmdEvtTrigComponent", "event_name": "SAVEDATA" } ]
+                }
+            }
+
 
             ]
         },
@@ -188,6 +189,7 @@
             "name": "ActionHandler_TRIAL_BLOCK",
             "actions": [{
                 "type": "ActionSaveDataComponent",
+                "oneshot":false,
                 "on_event": "SAVEDATA"
             }]
         },

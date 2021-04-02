@@ -1,6 +1,7 @@
 [
 {
 		"type": "SymbolicNumberComparisonPracticeState",
+        "name":"SymbNumCompPractice",
 		"desc_head": "SymbolicNumberComparison_HEAD",
 		"desc_body": "SymbolicNumberComparison_BODY",
 		"done": false,
@@ -17,6 +18,7 @@
 {
 		"type": "SymbolicNumberComparisonState",
 		"desc_head": "SymbolicNumberComparison_HEAD",
+        "name":"SymbNumComp",
 		"desc_body": "SymbolicNumberComparison_BODY",
 		"done": false,
 		"saved": false,

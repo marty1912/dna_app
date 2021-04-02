@@ -1,6 +1,7 @@
 [
 	{
 		"type": "NumberlinePracticeStateAdult",
+        "name":"NumberlinePractice",
 		"desc_head": "NumberlineState_HEAD",
 		"desc_body": "NumberlineState_BODY",
 		"done": false,
@@ -14,6 +15,7 @@
 	},
 	{
 		"type": "NumberlineState",
+        "name":"Numberline",
 		"desc_head": "NumberlineState_HEAD",
 		"desc_body": "NumberlineState_BODY",
 		"done": false,

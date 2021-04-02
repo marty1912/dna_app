@@ -76,7 +76,7 @@
             "name": "ActionHandler_Finish",
             "actions": [{
                     "type": "ActionDelayComponent",
-                    "delay":10,
+                    "delay":30,
                     "oneshot": false,
                     "on_event":"onCreate"
                 },
