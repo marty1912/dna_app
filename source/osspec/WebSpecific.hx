@@ -36,7 +36,7 @@ class WebSpecific implements OsSpecific
 	 */
 	public function saveFile(content:String, filename:String):Void
 	{
-		var blob:js.html.Blob = new js.html.Blob([content], {type: "text/plain;charset=utf-8"});
+		var blob:js.html.Blob = new js.html.Blob([content], {type: "text/plain"});
 		FileSaver.saveAs(blob, filename);
 	}
 

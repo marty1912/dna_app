@@ -115,6 +115,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 */
 	override public function fromFile(jsonFile:Dynamic)
 	{
+		trace("trialhabdler from file:", jsonFile);
 		if (Reflect.hasField(jsonFile, "randomize"))
 		{
 			randomize = jsonFile.randomize;

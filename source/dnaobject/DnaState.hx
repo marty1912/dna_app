@@ -189,6 +189,7 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 	 */
 	public function objectFromFile(obj:Dynamic)
 	{
+		trace("object:", obj);
 		if (obj.type == DnaConstants.OBJECT_GROUP)
 		{
 			fromFile(Assets.getText(obj.path));

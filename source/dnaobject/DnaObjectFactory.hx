@@ -228,83 +228,51 @@ class DnaObjectFactory
 			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolicNumberComparisonTaskHandlerObject.json"));
 		}
 		// // AUTOMATICALLY GENERATED
-else if (type == 'SubStateObject')
-{
-	obj = new SubStateObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SubStateObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'TaskTimeoutTimerObject')
-{
-	obj = new TaskTimeoutTimerObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/TaskTimeoutTimerObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'RoundedRectangleObject')
-{
-	obj = new RoundedRectangleObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/RoundedRectangleObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'DependentGroupObject')
-{
-	obj = new DependentGroupObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DependentGroupObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'OrdinalTaskHandlerObject')
-{
-	obj = new OrdinalTaskHandlerObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdinalTaskHandlerObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'NonSymbolCompTaskHandlerObject')
-{
-	obj = new NonSymbolCompTaskHandlerObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NonSymbolCompTaskHandlerObject.json"));
-}
-// INSERT_HERE
+		else if (type == 'SubStateObject')
+		{
+			obj = new SubStateObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SubStateObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'TaskTimeoutTimerObject')
+		{
+			obj = new TaskTimeoutTimerObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/TaskTimeoutTimerObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'RoundedRectangleObject')
+		{
+			obj = new RoundedRectangleObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/RoundedRectangleObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'DependentGroupObject')
+		{
+			obj = new DependentGroupObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DependentGroupObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'OrdinalTaskHandlerObject')
+		{
+			obj = new OrdinalTaskHandlerObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdinalTaskHandlerObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'NonSymbolCompTaskHandlerObject')
+		{
+			obj = new NonSymbolCompTaskHandlerObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NonSymbolCompTaskHandlerObject.json"));
+		}
+		// INSERT_HERE
 		else
 		{
 			trace(type);
 			assert(false);
 		}
-
-		obj.fromFile(file);
+		if (file != null)
+		{
+			obj.fromFile(file);
+		}
 		return obj;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
