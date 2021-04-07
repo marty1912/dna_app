@@ -1,5 +1,15 @@
 [
 {
+		"type": "SymbNumCompInstructionsState_01",
+		"desc_head": "SymbolicNumberComparison_HEAD",
+		"desc_body": "SymbolicNumberComparison_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+			[{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }]
+		]
+	},
+{
 		"type": "SymbolicNumberComparisonPracticeState",
         "name":"SymbNumCompPractice",
 		"desc_head": "SymbolicNumberComparison_HEAD",
@@ -13,6 +23,16 @@
 			[{ "name": "TaskHandler", "params": { "num_left": "3", "num_right": "8", "solution": 8 ,"distance":5} }, { "name": "TotalTime" }],
 			[{ "name": "TaskHandler", "params": { "num_left": "8", "num_right": "2", "solution": 8 ,"distance":6} }, { "name": "TotalTime" }]
 
+		]
+	},
+{
+		"type": "SymbNumCompInstructionsState_02",
+		"desc_head": "SymbolicNumberComparison_HEAD",
+		"desc_body": "SymbolicNumberComparison_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+			[{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }]
 		]
 	},
 {

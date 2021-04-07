@@ -233,6 +233,20 @@ else if (type == "NumberlinePracticeStateAdult")
 			state = new DnaState("NumberlinePracticeStateAdult");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Numberline/NumberlinePracticeStateAdult.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SymbNumCompInstructionsState_01")
+		{
+			state = new DnaState("SymbNumCompInstructionsState_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbNumCompInstructionsState_01.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SymbNumCompInstructionsState_02")
+		{
+			state = new DnaState("SymbNumCompInstructionsState_02");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbNumCompInstructionsState_02.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -245,6 +259,10 @@ else if (type == "NumberlinePracticeStateAdult")
 		return state;
 	}
 }
+
+
+
+
 
 
 
