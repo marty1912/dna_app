@@ -1,12 +1,4 @@
 ﻿1
-00:00:00,000 --> 00:00:03,507
-Das ist leider nicht ganz richtig.
-
-2
-00:00:03,607 --> 00:00:07,107
-Aber natürlich kann @001FF0000NIEMAND@000 Alles ohne Fehler lösen.
-
-3
-00:00:07,107 --> 00:00:11,107
-Gib nicht auf und versuch es noch einmal!
+00:00:00,000 --> 00:00:03,907
+Das ist leider nicht ganz richtig. Versuch es noch einmal!
 

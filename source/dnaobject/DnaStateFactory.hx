@@ -247,6 +247,13 @@ else if (type == "SymbNumCompInstructionsState_02")
 			state = new DnaState("SymbNumCompInstructionsState_02");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbNumCompInstructionsState_02.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "OrdinalTaskInsctuctionsState_01")
+		{
+			state = new DnaState("OrdinalTaskInsctuctionsState_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdinalTaskInsctuctionsState_01.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -259,6 +266,7 @@ else if (type == "SymbNumCompInstructionsState_02")
 		return state;
 	}
 }
+
 
 
 
