@@ -163,19 +163,6 @@
                     "on_event":"TrialHandler_all_fin",
                     "oneshot": false
                 },
-                
-                {
-                    "type": "ActionPlaySoundComponent",
-                    "path":"NumberlineTaskDone",
-                    "oneshot":false,
-                    "from_locale":true
-                },
-                {
-                    "type": "ActionShowTextComponent",
-                    "target":"TaskDoneText",
-                    "on_event":"same",
-                    "oneshot":false
-                },
                 {
                     "type": "ActionFinishTaskComponent",
                     "target":""

@@ -52,8 +52,8 @@ class TimerObject implements DnaObject implements TaskObject extends DnaObjectBa
 		timestamp_end = Timer.stamp();
 		time_timer = timestamp_end - timestamp_start;
 		var current_trial:Dynamic = {
-			time_update_loop: this.time_update_loop,
-			time_timer: this.time_timer
+			time_update_loop: this.time_update_loop
+			// time_timer: this.time_timer
 		};
 
 		return current_trial;

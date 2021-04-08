@@ -254,6 +254,13 @@ else if (type == "OrdinalTaskInsctuctionsState_01")
 			state = new DnaState("OrdinalTaskInsctuctionsState_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdinalTaskInsctuctionsState_01.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NonSymbNumCompInstructionsState_01")
+		{
+			state = new DnaState("NonSymbNumCompInstructionsState_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbNumCompInstructionsState_01.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -266,6 +273,10 @@ else if (type == "OrdinalTaskInsctuctionsState_01")
 		return state;
 	}
 }
+
+
+
+
 
 
 

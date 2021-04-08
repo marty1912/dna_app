@@ -5,13 +5,12 @@
             "type": "TaskBackgroundObject"
         },
 
-
         { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/OrdinalVerificationGroup.json" },
+            "path": "assets/data/DnaObjectGroups/NonSymbolCompGroup.json" },
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/FixationAndBlankSubstates.json" },
         { "type": "SrtPlayerTextObject", "name":"Instructions_01", 
-            "text":"SymbNumCompInstructions_01",
+            "text":"NonSymbNumCompInstructions_01",
             "autostart":false,
             "settings":{ "fontsize":32, "width":500 },
             "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ]
@@ -21,11 +20,11 @@
             "type": "DependentGroupObject",
             "conditions": [
                 { "condition": "desktop",
-                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"SymbNumCompInstructions_02_PC", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } },
+                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"NonSymbNumCompInstructions_02_PC", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } },
                 { "condition": "web",
-                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"SymbNumCompInstructions_02_PC", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } },
+                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"NonSymbNumCompInstructions_02_PC", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } },
                 { "condition": "android",
-                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"SymbNumCompInstructions_02_TOUCH", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } 
+                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"NonSymbNumCompInstructions_02_TOUCH", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } 
                 }
                 
             ]
@@ -104,7 +103,30 @@
                 },
                 {
                     "type": "ActionAppearComponent",
-                    "target": "blank_overlay",
+                    "targets": ["blank_overlay","NOISE_LEFT","NOISE_RIGHT"],
+                    "invert":true,
+                    "oneshot": false
+                },
+                {
+                    "type":"ActionDelayComponent",
+                    "delay": 0.5,
+                    "oneshot": false
+                }
+                ,
+                {
+                    "type": "ActionAppearComponent",
+                    "targets": ["NOISE_LEFT","NOISE_RIGHT"],
+                    "invert":false,
+                    "oneshot": false
+                } ,
+                {
+                    "type":"ActionDelayComponent",
+                    "delay": 0.1,
+                    "oneshot": false
+                } ,
+                {
+                    "type": "ActionAppearComponent",
+                    "targets": ["NUM_LEFT","NUM_RIGHT","NOISE_LEFT","NOISE_RIGHT"],
                     "invert":true,
                     "oneshot": false
                 },

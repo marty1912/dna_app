@@ -49,8 +49,8 @@
         },
         {
             "type":"RoundedRectangleObject",
-            "width":400,
-            "height":400,
+            "width":300,
+            "height":300,
             "components": [
                  {
                     "type": "PositionComponent",
@@ -86,8 +86,8 @@
         },
         {
             "type":"RoundedRectangleObject",
-            "width":400,
-            "height":400,
+            "width":300,
+            "height":300,
             "components": [
                  {
                     "type": "PositionComponent",
