@@ -31,6 +31,11 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 	 */
 	public function abortRunningActions()
 	{
+		trace(this.obj_name, " - canceling actions:", this.m_component_list);
+		for (act in this.m_inactive_actions_queue)
+		{
+			trace(this.obj_name, " - inactive action:", act.id, " - ", act.comp_type);
+		}
 		for (comp in this.m_component_list)
 		{
 			if (comp.comp_type.indexOf("Action") == -1)

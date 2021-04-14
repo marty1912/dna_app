@@ -17,7 +17,7 @@
             "type": "CmdEvtTrigComponent",
                 "event_name": "ANSWER_IN_ORDER"
             }
-            , { "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] }
+            , { "type": "KeyboardInputComponent", "keys": ["RIGHT"] }
              ]
         },
         {
@@ -34,7 +34,7 @@
             "type": "CmdEvtTrigComponent",
                 "event_name": "ANSWER_MIXED_ORDER"
             }
-            , { "type": "KeyboardInputComponent", "keys": ["S","LEFT"] } 
+            , { "type": "KeyboardInputComponent", "keys": ["LEFT"] } 
              ]
         }
     ]

@@ -28,10 +28,13 @@ class TaskTrials
 	private function new() {};
 
 	public final task_block_paths:Array<String> = [
-		"assets/data/Trials/AdditionTrials.json", "assets/data/Trials/NonSymbolCompTrials.json", "assets/data/Trials/NumberlineTrials.json",
-		"assets/data/Trials/OrdTrials.json", "assets/data/Trials/SymbolicCompTrials.json", "assets/data/Trials/SpeedTrials.json",
-		"assets/data/Trials/AdditionTrials_short.json", "assets/data/Trials/NonSymbolCompTrials_short.json", "assets/data/Trials/NumberlineTrials_short.json",
-		"assets/data/Trials/OrdTrials_short.json", "assets/data/Trials/SymbolicCompTrials_short.json", "assets/data/Trials/SpeedTrials_short.json",
+		"assets/data/Trials/AdditionTrials.json",
+		"assets/data/Trials/NonSymbolCompTrials.json",
+		"assets/data/Trials/NumberlineTrials.json",
+		"assets/data/Trials/OrdTrials.json",
+		"assets/data/Trials/SymbolicCompTrials.json",
+		"assets/data/Trials/SpeedTrials.json",
+		"assets/data/Trials/OrdTrials_short.json"
 	];
 
 	/**

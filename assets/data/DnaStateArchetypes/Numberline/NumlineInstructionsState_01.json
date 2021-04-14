@@ -1,31 +1,46 @@
 {
-    "type": "SymbolicNumberComparisonInstructionsState",
+    "type": "NumlineInstructionsState_01",
     "objects": [
         {
             "type": "TaskBackgroundObject"
         },
-
-
         { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/OrdinalVerificationGroup.json" },
-        { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/FixationAndBlankSubstates.json" },
-        { "type": "SrtPlayerTextObject", "name":"Instructions_01", 
-            "text":"SymbNumCompInstructions_01",
-            "autostart":false,
-            "settings":{ "fontsize":32, "width":500 },
-            "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ]
-        },
-
+            "path": "assets/data/DnaObjectGroups/NumberlineGroup.json" },
         {
             "type": "DependentGroupObject",
             "conditions": [
                 { "condition": "desktop",
-                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"SymbNumCompInstructions_02_PC", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } },
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "CenterBottom" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
+                },
                 { "condition": "web",
-                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"SymbNumCompInstructions_02_PC", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } },
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "CenterBottom" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
+                },
                 { "condition": "android",
-                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"SymbNumCompInstructions_02_TOUCH", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } 
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "CenterBottom" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
+                }
+            ]
+        },
+        { "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/FixationAndBlankSubstates.json" },
+
+        { "type": "SrtPlayerTextObject", "name":"Instructions_01", 
+            "text":"NumlineInstructions_01",
+            "autostart":false,
+            "settings":{ "fontsize":32, "width":500 },
+            "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ]
+        },
+        
+
+        { "type": "DependentGroupObject", "conditions": [
+                { "condition": "desktop",
+                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"NumlineInstructions_02_PC", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } 
+                },
+                { "condition": "web",
+                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"NumlineInstructions_02_PC", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } 
+                },
+                
+                { "condition": "android",
+                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"OrdInstructions_02_TOUCH", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } 
                 }
                 
             ]
@@ -33,30 +48,15 @@
         {
             "type": "DependentGroupObject",
             "conditions": [
-                { "condition": "desktop",
-                    "obj": { "type":"TextObject", "name":"Instructions_03", "text":"SymbNumCompInstructions_03_PC", "autostart":false, "settings":{"char_per_sec":24}, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "TextPosition" }] } }, 
+               { "condition": "desktop",
+                    "obj": { "type":"TextObject", "name":"Instructions_03", "text":"SymbNumCompInstructions_03_TOUCH", "autostart":false, "settings":{"char_per_sec":24}, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "TextPosition" }] } }, 
                 { "condition": "web",
-                    "obj": { "type":"TextObject", "name":"Instructions_03", "text":"SymbNumCompInstructions_03_PC", "autostart":false, "settings":{"char_per_sec":24}, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "TextPosition" }] } }, 
+                    "obj": { "type":"TextObject", "name":"Instructions_03", "text":"SymbNumCompInstructions_03_TOUCH", "autostart":false, "settings":{"char_per_sec":24}, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "TextPosition" }] } }, 
         { "condition": "android",
                     "obj": { "type":"TextObject", "name":"Instructions_03", "text":"SymbNumCompInstructions_03_TOUCH", "autostart":false, "settings":{"char_per_sec":24}, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "TextPosition" }] } } 
             ]
         },
-        {
-            "type": "DependentGroupObject",
-            "conditions": [
-                { "condition": "desktop",
-                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] } ] }
-                },
-                { "condition": "web",
-                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] } ] }
-                },
-                { "condition": "android",
-                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
-                }
-            ]
-        },
-
-
+        
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_Setup",
@@ -67,6 +67,7 @@
                     "target":"",
                     "on_event":"onCreate"
                 },  
+                
                 {
                     "type": "ActionSetButtonStateComponent",
                     "targets": ["buttonAccept"],
@@ -74,15 +75,9 @@
                     "oneshot": false
                 },
                 {
-                    "type": "ActionSetButtonStateComponent",
-                    "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-                {
                     "type": "ActionAppearComponent",
-                    "target": "blank_overlay",
-                    "invert":false,
+                    "targets": ["AcceptButton"],
+                    "invert":true,
                     "oneshot": false
                 },
                 {

@@ -1,0 +1,16 @@
+﻿1
+00:00:00,000 --> 00:00:04,507
+Hallo und herzlich Willkommen zur Zahlenstrahlaufgabe!
+
+2
+00:00:04,607 --> 00:00:12,007
+In dieser Aufgabe sollst du verschiedene Zahlen auf einem Zahlenstrahl einzeichnen.
+
+3
+00:00:12,007 --> 00:00:16,007
+Du wirst zuerst ein Fixationskreuz sehen, danach erscheint der Zahlenstrahl.
+
+4
+00:00:16,107 --> 00:00:20,107
+Jetzt kommt ein kleines Beispiel wie das in etwa aussehen wird.
+

@@ -68,10 +68,12 @@
                     "tolerance":0.05,
                     "oneshot":false
                 },
+
                 {
                     "type": "ActionAddComponentComponent",
                     "target":"NumberlineObject",
                     "oneshot":false,
+                    "on_event": "TASK_INCORRECT",
                     "components":[{"type": "NumlineZoneComponent", "tol":0.05 }]
                 },
                 

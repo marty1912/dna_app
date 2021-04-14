@@ -145,6 +145,7 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 		this.m_num_max = params.max;
 		this.setupPositions();
 		this.updateLabelTexts();
+		this.updateGraphics();
 	}
 
 	/**

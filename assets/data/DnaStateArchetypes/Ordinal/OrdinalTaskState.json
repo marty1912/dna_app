@@ -1,7 +1,6 @@
 {
     "type": "OrdinalTaskState",
     "objects": [
-
         {
             "type": "TaskBackgroundObject"
         },
@@ -37,13 +36,7 @@
                 },
                 {
                     "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_LEFT",
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_RIGHT",
+                    "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
                     "state": "INACTIVE",
                     "oneshot": false
                 },
@@ -128,28 +121,10 @@
             "actions": [
                 {
                     "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_LEFT",
+                    "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
                     "state": "INACTIVE",
                     "on_event":"TrialHandler_all_fin",
                     "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_RIGHT",
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionPlaySoundComponent",
-                    "path":"NumberlineTaskDone",
-                    "oneshot":false,
-                    "from_locale":true
-                },
-                {
-                    "type": "ActionShowTextComponent",
-                    "target":"TaskDoneText",
-                    "on_event":"same",
-                    "oneshot":false
                 },
                 {
                     "type": "ActionFinishTaskComponent",

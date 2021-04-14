@@ -192,74 +192,75 @@ class DnaStateFactory
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/BlankTaskState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "OrdinalTaskState")
+		else if (type == "OrdinalTaskState")
 		{
 			state = new DnaState("OrdinalTaskState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdinalTaskState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "NonSymbolCompState")
+		else if (type == "NonSymbolCompState")
 		{
 			state = new DnaState("NonSymbolCompState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbolCompState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "OrdinalTaskPracticeState")
+		else if (type == "OrdinalTaskPracticeState")
 		{
 			state = new DnaState("OrdinalTaskPracticeState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdinalTaskPracticeState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "NonSymbolCompPracticeState")
+		else if (type == "NonSymbolCompPracticeState")
 		{
 			state = new DnaState("NonSymbolCompPracticeState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbolCompPracticeState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "SymbolicNumberComparisonPracticeState")
+		else if (type == "SymbolicNumberComparisonPracticeState")
 		{
 			state = new DnaState("SymbolicNumberComparisonPracticeState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbolicNumberComparisonPracticeState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "NumberlinePracticeStateAdult")
+		else if (type == "NumberlinePracticeStateAdult")
 		{
 			state = new DnaState("NumberlinePracticeStateAdult");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Numberline/NumberlinePracticeStateAdult.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "SymbNumCompInstructionsState_01")
+		else if (type == "SymbNumCompInstructionsState_01")
 		{
 			state = new DnaState("SymbNumCompInstructionsState_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbNumCompInstructionsState_01.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "SymbNumCompInstructionsState_02")
+		else if (type == "SymbNumCompInstructionsState_02")
 		{
 			state = new DnaState("SymbNumCompInstructionsState_02");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbNumCompInstructionsState_02.json");
 		}
-		// // AUTOMATICALLY GENERATED
+			// // AUTOMATICALLY GENERATED
 
-else if (type == "OrdinalTaskInsctuctionsState_01")
-		{
-			state = new DnaState("OrdinalTaskInsctuctionsState_01");
-			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdinalTaskInsctuctionsState_01.json");
-		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "NonSymbNumCompInstructionsState_01")
+		else if (type == "NonSymbNumCompInstructionsState_01")
 		{
 			state = new DnaState("NonSymbNumCompInstructionsState_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbNumCompInstructionsState_01.json");
+		}
+
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "OrdinalTaskInstructionsState_01")
+		{
+			state = new DnaState("OrdinalTaskInstructionsState_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdinalTaskInstructionsState_01.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NumlineInstructionsState_01")
+		{
+			state = new DnaState("NumlineInstructionsState_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Numberline/NumlineInstructionsState_01.json");
 		}
 		// INSERT_HERE
 		else
@@ -273,38 +274,6 @@ else if (type == "NonSymbNumCompInstructionsState_01")
 		return state;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

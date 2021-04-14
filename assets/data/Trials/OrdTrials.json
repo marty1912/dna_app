@@ -1,5 +1,15 @@
 [
 	{
+		"type": "OrdinalTaskInstructionsState_01",
+		"desc_head": "OrdTask_HEAD",
+		"desc_body": "OrdTask_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+			[{ "name": "TaskHandler", "params": { "triplet": "1-2-3", "solution": "IN_ORDER" } }, { "name": "TotalTime" }]
+		]
+	},
+	{
 		"type": "OrdinalTaskPracticeState",
         "name":"OrdinalTaskPractice",
 		"desc_head": "OrdTask_HEAD",
@@ -13,6 +23,16 @@
 			[{ "name": "TaskHandler", "params": { "triplet": "2-3-1", "solution": "MIXED_ORDER" } }, { "name": "TotalTime" }],
 			[{ "name": "TaskHandler", "params": { "triplet": "2-1-3", "solution": "MIXED_ORDER" } }, { "name": "TotalTime" }]
 			
+		]
+	},
+	{
+		"type": "SymbNumCompInstructionsState_02",
+		"desc_head": "SymbolicNumberComparison_HEAD",
+		"desc_body": "SymbolicNumberComparison_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+			[{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }]
 		]
 	},
 	{

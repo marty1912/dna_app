@@ -224,6 +224,7 @@ class ButtonStateInactive implements IState
 
 	public function enter():Void
 	{
+		trace(this.parent.id, "button inactive", this.parent.obj_name); // parent.button.alpha = 1;
 		user_comp = parent.getComponentByType("UserButtonComponent");
 		parent.removeComponentByType("UserButtonComponent");
 		keyboard_comp = parent.getComponentByType("KeyboardInputComponent");
@@ -291,7 +292,7 @@ class ButtonStatePressed implements IState
 
 	public function enter():Void
 	{
-		// parent.button.alpha = 1;
+		trace(this.parent.id, "button pressed", this.parent.obj_name); // parent.button.alpha = 1;
 		// on 0 we will have normal behavior
 		parent.animCtrl.frameIndex = 2;
 		// play sound on press

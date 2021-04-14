@@ -1,0 +1,32 @@
+﻿1
+00:00:00,000 --> 00:00:08,007
+Die Aufgabe besteht nun darin, zu entscheiden, ob die Sequenz geordnet, also auf- oder absteigend, oder ungeordnet, also weder auf- noch absteigend, ist.
+
+2
+00:00:08,007 --> 00:00:13,007
+Sobald du weißt, ob die Sequenz geordnet oder ungeordnet ist, drückst du einen der beiden Buttons.
+
+3
+00:00:13,107 --> 00:00:17,107
+Drücke den Button mit dem Häckchen, wenn die Sequenz geordnet ist.
+
+4
+00:00:17,207 --> 00:00:21,207
+Drücke den Button mit dem Kreuz, wenn die Sequenz ungeordnet ist.
+
+5
+00:00:21,207 --> 00:00:26,207
+Es sind sowohl die Geschwindigkeit als auch die Genauigkeit wichtig.
+
+6
+00:00:26,307 --> 00:00:29,807
+Arbeite also so schnell und genau wie möglich.
+
+7
+00:00:29,907 --> 00:00:33,407
+Es wird jetzt noch einige Übungsdurchgänge dazu geben.
+
+8
+00:00:33,507 --> 00:00:42,007
+Bitte halte dein Gerät in beiden Händen, sodass du den Bildschirm mit deinen Daumen gut erreichen kannst.
+

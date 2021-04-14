@@ -8,7 +8,7 @@ Wenn du weißt, welche Zahl größer ist, dann drückst du entweder die rechte, 
 
 3
 00:00:12,207 --> 00:00:17,207
-Es sind sowohl die Geschwindikeit als auch die Genauigkeit wichtig.
+Es sind sowohl die Geschwindigkeit als auch die Genauigkeit wichtig.
 
 4
 00:00:17,307 --> 00:00:20,807

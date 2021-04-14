@@ -34,6 +34,7 @@ class ActionCancelActionComponent implements DnaComponent extends DnaActionBase
 		// we give the json to the state as a string because the from file things take strings..
 		var target:ActionHandlerObject = cast getParent().getParent().getObjectByName(m_target_name);
 		// target.fromFile(componentJson);
+		trace("canceling actions now.---------------------------------");
 		target.abortRunningActions();
 
 		this.finishAction();

@@ -1,0 +1,32 @@
+﻿1
+00:00:00,000 --> 00:00:04,000
+Hier siehst du nun den Zahlenstrahl.
+
+2
+00:00:04,100 --> 00:00:09,100
+Es ist auf dem Zahlenstrahl jeweils die Länge einer Einheit angegeben.
+
+3
+00:00:09,200 --> 00:00:12,200
+Die Linie ganz links symbolisiert die 0.
+
+4
+00:00:12,300 --> 00:00:17,300
+Die gesuchte Zahl steht immer oben über dem Zahlenstrahl.
+
+5
+00:00:17,400 --> 00:00:23,400
+Diese sollst du nun einzeichnen indem du an der gewünschten Stelle mit der linken Maustaste klickst.
+
+6
+00:00:23,500 --> 00:00:28,500
+Hierbei geht es vor allem um die Genauigkeit. Es gibt aber auch ein Zeitlimit pro Durchgang.
+
+7
+00:00:28,600 --> 00:00:33,600
+Versuche also, die Werte so exakt wie möglich zu schätzen.
+
+8
+00:00:33,700 --> 00:00:38,700
+Dazu kommen jetzt einige Übungsaufgaben.
+

@@ -90,6 +90,20 @@
                 "target": ""
             }]
         },
+        {
+            "type": "SpriteObject",
+            "name": "TextPositionBot",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_x": 600,
+            "scale_y": 200,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterBottom",
+                "target": ""
+            }]
+        },
 
         {
             "type":"OrdinalTaskHandlerObject",
