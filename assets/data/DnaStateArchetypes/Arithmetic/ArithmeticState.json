@@ -77,7 +77,7 @@
             "actions": [{
                     "type": "ActionDelayComponent",
                     "name":"Task_time_clock",
-                    "delay":30,
+                    "delay":240,
                     "oneshot": false,
                     "on_event":"onCreate"
                 },

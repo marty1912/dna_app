@@ -10,6 +10,7 @@ class LocaleDE implements Locale
 	public final ERROR_NOT_FOUND:String = "STRING NOT FOUND IN LOCALE!!";
 	public final ERROR_INV_INPUT:String = "STRING KEY INVALID IN LOCALE!!";
 	public final translation_map:Map<String, String> = [
+"TaskDoneText_01" => ConfigFile.text("assets/text/de/TaskDoneText_01.json"),
 "NumlineInstructions_02_PC" => ConfigFile.text("assets/text/de/NumlineInstructions_02_PC.json"),
 "4" => ConfigFile.text("assets/text/de/4.txt"),
 "SymbNumCompInstructions_03_PC" => ConfigFile.text("assets/text/de/SymbNumCompInstructions_03_PC.txt"),
@@ -31,6 +32,7 @@ class LocaleDE implements Locale
 "SettingsState_LANG" => ConfigFile.text("assets/text/de/SettingsState_LANG.txt"),
 "NumberlineTutorial_04" => ConfigFile.text("assets/text/de/NumberlineTutorial_04.json"),
 "NonSymbNumCompInstructions_02_PC" => ConfigFile.text("assets/text/de/NonSymbNumCompInstructions_02_PC.json"),
+"ArithmeticInstructions_02_TOUCH" => ConfigFile.text("assets/text/de/ArithmeticInstructions_02_TOUCH.json"),
 "NumberlineTaskDone" => ConfigFile.text("assets/text/de/NumberlineTaskDone.json"),
 "IntroText_02" => ConfigFile.text("assets/text/de/IntroText_02.json"),
 "NewUnlock" => ConfigFile.text("assets/text/de/NewUnlock.json"),
@@ -43,6 +45,7 @@ class LocaleDE implements Locale
 "NumberlineTutorial_03" => ConfigFile.text("assets/text/de/NumberlineTutorial_03.json"),
 "0" => ConfigFile.text("assets/text/de/0.txt"),
 "ALL_TASKS_DONE_HEAD" => ConfigFile.text("assets/text/de/ALL_TASKS_DONE_HEAD.txt"),
+"TaskInstructions_continue_PC_return" => ConfigFile.text("assets/text/de/TaskInstructions_continue_PC_return.txt"),
 "NonSymbolicNumberComparison_HEAD" => ConfigFile.text("assets/text/de/NonSymbolicNumberComparison_HEAD.txt"),
 "ArithmeticState_BODY" => ConfigFile.text("assets/text/de/ArithmeticState_BODY.txt"),
 "NonSymbolicNumberComparison_BODY" => ConfigFile.text("assets/text/de/NonSymbolicNumberComparison_BODY.txt"),
@@ -71,6 +74,7 @@ class LocaleDE implements Locale
 "SpeedTest_BODY" => ConfigFile.text("assets/text/de/SpeedTest_BODY.txt"),
 "OrdInstructions_02_PC_right" => ConfigFile.text("assets/text/de/OrdInstructions_02_PC_right.json"),
 "CreditsArt" => ConfigFile.text("assets/text/de/CreditsArt.txt"),
+"ArithmeticInstructions_02_PC" => ConfigFile.text("assets/text/de/ArithmeticInstructions_02_PC.json"),
 "INFO_STATE_C_ART" => ConfigFile.text("assets/text/de/INFO_STATE_C_ART.txt"),
 "INFO_STATE_C_SOUND" => ConfigFile.text("assets/text/de/INFO_STATE_C_SOUND.txt"),
 "7" => ConfigFile.text("assets/text/de/7.txt"),
@@ -96,12 +100,15 @@ class LocaleDE implements Locale
 "FeedbackQuestion_Motivation" => ConfigFile.text("assets/text/de/FeedbackQuestion_Motivation.txt"),
 "MainMenuTutorial_04" => ConfigFile.text("assets/text/de/MainMenuTutorial_04.json"),
 "INFO_STATE_ID" => ConfigFile.text("assets/text/de/INFO_STATE_ID.txt"),
+"ArithmeticPracticeFinished_01" => ConfigFile.text("assets/text/de/ArithmeticPracticeFinished_01.json"),
 "OrdTask_BODY" => ConfigFile.text("assets/text/de/OrdTask_BODY.txt"),
+"ArithmeticInstructions_01" => ConfigFile.text("assets/text/de/ArithmeticInstructions_01.json"),
 "SHORTTASKS_BODY" => ConfigFile.text("assets/text/de/SHORTTASKS_BODY.txt"),
 "FeedbackRatingHard" => ConfigFile.text("assets/text/de/FeedbackRatingHard.txt"),
 "MainMenuTutorial_01" => ConfigFile.text("assets/text/de/MainMenuTutorial_01.json"),
 "SETTINGS_MENUPOINT_AUDIO" => ConfigFile.text("assets/text/de/SETTINGS_MENUPOINT_AUDIO.txt"),
 "MainMenu_HEAD" => ConfigFile.text("assets/text/de/MainMenu_HEAD.txt"),
+"TaskInstructions_continue_button" => ConfigFile.text("assets/text/de/TaskInstructions_continue_button.txt"),
 "9" => ConfigFile.text("assets/text/de/9.txt")
 ];
 

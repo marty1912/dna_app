@@ -97,10 +97,12 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject ext
 	{
 		var answer:String = getAnswer();
 		var solution:Int = getSolution();
-		if (answer == "")
-		{
-			return DnaConstants.TASK_TIMED_OUT_FEEDBACK;
-		}
+		/*
+			if (answer == "")
+			{
+				return DnaConstants.TASK_TIMED_OUT_FEEDBACK;
+			}
+		 */
 		if (Std.parseInt(answer) == solution)
 		{
 			return DnaConstants.TASK_CORRECT;

@@ -163,7 +163,30 @@ def genAdditionTrials(numbers=[2,3,4,5,6,7,8,9]):
 
     return trials
 
-def genAdditionTrials(numbers=[x for x in range(1,100)]):
+def genMultiplicationTrials(numbers = [2,3,4,5,6,7,8,9]):
+    trials = []
+    for num_1 in numbers:
+        for num_2 in numbers:
+            if(num_1 == num_2):
+                continue
+            solution = num_1*num_2
+            trials.append([num_1,num_2,solution])
+
+    return trials
+
+
+def genSubtractionTrials(numbers= [2,3,4,5,6,7,8,9]):
+    trials = genAdditionTrials(numbers)
+    for trial in trials:
+        # swap the solution with the first operant
+        print(trial)
+        temp = trial[0]
+        trial[0] = trial[2]
+        trial[2] = temp
+
+    return trials
+
+def genTypingTrials(numbers=[x for x in range(1,100)]):
     '''
     '''
     trials = []
@@ -215,8 +238,12 @@ def main():
         trials = genNumLineTrials()
     elif mode == "add":
         trials = genAdditionTrials()
+    elif mode == "sub":
+        trials = genSubtractionTrials()
+    elif mode == "mult":
+        trials = genMultiplicationTrials()
     elif mode == "speed":
-        trials = genAdditionTrials()
+        trials = genTypingTrials()
     elif mode == "nonsymb":
         trials = genNonSymbTrials()
 

@@ -28,7 +28,7 @@ class TaskTrials
 	private function new() {};
 
 	public final task_block_paths:Array<String> = [
-		"assets/data/Trials/AdditionTrials.json",
+		"assets/data/Trials/ArithmeticTrials.json",
 		"assets/data/Trials/NonSymbolCompTrials.json",
 		"assets/data/Trials/NumberlineTrials.json",
 		"assets/data/Trials/OrdTrials.json",

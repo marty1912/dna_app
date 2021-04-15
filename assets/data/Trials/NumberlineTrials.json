@@ -105,6 +105,7 @@
 
 		]
 	},
+	{ "name": "TaskDoneState", "type": "TaskDoneState", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "done": false, "saved": false, "trials": [ ] },
 	{
 		"type": "SAVE",
 		"done": false,

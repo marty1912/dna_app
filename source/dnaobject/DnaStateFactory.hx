@@ -262,6 +262,41 @@ else if (type == "NumlineInstructionsState_01")
 			state = new DnaState("NumlineInstructionsState_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Numberline/NumlineInstructionsState_01.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "ArithmeticInstructionsState_01")
+		{
+			state = new DnaState("ArithmeticInstructionsState_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/ArithmeticInstructionsState_01.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PracticeFinishedState_return")
+		{
+			state = new DnaState("PracticeFinishedState_return");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/PracticeFinishedState_return.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "ArithmeticPracticeFinishedState_return")
+		{
+			state = new DnaState("ArithmeticPracticeFinishedState_return");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/ArithmeticPracticeFinishedState_return.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "ArithmeticTaskFinished")
+		{
+			state = new DnaState("ArithmeticTaskFinished");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/ArithmeticTaskFinished.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "TaskDoneState")
+		{
+			state = new DnaState("TaskDoneState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/TaskDoneState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -274,6 +309,14 @@ else if (type == "NumlineInstructionsState_01")
 		return state;
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

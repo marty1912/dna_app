@@ -40,7 +40,7 @@
                 },
                 
                 { "condition": "android",
-                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"OrdInstructions_02_TOUCH", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } 
+                    "obj": { "type": "SrtPlayerTextObject", "name":"Instructions_02", "text":"NumlineInstructions_02_TOUCH", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] } 
                 }
                 
             ]

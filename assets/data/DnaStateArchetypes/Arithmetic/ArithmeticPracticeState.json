@@ -104,23 +104,10 @@
                     "state":"INACTIVE",
                     "oneshot":false
                 },
-                
                 {
                     "type": "ActionFireEventComponent",
                     "target": "",
                     "event_name":"KeyboardButtons_INACTIVE",
-                    "oneshot":false
-                },
-                {
-                    "type": "ActionPlaySoundComponent",
-                    "oneshot":false,
-                    "path":"NumberlinePracticeDone",
-                    "from_locale":true
-                },
-                {
-                    "type": "ActionShowTextComponent",
-                    "target":"PracticeDoneText",
-                    "on_event":"same",
                     "oneshot":false
                 },
                 {
