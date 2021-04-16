@@ -46,6 +46,12 @@ class ActionAppearComponent implements DnaComponent extends DnaActionBase
 		}
 	}
 
+	override public function onHaveParent()
+	{
+		doActionOnAllTargets();
+		this.finishAction();
+	}
+
 	/**
 	 * in this function we will make the object appear..
 	 * @param elapsed
@@ -54,7 +60,7 @@ class ActionAppearComponent implements DnaComponent extends DnaActionBase
 	{
 		// might look confusing at first.
 		// with the first getParent we get the object. and with the 2nd the state.
-		doActionOnAllTargets();
-		this.finishAction();
+		// doActionOnAllTargets();
+		// this.finishAction();
 	}
 }

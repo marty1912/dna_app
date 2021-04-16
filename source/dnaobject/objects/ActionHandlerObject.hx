@@ -54,6 +54,7 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 	 */
 	public function addAction(action:DnaActionBase)
 	{
+		trace("adding action", action.id, " on event:", action.on_event);
 		if (action.on_event == CODE_SEQUENTIAL)
 		{
 			assert(this.m_inactive_actions_queue.length != 0); // , "sequential actions need a predecessor!");
@@ -66,6 +67,7 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 			var last_element = this.m_inactive_actions_queue[m_inactive_actions_queue.length - 1];
 			action.on_event = last_element.on_event;
 		}
+		assert(action.on_event != action.getFinishedEventName());
 		this.getParent().eventManager.addSubscriberForEvent(this, action.on_event);
 
 		this.m_inactive_actions_queue.push(action);
@@ -91,6 +93,8 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 		super.fromFile(jsonFile);
 	};
 
+	static var calls = 0;
+
 	/**
 	 * this is called whenever an event that is part of our inactive actions list is called..
 	 * @param event_key
@@ -98,19 +102,28 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 	public function getNotified(event_key:String):Void
 	{
 		var index = 0;
+		// step 1 find firing actoins
+		var firing_actions:Array<DnaActionBase> = new Array<DnaActionBase>();
 		while (index < this.m_inactive_actions_queue.length)
 		{
 			var action = m_inactive_actions_queue[index];
 
+			assert(action.on_event != action.getFinishedEventName());
 			if (action.on_event == event_key)
 			{
-				this.addComponent(cast(action));
-				m_inactive_actions_queue.remove(action);
-				index--;
+				firing_actions.push(action);
 			}
 			index++;
 		}
 
-		// we have two loops because some actions might fire on the same events..
+		// step 2 fire.
+		index = 0;
+		while (index < firing_actions.length)
+		{
+			var action = firing_actions[index];
+			m_inactive_actions_queue.remove(action);
+			this.addComponent(cast(action));
+			index++;
+		}
 	}
 }

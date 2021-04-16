@@ -73,14 +73,22 @@ class ActionSetButtonStateComponent implements DnaComponent extends DnaActionBas
 	}
 
 	/**
+	 * we use this function so everything happens immediately and without delay like in the update loop.
+	 */
+	override public function onHaveParent()
+	{
+		doActionOnAllTargets();
+		this.finishAction();
+	}
+
+	/**
 	 * in this function we will make the object appear..
 	 * @param elapsed
 	 */
 	override public function update(elapsed:Float)
 	{
-		doActionOnAllTargets();
-
-		this.finishAction();
+		// doActionOnAllTargets();
+		// this.finishAction();
 	}
 
 	/**

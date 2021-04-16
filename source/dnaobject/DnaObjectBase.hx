@@ -268,28 +268,12 @@ class DnaObjectBase implements IFlxDestroyable
 	 */
 	public function removeComponent(component_id:Int):Void
 	{
-		if (component_id == 212)
-		{
-			trace(component_id, "will be removed now");
-			for (comp in m_component_list)
-			{
-				trace(comp.id);
-			}
-		}
 		for (component in this.m_component_list)
 		{
 			if (component.id == component_id)
 			{
 				component.setParent(null);
 				this.m_component_list.remove(component);
-				if (component_id == 212)
-				{
-					trace(component_id, "has been removed now");
-					for (comp in m_component_list)
-					{
-						trace(comp.id);
-					}
-				}
 				return;
 			}
 		}

@@ -35,11 +35,16 @@ class ActionFireEventComponent implements DnaComponent extends DnaActionBase
 	public var jsonFile:Dynamic;
 
 	/**
-	 * in here we will set the slider position and make it visible (if not the case)
+	 * we might do stuff here to speed everything up as we do not have to wait for the next update
 	 */
-	override public function update(elapsed:Float)
+	override public function onHaveParent()
 	{
 		this.getParent().getParent().eventManager.broadcastEvent(event_name);
 		this.finishAction();
 	}
+
+	/**
+	 * in here we will set the slider position and make it visible (if not the case)
+	 */
+	override public function update(elapsed:Float) {}
 }
