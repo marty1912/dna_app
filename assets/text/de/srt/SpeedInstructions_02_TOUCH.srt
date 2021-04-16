@@ -1,0 +1,32 @@
+﻿1
+00:00:00,000 --> 00:00:04,507
+Die Zahl, die du abtippen sollst siehst du auf der linken Seite.
+
+2
+00:00:04,607 --> 00:00:09,607
+Du kannst mit der Tastatur unten am Bildschirm die Zahl eingeben.
+
+3
+00:00:09,707 --> 00:00:14,707
+Du kannst deine Eingabe bestätigen indem du auf das Häckchen drückst.
+
+4
+00:00:14,807 --> 00:00:19,807
+Falls du dich vertippt hast, kannst du das mit dem Pfeil auf der rechten Seite wieder ausbessern.
+
+5
+00:00:19,907 --> 00:00:24,907
+Du sollst nun innerhalb von 4 Minuten so viele Zahlen wie möglich tippen.
+
+6
+00:00:24,907 --> 00:00:29,907
+Dazu wird es nur diese eine Übungsaufgabe geben.
+
+7
+00:00:30,007 --> 00:00:35,007
+Bitte nimm dein Gerät in beide Hände, sodass du den Bildschirm mit den Daumen gut erreichen kannst.
+
+8
+00:00:35,007 --> 00:00:40,007
+Sobald dieser Text verschwunden ist, kannst du deine Lösung eingeben.
+

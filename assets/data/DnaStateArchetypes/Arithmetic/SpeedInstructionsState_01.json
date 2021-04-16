@@ -1,0 +1,347 @@
+{
+  "type": "SpeedInstructionsState_01",
+  "objects": [
+    {
+      "type": "TaskBackgroundObject"
+    },
+    {
+      "type": "DependentGroupObject",
+      "conditions": [
+        {
+          "condition": "web",
+          "obj": {
+            "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/KeyboardGroupPC.json"
+          }
+        },
+        {
+          "condition": "android",
+          "obj": {
+            "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/KeyboardGroup.json"
+          }
+        },
+        {
+          "condition": "desktop",
+          "obj": {
+            "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/KeyboardGroupPC.json"
+          }
+        }
+      ]
+    },
+    {
+      "type": "OBJECT_GROUP",
+      "path": "assets/data/DnaObjectGroups/ArithmeticGroup.json"
+    },
+    {
+      "type": "DependentGroupObject",
+      "conditions": [
+        {
+          "condition": "desktop",
+          "obj": {
+            "type": "EmptyButtonObject",
+            "path": "assets/gui_elements/buttonInvisible.png",
+            "name": "buttonAccept",
+            "components": [
+              {
+                "type": "PositionComponent",
+                "position": "CenterBottom"
+              },
+              {
+                "type": "CmdEvtTrigComponent",
+                "event_name": "INSTRUCTIONS_READ"
+              },
+              {
+                "type": "KeyboardInputComponent",
+                "keys": [
+                  "ENTER"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "condition": "web",
+          "obj": {
+            "type": "EmptyButtonObject",
+            "path": "assets/gui_elements/buttonInvisible.png",
+            "name": "buttonAccept",
+            "components": [
+              {
+                "type": "PositionComponent",
+                "position": "CenterBottom"
+              },
+              {
+                "type": "CmdEvtTrigComponent",
+                "event_name": "INSTRUCTIONS_READ"
+              },
+              {
+                "type": "KeyboardInputComponent",
+                "keys": [
+                  "ENTER"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "condition": "android",
+          "obj": {
+            "type": "EmptyButtonObject",
+            "path": "assets/gui_elements/buttonAccept.png",
+            "name": "buttonAccept",
+            "components": [
+              {
+                "type": "PositionComponent",
+                "position": "CenterBottom"
+              },
+              {
+                "type": "CmdEvtTrigComponent",
+                "event_name": "INSTRUCTIONS_READ"
+              },
+              {
+                "type": "UserButtonComponent"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "OBJECT_GROUP",
+      "path": "assets/data/DnaObjectGroups/FixationAndBlankSubstates.json"
+    },
+    {
+      "type": "SrtPlayerTextObject",
+      "name": "Instructions_01",
+      "text": "SpeedInstructions_01",
+      "autostart": false,
+      "settings": {
+        "fontsize": 32,
+        "width": 500
+      },
+      "components": [
+        {
+          "type": "PositionComponent",
+          "oneshot": false,
+          "position": "Center",
+          "target": "TextPosition"
+        }
+      ]
+    },
+    {
+      "type": "DependentGroupObject",
+      "conditions": [
+        {
+          "condition": "desktop",
+          "obj": {
+            "type": "SrtPlayerTextObject",
+            "name": "Instructions_02",
+            "text": "SpeedInstructions_02_PC",
+            "autostart": false,
+            "settings": {
+              "fontsize": 32,
+              "width": 500
+            },
+            "components": [
+              {
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "TextPosition"
+              }
+            ]
+          }
+        },
+        {
+          "condition": "web",
+          "obj": {
+            "type": "SrtPlayerTextObject",
+            "name": "Instructions_02",
+            "text": "SpeedInstructions_02_PC",
+            "autostart": false,
+            "settings": {
+              "fontsize": 32,
+              "width": 500
+            },
+            "components": [
+              {
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "TextPosition"
+              }
+            ]
+          }
+        },
+        {
+          "condition": "android",
+          "obj": {
+            "type": "SrtPlayerTextObject",
+            "name": "Instructions_02",
+            "text": "SpeedInstructions_02_TOUCH",
+            "autostart": false,
+            "settings": {
+              "fontsize": 32,
+              "width": 500
+            },
+            "components": [
+              {
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "TextPosition"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "DependentGroupObject",
+      "conditions": [
+        {
+          "condition": "desktop",
+          "obj": {
+            "type": "TextObject",
+            "name": "Instructions_03",
+            "text": "TaskInstructions_continue_PC_return",
+            "autostart": false,
+            "settings": {
+              "char_per_sec": 24
+            },
+            "components": [
+              {
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "TextPosition"
+              }
+            ]
+          }
+        },
+        {
+          "condition": "web",
+          "obj": {
+            "type": "TextObject",
+            "name": "Instructions_03",
+            "text": "TaskInstructions_continue_PC_return",
+            "autostart": false,
+            "settings": {
+              "char_per_sec": 24
+            },
+            "components": [
+              {
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "TextPosition"
+              }
+            ]
+          }
+        },
+        {
+          "condition": "android",
+          "obj": {
+            "type": "TextObject",
+            "name": "Instructions_03",
+            "text": "SymbNumCompInstructions_03_TOUCH",
+            "autostart": false,
+            "settings": {
+              "char_per_sec": 24
+            },
+            "components": [
+              {
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "Center",
+                "target": "TextPosition"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "type": "ActionHandlerObject",
+      "name": "ActionHandler_Setup",
+      "actions": [
+        {
+          "type": "ActionLoadTrialComponent",
+          "oneshot": false,
+          "target": "",
+          "on_event": "onCreate"
+        },
+        {
+          "type": "ActionSetButtonStateComponent",
+          "targets": [
+            "buttonAccept"
+          ],
+          "state": "INACTIVE",
+          "oneshot": false
+        },
+        {
+          "type": "ActionAppearComponent",
+          "targets": [
+            "AcceptButton"
+          ],
+          "invert": true,
+          "oneshot": false
+        },
+        {
+          "type": "ActionAppearComponent",
+          "target": "blank_overlay",
+          "invert": false,
+          "oneshot": false
+        },
+        {
+          "type": "ActionShowTextComponent",
+          "target": "Instructions_01",
+          "oneshot": false
+        },
+        {
+          "type": "ActionAppearComponent",
+          "target": "blank_overlay",
+          "invert": true,
+          "oneshot": false
+        },
+        {
+          "type": "ActionDelayComponent",
+          "delay": 2,
+          "oneshot": false
+        },
+        {
+          "type": "ActionShowTextComponent",
+          "target": "Instructions_02",
+          "oneshot": false
+        },
+        {
+          "type": "ActionFireEventComponent",
+          "event_name": "INSTRUCTIONS_READ",
+          "oneshot": false
+        }
+      ]
+    },
+    {
+      "type": "ActionHandlerObject",
+      "name": "ActionHandler_Finish",
+      "actions": [
+        {
+          "type": "ActionFinishTaskComponent",
+          "on_event": "INSTRUCTIONS_READ",
+          "target": ""
+        },
+        {
+          "type": "ActionStateSwitchComponent",
+          "target": "",
+          "next_state": "NEXT_TASK"
+        }
+      ]
+    },
+    {
+      "type": "TrialHandlerObject",
+      "reload_on_fin": false
+    }
+  ]
+}

@@ -1,4 +1,45 @@
 [	
+{
+    "type": "SpeedInstructionsState_01",
+		"desc_head": "SpeedTest_HEAD",
+		"desc_body": "SpeedTest_BODY",
+    "done": false,
+    "saved": false,
+    "trials": [
+      [
+        {
+          "name": "ArithmeticHandler",
+          "params": {
+            "problem": "67         ",
+            "solution": 67
+          }
+        },
+        {
+          "name": "TotalTime"
+        }
+      ]
+    ]
+  },
+    {
+            "type": "ArithmeticPracticeState",
+        "name":"SpeedTest",
+		"desc_head": "SpeedTest_HEAD",
+		"desc_body": "SpeedTest_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+           [{ "name": "ArithmeticHandler", "params": { "problem": "67         ", "solution": 67} }, { "name": "TotalTime" }]
+					]
+	},
+{
+    "type": "ArithmeticPracticeFinishedState_return",
+    "desc_head": "SymbolicNumberComparison_HEAD",
+    "desc_body": "SymbolicNumberComparison_BODY",
+    "done": false,
+    "saved": false,
+    "trials": [
+      [ { "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2, "distance": 1 } }, { "name": "TotalTime" } ] ] },
+
 	{
 		"type": "ArithmeticState",
         "name":"SpeedTest",
@@ -110,6 +151,8 @@
 	
 					]
 	},
+
+    { "name": "TaskDoneState", "type": "TaskDoneState", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "done": false, "saved": false, "trials": [ ] }, 
     {
 		"type": "SAVE",
 		"done": false,

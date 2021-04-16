@@ -4,6 +4,7 @@ import json
 import shutil
 import os
 import subprocess
+import random
 import time
 
 
@@ -148,19 +149,57 @@ def genNumLineTrials(ranges=[x for x in range(32,64+1,6)],targets=[x for x in ra
 
     return trials
 
+
+def getPossibleMatchings(numbers_left=[2,3,4,5,6,7,8,9],numbers_right=[2,3,4,5,6,7,8,9]):
+    matchings = []
+    for num_1 in numbers_left:
+        for num_2 in numbers_right:
+            matchings.append([num_1,num_2])
+    return matchings
+
+
+
+
 def genAdditionTrials(numbers=[2,3,4,5,6,7,8,9]):
     '''
     '''
     trials = []
 
-    for num_1 in numbers:
-        for num_2 in numbers:
-            if(num_1 == num_2):
-                continue
+    # single digit numbers
+    matchings = getPossibleMatchings(numbers_left=numbers,numbers_right=numbers)
+    for match in matchings:
+        solution = match[0]+match[1]
+        trials.append([match[0],match[1],solution])
+    
 
-            solution = num_1+num_2
-            trials.append([num_1,num_2,solution])
+    two_digit_trials = []
+    matchings = getPossibleMatchings(numbers_left=[i for i in range(10,100)],numbers_right=[i for i in range(10,100)])
+    for match in matchings:
+        solution = match[0]+match[1]
+        two_digit_trials.append([match[0],match[1],solution])
 
+    # solution must be 2 digits also 
+    two_digit_trials = [i for i in two_digit_trials if not i[2] >= 100]
+
+    # only with "zehnerübergang"
+    two_digit_trials = [i for i in two_digit_trials if ((i[0]%10) + (i[1]%10))>10]
+
+    # ignore stuff with the same last digit (66+36,...)
+    two_digit_trials = [i for i in two_digit_trials if not (i[0]%10) == (i[1]%10)]
+
+    # ignore numbers with same digits (55,66,...) 
+    two_digit_trials = [i for i in two_digit_trials if not (((i[0]%10) == ((i[0]//10)%10)) or ((i[1]%10) == ((i[1]//10)%10)) or ((i[2]%10) == ((i[2]//10)%10)))]
+
+    print("len two digits.",len(two_digit_trials))
+    n_two_digits = 60
+    two_digit_trials = random.sample(two_digit_trials,n_two_digits)
+
+    
+
+    # no same operants
+    trials = [i for i in trials if not i[0] == i[1]]
+
+    trials = trials + two_digit_trials
     return trials
 
 def genMultiplicationTrials(numbers = [2,3,4,5,6,7,8,9]):
@@ -172,7 +211,24 @@ def genMultiplicationTrials(numbers = [2,3,4,5,6,7,8,9]):
             solution = num_1*num_2
             trials.append([num_1,num_2,solution])
 
-    return trials
+    two_digit_trials = getPossibleMatchings(numbers_left=[i for i in range(12,100)],numbers_right=[i for i in range(3,10)])
+    for numbers in two_digit_trials:
+        # add the mult result.
+        numbers.append(numbers[0]*numbers[1])
+
+
+    #two_digit_trials = [i for i in two_digit_trials if not (i[0] == i[1])]
+    two_digit_trials = [i for i in two_digit_trials if (i[2] < 100)]
+    #two_digit_trials = [i for i in two_digit_trials if not (((i[0]%10) == ((i[0]//10)%10)) or ((i[1]%10) == ((i[1]//10)%10)) or ((i[2]%10) == ((i[2]//10)%10)))]
+
+    print("len two digits.",len(two_digit_trials))
+
+    #n_two_digits = 60
+    #two_digit_trials = random.sample(two_digit_trials,n_two_digits)
+
+    
+
+    return trials + two_digit_trials
 
 
 def genSubtractionTrials(numbers= [2,3,4,5,6,7,8,9]):
@@ -229,6 +285,8 @@ def main():
         quit()
 
 
+    # in order to get replicable results we use a random seed
+    #random.seed(42)
     mode = sys.argv[1]
     if(mode == "symb"):
         trials = genSymbolicNumberCompareTrials()

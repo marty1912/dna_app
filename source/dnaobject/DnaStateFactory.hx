@@ -297,6 +297,13 @@ else if (type == "TaskDoneState")
 			state = new DnaState("TaskDoneState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/TaskDoneState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SpeedInstructionsState_01")
+		{
+			state = new DnaState("SpeedInstructionsState_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/SpeedInstructionsState_01.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -309,6 +316,7 @@ else if (type == "TaskDoneState")
 		return state;
 	}
 }
+
 
 
 
