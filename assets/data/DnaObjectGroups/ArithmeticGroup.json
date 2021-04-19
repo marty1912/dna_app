@@ -87,6 +87,7 @@
             "settings": {
                 "char_per_sec": 500,
                 "width": 400,
+                "color": "0xFFFF4D",
                 "fontsize": 124
             },
             "components": [{

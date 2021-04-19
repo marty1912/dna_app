@@ -5,5 +5,5 @@ package dnaEvent;
  */
 interface DnaEventSubscriber
 {
-	function getNotified(event_key:String):Void;
+	public function getNotified(event_key:String, params:Any = null):Void;
 }

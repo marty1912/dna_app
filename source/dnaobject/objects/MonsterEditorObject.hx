@@ -218,7 +218,7 @@ class MonsterEditorObject implements DnaObject implements DnaEventSubscriber ext
 	 * this is the function that gets called everytime an event we subscribed for is fired
 	 * @param event_name
 	 */
-	public function getNotified(event_name:String)
+	public function getNotified(event_name:String, params:Any = null)
 	{
 		trace("MonsterEditor got notified:", event_name);
 

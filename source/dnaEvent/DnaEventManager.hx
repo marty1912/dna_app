@@ -85,9 +85,9 @@ class DnaEventManager
 	 * this function notifies all subscribers of the event
 	 * @param event_name - the name of the event
 	 */
-	public function broadcastEvent(event_name:String)
+	public function broadcastEvent(event_name:String, params:Any = null)
 	{
-		trace("event fired:", event_name);
+		trace("event fired:", event_name, " - params:", params);
 		assert(event_name != null);
 
 		var subscribers:Array<DnaEventSubscriber> = event_subscribers.get(event_name);
@@ -98,7 +98,7 @@ class DnaEventManager
 
 		for (sub in subscribers)
 		{
-			sub.getNotified(event_name);
+			sub.getNotified(event_name, params);
 		}
 	}
 

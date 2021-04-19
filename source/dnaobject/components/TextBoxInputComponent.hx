@@ -20,7 +20,7 @@ class TextBoxInputComponent implements DnaComponent implements DnaEventSubscribe
 	 * with that we will write to the answer textbox.
 	 * @param event_name
 	 */
-	public function getNotified(event_name:String)
+	public function getNotified(event_name:String, params:Any = null)
 	{
 		if (event_name.indexOf(DnaEventManager.KEY_EVENT_PREFIX) == -1)
 		{

@@ -187,7 +187,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 * this is the function that gets called everytime an event we subscribed for is fired
 	 * @param event_name
 	 */
-	public function getNotified(event_name:String)
+	public function getNotified(event_name:String, params:Any = null)
 	{
 		if (this.trials == null)
 		{

@@ -77,6 +77,7 @@
             "actions": [{
                     "type": "ActionDelayComponent",
                     "name":"Task_time_clock",
+                    "update_event_name":"timer_update",
                     "delay":240,
                     "oneshot": false,
                     "on_event":"onCreate"
@@ -96,6 +97,7 @@
                 },
                 {
                     "type": "ActionFinishTaskComponent",
+
                     "target": ""
                 },
                 {
@@ -103,6 +105,30 @@
                     "target": "",
                     "next_state": "NEXT_TASK"
                 }
+            ]
+        },
+        {
+            "type": "StaticTextObject",
+            "name": "TimerDisplay",
+            "use_literal_text": true,
+            "text": "test",
+            "autostart": true,
+            "settings": {
+                "char_per_sec": 500,
+                "width": 600,
+                "fontsize": 24
+            },
+            "components": [
+                {
+                    "type": "PositionComponent",
+                    "oneshot": false,
+                    "position": "RightTop"
+                },
+                {
+                    "type": "DisplayTimeComponent",
+                    "timer_event_name":"timer_update"
+                }
+
             ]
         },
 

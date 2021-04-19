@@ -11,11 +11,14 @@ class ActionDelayComponent implements DnaComponent extends DnaActionBase
 	public function new()
 	{
 		super("ActionDelayComponent");
+		this.update_event_name = this.id + "_update";
 	}
 
 	private var m_elapsed_time:Float = 0;
 
 	public var m_delay_time:Float;
+
+	public var update_event_name:String;
 
 	/**
 	 * in here we read our params from a file..
@@ -27,6 +30,11 @@ class ActionDelayComponent implements DnaComponent extends DnaActionBase
 		{
 			this.m_delay_time = jsonFile.delay;
 		}
+		if (Reflect.hasField(jsonFile, "update_event_name"))
+		{
+			this.update_event_name = jsonFile.update_event_name;
+		}
+
 		super.fromFile(jsonFile);
 	}
 
@@ -46,6 +54,12 @@ class ActionDelayComponent implements DnaComponent extends DnaActionBase
 	override public function update(elapsed:Float)
 	{
 		this.m_elapsed_time += elapsed;
+		// emit event with parameters to use for example for displaying the time.
+		var params = new Array<Float>();
+		params.push(this.m_elapsed_time);
+		params.push(this.m_delay_time);
+		this.getParent().getParent().eventManager.broadcastEvent(this.update_event_name, params);
+
 		if (this.m_delay_time <= this.m_elapsed_time)
 		{
 			// reset time.

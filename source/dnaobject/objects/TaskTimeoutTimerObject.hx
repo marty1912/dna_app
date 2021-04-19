@@ -42,7 +42,7 @@ class TaskTimeoutTimerObject implements DnaObject implements DnaEventSubscriber 
 	 * in this function we obtain our answer (which number has been selected?)
 	 * @param event_name 
 	 */
-	public function getNotified(event_name:String)
+	public function getNotified(event_name:String, params:Any = null)
 	{
 		if (event_name == DnaConstants.EVT_START_TRIAL_TIME)
 		{

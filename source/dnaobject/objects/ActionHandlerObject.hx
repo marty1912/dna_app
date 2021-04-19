@@ -99,7 +99,7 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 	 * this is called whenever an event that is part of our inactive actions list is called..
 	 * @param event_key
 	 */
-	public function getNotified(event_key:String):Void
+	public function getNotified(event_key:String, params:Any = null):Void
 	{
 		var index = 0;
 		// step 1 find firing actoins

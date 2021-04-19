@@ -37,7 +37,7 @@ class OrdinalTaskHandlerObject implements DnaObject implements TaskObject implem
 	 * in this function we obtain our answer (which number has been selected?)
 	 * @param event_name 
 	 */
-	public function getNotified(event_name:String)
+	public function getNotified(event_name:String, params:Any = null)
 	{
 		if (event_name == EVT_ANSWER_IN_ORDER)
 		{

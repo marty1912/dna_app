@@ -34,7 +34,7 @@ class DnaEvent implements DnaEventSubscriber
 	 *
 	 * @param event_name - name of the event
 	 */
-	public function getNotified(event_name:String)
+	public function getNotified(event_name:String, params:Any = null):Void
 	{
 		this.eventTriggered(event_name);
 	}
@@ -71,7 +71,7 @@ class DnaEvent implements DnaEventSubscriber
 	 * after going through all our preqisites it triggers this event
 	 * @param event_name - the event that just triggered
 	 */
-	public function eventTriggered(event_name:String)
+	public function eventTriggered(event_name:String, params:Any = null)
 	{
 		var is_prequisite:Bool = false;
 
@@ -85,7 +85,7 @@ class DnaEvent implements DnaEventSubscriber
 		}
 		if (prequisite_events.length == 0)
 		{
-			eventManager.broadcastEvent(this.name);
+			eventManager.broadcastEvent(this.name, params);
 		}
 	}
 }

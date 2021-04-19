@@ -27,7 +27,7 @@ class ActionCheckTaskComponent implements DnaComponent implements DnaEventSubscr
 	 * in here we will get notified for a timeout.
 	 * @param event_name 
 	 */
-	public function getNotified(event_name:String)
+	public function getNotified(event_name:String, params:Any = null)
 	{
 		trace("got notified:", event_name);
 		if (event_name == DnaConstants.EVT_TASK_TIMEOUT)

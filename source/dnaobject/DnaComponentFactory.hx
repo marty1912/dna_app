@@ -323,6 +323,14 @@ else if (type == 'ActionSaveDataComponent')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSaveDataComponent.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'DisplayTimeComponent')
+{
+	comp = new DisplayTimeComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/DisplayTimeComponent.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -334,6 +342,7 @@ else if (type == 'ActionSaveDataComponent')
 		return comp;
 	}
 }
+
 
 
 

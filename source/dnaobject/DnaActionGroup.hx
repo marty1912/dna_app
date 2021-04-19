@@ -19,7 +19,7 @@ class DnaActionGroup implements DnaComponent implements DnaEventSubscriber exten
 	 * getNotified() - we will register for the event where the last action is done..
 	 * @param event_name 
 	 */
-	public function getNotified(event_name:String):Void
+	public function getNotified(event_name:String, params:Any = null):Void
 	{
 		this.first = true;
 		this.getParent().getParent().removeObject(action_handler.id);

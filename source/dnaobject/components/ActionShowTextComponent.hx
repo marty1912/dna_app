@@ -27,7 +27,7 @@ class ActionShowTextComponent implements DnaComponent implements DnaEventSubscri
 	 * getNotified on the event for the finished text box
 	 * @param event_name
 	 */
-	public function getNotified(event_name:String)
+	public function getNotified(event_name:String, params:Any = null)
 	{
 		this.first = true;
 		this.finishAction();
