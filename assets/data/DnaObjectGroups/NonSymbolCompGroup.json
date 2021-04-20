@@ -19,7 +19,7 @@
 
         {
             "type": "SpriteObject",
-            "name": "LeftNumPosition",
+            "name": "LeftScreenhalf",
             "asset_path": "INVISIBLE_BOX",
             "scale_from_screen_width": true,
             "scale_x": 0.5,
@@ -34,7 +34,7 @@
         },
         {
             "type": "SpriteObject",
-            "name": "RightNumPosition",
+            "name": "RightScreenhalf",
             "asset_path": "INVISIBLE_BOX",
             "scale_from_screen_width": true,
             "scale_x": 0.5,
@@ -45,6 +45,36 @@
                 "oneshot": true,
                 "position": "RightCenter",
                 "target": ""
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "LeftNumPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_from_screen_width": true,
+            "scale_x": 0.3,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "RightCenter",
+                "target": "LeftScreenhalf"
+            }]
+        },
+        {
+            "type": "SpriteObject",
+            "name": "RightNumPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_from_screen_width": true,
+            "scale_x": 0.3,
+            "scale_y": 400,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "LeftCenter",
+                "target": "RightScreenhalf"
             }]
         },
         {

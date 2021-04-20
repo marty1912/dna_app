@@ -84,7 +84,7 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject ext
 	public function setParams(params:Dynamic):Void
 	{
 		var problem_textbox:ITextBox = cast this.getParent().getObjectByName(target_problem);
-		problem_textbox.setText(params.problem, true);
+		problem_textbox.setText(params.problem, this.use_literal_text);
 		solution = params.solution;
 		var answer_textbox:ITextBox = cast this.getParent().getObjectByName(target_answer);
 		answer_textbox.setText("", true);
@@ -123,6 +123,7 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject ext
 
 	public var target_problem:String;
 	public var target_answer:String;
+	public var use_literal_text:Bool = true;
 
 	/**
 		* fromFile()
@@ -140,6 +141,10 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject ext
 		if (Reflect.hasField(jsonFile, "target_answer"))
 		{
 			this.target_answer = jsonFile.target_answer;
+		}
+		if (Reflect.hasField(jsonFile, "use_literal_text"))
+		{
+			this.use_literal_text = jsonFile.use_literal_text;
 		}
 		super.fromFile(jsonFile);
 		return;
