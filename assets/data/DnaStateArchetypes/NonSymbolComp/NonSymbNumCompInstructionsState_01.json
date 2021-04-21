@@ -50,7 +50,7 @@
                     "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] } ] }
                 },
                 { "condition": "android",
-                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "Center" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
                 }
             ]
         },
@@ -72,6 +72,7 @@
                     "state": "INACTIVE",
                     "oneshot": false
                 },
+                { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":true, "oneshot": false },
                 {
                     "type": "ActionSetButtonStateComponent",
                     "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
@@ -145,6 +146,7 @@
                     "target":"Instructions_03",
                     "oneshot":false
                 },
+                { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":false, "oneshot": false },
                 {
                     "type": "ActionSetButtonStateComponent",
                     "targets": ["buttonAccept"],

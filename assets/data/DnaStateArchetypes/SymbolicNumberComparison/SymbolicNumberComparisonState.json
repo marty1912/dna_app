@@ -26,25 +26,15 @@
                     "oneshot":false,
                     "on_event": "EVT_TASK_ANSWERED"
                 },
-                {
-                    "type": "ActionFireEventComponent",
-                    "oneshot":false,
-                    "event_name":"test_EVENT01"
-                },
-                {
+                { "type": "ActionFireEventComponent", "oneshot":false, "event_name":"test_EVENT01" },
+            {
                     "type": "ActionCheckTaskComponent",
                     "oneshot":false,
                     "target":"TaskHandler"
                 },
                 {
                     "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_LEFT",
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_RIGHT",
+                    "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
                     "state": "INACTIVE",
                     "oneshot": false
                 },
@@ -55,6 +45,7 @@
                     "oneshot": false
                 },
 
+            { "type": "ActionFireEventComponent", "oneshot":false, "event_name":"test_before_stateswitch" },
                 {
                     "type": "ActionSwitchToSubStateComponent",
                     "target":"blank",
@@ -62,6 +53,7 @@
                     "duration_min":1000,
                     "duration_max":2000
                 },
+            { "type": "ActionFireEventComponent", "oneshot":false, "event_name":"test_after_stateswitch" },
                 {
                     "type": "ActionLoadTrialComponent",
                     "oneshot":false,
@@ -83,13 +75,7 @@
                 },  
                 {
                     "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_LEFT",
-                    "state": "NORMAL",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_RIGHT",
+                    "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
                     "state": "NORMAL",
                     "oneshot": false
                 },

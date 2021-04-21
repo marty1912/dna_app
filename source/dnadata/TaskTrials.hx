@@ -27,16 +27,18 @@ class TaskTrials
 	 */
 	private function new() {};
 
-	public final task_block_paths:Array<String> = [
-		"assets/data/Trials/ArithmeticTrials.json",
-		"assets/data/Trials/NonSymbolCompTrials.json",
-		"assets/data/Trials/NumberlineTrials.json",
-		"assets/data/Trials/OrdTrials.json",
-		"assets/data/Trials/SymbolicCompTrials.json",
-		"assets/data/Trials/SpeedTrials.json",
-		"assets/data/Trials/ProbCode.json"
-	];
+	public final task_block_paths:Array<String> = ["assets/data/Trials/testTrials.json"];
 
+	/*
+			"assets/data/Trials/ArithmeticTrials.json",
+			"assets/data/Trials/NonSymbolCompTrials.json",
+			"assets/data/Trials/NumberlineTrials.json",
+			"assets/data/Trials/OrdTrials.json",
+			"assets/data/Trials/SymbolicCompTrials.json",
+			"assets/data/Trials/SpeedTrials.json",
+			"assets/data/Trials/ProbCode.json"
+		];
+	 */
 	/**
 	 * this function returns all the trials in random order as a Dynamic .
 	 */

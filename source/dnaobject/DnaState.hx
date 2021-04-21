@@ -32,6 +32,11 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 	private var m_objects_list:Array<DnaObject>;
 
 	/**
+	 * this is the function that will be called whenever we call the close function on this substate.
+	 */
+	public var onCloseCalled:Void->Void = null;
+
+	/**
 	 * this thing will be used by almost all of our states so we put it here.
 	 */
 	// private var trial_handler:TrialHandlerObject;
@@ -159,6 +164,17 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 			var obj = this.m_objects_list.pop();
 			obj.setParent(null);
 			obj.destroy();
+		}
+	}
+
+	override public function close()
+	{
+		trace("state closing..", this.state_type);
+		super.close();
+
+		if (this.onCloseCalled != null)
+		{
+			this.onCloseCalled();
 		}
 	}
 

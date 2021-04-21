@@ -7,8 +7,25 @@
 
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/SymbolicNumberComparisonGroup.json" },
+
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/FixationAndBlankSubstates.json" },
+        {
+            "type": "DependentGroupObject",
+            "conditions": [
+                { "condition": "desktop",
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] } ] }
+                },
+                { "condition": "web",
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] } ] }
+                },
+                { "condition": "android",
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "Center" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
+                }
+            ]
+        },
+
+
         { "type": "SrtPlayerTextObject", "name":"Instructions_01", 
             "text":"SymbNumCompInstructions_PracticeDone_01",
             "autostart":false,
@@ -26,22 +43,7 @@
                     "obj": { "type":"TextObject", "name":"Instructions_03", "text":"SymbNumCompInstructions_03_TOUCH", "autostart":false, "settings":{"char_per_sec":24}, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "TextPosition" }] } } 
             ]
         },
-        {
-            "type": "DependentGroupObject",
-            "conditions": [
-                { "condition": "desktop",
-                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] } ] }
-                },
-                { "condition": "web",
-                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] } ] }
-                },
-                { "condition": "android",
-                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
-                }
-            ]
-        },
-
-
+        
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_Setup",
@@ -58,6 +60,7 @@
                     "state": "INACTIVE",
                     "oneshot": false
                 },
+                { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":true, "oneshot": false },
                 {
                     "type": "ActionSetButtonStateComponent",
                     "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
@@ -87,6 +90,7 @@
                     "target":"Instructions_03",
                     "oneshot":false
                 },
+                { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":false, "oneshot": false },
                 {
                     "type": "ActionSetButtonStateComponent",
                     "targets": ["buttonAccept"],

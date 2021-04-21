@@ -38,14 +38,19 @@ class Main extends Sprite
 
 		addChild(new FlxGame(width, heigth, 1, 60, 60, true, false));
 
+		#if web
 		FlxG.sound.muteKeys = null;
 		FlxG.sound.volumeUpKeys = null;
 		FlxG.sound.volumeDownKeys = null;
+		#end
+		FlxG.autoPause = false;
 		/*
-		 * these settings are used so the update loops will get the 
-		 * correct time that elapsed. therefore anabling everything to stay in
-		 * sync even with sub-optimal framerate.
+
+			* these settings are used so the update loops will get the 
+			* correct time that elapsed. therefore anabling everything to stay in
+			* sync even with sub-optimal framerate.
 		 */
+
 		FlxG.fixedTimestep = false;
 		FlxG.maxElapsed = 0.3;
 

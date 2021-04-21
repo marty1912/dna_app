@@ -108,7 +108,7 @@ class TaskTimeoutTimerObject implements DnaObject implements DnaEventSubscriber 
 		if (this.running)
 		{
 			time_update_loop += elapsed;
-			if (time_update_loop > max_time)
+			if (time_update_loop >= max_time)
 			{
 				onTimerFin();
 			}

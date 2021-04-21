@@ -72,7 +72,7 @@
             "components": [
               {
                 "type": "PositionComponent",
-                "position": "RightCenter"
+                "position": "Center"
               },
               {
                 "type": "CmdEvtTrigComponent",
@@ -187,6 +187,7 @@
           "state": "INACTIVE",
           "oneshot": false
         },
+        { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":true, "oneshot": false },
         {
           "type": "ActionSetButtonStateComponent",
           "targets": [

@@ -7,6 +7,20 @@
 
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/SymbolicNumberComparisonGroup.json" },
+        {
+            "type": "DependentGroupObject",
+            "conditions": [
+                { "condition": "desktop",
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] } ] }
+                },
+                { "condition": "web",
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] } ] }
+                },
+                { "condition": "android",
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "Center" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
+                }
+            ]
+        },
         { "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/FixationAndBlankSubstates.json" },
         { "type": "SrtPlayerTextObject", "name":"Instructions_01", 
@@ -40,20 +54,7 @@
                     "obj": { "type":"TextObject", "name":"Instructions_03", "text":"SymbNumCompInstructions_03_TOUCH", "autostart":false, "settings":{"char_per_sec":24}, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "TextPosition" }] } } 
             ]
         },
-        {
-            "type": "DependentGroupObject",
-            "conditions": [
-                { "condition": "desktop",
-                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] } ] }
-                },
-                { "condition": "web",
-                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["D","RIGHT"] } ] }
-                },
-                { "condition": "android",
-                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
-                }
-            ]
-        },
+        
 
 
         {
@@ -90,6 +91,7 @@
                     "invert":false,
                     "oneshot": false
                 },
+                { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":true, "oneshot": false },
                 {
                     "type": "ActionShowTextComponent",
                     "target":"Instructions_01",
@@ -122,6 +124,7 @@
                     "target":"Instructions_03",
                     "oneshot":false
                 },
+                { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":false, "oneshot": false },
                 {
                     "type": "ActionSetButtonStateComponent",
                     "targets": ["buttonAccept"],
