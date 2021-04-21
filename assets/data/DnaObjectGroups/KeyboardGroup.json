@@ -4,8 +4,9 @@
     "name": "KeyboardPosition",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 1,
-    "scale_y": 122,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -19,8 +20,9 @@
     "name": "KeyboardPosition_left",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.5,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -34,8 +36,9 @@
     "name": "KeyboardPosition_right",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.5,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -49,8 +52,9 @@
     "name": "KeyboardPosition_left_center",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.3,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -64,8 +68,9 @@
     "name": "KeyboardPosition_right_center",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.3,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -79,8 +84,9 @@
     "name": "KeyboardPosition_00",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.1,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -94,8 +100,9 @@
     "name": "KeyboardPosition_00_text",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.18,
     "scale_x": 0.09,
-    "scale_y": 180,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -109,8 +116,9 @@
     "name": "KeyboardPosition_01",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.1,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -124,8 +132,9 @@
     "name": "KeyboardPosition_01_text",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.18,
     "scale_x": 0.09,
-    "scale_y": 180,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -139,8 +148,9 @@
     "name": "KeyboardPosition_02",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.1,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -154,8 +164,9 @@
     "name": "KeyboardPosition_02_text",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.18,
     "scale_x": 0.09,
-    "scale_y": 180,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -169,8 +180,9 @@
     "name": "KeyboardPosition_03",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.1,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -184,8 +196,9 @@
     "name": "KeyboardPosition_03_text",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.18,
     "scale_x": 0.09,
-    "scale_y": 180,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -199,8 +212,9 @@
     "name": "KeyboardPosition_04",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.1,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -214,8 +228,9 @@
     "name": "KeyboardPosition_04_text",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.18,
     "scale_x": 0.09,
-    "scale_y": 180,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -229,8 +244,9 @@
     "name": "KeyboardPosition_05",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.1,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -244,8 +260,9 @@
     "name": "KeyboardPosition_05_text",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.18,
     "scale_x": 0.09,
-    "scale_y": 180,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -259,8 +276,9 @@
     "name": "KeyboardPosition_06",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.1,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -274,8 +292,9 @@
     "name": "KeyboardPosition_06_text",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.18,
     "scale_x": 0.09,
-    "scale_y": 180,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -289,8 +308,9 @@
     "name": "KeyboardPosition_07",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.1,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -304,8 +324,9 @@
     "name": "KeyboardPosition_07_text",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.18,
     "scale_x": 0.09,
-    "scale_y": 180,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -319,8 +340,9 @@
     "name": "KeyboardPosition_08",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.1,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -334,8 +356,9 @@
     "name": "KeyboardPosition_08_text",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.18,
     "scale_x": 0.09,
-    "scale_y": 180,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -349,8 +372,9 @@
     "name": "KeyboardPosition_09",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.2,
     "scale_x": 0.1,
-    "scale_y": 200,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -364,8 +388,9 @@
     "name": "KeyboardPosition_09_text",
     "asset_path": "INVISIBLE_BOX",
     "scale_from_screen_width": true,
+    "scale_from_screen_height": true,
+    "scale_y": 0.18,
     "scale_x": 0.09,
-    "scale_y": 180,
     "origin_where": "",
     "components": [{
         "type": "PositionComponent",
@@ -387,7 +412,8 @@
         {
             "type": "CmdEvtTrigComponent",
             "event_name": "KEY_0"
-        }
+        },
+        { "type":"ButtonScaleComponent", "target":"KeyboardPosition_00" }
     ]
 },
 {
@@ -418,6 +444,7 @@
             "type": "CmdEvtTrigComponent",
             "event_name": "KEY_1"
         }
+        ,{ "type":"ButtonScaleComponent", "target":"KeyboardPosition_01" }
     ]
 },
 {
@@ -450,6 +477,7 @@
             "type": "CmdEvtTrigComponent",
             "event_name": "KEY_2"
         }
+        ,{ "type":"ButtonScaleComponent", "target":"KeyboardPosition_02" }
     ]
 },
 {
@@ -482,6 +510,7 @@
             "type": "CmdEvtTrigComponent",
             "event_name": "KEY_3"
         }
+        ,{ "type":"ButtonScaleComponent", "target":"KeyboardPosition_03" }
     ]
 },
 {
@@ -514,6 +543,7 @@
             "type": "CmdEvtTrigComponent",
             "event_name": "KEY_4"
         }
+        ,{ "type":"ButtonScaleComponent", "target":"KeyboardPosition_04" }
     ]
 },
 {
@@ -548,6 +578,7 @@
             "type": "CmdEvtTrigComponent",
             "event_name": "KEY_5"
         }
+        ,{ "type":"ButtonScaleComponent", "target":"KeyboardPosition_05" }
     ]
 },
 {
@@ -578,6 +609,7 @@
             "type": "CmdEvtTrigComponent",
             "event_name": "KEY_6"
         }
+        ,{ "type":"ButtonScaleComponent", "target":"KeyboardPosition_06" }
     ]
 },
 {
@@ -610,6 +642,7 @@
             "type": "CmdEvtTrigComponent",
             "event_name": "KEY_7"
         }
+        ,{ "type":"ButtonScaleComponent", "target":"KeyboardPosition_07" }
     ]
 },
 {
@@ -642,6 +675,7 @@
             "type": "CmdEvtTrigComponent",
             "event_name": "KEY_8"
         }
+        ,{ "type":"ButtonScaleComponent", "target":"KeyboardPosition_08" }
     ]
 },
 {
@@ -674,6 +708,7 @@
             "type": "CmdEvtTrigComponent",
             "event_name": "KEY_9"
         }
+        ,{ "type":"ButtonScaleComponent", "target":"KeyboardPosition_09" }
     ]
 },
 {

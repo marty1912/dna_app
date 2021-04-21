@@ -127,8 +127,6 @@ class ConditionWEB extends Condition
 {
 	override public function check()
 	{
-		// debug
-		return false;
 		#if web
 		return true;
 		#end
@@ -141,8 +139,6 @@ class ConditionANDROID extends Condition
 {
 	override public function check()
 	{
-		// debug
-		return true;
 		#if android
 		return true;
 		#end
@@ -155,8 +151,6 @@ class ConditionDESKTOP extends Condition
 {
 	override public function check()
 	{
-		// debug
-		return false;
 		#if desktop
 		return true;
 		#end

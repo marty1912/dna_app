@@ -331,6 +331,14 @@ else if (type == 'DisplayTimeComponent')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/DisplayTimeComponent.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'ButtonScaleComponent')
+{
+	comp = new ButtonScaleComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ButtonScaleComponent.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -342,6 +350,7 @@ else if (type == 'DisplayTimeComponent')
 		return comp;
 	}
 }
+
 
 
 

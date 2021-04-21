@@ -43,6 +43,7 @@ class LocaleDE implements Locale
 "SymbNumCompInstructions_02_PC" => ConfigFile.text("assets/text/de/SymbNumCompInstructions_02_PC.json"),
 "FeedbackQuestion_Difficulty" => ConfigFile.text("assets/text/de/FeedbackQuestion_Difficulty.txt"),
 "MultiplicationTutorial_01" => ConfigFile.text("assets/text/de/MultiplicationTutorial_01.json"),
+"ProbcodeDoneText" => ConfigFile.text("assets/text/de/ProbcodeDoneText.json"),
 "SRTTEXTBOX_TEST" => ConfigFile.text("assets/text/de/SRTTEXTBOX_TEST.json"),
 "SpeedInstructions_02_TOUCH" => ConfigFile.text("assets/text/de/SpeedInstructions_02_TOUCH.json"),
 "NumberlineTutorial_03" => ConfigFile.text("assets/text/de/NumberlineTutorial_03.json"),

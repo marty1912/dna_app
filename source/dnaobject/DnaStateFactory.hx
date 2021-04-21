@@ -311,6 +311,13 @@ else if (type == "ProbCodeState_01")
 			state = new DnaState("ProbCodeState_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/ProbCode/ProbCodeState_01.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "ProbCodeStateDone")
+		{
+			state = new DnaState("ProbCodeStateDone");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/ProbCode/ProbCodeStateDone.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -323,6 +330,7 @@ else if (type == "ProbCodeState_01")
 		return state;
 	}
 }
+
 
 
 
