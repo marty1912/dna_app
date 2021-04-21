@@ -2,50 +2,22 @@
     "type": "HalfScreenClickareasGroup",
     "objects": [
 
-        {
-            "type": "SpriteObject",
-            "name": "LeftScreenhalf_CLICK_GROUP",
-            "asset_path": "INVISIBLE_BOX",
-            "scale_from_screen_width": true,
-            "scale_from_screen_height": true,
-            "scale_x": 0.5,
-            "scale_y": 1,
-            "origin_where": "",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "LeftCenter",
-                "target": ""
-            }]
-        },
-        {
-            "type": "SpriteObject",
-            "name": "RightScreenhalf_CLICK_GROUP",
-            "asset_path": "INVISIBLE_BOX",
-            "scale_from_screen_width": true,
-            "scale_from_screen_height": true,
-            "scale_x": 0.5,
-            "scale_y": 1,
-            "origin_where": "",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "RightCenter",
-                "target": ""
-            }]
-        },
+        { "type": "SpriteObject", "name": "LeftScreenhalf_CLICK_GROUP", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "" }] },
+        { "type": "SpriteObject", "name": "RightScreenhalf_CLICK_GROUP", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "" }] },
         
         {
             "type": "EmptyButtonObject",
+            "path": "assets/gui_elements/buttonInvisible.png",
             "name":"Clickarea_RIGHT",
             "components": [
                 {
-                    "type": "UserButtonComponent"
+                    "type": "UserButtonComponent","click_target":"RightScreenhalf_CLICK_GROUP"
                 },
                 {
                     "type": "ClickAreaComponent",
                     "target": "RightScreenhalf_CLICK_GROUP"
-                }, {
+                }, 
+                {
                     "type": "PositionComponent",
                     "target": "RightScreenhalf_CLICK_GROUP",
                     "position": "Center"
@@ -57,14 +29,14 @@
         },
         {
             "type": "EmptyButtonObject",
+
+            "path": "assets/gui_elements/buttonInvisible.png",
             "name":"Clickarea_LEFT",
             "components": [{
-                    "type": "UserButtonComponent"
+                    "type": "UserButtonComponent","click_target":"LeftScreenhalf_CLICK_GROUP"
                 },
+                { "type": "ClickAreaComponent", "target": "LeftScreenhalf_CLICK_GROUP" }, 
                 {
-                    "type": "ClickAreaComponent",
-                    "target": "LeftScreenhalf_CLICK_GROUP"
-                }, {
                     "type": "PositionComponent",
                     "target": "LeftScreenhalf_CLICK_GROUP",
                     "position": "Center"

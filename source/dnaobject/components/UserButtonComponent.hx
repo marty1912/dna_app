@@ -39,7 +39,15 @@ class UserButtonComponent implements DnaComponent extends DnaComponentBase
 	 * fromFile function. reads from Dynamic field.
 	 * @param jsonFile
 	 */
-	override public function fromFile(jsonFile:Dynamic) {}
+	override public function fromFile(jsonFile:Dynamic)
+	{
+		if (Reflect.hasField(jsonFile, "click_target"))
+		{
+			target_name = jsonFile.click_target;
+		}
+	}
+
+	public var target_name:String = "";
 
 	private var current_status:Int = FlxButton.NORMAL;
 
@@ -89,13 +97,19 @@ class UserButtonComponent implements DnaComponent extends DnaComponentBase
 		{
 			return;
 		}
-		var parent:DnaObject = cast(this.getParent());
-		// var button:FlxSprite = parent.button;
 
-		this.m_click_area.width = parent.getWidth();
-		this.m_click_area.height = parent.getHeight();
+		var click_target:DnaObject = cast(this.getParent());
+		if (this.target_name != "")
+		{
+			click_target = this.getParent().getParent().getObjectByName(this.target_name);
+			assert(click_target != null);
+		}
+		// var button:FlxSprite = click_target.button;
+
+		this.m_click_area.width = click_target.getWidth();
+		this.m_click_area.height = click_target.getHeight();
 		// this.m_click_area.setPosition(button.getPosition().x, button.getPosition().y);
-		this.m_click_area.setPosition(parent.getOrigin().x, parent.getOrigin().y);
+		this.m_click_area.setPosition(click_target.getOrigin().x, click_target.getOrigin().y);
 		this.m_click_area.update(elapsed);
 
 		this.setStatus(m_click_area.status);
