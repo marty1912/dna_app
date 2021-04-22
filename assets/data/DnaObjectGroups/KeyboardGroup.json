@@ -56,7 +56,8 @@
     "scale_y": 0.2,
     "scale_x": 0.3,
     "origin_where": "",
-    "components": [{
+    "components": [
+        {
         "type": "PositionComponent",
         "oneshot": true,
         "position": "Center",
@@ -405,7 +406,7 @@
     "name": "Button_0",
     "components": [{
             "type": "PositionComponent",
-            "oneshot": true,
+            "oneshot": false,
             "position": "Center",
             "target": "KeyboardPosition_00"
         },

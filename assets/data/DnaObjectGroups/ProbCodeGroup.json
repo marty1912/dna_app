@@ -74,7 +74,7 @@
         {
           "type": "PositionComponent",
           "oneshot": true,
-          "position": "CenterBottom",
+          "position": "Center",
           "target": ""
         }
       ]

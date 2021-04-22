@@ -7,6 +7,7 @@ import dnaobject.interfaces.CommandClient;
 import dnaobject.interfaces.IState;
 import dnaobject.interfaces.IStateMachine;
 import dnaobject.interfaces.Scrollable;
+import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxBackdrop;
 import flixel.animation.FlxAnimationController;
@@ -57,6 +58,33 @@ class DnaButtonObject implements DnaObject implements CommandClient implements I
 	 * with this thing can be done via the button (firing commands etc..)
 	 */
 	public var clickarea_target:String = "";
+
+	/**
+	 * we need to override this because we have buttons that are sprites and they loose the  scale otherwise
+	 * @return Int
+	 */
+	override public function getHeight():Int
+	{
+		return Std.int(Math.floor(this.button.height * this.button.scale.y));
+	}
+
+	/**
+	 * calculates the width of all the children in the curent configuration
+	 * @return Float
+	 */
+	override public function getWidth():Int
+	{
+		return Std.int(Math.floor(this.button.width * this.button.scale.x));
+	}
+
+	/**
+	 * we override this because it does not handle scaling otherwise
+	 * @return array - An array with the values max_left max_right max up and max_down in this order.
+	 */
+	override public function getMaxLeftRightUpDownFromOrigin():Array<Float>
+	{
+		return [-0, this.getWidth(), 0, this.getHeight()];
+	}
 
 	/**
 	 * constructor.

@@ -71,7 +71,7 @@
             "components": [
               {
                 "type": "PositionComponent",
-                "position": "RightCenter"
+                "position": "Center"
               },
               {
                 "type": "CmdEvtTrigComponent",

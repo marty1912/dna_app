@@ -89,7 +89,7 @@
           "condition": "android",
           "obj": {
             "type": "EmptyButtonObject",
-            "path": "assets/gui_elements/buttonAccept.png",
+            "path": "assets/gui_elements/buttonInvisible.png",
             "name": "buttonAccept",
             "components": [
               {
