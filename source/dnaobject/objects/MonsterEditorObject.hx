@@ -98,7 +98,7 @@ class MonsterEditorObject implements DnaObject implements DnaEventSubscriber ext
 				index += list_of_current_part.length;
 			}
 			unique_part_types.set(monti_part.part_type, index);
-			trace("part:", monti_part.part_type, "index:", index, "len of list:", list_of_current_part.length);
+			// trace("part:", monti_part.part_type, "index:", index, "len of list:", list_of_current_part.length);
 		}
 	}
 
@@ -220,7 +220,7 @@ class MonsterEditorObject implements DnaObject implements DnaEventSubscriber ext
 	 */
 	public function getNotified(event_name:String, params:Any = null)
 	{
-		trace("MonsterEditor got notified:", event_name);
+		// trace("MonsterEditor got notified:", event_name);
 
 		if (event_name == SAVE_MONTI_DATA)
 		{

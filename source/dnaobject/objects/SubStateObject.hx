@@ -34,7 +34,7 @@ class SubStateObject implements DnaObject extends DnaObjectBase
 	 */
 	public function onSubstateClose():Void
 	{
-		trace("substate closed");
+		// trace("substate closed");
 		this.getParent().eventManager.broadcastEvent(getSubstateClosedEventName());
 	}
 

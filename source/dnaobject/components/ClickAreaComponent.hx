@@ -36,7 +36,7 @@ class ClickAreaComponent implements DnaComponent extends DnaComponentBase
 	override public function onHaveParent()
 	{
 		var target:DnaObject = getParent().getParent().getObjectByName(target_name);
-		trace("target name:", target_name);
+		// trace("target name:", target_name);
 		var button:DnaButtonObject = cast this.getParent();
 		button.button.alpha = 0;
 		button.button.width = target.getWidth();

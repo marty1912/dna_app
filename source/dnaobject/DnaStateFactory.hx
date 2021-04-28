@@ -249,71 +249,61 @@ class DnaStateFactory
 		}
 
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "OrdinalTaskInstructionsState_01")
+		else if (type == "OrdinalTaskInstructionsState_01")
 		{
 			state = new DnaState("OrdinalTaskInstructionsState_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdinalTaskInstructionsState_01.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "NumlineInstructionsState_01")
+		else if (type == "NumlineInstructionsState_01")
 		{
 			state = new DnaState("NumlineInstructionsState_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Numberline/NumlineInstructionsState_01.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "ArithmeticInstructionsState_01")
+		else if (type == "ArithmeticInstructionsState_01")
 		{
 			state = new DnaState("ArithmeticInstructionsState_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/ArithmeticInstructionsState_01.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "PracticeFinishedState_return")
+		else if (type == "PracticeFinishedState_return")
 		{
 			state = new DnaState("PracticeFinishedState_return");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/PracticeFinishedState_return.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "ArithmeticPracticeFinishedState_return")
+		else if (type == "ArithmeticPracticeFinishedState_return")
 		{
 			state = new DnaState("ArithmeticPracticeFinishedState_return");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/ArithmeticPracticeFinishedState_return.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "ArithmeticTaskFinished")
+		else if (type == "ArithmeticTaskFinished")
 		{
 			state = new DnaState("ArithmeticTaskFinished");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/ArithmeticTaskFinished.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "TaskDoneState")
+		else if (type == "TaskDoneState")
 		{
 			state = new DnaState("TaskDoneState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/TaskDoneState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "SpeedInstructionsState_01")
+		else if (type == "SpeedInstructionsState_01")
 		{
 			state = new DnaState("SpeedInstructionsState_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/SpeedInstructionsState_01.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "ProbCodeState_01")
+		else if (type == "ProbCodeState_01")
 		{
 			state = new DnaState("ProbCodeState_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/ProbCode/ProbCodeState_01.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "ProbCodeStateDone")
+		else if (type == "ProbCodeStateDone")
 		{
 			state = new DnaState("ProbCodeStateDone");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/ProbCode/ProbCodeStateDone.json");
@@ -321,7 +311,7 @@ else if (type == "ProbCodeStateDone")
 		// INSERT_HERE
 		else
 		{
-			trace("type:", type);
+			// trace("type:", type);
 			assert(false);
 		}
 		state.eventManager.clearEvents();
@@ -330,23 +320,6 @@ else if (type == "ProbCodeStateDone")
 		return state;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

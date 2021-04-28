@@ -85,7 +85,7 @@ class StaticTextObject implements DnaObject implements ITextBox extends DnaObjec
 	{
 		// this.getChildren().remove(text_box);
 
-		trace("settext,", border_color);
+		// trace("settext,", border_color);
 		var real_string:String;
 		if (use_literal_text)
 		{
@@ -145,18 +145,18 @@ class StaticTextObject implements DnaObject implements ITextBox extends DnaObjec
 		}
 		if (Reflect.hasField(jsonFile, "text"))
 		{
-			trace("text:", jsonFile.text);
+			// trace("text:", jsonFile.text);
 			if (jsonFile.text == CODE_NEXT_TRIAL_DESC)
 			{
-				trace("have next trial body");
+				// trace("have next trial body");
 				jsonFile.text = DnaDataManager.instance.getNextTrials().desc_body;
 			}
 			if (jsonFile.text == CODE_NEXT_TRIAL_HEAD)
 			{
-				trace("have next trial head");
+				// trace("have next trial head");
 				jsonFile.text = DnaDataManager.instance.getNextTrials().desc_head;
 			}
-			trace("text:", jsonFile.text);
+			// trace("text:", jsonFile.text);
 			this.setText(jsonFile.text, use_literal_text);
 		}
 

@@ -51,7 +51,7 @@ class ActionSetTaskParamsComponent implements DnaComponent extends DnaActionBase
 			var task_object:TaskObject = cast(getParent().getParent().getObjectByName(params.name));
 			if (task_object == null)
 			{
-				trace("object not found! name:", params.name);
+				// trace("object not found! name:", params.name);
 				return;
 			}
 			task_object.setParams(params.params);

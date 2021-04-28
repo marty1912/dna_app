@@ -28,7 +28,7 @@ class Zone
 	public var alpha_min:Float = 0.2;
 	public var alpha_max:Float = 0.4;
 
-	public function new(position:Float, width:Float, height:Float = 64, color:String = '0x00ff00', alpha:Float = 0.5)
+	public function new(position:Float, width:Float, height:Float = 10, color:String = '0x00ff00', alpha:Float = 0.5)
 	{
 		this.position = position;
 		this.alpha = alpha;
@@ -141,7 +141,7 @@ class NumlineZoneComponent implements DnaComponent extends DnaComponentBase
 	 */
 	public function setupPos()
 	{
-		trace("setup pos, tol", tol);
+		// trace("setup pos, tol", tol);
 		var parent:Slideable = cast(this.getParent());
 		var target_num:Float = parent.getNumTarget();
 		var max_deviation:Float = (parent.getNumMax() - parent.getNumZero()) * tol;
@@ -150,7 +150,7 @@ class NumlineZoneComponent implements DnaComponent extends DnaComponentBase
 		zone.setWidth(deviation_pix * 2);
 		zone.updateGraphic();
 		zone.setPosition(pos.x, pos.y);
-		trace("pos:", pos);
+		// trace("pos:", pos);
 
 		pos.put();
 	}

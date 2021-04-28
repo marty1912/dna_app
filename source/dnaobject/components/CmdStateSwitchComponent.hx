@@ -39,7 +39,7 @@ class CmdStateSwitchComponent implements DnaComponent implements Command extends
 	 */
 	public override function execute()
 	{
-		trace("now switching states to:", m_next_state);
+		// trace("now switching states to:", m_next_state);
 		var action = DnaComponentFactory.create("ActionStateSwitchComponent");
 		cast(action, ActionStateSwitchComponent).next_state = m_next_state;
 		this.getParent().addComponent(action);

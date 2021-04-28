@@ -76,11 +76,11 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 	 */
 	override public function setParent(parent:DnaState):Void
 	{
-		// trace("set Parent of monti");
+		// //trace("set Parent of monti");
 		// if we have a new parent. we have to remove all of our children from the old one.
 		if (this.m_parent_state != null)
 		{
-			// trace(this.m_parent_state);
+			// //trace(this.m_parent_state);
 			removeAllSprites();
 			/*
 				in base class:
@@ -111,7 +111,7 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 	{
 		if (this.getParent() == null)
 		{
-			// trace("no parent set yet..");
+			// //trace("no parent set yet..");
 			return;
 		}
 		armatureGroup.forEach(function(display:FlixelArmatureDisplay)
@@ -128,7 +128,7 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 	{
 		if (this.getParent() == null)
 		{
-			// trace("no parent set yet..");
+			// //trace("no parent set yet..");
 			return;
 		}
 		armatureGroup.forEach(function(display:FlixelArmatureDisplay)
@@ -145,7 +145,7 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 	 */
 	public function startAnimation(name:String, times:Int)
 	{
-		// trace("starting animation:", name);
+		// //trace("starting animation:", name);
 		armatureGroup.forEach(_setAnimationProps);
 		armatureGroup.forEach(function(display:FlixelArmatureDisplay)
 		{

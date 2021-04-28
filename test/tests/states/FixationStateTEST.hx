@@ -15,7 +15,7 @@ class Main extends Sprite
 {
 	public function new()
 	{
-		trace("starting...");
+		// trace("starting...");
 		FlxAssets.FONT_DEFAULT = "assets/fonts/ttf-bitstream-vera-1.10/Vera.ttf";
 		OsManager.get_instance().toLandscapeMode();
 		DnaDataManager.instance.deleteAllData(); // debug
@@ -45,7 +45,7 @@ class Main extends Sprite
 		FlxG.fixedTimestep = false;
 		FlxG.maxElapsed = 0.3;
 
-		trace("now creating initial state.");
+		// trace("now creating initial state.");
 		FlxG.switchState(DnaStateFactory.create("FixationState"));
 	}
 }

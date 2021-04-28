@@ -49,7 +49,7 @@ class ActionStateSwitchComponent implements DnaComponent extends DnaActionBase
 			}
 			next_state = next_trial.type;
 		}
-		trace("switching states now to:", next_state);
+		// trace("switching states now to:", next_state);
 		FlxG.switchState(DnaStateFactory.create(next_state));
 	}
 

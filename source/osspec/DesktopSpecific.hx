@@ -24,6 +24,15 @@ class DesktopSpecific implements OsSpecific
 	public function saveFile(content:String, filename:String):Void {}
 
 	/**
+	 * public function toLandscapeMode()
+	 * this function sets the screen orientation to landscape.
+	 */
+	public function getOsInfo():String
+	{
+		return "Desktop";
+	}
+
+	/**
 	 * this returns the server URL. this will differ for example from web to others.
 	 * @return String
 	 */

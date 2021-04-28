@@ -87,7 +87,7 @@ class DnaEventManager
 	 */
 	public function broadcastEvent(event_name:String, params:Any = null)
 	{
-		trace("event fired:", event_name, " - params:", params);
+		// trace("event fired:", event_name, " - params:", params);
 		assert(event_name != null);
 
 		var subscribers:Array<DnaEventSubscriber> = event_subscribers.get(event_name);

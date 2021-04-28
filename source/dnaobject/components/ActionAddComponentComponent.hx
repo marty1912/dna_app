@@ -33,18 +33,18 @@ class ActionAddComponentComponent implements DnaComponent extends DnaActionBase
 		{
 			componentJson = jsonFile.components;
 		}
-		trace(jsonFile);
+		// trace(jsonFile);
 		super.fromFile(jsonFile);
 	}
 
 	override public function doActionPerTarget(target_name:String)
 	{
 		var target:DnaObject = getParent().getParent().getObjectByName(target_name);
-		trace("target name:", m_target_name);
+		// trace("target name:", m_target_name);
 		// target.fromFile(componentJson);
 		for (comp_json in componentJson)
 		{
-			trace(comp_json);
+			// trace(comp_json);
 			var comp:DnaComponent = DnaComponentFactory.create(comp_json.type);
 			comp.fromFile(comp_json);
 			target.addComponent(comp);

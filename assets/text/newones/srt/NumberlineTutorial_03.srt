@@ -1,0 +1,20 @@
+﻿1
+00:00:00,000 --> 00:00:04,500
+Du bist anscheinend schon ein richtiger Profi!
+
+2
+00:00:04,600 --> 00:00:08,800
+Deshalb werden wir die Aufgabe jetzt etwas schwieriger machen.
+
+3
+00:00:08,800 --> 00:00:14,000
+Wir lassen nur noch zwei Zahlen auf dem Zahlenstrahl stehen.
+
+4
+00:00:14,000 --> 00:00:18,000
+Wo die gesuchte Zahl jetzt genau liegt musst du @001FF0000schätzen!@000
+
+5
+00:00:18,000 --> 00:00:21,100
+Mal sehen ob @001FF0000Fingus der Finger@000 das auch noch kann...
+

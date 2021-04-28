@@ -23,6 +23,12 @@ interface OsSpecific
 	public function toLandscapeMode():Void;
 
 	/**
+	 * public function toLandscapeMode()
+	 * this function sets the screen orientation to landscape.
+	 */
+	public function getOsInfo():String;
+
+	/**
 	 * saveFile. lets the user save a file. (only really used for javascript)
 	 * @param content 
 	 * @param filename 

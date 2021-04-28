@@ -71,7 +71,7 @@ class ActionCheckNumberlineComponent implements DnaComponent extends DnaActionBa
 		var range:Float = max - min;
 		var deviation:Float = range * tol;
 
-		trace("numline.slider.alpha:", numline.slider.alpha);
+		// trace("numline.slider.alpha:", numline.slider.alpha);
 		if (numline.slider.alpha == 0)
 		{
 			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_TIMED_OUT_FEEDBACK);

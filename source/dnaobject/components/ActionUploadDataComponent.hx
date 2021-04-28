@@ -76,24 +76,24 @@ class ActionUploadDataComponent implements DnaComponent extends DnaActionBase
 	 */
 	public function onUploadComplete(event:Event):Void
 	{
-		trace("upload complete!!! event:", event);
-		trace("loader data:", loader.data);
+		// trace("upload complete!!! event:", event);
+		// trace("loader data:", loader.data);
 		this.getParent().getParent().eventManager.broadcastEvent("UPLOAD_COMPLETE");
 		this.finishAction();
 	}
 
 	public function IOEErrorHandler(e:IOErrorEvent)
 	{
-		trace("event ioerror");
-		trace("e: ", e);
+		// trace("event ioerror");
+		// trace("e: ", e);
 		this.getParent().getParent().eventManager.broadcastEvent("UPLOAD_ERROR");
 		this.finishAction();
 	}
 
 	public function SecEvHandler(e:SecurityErrorEvent)
 	{
-		trace("event secerror");
-		trace("e: ", e);
+		// trace("event secerror");
+		// trace("e: ", e);
 		this.getParent().getParent().eventManager.broadcastEvent("UPLOAD_ERROR");
 		this.finishAction();
 	}
@@ -105,7 +105,7 @@ class ActionUploadDataComponent implements DnaComponent extends DnaActionBase
 	 */
 	public function uploadData():Void
 	{
-		trace("now uploading data.");
+		// trace("now uploading data.");
 		var body:String = Json.stringify(DnaDataManager.instance.getAllData());
 		loader = new URLLoader();
 
@@ -132,6 +132,6 @@ class ActionUploadDataComponent implements DnaComponent extends DnaActionBase
 			uploadData();
 			first = false;
 		}
-		// trace("loader bytes:", loader.bytesLoaded, "/", loader.bytesTotal);
+		// //trace("loader bytes:", loader.bytesLoaded, "/", loader.bytesTotal);
 	}
 }

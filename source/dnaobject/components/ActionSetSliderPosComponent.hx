@@ -66,7 +66,7 @@ class ActionSetSliderPosComponent implements DnaComponent extends DnaActionBase
 		{
 			this.setPosFromObj();
 		}
-		// trace("set slider pos.");
+		// //trace("set slider pos.");
 		var target:Slideable = cast getParent().getParent().getObjectByName(m_target_name);
 		var slider = target.slider;
 

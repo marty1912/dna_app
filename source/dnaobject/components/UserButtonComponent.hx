@@ -108,7 +108,7 @@ class UserButtonComponent implements DnaComponent extends DnaComponentBase
 
 		this.m_click_area.width = click_target.getWidth();
 		this.m_click_area.height = click_target.getHeight();
-		trace("userbutton: button height:", click_target.getHeight());
+		// trace("userbutton: button height:", click_target.getHeight());
 		// this.m_click_area.setPosition(button.getPosition().x, button.getPosition().y);
 		this.m_click_area.setPosition(click_target.getOrigin().x, click_target.getOrigin().y);
 		this.m_click_area.update(elapsed);

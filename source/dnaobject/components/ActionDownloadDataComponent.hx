@@ -77,8 +77,8 @@ class ActionDownloadDataComponent implements DnaComponent extends DnaActionBase
 	 */
 	public function onDownloadComplete(event:Event):Void
 	{
-		trace("Download complete!!! event:", event);
-		trace("loader data:", loader.data);
+		// trace("Download complete!!! event:", event);
+		// trace("loader data:", loader.data);
 		DnaDataManager.instance.setTrials(Json.parse(loader.data));
 		this.getParent().getParent().eventManager.broadcastEvent("DOWNLOAD_COMPLETE");
 
@@ -87,16 +87,16 @@ class ActionDownloadDataComponent implements DnaComponent extends DnaActionBase
 
 	public function IOEErrorHandler(e:IOErrorEvent)
 	{
-		trace("event ioerror");
-		trace("e: ", e);
+		// trace("event ioerror");
+		// trace("e: ", e);
 		this.getParent().getParent().eventManager.broadcastEvent("DOWNLOAD_ERROR");
 		this.finishAction();
 	}
 
 	public function SecEvHandler(e:SecurityErrorEvent)
 	{
-		trace("event secerror");
-		trace("e: ", e);
+		// trace("event secerror");
+		// trace("e: ", e);
 		this.getParent().getParent().eventManager.broadcastEvent("DOWNLOAD_ERROR");
 		this.finishAction();
 	}
@@ -110,7 +110,7 @@ class ActionDownloadDataComponent implements DnaComponent extends DnaActionBase
 	{
 		var UNIQUE_ID_KEY:String = "participant_uuid";
 
-		trace("now Downloading data.");
+		// trace("now Downloading data.");
 		var uuid:String = DnaDataManager.instance.retrieveData(UNIQUE_ID_KEY);
 
 		var body:String = Json.stringify(DnaDataManager.instance.getAllData());
@@ -140,6 +140,6 @@ class ActionDownloadDataComponent implements DnaComponent extends DnaActionBase
 			DownloadData();
 			first = false;
 		}
-		// trace("loader bytes:", loader.bytesLoaded, "/", loader.bytesTotal);
+		// //trace("loader bytes:", loader.bytesLoaded, "/", loader.bytesTotal);
 	}
 }

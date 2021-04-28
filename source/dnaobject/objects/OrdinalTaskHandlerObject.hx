@@ -147,7 +147,7 @@ class OrdinalTaskHandlerObject implements DnaObject implements TaskObject implem
 	 */
 	override public function registerEvents()
 	{
-		trace(this.getParent());
+		// trace(this.getParent());
 		this.getParent().eventManager.addSubscriberForEvent(this, EVT_ANSWER_IN_ORDER);
 		this.getParent().eventManager.addSubscriberForEvent(this, EVT_ANSWER_MIXED_ORDER);
 		this.getParent().eventManager.addSubscriberForEvent(this, DnaConstants.EVT_TASK_TIMEOUT);

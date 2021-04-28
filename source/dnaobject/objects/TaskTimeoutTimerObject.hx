@@ -46,7 +46,7 @@ class TaskTimeoutTimerObject implements DnaObject implements DnaEventSubscriber 
 	{
 		if (event_name == DnaConstants.EVT_START_TRIAL_TIME)
 		{
-			trace("starting timer with:", max_time);
+			// trace("starting timer with:", max_time);
 			this.running = true;
 			this.time_update_loop = 0;
 		}

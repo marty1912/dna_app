@@ -27,6 +27,7 @@ import haxe.DynamicAccess;
  */
 class NumberlineObject implements DnaObject implements Slideable implements TaskObject extends DnaObjectBase
 {
+	public var visual_mode = "old";
 	// the horizontal line. (the actual numberline)
 	// -------
 	public var axis:FlxSprite;
@@ -51,7 +52,7 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 
 	public function getSliderNum():Float
 	{
-		return (((slider.getPosition().x - axis.getPosition().x) / axis.width) * (getNumMax() - getNumZero()) + getNumZero());
+		return ((((slider.getPosition().x + (slider.width / 2)) - axis.getPosition().x) / axis.width) * (getNumMax() - getNumZero()) + getNumZero());
 	}
 
 	/**
@@ -120,7 +121,7 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 		var selected:Null<Float> = null;
 		if (this.slider.alpha != 0)
 		{
-			trace("slider alpha is not 0 but:", this.slider.alpha);
+			// trace("slider alpha is not 0 but:", this.slider.alpha);
 			selected = getSliderNum();
 		}
 		var current_trial:Dynamic = {
@@ -242,8 +243,24 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 		// we calculate the relative position on the number line based on the max, ref and zero value of the numberline
 		var ref_offset_rel:Float = (m_num_ref - m_num_zero) / (m_num_max - m_num_zero);
 		// m_ref_line.setPosition(axis.x + (axis.width * ref_offset_rel) - (m_ref_line.width / 2), -(m_ref_line.height / 2));
-		// we want to have the left side of the lines be the exact measures
-		m_ref_line.setPosition(axis.x + (axis.width * ref_offset_rel), -(m_ref_line.height / 2));
+		// we want to have the center of the lines be the exact measures
+
+		if (this.visual_mode == "new")
+		{
+			// we want the numberline to look like this:
+			//  1
+			// ###------
+			// where the #  is a red color or something
+			m_ref_line.width = ref_offset_rel * axis.width;
+			m_ref_line.setPosition(axis.x, -(m_ref_line.height / 2));
+		}
+		else
+		{
+			// we want the numberline to look like this
+			// 0 1
+			// |-|----
+			m_ref_line.setPosition(axis.x + (axis.width * ref_offset_rel), -(m_ref_line.height / 2));
+		}
 
 		// setup label positions.
 		m_label_zero.setPosition(m_zero_line.getPosition().x
@@ -335,6 +352,10 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 		// not used for now..
 		// assert(jsonFile.type == obj_type);
 
+		if (Reflect.hasField(jsonFile, "visual_mode"))
+		{
+			visual_mode = jsonFile.visual_mode;
+		}
 		if (Reflect.hasField(jsonFile, "origin_on_target"))
 		{
 			origin_on_target = jsonFile.origin_on_target;

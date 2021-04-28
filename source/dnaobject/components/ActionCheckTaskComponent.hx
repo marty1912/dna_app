@@ -29,7 +29,7 @@ class ActionCheckTaskComponent implements DnaComponent implements DnaEventSubscr
 	 */
 	public function getNotified(event_name:String, params:Any = null)
 	{
-		trace("got notified:", event_name);
+		// trace("got notified:", event_name);
 		if (event_name == DnaConstants.EVT_TASK_TIMEOUT)
 		{
 			this.timeout = true;

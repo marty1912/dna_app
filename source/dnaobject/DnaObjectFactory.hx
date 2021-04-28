@@ -266,7 +266,7 @@ class DnaObjectFactory
 		// INSERT_HERE
 		else
 		{
-			trace(type);
+			// trace(type);
 			assert(false);
 		}
 		if (file != null)
@@ -276,37 +276,6 @@ class DnaObjectFactory
 		return obj;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

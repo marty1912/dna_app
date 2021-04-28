@@ -36,13 +36,13 @@ class ActionAppearComponent implements DnaComponent extends DnaActionBase
 	override public function doActionPerTarget(target_name:String)
 	{
 		var target:DnaObject = getParent().getParent().getObjectByName(target_name);
-		trace("target:", target_name);
+		// trace("target:", target_name);
 		for (child in target.getChildren())
 		{
 			// invert is default to false. so default behaviour is to make stuff appear.
 			// if invert is true we hide instead of making things appear.
 			child.visible = !this.invert;
-			trace("set child to visible", !this.invert);
+			// trace("set child to visible", !this.invert);
 		}
 	}
 

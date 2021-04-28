@@ -68,11 +68,11 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 		var t_start = Timer.stamp();
 		// eventManager.clearEvents();
 		// this.fromFile(this.m_json_file);
-		trace("create:", this.state_type);
+		// trace("create:", this.state_type);
 		eventManager.broadcastEvent("onCreate");
 		var t_end = Timer.stamp();
 
-		trace("create time:", t_start - t_end);
+		// trace("create time:", t_start - t_end);
 	}
 
 	/**
@@ -80,7 +80,7 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 	 */
 	override public function destroy():Void
 	{
-		trace("dtor called for", this.state_type);
+		// trace("dtor called for", this.state_type);
 		if (this.keep_alive)
 		{
 			return;
@@ -169,7 +169,7 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 
 	override public function close()
 	{
-		trace("state closing..", this.state_type);
+		// trace("state closing..", this.state_type);
 		super.close();
 
 		if (this.onCloseCalled != null)
@@ -205,7 +205,7 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 	 */
 	public function objectFromFile(obj:Dynamic)
 	{
-		trace("object:", obj);
+		// trace("object:", obj);
 		if (obj.type == DnaConstants.OBJECT_GROUP)
 		{
 			fromFile(Assets.getText(obj.path));
@@ -239,6 +239,6 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 		}
 		super.update(elapsed);
 		var end = haxe.Timer.stamp();
-		// trace("update time:", end - start);
+		// //trace("update time:", end - start);
 	}
 }

@@ -42,7 +42,7 @@ class DependentGroupObject implements DnaObject extends DnaObjectBase
 	{
 		for (cond in this.conditionals)
 		{
-			trace("condition:", cond, "check:", cond.check());
+			// trace("condition:", cond, "check:", cond.check());
 			if (cond.check())
 			{
 				getParent().objectFromFile(cond.obj);
@@ -64,10 +64,10 @@ class DependentGroupObject implements DnaObject extends DnaObjectBase
 		if (Reflect.hasField(jsonFile, "conditions"))
 		{
 			var conds:Array<Dynamic> = jsonFile.conditions;
-			trace("conditions:", conds);
+			// trace("conditions:", conds);
 			for (cond in conds)
 			{
-				trace("cond:", cond);
+				// trace("cond:", cond);
 				var condition:Condition = null;
 				if (cond.condition == "web")
 				{
@@ -90,7 +90,7 @@ class DependentGroupObject implements DnaObject extends DnaObjectBase
 					condition = new ConditionORDINAL_RIGHT(cond.obj);
 				}
 
-				trace("condition:", condition);
+				// trace("condition:", condition);
 				assert(condition != null);
 
 				conditionals.push(condition);

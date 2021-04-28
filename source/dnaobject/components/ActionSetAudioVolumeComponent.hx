@@ -64,7 +64,7 @@ class ActionSetAudioVolumeComponent implements DnaComponent extends DnaActionBas
 	override public function update(elapsed:Float)
 	{
 		FlxG.sound.volume += value;
-		trace("new volume:", FlxG.sound.volume);
+		// trace("new volume:", FlxG.sound.volume);
 		finishAction();
 	}
 }

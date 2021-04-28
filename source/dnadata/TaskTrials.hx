@@ -61,7 +61,7 @@ class TaskTrials
 
 	public function set_trial_path_index(value:Int):Int
 	{
-		trace("trial path index set to value:", value);
+		// trace("trial path index set to value:", value);
 		trial_path_index = value % task_block_paths.length;
 		return trial_path_index;
 	}
@@ -72,7 +72,7 @@ class TaskTrials
 	public function loadNextTrialBlock():Void
 	{
 		var trial_block = task_block_paths[trial_path_index];
-		trace("trialblock:", trial_block);
+		// trace("trialblock:", trial_block);
 		trial_path_index++;
 		DnaDataManager.instance.setTrials(readTrialsFromFile(trial_block));
 	}

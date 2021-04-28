@@ -31,10 +31,10 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 	 */
 	public function abortRunningActions()
 	{
-		trace(this.obj_name, " - canceling actions:", this.m_component_list);
+		// trace(this.obj_name, " - canceling actions:", this.m_component_list);
 		for (act in this.m_inactive_actions_queue)
 		{
-			trace(this.obj_name, " - inactive action:", act.id, " - ", act.comp_type);
+			// trace(this.obj_name, " - inactive action:", act.id, " - ", act.comp_type);
 		}
 		for (comp in this.m_component_list)
 		{
@@ -44,7 +44,7 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 			}
 			var action:DnaActionBase = cast comp;
 			action.canceled = true;
-			trace("action canceled!", action.comp_type);
+			// trace("action canceled!", action.comp_type);
 		}
 	}
 
@@ -54,7 +54,7 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 	 */
 	public function addAction(action:DnaActionBase)
 	{
-		trace("adding action", action.id, " on event:", action.on_event);
+		// trace("adding action", action.id, " on event:", action.on_event);
 		if (action.on_event == CODE_SEQUENTIAL)
 		{
 			assert(this.m_inactive_actions_queue.length != 0); // , "sequential actions need a predecessor!");
@@ -84,7 +84,7 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 
 			for (action in actions)
 			{
-				trace(action);
+				// trace(action);
 				var to_add = DnaComponentFactory.create(action.type);
 				to_add.fromFile(action);
 				addAction(cast(to_add, DnaActionBase));

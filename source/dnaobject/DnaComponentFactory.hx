@@ -284,65 +284,58 @@ class DnaComponentFactory
 		}
 
 		// // AUTOMATICALLY GENERATED
+		else if (type == 'ActionCloseSubStateComponent')
+		{
+			comp = new ActionCloseSubStateComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCloseSubStateComponent.json"));
+		}
 
-else if (type == 'ActionCloseSubStateComponent')
-{
-	comp = new ActionCloseSubStateComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCloseSubStateComponent.json"));
-}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'KeyboardInputComponent')
+		{
+			comp = new KeyboardInputComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/KeyboardInputComponent.json"));
+		}
 
-// // AUTOMATICALLY GENERATED
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ActionCancelActionComponent')
+		{
+			comp = new ActionCancelActionComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCancelActionComponent.json"));
+		}
 
-else if (type == 'KeyboardInputComponent')
-{
-	comp = new KeyboardInputComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/KeyboardInputComponent.json"));
-}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ActionSetNextTrialBlockComponent')
+		{
+			comp = new ActionSetNextTrialBlockComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSetNextTrialBlockComponent.json"));
+		}
 
-// // AUTOMATICALLY GENERATED
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ActionSaveDataComponent')
+		{
+			comp = new ActionSaveDataComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSaveDataComponent.json"));
+		}
 
-else if (type == 'ActionCancelActionComponent')
-{
-	comp = new ActionCancelActionComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionCancelActionComponent.json"));
-}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'DisplayTimeComponent')
+		{
+			comp = new DisplayTimeComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/DisplayTimeComponent.json"));
+		}
 
-// // AUTOMATICALLY GENERATED
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ButtonScaleComponent')
+		{
+			comp = new ButtonScaleComponent();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ButtonScaleComponent.json"));
+		}
 
-else if (type == 'ActionSetNextTrialBlockComponent')
-{
-	comp = new ActionSetNextTrialBlockComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSetNextTrialBlockComponent.json"));
-}
-
-// // AUTOMATICALLY GENERATED
-
-else if (type == 'ActionSaveDataComponent')
-{
-	comp = new ActionSaveDataComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSaveDataComponent.json"));
-}
-
-// // AUTOMATICALLY GENERATED
-
-else if (type == 'DisplayTimeComponent')
-{
-	comp = new DisplayTimeComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/DisplayTimeComponent.json"));
-}
-
-// // AUTOMATICALLY GENERATED
-
-else if (type == 'ButtonScaleComponent')
-{
-	comp = new ButtonScaleComponent();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ButtonScaleComponent.json"));
-}
-
-// INSERT_HERE
+		// INSERT_HERE
 		else
 		{
-			trace("type:", type);
+			// trace("type:", type);
 			assert(false);
 		}
 
@@ -350,69 +343,6 @@ else if (type == 'ButtonScaleComponent')
 		return comp;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

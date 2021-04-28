@@ -48,7 +48,7 @@ class DnaEvent implements DnaEventSubscriber
 	{
 		if (event_name == null || event_name.length == 0)
 		{
-			trace("invalid event name", event_name);
+			// trace("invalid event name", event_name);
 			return;
 		}
 		var already_have:Bool = false;

@@ -18,6 +18,15 @@ class AndroidSpecific implements OsSpecific
 	public function new() {};
 
 	/**
+	 * public function toLandscapeMode()
+	 * this function sets the screen orientation to landscape.
+	 */
+	public function getOsInfo():String
+	{
+		return "Android";
+	}
+
+	/**
 	 * saveFile. lets the user save a file. (only really used for javascript)
 	 * @param content 
 	 * @param filename 

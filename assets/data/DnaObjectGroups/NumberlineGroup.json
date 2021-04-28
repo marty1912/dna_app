@@ -24,6 +24,7 @@
             "num_ref":1,
             "num_target":7,
             "num_max":12,
+            "visual_mode":"new",
             "components": [{
                 "type": "PositionComponent",
                 "oneshot": true,

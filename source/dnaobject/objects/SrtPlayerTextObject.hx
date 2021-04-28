@@ -69,7 +69,7 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 	 */
 	public function start():Void
 	{
-		trace("started.");
+		// trace("started.");
 		this.running = true;
 	}
 

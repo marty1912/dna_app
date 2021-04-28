@@ -70,15 +70,15 @@ class ActionSwitchToSubStateComponent implements DnaComponent extends DnaActionB
 		// if we have a min and a max we want  to randomly choose a time value
 		if (duration_min != NOT_SET_YET && duration_max != NOT_SET_YET)
 		{
-			trace("creating timer..");
+			// trace("creating timer..");
 			var random_duration = Random.int(duration_min, duration_max);
-			trace("got random time interval to close:", random_duration);
+			// trace("got random time interval to close:", random_duration);
 			Timer.delay(substate.close, random_duration);
 		}
 		// a set duration overrides the randomly generated one
 		if (duration != NOT_SET_YET)
 		{
-			trace("creating fixed duration timer..", this.duration);
+			// trace("creating fixed duration timer..", this.duration);
 			Timer.delay(substate.close, this.duration);
 		}
 	}
@@ -88,11 +88,11 @@ class ActionSwitchToSubStateComponent implements DnaComponent extends DnaActionB
 	 */
 	private function switchstates()
 	{
-		trace("actionswitchto substate duration:", duration);
+		// trace("actionswitchto substate duration:", duration);
 		var obj:SubStateObject = cast this.getParent().getParent().getObjectByName(this.m_target_name);
 		var substate = obj.sub_state;
 
-		trace("switching to substate now:", substate.state_type);
+		// trace("switching to substate now:", substate.state_type);
 		setupTimer(substate);
 		this.getParent().getParent().eventManager.addSubscriberForEvent(this, obj.getSubstateClosedEventName());
 		this.getParent().getParent().openSubState(substate);

@@ -162,7 +162,7 @@ class SymbolicNumberComparisonTaskHandlerObject implements DnaObject implements 
 	 */
 	override public function registerEvents()
 	{
-		trace(this.getParent());
+		// trace(this.getParent());
 		this.getParent().eventManager.addSubscriberForEvent(this, EVENTNAME_LEFT);
 		this.getParent().eventManager.addSubscriberForEvent(this, EVENTNAME_RIGHT);
 		this.getParent().eventManager.addSubscriberForEvent(this, DnaConstants.EVT_TASK_TIMEOUT);

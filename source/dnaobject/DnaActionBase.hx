@@ -16,10 +16,10 @@ class DnaActionBase implements DnaComponent extends DnaComponentBase
 	 */
 	public function finishAction()
 	{
-		// trace(this.comp_type, "finish action, canceled:", canceled);
+		// //trace(this.comp_type, "finish action, canceled:", canceled);
 		if (this.getParent() == null)
 		{
-			trace(this.id, "parent null", this.getParent());
+			// trace(this.id, "parent null", this.getParent());
 			return;
 		}
 		if (!this.oneshot)
@@ -49,7 +49,7 @@ class DnaActionBase implements DnaComponent extends DnaComponentBase
 	public function set_canceled(value:Bool):Bool
 	{
 		this.canceled = value;
-		trace(this.comp_type, "used setter to set canceled to:", canceled);
+		// trace(this.comp_type, "used setter to set canceled to:", canceled);
 		if (canceled)
 		{
 			this.finishAction();

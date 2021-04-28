@@ -55,7 +55,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 */
 	public function setTrials(trials:Array<Dynamic>)
 	{
-		trace(trials);
+		// trace(trials);
 		if (randomize)
 		{
 			trials = Random.shuffle(trials);
@@ -68,14 +68,14 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 */
 	public function collectData()
 	{
-		// trace("\033[1;31m collectData", this.trials, "index", this.trial_index, "\033[0m");
+		// //trace("\033[1;31m collectData", this.trials, "index", this.trial_index, "\033[0m");
 		if (this.trials == null)
 		{
 			return;
 		}
 		if (this.trial_index > this.trials.length - 1)
 		{
-			// trace(this.trials);
+			// //trace(this.trials);
 			Assertion.assert(false);
 			if (this.reload_on_fin)
 			{
@@ -95,7 +95,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 			}
 			catch (e)
 			{
-				trace("WARNING: failed to get Data for:", params.name);
+				// trace("WARNING: failed to get Data for:", params.name);
 				continue;
 			}
 		}
@@ -115,7 +115,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 */
 	override public function fromFile(jsonFile:Dynamic)
 	{
-		// trace("trialhabdler from file:", jsonFile);
+		// //trace("trialhabdler from file:", jsonFile);
 		if (Reflect.hasField(jsonFile, "randomize"))
 		{
 			randomize = jsonFile.randomize;
@@ -133,7 +133,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 */
 	public function resetTrials()
 	{
-		trace("reset Trials!!");
+		// trace("reset Trials!!");
 		this.setTrials(this.trials);
 		this.trial_index = 0;
 	}
@@ -143,7 +143,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 */
 	public function loadNextTrial()
 	{
-		// trace("load next trial", this.trials, "index", this.trial_index, "");
+		// //trace("load next trial", this.trials, "index", this.trial_index, "");
 		if (this.trials == null)
 		{
 			this.getTrialsFromManager();
@@ -156,7 +156,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 
 		if (this.trial_index >= trials_len)
 		{
-			// trace(this.trials);
+			// //trace(this.trials);
 			if (this.reload_on_fin)
 			{
 				resetTrials();
@@ -175,7 +175,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 			}
 			catch (e)
 			{
-				trace("WARNING: Failed to set Params for: ", params.name);
+				// trace("WARNING: Failed to set Params for: ", params.name);
 				break;
 				return;
 			}
@@ -193,7 +193,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		{
 			getTrialsFromManager();
 		}
-		trace("Trial Handler got notified:", event_name);
+		// trace("Trial Handler got notified:", event_name);
 		if (event_name == LOAD_TRIAL)
 		{
 			loadNextTrial();

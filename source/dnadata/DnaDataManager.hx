@@ -5,6 +5,7 @@ import flixel.util.FlxSave;
 import haxe.DynamicAccess;
 import haxe.Json;
 import osspec.OsManager;
+import osspec.OsSpecific;
 import textparsemacro.ConfigFile;
 import thx.csv.Csv;
 import uuid.Uuid;
@@ -15,6 +16,7 @@ import uuid.Uuid;
 class DnaDataManager
 {
 	public final PART_UUID:String = "participant_uuid";
+	public final OS_DATA:String = "os_data";
 
 	public static final ORD_TASK_COND:String = "ord_task_right_inorder";
 
@@ -65,10 +67,11 @@ class DnaDataManager
 	{
 		initStorage();
 		var uuid:String = retrieveData(PART_UUID);
-		trace(uuid);
+		// trace(uuid);
 		if (uuid == null)
 		{
 			setupUUID();
+			setupOsInfo();
 			setupRandomConditions();
 			setupTrials();
 			setupMonti();
@@ -85,6 +88,14 @@ class DnaDataManager
 	public function setupUUID()
 	{
 		storeData(PART_UUID, Uuid.v4());
+	}
+
+	/**
+	 * this function
+	 */
+	public function setupOsInfo()
+	{
+		storeData(OS_DATA, OsManager.get_instance().getOsInfo());
 	}
 
 	public function setupRandomConditions()
@@ -109,11 +120,11 @@ class DnaDataManager
 	 */
 	public function storeData(key:String, value:Dynamic)
 	{
-		// trace("storeData:", key, value);
+		// //trace("storeData:", key, value);
 		Reflect.setProperty(persistent_storage.data, key, value);
 		OsManager.get_instance().saveToStorage(getAllData(), save_slot_name);
 		// persistent_storage.flush();
-		// trace(persistent_storage.data);
+		// //trace(persistent_storage.data);
 	}
 
 	/** storeData - this stores some data permanently.
@@ -159,7 +170,7 @@ class DnaDataManager
 	 */
 	public function setTrials(value:Dynamic)
 	{
-		trace("set trials:", value);
+		// trace("set trials:", value);
 		m_trials = value;
 		storeData(TRIALS_KEY, value);
 	}
@@ -252,14 +263,14 @@ class DnaDataManager
 			{
 				if (cur_trial.type == SAVE_ALL_BEFORE)
 				{
-					trace("now saving progress..");
+					// trace("now saving progress..");
 					saveAllBefore(index);
 					cur_trial.done = true;
 					return getNextTrials();
 				}
 				else if (cur_trial.type == REDIRECT)
 				{
-					trace("now redirecting to:", cur_trial.to);
+					// trace("now redirecting to:", cur_trial.to);
 					cur_trial.done = true;
 					saveAllBefore(index);
 					return cur_trial.to;
