@@ -1,5 +1,7 @@
 package constants;
 
+import flixel.math.FlxPoint;
+
 class DnaConstants
 {
 	public static final KEY_BACKSPACE = "BACKSPACE";
@@ -13,4 +15,6 @@ class DnaConstants
 	public static final TASK_ANSWERED_EVENT:String = "EVT_TASK_ANSWERED";
 	public static final EVT_TASK_TIMEOUT:String = "EVT_TASK_TIMEOUT";
 	public static final EVT_START_TRIAL_TIME:String = "EVT_START_TRIAL_TIME";
+
+	public static final DEFAULT_SCREEN_SIZE = FlxPoint.get(1280, 720);
 }

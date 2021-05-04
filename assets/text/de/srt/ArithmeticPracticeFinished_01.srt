@@ -11,6 +11,10 @@ Jetzt sind Sie bereit für die richtigen Aufgaben.
 Zur Erinnerung: Es geht darum, so viele Durchgänge wie möglich, in der vorgegebenen Zeit, richtig zu beantworten.
 
 4
-00:00:13,400 --> 00:00:17,400
+00:00:13,400 --> 00:00:18,600
+Überspringen Sie keine Aufgaben!
+
+5
+00:00:18,700 --> 00:00:22,700
 Sie haben nun vier Minuten Zeit.
 

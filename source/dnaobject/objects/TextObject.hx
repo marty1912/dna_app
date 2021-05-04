@@ -4,6 +4,7 @@ import constants.DnaConstants;
 import dnaEvent.DnaEventManager;
 import dnadata.DnaDataManager;
 import dnaobject.interfaces.ITextBox;
+import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.math.FlxPoint;
 import flixel.system.FlxAssets;
@@ -145,7 +146,11 @@ class TextObject implements DnaObject implements ITextBox extends DnaObjectBase
 		{
 			var char_per_sec = Reflect.hasField(jsonFile.settings, "char_per_sec") ? jsonFile.settings.char_per_sec : default_char_per_sec;
 			var fontsize = Reflect.hasField(jsonFile.settings, "fontsize") ? jsonFile.settings.fontsize : default_fontsize;
+			// autoscale fontsize.
+			fontsize = cast Math.floor(fontsize * (FlxG.height / DnaConstants.DEFAULT_SCREEN_SIZE.y));
 			var width = Reflect.hasField(jsonFile.settings, "width") ? jsonFile.settings.width : default_width;
+			width = cast Math.floor(width * (FlxG.width / DnaConstants.DEFAULT_SCREEN_SIZE.x));
+
 			var n_lines = Reflect.hasField(jsonFile.settings, "n_lines") ? jsonFile.settings.n_lines : default_n_lines;
 			var color = Reflect.hasField(jsonFile.settings, "color") ? jsonFile.settings.color : default_color;
 			border_color = Reflect.hasField(jsonFile.settings, "border_color") ? jsonFile.settings.border_color : default_border_color;

@@ -6,6 +6,9 @@ import dnaobject.DnaStateFactory;
 import flixel.FlxG;
 import flixel.FlxGame;
 import flixel.system.FlxAssets;
+import flixel.system.scaleModes.PixelPerfectScaleMode;
+import flixel.system.scaleModes.RatioScaleMode;
+import flixel.system.scaleModes.StageSizeScaleMode;
 import flixel.util.FlxSave;
 import openfl.display.InteractiveObject;
 import openfl.display.Sprite;
@@ -26,6 +29,7 @@ class Main extends Sprite
 		// addChild(new FlxGame(1280, 720, 1, 60, 60, true, false));
 		// with 0,0 we get the game to fill the screen.
 		// we want to force landscape mode. it does not really work as expected so here is our workaround:
+
 		var width = FlxG.stage.stageWidth;
 		var heigth = FlxG.stage.stageHeight;
 

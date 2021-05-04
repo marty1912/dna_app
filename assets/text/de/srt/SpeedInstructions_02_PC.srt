@@ -3,33 +3,34 @@
 Die Zahl, die Sie abtippen sollen, sehen Sie jeweils links.
 
 2
-00:00:04,607 --> 00:00:09,607
+00:00:04,607 --> 00:00:11,407
 Wenn Sie eine Tastatur mit seperatem Zahlenfeld haben, dann benutzen Sie bitte dieses für die Eingabe der Lösung.
 
 3
-00:00:09,707 --> 00:00:14,707
+00:00:11,507 --> 00:00:18,307
 Falls Sie kein seperates Zahlenfeld haben, dann benutzen Sie einfach die Zahlenleiste über den Buchstaben auf der Tastatur.
 
 4
-00:00:14,807 --> 00:00:19,807
+00:00:18,407 --> 00:00:23,407
 Nachdem Sie die Zahl eingegeben haben, bestätigen Sie mit der Eingabetaste (=Enter).
 
 5
-00:00:19,907 --> 00:00:24,907
+00:00:23,507 --> 00:00:28,507
 Sie können Fehler mit der Backspace-Taste, das ist die Taste über der Eingabetaste, ausbessern.
 
 6
-00:00:25,007 --> 00:00:29,907
+00:00:28,607 --> 00:00:33,507
 Sie sollen nun innerhalb von 4 Minuten so viele Zahlen wie möglich tippen.
 
 7
-00:00:30,007 --> 00:00:34,007
+00:00:33,607 --> 00:00:37,607
 Dazu wird es nur diese eine Übungsaufgabe geben.
 
 8
-00:00:34,007 --> 00:00:39,007
+00:00:37,607 --> 00:00:42,607
 Legen Sie jetzt Ihre Hände auf die Tastatur.
 
 9
-00:00:39,107 --> 00:00:43,707
+00:00:42,707 --> 00:00:47,307
 Sobald dieser Text verschwunden ist, können Sie Ihre Lösung eingeben.
+

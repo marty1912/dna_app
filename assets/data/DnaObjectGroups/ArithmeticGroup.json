@@ -62,20 +62,14 @@
             "type": "StaticTextObject",
             "name": "Text_Problem",
             "use_literal_text": true,
-            "text": "PROBLEM",
+            "text": "",
             "autostart": true,
             "settings": {
                 "char_per_sec": 500,
                 "width": 600,
                 "fontsize": 124
             },
-            "components": [{
-                    "type": "PositionComponent",
-                    "oneshot": false,
-                    "position": "RightCenter",
-                    "target": "ProblemPosition"
-                }
-
+            "components": [ { "type": "PositionComponent", "oneshot": false, "position": "RightCenter", "target": "ProblemPosition" }
             ]
         },
         {

@@ -47,8 +47,10 @@
         },
         {
             "type":"RoundedRectangleObject",
-            "width":400,
-            "height":200,
+            "scale_from_screen_width":true,
+            "scale_from_screen_height":true,
+            "width":0.3,
+            "height":0.2,
             "components": [
                  {
                     "type": "PositionComponent",

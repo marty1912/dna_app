@@ -49,8 +49,10 @@
         },
         {
             "type":"RoundedRectangleObject",
-            "width":300,
-            "height":300,
+            "scale_from_screen_width":true,
+            "scale_from_screen_height":true,
+            "width":0.15,
+            "height":0.3,
             "components": [
                  {
                     "type": "PositionComponent",
@@ -83,8 +85,10 @@
         },
         {
             "type":"RoundedRectangleObject",
-            "width":300,
-            "height":300,
+            "scale_from_screen_width":true,
+            "scale_from_screen_height":true,
+            "width":0.15,
+            "height":0.3,
             "components": [
                  {
                     "type": "PositionComponent",

@@ -1,8 +1,10 @@
 package dnaobject.objects;
 
+import constants.DnaConstants;
 import dnaEvent.DnaEventManager;
 import dnadata.DnaDataManager;
 import dnaobject.interfaces.ITextBox;
+import flixel.FlxG;
 import flixel.system.FlxAssets;
 import flixel.util.FlxColor;
 import flixel.util.FlxDestroyUtil;
@@ -203,7 +205,11 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 		{
 			append_before = Reflect.hasField(jsonFile.settings, "append_before") ? jsonFile.settings.append_before : append_before;
 			append_after = Reflect.hasField(jsonFile.settings, "append_after") ? jsonFile.settings.append_after : append_after;
-			this.settings = new Settings(FlxAssets.FONT_DEFAULT, jsonFile.settings.fontsize, jsonFile.settings.width, FlxColor.WHITE);
+			var fontsize = jsonFile.settings.fontsize;
+			fontsize = cast Math.floor(fontsize * (FlxG.height / DnaConstants.DEFAULT_SCREEN_SIZE.y));
+			var width = jsonFile.settings.width;
+			width = cast Math.floor(width * (FlxG.width / DnaConstants.DEFAULT_SCREEN_SIZE.x));
+			this.settings = new Settings(FlxAssets.FONT_DEFAULT, fontsize, width, FlxColor.WHITE);
 		}
 		if (Reflect.hasField(jsonFile, "text"))
 		{
