@@ -308,6 +308,20 @@ class DnaStateFactory
 			state = new DnaState("ProbCodeStateDone");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/ProbCode/ProbCodeStateDone.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "StudentIntro")
+		{
+			state = new DnaState("StudentIntro");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/TestStudents/StudentIntro.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "StudentFin")
+		{
+			state = new DnaState("StudentFin");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/TestStudents/StudentFin.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -320,6 +334,14 @@ class DnaStateFactory
 		return state;
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,96 @@
+{
+    "type": "SymbolicNumberComparisonStimuliState",
+    "objects": [
+
+        {
+            "type": "TaskBackgroundObject"
+        },
+        {
+            "type": "SrtPlayerTextObject",
+            "name": "Instructions_01",
+            "text": "StudentIntro_01",
+            "autostart": true,
+            "settings": {
+                "char_per_sec": 500,
+                "n_lines":5,
+                "width": 1000,
+                "fontsize":  42
+            },
+            "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center" } ]
+        },
+        {
+            "type": "DependentGroupObject",
+            "conditions": [
+                { "condition": "desktop",
+                    "obj": { "type":"TextObject", "name":"Instructions_02", "text":"StudentIntro_confirm_PC", "autostart":false, "settings":{"char_per_sec":24,"fontsize":42, "n_lines":5, "width": 1000}, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center" }] } }, 
+                { "condition": "web",
+                    "obj": { "type":"TextObject", "name":"Instructions_02", "text":"StudentIntro_confirm_PC", "autostart":false, "settings":{"char_per_sec":24,"fontsize":42, "n_lines":5, "width": 1000}, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center" }] } }, 
+                    { "condition": "android",
+                    "obj": { "type":"TextObject", "name":"Instructions_02", "text":"StudentIntro_confirm_TOUCH", "autostart":false, "settings":{"char_per_sec":24,"fontsize":42 , "n_lines":5, "width": 1000 }, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center" }] } } 
+            ]
+        }
+        ,{
+            "type": "DependentGroupObject",
+            "conditions": [
+                { "condition": "desktop",
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["ENTER"] } ] }
+                },
+                { "condition": "web",
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["ENTER"] } ] }
+                },
+                { "condition": "android",
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "BottomCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
+                }
+            ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Setup",
+            "actions": [
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "targets": ["buttonAccept"],
+                    "state": "INACTIVE",
+                    "oneshot": false,
+                    "on_event":"onCreate"
+                },
+                { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":true, "oneshot": false },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"Instructions_01",
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionDelayComponent",
+                    "delay":2,
+                    "oneshot":false
+                },
+                {
+                    "type": "ActionShowTextComponent",
+                    "target":"Instructions_02",
+                    "oneshot":false
+                },
+                { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":false, "oneshot": false },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "targets": ["buttonAccept"],
+                    "state": "NORMAL",
+                    "oneshot": false
+                }
+                
+        ]
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Finish",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event":"INSTRUCTIONS_READ",
+                    "next_state":"NEXT_TASK"
+                }  
+        ] }
+
+    ]
+}

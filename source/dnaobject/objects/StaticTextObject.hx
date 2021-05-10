@@ -143,6 +143,7 @@ class StaticTextObject implements DnaObject implements ITextBox extends DnaObjec
 			border = Reflect.hasField(jsonFile.settings, "border") ? jsonFile.settings.border : border;
 			border_color = Reflect.hasField(jsonFile.settings, "border_color") ? jsonFile.settings.border_color : border_color;
 
+			this.text_box.width = width;
 			this.settings = new Settings(FlxAssets.FONT_DEFAULT, fontsize, width, FlxColor.fromString(color), n_lines, char_per_sec);
 		}
 		if (Reflect.hasField(jsonFile, "text"))
