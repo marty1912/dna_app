@@ -97,7 +97,7 @@
           "target": "TextPosition"
         }
       ],
-      "text": "ProbCodeDoneText",
+      "text": "ProbcodeDoneText",
       "autostart": false,
       "settings": {
         "fontsize": 32,

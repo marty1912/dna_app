@@ -32,7 +32,6 @@ class LocaleDE implements Locale
 "AdditionTutorial_01" => ConfigFile.text("assets/text/de/AdditionTutorial_01.json"),
 "SpeedInstructions_02_PC" => ConfigFile.text("assets/text/de/SpeedInstructions_02_PC.json"),
 "SymbolicNumberComparison_BODY" => ConfigFile.text("assets/text/de/SymbolicNumberComparison_BODY.txt"),
-".StudentFin_01.txt" => ConfigFile.text("assets/text/de/.StudentFin_01.txt.swp"),
 "SETTINGS_AUDIO_TEST" => ConfigFile.text("assets/text/de/SETTINGS_AUDIO_TEST.txt"),
 "SettingsState_LANG" => ConfigFile.text("assets/text/de/SettingsState_LANG.txt"),
 "NumberlineTutorial_04" => ConfigFile.text("assets/text/de/NumberlineTutorial_04.json"),

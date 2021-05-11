@@ -44,7 +44,7 @@
 		"done": false,
 		"saved": false,
 		"to": {
-			"type": "LevelSelectState"
+			"type": "GotoNextState"
 		}
 	}
 ]

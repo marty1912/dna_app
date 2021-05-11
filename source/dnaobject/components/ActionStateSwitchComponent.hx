@@ -42,6 +42,7 @@ class ActionStateSwitchComponent implements DnaComponent extends DnaActionBase
 		if (next_state == NEXT_TASK)
 		{
 			var next_trial:Dynamic = DnaDataManager.instance.getNextTrials();
+			trace("NEXT_TASK:", next_trial.type);
 			if (next_trial == null)
 			{
 				assert(false);

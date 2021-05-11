@@ -39,7 +39,7 @@
                     "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonInvisible.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "RightCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "KeyboardInputComponent", "keys": ["ENTER"] } ] }
                 },
                 { "condition": "android",
-                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "BottomCenter" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
+                    "obj": { "type":"EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name":"buttonAccept", "components": [ { "type": "PositionComponent", "position": "CenterBottom" }           , { "type": "CmdEvtTrigComponent", "event_name": "INSTRUCTIONS_READ" } ,{ "type": "UserButtonComponent" } ] }
                 }
             ]
         },

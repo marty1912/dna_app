@@ -224,9 +224,11 @@ class DnaDataManager
 	 */
 	public function saveAllBefore(max_index:Int):Void
 	{
+		trace("saving all before:", max_index);
 		var index = 0;
 		while (index < max_index)
 		{
+			trace("saving:", m_trials[index].type);
 			m_trials[index].saved = true;
 			index++;
 		}
@@ -259,6 +261,7 @@ class DnaDataManager
 		while (index < m_trials.length)
 		{
 			var cur_trial:Dynamic = m_trials[index];
+			trace("current_trial:", cur_trial.type);
 			if (cur_trial.done == false)
 			{
 				if (cur_trial.type == SAVE_ALL_BEFORE)
@@ -288,12 +291,14 @@ class DnaDataManager
 	 */
 	public function finishCurrentTask():Void
 	{
+		trace("finish current task..");
 		var index = 0;
 		while (index < m_trials.length)
 		{
 			var cur_trial:Dynamic = m_trials[index];
 			if (cur_trial.done == false)
 			{
+				trace("finishing current task:", cur_trial.type);
 				if (cur_trial.type == SAVE_ALL_BEFORE)
 				{
 					saveAllBefore(index);

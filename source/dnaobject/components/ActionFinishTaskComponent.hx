@@ -31,6 +31,7 @@ class ActionFinishTaskComponent implements DnaComponent extends DnaActionBase
 	 */
 	private function finishTask()
 	{
+		trace("now finishing task from state:", this.getParent().getParent().state_type);
 		DnaDataManager.instance.finishCurrentTask();
 	}
 

@@ -1,0 +1,20 @@
+{
+    "type": "GotoNextState",
+    "objects": [
+        {
+            "type": "TaskBackgroundObject"
+        },
+        {
+            "type": "ActionHandlerObject",
+            "name": "ActionHandler_Finish",
+            "actions": [
+                {
+                    "type": "ActionStateSwitchComponent",
+                    "target":"",
+                    "on_event":"onCreate",
+                    "next_state":"NEXT_TASK"
+                }  
+        ] }
+    ]
+}
+

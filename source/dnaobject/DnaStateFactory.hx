@@ -322,6 +322,13 @@ else if (type == "StudentFin")
 			state = new DnaState("StudentFin");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/TestStudents/StudentFin.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "GotoNextState")
+		{
+			state = new DnaState("GotoNextState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/GotoNextState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -334,6 +341,7 @@ else if (type == "StudentFin")
 		return state;
 	}
 }
+
 
 
 
