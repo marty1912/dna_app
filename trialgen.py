@@ -158,6 +158,22 @@ def getPossibleMatchings(numbers_left=[2,3,4,5,6,7,8,9],numbers_right=[2,3,4,5,6
     return matchings
 
 
+def getTripleAdditionTrials(numbers=[i for i in range(10,100)]):
+    calcs = []
+    for num_1 in numbers:
+        for num_2 in numbers:
+            for num_3 in numbers:
+                solution = num_1+num_2+num_3
+                calcs.append([num_1,num_2,num_3,solution])
+    n_two_digits = 60
+    calcs = random.sample(calcs,n_two_digits)
+    template_friendly_trials = []
+    for calc in calcs:
+        template_friendly_trials.append([str(calc[0])+"+"+str(calc[1]),calc[2],calc[3]])
+    return template_friendly_trials
+    
+
+ 
 
 
 def genAdditionTrials(numbers=[2,3,4,5,6,7,8,9]):
@@ -296,6 +312,8 @@ def main():
         trials = genNumLineTrials()
     elif mode == "add":
         trials = genAdditionTrials()
+    elif mode == "triple_add":
+        trials = getTripleAdditionTrials()
     elif mode == "sub":
         trials = genSubtractionTrials()
     elif mode == "mult":

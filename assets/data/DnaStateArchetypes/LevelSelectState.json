@@ -187,11 +187,11 @@
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_TRIAL_BLOCK",
-            "actions": [{
-                "type": "ActionSaveDataComponent",
+            "actions": [
+                { "type": "ActionSaveDataComponent",
                 "oneshot":false,
-                "on_event": "SAVEDATA"
-            }]
+                "on_event": "SAVEDATA" }
+        ]
         },
         {
             "type": "ActionHandlerObject",
