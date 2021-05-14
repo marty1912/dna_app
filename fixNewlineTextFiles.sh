@@ -9,7 +9,9 @@ path_arg=$1
 
 cd "$path_arg"
 # this removes the \n from the files. making them usable for us.
-for filename in *.txt; do echo "$filename" ;echo -n $(tr -d "\n" < "$filename") > "$filename"  ; done
+for filename in *.txt; do echo "$filename" ; printf "%s" "$(< $filename)" > "$filename"  ; done
+
+
 # 
 
 echo "all done. those files should work nicely now."
