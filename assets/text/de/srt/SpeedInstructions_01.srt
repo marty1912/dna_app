@@ -12,7 +12,7 @@ Es werden Ihnen Zahlen präsentiert, die Sie so schnell wie möglich abtippen so
 
 4
 00:00:15,707 --> 00:00:20,107
-Sie haben 4 Minuten Zeit, um so viele Zahlen wie möglich einzugeben.
+Sie haben 5 Minuten Zeit, um so viele Zahlen wie möglich einzugeben.
 
 5
 00:00:20,207 --> 00:00:24,207

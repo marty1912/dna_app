@@ -78,7 +78,7 @@
                     "type": "ActionDelayComponent",
                     "name":"Task_time_clock",
                     "update_event_name":"timer_update",
-                    "delay":240,
+                    "delay":300,
                     "oneshot": false,
                     "on_event":"onCreate"
                 },

@@ -20,7 +20,7 @@ Sie können Fehler mit der Backspace-Taste, das ist die Taste über der Eingabet
 
 6
 00:00:28,607 --> 00:00:33,507
-Sie sollen nun innerhalb von 4 Minuten so viele Zahlen wie möglich tippen.
+Sie sollen nun innerhalb von 5 Minuten so viele Zahlen wie möglich tippen.
 
 7
 00:00:33,607 --> 00:00:37,607
