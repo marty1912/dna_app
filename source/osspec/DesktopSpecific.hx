@@ -38,7 +38,8 @@ class DesktopSpecific implements OsSpecific
 	 */
 	public function getServerUrl():String
 	{
-		return "http://localhost:8000/student_data/api/";
+		// return"http://localhost:8000/student_data/api/";
+		return "https://143.50.35.159/student_data/api/";
 	}
 
 	/**

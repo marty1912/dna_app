@@ -29,14 +29,6 @@
                     "obj": { "type":"TextObject", "name":"Instructions_02", "text":"StudentIntro_confirm_TOUCH", "autostart":false, "settings":{"char_per_sec":24,"fontsize":42 , "n_lines":5, "width": 1000 }, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center" }] } } 
             ]
         },
-       {
-                    "type": "EmptyButtonObject",
-                    "path": "assets/gui_elements/buttonData.png",
-                    "name": "IncTrialsComponent",
-                    "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftBottom", "target": "" },
-                        { "type": "UserButtonComponent" },
-        { "type": "CmdEvtTrigComponent", "event_name": "SAVEDATA" } ] },
- 
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_Setup",
@@ -52,11 +44,7 @@
                     "target":"",
                     "on_event":"onCreate",
                     "oneshot":false
-                },
-                { "type": "ActionSaveDataComponent",
-                "oneshot":false,
-                    "on_event":"SAVEDATA"
-                 }
+                }
         ]
         }
         
