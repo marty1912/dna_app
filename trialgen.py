@@ -258,14 +258,34 @@ def genSubtractionTrials(numbers= [2,3,4,5,6,7,8,9]):
 
     return trials
 
-def genTypingTrials(numbers=[x for x in range(1,100)]):
+def genTypingTrials(numbers=[x for x in range(1,300)]):
     '''
+    we want to resemble the arithmetic trials as this task will be the control for that.
+    there we have solutions with the following digits:
+    single 152 double 245 triple 55
+    so we will do the same here.
     '''
     trials = []
+    n_singles = 152
+    n_doubles = 245
+    n_triple = 55
 
-    for num_1 in numbers:
-        solution = num_1
-        trials.append([num_1,solution])
+    single_digit_numbers = [i for i in range(0,10)]
+    double_digit_numbers = [i for i in range(10,100)]
+    # we choose the range of 300 as this is also the case with the arithmetic trials
+    triple_digit_numbers = [i for i in range(100,300)]
+
+    for single in range(0,n_singles):
+        solution = random.choice(single_digit_numbers)
+        trials.append([solution,solution])
+
+    for double in range(0,n_doubles):
+        solution = random.choice(double_digit_numbers)
+        trials.append([solution,solution])
+
+    for triple in range(0,n_triple):
+        solution = random.choice(triple_digit_numbers)
+        trials.append([solution,solution])
 
     return trials
 

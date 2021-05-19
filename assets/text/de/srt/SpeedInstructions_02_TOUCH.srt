@@ -12,7 +12,7 @@ Sie können Ihre Eingabe bestätigen, indem Sie auf das Häckchen drücken.
 
 4
 00:00:14,807 --> 00:00:19,807
-Falls Sie dich vertippt haben, können Sie das mit dem Pfeil auf der rechten Seite wieder ausbessern.
+Falls Sie sich vertippt haben, können Sie das mit dem Pfeil auf der rechten Seite wieder ausbessern.
 
 5
 00:00:19,907 --> 00:00:24,907

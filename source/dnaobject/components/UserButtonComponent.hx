@@ -57,6 +57,9 @@ class UserButtonComponent implements DnaComponent extends DnaComponentBase
 	 */
 	public function setStatus(status:Int)
 	{
+		// little hack to make buttons responsive on touchscreen.
+		// (Highlight does somehow work there but it should not.)
+
 		if (current_status != status)
 		{
 			current_status = status;
@@ -70,6 +73,7 @@ class UserButtonComponent implements DnaComponent extends DnaComponentBase
 	public function onStatusChanged(new_status:Int)
 	{
 		var parent:IStateMachine = cast(this.getParent());
+
 		switch (new_status)
 		{
 			case FlxButton.NORMAL:
