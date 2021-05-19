@@ -1,6 +1,7 @@
 package dnadata;
 
 import Assertion.assert;
+import flixel.FlxG;
 import flixel.util.FlxSave;
 import haxe.DynamicAccess;
 import haxe.Json;
@@ -25,6 +26,9 @@ class DnaDataManager
 	public static final ALL_MONTI_PARTS_KEY:String = "all_monti_parts";
 	public static final SAVE_ALL_BEFORE:String = "SAVE";
 	public static final REDIRECT:String = "REDIRECT";
+
+	public static final SCREEN_W:String = "screen_w";
+	public static final SCREEN_H:String = "screen_h";
 
 	public var persistent_storage:Dynamic;
 
@@ -96,6 +100,8 @@ class DnaDataManager
 	public function setupOsInfo()
 	{
 		storeData(OS_DATA, OsManager.get_instance().getOsInfo());
+		storeData(SCREEN_W, FlxG.stage.stageWidth);
+		storeData(SCREEN_H, FlxG.stage.stageHeight);
 	}
 
 	public function setupRandomConditions()
