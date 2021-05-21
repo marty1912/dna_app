@@ -66,7 +66,6 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 
 		// we use this because the default sound does not work on ios browsers.
 		sound = OsManager.get_instance().getSoundObject(path);
-		trace("sound:", sound);
 	}
 
 	/**

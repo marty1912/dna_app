@@ -37,6 +37,15 @@ class AndroidSpecific implements OsSpecific
 	 */
 	public function getSoundObject(path:String):ISoundObject
 	{
+		// for better compatability we will use the ".ogg" files on desktop targets.
+		// mp3 does not seem to work..
+		var file_ext_index = path.indexOf(".mp3");
+		// if we have a mp3 file we need to use the ogg instead
+		if (file_ext_index != -1)
+		{
+			path = path.substring(0, file_ext_index) + ".ogg";
+		}
+
 		var sound:FlxSound = new FlxSound();
 		sound.loadEmbedded(Assets.getSound(path));
 		return new FlxSoundWrapper(sound);

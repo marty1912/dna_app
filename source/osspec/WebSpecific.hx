@@ -75,6 +75,15 @@ class WebSpecific implements OsSpecific
 	 */
 	public function getSoundObject(path:String):ISoundObject
 	{
+		// for better compatability we will use the ".mp3" files on web targets.
+		// ogg does not seem to work on ios
+		var file_ext_index = path.indexOf(".ogg");
+		// if we have a mp3 file we need to use the ogg instead
+		if (file_ext_index != -1)
+		{
+			path = path.substring(0, file_ext_index) + ".mp3";
+		}
+
 		var options:HowlOptions = {};
 		options.src = [path];
 		options.autoplay = false;

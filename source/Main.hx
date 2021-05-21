@@ -46,7 +46,7 @@ class Main extends Sprite
 		FlxG.sound.muteKeys = null;
 		FlxG.sound.volumeUpKeys = null;
 		FlxG.sound.volumeDownKeys = null;
-		FlxG.sound.cacheAll();
+		// FlxG.sound.cacheAll();
 		#end
 		FlxG.autoPause = false;
 		/*
