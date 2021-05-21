@@ -5,6 +5,7 @@ import dnaEvent.DnaEventManager;
 import dnadata.DnaDataManager;
 import dnaobject.DnaComponent;
 import dnaobject.DnaComponentBase;
+import dnaobject.interfaces.ISoundObject;
 import dnaobject.interfaces.Slideable;
 import dnaobject.objects.NumberlineObject;
 import flixel.FlxG;
@@ -13,6 +14,8 @@ import flixel.math.FlxRect;
 import flixel.system.FlxSound;
 import flixel.ui.FlxButton;
 import flixel.util.FlxDestroyUtil;
+import howler.Howl.HowlOptions;
+import howler.Howl;
 import locale.LocaleManager;
 import openfl.utils.Assets;
 import osspec.OsManager;
@@ -36,7 +39,7 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 	 */
 	override public function destroy()
 	{
-		this.sound.destroy();
+		// this.sound.destroy();
 		super.destroy();
 	}
 
@@ -45,7 +48,8 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 
 	// TODO: use this so we can have sound on ios: https://github.com/adireddy/haxe-howler/blob/master/samples/Main.hx
 	// howlerjs
-	public var sound:FlxSound;
+	// public var sound:FlxSound;
+	public var sound:ISoundObject;
 	public var from_locale:Bool = false;
 
 	public function setupSound()
@@ -59,9 +63,10 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 		{
 			path = LocaleManager.getInstance().getAudioPath(path);
 		}
-		sound = new FlxSound();
-		sound.loadEmbedded(Assets.getSound(path));
-		sound.onComplete = finishAction;
+
+		// we use this because the default sound does not work on ios browsers.
+		sound = OsManager.get_instance().getSoundObject(path);
+		trace("sound:", sound);
 	}
 
 	/**
@@ -98,13 +103,20 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 	}
 
 	/**
+	 * this will be called when the action is started. for the first time
+	 */
+	override public function onHaveParent()
+	{
+		super.onHaveParent();
+		sound.play();
+	}
+
+	/**
 	 * update - in this function we will put the object back to the screencenter, respecting the childrens offsets.
 	 * @param elapsed
 	 */
 	override public function update(elapsed:Float)
 	{
-		sound.play();
-
 		super.update(elapsed);
 	}
 }

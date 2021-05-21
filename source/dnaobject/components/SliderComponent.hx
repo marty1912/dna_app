@@ -51,7 +51,7 @@ class SliderComponent implements DnaComponent extends DnaComponentBase
 	{
 		// play sound on press
 		var sound:ActionPlaySoundComponent = new ActionPlaySoundComponent();
-		sound.path = "assets/sounds/kenney_interfacesounds/Audio/select_001.ogg";
+		sound.path = "assets/sounds/kenney_interfacesounds/Audio/select_001.mp3";
 		sound.setupSound();
 		getParent().addComponent(sound);
 	}

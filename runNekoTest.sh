@@ -2,7 +2,7 @@
 
 echo "converting audio to ogg"
 cd assets/sounds/de/
-for i in *.oga; do ffmpeg -i "$i" "${i%.*}.ogg" ; done
+for i in *.oga; do ffmpeg -i "$i" "${i%.*}.mp3" ; done
 rm *.oga
 cd ../../../
 

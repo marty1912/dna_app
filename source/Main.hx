@@ -46,6 +46,7 @@ class Main extends Sprite
 		FlxG.sound.muteKeys = null;
 		FlxG.sound.volumeUpKeys = null;
 		FlxG.sound.volumeDownKeys = null;
+		FlxG.sound.cacheAll();
 		#end
 		FlxG.autoPause = false;
 		/*
@@ -60,6 +61,7 @@ class Main extends Sprite
 
 		// trace("now creating initial state.");
 		// FlxG.switchState(DnaStateFactory.create("NumberlineState"));
-		FlxG.switchState(DnaStateFactory.create("StudentIntro"));
+		// FlxG.switchState(DnaStateFactory.create("StudentIntro"));
+		FlxG.switchState(DnaStateFactory.create("SettingsState"));
 	}
 }

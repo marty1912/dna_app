@@ -325,7 +325,7 @@ class ButtonStatePressed implements IState
 		parent.animCtrl.frameIndex = 2;
 		// play sound on press
 		var sound:ActionPlaySoundComponent = new ActionPlaySoundComponent();
-		sound.path = "assets/sounds/kenney_interfacesounds/Audio/select_001.ogg";
+		sound.path = "assets/sounds/kenney_interfacesounds/Audio/select_001.mp3";
 		sound.setupSound();
 		parent.addComponent(sound);
 
@@ -336,7 +336,7 @@ class ButtonStatePressed implements IState
 	{
 		// play sound on release
 		// var sound:ActionPlaySoundComponent = new ActionPlaySoundComponent();
-		// sound.path = "assets/sounds/kenney_interfacesounds/Audio/select_001.ogg";
+		// sound.path = "assets/sounds/kenney_interfacesounds/Audio/select_001.mp3";
 		// sound.setupSound();
 		// parent.addComponent(sound);
 	}

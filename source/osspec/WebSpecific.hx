@@ -1,10 +1,14 @@
 package osspec;
 
+import dnaobject.classes.HowlerSoundWrapper;
+import dnaobject.interfaces.ISoundObject;
 import flixel.FlxG;
 import flixel.math.FlxPoint;
 import flixel.system.scaleModes.FillScaleMode;
 import flixel.system.scaleModes.RatioScaleMode;
 import flixel.util.FlxSave;
+import howler.Howl.HowlOptions;
+import howler.Howl;
 import js.FullScreenApi;
 import js.html.FileSaver;
 import osspec.OsSpecific;
@@ -62,6 +66,21 @@ class WebSpecific implements OsSpecific
 		// https://stackoverflow.com/questions/9454125/javascript-request-fullscreen-is-unreliable
 		// FlxG.fullscreen = true;
 		FlxG.fullscreen = true;
+	}
+
+	/**
+	 * returns a howler sound object that will work on every available browser. 
+	 * @param path 
+	 * @return ISoundObject
+	 */
+	public function getSoundObject(path:String):ISoundObject
+	{
+		var options:HowlOptions = {};
+		options.src = [path];
+		options.autoplay = false;
+		options.loop = false;
+		var sound = new Howl(options);
+		return new HowlerSoundWrapper(sound);
 	}
 
 	/**

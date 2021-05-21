@@ -46,6 +46,6 @@ class LocaleEN implements Locale
 
 	public function getAudioPath(string_id:String):String
 	{
-		return "assets/sounds/kenney_interfacesounds/Audio/click_003.ogg";
+		return "assets/sounds/kenney_interfacesounds/Audio/click_003.mp3";
 	};
 }

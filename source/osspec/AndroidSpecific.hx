@@ -1,9 +1,13 @@
 package osspec;
 
+import dnaobject.classes.FlxSoundWrapper;
+import dnaobject.interfaces.ISoundObject;
 import extension.eightsines.EsOrientation;
 import flixel.FlxG;
 import flixel.math.FlxPoint;
+import flixel.system.FlxSound;
 import flixel.util.FlxSave;
+import openfl.utils.Assets;
 import osspec.OsSpecific;
 
 /**
@@ -24,6 +28,18 @@ class AndroidSpecific implements OsSpecific
 	public function getOsInfo():String
 	{
 		return "Android";
+	}
+
+	/**
+	 * returns a howler sound object that will work on every available browser. 
+	 * @param path 
+	 * @return ISoundObject
+	 */
+	public function getSoundObject(path:String):ISoundObject
+	{
+		var sound:FlxSound = new FlxSound();
+		sound.loadEmbedded(Assets.getSound(path));
+		return new FlxSoundWrapper(sound);
 	}
 
 	/**

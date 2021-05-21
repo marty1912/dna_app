@@ -16,7 +16,7 @@ interface Locale
 
 	/**
 	 * getAudioPath - this function returns the path of the wanted audio asset in the specific locale.
-	 * so it might be that "test" is once "assets/sounds/de/test.ogg" and another time "assets/sounds/en/test.ogg" or something like that.
+	 * so it might be that "test" is once "assets/sounds/de/test.mp3" and another time "assets/sounds/en/test.mp3" or something like that.
 	 * @param string_id 
 	 * @return String
 	 */

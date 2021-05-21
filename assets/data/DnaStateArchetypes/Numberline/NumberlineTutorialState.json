@@ -169,7 +169,7 @@
                 },
                 {
                     "type":"ActionPlaySoundComponent",
-                    "path" : "assets/sounds/kenney_interfacesounds/Audio/select_001.ogg"
+                    "path" : "assets/sounds/kenney_interfacesounds/Audio/select_001.mp3"
                 },
                 {
                     "type": "ActionSetSliderPosComponent",

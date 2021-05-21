@@ -1,8 +1,12 @@
 package osspec;
 
 import Assertion.*;
+import dnaobject.classes.FlxSoundWrapper;
+import dnaobject.interfaces.ISoundObject;
 import flixel.FlxG;
 import flixel.math.FlxPoint;
+import flixel.system.FlxSound;
+import openfl.utils.Assets;
 import osspec.OsSpecific;
 
 /**
@@ -73,6 +77,18 @@ class DesktopSpecific implements OsSpecific
 		var path = new haxe.io.Path(filename);
 		var datastring:String = haxe.Json.stringify(data);
 		sys.io.File.saveContent(path.toString(), datastring);
+	}
+
+	/**
+	 * returns a howler sound object that will work on every available browser. 
+	 * @param path 
+	 * @return ISoundObject
+	 */
+	public function getSoundObject(path:String):ISoundObject
+	{
+		var sound:FlxSound = new FlxSound();
+		sound.loadEmbedded(Assets.getSound(path));
+		return new FlxSoundWrapper(sound);
 	}
 
 	/**

@@ -1,5 +1,6 @@
 package osspec;
 
+import dnaobject.interfaces.ISoundObject;
 import flixel.math.FlxPoint;
 
 /**
@@ -62,4 +63,6 @@ interface OsSpecific
 	 * @return Dynamic - returns the data stored at the specified location.
 	 */
 	public function readFromStorage(filename:String):Dynamic;
+
+	public function getSoundObject(path:String):ISoundObject;
 }
