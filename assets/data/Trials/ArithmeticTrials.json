@@ -1,6 +1,7 @@
 [
   {
-    "type": "ArithmeticInstructionsState_01",
+    "name": "AdditionTutorial",
+    "type": "AdditionTutorialState",
     "desc_head": "ArithmeticState_HEAD",
     "desc_body": "ArithmeticState_BODY",
     "done": false,
@@ -10,30 +11,8 @@
         {
           "name": "ArithmeticHandler",
           "params": {
-            "problem": "2+3=",
-            "solution": 5
-          }
-        },
-        {
-          "name": "TotalTime"
-        }
-      ]
-    ]
-  },
-  {
-    "name": "AdditionPractice",
-    "type": "ArithmeticPracticeState",
-    "desc_head": "ArithmeticState_HEAD",
-    "desc_body": "ArithmeticState_BODY",
-    "done": false,
-    "saved": false,
-    "trials": [
-      [
-        {
-          "name": "ArithmeticHandler",
-          "params": {
-            "problem": "2+3=",
-            "solution": 5
+            "problem": "1+2=",
+            "solution": 3
           }
         },
         {

@@ -1,15 +1,5 @@
 [
-	{
-		"type": "OrdinalTaskInstructionsState_01",
-		"desc_head": "OrdTask_HEAD",
-		"desc_body": "OrdTask_BODY",
-		"done": false,
-		"saved": false,
-		"trials": [
-			[{ "name": "TaskHandler", "params": { "triplet": "1-2-3", "solution": "IN_ORDER" } }, { "name": "TotalTime" }]
-		]
-	},
-	{
+{
 		"type": "OrdinalTaskPracticeState",
         "name":"OrdinalTaskPractice",
 		"desc_head": "OrdTask_HEAD",

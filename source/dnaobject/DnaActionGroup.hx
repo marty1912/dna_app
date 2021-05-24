@@ -104,6 +104,7 @@ class DnaActionGroup implements DnaComponent implements DnaEventSubscriber exten
 	 */
 	public function setupActionHandler()
 	{
+		getParent().getParent().addObject(action_handler);
 		assert(this.action_queue.length != 0);
 		action_queue[0].on_event = getStartEventName();
 		this.getParent().getParent().eventManager.addSubscriberForEvent(this, action_queue[action_queue.length - 1].getFinishedEventName());
@@ -112,6 +113,12 @@ class DnaActionGroup implements DnaComponent implements DnaEventSubscriber exten
 		{
 			action_handler.addAction(action);
 		}
+	}
+
+	override public function onHaveParent()
+	{
+		setupActionHandler();
+		this.getParent().getParent().eventManager.broadcastEvent(getStartEventName());
 	}
 
 	/**
@@ -123,9 +130,6 @@ class DnaActionGroup implements DnaComponent implements DnaEventSubscriber exten
 		if (first)
 		{
 			first = false;
-			setupActionHandler();
-			getParent().getParent().addObject(action_handler);
-			this.getParent().getParent().eventManager.broadcastEvent(getStartEventName());
 		}
 	}
 }

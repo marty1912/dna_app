@@ -1,16 +1,27 @@
 [
 	{
-		"type": "NumlineInstructionsState_01",
+		"type": "NumberlineTutorialState",
 		"desc_head": "NumberlineState_HEAD",
 		"desc_body": "NumberlineState_BODY",
 		"done": false,
 		"saved": false,
 		"trials": [
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 31 } }, { "name": "TotalTime" }]
+			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }]
 		]
 	},
 	{
-		"type": "NumberlinePracticeStateAdult",
+		"type": "NumberlinePracticeState_01",
+		"desc_head": "NumberlineState_HEAD",
+		"desc_body": "NumberlineState_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }]
+		]
+	},
+	
+	{
+		"type": "NumberlineTutorialState_02",
         "name":"NumberlinePractice",
 		"desc_head": "NumberlineState_HEAD",
 		"desc_body": "NumberlineState_BODY",
@@ -18,10 +29,18 @@
 		"saved": false,
 		"trials": [
 
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 31 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 4 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 7 } }, { "name": "TotalTime" }]
+			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 31 } }, { "name": "TotalTime" }]
 
+		]
+	},
+	{
+		"type": "NumberlinePracticeState_02",
+		"desc_head": "NumberlineState_HEAD",
+		"desc_body": "NumberlineState_BODY",
+		"done": false,
+		"saved": false,
+		"trials": [
+			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 31 } }, { "name": "TotalTime" }]
 		]
 	},
 	{

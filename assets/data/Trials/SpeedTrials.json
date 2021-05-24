@@ -1,26 +1,5 @@
 [	
-{
-    "type": "SpeedInstructionsState_01",
-		"desc_head": "SpeedTest_HEAD",
-		"desc_body": "SpeedTest_BODY",
-    "done": false,
-    "saved": false,
-    "trials": [
-      [
-        {
-          "name": "ArithmeticHandler",
-          "params": {
-            "problem": "67         ",
-            "solution": 67
-          }
-        },
-        {
-          "name": "TotalTime"
-        }
-      ]
-    ]
-  },
-    {
+   {
             "type": "ArithmeticPracticeState",
         "name":"SpeedTest",
 		"desc_head": "SpeedTest_HEAD",
