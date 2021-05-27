@@ -21,7 +21,7 @@ class Main extends Sprite
 		// trace("starting...");
 		FlxAssets.FONT_DEFAULT = "assets/fonts/ttf-bitstream-vera-1.10/Vera.ttf";
 		OsManager.get_instance().toLandscapeMode();
-		// DnaDataManager.instance.deleteAllData(); // debug
+		DnaDataManager.instance.deleteAllData(); // debug
 		DnaDataManager.instance.init();
 
 		super();

@@ -21,6 +21,8 @@ class CmdEvtTrigComponent implements DnaComponent implements Command extends Dna
 
 	private var m_event_to_trigger:String;
 
+	public var params:Null<Any> = null;
+
 	/**
 	 * fromFile function. reads from Dynamic field.
 	 * @param jsonFile
@@ -32,6 +34,10 @@ class CmdEvtTrigComponent implements DnaComponent implements Command extends Dna
 		{
 			m_event_to_trigger = jsonFile.event_name;
 		}
+		if (Reflect.hasField(jsonFile, "params"))
+		{
+			params = jsonFile.params;
+		}
 	}
 
 	/**
@@ -39,6 +45,6 @@ class CmdEvtTrigComponent implements DnaComponent implements Command extends Dna
 	 */
 	public override function execute()
 	{
-		this.getParent().getParent().eventManager.broadcastEvent(m_event_to_trigger);
+		this.getParent().getParent().eventManager.broadcastEvent(m_event_to_trigger, params);
 	}
 }

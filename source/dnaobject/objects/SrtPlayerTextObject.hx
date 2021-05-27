@@ -119,7 +119,16 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 		}
 	}
 
-	public function setText(value:String, ?use_literal_text:Bool = false) {}
+	/**
+	 * sets the text of this textbox
+	 * @param value 
+	 * @param use_literal_text 
+	 */
+	public function setText(value:String, ?use_literal_text:Bool = false)
+	{
+		this.parseText(value);
+		this.text_from_file = value;
+	}
 
 	public function getText():String
 		throw "NOT IMPLEMENTED!";

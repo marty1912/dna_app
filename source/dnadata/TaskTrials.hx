@@ -53,6 +53,8 @@ class TaskTrials
 		//
 		all_trial_paths.insert(0, probCode);
 		all_trial_paths.push(finalBlock);
+		//
+		all_trial_paths = ["assets/data/Trials/MathAnxietyTrials.json"];
 
 		var all_trials:Array<Dynamic> = new Array<Dynamic>();
 

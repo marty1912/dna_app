@@ -5,6 +5,7 @@ import dnaEvent.DnaEventManager;
 import dnadata.DnaDataManager;
 import dnaobject.DnaComponent;
 import dnaobject.DnaComponentBase;
+import dnaobject.interfaces.IResourcePath;
 import dnaobject.interfaces.ISoundObject;
 import dnaobject.interfaces.Slideable;
 import dnaobject.objects.NumberlineObject;
@@ -54,6 +55,12 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 
 	public function setupSound()
 	{
+		if (target_resource != "")
+		{
+			var res:IResourcePath = cast getParent().getParent().getObjectByName(target_resource);
+			path = res.getResource();
+		}
+
 		if (path == "")
 		{
 			return;
@@ -88,9 +95,16 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 		{
 			this.path = jsonFile.path;
 		}
-		setupSound();
+		if (Reflect.hasField(jsonFile, "target_resource"))
+		{
+			this.target_resource = jsonFile.target_resource;
+		}
+
+		// setupSound();
 		super.fromFile(jsonFile);
 	}
+
+	public var target_resource:String = "";
 
 	/**
 	 * @param numline_name - the name of the numberline to check.
@@ -107,6 +121,7 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 	override public function onHaveParent()
 	{
 		super.onHaveParent();
+		setupSound();
 		sound.play();
 	}
 

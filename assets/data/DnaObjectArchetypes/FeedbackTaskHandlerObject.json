@@ -1,0 +1,15 @@
+{
+    "type":"FeedbackTaskHandlerObject",
+
+    "target_question":"",
+
+    "target_srt_green":"",
+    "target_srt_yellow":"",
+    "target_srt_orange":"",
+    "target_srt_red":"",
+
+    "target_audio_green":"",
+    "target_audio_yellow":"",
+    "target_audio_orange":"",
+    "target_audio_red":""
+}

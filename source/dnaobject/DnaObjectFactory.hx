@@ -263,7 +263,19 @@ class DnaObjectFactory
 			obj = new NonSymbolCompTaskHandlerObject();
 			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NonSymbolCompTaskHandlerObject.json"));
 		}
-		// INSERT_HERE
+		// // AUTOMATICALLY GENERATED
+else if (type == 'FeedbackTaskHandlerObject')
+{
+	obj = new FeedbackTaskHandlerObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/FeedbackTaskHandlerObject.json"));
+}
+// // AUTOMATICALLY GENERATED
+else if (type == 'ResourceObject')
+{
+	obj = new ResourceObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ResourceObject.json"));
+}
+// INSERT_HERE
 		else
 		{
 			// trace(type);
@@ -276,6 +288,9 @@ class DnaObjectFactory
 		return obj;
 	}
 }
+
+
+
 
 
 

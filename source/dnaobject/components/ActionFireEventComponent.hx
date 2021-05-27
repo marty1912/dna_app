@@ -17,6 +17,7 @@ class ActionFireEventComponent implements DnaComponent extends DnaActionBase
 	}
 
 	public var event_name:String = "";
+	public var params:Null<Any> = null;
 
 	/**
 	 * in here we read our params from a file..
@@ -27,6 +28,10 @@ class ActionFireEventComponent implements DnaComponent extends DnaActionBase
 		if (Reflect.hasField(jsonFile, "event_name"))
 		{
 			event_name = jsonFile.event_name;
+		}
+		if (Reflect.hasField(jsonFile, "params"))
+		{
+			params = jsonFile.params;
 		}
 		super.fromFile(jsonFile);
 		this.jsonFile = jsonFile;
@@ -39,7 +44,7 @@ class ActionFireEventComponent implements DnaComponent extends DnaActionBase
 	 */
 	override public function onHaveParent()
 	{
-		this.getParent().getParent().eventManager.broadcastEvent(event_name);
+		this.getParent().getParent().eventManager.broadcastEvent(event_name, params);
 		this.finishAction();
 	}
 
