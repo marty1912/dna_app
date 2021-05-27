@@ -54,9 +54,14 @@ class ButtonScaleComponent implements DnaComponent extends DnaComponentBase
 
 		if (keep_ratio)
 		{
+			trace("keeping ratio.");
 			if (factor_height > factor_width)
 			{
 				factor_height = factor_width;
+			}
+			if (factor_height < factor_width)
+			{
+				factor_width = factor_height;
 			}
 		}
 

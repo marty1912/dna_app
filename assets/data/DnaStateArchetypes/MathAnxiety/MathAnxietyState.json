@@ -1,0 +1,10 @@
+{
+    "type": "MathAnxietyState",
+    "objects": [
+    { "type": "TaskBackgroundObject" },
+        { "type": "OBJECT_GROUP",
+            "path": "assets/data/DnaObjectGroups/FeedbackButtonsGroup.json" }
+
+
+    ]
+}

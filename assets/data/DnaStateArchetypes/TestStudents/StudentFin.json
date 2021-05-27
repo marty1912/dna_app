@@ -8,7 +8,8 @@
         {
             "type": "StaticTextObject",
             "name": "Instructions_01",
-            "text": "StudentFin_01",
+            "use_literal_text":true,
+            "text": "Vielen Dank! \nIhre Daten wurden gespeichert.",
             "autostart": true,
             "settings": {
                 "char_per_sec": 500,

@@ -4,9 +4,10 @@ import json
 
 from os import listdir
 from os.path import isfile, join, basename ,splitext
-def getTranslationMapString(path):
+def getTranslationMapString(path,filter_contains=""):
     
     files_list = [f for f in listdir(path) if isfile(join(path, f))]
+    files_list = [f for f in files_list if  filter_contains in f]
     map_string = ""
     
     
@@ -44,7 +45,7 @@ if __name__ == "__main__":
     folder_path_text = sys.argv[2]
     folder_path_audio = sys.argv[3]
     my_trans_map = getTranslationMapString(folder_path_text)
-    my_audio_map = getTranslationMapString(folder_path_audio).replace("ConfigFile.text","")
+    my_audio_map = getTranslationMapString(folder_path_audio,".ogg").replace("ConfigFile.text","")
     with open(template_filename) as tempfile:
         temp_string = tempfile.read()
         temp_string = temp_string.replace("INSERT_TEXT_MAP_HERE",my_trans_map)

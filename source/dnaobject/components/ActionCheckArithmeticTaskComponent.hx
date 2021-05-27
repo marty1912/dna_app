@@ -49,8 +49,8 @@ class ActionCheckArithmeticTaskComponent implements DnaComponent extends DnaActi
 
 	/**
 	 * this function checks if the numline result lies within the tolerance.
-	 * if it is within the specified tolerance the event "NUMLINE_CORRECT" is broadcast.
-	 * otherwise "NUMLINE_INCORRECT"
+	 * if it is within the specified tolerance the event "TASK_CORRECT" is broadcast.
+	 * otherwise "TASK_INCORRECT"
 	 * @param numline_name - the name of the numberline to check.
 	 * @param tol - max allowed deviation as a ratio to the whole numberline len.
 	 */

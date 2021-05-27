@@ -1,5 +1,5 @@
 {
-    "type": "NumberlineTutorialState",
+    "type": "NumberlinePracticeState",
     "objects": [
         {
             "type": "BackgroundObject"
@@ -20,24 +20,27 @@
                 "target": ""
             }]
         },
-        {
+       {
             "type": "NumberlineObject",
             "name": "NumberlineObject",
             "num_zero": 0,
             "num_ref":1,
             "num_target":7,
             "num_max":12,
+            "label_ref_color": "0x00000000",
+            "ref_line_color": "0x00FF0000",
+            "visual_mode":"old",
+            "origin_on_target":true,
             "components": [{
                 "type": "PositionComponent",
                 "oneshot": true,
                 "position": "Center"
             },
             {
-                "type": "SliderComponent"
-            },
-            {
                 "type": "SliderTickComponent",
                 "ticks":[
+                    {"position":0,"color":"0xffffff","alpha":1},
+                    {"position":1,"color":"0xffffff","alpha":1},
                     {"position":2,"color":"0xffffff","alpha":1},
                     {"position":3,"color":"0xffffff","alpha":1},
                     {"position":4,"color":"0xffffff","alpha":1},
@@ -50,10 +53,13 @@
                     {"position":11,"color":"0xffffff","alpha":1},
                     {"position":12,"color":"0xffffff","alpha":1}     
                 ]
+            },
+            {
+                "type":"SliderComponent"
             }
         ]
-        }
-        ,
+        },
+
         {
             "type": "SrtPlayerTextObject",
             "name":"FeedbackTextCorrect",
@@ -116,6 +122,7 @@
                     "type": "ActionEnterFullscreenComponent",
                     "on_event": "BtnMainMenuPressed"
                 },
+
                 {
                     "type": "ActionCheckNumberlineComponent",
                     "on_event": "AcceptButtonPressed",
@@ -144,20 +151,20 @@
                 {
                     "type": "ActionAddComponentComponent",
                     "target":"NumberlineObject",
-                    "on_event": "NUMLINE_CORRECT",
+                    "on_event": "TASK_CORRECT",
                     "components":[{"type": "NumlineZoneComponent"}]
                 },
                 {
                     "type": "ActionPlaySoundComponent",
                     "path":"NumberlineFeedbackCorrect",
                     "oneshot":false,
-                    "on_event": "NUMLINE_CORRECT",
+                    "on_event": "TASK_CORRECT",
                     "from_locale":true
                 },
                 {
                     "type": "ActionShowTextComponent",
                     "target":"FeedbackTextCorrect",
-                    "on_event": "NUMLINE_CORRECT"
+                    "on_event": "TASK_CORRECT"
                 },
                 {
                     "type": "ActionStateSwitchComponent",
@@ -173,20 +180,20 @@
                 {
                     "type": "ActionAddComponentComponent",
                     "target":"NumberlineObject",
-                    "on_event": "NUMLINE_INCORRECT",
+                    "on_event": "TASK_INCORRECT",
                     "components":[{"type": "NumlineZoneComponent"}]
                 },
                 {
                     "type": "ActionPlaySoundComponent",
                     "oneshot":false,
                     "path":"NumberlineFeedbackIncorrect",
-                    "on_event": "NUMLINE_INCORRECT",
+                    "on_event": "TASK_INCORRECT",
                     "from_locale":true
                 },
                 {
                     "type": "ActionShowTextComponent",
                     "target":"FeedbackTextIncorrect",
-                    "on_event": "NUMLINE_INCORRECT"
+                    "on_event": "TASK_INCORRECT"
                 },
                 {
                     "type": "ActionStateSwitchComponent",

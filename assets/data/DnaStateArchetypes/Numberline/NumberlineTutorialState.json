@@ -26,6 +26,9 @@
             "num_ref":1,
             "num_target":7,
             "num_max":12,
+            "label_ref_color": "0x00000000",
+            "ref_line_color": "0x00FF0000",
+            "visual_mode":"old",
             "origin_on_target":true,
             "components": [{
                 "type": "PositionComponent",
@@ -35,6 +38,8 @@
             {
                 "type": "SliderTickComponent",
                 "ticks":[
+                    {"position":0,"color":"0xffffff","alpha":1},
+                    {"position":1,"color":"0xffffff","alpha":1},
                     {"position":2,"color":"0xffffff","alpha":1},
                     {"position":3,"color":"0xffffff","alpha":1},
                     {"position":4,"color":"0xffffff","alpha":1},

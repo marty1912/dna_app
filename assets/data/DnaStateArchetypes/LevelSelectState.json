@@ -188,7 +188,7 @@
             "type": "ActionHandlerObject",
             "name": "ActionHandler_TRIAL_BLOCK",
             "actions": [
-                { "type": "ActionSaveDataComponent",
+                { "type": "ActionUploadDataComponent",
                 "oneshot":false,
                 "on_event": "SAVEDATA" }
         ]

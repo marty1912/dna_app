@@ -156,8 +156,15 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 	{
 		m_label_zero.text = ""; // Std.string(m_num_zero);
 		m_label_zero.color = FlxColor.TRANSPARENT; // label_zero_color;
-		m_label_ref.text = Std.string(m_num_ref);
 		m_label_ref.color = label_ref_color;
+		if (label_ref_color.alpha == 0)
+		{
+			m_label_ref.text = Std.string("");
+		}
+		else
+		{
+			m_label_ref.text = Std.string(m_num_ref);
+		}
 		m_label_target.text = Std.string(m_num_target);
 		m_label_target.color = label_target_color;
 	}

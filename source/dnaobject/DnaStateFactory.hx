@@ -329,6 +329,13 @@ else if (type == "GotoNextState")
 			state = new DnaState("GotoNextState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/GotoNextState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "MathAnxietyState")
+		{
+			state = new DnaState("MathAnxietyState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/MathAnxiety/MathAnxietyState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -341,6 +348,10 @@ else if (type == "GotoNextState")
 		return state;
 	}
 }
+
+
+
+
 
 
 

@@ -4,7 +4,7 @@ Herzlich Willkommen zur Zahlenstrahlaufgabe!
 
 2
 00:00:04,691 --> 00:00:08,594
-Hier sehen Sie einen sogenannten @001FF0000Zahlenstrahl@000
+Hier siehst du einen sogenannten @001FF0000Zahlenstrahl@000
 
 3
 00:00:08,681 --> 00:00:11,985
@@ -28,9 +28,9 @@ Hier ist die gesuchte Zahl beispielsweise 7.
 
 8
 00:00:34,300 --> 00:00:39,604
-Ihre Aufgabe ist es nun, die gesuchte Zahl auf dem Zahlenstrahl zu markieren.
+Deine Aufgabe ist es nun, die gesuchte Zahl auf dem Zahlenstrahl zu markieren.
 
 9
 00:00:39,704 --> 00:00:46,704
-Mein Freund @001FF0000Fingus der Finger@000 wird Ihnen das jetzt vorzeigen.
+Mein Freund @001FF0000Fingus der Finger@000 wird dir das jetzt vorzeigen.
 

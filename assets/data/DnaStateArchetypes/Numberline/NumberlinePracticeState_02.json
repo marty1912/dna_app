@@ -189,7 +189,7 @@
                 {
                     "type": "ActionAddComponentComponent",
                     "target":"NumberlineObject",
-                    "on_event": "NUMLINE_CORRECT",
+                    "on_event": "TASK_CORRECT",
                     "oneshot":false,
                     "components":[{"type": "NumlineZoneComponent"}]
                 },
@@ -198,14 +198,14 @@
                     "type": "ActionPlaySoundComponent",
                     "oneshot":false,
                     "path":"NumberlineFeedbackCorrect",
-                    "on_event": "NUMLINE_CORRECT",
+                    "on_event": "TASK_CORRECT",
                     "from_locale":true
                 },
                 {
                     "type": "ActionShowTextComponent",
                     "target":"FeedbackTextCorrect",
                     "oneshot":false,
-                    "on_event": "NUMLINE_CORRECT"
+                    "on_event": "TASK_CORRECT"
                 },
                 {
                     "type": "ActionSaveTrialComponent",
@@ -239,7 +239,7 @@
                 {
                     "type": "ActionAddComponentComponent",
                     "target":"NumberlineObject",
-                    "on_event": "NUMLINE_INCORRECT",
+                    "on_event": "TASK_INCORRECT",
                     "oneshot":false,
                     "components":[{"type": "NumlineZoneComponent"}]
                 },
@@ -247,14 +247,14 @@
                     "type": "ActionPlaySoundComponent",
                     "oneshot":false,
                     "path":"NumberlineFeedbackIncorrect",
-                    "on_event": "NUMLINE_INCORRECT",
+                    "on_event": "TASK_INCORRECT",
                     "from_locale":true
                 },
                 {
                     "type": "ActionShowTextComponent",
                     "target":"FeedbackTextIncorrect",
                     "oneshot":false,
-                    "on_event": "NUMLINE_INCORRECT"
+                    "on_event": "TASK_INCORRECT"
                 },
                 {
                     "type": "ActionRemoveComponentComponent",
