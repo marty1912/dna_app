@@ -2,25 +2,28 @@
 	{
 		"type": "MathAnxietyState",
 
-        "name":"AdditionPractice",
-		"desc_head": "ArithmeticState_HEAD",
+        "name":"Feedback-MASIC",
+		"desc_head": "FEEDBACK_MASIC_HEAD",
 		"desc_body": "SHORTTASKS_BODY",
 		"done": false,
 		"saved": false,
 		"trials": [
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q1", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q2", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q3", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q4", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q5", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q6", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q7", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q8", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q9", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q10", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q11", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q12", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }],
-			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q13", "srt_green": "test_srt_green" , "srt_yellow": "test_srt_yellow", "srt_orange": "test_srt_orange", "srt_red": "test_srt_red", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg"} }]
+			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q1", "srt_green": "MASIC_Q1_green_subs" , "srt_yellow": "MASIC_Q1_yellow_subs", "srt_orange": "MASIC_Q1_orange_subs", "srt_red": "MASIC_Q1_red_subs", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg","question_srt":"MASIC_Q1_subs","question_audio":"assets/sounds/kenney_interfacesounds/Audio/minimize_005.ogg"} }],
+			[{ "name": "TaskHandler", "params": { "question": "MASIC_Q2", "srt_green": "MASIC_Q2_green_subs" , "srt_yellow": "MASIC_Q2_yellow_subs", "srt_orange": "MASIC_Q2_orange_subs", "srt_red": "MASIC_Q2_red_subs", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg","question_srt":"MASIC_Q2_subs","question_audio":"assets/sounds/kenney_interfacesounds/Audio/minimize_005.ogg"} }]
 					]
+	},
+	{
+		"type": "SAVE",
+		"done": false,
+		"saved": false
+	},
+	{
+		"type": "REDIRECT",
+		"done": false,
+		"saved": false,
+		"to": {
+			"type": "GotoNextState"
+		}
 	}
+
 ]

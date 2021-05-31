@@ -8,12 +8,8 @@
     {
     "type": "ActionHandlerObject",
     "actions": [            
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"],
-            "components":[{"type": "UserButtonComponent" }],
-            "on_event":"onCreate"
-        },
+        { "type": "ActionAddComponentComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "components":[{"type": "UserButtonComponent" }], "on_event":"onCreate" },
+        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE" },
         { "type": "ActionLoadTrialComponent", "oneshot":false, "on_event":"onCreate" }
         ]
     },
@@ -27,12 +23,23 @@
         { "type": "ActionLoadTrialComponent", "oneshot":false}
         ]
     },
-{
-    "type": "ActionHandlerObject",
+{ "type": "ActionHandlerObject",
     "actions": [            
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"NORMAL","on_event":"TrialHandler_load_fin" }
-        ]
-    }
+           {
+                    "type": "ActionFinishTaskComponent",
+                "on_event":"TrialHandler_all_fin" ,
+                    "target": ""
+                },
+      
+            { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
+        ] },
+
+{ "type": "ActionHandlerObject",
+    "actions": [            
+        { "type": "ActionPlaySoundComponent", "oneshot":false, "target_resource": "question_audio", "on_event":"TrialHandler_load_fin" },
+        { "type": "ActionShowTextComponent", "oneshot":false, "target": "question_srt", "on_event":"TrialHandler_load_fin" },
+        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"NORMAL" }
+        ] }
 
     ]
 }

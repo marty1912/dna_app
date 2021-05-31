@@ -41,17 +41,21 @@
     { "type": "StaticTextObject", "name": "Text_Question", "use_literal_text":false, "text": "", "autostart": true, "settings": { "char_per_sec": 500, "n_lines":5, "width": 1000, "fontsize":  32 },
             "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center","target":"Text_Area" } ] },
         {"type":"ResourceObject","name":"feedback_audio"},
+        {"type":"ResourceObject","name":"question_audio"},
         { "type": "SrtPlayerTextObject", "name":"feedback_srt", "text":"NumberlineFeedbackRealTask", "autostart":false, "settings":{ "fontsize":32, "width":500 },
             "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
+        { "type": "SrtPlayerTextObject", "name":"question_srt", "text":"NumberlineFeedbackRealTask", "autostart":false, "settings":{ "fontsize":32, "width":500 },
+            "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
+
             {"type":"FeedbackTaskHandlerObject",
             "name":"TaskHandler",
             "target_srt":"feedback_srt",
+            "question_srt":"question_srt",
+            "question_audio":"question_audio",
             "target_question":"Text_Question",
             "target_audio":"feedback_audio"
         },
-        {
-            "type": "TrialHandlerObject"
-        }
+        { "type": "TrialHandlerObject" }
 
 
     ]

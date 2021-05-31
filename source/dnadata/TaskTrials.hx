@@ -34,6 +34,7 @@ class TaskTrials
 		"assets/data/Trials/ArithmeticTrials.json",
 		"assets/data/Trials/NonSymbolCompTrials.json",
 		"assets/data/Trials/NumberlineTrials.json",
+		"assets/data/Trials/MathAnxietyTrials.json",
 		"assets/data/Trials/OrdTrials.json",
 		"assets/data/Trials/SymbolicCompTrials.json",
 		"assets/data/Trials/SpeedTrials.json"
@@ -53,8 +54,6 @@ class TaskTrials
 		//
 		all_trial_paths.insert(0, probCode);
 		all_trial_paths.push(finalBlock);
-		//
-		all_trial_paths = ["assets/data/Trials/MathAnxietyTrials.json"];
 
 		var all_trials:Array<Dynamic> = new Array<Dynamic>();
 

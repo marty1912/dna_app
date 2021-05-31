@@ -116,6 +116,10 @@ class FeedbackTaskHandlerObject implements DnaObject implements TaskObject imple
 		this.answer = "";
 		var textbox:ITextBox = cast this.getParent().getObjectByName(target_question);
 		textbox.setText(params.question, false);
+		var audio:IResourcePath = cast this.getParent().getObjectByName(question_audio);
+		audio.setResource(params.question_audio);
+		var question_subs:ITextBox = cast this.getParent().getObjectByName(question_srt);
+		question_subs.setText(params.question_srt);
 
 		feedbacks_map[GREEN].srt = params.srt_green;
 		feedbacks_map[YELLOW].srt = params.srt_yellow;
@@ -148,8 +152,9 @@ class FeedbackTaskHandlerObject implements DnaObject implements TaskObject imple
 	public var target_question:String;
 
 	public var target_srt:String;
-
 	public var target_audio:String;
+	public var question_srt:String;
+	public var question_audio:String;
 
 	/**
 	 * register events in here
@@ -183,6 +188,15 @@ class FeedbackTaskHandlerObject implements DnaObject implements TaskObject imple
 		if (Reflect.hasField(jsonFile, "target_audio"))
 		{
 			this.target_audio = jsonFile.target_audio;
+		}
+		if (Reflect.hasField(jsonFile, "question_audio"))
+		{
+			this.question_audio = jsonFile.question_audio;
+		}
+
+		if (Reflect.hasField(jsonFile, "question_srt"))
+		{
+			this.question_srt = jsonFile.question_srt;
 		}
 
 		super.fromFile(jsonFile);
