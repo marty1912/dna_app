@@ -34,8 +34,9 @@ class TaskTrials
 		"assets/data/Trials/NonSymbolCompTrials.json",
 		"assets/data/Trials/NumberlineTrials.json",
 		"assets/data/Trials/OrdTrials.json",
-		"assets/data/Trials/SymbolicCompTrials.json" // "assets/data/Trials/ArithmeticTrials.json",
-		// "assets/data/Trials/SpeedTrials.json"
+		"assets/data/Trials/SymbolicCompTrials.json",
+		"assets/data/Trials/ArithmeticTrials.json",
+		"assets/data/Trials/SpeedTrials.json"
 	];
 
 	/**

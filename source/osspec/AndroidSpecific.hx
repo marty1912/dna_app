@@ -39,7 +39,8 @@ class AndroidSpecific implements OsSpecific
 	 */
 	public function getServerUrl():String
 	{
-		return "https://143.50.35.159/student_data/api/";
+		return "https://dna-backend.casacam.net/student_data/api/";
+		// return "https://143.50.35.159/student_data/api/";
 		// return "http://192.168.1.241:8000/student_data/api/";
 	}
 
