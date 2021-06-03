@@ -1,0 +1,7 @@
+{
+    "type": "ActionSetText",
+    "on_event": "seq",
+    "target":"",
+    "use_literal_text":false,
+    "text":""
+}

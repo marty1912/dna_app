@@ -3,9 +3,13 @@
     "objects": [
     { "type": "TaskBackgroundObject" },
     { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/FeedbackButtonsGroup.json" },
+    { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/FeedbackButtonExplainGroup.json" },
+
 { "type": "ActionHandlerObject",
     "actions": [            
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE", "on_event":"onCreate" },
+
+        { "type": "ActionAddComponentComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "components":[{"type": "UserButtonComponent" }], "on_event":"onCreate" },
+        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE", "on_event":"seq" },
         { "type": "ActionLoadTrialComponent", "oneshot":false}
         ]
     },
@@ -19,52 +23,6 @@
         ]
     },
 
-{ "type": "SrtPlayerTextObject", "name":"ExplainButtons_01", "text":"buttons_explain_01", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
-{ "type": "SrtPlayerTextObject", "name":"ExplainButtons_02", "text":"buttons_explain_green", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
-{ "type": "SrtPlayerTextObject", "name":"ExplainButtons_03", "text":"buttons_explain_yellow", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
-{ "type": "SrtPlayerTextObject", "name":"ExplainButtons_04", "text":"buttons_explain_orange", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
-{ "type": "SrtPlayerTextObject", "name":"ExplainButtons_05", "text":"buttons_explain_red", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
-
-
-{ "type": "ActionHandlerObject",
-    "name":"ActionExplainButtons",
-    "actions": [            
-        { "type": "ActionDelayComponent", "oneshot":false, "delay":1, "on_event":"EXPLAIN_BUTTONS" },
-
-        { "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" },
-                    
-        { "type": "ActionShowTextComponent", "oneshot":false, "target": "ExplainButtons_01", "on_event":"same" },
-
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE"},
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green"], "state":"HIGHLIGHT" },
-
-        { "type": "ActionPlaySoundComponent", "oneshot":false,  "from_locale":true, "path":"click_002" },
-        { "type": "ActionShowTextComponent", "oneshot":false, "target": "ExplainButtons_02", "on_event":"same" },
-
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE"},
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Yellow"], "state":"HIGHLIGHT" },
-
-        { "type": "ActionPlaySoundComponent", "oneshot":false,   "from_locale":true,"path":"click_002" },
-        { "type": "ActionShowTextComponent", "oneshot":false, "target": "ExplainButtons_03", "on_event":"same" },
-
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE"},
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Orange"], "state":"HIGHLIGHT" },
-
-        { "type": "ActionPlaySoundComponent", "oneshot":false,   "from_locale":true,"path":"click_002" },
-        { "type": "ActionShowTextComponent", "oneshot":false, "target": "ExplainButtons_04", "on_event":"same" },
-
-
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE"},
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Red"], "state":"HIGHLIGHT" },
-
-        { "type": "ActionPlaySoundComponent", "oneshot":false,   "from_locale":true,"path":"click_002" },
-        { "type": "ActionShowTextComponent", "oneshot":false, "target": "ExplainButtons_05", "on_event":"same" },
-
-        { "type": "ActionFireEventComponent", "event_name":"EXPLAIN_BUTTONS_DONE", "oneshot":false, "target":"" }
-        ]
-    },
-
-
 { "type": "ActionHandlerObject",
     "actions": [            
            { "type": "ActionFinishTaskComponent", "on_event":"TrialHandler_all_fin" , "target": "" },
@@ -73,10 +31,10 @@
 
 { "type": "ActionHandlerObject",
     "actions": [            
-        { "type": "ActionPlaySoundComponent", "oneshot":false, "target_resource": "question_audio", "on_event":"TrialHandler_load_fin" },
-        { "type": "ActionShowTextComponent", "oneshot":false, "target": "question_srt", "on_event":"TrialHandler_load_fin" },
-        { "type": "ActionFireEventComponent", "event_name":"EXPLAIN_BUTTONS", "oneshot":false, "target":"" },
+        { "type": "ActionFireEventComponent", "event_name":"EXPLAIN_BUTTONS", "oneshot":false, "target":"","on_event":"TrialHandler_load_fin" },
         { "type": "ActionDelayComponent", "oneshot":false, "delay":0.1, "on_event":"EXPLAIN_BUTTONS_DONE" },
+        { "type": "ActionPlaySoundComponent", "oneshot":false, "target_resource": "question_audio" },
+        { "type": "ActionShowTextComponent", "oneshot":false, "target": "question_srt", "on_event":"same" },
         { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"NORMAL" }
         ] }
 

@@ -332,7 +332,15 @@ class DnaComponentFactory
 			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ButtonScaleComponent.json"));
 		}
 
-		// INSERT_HERE
+		// // AUTOMATICALLY GENERATED
+
+else if (type == 'ActionSetText')
+{
+	comp = new ActionSetText();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSetText.json"));
+}
+
+// INSERT_HERE
 		else
 		{
 			// trace("type:", type);
@@ -343,6 +351,7 @@ class DnaComponentFactory
 		return comp;
 	}
 }
+
 
 
 

@@ -1,0 +1,7 @@
+﻿1
+00:00:00,000 --> 00:00:06,000
+Die erste Behauptung ist für mich. 
+
+2
+00:00:06,000 --> 00:00:12,000
+Die Behauptung ist ‚Ich höre gerne Musik‘

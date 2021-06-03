@@ -1,0 +1,7 @@
+﻿1
+00:00:00,000 --> 00:00:06,000
+Ich werde dir jetzt ein paar Behauptungen vorlesen und hätte gerne, dass du auf die Antwort zeigst, die am besten auf dich passt. 
+
+2
+00:00:06,000 --> 00:00:12,000
+Ich erkläre dir gleich wie das geht.

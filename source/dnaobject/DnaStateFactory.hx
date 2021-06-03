@@ -338,6 +338,13 @@ class DnaStateFactory
 			state = new DnaState("MathAnxietyTutorial_02");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/MathAnxiety/MathAnxietyTutorial_02.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "MathAnxietyTutorial_01")
+		{
+			state = new DnaState("MathAnxietyTutorial_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/MathAnxiety/MathAnxietyTutorial_01.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -350,4 +357,5 @@ class DnaStateFactory
 		return state;
 	}
 }
+
 

@@ -1,0 +1,53 @@
+{
+    "type": "MathAnxietyTutorial_01",
+    "objects": [
+    { "type": "TaskBackgroundObject" },
+    { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/FeedbackButtonsGroup.json" },
+    { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/FeedbackButtonExplainGroup.json" },
+
+
+        { "type": "SrtPlayerTextObject", "name":"tut_01", "text":"mathanxiety_tutorial_01", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
+        { "type": "SrtPlayerTextObject", "name":"tut_02", "text":"mathanxiety_tutorial_02", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
+        { "type": "SrtPlayerTextObject", "name":"tut_03", "text":"mathanxiety_tutorial_03", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
+        { "type": "SrtPlayerTextObject", "name":"tut_04", "text":"mathanxiety_tutorial_04", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
+        { "type": "SrtPlayerTextObject", "name":"tut_05", "text":"mathanxiety_tutorial_05", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
+        { "type": "SrtPlayerTextObject", "name":"tut_06", "text":"mathanxiety_tutorial_06", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
+
+        { "type": "TutorialFingerObject", "name": "TutorialFinger", "components":[ { "type": "ActionHideComponent", "target":"TutorialFinger" }, { "type": "PositionComponent", "oneshot": true, "position": "LeftBottom" } ] },
+
+{ "type": "ActionHandlerObject",
+    "actions": [            
+        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE", "on_event":"onCreate" },
+        { "type": "ActionSetText", "oneshot":false, "target": "Text_Question", "text":"", "use_literal_text":true }
+
+        ,{ "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" }
+        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_01", "on_event":"same" }
+
+        ,{ "type": "ActionSetText", "oneshot":false, "target": "Text_Question", "text":"mathanxiety_tutorial_q01", "use_literal_text":false}
+
+        ,{ "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" }
+        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_02", "on_event":"same" }
+
+        ,{ "type": "ActionFireEventComponent", "event_name":"EXPLAIN_BUTTONS", "oneshot":false, "target":""}
+        ,{ "type": "ActionDelayComponent", "oneshot":false, "delay":0.1, "on_event":"EXPLAIN_BUTTONS_DONE" }
+
+        ,{ "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" }
+        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_03", "on_event":"same" }
+
+        ,{ "type": "ActionAppearComponent", "target": "TutorialFinger" }
+        ,{ "type": "ActionMoveToAndPressComponent", "target": "TutorialFinger", "target_button": "Button_Green" }
+ 
+        ]
+    },
+
+{ "type": "ActionHandlerObject",
+    "actions": [            
+        { "type": "ActionFireEventComponent", "event_name":"EXPLAIN_BUTTONS", "oneshot":false, "target":"","on_event":"TrialHandler_load_fin" },
+        { "type": "ActionDelayComponent", "oneshot":false, "delay":0.1, "on_event":"EXPLAIN_BUTTONS_DONE" },
+        { "type": "ActionPlaySoundComponent", "oneshot":false, "target_resource": "question_audio" },
+        { "type": "ActionShowTextComponent", "oneshot":false, "target": "question_srt", "on_event":"same" },
+        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"NORMAL" }
+        ] }
+
+    ]
+}
