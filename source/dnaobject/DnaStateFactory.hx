@@ -309,32 +309,34 @@ class DnaStateFactory
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/ProbCode/ProbCodeStateDone.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "StudentIntro")
+		else if (type == "StudentIntro")
 		{
 			state = new DnaState("StudentIntro");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/TestStudents/StudentIntro.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "StudentFin")
+		else if (type == "StudentFin")
 		{
 			state = new DnaState("StudentFin");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/TestStudents/StudentFin.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "GotoNextState")
+		else if (type == "GotoNextState")
 		{
 			state = new DnaState("GotoNextState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/GotoNextState.json");
 		}
 		// // AUTOMATICALLY GENERATED
-
-else if (type == "MathAnxietyState")
+		else if (type == "MathAnxietyState")
 		{
 			state = new DnaState("MathAnxietyState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/MathAnxiety/MathAnxietyState.json");
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == "MathAnxietyTutorial_02")
+		{
+			state = new DnaState("MathAnxietyTutorial_02");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/MathAnxiety/MathAnxietyTutorial_02.json");
 		}
 		// INSERT_HERE
 		else
@@ -348,34 +350,4 @@ else if (type == "MathAnxietyState")
 		return state;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

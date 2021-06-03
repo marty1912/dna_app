@@ -25,12 +25,7 @@
     },
 { "type": "ActionHandlerObject",
     "actions": [            
-           {
-                    "type": "ActionFinishTaskComponent",
-                "on_event":"TrialHandler_all_fin" ,
-                    "target": ""
-                },
-      
+           { "type": "ActionFinishTaskComponent", "on_event":"TrialHandler_all_fin" , "target": "" },
             { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
         ] },
 

@@ -42,8 +42,7 @@
             "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center","target":"Text_Area" } ] },
         {"type":"ResourceObject","name":"feedback_audio"},
         {"type":"ResourceObject","name":"question_audio"},
-        { "type": "SrtPlayerTextObject", "name":"feedback_srt", "text":"NumberlineFeedbackRealTask", "autostart":false, "settings":{ "fontsize":32, "width":500 },
-            "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
+        { "type": "SrtPlayerTextObject", "name":"feedback_srt", "text":"NumberlineFeedbackRealTask", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
         { "type": "SrtPlayerTextObject", "name":"question_srt", "text":"NumberlineFeedbackRealTask", "autostart":false, "settings":{ "fontsize":32, "width":500 },
             "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
 
