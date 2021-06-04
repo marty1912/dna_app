@@ -47,6 +47,7 @@ class ActionMoveToAndPressComponent implements DnaComponent extends DnaActionGro
 		// trace("setting taget name: ", this.m_target_name);
 		this.action_move.setTarget(this.m_target_name);
 		action_move.m_to_object = this.m_target_button;
+		action_move.m_to_center = true;
 		action_move.m_speed = speed;
 		action_move.m_to_x = 50;
 

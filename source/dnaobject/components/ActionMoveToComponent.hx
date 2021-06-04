@@ -21,6 +21,7 @@ class ActionMoveToComponent implements DnaComponent extends DnaActionBase
 	public var mode:String = "linear";
 
 	public var m_to_object:String;
+	public var m_to_center:Bool = false;
 
 	public var m_to_x:Float = 0;
 	public var m_to_y:Float = 0;
@@ -36,6 +37,12 @@ class ActionMoveToComponent implements DnaComponent extends DnaActionBase
 		{
 			m_to_object = jsonFile.to_object;
 		}
+
+		if (Reflect.hasField(jsonFile, "to_center"))
+		{
+			m_to_center = jsonFile.to_center;
+		}
+
 		if (Reflect.hasField(jsonFile, "to_x"))
 		{
 			m_to_x = jsonFile.to_x;
@@ -60,7 +67,15 @@ class ActionMoveToComponent implements DnaComponent extends DnaActionBase
 		// might look confusing at first.
 		// with the first getParent we get the object. and with the 2nd the state.
 		var target:DnaObject = getParent().getParent().getObjectByName(m_target_name);
-		var goal_pos:FlxPoint = getParent().getParent().getObjectByName(m_to_object).getOrigin().copyTo(FlxPoint.get());
+		var to_object:DnaObject = getParent().getParent().getObjectByName(m_to_object);
+		var goal_pos:FlxPoint = to_object.getOrigin().copyTo(FlxPoint.get());
+
+		if (m_to_center == true)
+		{
+			goal_pos.x = goal_pos.x + to_object.getWidth() / 2;
+			goal_pos.y = goal_pos.y + to_object.getHeight() / 2;
+		}
+
 		var target_origin:FlxPoint = target.getOrigin().copyTo(FlxPoint.get());
 
 		goal_pos.x += this.m_to_x;

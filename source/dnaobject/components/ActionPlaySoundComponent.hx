@@ -55,6 +55,8 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 
 	public function setupSound()
 	{
+		trace("sound-path:", path, "target_res", target_resource);
+
 		if (target_resource != "")
 		{
 			var res:IResourcePath = cast getParent().getParent().getObjectByName(target_resource);
@@ -71,6 +73,7 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 			path = LocaleManager.getInstance().getAudioPath(path);
 		}
 
+		trace("now setting up sound to path:", path);
 		// we use this because the default sound does not work on ios browsers.
 		sound = OsManager.get_instance().getSoundObject(path);
 	}
@@ -122,7 +125,9 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 	{
 		super.onHaveParent();
 		setupSound();
+		trace("id:", this.id, "sound:", sound);
 		sound.play();
+		this.finishAction();
 	}
 
 	/**

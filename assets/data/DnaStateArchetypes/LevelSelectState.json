@@ -195,12 +195,9 @@
         },
         {
             "type": "ActionHandlerObject",
-            "actions": [{
-                "type": "ActionStateSwitchComponent",
-                "on_event": "PlayButtonPressed",
-                "target": "",
-                "next_state": "NEXT_TASK"
-            }]
+            "actions": [
+                { "type": "ActionStateSwitchComponent", "on_event": "PlayButtonPressed", "target": "", "next_state": "NEXT_TASK" }
+            ]
         }
     ]
 }
