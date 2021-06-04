@@ -1,0 +1,4 @@
+﻿1
+00:00:00,000 --> 00:00:04,100
+Alles klar, dein Herz klopft also nicht schnell, wenn du Kopfrechnen musst.
+

@@ -58,12 +58,7 @@
     "type": "ActionHandlerObject",
     "name": "ActionHandler_ArithmeticButtons_USERBUTTON",
     "actions": [
-        {
-            "type": "ActionRemoveComponentComponent", "oneshot":false,
-            "targets": [ "AcceptButton", "BackspaceButton"],
-            "on_event":"ArithmeticButtons_REMOVE_USERBUTTON",
-            "target_comp":"UserButtonComponent"
-        },
+        { "type": "ActionRemoveComponentComponent", "oneshot":false, "targets": [ "AcceptButton", "BackspaceButton"], "on_event":"ArithmeticButtons_REMOVE_USERBUTTON", "target_comp":"UserButtonComponent" },
         
         {
             "type": "ActionAddComponentComponent", "oneshot":false,

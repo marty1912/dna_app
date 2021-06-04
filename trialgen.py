@@ -342,6 +342,8 @@ def main():
         trials = genTypingTrials()
     elif mode == "nonsymb":
         trials = genNonSymbTrials()
+    elif mode == "mathanxiety":
+        trials = [[i] for i in range(1,14)]
 
     template_file = sys.argv[2]
 

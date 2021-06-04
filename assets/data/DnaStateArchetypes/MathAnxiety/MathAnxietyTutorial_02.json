@@ -5,11 +5,11 @@
     { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/FeedbackButtonsGroup.json" },
     { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/FeedbackButtonExplainGroup.json" },
 
+        { "type": "SrtPlayerTextObject", "name":"reminder", "text":"mathanxiety_reminder_01", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"Subtitle_Area" } ] },
 { "type": "ActionHandlerObject",
     "actions": [            
 
         { "type": "ActionAddComponentComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "components":[{"type": "UserButtonComponent" }], "on_event":"onCreate" },
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE", "on_event":"seq" },
         { "type": "ActionLoadTrialComponent", "oneshot":false}
         ]
     },
@@ -31,11 +31,24 @@
 
 { "type": "ActionHandlerObject",
     "actions": [            
-        { "type": "ActionFireEventComponent", "event_name":"EXPLAIN_BUTTONS", "oneshot":false, "target":"","on_event":"TrialHandler_load_fin" },
+
+        { "type": "ActionDelayComponent", "oneshot":false, "delay":0.1,"on_event":"TrialHandler_load_fin" },
+        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"NORMAL", "on_event":"seq" },
+        { "type": "ActionRemoveComponentComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "target_comp":"UserButtonComponent" },
+        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE", "on_event":"seq" },
+
+        { "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" },
+        { "type": "ActionShowTextComponent", "oneshot":false, "target": "reminder", "on_event":"same" },
+
+        { "type": "ActionFireEventComponent", "event_name":"EXPLAIN_BUTTONS", "oneshot":false, "target":"" },
         { "type": "ActionDelayComponent", "oneshot":false, "delay":0.1, "on_event":"EXPLAIN_BUTTONS_DONE" },
+
         { "type": "ActionPlaySoundComponent", "oneshot":false, "target_resource": "question_audio" },
         { "type": "ActionShowTextComponent", "oneshot":false, "target": "question_srt", "on_event":"same" },
-        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"NORMAL" }
+
+        { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"NORMAL" },
+
+        { "type": "ActionAddComponentComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "components":[{"type": "UserButtonComponent" }] }
         ] }
 
     ]

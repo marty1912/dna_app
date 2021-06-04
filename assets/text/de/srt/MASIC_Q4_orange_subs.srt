@@ -1,0 +1,4 @@
+﻿1
+00:00:00,000 --> 00:00:04,100
+Alles klar, du meldest dich also im Matheunterricht nicht wirklich gern und viel.
+

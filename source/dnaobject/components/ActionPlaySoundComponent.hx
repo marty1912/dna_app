@@ -45,7 +45,19 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 	}
 
 	public var audio_type:String = "audio_volume_master";
-	public var path:String;
+	public var path(default, set):String;
+
+	private var path_updated:Bool = true;
+
+	public function set_path(value)
+	{
+		if (value != path)
+		{
+			path_updated = true;
+		}
+		path = value;
+		return path;
+	}
 
 	// TODO: use this so we can have sound on ios: https://github.com/adireddy/haxe-howler/blob/master/samples/Main.hx
 	// howlerjs
@@ -60,7 +72,7 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 		if (target_resource != "")
 		{
 			var res:IResourcePath = cast getParent().getParent().getObjectByName(target_resource);
-			path = res.getResource();
+			set_path(res.getResource());
 		}
 
 		if (path == "")
@@ -68,9 +80,10 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 			return;
 		}
 
-		if (from_locale)
+		if (from_locale && path_updated)
 		{
 			path = LocaleManager.getInstance().getAudioPath(path);
+			path_updated = false;
 		}
 
 		trace("now setting up sound to path:", path);
