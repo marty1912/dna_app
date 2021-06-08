@@ -1,0 +1,9 @@
+{
+    "type": "NineSliceSprite",
+    "asset_path": "assets/gui_elements/textbox.png",
+    "scale_from_screen_width":true,
+    "scale_from_screen_height":true,
+    "scale_x": 0.5,
+    "scale_y": 0.5,
+    "components": []
+}

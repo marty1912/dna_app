@@ -25,7 +25,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		super("TrialHandlerObject");
 	}
 
-	override public function registerEvents()
+	override public function onHaveParent()
 	{
 		this.getParent().eventManager.addSubscriberForEvent(this, LOAD_TRIAL);
 		this.getParent().eventManager.addSubscriberForEvent(this, SAVE_TRIAL_DATA);

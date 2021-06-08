@@ -275,6 +275,12 @@ else if (type == 'ResourceObject')
 	obj = new ResourceObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ResourceObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'NineSliceSprite')
+{
+	obj = new NineSliceSprite();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NineSliceSprite.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -288,6 +294,9 @@ else if (type == 'ResourceObject')
 		return obj;
 	}
 }
+
+
+
 
 
 

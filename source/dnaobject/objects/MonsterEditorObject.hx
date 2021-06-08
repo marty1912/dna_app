@@ -38,7 +38,7 @@ class MonsterEditorObject implements DnaObject implements DnaEventSubscriber ext
 		getCurrentPartsFromManager();
 	}
 
-	override public function registerEvents()
+	override public function onHaveParent()
 	{
 		this.getParent().eventManager.addSubscriberForEvent(this, SAVE_MONTI_DATA);
 		this.registerListeners();

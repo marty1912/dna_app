@@ -333,17 +333,16 @@ class DnaComponentFactory
 		}
 
 		// // AUTOMATICALLY GENERATED
+		else if (type == 'ActionSetText')
+		{
+			comp = new ActionSetText();
+			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSetText.json"));
+		}
 
-else if (type == 'ActionSetText')
-{
-	comp = new ActionSetText();
-	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSetText.json"));
-}
-
-// INSERT_HERE
+		// INSERT_HERE
 		else
 		{
-			// trace("type:", type);
+			trace("type:", type);
 			assert(false);
 		}
 
@@ -351,40 +350,3 @@ else if (type == 'ActionSetText')
 		return comp;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

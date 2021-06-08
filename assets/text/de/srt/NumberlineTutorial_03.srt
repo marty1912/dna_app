@@ -8,13 +8,17 @@ Deshalb werden wir die Aufgabe jetzt etwas schwieriger machen.
 
 3
 00:00:08,800 --> 00:00:14,000
-Wir lassen nur noch zwei Zahlen auf dem Zahlenstrahl stehen.
+Wir nehmen alle Linien weg und es bleibt nur noch die 1 auf dem Zahlenstrahl stehen.
 
 4
 00:00:14,000 --> 00:00:18,000
-Wo die gesuchte Zahl jetzt genau liegt musst du @001FF0000schätzen!@000
+Die Länge von 1 ist in @001FF0000rot@000 eingezeichnet.
 
 5
 00:00:18,000 --> 00:00:21,100
-Mal sehen ob @001FF0000Fingus der Finger@000 das auch noch kann...
+Wo die gesuchte Zahl jetzt genau liegt musst du also schätzen!
+
+6
+00:00:21,100 --> 00:00:28,100
+Klingt schon viel schwieriger. Mal sehen ob ich das schaffe. 
 

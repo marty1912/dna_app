@@ -160,7 +160,7 @@ class NonSymbolCompTaskHandlerObject implements DnaObject implements TaskObject 
 	/**
 	 * register events in here
 	 */
-	override public function registerEvents()
+	override public function onHaveParent()
 	{
 		// trace(this.getParent());
 		this.getParent().eventManager.addSubscriberForEvent(this, EVENTNAME_LEFT);

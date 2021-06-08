@@ -4,7 +4,7 @@ Moment mal...
 
 2
 00:00:02,500 --> 00:00:05,500
-Sie haben schon alle Übungsaufgaben geschafft!
+Du hast ja schon alle Übungsaufgaben geschafft!
 
 3
 00:00:06,300 --> 00:00:08,300
@@ -12,13 +12,13 @@ Sie haben schon alle Übungsaufgaben geschafft!
 
 4
 00:00:08,700 --> 00:00:11,700
-Jetzt kommen noch ein paar Aufgaben für Sie!
+Jetzt kommen noch ein paar Aufgaben für dich!
 
 5
 00:00:11,800 --> 00:00:15,800
-Bei diesen Aufgaben werde ich Ihnen nicht mehr sagen, ob du Sie diese korrekt beantwortet haben.
+Bei diesen Aufgaben werde ich dir nicht mehr sagen, ob du sie korrekt beantwortet hast.
 
 6
 00:00:17,000 --> 00:00:21,500
-Also geben Sie einfach Ihr Bestes! @001FF0000Viel Erfolg!@000
+Also gib einfach dein Bestes! @001FF0000Viel Erfolg!@000
 

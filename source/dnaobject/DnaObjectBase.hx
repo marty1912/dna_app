@@ -470,7 +470,7 @@ class DnaObjectBase implements IFlxDestroyable
 
 		if (this.m_parent_state != null)
 		{
-			registerEvents();
+			onHaveParent();
 		}
 	}
 
@@ -491,5 +491,5 @@ class DnaObjectBase implements IFlxDestroyable
 	/**
 	 * register events in here
 	 */
-	public function registerEvents():Void {}
+	public function onHaveParent():Void {}
 }

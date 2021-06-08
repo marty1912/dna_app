@@ -210,5 +210,5 @@ interface DnaObject extends IFlxDestroyable
 	/**
 	 * register events in here
 	 */
-	public function registerEvents():Void;
+	public function onHaveParent():Void;
 }

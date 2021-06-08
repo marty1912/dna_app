@@ -159,7 +159,7 @@ class FeedbackTaskHandlerObject implements DnaObject implements TaskObject imple
 	/**
 	 * register events in here
 	 */
-	override public function registerEvents()
+	override public function onHaveParent()
 	{
 		// trace(this.getParent());
 		this.getParent().eventManager.addSubscriberForEvent(this, EVT_FEEDBACK_GIVEN);

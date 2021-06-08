@@ -76,7 +76,7 @@ class TaskTimeoutTimerObject implements DnaObject implements DnaEventSubscriber 
 	/**
 	 * register events in here
 	 */
-	override public function registerEvents()
+	override public function onHaveParent()
 	{
 		this.getParent().eventManager.addSubscriberForEvent(this, DnaConstants.EVT_START_TRIAL_TIME);
 		this.getParent().eventManager.addSubscriberForEvent(this, DnaConstants.TASK_ANSWERED_EVENT);

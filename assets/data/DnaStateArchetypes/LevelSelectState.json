@@ -21,13 +21,15 @@
             }]
         },
         {
-            "type": "SpriteObject",
-            "name": "TextBox",
-            "asset_path": "assets/gui_elements/textbox.png",
-            "scale_x": 1,
-            "scale_y": 1,
-            "origin_where": "",
-            "components": [{
+     "type": "NineSliceSprite",
+    "name": "TextBox",
+    "asset_path": "assets/gui_elements/textbox.png",
+    "scale_from_screen_width":true,
+    "scale_from_screen_height":true,
+    "scale_x": 0.5,
+    "scale_y": 0.5,
+    "grid":[100,100,300,200],
+           "components": [{
                 "type": "PositionComponent",
                 "oneshot": true,
                 "position": "CenterTop",

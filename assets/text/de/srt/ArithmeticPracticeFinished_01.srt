@@ -4,7 +4,7 @@ Super!
 
 2
 00:00:03,100 --> 00:00:07,200
-Jetzt sind Sie bereit für die richtigen Aufgaben.
+Jetzt bist du bereit für die richtigen Aufgaben.
 
 3
 00:00:07,300 --> 00:00:13,300
@@ -12,9 +12,9 @@ Zur Erinnerung: Es geht darum, so viele Durchgänge wie möglich, in der vorgege
 
 4
 00:00:13,400 --> 00:00:18,600
-Überspringen Sie keine Aufgaben!
+Überspringe keine Aufgaben!
 
 5
 00:00:18,700 --> 00:00:22,700
-Sie haben nun fünf Minuten Zeit.
+Du hast nun zwei Minuten Zeit.
 

@@ -59,6 +59,7 @@
 	<haxelib name="FileSaver" />
 	<haxelib name="thx.csv" />
 	<haxelib name="mergejson" />
+	<haxelib name="flixel-ui" />
 	<!-- TODO: PUSH NOTIFICATIONS!! https://github.com/Tw1ddle/samcodes-notifications-demo-->
 	
 	

@@ -4,5 +4,5 @@ Gut gemacht!
 
 2
 00:00:04,200 --> 00:00:09,200
-Sie haben diese Aufgabe abgeschlossen.
+Du hast diese Aufgabe abgeschlossen.
 

@@ -4,21 +4,21 @@ Hallo! Herzlich Willkommen zur Additionsaufgabe!
 
 2
 00:00:05,200 --> 00:00:10,200
-Bei dieser Aufgabe sind Ihre Rechenkünste gefragt.
+Bei dieser Aufgabe sind deine Rechenkünste gefragt.
 
 3
 00:00:10,300 --> 00:00:15,300
-Die Rechnung sehen Sie hier. Ihre Aufgabe ist es jetzt, das richtige Ergebnis auszurechnen.
+Die Rechnung siehst du hier. Deine Aufgabe ist es jetzt, das richtige Ergebnis auszurechnen.
 
 4
 00:00:15,400 --> 00:00:20,400
-Beim Addieren oder Plusrechnen zählen Sie einfach die beiden Zahlen links und rechts vom "+"-Zeichen zusammen.
+Beim Addieren oder Plusrechnen zählst du einfach die beiden Zahlen links und rechts vom "+"-Zeichen zusammen.
 
 5
 00:00:20,500 --> 00:00:25,500
-Damit das auch alles klar ist, habe ich ein Beispiel vorbereitet.
+Damit das auch Alles klar ist, habe ich ein Beispiel vorbereitet.
 
 6
 00:00:25,600 --> 00:00:30,600
-Hier ist die Rechnung "1+2" gegeben. Kennen Sie die Lösung?
+Hier ist die Rechnung "9+3" gegeben. Kennst du die Lösung?
 
