@@ -1,5 +1,6 @@
 package dnaobject.objects;
 
+import dnaobject.interfaces.Scrollable;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.math.FlxPoint;
@@ -11,7 +12,7 @@ import flixel.util.FlxColor;
  * this class will be used for example to create the "Finger" in our tutorials.
  *
  */
-class SpriteObject implements DnaObject extends DnaObjectBase
+class SpriteObject implements DnaObject implements Scrollable extends DnaObjectBase
 {
 	private var m_asset_path:String;
 	private var m_scale_x:Float = 1;
@@ -27,6 +28,16 @@ class SpriteObject implements DnaObject extends DnaObjectBase
 		this.loadAsset();
 	}
 
+	public function setPosition(value:FlxPoint)
+	{
+		this.sprite.setPosition(value.x, value.y);
+	}
+
+	public function getPosition():FlxPoint
+	{
+		return this.sprite.getPosition();
+	}
+
 	/**
 	 * getter for asset path.
 	 */
@@ -35,10 +46,25 @@ class SpriteObject implements DnaObject extends DnaObjectBase
 		return m_asset_path;
 	}
 
-	public function setScale(x, y)
+	public function setScale(x:Float, y:Float)
 	{
-		sprite.scale.x = x;
-		sprite.scale.y = y;
+		if (this.m_scale_from_screen_height || this.m_scale_from_screen_width)
+		{
+			var want_scale = FlxPoint.get();
+			want_scale.x = (x / sprite.width);
+			want_scale.y = (y / sprite.height);
+			if (want_scale.x != want_scale.y)
+			{
+				want_scale.x = want_scale.y;
+			}
+			sprite.scale.x = want_scale.x;
+			sprite.scale.y = want_scale.y;
+		}
+		else
+		{
+			sprite.scale.x = x;
+			sprite.scale.y = y;
+		}
 		m_scale_x = x;
 		m_scale_y = y;
 	}

@@ -1,0 +1,5 @@
+{
+	"type": "ActionShowUnlockables",
+	"on_event": "seq",
+	"target":""
+    }

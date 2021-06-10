@@ -2,6 +2,7 @@ package dnaobject.objects;
 
 import dnaobject.interfaces.Scrollable;
 import flixel.addons.display.FlxBackdrop;
+import flixel.math.FlxPoint;
 
 /**
  * class BackgroundObject
@@ -28,6 +29,16 @@ class BackgroundObject implements DnaObject implements Scrollable extends DnaObj
 		super('BackgroundObject');
 		backdrop = new FlxBackdrop();
 		addChild(backdrop);
+	}
+
+	public function setPosition(value:FlxPoint)
+	{
+		this.backdrop.setPosition(value.x, value.y);
+	}
+
+	public function getPosition():FlxPoint
+	{
+		return this.backdrop.getPosition();
 	}
 
 	/**

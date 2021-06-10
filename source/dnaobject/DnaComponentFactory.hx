@@ -339,7 +339,15 @@ class DnaComponentFactory
 			file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSetText.json"));
 		}
 
-		// INSERT_HERE
+		// // AUTOMATICALLY GENERATED
+
+else if (type == 'ActionShowUnlockables')
+{
+	comp = new ActionShowUnlockables();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionShowUnlockables.json"));
+}
+
+// INSERT_HERE
 		else
 		{
 			trace("type:", type);
@@ -350,3 +358,6 @@ class DnaComponentFactory
 		return comp;
 	}
 }
+
+
+

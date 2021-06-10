@@ -1,8 +1,8 @@
 [
-
     {
         "type": "MonsterPartComponent",
         "part_type": "hat",
+        "preview":"assets/images/monsterparts/resized/preview_hat.png",
         "unlocked":true,
         "assets": [{
             "name": "hat",
@@ -13,6 +13,7 @@
     {
         "type": "MonsterPartComponent",
         "part_type": "head",
+        "preview":"assets/images/monsterparts/resized/preview_head.png",
         "unlocked":true,
         "assets": [{
                 "name": "nose",
@@ -53,6 +54,7 @@
         "type": "MonsterPartComponent",
         "part_type": "arms",
         "unlocked":true,
+        "preview":"assets/images/monsterparts/resized/preview_arms.png",
         "assets": [{
                 "name": "arm_l",
                 "path": "assets/images/monsterparts/resized/arm_l.png"
@@ -78,6 +80,7 @@
     {
         "type": "MonsterPartComponent",
         "part_type": "body",
+        "preview":"assets/images/monsterparts/resized/preview_body.png",
         "unlocked":true,
         "assets": [{
                 "name": "body",
@@ -93,6 +96,7 @@
         "type": "MonsterPartComponent",
         "part_type": "legs",
         "unlocked":true,
+        "preview":"assets/images/monsterparts/resized/preview_legs.png",
         "assets": [{
                 "name": "leg_l",
                 "path": "assets/images/monsterparts/resized/leg_l.png"

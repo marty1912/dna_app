@@ -1,5 +1,8 @@
 {
     "type": "BackgroundObject",
-    "background_path": "assets/images/backdrop_2.png",
-    "components": []
+    "background_path": "assets/images/my_background.resized.png",
+    "components": [
+{ "type": "InfiniteScrollComponent", "scroll_speed_x": 8, "scroll_speed_y": -4, "mode": "Scroll" }
+
+    ]
 }

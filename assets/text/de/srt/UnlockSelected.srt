@@ -1,0 +1,8 @@
+﻿1
+00:00:00,000 --> 00:00:04,100
+Gute Wahl!
+
+2
+00:00:04,200 --> 00:00:10,100
+Schau gleich in den Monti-Editor und probier das neue Teil aus!
+

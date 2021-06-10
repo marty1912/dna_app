@@ -20,6 +20,7 @@ import flixel.FlxSprite;
 import flixel.FlxState;
 import flixel.group.FlxGroup;
 import flixel.group.FlxSpriteGroup;
+import flixel.math.FlxPoint;
 import flixel.system.FlxAssets.FlxGraphicAsset;
 import haxe.Json;
 import openfl.Assets;
@@ -42,6 +43,7 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 	public function new()
 	{
 		super("MonsterObject");
+
 		setupDragonBones();
 		getPartsFromData();
 		setNextState(new MontiStateIdle());
@@ -50,6 +52,8 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 	private var _factory:FlixelFactory = new FlixelFactory();
 	private var armatureGroup:FlxTypedGroup<FlixelArmatureDisplay>;
 	private var arm_collider:FlixelArmatureCollider;
+
+	public var scale:FlxPoint = FlxPoint.get(1, 1);
 
 	/**
 	 * setupDragonBones
@@ -133,6 +137,8 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 		}
 		armatureGroup.forEach(function(display:FlixelArmatureDisplay)
 		{
+			display.scaleX = scale.x;
+			display.scaleY = scale.y;
 			var sprite:FlxBasic = cast(display, FlxBasic);
 
 			this.getParent().add(sprite);
@@ -190,8 +196,8 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 		display.antialiasing = true;
 		display.x = 0;
 		display.y = 0;
-		display.scaleX = 0.7;
-		display.scaleY = 0.7;
+		// display.scaleX = 0.7;
+		// display.scaleY = 0.7;
 	}
 
 	private function _animationHandler(event:FlixelEvent):Void
@@ -226,8 +232,8 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 		// hardcoded values because the nice version does not work here..
 		max_left_from_origin = 0;
 		max_up_from_origin = 0;
-		max_down_from_origin = 450;
-		max_right_from_origin = 350;
+		max_down_from_origin = (450 / 0.7) * scale.y;
+		max_right_from_origin = (350 / 0.7) * scale.x;
 		return [
 			max_left_from_origin,
 			max_right_from_origin,

@@ -98,12 +98,22 @@ class DnaButtonObject implements DnaObject implements CommandClient implements I
 	}
 
 	/**
+	 * this is the callback we can use to do stuff on button press
+	 */
+	public var onPressCallback:Void->Void;
+
+	/**
 	 * this function is executed on button press.
 	 * to be super clean we should put this functionality in a component but it will work from here as well
 	 * and for buttons this is okay.
 	 */
 	public function onBtnPress()
 	{
+		if (onPressCallback != null)
+		{
+			onPressCallback();
+		}
+
 		for (command in this.command_list)
 		{
 			command.execute();

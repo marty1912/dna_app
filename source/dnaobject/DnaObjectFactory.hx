@@ -281,6 +281,12 @@ else if (type == 'NineSliceSprite')
 	obj = new NineSliceSprite();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NineSliceSprite.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'UnlockDisplayController')
+{
+	obj = new UnlockDisplayController();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/UnlockDisplayController.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -294,6 +300,9 @@ else if (type == 'NineSliceSprite')
 		return obj;
 	}
 }
+
+
+
 
 
 

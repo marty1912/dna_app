@@ -1,6 +1,6 @@
 package dnaobject.interfaces;
 
-import flixel.addons.display.FlxBackdrop;
+import flixel.math.FlxPoint;
 
 /**
  * interface Scrollable - this interface is used to define what we need to
@@ -8,8 +8,6 @@ import flixel.addons.display.FlxBackdrop;
  */
 interface Scrollable
 {
-	/**
-	 * this is the backdrop object we want to scroll infinitely
-	 */
-	public var backdrop:FlxBackdrop;
+	public function setPosition(value:FlxPoint):Void;
+	public function getPosition():FlxPoint;
 }

@@ -358,6 +358,47 @@ class DnaDataManager
 	}
 
 	/**
+	 * this function is used to get all the available (unlocked) monty parts and return them.
+	 * @return Array<Dynamic>
+	 */
+	public function getLockedMontiParts():Array<Dynamic>
+	{
+		var parts:Array<Dynamic> = retrieveData(ALL_MONTI_PARTS_KEY);
+		var locked_parts:Array<Dynamic> = new Array<Dynamic>();
+		for (part in parts)
+		{
+			if (part.unlocked == false)
+			{
+				locked_parts.push(part);
+			}
+		}
+		return locked_parts;
+	}
+
+	/**
+	 * this function unlocks the monti part given, stores the list of parts again and then
+	 * returns the newly unlocked part.
+	 * in case that all parts have been unlocked already it returns null
+	 * @return Dynamic - the part that was unlocked.
+	 */
+	public function unlockMontyPart(value:Dynamic):Dynamic
+	{
+		var parts:Array<Dynamic> = retrieveData(ALL_MONTI_PARTS_KEY);
+		var unlock:Dynamic = null;
+		for (part in parts)
+		{
+			if (!part.unlocked && part == value)
+			{
+				part.unlocked = true;
+				unlock = part;
+				break;
+			}
+		}
+		storeData(ALL_MONTI_PARTS_KEY, parts);
+		return unlock;
+	}
+
+	/**
 	 * this function unlocks the next available monti part, stores the list of parts again and then
 	 * returns the newly unlocked part.
 	 * in case that all parts have been unlocked already it returns null

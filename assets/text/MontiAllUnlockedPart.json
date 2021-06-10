@@ -1,0 +1,10 @@
+    {
+        "type": "MonsterPartComponent",
+        "unlocked":true,
+        "part_type": "body",
+        "preview":"assets/images/monsterparts/invisible/lock.png",
+        "assets": [{
+            "name": "body",
+            "path": "assets/images/monsterparts/invisible/lock.png"
+        }]
+    }

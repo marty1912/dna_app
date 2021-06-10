@@ -10,8 +10,10 @@
             "type": "SpriteObject",
             "name": "CenteredPosition",
             "asset_path": "INVISIBLE_BOX",
-            "scale_x": 500,
-            "scale_y": 400,
+            "scale_from_screen_width":true,
+            "scale_from_screen_height":true,
+            "scale_x": 0.3,
+            "scale_y": 0.5,
             "origin_where": "",
             "components": [{
                 "type": "PositionComponent",
@@ -27,7 +29,7 @@
     "scale_from_screen_width":true,
     "scale_from_screen_height":true,
     "scale_x": 0.5,
-    "scale_y": 0.5,
+    "scale_y": 0.45,
     "grid":[100,100,300,200],
            "components": [{
                 "type": "PositionComponent",
@@ -59,12 +61,15 @@
             }]
         },
         {
-            "type": "SpriteObject",
-            "name": "Banner",
-            "asset_path": "assets/gui_elements/banner.png",
-            "scale_x": 1,
-            "scale_y": 1,
-            "origin_where": "",
+
+     "type": "NineSliceSprite",
+    "name": "Banner",
+    "asset_path": "assets/gui_elements/banner.png",
+    "scale_from_screen_width":true,
+    "scale_from_screen_height":true,
+    "scale_x": 0.35,
+    "scale_y": 0.12,
+    "grid":[200,20,400,30],
             "components": [{
                 "type": "PositionComponent",
                 "oneshot": true,

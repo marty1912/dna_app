@@ -6,6 +6,7 @@ import dnaobject.DnaComponentBase;
 import dnaobject.interfaces.Scrollable;
 import flixel.FlxCamera;
 import flixel.FlxG;
+import flixel.math.FlxPoint;
 import flixel.util.FlxColor;
 
 /**
@@ -133,7 +134,9 @@ class InfiniteScrollComponent implements DnaComponent extends DnaComponentBase
 			scroll_y = Math.cos(m_total_time_elapsed) * m_scroll_speed_y;
 		}
 
-		var old_pos = m_scrollable.backdrop.getPosition();
-		m_scrollable.backdrop.setPosition(old_pos.x + (elapsed * scroll_x), old_pos.y + (elapsed * scroll_y));
+		var old_pos = m_scrollable.getPosition();
+		var new_pos = FlxPoint.get(old_pos.x + (elapsed * scroll_x), old_pos.y + (elapsed * scroll_y));
+		m_scrollable.setPosition(new_pos);
+		new_pos.put();
 	}
 }

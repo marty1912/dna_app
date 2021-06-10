@@ -87,6 +87,7 @@ class LocaleDE implements Locale
 "MASIC_Q12_subs" => ConfigFile.text("assets/text/de/MASIC_Q12_subs.json"),
 "MASIC_Q8_red_subs" => ConfigFile.text("assets/text/de/MASIC_Q8_red_subs.json"),
 "MASIC_Q8" => ConfigFile.text("assets/text/de/MASIC_Q8.txt"),
+"UnlockSelected" => ConfigFile.text("assets/text/de/UnlockSelected.json"),
 "MASIC_Q9_subs" => ConfigFile.text("assets/text/de/MASIC_Q9_subs.json"),
 "MASIC_TUT_Q1_yellow_subs" => ConfigFile.text("assets/text/de/MASIC_TUT_Q1_yellow_subs.json"),
 "SymbNumCompInstructions_02_PC" => ConfigFile.text("assets/text/de/SymbNumCompInstructions_02_PC.json"),
