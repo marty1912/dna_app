@@ -1,141 +1,24 @@
 [
-	{
-		"type": "NumberlineTutorialState",
-		"desc_head": "NumberlineState_HEAD",
-		"desc_body": "NumberlineState_BODY",
-		"done": false,
-		"saved": false,
-		"trials": [
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }]
-		]
-	},
-	{
-		"type": "NumberlinePracticeState_01",
-		"desc_head": "NumberlineState_HEAD",
-		"desc_body": "NumberlineState_BODY",
-		"done": false,
-		"saved": false,
-		"trials": [
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }]
-		]
-	},
+
+	{ "type": "NumberlineTutorialState", "desc_head": "NumberlineState_HEAD", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
+	{ "type": "NumberlinePracticeState_01", "desc_head": "NumberlineState_HEAD", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
 	
-	{
-		"type": "NumberlineTutorialState_02",
-        "name":"NumberlinePractice",
-		"desc_head": "NumberlineState_HEAD",
-		"desc_body": "NumberlineState_BODY",
-		"done": false,
-		"saved": false,
-		"trials": [
+	{ "type": "NumberlineTutorialState_02", "name":"NumberlinePractice", "desc_head": "NumberlineState_HEAD", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 31 } }, { "name": "TotalTime" }] ] },
+	{ "type": "NumberlinePracticeState_02", "desc_head": "NumberlineState_HEAD", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [
+			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 24, "target": 9 } }, { "name": "TotalTime" }],
+			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 31, "target": 15 } }, { "name": "TotalTime" }]
+		]
+	},
+	{ "type": "NumberlinePracticeDoneState", "desc_head": "SymbolicNumberComparison_HEAD", "desc_body": "SymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": [ [{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }] ] },
 
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 31 } }, { "name": "TotalTime" }]
-
-		]
-	},
-	{
-		"type": "NumberlinePracticeState_02",
-		"desc_head": "NumberlineState_HEAD",
-		"desc_body": "NumberlineState_BODY",
-		"done": false,
-		"saved": false,
-		"trials": [
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 31 } }, { "name": "TotalTime" }]
-		]
-	},
-	{
-		"type": "SymbNumCompInstructionsState_02",
-		"desc_head": "SymbolicNumberComparison_HEAD",
-		"desc_body": "SymbolicNumberComparison_BODY",
-		"done": false,
-		"saved": false,
-		"trials": [
-			[{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }]
-		]
-	},
-	{
-		"type": "NumberlineState",
-        "name":"Numberline",
-		"desc_head": "NumberlineState_HEAD",
-		"desc_body": "NumberlineState_BODY",
-		"done": false,
-		"saved": false,
-		"trials": [
+	{ "type": "NumberlineState", "name":"Numberline", "desc_head": "NumberlineState_HEAD", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, 
+		"trials": [ 
 			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 4 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 7 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 10 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 13 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 16 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 19 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 22 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 25 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 28 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 31 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 38, "target": 4 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 38, "target": 7 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 38, "target": 10 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 38, "target": 13 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 38, "target": 16 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 38, "target": 19 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 38, "target": 22 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 38, "target": 25 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 38, "target": 28 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 38, "target": 31 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 44, "target": 4 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 44, "target": 7 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 44, "target": 10 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 44, "target": 13 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 44, "target": 16 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 44, "target": 19 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 44, "target": 22 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 44, "target": 25 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 44, "target": 28 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 44, "target": 31 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 50, "target": 4 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 50, "target": 7 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 50, "target": 10 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 50, "target": 13 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 50, "target": 16 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 50, "target": 19 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 50, "target": 22 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 50, "target": 25 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 50, "target": 28 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 50, "target": 31 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 56, "target": 4 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 56, "target": 7 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 56, "target": 10 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 56, "target": 13 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 56, "target": 16 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 56, "target": 19 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 56, "target": 22 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 56, "target": 25 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 56, "target": 28 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 56, "target": 31 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 4 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 7 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 10 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 13 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 16 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 19 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 22 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 25 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 28 } }, { "name": "TotalTime" }],
-			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 31 } }, { "name": "TotalTime" }]
-
-		]
+			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 32, "target": 22 } }, { "name": "TotalTime" }]
+				]
 	},
 	{ "name": "TaskDoneState", "type": "TaskDoneState", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "done": false, "saved": false, "trials": [ ] },
-	{
-		"type": "SAVE",
-		"done": false,
-		"saved": false
-	},
-	{
-		"type": "REDIRECT",
-		"done": false,
-		"saved": false,
-		"to": {
-			"type": "GotoNextState"
-		}
+	{ "type": "SAVE", "done": false, "saved": false },
+	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "UnlockState" }
 	}
 ]

@@ -35,7 +35,9 @@
         {
             "type": "ActionHandlerObject",
             "actions": [
-                { "type": "ActionShowTextComponent", "target":"UnlockText1", "on_event":"onCreate" }
+                { "type": "ActionSetButtonStateComponent", "on_event": "onCreate","state":"INACTIVE", "targets": ["button_1","button_2","button_3"] },
+                { "type": "ActionShowTextComponent", "target":"UnlockText1", "on_event":"seq" },
+                { "type": "ActionSetButtonStateComponent", "on_event": "seq","state":"NORMAL", "targets": ["button_1","button_2","button_3"] }
 
             ]
         },

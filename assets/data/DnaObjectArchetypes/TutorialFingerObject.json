@@ -3,5 +3,7 @@
     "asset_path": "assets/images/finger.png",
     "scale_x":1,
     "scale_y":1,
+    "keep_ratio":false,
+    "scale_from_screen_height":false,
     "origin_where":"mid_top"
 }

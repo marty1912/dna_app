@@ -19,72 +19,20 @@
             "type": "ActionHandlerObject",
             "name": "ActionHandler_Timeout",
             "actions": [
-                
-                {
-                    "type": "ActionDelayComponent",
-                    "oneshot":false,
-                    "delay":8,
-                    "on_event":"EVT_START_TRIAL_TIME",
-                    "target":""
-                },{
-                    "type": "ActionFireEventComponent",
-                    "oneshot":false,
-                    "event_name":"TASK_ANSWERED",
-                    "target":""
-                },
-                {
-                    "type": "ActionCancelActionComponent",
-                    "oneshot":false,
-                    "on_event": "TASK_ANSWERED",
-                    "target":"ActionHandler_Timeout"
-                }
-
+                { "type": "ActionDelayComponent", "oneshot":false, "delay":8, "on_event":"EVT_START_TRIAL_TIME <-DISABLED", "target":"" },
+                { "type": "ActionFireEventComponent", "oneshot":false, "event_name":"TASK_ANSWERED", "target":"" },
+                { "type": "ActionCancelActionComponent", "oneshot":false, "on_event": "TASK_ANSWERED", "target":"ActionHandler_Timeout" }
             ]},
-         
-
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_onAnswered",
             "actions": [
                 
-                {
-                    "type": "ActionSaveTrialComponent",
-                    "oneshot":false,
-                    "on_event": "TASK_ANSWERED",
-                    "target":""
-                },
-                {
-                    "type": "ActionRemoveComponentComponent",
-                    "target": "NumberlineObject",
-                    "oneshot":false,
-                    "target_comp":"SliderComponent"
-                } ,
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state":"INACTIVE",
-                    "oneshot":false
-                },
-                
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "blank_overlay",
-                    "invert":false,
-                    "oneshot": false
-                },
-                
-                {
-                    "type": "ActionSwitchToSubStateComponent",
-                    "target":"blank",
-                    "oneshot":false,
-                    "duration_min":4000,
-                    "duration_max":5000
-                },
-                {
-                    "type": "ActionLoadTrialComponent",
-                    "oneshot":false,
-                    "target":""
-                }
+                { "type": "ActionSaveTrialComponent", "oneshot":false, "on_event": "TASK_ANSWERED", "target":"" },
+                { "type": "ActionRemoveComponentComponent", "target": "NumberlineObject", "oneshot":false, "target_comp":"SliderComponent" } ,
+                { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE", "oneshot":false },
+                { "type": "ActionAppearComponent", "target": "blank_overlay", "invert":false, "oneshot": false },
+                { "type": "ActionLoadTrialComponent", "oneshot":false, "target":"" }
                 
             ]
         },
@@ -92,31 +40,18 @@
             "type": "ActionHandlerObject",
             "name": "ActionHandler_setup",
             "actions": [
-                {
-                    "type": "ActionLoadTrialComponent",
-                    "target":"",
-                    "on_event": "onCreate",
-                    "oneshot":false
-                } ,
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "blank_overlay",
-                    "invert":false,
-                    "oneshot": false
-                }
+                { "type": "ActionLoadTrialComponent", "target":"", "on_event": "onCreate", "oneshot":false } ,
+                { "type": "ActionAppearComponent", "target": "blank_overlay", "invert":true, "oneshot": false }
             ]
         },
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_OnSuccessful_load",
             "actions": [
+                { "type": "ActionFireEventComponent", "oneshot":false, "event_name":"SUCCESSFULL_LOAD" , "on_event":"TrialHandler_load_fin"},
+
+                { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE", "oneshot":false },
                 {
-                    "type": "ActionSwitchToSubStateComponent",
-                    "oneshot":false,
-                    "target":"fixation",
-                    "duration":500,
-                    "on_event":"TrialHandler_load_fin"
-                },{
                     "type": "ActionAppearComponent",
                     "target": "blank_overlay",
                     "invert":true,
@@ -127,11 +62,7 @@
                     "oneshot":false,
                     "components":[{"type":"SliderComponent"}]
                 },
-                {
-                    "type": "ActionFireEventComponent",
-                    "oneshot":false,
-                    "event_name":"EVT_START_TRIAL_TIME"
-                }
+                { "type": "ActionFireEventComponent", "oneshot":false, "event_name":"EVT_START_TRIAL_TIME" }
                 ]},
         {
             "type": "ActionHandlerObject",

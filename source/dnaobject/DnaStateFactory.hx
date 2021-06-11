@@ -345,6 +345,13 @@ else if (type == "MathAnxietyTutorial_01")
 			state = new DnaState("MathAnxietyTutorial_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/MathAnxiety/MathAnxietyTutorial_01.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NumberlinePracticeDoneState")
+		{
+			state = new DnaState("NumberlinePracticeDoneState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Numberline/NumberlinePracticeDoneState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -357,6 +364,7 @@ else if (type == "MathAnxietyTutorial_01")
 		return state;
 	}
 }
+
 
 
 

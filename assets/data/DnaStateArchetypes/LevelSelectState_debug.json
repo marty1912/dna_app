@@ -1,10 +1,52 @@
 {
     "type": "LevelSelectState",
-    "objects": [
-        { "type": "BackgroundObject" },
-        { "type": "SpriteObject", "name": "CenteredPosition", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.3, "scale_y": 0.5, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "" }] },
-        { "type": "NineSliceSprite", "name": "TextBox", "asset_path": "assets/gui_elements/textbox.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.45, "grid":[100,100,300,200], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "CenteredPosition" }] },
-        { "type": "TextObject", "name": "Text_BODY", "text": "NEXT_TRIAL_DESC", "autostart": true, "settings": { "char_per_sec": 24, "width": 500,
+    "objects": [{
+            "type": "BackgroundObject"
+        },
+
+
+
+        {
+            "type": "SpriteObject",
+            "name": "CenteredPosition",
+            "asset_path": "INVISIBLE_BOX",
+            "scale_from_screen_width":true,
+            "scale_from_screen_height":true,
+            "scale_x": 0.3,
+            "scale_y": 0.5,
+            "origin_where": "",
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center",
+                "target": ""
+            }]
+        },
+        {
+     "type": "NineSliceSprite",
+    "name": "TextBox",
+    "asset_path": "assets/gui_elements/textbox.png",
+    "scale_from_screen_width":true,
+    "scale_from_screen_height":true,
+    "scale_x": 0.5,
+    "scale_y": 0.45,
+    "grid":[100,100,300,200],
+           "components": [{
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "CenterTop",
+                "target": "CenteredPosition"
+            }]
+        },
+
+        {
+            "type": "TextObject",
+            "name": "Text_BODY",
+            "text": "NEXT_TRIAL_DESC",
+            "autostart": true,
+            "settings": {
+                "char_per_sec": 24,
+                "width": 500,
                 "n_lines": 5,
                 "append_before": "@041911315",
                 "append_after": "@040",

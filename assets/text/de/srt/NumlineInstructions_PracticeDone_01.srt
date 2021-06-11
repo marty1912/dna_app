@@ -1,0 +1,23 @@
+﻿1
+00:00:00,000 --> 00:00:02,000
+Ausgezeichnet!
+
+2
+00:00:02,100 --> 00:00:06,300
+Du hast alle Übungsaufgaben geschafft.
+
+3
+00:00:06,400 --> 00:00:09,900
+Jetzt kommen die richtigen Aufgaben.
+
+4
+00:00:10,000 --> 00:00:18,000
+Bei diesen Aufgaben werde ich dir nicht mehr sagen, ob du sie richtig beantwortet hast.
+
+5
+00:00:18,100 --> 00:00:22,900
+Also gib einfach dein Bestes. 
+
+6
+00:00:23,000 --> 00:00:27,000
+Viel Erfolg!
