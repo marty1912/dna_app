@@ -4,20 +4,7 @@
         { "type": "BackgroundObject" },
         { "type": "SpriteObject", "name": "CenteredPosition", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.3, "scale_y": 0.5, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "" }] },
         { "type": "NineSliceSprite", "name": "TextBox", "asset_path": "assets/gui_elements/textbox.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.45, "grid":[100,100,300,200], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "CenteredPosition" }] },
-        { "type": "TextObject", "name": "Text_BODY", "text": "NEXT_TRIAL_DESC", "autostart": true, "settings": { "char_per_sec": 24, "width": 500,
-                "n_lines": 5,
-                "append_before": "@041911315",
-                "append_after": "@040",
-                "border": "OUTLINE",
-                "border_color": "0x911315"
-            },
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": false,
-                "position": "Center",
-                "target": "TextBox"
-            }]
-        },
+        { "type": "TextObject", "name": "Text_BODY", "text": "NEXT_TRIAL_DESC", "autostart": true, "settings": { "char_per_sec": 24, "width": 500, "n_lines": 5, "append_before": "@041911315", "append_after": "@040", "border": "OUTLINE", "border_color": "0x911315" }, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "TextBox" }] },
         {
 
      "type": "NineSliceSprite",
@@ -49,6 +36,29 @@
                 "target": "Banner"
             }]
         },
+       {
+            "type": "TextObject",
+            "name": "Text_DEBUG",
+            "text": "Achtung: Dieser Bilschirm wird so nicht in der App vorkommen. Die Taskauswahl wird derzeit überarbeitet.",
+            "use_literal_text":true,
+            "autostart": true,
+            "settings": {
+                "char_per_sec": 24,
+                "width": 700,
+                "n_lines": 5,
+                "append_before": "@041d8c50a",
+                "append_after": "@040",
+                "border": "OUTLINE",
+                "border_color": "0x911315"
+            },
+            "components": [{
+                "type": "PositionComponent",
+                "oneshot": false,
+                "position": "CenterBottom",
+                "target": ""
+            }]
+        },
+  
         {
             "type": "TextObject",
             "name": "Text_HEAD",
@@ -159,8 +169,29 @@
         ]
         },
         {
-            "type": "ActionHandlerObject",
-            "actions": [
+            "type": "EmptyButtonObject",
+            "path": "assets/gui_elements/buttonDecline.png",
+            "name": "IncTrialsComponent",
+            "components": [{
+                    "type": "PositionComponent",
+                    "oneshot": true,
+                    "position": "LeftTop",
+                    "target": ""
+                },
+                {
+                    "type": "UserButtonComponent"
+                },
+                {
+                    "type": "CmdEvtTrigComponent",
+                    "event_name": "BACK_TO_MENU"
+                }
+            ]
+        },
+        { "type": "ActionHandlerObject", "actions": [
+                { "type": "ActionStateSwitchComponent", "on_event": "BACK_TO_MENU", "target": "", "next_state": "MainMenuState" }
+            ]
+        },
+        { "type": "ActionHandlerObject", "actions": [
                 { "type": "ActionStateSwitchComponent", "on_event": "PlayButtonPressed", "target": "", "next_state": "NEXT_TASK" }
             ]
         }

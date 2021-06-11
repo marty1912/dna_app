@@ -31,13 +31,13 @@ class TaskTrials
 	public final finalBlock:String = "assets/data/Trials/FinalStudentTrial.json";
 
 	public final task_block_paths:Array<String> = [
-		"assets/data/Trials/ArithmeticTrials.json",
-		"assets/data/Trials/NonSymbolCompTrials.json",
+		// "assets/data/Trials/ArithmeticTrials.json",
+		// "assets/data/Trials/NonSymbolCompTrials.json",
 		"assets/data/Trials/NumberlineTrials.json",
 		"assets/data/Trials/MathAnxietyTrials.json",
-		"assets/data/Trials/OrdTrials.json",
-		"assets/data/Trials/SymbolicCompTrials.json",
-		"assets/data/Trials/SpeedTrials.json"
+		// "assets/data/Trials/OrdTrials.json",
+		// "assets/data/Trials/SymbolicCompTrials.json",
+		//	"assets/data/Trials/SpeedTrials.json"
 	];
 
 	/**
@@ -52,8 +52,8 @@ class TaskTrials
 		}
 
 		//
-		all_trial_paths.insert(0, probCode);
-		all_trial_paths.push(finalBlock);
+		// all_trial_paths.insert(0, probCode);
+		// all_trial_paths.push(finalBlock);
 
 		var all_trials:Array<Dynamic> = new Array<Dynamic>();
 

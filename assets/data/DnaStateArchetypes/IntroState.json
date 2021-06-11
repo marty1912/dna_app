@@ -79,7 +79,7 @@
                 {
                     "type": "PositionComponent",
                     "oneshot": true,
-                    "position": "RightBottom"
+                    "position": "Center"
                 },
                 {
                     "type": "ActionSetButtonStateComponent",
@@ -119,6 +119,11 @@
                     "type": "ActionDelayComponent",
                     "delay": 0.1,
                     "on_event": "onStart"
+                },
+                {
+                    "type": "ActionSetButtonStateComponent",
+                    "target": "AcceptButton",
+                    "state":"INACTIVE"
                 },
                 {
                     "type": "ActionPlaySoundComponent",

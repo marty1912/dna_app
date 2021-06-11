@@ -43,7 +43,7 @@ class Main extends Sprite
 		addChild(new FlxGame(width, heigth, 1, 60, 60, true, false));
 
 		// debug until we have sound
-		FlxG.sound.volume = 0;
+		// FlxG.sound.volume = 0;
 		#if web
 		FlxG.sound.muteKeys = null;
 		FlxG.sound.volumeUpKeys = null;
@@ -64,6 +64,6 @@ class Main extends Sprite
 		// trace("now creating initial state.");
 		// FlxG.switchState(DnaStateFactory.create("NumberlineState"));
 		// FlxG.switchState(DnaStateFactory.create("StudentIntro"));
-		FlxG.switchState(DnaStateFactory.create("LevelSelectState"));
+		FlxG.switchState(DnaStateFactory.create("IntroState"));
 	}
 }
