@@ -54,7 +54,6 @@ class ButtonScaleComponent implements DnaComponent extends DnaComponentBase
 
 		if (keep_ratio)
 		{
-			trace("keeping ratio.");
 			if (factor_height > factor_width)
 			{
 				factor_height = factor_width;
@@ -78,5 +77,8 @@ class ButtonScaleComponent implements DnaComponent extends DnaComponentBase
 	 * in this function we will make the object Shrink..
 	 * @param elapsed
 	 */
-	override public function update(elapsed:Float) {}
+	override public function update(elapsed:Float)
+	{
+		onHaveParent();
+	}
 }

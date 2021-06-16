@@ -84,6 +84,13 @@ interface DnaObject extends IFlxDestroyable
 	public function addComponent(component:DnaComponent):Void;
 
 	/**
+	 * this returns the nested object name like:
+	 * parent_name/base_name
+	 * @param base_name 
+	 */
+	public function getNestedObjectName(base_name:String):String;
+
+	/**
 	 * removeComponent - this function removes component with a specified id from the list.
 	 */
 	public function removeComponent(component_id:Int):Void;

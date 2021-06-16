@@ -8,6 +8,8 @@ import flixel.group.FlxGroup;
 import flixel.math.FlxPoint;
 import flixel.util.FlxDestroyUtil.IFlxDestroyable;
 import flixel.util.FlxDestroyUtil;
+import haxe.Json;
+import haxe.macro.Type.Ref;
 
 /**
  * this is the Base implementation for a DnaObject.
@@ -31,6 +33,12 @@ class DnaObjectBase implements IFlxDestroyable
 	 * static variable used to get a unique id count.
 	 */
 	static var s_obj_id:Int = 0;
+
+	public var objects_archetypes:Array<Dynamic> = new Array<Dynamic>();
+
+	public var nested_objects:Array<DnaObject> = new Array<DnaObject>();
+
+	public var json_file:Dynamic;
 
 	/**
 	 * private constructor so nobody can create an actual instance of this class.
@@ -67,6 +75,7 @@ class DnaObjectBase implements IFlxDestroyable
 		{
 			return;
 		}
+		this.json_file = jsonFile;
 
 		if (Reflect.hasField(jsonFile, "name"))
 		{
@@ -76,6 +85,13 @@ class DnaObjectBase implements IFlxDestroyable
 		{
 			this.setActive(jsonFile.active);
 		}
+
+		// support for nested objects
+		if (Reflect.hasField(jsonFile, "objects"))
+		{
+			objects_archetypes = jsonFile.objects;
+		}
+
 		if (Reflect.hasField(jsonFile, "components"))
 		{
 			var components:Array<Dynamic> = jsonFile.components;
@@ -87,7 +103,18 @@ class DnaObjectBase implements IFlxDestroyable
 				addComponent(to_add);
 			}
 		}
+		setupNestedObjects();
 	};
+
+	/**
+	 * this returns the nested object name like:
+	 * parent_name/base_name
+	 * @param base_name 
+	 */
+	public function getNestedObjectName(base_name:String):String
+	{
+		return this.obj_name + "/" + base_name;
+	}
 
 	/**
 	 * removes a component by component type.
@@ -487,6 +514,41 @@ class DnaObjectBase implements IFlxDestroyable
 	 * the parent state of this object.
 	 */
 	private var m_parent_state:DnaState;
+
+	public function setupNestedObjects():Void
+	{
+		if (this.getParent() == null)
+		{
+			return;
+		}
+
+		if (objects_archetypes.length != 0)
+		{
+			var objects_str:String = Json.stringify(objects_archetypes);
+
+			for (obj in objects_archetypes)
+			{
+				var name = obj.name;
+				var nest_name = getNestedObjectName(obj.name);
+				// we will replace the object names for all nested objects so
+				// references to other nested objects are possible
+				objects_str = StringTools.replace(objects_str, name, nest_name);
+			}
+			var parent_field_ref_regex = ~/::(([A-Z0-9]|_)+)::/i;
+			if (parent_field_ref_regex.match(objects_str))
+			{
+				var replace_with = Reflect.field(this.json_file, parent_field_ref_regex.matched(1));
+				objects_str = parent_field_ref_regex.replace(objects_str, replace_with);
+			}
+
+			objects_archetypes = Json.parse(objects_str);
+		}
+
+		for (obj in objects_archetypes)
+		{
+			this.getParent().objectFromFile(obj);
+		}
+	}
 
 	/**
 	 * register events in here

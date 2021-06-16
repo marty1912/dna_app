@@ -287,6 +287,12 @@ else if (type == 'UnlockDisplayController')
 	obj = new UnlockDisplayController();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/UnlockDisplayController.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'LevelSelectPreview')
+{
+	obj = new LevelSelectPreview();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/LevelSelectPreview.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -300,6 +306,7 @@ else if (type == 'UnlockDisplayController')
 		return obj;
 	}
 }
+
 
 
 

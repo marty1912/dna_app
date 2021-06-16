@@ -352,6 +352,13 @@ else if (type == "NumberlinePracticeDoneState")
 			state = new DnaState("NumberlinePracticeDoneState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Numberline/NumberlinePracticeDoneState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "LevelSelectState_debug")
+		{
+			state = new DnaState("LevelSelectState_debug");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/LevelSelectState_debug.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -364,6 +371,7 @@ else if (type == "NumberlinePracticeDoneState")
 		return state;
 	}
 }
+
 
 
 
