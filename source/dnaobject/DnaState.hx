@@ -69,6 +69,10 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 		// eventManager.clearEvents();
 		// this.fromFile(this.m_json_file);
 		// trace("create:", this.state_type);
+		for (obj in this.getObjectList())
+		{
+			obj.onReady();
+		}
 		eventManager.broadcastEvent("onCreate");
 		var t_end = Timer.stamp();
 

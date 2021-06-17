@@ -21,6 +21,7 @@ class ButtonScaleComponent implements DnaComponent extends DnaComponentBase
 
 	public var target_name:String = "";
 	public var keep_ratio:Bool = true;
+	public var oneshot:Bool = false;
 
 	/**
 	 * in here we read our params from a file..
@@ -35,6 +36,10 @@ class ButtonScaleComponent implements DnaComponent extends DnaComponentBase
 		if (Reflect.hasField(jsonFile, "keep_ratio"))
 		{
 			keep_ratio = jsonFile.keep_ratio;
+		}
+		if (Reflect.hasField(jsonFile, "oneshot"))
+		{
+			oneshot = jsonFile.oneshot;
 		}
 	}
 
@@ -79,6 +84,9 @@ class ButtonScaleComponent implements DnaComponent extends DnaComponentBase
 	 */
 	override public function update(elapsed:Float)
 	{
-		onHaveParent();
+		if (!this.oneshot)
+		{
+			onHaveParent();
+		}
 	}
 }

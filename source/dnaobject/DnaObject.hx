@@ -84,6 +84,11 @@ interface DnaObject extends IFlxDestroyable
 	public function addComponent(component:DnaComponent):Void;
 
 	/**
+	 * this function is called when the state is done with the fromFile is in the create.
+	 */
+	public function onReady():Void;
+
+	/**
 	 * this returns the nested object name like:
 	 * parent_name/base_name
 	 * @param base_name 

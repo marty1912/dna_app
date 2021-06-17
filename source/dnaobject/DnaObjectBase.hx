@@ -554,4 +554,9 @@ class DnaObjectBase implements IFlxDestroyable
 	 * register events in here
 	 */
 	public function onHaveParent():Void {}
+
+	/**
+	 * this function is called when the state is done with the fromFile is in the create.
+	 */
+	public function onReady():Void {}
 }

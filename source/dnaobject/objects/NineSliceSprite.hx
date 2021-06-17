@@ -29,6 +29,7 @@ class NineSliceSprite implements DnaObject extends DnaObjectBase
 	public function setAssetPath(value:String)
 	{
 		m_asset_path = value;
+		setupSprite();
 	}
 
 	/**

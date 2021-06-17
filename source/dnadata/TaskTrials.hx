@@ -86,6 +86,39 @@ class TaskTrials
 	}
 
 	/**
+	 * [returns all the trialBlocks we have]
+	 */
+	public function getTrialBlocks():Array<TrialBlock>
+	{
+		var blocks:Array<TrialBlock> = new Array<TrialBlock>();
+		for (path in task_block_paths)
+		{
+			var json = readTrialsFromFile(path);
+			var trial_block = new TrialBlock(json);
+			blocks.push(trial_block);
+		}
+		return blocks;
+	}
+
+	/**
+	 * [returns all the trialBlocks we have]
+	 */
+	public function getTrialBlocksTodo():Array<TrialBlock>
+	{
+		var blocks:Array<TrialBlock> = new Array<TrialBlock>();
+		for (path in task_block_paths)
+		{
+			var json = readTrialsFromFile(path);
+			var trial_block = new TrialBlock(json);
+			if (trial_block.done == false)
+			{
+				blocks.push(trial_block);
+			}
+		}
+		return blocks;
+	}
+
+	/**
 	 * [Description]
 	 * @param path 
 	 */

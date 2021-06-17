@@ -347,6 +347,14 @@ else if (type == 'ActionShowUnlockables')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionShowUnlockables.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'ActionShowLevelPreview')
+{
+	comp = new ActionShowLevelPreview();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionShowLevelPreview.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -358,6 +366,7 @@ else if (type == 'ActionShowUnlockables')
 		return comp;
 	}
 }
+
 
 
 

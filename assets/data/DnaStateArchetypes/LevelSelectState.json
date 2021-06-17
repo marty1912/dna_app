@@ -16,6 +16,7 @@
 
         { "type": "TextObject", "name": "Text_HEAD", "text": "NEXT_TRIAL_HEAD", "autostart": true, "settings": { "char_per_sec": 24, "width": 500, "n_lines": 5, "append_before": "@041d8c50a", "append_after": "@040", "border": "OUTLINE", "border_color": "0x911315" }, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target": "BannerCenter" }] }, 
         { "type": "EmptyButtonObject", "path": "assets/gui_elements/buttonDecline.png", "name": "IncTrialsComponent", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftTop", "target": "" }, { "type": "UserButtonComponent" }, { "type": "CmdEvtTrigComponent", "event_name": "BACK_TO_MENU" } ] },
-        { "type": "ActionHandlerObject", "actions": [ { "type": "ActionStateSwitchComponent", "on_event": "BACK_TO_MENU", "target": "", "next_state": "MainMenuState" } ] }
+        { "type": "ActionHandlerObject", "actions": [ { "type": "ActionStateSwitchComponent", "on_event": "BACK_TO_MENU", "target": "", "next_state": "MainMenuState" } ] },
+        { "type": "ActionHandlerObject", "actions": [ { "type": "ActionShowLevelPreview", "on_event": "onCreate", "targets": ["preview_1","preview_2"] } ] }
     ]
 }

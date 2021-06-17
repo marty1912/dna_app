@@ -1,0 +1,5 @@
+{
+	"type": "ActionShowLevelPreview",
+	"on_event": "seq",
+	"target":""
+    }

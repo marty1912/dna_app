@@ -1,6 +1,6 @@
 [	
 	
-	{ "type": "MathAnxietyTutorial_01", "name":"Tutorial-MASIC", "desc_head": "FEEDBACK_MASIC_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
+	{ "type": "MathAnxietyTutorial_01", "name":"Tutorial-MASIC", "preview":"assets/images/level_preview/MathanxietyPreview.png","desc_head": "FEEDBACK_MASIC_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
 
 	{ "type": "MathAnxietyTutorial_02", "name":"Tutorial-MASIC", "desc_head": "FEEDBACK_MASIC_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": [
 			[{ "name": "TaskHandler", "params": { "question": "MASIC_TUT_Q1", "srt_green": "MASIC_TUT_Q1_green_subs" , "srt_yellow": "MASIC_TUT_Q1_yellow_subs", "srt_orange": "MASIC_TUT_Q1_orange_subs", "srt_red": "MASIC_TUT_Q1_red_subs", "audio_green": "assets/sounds/kenney_interfacesounds/Audio/minimize_008.ogg" , "audio_yellow": "assets/sounds/kenney_interfacesounds/Audio/minimize_009.ogg", "audio_orange": "assets/sounds/kenney_interfacesounds/Audio/minimize_007.ogg", "audio_red": "assets/sounds/kenney_interfacesounds/Audio/minimize_006.ogg","question_srt":"MASIC_TUT_Q1_subs","question_audio":"assets/sounds/kenney_interfacesounds/Audio/minimize_005.ogg"} }],

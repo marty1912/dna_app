@@ -3,6 +3,9 @@ package dnaobject.objects;
 import dnaEvent.DnaEventManager;
 import dnaEvent.DnaEventSubscriber;
 import dnadata.DnaDataManager;
+import dnadata.TrialBlock;
+import dnaobject.components.ActionStateSwitchComponent;
+import dnaobject.interfaces.ILevelPreview;
 import dnaobject.interfaces.IUnlockableItem;
 import dnaobject.interfaces.TaskObject;
 import haxe.Json;
@@ -10,14 +13,28 @@ import haxe.Json;
 /**
  * this is the class that handles giving our trial parameters to the correct objects.
  */
-class LevelSelectPreview implements DnaObject implements DnaEventSubscriber extends DnaObjectBase
+class LevelSelectPreview implements DnaObject implements DnaEventSubscriber implements ILevelPreview extends DnaObjectBase
 {
+	public var button(default, set):String = "";
+	public var preview(default, set):String = "";
+
+	public var button_obj:DnaButtonObject;
+	public var preview_obj:NineSliceSprite;
+	public var trial_block:TrialBlock;
+
 	/**
 	 * overwritten ctor.
 	 */
 	public function new()
 	{
 		super("LevelSelectPreview");
+	}
+
+	public function setTrialBlock(trial_block:TrialBlock)
+	{
+		this.trial_block = trial_block;
+		this.preview_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview));
+		preview_obj.setAssetPath(trial_block.preview);
 	}
 
 	/**
@@ -28,19 +45,6 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber exte
 
 	override public function onHaveParent() {}
 
-	/**
-	 * sets the unlockable to the monster and we also remember it for the button press.
-	 * @param value 
-	 */
-	public function setUnlockable(value:Dynamic)
-	{
-		this.unlockable = value;
-		preview_obj.setAssetPath(unlockable.preview);
-	}
-
-	public var button(default, set):String = "";
-	public var preview(default, set):String = "";
-
 	public function set_preview(value:String):String
 	{
 		preview = value;
@@ -48,37 +52,32 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber exte
 		{
 			return value;
 		}
-		this.preview_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview));
 		return preview;
 	}
 
 	public function set_button(value:String):String
 	{
 		button = (value);
-		if (this.getParent() == null)
-		{
-			return value;
-		}
-		trace("button:", button);
-		this.button_obj = cast this.getParent().getObjectByName(getNestedObjectName(button));
-
-		if (this.button_obj == null)
-		{
-			return value;
-		}
-		button_obj.onPressCallback = startTask;
 		return button;
+	}
+
+	override public function onReady()
+	{
+		// setup our button
+		this.button_obj = cast this.getParent().getObjectByName(getNestedObjectName(button));
+		button_obj.onPressCallback = startTask;
+		this.preview_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview));
 	}
 
 	public function startTask():Void
 	{
-		trace(this.obj_name, "starting task now..");
+		trace(this.obj_name, "starting task now. text:", this.trial_block.desc_head);
+		trial_block.load();
+
+		var action = DnaComponentFactory.create("ActionStateSwitchComponent");
+		cast(action, ActionStateSwitchComponent).next_state = "NEXT_TASK";
+		this.addComponent(action);
 	}
-
-	public var button_obj:DnaButtonObject;
-	public var preview_obj:NineSliceSprite;
-
-	public var unlockable:Dynamic;
 
 	/**
 	 * override so we can have parameters like random order and stuff.
@@ -96,7 +95,5 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber exte
 		{
 			set_preview(cast jsonFile.preview);
 		}
-		this.set_button(this.button);
-		this.set_preview(this.preview);
 	}
 }

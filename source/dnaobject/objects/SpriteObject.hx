@@ -46,6 +46,32 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 		return m_asset_path;
 	}
 
+	/**
+	 * returns the width
+	 */
+	override public function getWidth():Int
+	{
+		if (this.m_asset_path == "INVISIBLE_BOX")
+		{
+			return Std.int(this.m_scale_x);
+		}
+
+		return Std.int(this.sprite.width * m_scale_x);
+	}
+
+	/**
+	 * returns the width
+	 */
+	override public function getHeight():Int
+	{
+		if (this.m_asset_path == "INVISIBLE_BOX")
+		{
+			return Std.int(this.m_scale_y);
+		}
+
+		return Std.int(this.sprite.height * m_scale_y);
+	}
+
 	public function setScale(x:Float, y:Float)
 	{
 		if (this.m_scale_from_screen_height || this.m_scale_from_screen_width)
@@ -114,7 +140,7 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 		{
 			sprite.makeGraphic(Std.int(m_scale_x), Std.int(m_scale_y), FlxColor.WHITE);
 
-			sprite.alpha = 0;
+			sprite.alpha = 0.2;
 		}
 		else
 		{

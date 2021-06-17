@@ -174,11 +174,35 @@ class DnaDataManager
 	/**
 	 * setTrials sets the m_trials member to the value specified
 	 */
-	public function setTrials(value:Dynamic)
+	public function getTrials():Array<Dynamic>
 	{
-		// trace("set trials:", value);
-		m_trials = value;
-		storeData(TRIALS_KEY, value);
+		// we want to save all trials that are already done.
+		// loadTrials();
+		return m_trials;
+	}
+
+	/**
+	 * setTrials sets the m_trials member to the value specified
+	 */
+	public function setTrials(value:Array<Dynamic>)
+	{
+		// we want to save all trials that are already done.
+		trace("setTrials: \n old:\n", m_trials, "\n-----------\nnew:\n", value);
+		var my_old_trials:Array<Dynamic> = m_trials;
+		m_trials = new Array<Dynamic>();
+		if (my_old_trials != null)
+		{
+			for (cur_trial in my_old_trials)
+			{
+				if (cur_trial.done == true)
+				{
+					m_trials.push(cur_trial);
+				}
+			}
+		}
+
+		m_trials = m_trials.concat(value);
+		storeData(TRIALS_KEY, m_trials);
 	}
 
 	/**
@@ -208,7 +232,7 @@ class DnaDataManager
 		while (index < m_trials.length)
 		{
 			var cur_trial:Dynamic = m_trials[index];
-			if (cur_trial.done == false)
+			if (cur_trial.done == true)
 			{
 				done++;
 			}

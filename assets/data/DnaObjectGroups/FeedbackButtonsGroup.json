@@ -2,40 +2,40 @@
     "type": "FeedbackButtonsGroup",
     "objects": [
 
-    { "type": "SpriteObject", "name": "Text_Area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" }] },
-    { "type": "SpriteObject", "name": "Subtitle_Area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
-    { "type": "SpriteObject", "name": "Buttons_Area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.8, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "" }] },
-    { "type": "SpriteObject", "name": "LeftButtons_Area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.33, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "Buttons_Area" }] },
-    { "type": "SpriteObject", "name": "RightButtons_Area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.33, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "Buttons_Area" }] },
+    { "type": "SpriteObject", "name": "Text_Area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target": "" }] },
+    { "type": "SpriteObject", "name": "Subtitle_Area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "CenterBottom", "target": "" }] },
+    { "type": "SpriteObject", "name": "Buttons_Area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.8, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "" }] },
+    { "type": "SpriteObject", "name": "LeftButtons_Area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.33, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "LeftCenter", "target": "Buttons_Area" }] },
+    { "type": "SpriteObject", "name": "RightButtons_Area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.33, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "RightCenter", "target": "Buttons_Area" }] },
 
-    { "type": "SpriteObject", "name": "GreenButton_POS", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "LeftButtons_Area" }] },
-    { "type": "SpriteObject", "name": "YellowButton_POS", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "LeftButtons_Area" }] },
-    { "type": "SpriteObject", "name": "OrangeButton_POS", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "RightButtons_Area" }] },
-    { "type": "SpriteObject", "name": "RedButton_POS", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "RightButtons_Area" }] },
+    { "type": "SpriteObject", "name": "GreenButton_POS", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "LeftCenter", "target": "LeftButtons_Area" }] },
+    { "type": "SpriteObject", "name": "YellowButton_POS", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "RightCenter", "target": "LeftButtons_Area" }] },
+    { "type": "SpriteObject", "name": "OrangeButton_POS", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "LeftCenter", "target": "RightButtons_Area" }] },
+    { "type": "SpriteObject", "name": "RedButton_POS", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "RightCenter", "target": "RightButtons_Area" }] },
        
 
     { "type": "EmptyButtonObject", "name": "Button_Green", "path":"assets/mathanxiety/resize/btn_green.png", "width":380, "height":380,
     "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "GreenButton_POS" },
         { "type": "CmdEvtTrigComponent", "event_name": "FEEDBACK_PRESSED","params":"GREEN" },
-        { "type":"ButtonScaleComponent", "target":"GreenButton_POS","keep_ratio":true }
+        { "type":"ButtonScaleComponent", "target":"GreenButton_POS","keep_ratio":true, "oneshot": true}
     ] },
   
     { "type": "EmptyButtonObject", "name": "Button_Yellow", "path":"assets/mathanxiety/resize/btn_yellow.png", "width":380, "height":380,
     "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "YellowButton_POS" },
         { "type": "CmdEvtTrigComponent", "event_name": "FEEDBACK_PRESSED","params":"YELLOW" },
-        { "type":"ButtonScaleComponent", "target":"YellowButton_POS" ,"keep_ratio":true}
+        { "type":"ButtonScaleComponent", "target":"YellowButton_POS" ,"keep_ratio":true, "oneshot": true}
     ] },
   
     { "type": "EmptyButtonObject", "name": "Button_Orange", "path":"assets/mathanxiety/resize/btn_orange.png", "width":380, "height":380,
     "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "OrangeButton_POS" },
         { "type": "CmdEvtTrigComponent", "event_name": "FEEDBACK_PRESSED","params":"ORANGE" },
-        { "type":"ButtonScaleComponent", "target":"OrangeButton_POS" ,"keep_ratio":true}
+        { "type":"ButtonScaleComponent", "target":"OrangeButton_POS" ,"keep_ratio":true, "oneshot": true}
     ] },
   
     { "type": "EmptyButtonObject", "name": "Button_Red", "path":"assets/mathanxiety/resize/btn_red.png", "width":380, "height":380,
     "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "RedButton_POS" },
         { "type": "CmdEvtTrigComponent", "event_name": "FEEDBACK_PRESSED","params":"RED" },
-        { "type":"ButtonScaleComponent", "target":"RedButton_POS" ,"keep_ratio":true}
+        { "type":"ButtonScaleComponent", "target":"RedButton_POS" ,"keep_ratio":true, "oneshot": true}
     ] },
 
     { "type": "StaticTextObject", "name": "Text_Question", "use_literal_text":false, "text": "", "autostart": true, "settings": { "char_per_sec": 500, "n_lines":5, "width": 1000, "fontsize":  32 },
