@@ -4,6 +4,7 @@
     "name":"Probandencode",
     "desc_head": "ProbCode_HEAD",
     "desc_body": "ProbCode_BODY",
+"preview":"assets/images/level_preview/ProbcodePreview.png",
     "done": false,
     "saved": false,
     "trials": [

@@ -3,6 +3,7 @@
             "type": "ArithmeticPracticeState",
         "name":"SpeedTest",
 		"desc_head": "SpeedTest_HEAD",
+        "preview":"assets/images/level_preview/SpeedPreview.png",
 		"desc_body": "SpeedTest_BODY",
 		"done": false,
 		"saved": false,

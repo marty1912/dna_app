@@ -140,7 +140,7 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 		{
 			sprite.makeGraphic(Std.int(m_scale_x), Std.int(m_scale_y), FlxColor.WHITE);
 
-			sprite.alpha = 0.2;
+			sprite.alpha = 0.0;
 		}
 		else
 		{

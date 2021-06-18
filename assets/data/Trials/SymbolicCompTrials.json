@@ -4,6 +4,7 @@
         "name":"SymbNumCompPractice",
 		"desc_head": "SymbolicNumberComparison_HEAD",
 		"desc_body": "SymbolicNumberComparison_BODY",
+"preview":"assets/images/level_preview/SymbNumCompPreview.png",
 		"done": false,
 		"saved": false,
 		"trials": [

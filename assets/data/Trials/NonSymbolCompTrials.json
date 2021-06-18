@@ -2,6 +2,7 @@
 	{
 		"type": "NonSymbolCompPracticeState",
         "name":"DotCompPractice",
+	"preview":"assets/images/level_preview/DotCompPreview.png",
 		"desc_head": "NonSymbolicNumberComparison_HEAD",
 		"desc_body": "NonSymbolicNumberComparison_BODY",
 		"done": false,

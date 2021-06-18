@@ -37,6 +37,7 @@ class LocaleDE implements Locale
 "mathanxiety_tutorial_04" => ConfigFile.text("assets/text/de/mathanxiety_tutorial_04.json"),
 "StudentFin_01" => ConfigFile.text("assets/text/de/StudentFin_01.txt"),
 "MASIC_Q5" => ConfigFile.text("assets/text/de/MASIC_Q5.txt"),
+"LevelSelectHEAD" => ConfigFile.text("assets/text/de/LevelSelectHEAD.txt"),
 "NumberlineFeedbackTimeout" => ConfigFile.text("assets/text/de/NumberlineFeedbackTimeout.json"),
 "FeedbackRatingEasy" => ConfigFile.text("assets/text/de/FeedbackRatingEasy.txt"),
 "MASIC_TUT_Q2_green_subs" => ConfigFile.text("assets/text/de/MASIC_TUT_Q2_green_subs.json"),

@@ -123,8 +123,46 @@ class NineSliceSprite implements DnaObject extends DnaObjectBase
 			nineSliceSprite.destroy();
 			nineSliceSprite = null;
 		}
+		width = Std.int(m_scale_x);
+		height = Std.int(m_scale_y);
 		nineSliceSprite = new FlxUI9SliceSprite(0, 0, m_asset_path, new flash.geom.Rectangle(0, 0, m_scale_x, m_scale_y), this.grid);
+
 		this.addChild(nineSliceSprite);
+	}
+
+	public var width(get, set):Int;
+	public var height(get, set):Int;
+
+	public function get_width():Int
+	{
+		return Std.int(m_scale_x);
+	}
+
+	public function set_width(value:Int):Int
+	{
+		if (this.nineSliceSprite == null)
+		{
+			return value;
+		}
+		this.m_scale_x = Std.int(value);
+		this.nineSliceSprite.resize(width, height);
+		return value;
+	}
+
+	public function get_height():Int
+	{
+		return Std.int(m_scale_y);
+	}
+
+	public function set_height(value:Int):Int
+	{
+		if (this.nineSliceSprite == null)
+		{
+			return value;
+		}
+		this.m_scale_x = Std.int(value);
+		this.nineSliceSprite.resize(width, height);
+		return value;
 	}
 
 	/**

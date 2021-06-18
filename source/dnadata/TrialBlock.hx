@@ -29,7 +29,9 @@ class TrialBlock
 			{
 				if (my_trial.type == stored_trial.type
 					&& stored_trial.done == true
-					&& stored_trial.trials.length == my_trial.trials.length)
+					&& (stored_trial.trials == my_trial.trials
+						|| (stored_trial.trials == null && my_trial.trials == null)
+						|| stored_trial.trials.length == my_trial.trials.length))
 				{
 					trial_found = true;
 					break;
@@ -51,7 +53,6 @@ class TrialBlock
 	public function load()
 	{
 		DnaDataManager.instance.setTrials(this.trials);
-		trace("trials in data mangaer:", DnaDataManager.instance.getTrials());
 	}
 
 	public function new(trials:Array<Dynamic>)

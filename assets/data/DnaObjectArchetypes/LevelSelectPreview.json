@@ -1,9 +1,9 @@
 {"type":"LevelSelectPreview",
 "name":"preview",
 "pos_target":"",
-"button":"button","preview":"preview",
+"button":"my_button","preview":"my_preview",
 "objects":[
-	{ "type": "NineSliceSprite", "name": "preview", "asset_path": "assets/gui_elements/textbox.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.3, "scale_y": 0.4, "grid":[100,100,400,400], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "::pos_target::" }] },
-	{ "type": "EmptyButtonObject", "name":"button", "path": "assets/gui_elements/buttonPlay.png", "components": [{ "type": "PositionComponent", "position": "Center", "target": "preview","oneshot":false }, {"type":"UserButtonComponent"},{ "type":"ButtonScaleComponent", "target":"preview" ,"keep_ratio":false,"oneshot":false}] }
+	{ "type": "NineSliceSprite", "name": "my_preview", "asset_path": "assets/gui_elements/textbox.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.3, "scale_y": 0.4, "grid":[100,100,400,400], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "::pos_target::" }] },
+	{ "type": "EmptyButtonObject", "name":"my_button", "path": "assets/gui_elements/buttonInvisible.png", "components": [{ "type": "PositionComponent", "position": "Center", "target": "my_preview","oneshot":false }, {"type":"UserButtonComponent"},{ "type":"ButtonScaleComponent", "target":"my_preview" ,"keep_ratio":false,"oneshot":false}] }
 ]
 }

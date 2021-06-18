@@ -71,7 +71,6 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 
 	public function startTask():Void
 	{
-		trace(this.obj_name, "starting task now. text:", this.trial_block.desc_head);
 		trial_block.load();
 
 		var action = DnaComponentFactory.create("ActionStateSwitchComponent");

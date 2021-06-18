@@ -1,0 +1,11 @@
+{"type":"ProgressBar",
+"name":"prog_bar",
+"pos_target":"",
+"background_bar":"empty_bar",
+"filled_bar":"my_filled_bar",
+"objects":[
+	{ "type": "NineSliceSprite", "name": "my_bar_bg", "asset_path": "assets/gui_elements/progress_bar_bg.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.8, "scale_y": 0.2, "grid":[50,35,500,75], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "::pos_target::" }] },
+	{ "type": "NineSliceSprite", "name": "empty_bar", "asset_path": "assets/gui_elements/progress_empty.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.7, "scale_y": 0.1, "grid":[50,35,900,100], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "my_bar_bg" }] },
+	{ "type": "NineSliceSprite", "name": "my_filled_bar", "asset_path": "assets/gui_elements/bar_white.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.3, "scale_y": 0.1, "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "LeftCenter", "target": "empty_bar" }] }
+]
+}

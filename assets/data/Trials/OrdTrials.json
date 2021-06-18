@@ -2,6 +2,7 @@
 {
 		"type": "OrdinalTaskPracticeState",
         "name":"OrdinalTaskPractice",
+"preview":"assets/images/level_preview/OrdPreview.png",
 		"desc_head": "OrdTask_HEAD",
 		"desc_body": "OrdTask_BODY",
 		"done": false,

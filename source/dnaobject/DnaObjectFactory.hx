@@ -293,6 +293,12 @@ else if (type == 'LevelSelectPreview')
 	obj = new LevelSelectPreview();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/LevelSelectPreview.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'ProgressBar')
+{
+	obj = new ProgressBar();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ProgressBar.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -306,6 +312,8 @@ else if (type == 'LevelSelectPreview')
 		return obj;
 	}
 }
+
+
 
 
 

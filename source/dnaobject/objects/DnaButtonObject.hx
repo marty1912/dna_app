@@ -192,6 +192,7 @@ class DnaButtonObject implements DnaObject implements CommandClient implements I
 	 */
 	public function initButton()
 	{
+		trace("initbutton:", m_asset_path);
 		button.loadGraphic(m_asset_path, m_btn_animated, m_btn_width, m_btn_height);
 		animCtrl = new FlxAnimationController(button);
 		this.setNextState(new ButtonStateNormal());

@@ -3,6 +3,7 @@
     "type": "ArithmeticInstructionsState_01",
     "desc_head": "ArithmeticState_HEAD",
     "desc_body": "ArithmeticState_BODY",
+    "preview":"assets/images/level_preview/AdditionPreview.png",
     "done": false,
     "saved": false,
     "trials": [

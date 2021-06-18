@@ -187,7 +187,7 @@ class DnaDataManager
 	public function setTrials(value:Array<Dynamic>)
 	{
 		// we want to save all trials that are already done.
-		trace("setTrials: \n old:\n", m_trials, "\n-----------\nnew:\n", value);
+		// trace("setTrials: \n old:\n", m_trials, "\n-----------\nnew:\n", value);
 		var my_old_trials:Array<Dynamic> = m_trials;
 		m_trials = new Array<Dynamic>();
 		if (my_old_trials != null)
