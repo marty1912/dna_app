@@ -299,6 +299,12 @@ else if (type == 'ProgressBar')
 	obj = new ProgressBar();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ProgressBar.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'DnaHelixOrb')
+{
+	obj = new DnaHelixOrb();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DnaHelixOrb.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -312,6 +318,7 @@ else if (type == 'ProgressBar')
 		return obj;
 	}
 }
+
 
 
 

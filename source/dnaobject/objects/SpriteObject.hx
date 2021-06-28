@@ -17,7 +17,51 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 	private var m_asset_path:String;
 	private var m_scale_x:Float = 1;
 	private var m_scale_y:Float = 1;
-	var sprite:FlxSprite;
+	private var animated = false;
+	private var asset_height = 0;
+	private var asset_width = 0;
+
+	public var sprite:FlxSprite;
+
+	/**
+	 * properties to make tweens easy to use.
+	 */
+	public var width(get, set):Float;
+
+	/**
+	 * properties to make tweens easy to use.
+	 */
+	public var height(get, set):Float;
+
+	public function set_width(value:Float):Float
+	{
+		var have_width:Float = this.getWidth();
+		if (have_width == 0)
+		{
+			have_width = 1;
+			// kind of a hack but it will probably do the trick.
+			sprite.scale.x = 0.001;
+		}
+		this.sprite.scale.x = (value / have_width) * this.sprite.scale.x;
+		return value;
+	}
+
+	public function get_width():Float
+	{
+		return this.getWidth();
+	}
+
+	public function set_height(value:Float):Float
+	{
+		var have_height = this.getHeight();
+		this.sprite.scale.y = (value / have_height) * this.sprite.scale.y;
+		return value;
+	}
+
+	public function get_height():Float
+	{
+		return this.getHeight();
+	}
 
 	/**
 	 * getter for asset path.
@@ -38,6 +82,13 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 		return this.sprite.getPosition();
 	}
 
+	public override function onReady()
+	{
+		super.onReady();
+		this.removeChild(sprite);
+		this.addChild(sprite);
+	}
+
 	/**
 	 * getter for asset path.
 	 */
@@ -56,7 +107,8 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 			return Std.int(this.m_scale_x);
 		}
 
-		return Std.int(this.sprite.width * m_scale_x);
+		this.sprite.updateHitbox();
+		return Std.int(this.sprite.width);
 	}
 
 	/**
@@ -69,7 +121,8 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 			return Std.int(this.m_scale_y);
 		}
 
-		return Std.int(this.sprite.height * m_scale_y);
+		this.sprite.updateHitbox();
+		return Std.int(this.sprite.height);
 	}
 
 	public function setScale(x:Float, y:Float)
@@ -91,8 +144,8 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 			sprite.scale.x = x;
 			sprite.scale.y = y;
 		}
-		m_scale_x = x;
-		m_scale_y = y;
+
+		this.sprite.updateHitbox();
 	}
 
 	/**
@@ -144,7 +197,7 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 		}
 		else
 		{
-			sprite.loadGraphic(m_asset_path);
+			sprite.loadGraphic(m_asset_path, animated, asset_width, asset_height);
 			setScale(m_scale_x, m_scale_y);
 		}
 		// this.addChild(sprite);
@@ -189,6 +242,20 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 			{
 				this.m_scale_y = jsonFile.scale_y;
 			}
+		}
+
+		if (Reflect.hasField(jsonFile, "animated"))
+		{
+			this.animated = jsonFile.animated;
+		}
+
+		if (Reflect.hasField(jsonFile, "asset_height"))
+		{
+			this.asset_height = jsonFile.asset_height;
+		}
+		if (Reflect.hasField(jsonFile, "asset_width"))
+		{
+			this.asset_width = jsonFile.asset_width;
 		}
 
 		if (Reflect.hasField(jsonFile, "asset_path"))

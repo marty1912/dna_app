@@ -452,6 +452,72 @@ class DnaObjectBase implements IFlxDestroyable
 	}
 
 	/**
+	 * pos_x property to enable the easier use of tweens
+	 * @return Float
+	 */
+	public var pos_x(get, set):Float;
+
+	/**
+	 * pos_y property to enable the easier use of tweens
+	 * @return Float
+	 */
+	public var pos_y(get, set):Float;
+
+	/**
+	 * getter for pos_x property
+	 * @return Float
+	 */
+	public function get_pos_x():Float
+	{
+		return this.getOrigin().x;
+	}
+
+	/**
+	 * setter for pos_x property
+	 * @return Float
+	 */
+	public function set_pos_x(value:Float):Float
+	{
+		var x = value;
+		var offset_x = x - this.getOrigin().x;
+		for (child in this.getChildren())
+		{
+			var child_ob:FlxObject = cast child;
+			var old_pos = child_ob.getPosition();
+			child_ob.setPosition(offset_x + old_pos.x, old_pos.y);
+		}
+		this.setOrigin(x, this.getOrigin().y);
+		return value;
+	}
+
+	/**
+	 * getter for pos_y property
+	 * @return Float
+	 */
+	public function get_pos_y():Float
+	{
+		return this.getOrigin().y;
+	}
+
+	/**
+	 * setter for pos_y property
+	 * @return Float
+	 */
+	public function set_pos_y(value:Float):Float
+	{
+		var y = value;
+		var offset_y = y - this.getOrigin().y;
+		for (child in this.getChildren())
+		{
+			var child_ob:FlxObject = cast child;
+			var old_pos = child_ob.getPosition();
+			child_ob.setPosition(old_pos.x, old_pos.y + offset_y);
+		}
+		this.setOrigin(this.getOrigin().x, y);
+		return value;
+	}
+
+	/**
 	 * this is the origin point or anchor point for this object.
 	 */
 	private var origin:FlxPoint = FlxPoint.get();
@@ -528,11 +594,16 @@ class DnaObjectBase implements IFlxDestroyable
 
 			for (obj in objects_archetypes)
 			{
-				var name = obj.name;
-				var nest_name = getNestedObjectName(obj.name);
 				// we will replace the object names for all nested objects so
 				// references to other nested objects are possible
-				objects_str = StringTools.replace(objects_str, name, nest_name);
+				var name = obj.name;
+				var nest_name = getNestedObjectName(obj.name);
+				// this regex should match only values.
+				// the json looks like this:
+				// "key" : "value"
+				var name_replace_regex = new EReg(": *\"" + name + "\"", "g");
+
+				objects_str = name_replace_regex.replace(objects_str, ":\"" + nest_name + "\"");
 			}
 			var parent_field_ref_regex = ~/::(([A-Z0-9]|_)+)::/i;
 			if (parent_field_ref_regex.match(objects_str))

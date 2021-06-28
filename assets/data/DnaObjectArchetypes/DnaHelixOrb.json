@@ -1,0 +1,13 @@
+{"type":"DnaHelixOrb",
+"name":"prog_bar",
+"pos_target":"",
+"helix":"helix",
+"filled_bar":"my_filled_bar",
+"objects":[
+	{ "type": "SpriteObject", "name": "sphere_bg", "asset_path": "assets/images/sphere_bg.resized.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.27, "scale_y": 0.27, "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "::pos_target::" }] },
+	{ "type": "SpriteObject", "name": "sphere_center", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.26, "scale_y": 0.26, "grid":[50,35,500,75], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "sphere_bg" }] },
+
+	{ "type": "SpriteObject", "name": "helix", "asset_path": "assets/images/dna_helix_animated.png","animated":true,"asset_height":256,"asset_width":128, "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.23, "scale_y": 0.23, "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "sphere_center" }] },
+	{ "type": "SpriteObject", "name": "sphere_orb", "asset_path": "assets/images/sphere_orb.resized.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.25, "scale_y": 0.25, "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "sphere_center" }] }
+]
+}
