@@ -38,10 +38,10 @@ class DnaHelixOrb implements DnaObject implements DnaEventSubscriber extends Dna
 		helix_obj = cast this.getParent().getObjectByName(getNestedObjectName(helix));
 		helix_obj.sprite.animation.add("rotate", [
 			1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23
-		]);
+		], 25);
 		helix_obj.sprite.animation.play("rotate");
 
-		var tween = FlxTween.angle(helix_obj.sprite, 0, 360, 10, {type: LOOPING});
+		var tween = FlxTween.angle(helix_obj.sprite, 0, 360, 20, {type: LOOPING});
 	}
 
 	public var helix:String;

@@ -58,6 +58,7 @@ class LocaleDE implements Locale
 "AdditionTutorial_01" => ConfigFile.text("assets/text/de/AdditionTutorial_01.json"),
 "MASIC_Q9_yellow_subs" => ConfigFile.text("assets/text/de/MASIC_Q9_yellow_subs.json"),
 "MASIC_TUT_Q1" => ConfigFile.text("assets/text/de/MASIC_TUT_Q1.txt"),
+"ShowProgressHEAD" => ConfigFile.text("assets/text/de/ShowProgressHEAD.txt"),
 "MASIC_Q4_red_subs" => ConfigFile.text("assets/text/de/MASIC_Q4_red_subs.json"),
 "mathanxiety_tutorial_05" => ConfigFile.text("assets/text/de/mathanxiety_tutorial_05.json"),
 "SpeedInstructions_02_PC" => ConfigFile.text("assets/text/de/SpeedInstructions_02_PC.json"),

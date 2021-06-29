@@ -173,7 +173,7 @@ class PositionComponent implements DnaComponent extends DnaComponentBase
 			var target:DnaObject = getParent().getParent().getObjectByName(m_target_name);
 			if (target == null)
 			{
-				// trace("target not found:", this.m_target_name);
+				trace("target not found:", this.m_target_name);
 			}
 			screen_height = target.getHeight();
 			screen_width = target.getWidth();

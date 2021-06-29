@@ -355,6 +355,14 @@ else if (type == 'ActionShowLevelPreview')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionShowLevelPreview.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'ActionSetProgress')
+{
+	comp = new ActionSetProgress();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSetProgress.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -366,6 +374,9 @@ else if (type == 'ActionShowLevelPreview')
 		return comp;
 	}
 }
+
+
+
 
 
 

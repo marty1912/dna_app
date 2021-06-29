@@ -359,6 +359,13 @@ else if (type == "LevelSelectState_debug")
 			state = new DnaState("LevelSelectState_debug");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/LevelSelectState_debug.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "ShowProgressState")
+		{
+			state = new DnaState("ShowProgressState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/ShowProgressState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -371,6 +378,9 @@ else if (type == "LevelSelectState_debug")
 		return state;
 	}
 }
+
+
+
 
 
 

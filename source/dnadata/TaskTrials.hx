@@ -120,6 +120,15 @@ class TaskTrials
 	}
 
 	/**
+	 * returns ratio of done tasks. 
+	 * @return Float value between 0 and 1
+	 */
+	public function getProgress():Float
+	{
+		return 1 - (getTrialBlocksTodo().length / getTrialBlocks().length);
+	}
+
+	/**
 	 * [Description]
 	 * @param path 
 	 */

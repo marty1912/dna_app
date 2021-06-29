@@ -1,0 +1,5 @@
+{
+    "type": "ActionSetProgress",
+    "on_event": "seq",
+    "target":""
+}
