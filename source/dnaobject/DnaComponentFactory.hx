@@ -363,6 +363,22 @@ else if (type == 'ActionSetProgress')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ActionSetProgress.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'SymbolSlotComponent')
+{
+	comp = new SymbolSlotComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/SymbolSlotComponent.json"));
+}
+
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'DragableComponent')
+{
+	comp = new DragableComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/DragableComponent.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -374,6 +390,9 @@ else if (type == 'ActionSetProgress')
 		return comp;
 	}
 }
+
+
+
 
 
 

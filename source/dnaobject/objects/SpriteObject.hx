@@ -2,6 +2,7 @@ package dnaobject.objects;
 
 import dnaobject.interfaces.Scrollable;
 import flixel.FlxG;
+import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.math.FlxPoint;
 import flixel.system.debug.Window;
@@ -61,6 +62,22 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 	public function get_height():Float
 	{
 		return this.getHeight();
+	}
+
+	/**
+	 * this function sets the max dimensions keeping the aspect ratio.
+	 * @param w 
+	 * @param h 
+	 */
+	public function setMaxDimensions(w:Float, h:Float)
+	{
+		width = w;
+		height = sprite.height * sprite.scale.x;
+		if (height > h)
+		{
+			height = h;
+			width = sprite.width * sprite.scale.y;
+		}
 	}
 
 	/**

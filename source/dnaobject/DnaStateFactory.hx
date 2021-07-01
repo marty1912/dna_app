@@ -366,6 +366,13 @@ else if (type == "ShowProgressState")
 			state = new DnaState("ShowProgressState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/ShowProgressState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PatternDisplayTest")
+		{
+			state = new DnaState("PatternDisplayTest");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternDisplayTest.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -378,6 +385,9 @@ else if (type == "ShowProgressState")
 		return state;
 	}
 }
+
+
+
 
 
 

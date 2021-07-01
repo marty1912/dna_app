@@ -248,6 +248,18 @@ class PositionComponent implements DnaComponent extends DnaComponentBase
 		}
 	}
 
+	override public function onHaveParent()
+	{
+		this.setPos();
+		/**
+		 * remove the component from the parent
+		 */
+		if (this.m_oneshot == true)
+		{
+			getParent().removeComponent(this.id);
+		}
+	}
+
 	/**
 	 * update - in this function we will put the object back to the screencenter, respecting the childrens offsets.
 	 * @param elapsed

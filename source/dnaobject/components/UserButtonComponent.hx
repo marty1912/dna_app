@@ -15,7 +15,7 @@ class UserButtonComponent implements DnaComponent extends DnaComponentBase
 	/**
 	 * the area in which we register clicks or touches.
 	 */
-	private var m_click_area:FlxButton;
+	public var m_click_area:FlxButton;
 
 	/**
 	 * ctor
@@ -67,12 +67,22 @@ class UserButtonComponent implements DnaComponent extends DnaComponentBase
 		}
 	}
 
+	public var state_machine:IStateMachine = null;
+
 	/**
 	 * this function will be called whenever the status of our click area changed.
 	 */
 	public function onStatusChanged(new_status:Int)
 	{
-		var parent:IStateMachine = cast(this.getParent());
+		var parent:IStateMachine;
+		if (state_machine == null)
+		{
+			parent = cast(this.getParent());
+		}
+		else
+		{
+			parent = state_machine;
+		}
 
 		switch (new_status)
 		{
@@ -102,11 +112,15 @@ class UserButtonComponent implements DnaComponent extends DnaComponentBase
 			return;
 		}
 
-		var click_target:DnaObject = cast(this.getParent());
+		var click_target:DnaObject;
 		if (this.target_name != "")
 		{
 			click_target = this.getParent().getParent().getObjectByName(this.target_name);
 			assert(click_target != null);
+		}
+		else
+		{
+			click_target = cast(this.getParent());
 		}
 		// var button:FlxSprite = click_target.button;
 

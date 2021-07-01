@@ -1,0 +1,8 @@
+{
+    "type": "SpriteObject",
+    "asset_path": "assets/images/pattern_symbols/question_mark.PNG",
+    "scale_x":1,
+    "scale_y":1,
+    "origin_where":"",
+    "components":[{"type":"SymbolSlotComponent"}]
+}

@@ -264,46 +264,64 @@ class DnaObjectFactory
 			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NonSymbolCompTaskHandlerObject.json"));
 		}
 		// // AUTOMATICALLY GENERATED
-else if (type == 'FeedbackTaskHandlerObject')
+		else if (type == 'FeedbackTaskHandlerObject')
+		{
+			obj = new FeedbackTaskHandlerObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/FeedbackTaskHandlerObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ResourceObject')
+		{
+			obj = new ResourceObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ResourceObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'NineSliceSprite')
+		{
+			obj = new NineSliceSprite();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NineSliceSprite.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'UnlockDisplayController')
+		{
+			obj = new UnlockDisplayController();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/UnlockDisplayController.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'LevelSelectPreview')
+		{
+			obj = new LevelSelectPreview();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/LevelSelectPreview.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'ProgressBar')
+		{
+			obj = new ProgressBar();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ProgressBar.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'DnaHelixOrb')
+		{
+			obj = new DnaHelixOrb();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DnaHelixOrb.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'PatternDisplay')
+		{
+			obj = new PatternDisplay();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternDisplay.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'SymbolSlot')
+		{
+			obj = new SpriteObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolSlot.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+else if (type == 'SymbolDragable')
 {
-	obj = new FeedbackTaskHandlerObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/FeedbackTaskHandlerObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'ResourceObject')
-{
-	obj = new ResourceObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ResourceObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'NineSliceSprite')
-{
-	obj = new NineSliceSprite();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NineSliceSprite.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'UnlockDisplayController')
-{
-	obj = new UnlockDisplayController();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/UnlockDisplayController.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'LevelSelectPreview')
-{
-	obj = new LevelSelectPreview();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/LevelSelectPreview.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'ProgressBar')
-{
-	obj = new ProgressBar();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ProgressBar.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'DnaHelixOrb')
-{
-	obj = new DnaHelixOrb();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DnaHelixOrb.json"));
+	obj = new SymbolDragable();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolDragable.json"));
 }
 // INSERT_HERE
 		else
@@ -318,55 +336,4 @@ else if (type == 'DnaHelixOrb')
 		return obj;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

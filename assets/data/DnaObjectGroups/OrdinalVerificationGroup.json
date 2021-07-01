@@ -45,20 +45,7 @@
                 "target": "CenterPosition"
             }]
         },
-        {
-            "type":"RoundedRectangleObject",
-            "scale_from_screen_width":true,
-            "scale_from_screen_height":true,
-            "width":0.3,
-            "height":0.2,
-            "components": [
-                 {
-                    "type": "PositionComponent",
-                    "target": "CenterTopPosition",
-                    "position": "Center"
-                }            ]
-
-        },
+        { "type":"RoundedRectangleObject", "scale_from_screen_width":true, "scale_from_screen_height":true, "width":0.3, "height":0.2, "components": [ { "type": "PositionComponent", "target": "CenterTopPosition", "position": "Center" }            ] },
         {
             "type": "StaticTextObject",
             "name": "TripletText",

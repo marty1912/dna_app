@@ -77,18 +77,7 @@
                 "target": "RightScreenhalf"
             }]
         },
-        {
-            "type":"RoundedRectangleObject",
-            "width":300,
-            "height":300,
-            "components": [
-                 {
-                    "type": "PositionComponent",
-                    "target": "LeftNumPosition",
-                    "position": "Center"
-                }            ]
-
-        },
+        { "type":"RoundedRectangleObject", "width":300, "height":300, "components": [ { "type": "PositionComponent", "target": "LeftNumPosition", "position": "Center" }            ] },
 
         {
             "type": "SpriteObject",

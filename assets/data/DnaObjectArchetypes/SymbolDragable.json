@@ -1,0 +1,13 @@
+{"type":"SymbolDragable",
+"name":"pattern_disp",
+"pos_target":"",
+"background_bar":"empty_bar",
+"pattern_area":"pattern_area",
+"symbol_asset":"assets/images/pattern_symbols/circle.PNG",
+"filled_bar":"my_filled_bar",
+"objects":[
+	{ "type": "SpriteObject", "name": "symbol_area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.2, "scale_y": 0.2, "grid":[50,35,500,75], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "::pos_target::" }] },
+        { "type":"RoundedRectangleObject", "scale_from_screen_width":true, "scale_from_screen_height":true, "width":0.2, "height":0.2, "components": [ { "type": "PositionComponent", "target": "symbol_area", "position": "Center" }            ] },
+	{ "type": "SpriteObject", "name": "symbol_draggable", "asset_path": "::symbol_asset::", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.2, "scale_y": 0.2, "grid":[50,35,500,75], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "symbol_area" },{"type":"DragableComponent"}] }
+]
+}

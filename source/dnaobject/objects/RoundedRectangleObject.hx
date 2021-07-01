@@ -58,7 +58,7 @@ class RoundedRectangleObject implements DnaObject extends DnaObjectBase
 	private var height:Float = 0;
 	var shape:RoundedRectShape;
 	private var radius:Float = 0;
-	private var color:String = "0xFFFFFF";
+	private var color:String = "0xFFFF00";
 
 	/**
 	 * ctor.
@@ -77,7 +77,7 @@ class RoundedRectangleObject implements DnaObject extends DnaObjectBase
 	{
 		this.removeChild(shape);
 		shape = new RoundedRectShape(0, 0, this.width, this.height, this.radius, {thickness: 0, color: FlxColor.TRANSPARENT}, FlxColor.WHITE);
-		// shape = new RoundedRectShape(0, 0, this.width, this.height, this.radius, {thickness: 0, color: FlxColor.TRANSPARENT}, FlxColor.fromString(color));
+		// shape = new RoundedRectShape(0, 0, this.width, this.height, this.radius, {thickness: 0, color: FlxColor.TRANSPARENT}, FlxColor.fromString("0xFF00FFFF"));
 		shape.shapeDirty = true;
 		this.addChild(shape);
 	}

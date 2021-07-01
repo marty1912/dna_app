@@ -606,7 +606,7 @@ class DnaObjectBase implements IFlxDestroyable
 				objects_str = name_replace_regex.replace(objects_str, ":\"" + nest_name + "\"");
 			}
 			var parent_field_ref_regex = ~/::(([A-Z0-9]|_)+)::/i;
-			if (parent_field_ref_regex.match(objects_str))
+			while (parent_field_ref_regex.match(objects_str))
 			{
 				var replace_with = Reflect.field(this.json_file, parent_field_ref_regex.matched(1));
 				objects_str = parent_field_ref_regex.replace(objects_str, replace_with);
