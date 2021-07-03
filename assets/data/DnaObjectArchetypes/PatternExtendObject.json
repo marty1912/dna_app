@@ -1,0 +1,31 @@
+{"type":"PatternDisplay",
+"name":"pattern_disp",
+"pos_target":"",
+"pattern_display":"pdisplay",
+"button":"my_button",
+"objects":[
+
+        { "type": "SpriteObject", "name": "BaseArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.8, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "::pos_target::" }] },
+
+        { "type": "SpriteObject", "name": "PatternArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.4, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "BaseArea" }] },
+
+        { "type": "SpriteObject", "name": "LeftArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftBottom", "target": "BaseArea" }] },
+        { "type": "SpriteObject", "name": "RightArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightBottom", "target": "BaseArea" }] },
+
+        { "type": "SpriteObject", "name": "BottomLeftLeft", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.25, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftBottom", "target": "LeftArea" }] },
+        { "type": "SpriteObject", "name": "BottomLeftRight", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.25, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightBottom", "target": "LeftArea" }] },
+
+        { "type": "SpriteObject", "name": "BottomRightLeft", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.25, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftBottom", "target": "RightArea" }] },
+        { "type": "SpriteObject", "name": "BottomRightRight", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.25, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightBottom", "target": "RightArea" }] },
+
+        { "type": "PatternDisplay", "name": "pdisplay", "pos_target":"PatternArea"},
+        { "type": "SymbolDragable", "name": "symb_1", "pos_target":"BottomLeftLeft","symbol_asset":"assets/images/pattern_symbols/triangle.PNG"},
+        { "type": "SymbolDragable", "name": "symb_2", "pos_target":"BottomLeftRight","symbol_asset":"assets/images/pattern_symbols/square.PNG"},
+        { "type": "SymbolDragable", "name": "symb_3", "pos_target":"BottomRightLeft","symbol_asset":"assets/images/pattern_symbols/circle.PNG"},
+        { "type": "SymbolDragable", "name": "symb_4", "pos_target":"BottomRightRight","symbol_asset":"assets/images/pattern_symbols/rhombus.PNG"},
+
+        { "type": "SpriteObject", "name": "ButtonArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.2, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
+        { "type": "EmptyButtonObject", "name": "my_button",  "path": "assets/gui_elements/buttonAccept.png","components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "ButtonArea" },{"type":"ButtonScaleComponent","target":"ButtonArea","keep_ratio":true},{"type":"UserButtonComponent"} ] }
+ 
+]
+}

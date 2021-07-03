@@ -12,6 +12,8 @@ class DnaConstants
 	public static final TASK_TIMED_OUT_FEEDBACK:String = "TASK_TIMED_OUT_FEEDBACK";
 	public static final CODE_ID = "<ID>";
 
+	public static final PATTERN_CHANGE:String = "EVT_PATTERN_CHANGE";
+
 	public static final TASK_ANSWERED_EVENT:String = "EVT_TASK_ANSWERED";
 	public static final EVT_TASK_TIMEOUT:String = "EVT_TASK_TIMEOUT";
 	public static final EVT_START_TRIAL_TIME:String = "EVT_START_TRIAL_TIME";

@@ -1,7 +1,9 @@
 package dnaobject.components;
 
 import Assertion.assert;
+import constants.DnaConstants;
 import dnaEvent.DnaEvent;
+import dnaEvent.DnaEventManager;
 import dnaobject.interfaces.IState;
 import dnaobject.interfaces.IStateMachine;
 import dnaobject.objects.SpriteObject;
@@ -44,6 +46,21 @@ class SymbolSlotComponent implements DnaComponent implements IStateMachine exten
 		{
 			setStateCallback(state);
 		}
+	}
+
+	public var filled(get, null):Bool;
+
+	public function get_filled()
+	{
+		if (Std.isOfType(m_current_state, SymbolStateFilled))
+		{
+			return true;
+		}
+		if (Std.isOfType(m_current_state, SymbolStateHiglight))
+		{
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -285,6 +302,7 @@ class SymbolStateFilled implements IState
 		sprite_obj.setAssetPath(asset_path);
 		sprite_obj.loadAsset();
 		sprite_obj.setMaxDimensions(old_width, old_height);
+		sprite_obj.getParent().eventManager.broadcastEvent(DnaConstants.PATTERN_CHANGE);
 	}
 
 	public function exit():Void
@@ -438,6 +456,8 @@ class SymbolStatePressed implements IState
 		cross_sprite.moveTo(sprite_obj.getOrigin().x, sprite_obj.getOrigin().y);
 		cross_sprite.removeChild(cross_sprite.sprite);
 		cross_sprite.addChild(cross_sprite.sprite);
+
+		sprite_obj.getParent().eventManager.broadcastEvent(DnaConstants.PATTERN_CHANGE);
 	}
 
 	public function exit():Void

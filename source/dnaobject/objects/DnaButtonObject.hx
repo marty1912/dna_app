@@ -65,7 +65,8 @@ class DnaButtonObject implements DnaObject implements CommandClient implements I
 	 */
 	override public function getHeight():Int
 	{
-		return Std.int(Math.floor(this.button.height * this.button.scale.y));
+		this.button.updateHitbox();
+		return Std.int(Math.floor(this.button.height));
 	}
 
 	/**
@@ -74,17 +75,19 @@ class DnaButtonObject implements DnaObject implements CommandClient implements I
 	 */
 	override public function getWidth():Int
 	{
-		return Std.int(Math.floor(this.button.width * this.button.scale.x));
+		this.button.updateHitbox();
+		return Std.int(Math.floor(this.button.width));
 	}
 
 	/**
 	 * we override this because it does not handle scaling otherwise
 	 * @return array - An array with the values max_left max_right max up and max_down in this order.
 	 */
-	override public function getMaxLeftRightUpDownFromOrigin():Array<Float>
-	{
-		return [-0, this.getWidth(), 0, this.getHeight()];
-	}
+	// override public function getMaxLeftRightUpDownFromOrigin():Array<Float>
+	// {
+	//	return [-0, this.getWidth(), 0, this.getHeight()];
+	// }
+	public var onSetStateCallback:StateEnum->Void;
 
 	/**
 	 * constructor.
@@ -145,6 +148,12 @@ class DnaButtonObject implements DnaObject implements CommandClient implements I
 	 */
 	public function setState(state:StateEnum):Void
 	{
+		if (onSetStateCallback != null)
+		{
+			// we make it so we can override the default behaviour with our callback.
+			onSetStateCallback(state);
+			return;
+		}
 		switch (state)
 		{
 			case StateEnum.NORMAL:
@@ -261,14 +270,22 @@ class ButtonStateInactive implements IState
 
 	public function update(elapsed:Float):Void {}
 
+	public function onSetStateCallback(state:StateEnum)
+	{
+		// in the inactive state we do absolutely nothing.
+		switch (state)
+		{
+			case StateEnum.NORMAL:
+			case StateEnum.HIGHLIGHT:
+			case StateEnum.PRESSED:
+			default:
+				assert(false);
+		}
+	}
+
 	public function enter():Void
 	{
-		// trace(this.parent.id, "button inactive", this.parent.obj_name); // parent.button.alpha = 1;
-		user_comp = parent.getComponentByType("UserButtonComponent");
-		parent.removeComponentByType("UserButtonComponent");
-		keyboard_comp = parent.getComponentByType("KeyboardInputComponent");
-		parent.removeComponentByType("KeyboardInputComponent");
-		// parent.button.alpha = 0.5;
+		parent.onSetStateCallback = this.onSetStateCallback;
 		// on 0 we will have normal behavior
 		parent.animCtrl.frameIndex = 3;
 	}
@@ -276,14 +293,51 @@ class ButtonStateInactive implements IState
 	public function exit():Void
 	{
 		// here we have to add the interactive part again (if not null)
-		if (user_comp != null)
+		parent.onSetStateCallback = null;
+	}
+}
+
+/**
+ * the normal state for a button. here the first
+ */
+class ButtonStateHidden implements IState
+{
+	public var parent:DnaButtonObject = null;
+
+	public function new() {};
+
+	public function onSetStateCallback(state:StateEnum)
+	{
+		// in the inactive state we do absolutely nothing.
+		switch (state)
 		{
-			parent.addComponent(user_comp);
+			case StateEnum.NORMAL:
+			case StateEnum.HIGHLIGHT:
+			case StateEnum.PRESSED:
+			default:
+				assert(false);
 		}
-		if (keyboard_comp != null)
-		{
-			parent.addComponent(keyboard_comp);
-		}
+	}
+
+	public function setParent(parent:IStateMachine):Void
+	{
+		this.parent = cast(parent);
+	}
+
+	public function update(elapsed:Float):Void {}
+
+	public function enter():Void
+	{
+		// on 0 we will have normal behavior
+		parent.onSetStateCallback = this.onSetStateCallback;
+		parent.animCtrl.frameIndex = 3;
+		parent.button.alpha = 0;
+	}
+
+	public function exit():Void
+	{
+		parent.button.alpha = 1;
+		parent.onSetStateCallback = null;
 	}
 }
 

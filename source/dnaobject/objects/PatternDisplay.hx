@@ -1,11 +1,13 @@
 package dnaobject.objects;
 
+import constants.DnaConstants;
 import dnaEvent.DnaEventManager;
 import dnaEvent.DnaEventSubscriber;
 import dnadata.DnaDataManager;
 import dnadata.TaskTrials;
 import dnadata.TrialBlock;
 import dnaobject.components.ActionStateSwitchComponent;
+import dnaobject.components.SymbolSlotComponent;
 import dnaobject.interfaces.ILevelPreview;
 import dnaobject.interfaces.IUnlockableItem;
 import dnaobject.interfaces.TaskObject;
@@ -26,19 +28,70 @@ class PatternDisplay implements DnaObject implements DnaEventSubscriber extends 
 		super("PatternDisplay");
 	}
 
-	/**
-	 * this is the function that gets called everytime an event we subscribed for is fired
-	 * @param event_name
-	 */
-	public function getNotified(event_name:String, params:Any = null) {}
-
 	override public function onHaveParent() {}
 
 	override public function onReady()
 	{
+		this.getParent().eventManager.addSubscriberForEvent(this, DnaConstants.PATTERN_CHANGE);
 		this.pattern_area_obj = cast getParent().getObjectByName(getNestedObjectName(pattern_area));
-		trace("width:", pattern_area_obj.width, "height:", pattern_area_obj.width);
 		setPattern(pattern_assets);
+	}
+
+	/**
+	 * we will listen for the changed event.
+	 * @param event 
+	 * @param params 
+	 */
+	public function getNotified(event:String, ?params:Dynamic)
+	{
+		if (onPatternChanged != null)
+		{
+			onPatternChanged();
+		}
+	}
+
+	/**
+	 * returns the pattern that we have in this display.
+	 */
+	public function getPattern():Array<String>
+	{
+		var pattern = new Array<String>();
+		for (symbol in this.symbols)
+		{
+			pattern.push(symbol.getAssetPath());
+		}
+		return pattern;
+	}
+
+	public var filled_fields(get, null):Int;
+
+	public function get_filled_fields():Int
+	{
+		var filled = 0;
+		for (sym in this.symbols)
+		{
+			var slot:SymbolSlotComponent = cast sym.getComponentByType("SymbolSlotComponent");
+			if (slot != null && slot.filled)
+			{
+				filled++;
+			}
+		}
+		return filled;
+	}
+
+	public var fields_to_fill(get, null):Int;
+
+	public function get_fields_to_fill():Int
+	{
+		var to_fill = 0;
+		for (sym in this.symbols)
+		{
+			if (sym.getComponentByType("SymbolSlotComponent") != null)
+			{
+				to_fill++;
+			}
+		}
+		return to_fill;
 	}
 
 	/**
@@ -47,6 +100,17 @@ class PatternDisplay implements DnaObject implements DnaEventSubscriber extends 
 	 */
 	public function setPattern(asset_list:Array<String>)
 	{
+		// delete previous pattern:
+		for (sym in symbols)
+		{
+			this.getParent().removeObject(sym.id);
+		}
+		while (symbols.length > 0)
+		{
+			symbols.pop();
+		}
+
+		// create new one.
 		var single_asset_width = pattern_area_obj.width / asset_list.length;
 		var single_asset_height = pattern_area_obj.height;
 		for (symbol_index in 0...asset_list.length)
@@ -67,6 +131,7 @@ class PatternDisplay implements DnaObject implements DnaEventSubscriber extends 
 
 			this.getParent().addObject(sprite);
 			sprite.moveTo(pattern_area_obj.sprite.x + symbol_index * single_asset_width, pattern_area_obj.sprite.getMidpoint().y - (sprite.height / 2));
+			symbols.push(sprite);
 		}
 	}
 
@@ -74,7 +139,12 @@ class PatternDisplay implements DnaObject implements DnaEventSubscriber extends 
 	public var pattern_assets:Array<String>;
 
 	public var pattern_area_obj:SpriteObject;
-	public var fixed_symbols:Array<SpriteObject>;
+	public var symbols:Array<SpriteObject> = new Array<SpriteObject>();
+
+	/**
+	 * callback that we will call whenever a symbol changes.
+	 */
+	public var onPatternChanged:Void->Void = null;
 
 	/**
 	 * override so we can have parameters like random order and stuff.

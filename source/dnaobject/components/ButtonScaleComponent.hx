@@ -69,13 +69,20 @@ class ButtonScaleComponent implements DnaComponent extends DnaComponentBase
 			}
 		}
 
-		button.button.scale.x = factor_width;
-		button.button.scale.y = factor_height;
+		// button.button.scale.x *= factor_width;
+		// button.button.scale.y *= factor_height;
+		if (keep_ratio)
+		{
+			button.button.setGraphicSize(want_width);
+		}
+		else
+		{
+			button.button.setGraphicSize(want_width, want_height);
+		}
 		button.button.updateHitbox();
-		button.button.width = have_width * factor_width;
-		button.button.height = have_height * factor_height;
-		// trace("button height:", button.getHeight());
-		// trace("button width:", button.getWidth());
+
+		// button.button.width = have_width * factor_width;
+		// button.button.height = have_height * factor_height;
 	}
 
 	/**

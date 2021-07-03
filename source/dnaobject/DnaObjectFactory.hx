@@ -323,6 +323,12 @@ else if (type == 'SymbolDragable')
 	obj = new SymbolDragable();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolDragable.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'PatternExtendObject')
+{
+	obj = new PatternExtendObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -336,4 +342,5 @@ else if (type == 'SymbolDragable')
 		return obj;
 	}
 }
+
 

@@ -3,7 +3,7 @@
 "pos_target":"",
 "background_bar":"empty_bar",
 "pattern_area":"pattern_area",
-"pattern_assets":["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/triangle.PNG","","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/triangle.PNG",""],
+"pattern_assets":["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/triangle.PNG","","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/rhombus.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/rhombus.PNG"],
 "filled_bar":"my_filled_bar",
 "objects":[
 	{ "type": "SpriteObject", "name": "pattern_area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.9, "scale_y": 0.25, "grid":[50,35,500,75], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "::pos_target::" }] },
