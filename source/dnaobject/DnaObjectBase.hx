@@ -27,7 +27,7 @@ class DnaObjectBase implements IFlxDestroyable
 	 * this is the name of the object. it is used so we are able to find it
 	 * in case we need to do something with it
 	 */
-	public var obj_name:String;
+	public var obj_name:String = null;
 
 	/**
 	 * static variable used to get a unique id count.
@@ -103,6 +103,12 @@ class DnaObjectBase implements IFlxDestroyable
 				addComponent(to_add);
 			}
 		}
+
+		if (this.obj_name == null || this.obj_name == "")
+		{
+			this.obj_name = Std.string(this.id);
+		}
+
 		setupNestedObjects();
 	};
 
@@ -591,13 +597,8 @@ class DnaObjectBase implements IFlxDestroyable
 	 */
 	private var m_parent_state:DnaState;
 
-	public function setupNestedObjects():Void
+	public function setupNestedNames():Void
 	{
-		if (this.getParent() == null)
-		{
-			return;
-		}
-
 		if (objects_archetypes.length != 0)
 		{
 			var objects_str:String = Json.stringify(objects_archetypes);
@@ -624,10 +625,20 @@ class DnaObjectBase implements IFlxDestroyable
 
 			objects_archetypes = Json.parse(objects_str);
 		}
+	}
+
+	public function setupNestedObjects():Void
+	{
+		if (this.getParent() == null)
+		{
+			return;
+		}
+		setupNestedNames();
 
 		for (obj in objects_archetypes)
 		{
 			this.getParent().objectFromFile(obj);
+			this.nested_objects.push(getParent().getObjectByName(obj.name));
 		}
 	}
 

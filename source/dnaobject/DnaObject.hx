@@ -18,6 +18,9 @@ interface DnaObject extends IFlxDestroyable
 {
 	private var active:Bool;
 
+	public var pos_x(get, set):Float;
+	public var pos_y(get, set):Float;
+
 	/**
 	 * destructor.
 	 */

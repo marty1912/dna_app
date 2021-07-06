@@ -8,6 +8,7 @@ import dnaobject.components.ActionStateSwitchComponent;
 import dnaobject.interfaces.ILevelPreview;
 import dnaobject.interfaces.IUnlockableItem;
 import dnaobject.interfaces.TaskObject;
+import dnaobject.objects.DnaButtonObject.ButtonStateInactive;
 import haxe.Json;
 
 /**
@@ -15,12 +16,18 @@ import haxe.Json;
  */
 class LevelSelectPreview implements DnaObject implements DnaEventSubscriber implements ILevelPreview extends DnaObjectBase
 {
-	public var button(default, set):String = "";
-	public var preview(default, set):String = "";
+	public var button:String = "";
+	public var preview:String = "";
+	public var preview_area:String = "";
+	public var done_overlay:String = "";
 
 	public var button_obj:DnaButtonObject;
-	public var preview_obj:NineSliceSprite;
-	public var trial_block:TrialBlock;
+	public var preview_obj:SpriteObject;
+	public var preview_area_obj:SpriteObject;
+	public var done_overlay_obj:SpriteObject;
+
+	@:isVar
+	public var trial_block(get, set):TrialBlock;
 
 	/**
 	 * overwritten ctor.
@@ -30,11 +37,31 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 		super("LevelSelectPreview");
 	}
 
-	public function setTrialBlock(trial_block:TrialBlock)
+	public function get_trial_block():TrialBlock
 	{
-		this.trial_block = trial_block;
+		return trial_block;
+	}
+
+	public function set_trial_block(value:TrialBlock):TrialBlock
+	{
+		this.trial_block = value;
 		this.preview_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview));
 		preview_obj.setAssetPath(trial_block.preview);
+		if (trial_block.done == true)
+		{
+			// done_overlay_obj.removeChild(done_overlay_obj.sprite);
+			// done_overlay_obj.addChild(done_overlay_obj.sprite);
+			done_overlay_obj.sprite.alpha = 1.0;
+			trace("set to 1:", done_overlay_obj.sprite.alpha);
+			done_overlay_obj.sprite.update(1);
+			button_obj.setNextState(new ButtonStateInactive());
+		}
+		return trial_block;
+	}
+
+	public function setTrialBlock(value:TrialBlock)
+	{
+		set_trial_block(value);
 	}
 
 	/**
@@ -45,37 +72,25 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 
 	override public function onHaveParent() {}
 
-	public function set_preview(value:String):String
-	{
-		preview = value;
-		if (this.getParent() == null)
-		{
-			return value;
-		}
-		return preview;
-	}
-
-	public function set_button(value:String):String
-	{
-		button = (value);
-		return button;
-	}
-
-	override public function onReady()
-	{
-		// setup our button
-		this.button_obj = cast this.getParent().getObjectByName(getNestedObjectName(button));
-		button_obj.onPressCallback = startTask;
-		this.preview_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview));
-	}
-
-	public function startTask():Void
+	public function onButtonPress():Void
 	{
 		trial_block.load();
 
 		var action = DnaComponentFactory.create("ActionStateSwitchComponent");
 		cast(action, ActionStateSwitchComponent).next_state = "NEXT_TASK";
 		this.addComponent(action);
+	}
+
+	override public function onReady()
+	{
+		// setup our button
+		this.button_obj = cast this.getParent().getObjectByName(getNestedObjectName(button));
+		button_obj.onPressCallback = onButtonPress;
+		this.preview_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview));
+		this.done_overlay_obj = cast this.getParent().getObjectByName(getNestedObjectName(done_overlay));
+		done_overlay_obj.sprite.alpha = 0.1;
+
+		this.preview_area_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview_area));
 	}
 
 	/**
@@ -88,11 +103,37 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 
 		if (Reflect.hasField(jsonFile, "button"))
 		{
-			set_button(cast jsonFile.button);
+			this.button = jsonFile.button;
 		}
 		if (Reflect.hasField(jsonFile, "preview"))
 		{
-			set_preview(cast jsonFile.preview);
+			this.preview = jsonFile.preview;
 		}
+		if (Reflect.hasField(jsonFile, "preview_area"))
+		{
+			this.preview_area = jsonFile.preview_area;
+		}
+		if (Reflect.hasField(jsonFile, "done_overlay"))
+		{
+			this.done_overlay = jsonFile.done_overlay;
+		}
+	}
+
+	/**
+	 * override the function so we can move all the nested objects as well.
+	 * and keep the relative positions
+	 * @param x 
+	 * @param y 
+	 */
+	override public function moveTo(x:Float, y:Float)
+	{
+		preview_area_obj.moveTo(x, y);
+		/*
+			for (obj in this.nested_objects)
+			{
+				obj.moveTo(this.pos_x - obj.pos_x, this.pos_y - obj.pos_y);
+			}
+		 */
+		super.moveTo(x, y);
 	}
 }

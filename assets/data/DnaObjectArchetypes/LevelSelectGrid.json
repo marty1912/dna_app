@@ -1,0 +1,15 @@
+{"type":"LevelSelectGrid",
+"name":"",
+"pos_target":"",
+"grid_area":"grid_area",
+"button_left":"btn_left",
+"button_right":"btn_right",
+"objects":[
+	{ "type": "SpriteObject", "name": "grid_area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.6, "scale_y": 0.4, "grid":[100,100,400,400], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "::pos_target::" }] },
+	{ "type": "SpriteObject", "name": "button_area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.95, "scale_y": 0.4, "grid":[100,100,400,400], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "::pos_target::" }] },
+	{ "type": "SpriteObject", "name": "button_right_area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.1, "grid":[100,100,400,400], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "RightCenter", "target": "button_area" }] },
+	{ "type": "EmptyButtonObject", "name":"btn_right", "path": "assets/gui_elements/buttonRight.png", "components": [{ "type": "PositionComponent", "position": "Center", "target": "button_right_area","oneshot":false}, {"type":"UserButtonComponent"},{ "type":"ButtonScaleComponent", "target":"button_right_area" ,"keep_ratio":true,"oneshot":false}] },
+	{ "type": "SpriteObject", "name": "button_left_area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.1, "grid":[100,100,400,400], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "LeftCenter", "target": "button_area" }] },
+	{ "type": "EmptyButtonObject", "name":"btn_left", "path": "assets/gui_elements/buttonLeft.png", "components": [{ "type": "PositionComponent", "position": "Center", "target": "button_left_area","oneshot":false}, {"type":"UserButtonComponent"},{ "type":"ButtonScaleComponent", "target":"button_left_area" ,"keep_ratio":true,"oneshot":false}] }
+]
+}

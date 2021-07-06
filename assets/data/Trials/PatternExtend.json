@@ -4,6 +4,7 @@
         "name":"SpeedTest",
 		"desc_head": "SpeedTest_HEAD",
 		"desc_body": "SHORTTASKS_BODY",
+		"preview":"assets/images/level_preview/PatternPreview.png",
 		"done": false,
 		"saved": false,
 		"trials": [

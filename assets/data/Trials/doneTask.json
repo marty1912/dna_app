@@ -1,0 +1,29 @@
+[	
+{
+		"type": "PatternExtendTutorial_02",
+		"name":"SpeedTest",
+		"desc_head": "SpeedTest_HEAD",
+		"desc_body": "SHORTTASKS_BODY",
+		"preview":"assets/images/level_preview/TestTask.png",
+		"done": true,
+		"saved": true,
+		"trials": [
+            [{ "name": "pextend", "params": { "pattern": ["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG",""], "solution":["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG"]}} , { "name": "TotalTime" }]
+					]
+	},
+	
+ 
+	{
+		"type": "SAVE",
+		"done": true,
+		"saved":true 
+	},
+	{
+		"type": "REDIRECT",
+		"done": true,
+		"saved": true,
+		"to": {
+			"type": "LevelSelectState"
+		}
+	}
+]

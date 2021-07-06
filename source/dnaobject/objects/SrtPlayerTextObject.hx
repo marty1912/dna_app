@@ -1,17 +1,12 @@
 package dnaobject.objects;
 
 import constants.DnaConstants;
-import dnaEvent.DnaEventManager;
 import dnadata.DnaDataManager;
 import dnaobject.interfaces.ITextBox;
 import flixel.FlxG;
-import flixel.system.FlxAssets;
-import flixel.util.FlxColor;
-import flixel.util.FlxDestroyUtil;
+import flixel.text.FlxText;
 import haxe.Json;
 import locale.LocaleManager;
-import textbox.Settings;
-import textbox.Textbox;
 
 class SrtEntry
 {
@@ -39,13 +34,14 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 {
 	public static final CODE_NEXT_TRIAL_DESC = "NEXT_TRIAL_DESC";
 
-	public var text_box:Textbox;
-	public var settings:Settings;
+	public var text_box:FlxText;
 	public var autostart:Bool = false;
 	public var srt_text:String;
 	public var srt_list:Array<SrtEntry> = new Array<SrtEntry>();
 	public var cur_time:Float = 0;
 	public var running:Bool = false;
+	public var text_width:Int = 100;
+	public var fontsize:Int = 10;
 
 	public var append_before:String = "";
 	public var append_after:String = "";
@@ -81,8 +77,7 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 	public function new()
 	{
 		super("SrtPlayerTextObject");
-		this.settings = new Settings(FlxAssets.FONT_DEFAULT, 16, 320, FlxColor.WHITE);
-		text_box = new Textbox(0, 0, settings);
+		text_box = new FlxText();
 		this.addChild(text_box);
 	}
 
@@ -142,25 +137,12 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 		this.setOrigin(0, 0);
 		this.removeChild(text_box);
 
-		this.text_box.destroy();
-		this.text_box = null;
-		this.text_box = new Textbox(0, 0, this.settings);
-
 		this.addChild(text_box);
-		this.text_box.setText(value);
-		this.text_box.bring();
 
-		this.text_box.statusChangeCallbacks.push(function(newStatus:textbox.Status):Void
-		{
-			if (newStatus == textbox.Status.FULL)
-			{
-				text_box.continueWriting();
-			}
-			if (newStatus == textbox.Status.DONE)
-			{
-				// onTextBoxDone();
-			}
-		});
+		text_box.width = text_width;
+		text_box.size = fontsize;
+		this.text_box.text = value;
+		text_box.alpha = 1;
 	}
 
 	/**
@@ -168,7 +150,7 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 	 */
 	public function hideText()
 	{
-		this.text_box.dismiss();
+		text_box.alpha = 0;
 	}
 
 	/**
@@ -214,11 +196,10 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 		{
 			append_before = Reflect.hasField(jsonFile.settings, "append_before") ? jsonFile.settings.append_before : append_before;
 			append_after = Reflect.hasField(jsonFile.settings, "append_after") ? jsonFile.settings.append_after : append_after;
-			var fontsize = jsonFile.settings.fontsize;
+			fontsize = jsonFile.settings.fontsize;
 			fontsize = cast Math.floor(fontsize * (FlxG.height / DnaConstants.DEFAULT_SCREEN_SIZE.y));
-			var width = jsonFile.settings.width;
-			width = cast Math.floor(width * (FlxG.width / DnaConstants.DEFAULT_SCREEN_SIZE.x));
-			this.settings = new Settings(FlxAssets.FONT_DEFAULT, fontsize, width, FlxColor.WHITE);
+			text_width = jsonFile.settings.width;
+			text_width = cast Math.floor(text_width * (FlxG.width / DnaConstants.DEFAULT_SCREEN_SIZE.x));
 		}
 		if (Reflect.hasField(jsonFile, "text"))
 		{

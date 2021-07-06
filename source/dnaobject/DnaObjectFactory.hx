@@ -341,6 +341,12 @@ else if (type == 'PatternExtendTutorial')
 	obj = new PatternExtendTutorial();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendTutorial.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'LevelSelectGrid')
+{
+	obj = new LevelSelectGrid();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/LevelSelectGrid.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -354,6 +360,7 @@ else if (type == 'PatternExtendTutorial')
 		return obj;
 	}
 }
+
 
 
 
