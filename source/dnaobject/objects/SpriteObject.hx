@@ -71,10 +71,17 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 	 */
 	public function setMaxDimensions(w:Float, h:Float)
 	{
+		sprite.scale.x = 1;
+		sprite.scale.y = 1;
+		sprite.updateHitbox();
+
 		width = w;
 		height = sprite.height * sprite.scale.x;
 		if (height > h)
 		{
+			sprite.scale.x = 1;
+			sprite.scale.y = 1;
+			sprite.updateHitbox();
 			height = h;
 			width = sprite.width * sprite.scale.y;
 		}
@@ -183,6 +190,7 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 	 */
 	public function setupOrigin(where:String)
 	{
+		sprite.updateHitbox();
 		if (where == "mid")
 		{
 			this.setOrigin(sprite.getMidpoint().x, sprite.getMidpoint().y);
@@ -193,7 +201,7 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 		}
 		else if (where == "mid_top")
 		{
-			this.setOrigin(sprite.getMidpoint().x, sprite.getMidpoint().y - ((sprite.height / 2) * m_scale_y));
+			this.setOrigin(sprite.getMidpoint().x, sprite.getMidpoint().y - ((sprite.height / 2)));
 		}
 	}
 

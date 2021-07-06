@@ -1,0 +1,33 @@
+{"type":"PatternExtendRealTask",
+"name":"pattern_ctrl",
+"pos_target":"",
+"pattern_display":"pdisplay",
+"action_load":"ActionHandler_Load",
+"action_init":"ActionHandler_init",
+"action_fin":"ActionHandler_Fin",
+"trial_handler":"trialz",
+"objects":[
+        { "type": "TrialHandlerObject","name": "trialz"},
+        { "type": "ActionHandlerObject", "name": "ActionHandler_Fin",
+            "actions": [
+                { 
+            "type": "ActionFinishTaskComponent",
+                "on_event":"NO_EVENT_HERE",
+            "target": ""
+          },
+          {
+            "type": "ActionStateSwitchComponent",
+            "target": "",
+            "next_state": "NEXT_TASK"
+          }
+        ]
+      },
+ 
+        { "type": "ActionHandlerObject", "name": "ActionHandler_Load",
+            "actions": [
+                { "type": "ActionLoadTrialComponent", "oneshot": false, "target": "", "on_event":"NO_EVENT_HERE" }
+            ]
+        }
+ 
+]
+}

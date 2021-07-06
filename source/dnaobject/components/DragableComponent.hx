@@ -44,6 +44,23 @@ class DragableComponent implements DnaComponent implements IStateMachine extends
 
 	public var setStateCallback:StateEnum->Void = null;
 
+	public var disabled(get, set):Bool;
+
+	public function get_disabled():Bool
+	{
+		return !this.user_button.active;
+	}
+
+	public function set_disabled(value:Bool):Bool
+	{
+		this.user_button.active = !value;
+		if (value = true)
+		{
+			this.setNextState(new DragStateNormal());
+		}
+		return value;
+	}
+
 	public function setState(state:StateEnum):Void
 	{
 		if (setStateCallback != null)

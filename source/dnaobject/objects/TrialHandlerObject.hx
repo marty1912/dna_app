@@ -138,6 +138,45 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		this.trial_index = 0;
 	}
 
+	public var all_trials_done(get, null):Bool;
+
+	public function get_all_trials_done():Bool
+	{
+		if (this.trials == null)
+		{
+			this.getTrialsFromManager();
+		}
+		if (this.trials == null)
+		{
+			return true;
+		}
+
+		if (this.trial_index >= this.trials.length)
+		{
+			return true;
+		}
+		return false;
+	}
+
+	public var done_trials(get, null):Int;
+
+	/**
+	 * getter for done_trials_property
+	 * @return Int
+	 */
+	public function get_done_trials():Int
+	{
+		if (this.trials == null)
+		{
+			this.getTrialsFromManager();
+		}
+		if (this.trials == null)
+		{
+			return 0;
+		}
+		return this.trials.length - this.trial_index;
+	}
+
 	/**
 	 * this function loads the next trial.
 	 */
@@ -183,6 +222,13 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		this.getParent().eventManager.broadcastEvent(LOAD_TRIAL_FIN);
 	}
 
+	public function saveCurrentTrial()
+	{
+		collectData();
+		this.trial_index++;
+		this.getParent().eventManager.broadcastEvent(SAVE_TRIAL_DATA_FIN);
+	}
+
 	/**
 	 * this is the function that gets called everytime an event we subscribed for is fired
 	 * @param event_name
@@ -200,9 +246,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		}
 		else if (event_name == SAVE_TRIAL_DATA)
 		{
-			collectData();
-			this.trial_index++;
-			this.getParent().eventManager.broadcastEvent(SAVE_TRIAL_DATA_FIN);
+			saveCurrentTrial();
 		}
 	}
 }

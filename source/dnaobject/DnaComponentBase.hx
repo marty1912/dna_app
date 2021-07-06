@@ -19,6 +19,11 @@ class DnaComponentBase
 	static var s_comp_id:Int = 0;
 
 	/**
+	 * called when the state is done with creating
+	 */
+	public function onReady():Void {}
+
+	/**
 	 * private ctor so nobody can instantate this class directly.
 	 * @param comp_type
 	 */

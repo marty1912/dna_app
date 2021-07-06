@@ -373,6 +373,27 @@ else if (type == "PatternDisplayTest")
 			state = new DnaState("PatternDisplayTest");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternDisplayTest.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PatternExtend")
+		{
+			state = new DnaState("PatternExtend");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternExtend.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PatternExtendPractice")
+		{
+			state = new DnaState("PatternExtendPractice");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternExtendPractice.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PatternExtendTutorial_02")
+		{
+			state = new DnaState("PatternExtendTutorial_02");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternExtendTutorial_02.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -385,6 +406,12 @@ else if (type == "PatternDisplayTest")
 		return state;
 	}
 }
+
+
+
+
+
+
 
 
 

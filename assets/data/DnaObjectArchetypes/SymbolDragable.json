@@ -3,6 +3,7 @@
 "pos_target":"",
 "background_bar":"empty_bar",
 "pattern_area":"pattern_area",
+"symbol":"symbol_draggable",
 "symbol_asset":"assets/images/pattern_symbols/circle.PNG",
 "filled_bar":"my_filled_bar",
 "objects":[

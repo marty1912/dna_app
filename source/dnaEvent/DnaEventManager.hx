@@ -82,6 +82,22 @@ class DnaEventManager
 	}
 
 	/**
+	 * this function adds a subscriber for a given event name. if the event with the name given does not exist it will
+	 * be created
+	 * @param subscriber - the subscriber to be added to the list.
+	 * @param event_name - the name of the event.
+	 */
+	public function rmSubscriberForEvent(subscriber:DnaEventSubscriber, event_name:String):Void
+	{
+		this.addEvent(event_name);
+		var subscribers:Array<DnaEventSubscriber> = event_subscribers.get(event_name);
+		if (subscribers.contains(subscriber))
+		{
+			subscribers.remove(subscriber);
+		}
+	}
+
+	/**
 	 * this function notifies all subscribers of the event
 	 * @param event_name - the name of the event
 	 */

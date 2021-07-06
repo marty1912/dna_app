@@ -39,8 +39,42 @@ class PatternExtendObject implements DnaObject implements TaskObject extends Dna
 		}
 		else
 		{
-			button_obj.setNextState(new ButtonStateInactive());
+			button_obj.setNextState(new ButtonStateHidden());
 		}
+	}
+
+	/**
+	 * called when the user presses the button
+	 */
+	public function onButtonPress()
+	{
+		button_obj.setNextState(new ButtonStateHidden());
+		this.disabled = true;
+		if (isCorrect() == DnaConstants.TASK_CORRECT)
+		{
+			this.getParent().eventManager.broadcastEvent(DnaConstants.TASK_ANSWERED_EVENT, true);
+		}
+		else
+		{
+			this.getParent().eventManager.broadcastEvent(DnaConstants.TASK_ANSWERED_EVENT, false);
+		}
+	}
+
+	public var disabled(get, set):Bool;
+
+	public function get_disabled():Bool
+	{
+		return pattern_display_obj.disabled;
+	}
+
+	public function set_disabled(value:Bool):Bool
+	{
+		pattern_display_obj.disabled = value;
+		for (obj in this.dragables_obj)
+		{
+			obj.disabled = value;
+		}
+		return value;
 	}
 
 	/**
@@ -65,12 +99,19 @@ class PatternExtendObject implements DnaObject implements TaskObject extends Dna
 		pattern_display_obj.onPatternChanged = this.onPatternChanged;
 		button_obj = cast this.getParent().getObjectByName(getNestedObjectName(button));
 		button_obj.setNextState(new ButtonStateHidden());
+		button_obj.onPressCallback = this.onButtonPress;
+		for (drag in dragables)
+		{
+			dragables_obj.push(cast this.getParent().getObjectByName(getNestedObjectName(drag)));
+		}
 	}
 
 	public var pattern_display:String;
+	public var dragables:Array<String> = new Array<String>();
 	public var pattern_display_obj:PatternDisplay;
 	public var button:String;
 	public var button_obj:DnaButtonObject;
+	public var dragables_obj:Array<SymbolDragable> = new Array<SymbolDragable>();
 
 	/**
 	 * override so we can have parameters like random order and stuff.
@@ -90,6 +131,10 @@ class PatternExtendObject implements DnaObject implements TaskObject extends Dna
 		}
 
 		if (Reflect.hasField(jsonFile, "pattern_assets")) {}
+		if (Reflect.hasField(jsonFile, "dragables"))
+		{
+			dragables = jsonFile.dragables;
+		}
 	}
 
 	public override function update(elapsed:Float) {}
@@ -103,6 +148,7 @@ class PatternExtendObject implements DnaObject implements TaskObject extends Dna
 	{
 		pattern_display_obj.setPattern(params.pattern);
 		correct_solution = params.solution;
+		this.disabled = false;
 	}
 
 	public var correct_solution:Array<String>;

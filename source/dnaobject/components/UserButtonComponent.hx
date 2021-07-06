@@ -24,6 +24,7 @@ class UserButtonComponent implements DnaComponent extends DnaComponentBase
 	{
 		super('UserButtonComponent');
 		m_click_area = new FlxButton();
+		m_click_area.allowSwiping = false;
 	}
 
 	/**

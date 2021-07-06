@@ -48,6 +48,19 @@ class SymbolSlotComponent implements DnaComponent implements IStateMachine exten
 		}
 	}
 
+	public var disabled(get, set):Bool;
+
+	public function get_disabled():Bool
+	{
+		return !this.user_button.active;
+	}
+
+	public function set_disabled(value:Bool):Bool
+	{
+		this.user_button.active = !value;
+		return value;
+	}
+
 	public var filled(get, null):Bool;
 
 	public function get_filled()

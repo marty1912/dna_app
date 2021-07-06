@@ -3,6 +3,7 @@
 "pos_target":"",
 "pattern_display":"pdisplay",
 "button":"my_button",
+"dragables":["symb_1","symb_2","symb_3","symb_4"],
 "objects":[
 
         { "type": "SpriteObject", "name": "BaseArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.8, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "::pos_target::" }] },

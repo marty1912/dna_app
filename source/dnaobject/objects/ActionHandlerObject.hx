@@ -95,6 +95,22 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 
 	static var calls = 0;
 
+	private var on_queue_done:Void->Void = null;
+	private var last_event_name:String = null;
+
+	/**
+	 * starts the queue
+	 * @param on_done - the function to call when the action queue is done.
+	 */
+	public function startQueue(on_done:Void->Void = null)
+	{
+		on_queue_done = on_done;
+		var first_event_name = this.m_inactive_actions_queue[0].on_event;
+		last_event_name = this.m_inactive_actions_queue[this.m_inactive_actions_queue.length - 1].getFinishedEventName();
+		getParent().eventManager.addSubscriberForEvent(this, last_event_name);
+		this.getNotified(first_event_name);
+	}
+
 	/**
 	 * this is called whenever an event that is part of our inactive actions list is called..
 	 * @param event_key
@@ -124,6 +140,12 @@ class ActionHandlerObject implements DnaObject implements DnaEventSubscriber ext
 			m_inactive_actions_queue.remove(action);
 			this.addComponent(cast(action));
 			index++;
+		}
+
+		if (on_queue_done != null && last_event_name == event_key)
+		{
+			getParent().eventManager.rmSubscriberForEvent(this, event_key);
+			on_queue_done();
 		}
 	}
 }

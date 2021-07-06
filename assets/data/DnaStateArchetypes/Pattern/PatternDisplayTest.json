@@ -3,7 +3,16 @@
     "objects": [
         { "type": "TaskBackgroundObject" },
 
-        { "type": "PatternExtendObject", "name": "pextend", "pos_target":""}
+        { "type": "PatternExtendObject", "name": "pextend", "pos_target":""},
+
+        { "type": "TrialHandlerObject" },
+        { "type": "TimerObject", "name": "TotalTime" },
+        { "type": "ActionHandlerObject", "name": "ActionHandler_Load",
+            "actions": [
+                { "type": "ActionLoadTrialComponent", "oneshot": false, "target": "", "onEvent":"onCreate" }
+            ]
+        }
+    
      
     ]
 }

@@ -329,6 +329,18 @@ else if (type == 'PatternExtendObject')
 	obj = new PatternExtendObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'PatternExtendRealTask')
+{
+	obj = new PatternExtendRealTask();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendRealTask.json"));
+}
+// // AUTOMATICALLY GENERATED
+else if (type == 'PatternExtendTutorial')
+{
+	obj = new PatternExtendTutorial();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendTutorial.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -342,5 +354,11 @@ else if (type == 'PatternExtendObject')
 		return obj;
 	}
 }
+
+
+
+
+
+
 
 

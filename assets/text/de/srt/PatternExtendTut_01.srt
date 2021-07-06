@@ -1,0 +1,29 @@
+﻿1
+00:00:00,000 --> 00:00:06,000
+Beim Erforschen meiner DNA sind
+merkwürdige Muster aufgetaucht.
+
+2
+00:00:06,100 --> 00:00:12,100
+Sie wurden vom Forschungsteam unter
+dem Mikroskop entdeckt.
+
+3
+00:00:12,200 --> 00:00:16,200
+Es gibt aber ein Problem:
+wie du siehst, sind sie leider unvollständig.
+
+4
+00:00:16,300 --> 00:00:22,300
+Um damit arbeiten zu können,
+brauchen wir die gesamte Reihenfolge.
+
+5
+00:00:22,400 --> 00:00:28,400
+Bitte hilf mit, sie zu vervollständigen!
+
+6
+00:00:28,500 --> 00:00:34,500
+Ich werde dir hier einmal vorzeigen,
+wie das geht.
+

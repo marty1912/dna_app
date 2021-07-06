@@ -79,6 +79,34 @@ class PatternDisplay implements DnaObject implements DnaEventSubscriber extends 
 		return filled;
 	}
 
+	public var disabled(get, set):Bool;
+
+	public function set_disabled(value:Bool):Bool
+	{
+		for (sym in this.symbols)
+		{
+			var slot:SymbolSlotComponent = cast sym.getComponentByType("SymbolSlotComponent");
+			if (slot != null)
+			{
+				slot.disabled = value;
+			}
+		}
+		return value;
+	}
+
+	public function get_disabled():Bool
+	{
+		for (sym in this.symbols)
+		{
+			var slot:SymbolSlotComponent = cast sym.getComponentByType("SymbolSlotComponent");
+			if (slot != null)
+			{
+				return slot.disabled;
+			}
+		}
+		return true;
+	}
+
 	public var fields_to_fill(get, null):Int;
 
 	public function get_fields_to_fill():Int
@@ -127,10 +155,19 @@ class PatternDisplay implements DnaObject implements DnaEventSubscriber extends 
 				sprite.setAssetPath(asset);
 				sprite.loadAsset();
 			}
-			sprite.setMaxDimensions(single_asset_width, single_asset_width);
+			sprite.setMaxDimensions(single_asset_width, single_asset_height);
 
 			this.getParent().addObject(sprite);
-			sprite.moveTo(pattern_area_obj.sprite.x + symbol_index * single_asset_width, pattern_area_obj.sprite.getMidpoint().y - (sprite.height / 2));
+			// put in foreground:
+			sprite.removeChild(sprite.sprite);
+			sprite.addChild(sprite.sprite);
+
+			var rest_width = single_asset_width - sprite.width;
+			var rest_height = single_asset_height - sprite.height;
+			sprite.moveTo(pattern_area_obj.sprite.x
+				+ (rest_width / 2)
+				+ symbol_index * single_asset_width, pattern_area_obj.sprite.y
+				+ (rest_height / 2));
 			symbols.push(sprite);
 		}
 	}

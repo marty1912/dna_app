@@ -19,6 +19,8 @@ interface DnaComponent extends IFlxDestroyable
 	 */
 	public function destroy():Void;
 
+	public function onReady():Void;
+
 	/**
 	 * fromFile(path:String):
 	 * each DnaComponent is able to get its own parameters from a file.

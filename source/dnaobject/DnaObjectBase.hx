@@ -478,15 +478,20 @@ class DnaObjectBase implements IFlxDestroyable
 	 */
 	public function set_pos_x(value:Float):Float
 	{
-		var x = value;
-		var offset_x = x - this.getOrigin().x;
-		for (child in this.getChildren())
-		{
-			var child_ob:FlxObject = cast child;
-			var old_pos = child_ob.getPosition();
-			child_ob.setPosition(offset_x + old_pos.x, old_pos.y);
-		}
-		this.setOrigin(x, this.getOrigin().y);
+		moveTo(value, pos_y);
+		return value;
+
+		/*
+			var x = value;
+			var offset_x = x - this.getOrigin().x;
+			for (child in this.getChildren())
+			{
+				var child_ob:FlxObject = cast child;
+				var old_pos = child_ob.getPosition();
+				child_ob.setPosition(offset_x + old_pos.x, old_pos.y);
+			}
+			this.setOrigin(x, this.getOrigin().y);
+		 */
 		return value;
 	}
 
@@ -505,16 +510,21 @@ class DnaObjectBase implements IFlxDestroyable
 	 */
 	public function set_pos_y(value:Float):Float
 	{
-		var y = value;
-		var offset_y = y - this.getOrigin().y;
-		for (child in this.getChildren())
-		{
-			var child_ob:FlxObject = cast child;
-			var old_pos = child_ob.getPosition();
-			child_ob.setPosition(old_pos.x, old_pos.y + offset_y);
-		}
-		this.setOrigin(this.getOrigin().x, y);
+		moveTo(pos_x, value);
 		return value;
+
+		/*
+			var y = value;
+			var offset_y = y - this.getOrigin().y;
+			for (child in this.getChildren())
+			{
+				var child_ob:FlxObject = cast child;
+				var old_pos = child_ob.getPosition();
+				child_ob.setPosition(old_pos.x, old_pos.y + offset_y);
+			}
+			this.setOrigin(this.getOrigin().x, y);
+			return value;
+		 */
 	}
 
 	/**
@@ -629,5 +639,11 @@ class DnaObjectBase implements IFlxDestroyable
 	/**
 	 * this function is called when the state is done with the fromFile is in the create.
 	 */
-	public function onReady():Void {}
+	public function onReady():Void
+	{
+		for (comp in this.m_component_list)
+		{
+			comp.onReady();
+		}
+	}
 }

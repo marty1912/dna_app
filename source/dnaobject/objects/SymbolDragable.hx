@@ -6,6 +6,7 @@ import dnadata.DnaDataManager;
 import dnadata.TaskTrials;
 import dnadata.TrialBlock;
 import dnaobject.components.ActionStateSwitchComponent;
+import dnaobject.components.DragableComponent;
 import dnaobject.interfaces.ILevelPreview;
 import dnaobject.interfaces.IUnlockableItem;
 import dnaobject.interfaces.TaskObject;
@@ -32,12 +33,33 @@ class SymbolDragable implements DnaObject implements DnaEventSubscriber extends 
 	 */
 	public function getNotified(event_name:String, params:Any = null) {}
 
+	public var disabled(get, set):Bool;
+
+	public function set_disabled(value:Bool):Bool
+	{
+		var drag:DragableComponent = cast this.symbol_obj.getComponentByType("DragableComponent");
+		drag.disabled = value;
+		return value;
+	}
+
+	public function get_disabled():Bool
+	{
+		var drag:DragableComponent = cast this.symbol_obj.getComponentByType("DragableComponent");
+		return drag.disabled;
+	}
+
 	override public function onHaveParent() {}
 
-	override public function onReady() {}
+	override public function onReady()
+	{
+		symbol_obj = cast getParent().getObjectByName(getNestedObjectName(symbol));
+	}
 
 	public var pattern_area:String;
 	public var pattern_assets:Array<String>;
+
+	public var symbol:String;
+	public var symbol_obj:SpriteObject;
 
 	public var pattern_area_obj:SpriteObject;
 	public var fixed_symbols:Array<SpriteObject>;
@@ -53,6 +75,11 @@ class SymbolDragable implements DnaObject implements DnaEventSubscriber extends 
 		if (Reflect.hasField(jsonFile, "pattern_area"))
 		{
 			this.pattern_area = cast jsonFile.pattern_area;
+		}
+
+		if (Reflect.hasField(jsonFile, "symbol"))
+		{
+			this.symbol = cast jsonFile.symbol;
 		}
 
 		if (Reflect.hasField(jsonFile, "pattern_assets"))
