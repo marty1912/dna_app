@@ -452,7 +452,7 @@ class DnaObjectBase implements IFlxDestroyable
 		{
 			var child_ob:FlxObject = cast child;
 			var old_pos = child_ob.getPosition();
-			child_ob.setPosition(offset_x + old_pos.x, old_pos.y + offset_y);
+			child_ob.setPosition(old_pos.x + offset_x, old_pos.y + offset_y);
 		}
 		this.setOrigin(x, y);
 	}

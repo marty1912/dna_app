@@ -135,7 +135,7 @@ class NineSliceSprite implements DnaObject extends DnaObjectBase
 
 	public function get_width():Int
 	{
-		return Std.int(m_scale_x);
+		return Std.int(this.nineSliceSprite.width);
 	}
 
 	public function set_width(value:Int):Int
@@ -151,7 +151,7 @@ class NineSliceSprite implements DnaObject extends DnaObjectBase
 
 	public function get_height():Int
 	{
-		return Std.int(m_scale_y);
+		return Std.int(this.nineSliceSprite.height);
 	}
 
 	public function set_height(value:Int):Int

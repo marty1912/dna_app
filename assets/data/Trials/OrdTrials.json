@@ -189,13 +189,8 @@
 		"done": false,
 		"saved": false
 	},
-	{
-		"type": "REDIRECT",
-		"done": false,
-		"saved": false,
-		"to": {
-			"type": "GotoNextState"
-		}
-	}
+
+	{ "type": "ShowProgressState", "done": false, "saved": false },
+	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "UnlockState" } }
 ]
 	

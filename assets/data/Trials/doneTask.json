@@ -18,12 +18,6 @@
 		"done": true,
 		"saved":true 
 	},
-	{
-		"type": "REDIRECT",
-		"done": true,
-		"saved": true,
-		"to": {
-			"type": "LevelSelectState"
-		}
-	}
+	{ "type": "ShowProgressState", "done": false, "saved": false },
+	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "UnlockState" } }
 ]

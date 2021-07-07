@@ -1,76 +1,17 @@
 {
     "type": "NumberlineGroup",
     "objects": [
-        {
-            "type": "SpriteObject",
-            "name": "TextPosition",
-            "asset_path": "INVISIBLE_BOX",
-            "scale_x": 600,
-            "scale_y": 200,
-            "origin_where": "",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "CenterTop",
-                "target": ""
-            }]
-        },
+        { "type": "SpriteObject", "name": "TextPosition", "asset_path": "INVISIBLE_BOX", "scale_x": 600, "scale_y": 200, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" }] },
 
-        
-        {
-            "type": "NumberlineObject",
-            "name": "NumberlineObject",
-            "num_zero": 0,
-            "num_ref":1,
-            "num_target":7,
-            "num_max":12,
-            "visual_mode":"new",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "Center"
-            }
-        ]
-        },
-        {
-            "type": "TrialHandlerObject"
-        },
-        {
-            "type": "EmptyButtonObject",
-            "path": "assets/gui_elements/buttonAccept.png",
-            "name": "AcceptButton",
-            "active":false,
-            "components": [
-                {
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "CenterBottom"
-                },
-                {"type":"UserButtonComponent"},
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state":"INACTIVE"
-                },
-                {"type":"CmdEvtTrigComponent",
-                    "event_name":"TASK_ANSWERED"
-                }
-            ]
-        }
+        { "type": "NumberlineObject", "name": "NumberlineObject", "num_zero": 0, "num_ref":1, "num_target":7, "num_max":12, "visual_mode":"new", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center" } ] },
+
+        { "type": "TrialHandlerObject" },
+
+        { "type": "EmptyButtonObject", "path": "assets/gui_elements/buttonAccept.png", "name": "AcceptButton", "active":false, "components": [ { "type": "PositionComponent", "oneshot": true, "position": "CenterBottom" }, {"type":"UserButtonComponent"}, { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE" }, {"type":"CmdEvtTrigComponent", "event_name":"TASK_ANSWERED" } ] }
+
         ,{"type":"TimerObject","name":"TotalTime"},
-        {
-            "type": "ActionHandlerObject",
-            "name": "ActionHandler_activate_accept_on_sliderpos set",
-            "actions": [
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "on_event": "EVENT_SLIDERPOS_SET",
-                    "oneshot":false,
-                    "state":"NORMAL"
-                }
-            ]
-        }
+        { "type": "ActionHandlerObject", "name": "ActionHandler_activate_accept_on_sliderpos set", "actions": [ { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "on_event": "EVENT_SLIDERPOS_SET", "oneshot":false, "state":"NORMAL" } ] }
+
         
     ]
 }

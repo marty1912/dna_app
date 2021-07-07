@@ -37,12 +37,6 @@
         { "type": "ActionRemoveComponentComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "target_comp":"UserButtonComponent" },
         { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE", "on_event":"seq" },
 
-        { "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" },
-        { "type": "ActionShowTextComponent", "oneshot":false, "target": "reminder", "on_event":"same" },
-
-        { "type": "ActionFireEventComponent", "event_name":"EXPLAIN_BUTTONS", "oneshot":false, "target":"" },
-        { "type": "ActionDelayComponent", "oneshot":false, "delay":0.1, "on_event":"EXPLAIN_BUTTONS_DONE" },
-
         { "type": "ActionPlaySoundComponent", "oneshot":false, "target_resource": "question_audio" },
         { "type": "ActionShowTextComponent", "oneshot":false, "target": "question_srt", "on_event":"same" },
 

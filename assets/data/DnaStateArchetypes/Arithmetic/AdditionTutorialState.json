@@ -34,7 +34,7 @@
 {
             "type": "SrtPlayerTextObject",
             "name": "TutorialText_02",
-            "text": "NumberlineTutorial_04",
+            "text": "ArithmeticTutorial_04",
             "autostart": false,
             "settings": {
                 "fontsize": 32,
@@ -124,11 +124,11 @@
             "actions": [{
                     "type": "ActionSetTaskParamsComponent",
                     "on_event":"onCreate",
-                    "params": [{
-                        "name": "ArithmeticHandler",
+                    "params": [
+                        { "name": "ArithmeticHandler",
                         "params": {
-                            "problem": "1+2=",
-                            "solution": 3
+                            "problem": "9+3=",
+                            "solution": 12
                         }
                     }, 
                     { "name": "TotalTime" }
@@ -137,40 +137,21 @@
                 ,
                 {"type":"ActionShowTextComponent",
                 "target":"TutorialText_01"},
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "TutorialFinger"
-                }
-                ,{
-                    "type": "ActionMoveToAndPressComponent",
-                    "target": "TutorialFinger",
-                    "target_button": "Button_3"
-                }
-                ,{
-                    "type": "ActionMoveToAndPressComponent",
-                    "target": "TutorialFinger",
-                    "target_button": "AcceptButton"
-                }
-                ,{
-                    "type":"ActionSetButtonStateComponent",
-                    "target":"AcceptButton",
-                    "state":"INACTIVE"
-                },
-                {
-                    "type": "ActionMoveToComponent",
-                    "target": "TutorialFinger",
-                    "to_object": "AcceptButton",
-                    "speed":400,
-                    "to_y": 300
-                    
-                },
-                {"type":"ActionShowTextComponent",
-                "target":"TutorialText_02"},
-                {
-                    "type": "ActionStateSwitchComponent",
-                    "target": "",
-                    "next_state": "ArithmeticPracticeState"
-                }
+                { "type": "ActionAppearComponent", "target": "TutorialFinger" }
+
+                ,{ "type": "ActionMoveToAndPressComponent", "target": "TutorialFinger", "target_button": "KEY_1/Button_0" }
+                ,{ "type": "ActionMoveToAndPressComponent", "target": "TutorialFinger", "target_button": "KEY_2/Button_0" }
+
+                ,{ "type": "ActionMoveToAndPressComponent", "target": "TutorialFinger", "target_button": "AcceptButton" }
+
+                ,{ "type":"ActionSetButtonStateComponent", "target":"AcceptButton", "state":"INACTIVE" },
+
+                { "type": "ActionMoveToComponent", "target": "TutorialFinger", "to_object": "AcceptButton", "speed":400, "to_y": 300 },
+
+                {"type":"ActionShowTextComponent", "target":"TutorialText_02"},
+
+                { "type": "ActionStateSwitchComponent", "target": "", "next_state": "ArithmeticPracticeState" }
+
             ]
         },
         {

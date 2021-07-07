@@ -17,25 +17,25 @@
     { "type": "EmptyButtonObject", "name": "Button_Green", "path":"assets/mathanxiety/resize/btn_green.png", "width":380, "height":380,
     "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "GreenButton_POS" },
         { "type": "CmdEvtTrigComponent", "event_name": "FEEDBACK_PRESSED","params":"GREEN" },
-        { "type":"ButtonScaleComponent", "target":"GreenButton_POS","keep_ratio":true, "oneshot": true}
+        { "type":"ButtonScaleComponent", "target":"GreenButton_POS","keep_ratio":true, "oneshot": false}
     ] },
   
     { "type": "EmptyButtonObject", "name": "Button_Yellow", "path":"assets/mathanxiety/resize/btn_yellow.png", "width":380, "height":380,
     "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "YellowButton_POS" },
         { "type": "CmdEvtTrigComponent", "event_name": "FEEDBACK_PRESSED","params":"YELLOW" },
-        { "type":"ButtonScaleComponent", "target":"YellowButton_POS" ,"keep_ratio":true, "oneshot": true}
+        { "type":"ButtonScaleComponent", "target":"YellowButton_POS" ,"keep_ratio":true, "oneshot": false}
     ] },
   
     { "type": "EmptyButtonObject", "name": "Button_Orange", "path":"assets/mathanxiety/resize/btn_orange.png", "width":380, "height":380,
     "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "OrangeButton_POS" },
         { "type": "CmdEvtTrigComponent", "event_name": "FEEDBACK_PRESSED","params":"ORANGE" },
-        { "type":"ButtonScaleComponent", "target":"OrangeButton_POS" ,"keep_ratio":true, "oneshot": true}
+        { "type":"ButtonScaleComponent", "target":"OrangeButton_POS" ,"keep_ratio":true, "oneshot": false}
     ] },
   
     { "type": "EmptyButtonObject", "name": "Button_Red", "path":"assets/mathanxiety/resize/btn_red.png", "width":380, "height":380,
     "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "RedButton_POS" },
         { "type": "CmdEvtTrigComponent", "event_name": "FEEDBACK_PRESSED","params":"RED" },
-        { "type":"ButtonScaleComponent", "target":"RedButton_POS" ,"keep_ratio":true, "oneshot": true}
+        { "type":"ButtonScaleComponent", "target":"RedButton_POS" ,"keep_ratio":true, "oneshot": false}
     ] },
 
     { "type": "StaticTextObject", "name": "Text_Question", "use_literal_text":false, "text": "", "autostart": true, "settings": { "char_per_sec": 500, "n_lines":5, "width": 1000, "fontsize":  32 },

@@ -26,14 +26,9 @@
             "num_ref":1,
             "num_target":8,
             "num_max":10,
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "Center"
-            },
-            {
-                "type": "SliderComponent"
-            }
+            "components": [
+            { "type": "SliderComponent" },
+            { "type": "PositionComponent", "oneshot": true, "position": "Center" }
         ]
         },
         {

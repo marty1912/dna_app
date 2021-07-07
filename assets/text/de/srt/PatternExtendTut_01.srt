@@ -1,29 +1,37 @@
-﻿1
+1
 00:00:00,000 --> 00:00:06,000
-Beim Erforschen meiner DNA sind
-merkwürdige Muster aufgetaucht.
+Beim Erforschen meiner DNA haben wir  
+schon viele Fortschritte gemacht.
 
 2
 00:00:06,100 --> 00:00:12,100
+Es ist aber etwas merkwürdiges Aufgefallen.
+
+3
+00:00:12,200 --> 00:00:18,200
+In meiner DNA gibt es Muster!
+
+4
+00:00:18,300 --> 00:00:24,300
 Sie wurden vom Forschungsteam unter
 dem Mikroskop entdeckt.
 
-3
-00:00:12,200 --> 00:00:16,200
+5
+00:00:24,400 --> 00:00:28,400
 Es gibt aber ein Problem:
 wie du siehst, sind sie leider unvollständig.
 
-4
-00:00:16,300 --> 00:00:22,300
+6
+00:00:28,500 --> 00:00:34,500
 Um damit arbeiten zu können,
 brauchen wir die gesamte Reihenfolge.
 
-5
-00:00:22,400 --> 00:00:28,400
+7
+00:00:34,600 --> 00:00:40,600
 Bitte hilf mit, sie zu vervollständigen!
 
-6
-00:00:28,500 --> 00:00:34,500
+8
+00:00:40,700 --> 00:00:46,700
 Ich werde dir hier einmal vorzeigen,
 wie das geht.
 

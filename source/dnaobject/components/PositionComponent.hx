@@ -218,6 +218,10 @@ class PositionComponent implements DnaComponent extends DnaComponentBase
 		var empty_space_left_rigth = screen_width - total_width;
 		var empty_space_up_down = screen_height - total_height;
 
+		if (getParent().obj_name == "NumberlineObject")
+		{
+			trace("object name:", getParent().obj_name, "lrud:", leftrightupdown, "sec:", getParent().getMaxLeftRightUpDownFromOrigin());
+		}
 		switch m_position_type
 		{
 			case Center:
@@ -252,12 +256,12 @@ class PositionComponent implements DnaComponent extends DnaComponentBase
 	{
 		this.setPos();
 		/**
-		 * remove the component from the parent
+			* remove the component from the parent
+			if (this.m_oneshot == true)
+			{
+				getParent().removeComponent(this.id);
+			}
 		 */
-		if (this.m_oneshot == true)
-		{
-			getParent().removeComponent(this.id);
-		}
 	}
 
 	/**

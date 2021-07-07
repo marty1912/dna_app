@@ -387,6 +387,14 @@ else if (type == 'PatternExtendPracticeComponent')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/PatternExtendPracticeComponent.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'ForegroundComponent')
+{
+	comp = new ForegroundComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ForegroundComponent.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -398,6 +406,15 @@ else if (type == 'PatternExtendPracticeComponent')
 		return comp;
 	}
 }
+
+
+
+
+
+
+
+
+
 
 
 

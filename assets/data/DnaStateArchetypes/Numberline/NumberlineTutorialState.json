@@ -30,12 +30,8 @@
             "ref_line_color": "0x00FF0000",
             "visual_mode":"old",
             "origin_on_target":true,
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "Center"
-            },
-            {
+            "components": [
+           {
                 "type": "SliderTickComponent",
                 "ticks":[
                     {"position":0,"color":"0xffffff","alpha":1},
@@ -52,7 +48,13 @@
                     {"position":11,"color":"0xffffff","alpha":1},
                     {"position":12,"color":"0xffffff","alpha":1}     
                 ]
+            },
+             {
+                "type": "PositionComponent",
+                "oneshot": true,
+                "position": "Center"
             }
+    
         ]
         },
         {
@@ -166,13 +168,6 @@
                     "delay": 0.2
                 },
                 {
-                    "type": "ActionShrinkComponent",
-                    "target": "TutorialFinger",
-                    "to_x": 0.95,
-                    "to_y": 0.95
-
-                },
-                {
                     "type":"ActionPlaySoundComponent",
                     "path" : "assets/sounds/kenney_interfacesounds/Audio/select_001.mp3"
                 },
@@ -194,13 +189,6 @@
                     "delay": 0.2
                 },
                 {
-                    "type": "ActionShrinkComponent",
-                    "target": "TutorialFinger",
-                    "to_x": 1,
-                    "to_y": 1
-
-                },
-                {
                     "type": "ActionMoveToComponent",
                     "target": "TutorialFinger",
                     "to_object": "AcceptButton",
@@ -213,13 +201,6 @@
                     "delay": 0.2
                 },
                 {
-                    "type": "ActionShrinkComponent",
-                    "target": "TutorialFinger",
-                    "to_x": 0.95,
-                    "to_y": 0.95
-
-                },
-                {
                     "type": "ActionSetButtonStateComponent",
                     "target": "AcceptButton",
                     "state":"PRESSED"
@@ -228,13 +209,6 @@
                     "type": "ActionDelayComponent",
                     "target": "TutorialFinger",
                     "delay": 0.2
-                },
-                {
-                    "type": "ActionShrinkComponent",
-                    "target": "TutorialFinger",
-                    "to_x": 1,
-                    "to_y": 1
-
                 },
                 {
                     "type": "ActionSetButtonStateComponent",

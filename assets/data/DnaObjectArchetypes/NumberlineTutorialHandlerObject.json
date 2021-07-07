@@ -13,13 +13,6 @@
             "speed": 400
         },
         {
-            "type": "ActionShrinkComponent",
-            "target": "TutorialFinger",
-            "to_x": 0.28,
-            "to_y": 0.28
-
-        },
-        {
             "type": "ActionSetSliderPosComponent",
             "target": "NumberlineObject",
             "pos_from_object": "TutorialFinger"
@@ -29,13 +22,6 @@
             "type": "ActionDelayComponent",
             "target": "TutorialFinger",
             "delay": 0.1
-
-        },
-        {
-            "type": "ActionShrinkComponent",
-            "target": "TutorialFinger",
-            "to_x": 0.3,
-            "to_y": 0.3
 
         },
 

@@ -121,7 +121,6 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 		var selected:Null<Float> = null;
 		if (this.slider.alpha != 0)
 		{
-			// trace("slider alpha is not 0 but:", this.slider.alpha);
 			selected = getSliderNum();
 		}
 		var current_trial:Dynamic = {
@@ -144,9 +143,9 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 		this.m_num_ref = params.ref;
 		this.m_num_target = params.target;
 		this.m_num_max = params.max;
-		this.setupPositions();
-		this.updateLabelTexts();
 		this.updateGraphics();
+		this.updateLabelTexts();
+		this.setupPositions();
 	}
 
 	/**
@@ -213,6 +212,7 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 	public function new()
 	{
 		super('NumberlineObject');
+		this.setOrigin(0, 0);
 		axis = new FlxSprite();
 		m_zero_line = new FlxSprite();
 		m_ref_line = new FlxSprite();
@@ -227,6 +227,17 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 		addChild(m_label_ref);
 		addChild(m_label_target);
 		addChild(m_label_zero);
+		for (child in this.getChildren())
+		{
+			child.setPosition(0, 0);
+		}
+	}
+
+	public override function moveTo(x:Float, y:Float)
+	{
+		var before_lrud = this.getMaxLeftRightUpDownFromOrigin();
+		super.moveTo(x, y);
+		var aftert_lrud = this.getMaxLeftRightUpDownFromOrigin();
 	}
 
 	/**
@@ -235,8 +246,14 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 	 */
 	public function setupPositions()
 	{
+		m_ref_line.setGraphicSize(Std.int(m_ref_line.width), Std.int(m_ref_line.height));
+		m_ref_line.updateHitbox();
+		axis.setGraphicSize(Std.int(axis.width), Std.int(axis.height));
+		axis.updateHitbox();
+		m_zero_line.setGraphicSize(Std.int(m_zero_line.width), Std.int(m_zero_line.height));
+		m_zero_line.updateHitbox();
 		// first we save current position so that we can get back to it later.
-		var current_pos:FlxPoint = FlxPoint.get();
+		var current_pos:FlxPoint = FlxPoint.get(0, 0);
 		current_pos.x = getOrigin().x;
 		current_pos.y = getOrigin().y;
 
@@ -244,6 +261,7 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 		setOrigin(0, 0);
 		// place this thing in the middle. (so the center of the horizontal line is in the origin)
 		axis.setPosition(-axis.width / 2, -axis.height / 2);
+		slider.setPosition(-axis.width / 2, -axis.height / 2);
 		// put this to the left end of the horizontal line.
 		m_zero_line.setPosition(axis.x, -m_zero_line.height / 2);
 		// this one is put at the ref_offset_rel
@@ -259,6 +277,8 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 			// ###------
 			// where the #  is a red color or something
 			m_ref_line.width = ref_offset_rel * axis.width;
+			m_ref_line.setGraphicSize(Std.int(m_ref_line.width), Std.int(m_ref_line.height));
+			m_ref_line.updateHitbox();
 			m_ref_line.setPosition(axis.x, -(m_ref_line.height / 2));
 		}
 		else
@@ -319,9 +339,13 @@ class NumberlineObject implements DnaObject implements Slideable implements Task
 	public function updateGraphics()
 	{
 		axis.makeGraphic(Math.floor(axis.width), Math.floor(axis.height), axis_color);
+		axis.updateHitbox();
 		m_zero_line.makeGraphic(Math.floor(m_zero_line.width), Math.floor(m_zero_line.height), zero_line_color);
+		m_zero_line.updateHitbox();
 		m_ref_line.makeGraphic(Math.floor(m_ref_line.width), Math.floor(m_ref_line.height), ref_line_color);
+		m_ref_line.updateHitbox();
 		slider.makeGraphic(Math.floor(slider.width), Math.floor(slider.height), slider_color);
+		slider.updateHitbox();
 		slider.alpha = 0;
 	}
 

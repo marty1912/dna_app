@@ -40,7 +40,7 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 	public var srt_list:Array<SrtEntry> = new Array<SrtEntry>();
 	public var cur_time:Float = 0;
 	public var running:Bool = false;
-	public var text_width:Int = 100;
+	public var text_width:Float = 0.5;
 	public var fontsize:Int = 10;
 
 	public var append_before:String = "";
@@ -135,14 +135,23 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 	public function showText(value:String)
 	{
 		this.setOrigin(0, 0);
-		this.removeChild(text_box);
 
-		this.addChild(text_box);
-
-		text_box.width = text_width;
-		text_box.size = fontsize;
 		this.text_box.text = value;
+
+		text_box.autoSize = false;
+		text_box.fieldWidth = text_width;
+
+		text_box.size = fontsize;
 		text_box.alpha = 1;
+		text_box.wordWrap = true;
+		text_box.alignment = FlxTextAlign.LEFT;
+		if (text_box.textField.numLines <= 1)
+		{
+			text_box.alignment = FlxTextAlign.CENTER;
+		}
+
+		this.removeChild(text_box);
+		this.addChild(text_box);
 	}
 
 	/**
@@ -199,7 +208,11 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 			fontsize = jsonFile.settings.fontsize;
 			fontsize = cast Math.floor(fontsize * (FlxG.height / DnaConstants.DEFAULT_SCREEN_SIZE.y));
 			text_width = jsonFile.settings.width;
-			text_width = cast Math.floor(text_width * (FlxG.width / DnaConstants.DEFAULT_SCREEN_SIZE.x));
+			if (text_width > 1)
+			{
+				text_width = 0.5;
+			}
+			text_width = cast Math.floor(text_width * (FlxG.width));
 		}
 		if (Reflect.hasField(jsonFile, "text"))
 		{

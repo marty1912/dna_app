@@ -30,13 +30,7 @@
 		"done": false,
 		"saved": false
 	},
-	{
-		"type": "REDIRECT",
-		"done": false,
-		"saved": false,
-		"to": {
-			"type": "UnlockState"
-		}
-	}
+	{ "type": "ShowProgressState", "done": false, "saved": false },
+	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "UnlockState" } }
 
 ]

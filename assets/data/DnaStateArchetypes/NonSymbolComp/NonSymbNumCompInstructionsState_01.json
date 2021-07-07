@@ -60,99 +60,40 @@
             "type": "ActionHandlerObject",
             "name": "ActionHandler_Setup",
             "actions": [
-                {
-                    "type": "ActionLoadTrialComponent",
-                    "oneshot":false,
-                    "target":"",
-                    "on_event":"onCreate"
-                },  
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "targets": ["buttonAccept"],
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
+                { "type": "ActionLoadTrialComponent", "oneshot":false, "target":"", "on_event":"onCreate" },  
+
+                { "type": "ActionSetButtonStateComponent", "targets": ["buttonAccept"], "state": "INACTIVE", "oneshot": false },
+
                 { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":true, "oneshot": false },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "blank_overlay",
-                    "invert":false,
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "blank_overlay",
-                    "invert":false,
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionShowTextComponent",
-                    "target":"Instructions_01",
-                    "oneshot":false
-                },
-                {
-                    "type": "ActionSwitchToSubStateComponent",
-                    "oneshot":false,
-                    "target":"fixation",
-                    "duration":500
-                },
-                {
-                    "type": "ActionAppearComponent",
-                    "targets": ["blank_overlay","NOISE_LEFT","NOISE_RIGHT"],
-                    "invert":true,
-                    "oneshot": false
-                },
-                {
-                    "type":"ActionDelayComponent",
-                    "delay": 0.5,
-                    "oneshot": false
-                }
+                { "type": "ActionSetButtonStateComponent", "targets": ["Clickarea_LEFT","Clickarea_RIGHT"], "state": "INACTIVE", "oneshot": false },
+
+                { "type": "ActionAppearComponent", "target": "blank_overlay", "invert":false, "oneshot": false },
+
+                { "type": "ActionAppearComponent", "target": "blank_overlay", "invert":false, "oneshot": false },
+
+                { "type": "ActionShowTextComponent", "target":"Instructions_01", "oneshot":false },
+
+                { "type": "ActionSwitchToSubStateComponent", "oneshot":false, "target":"fixation", "duration":500 },
+
+                { "type": "ActionAppearComponent", "targets": ["blank_overlay","NOISE_LEFT","NOISE_RIGHT"], "invert":true, "oneshot": false },
+
+                { "type":"ActionDelayComponent", "delay": 0.5, "oneshot": false }
                 ,
-                {
-                    "type": "ActionAppearComponent",
-                    "targets": ["NOISE_LEFT","NOISE_RIGHT"],
-                    "invert":false,
-                    "oneshot": false
-                } ,
-                {
-                    "type":"ActionDelayComponent",
-                    "delay": 0.1,
-                    "oneshot": false
-                } ,
-                {
-                    "type": "ActionAppearComponent",
-                    "targets": ["NUM_LEFT","NUM_RIGHT","NOISE_LEFT","NOISE_RIGHT"],
-                    "invert":true,
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionDelayComponent",
-                    "delay":2,
-                    "oneshot":false
-                },
-                {
-                    "type": "ActionShowTextComponent",
-                    "target":"Instructions_02",
-                    "oneshot":false
-                },
-                {
-                    "type": "ActionShowTextComponent",
-                    "target":"Instructions_03",
-                    "oneshot":false
-                },
+                { "type": "ActionAppearComponent", "targets": ["NOISE_LEFT","NOISE_RIGHT"], "invert":false, "oneshot": false } ,
+
+                { "type":"ActionDelayComponent", "delay": 0.1, "oneshot": false } ,
+
+                { "type": "ActionAppearComponent", "targets": ["NUM_LEFT","NUM_RIGHT","NOISE_LEFT","NOISE_RIGHT"], "invert":true, "oneshot": false },
+
+                { "type": "ActionDelayComponent", "delay":2, "oneshot":false },
+
+                { "type": "ActionShowTextComponent", "target":"Instructions_02", "oneshot":false },
+
+                { "type": "ActionShowTextComponent", "target":"Instructions_03", "oneshot":false },
+
                 { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":false, "oneshot": false },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "targets": ["buttonAccept"],
-                    "state": "NORMAL",
-                    "oneshot": false
-                }
+                { "type": "ActionSetButtonStateComponent", "targets": ["buttonAccept"], "state": "NORMAL", "oneshot": false }
+
                 
         ]
         },
@@ -161,16 +102,10 @@
             "name": "ActionHandler_Finish",
             "actions": [
 
-                {
-                    "type": "ActionFinishTaskComponent",
-                    "on_event":"INSTRUCTIONS_READ",
-                    "target":""
-                },
-                {
-                    "type": "ActionStateSwitchComponent",
-                    "target":"",
-                    "next_state":"NEXT_TASK"
-                }  
+                { "type": "ActionFinishTaskComponent", "on_event":"INSTRUCTIONS_READ", "target":"" },
+
+                { "type": "ActionStateSwitchComponent", "target":"", "next_state":"NEXT_TASK" }  
+
         ] }
 
     ]

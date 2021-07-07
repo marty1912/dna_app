@@ -17,6 +17,7 @@ class LocaleDE implements Locale
 "MASIC_Q4_subs" => ConfigFile.text("assets/text/de/MASIC_Q4_subs.json"),
 "MASIC_Q3_orange_subs" => ConfigFile.text("assets/text/de/MASIC_Q3_orange_subs.json"),
 "4" => ConfigFile.text("assets/text/de/4.txt"),
+"ArithmeticTutorial_04" => ConfigFile.text("assets/text/de/ArithmeticTutorial_04.json"),
 "SymbNumCompInstructions_03_PC" => ConfigFile.text("assets/text/de/SymbNumCompInstructions_03_PC.txt"),
 "OrdInstructions_02_PC_left" => ConfigFile.text("assets/text/de/OrdInstructions_02_PC_left.json"),
 "NumberlineState_HEAD" => ConfigFile.text("assets/text/de/NumberlineState_HEAD.txt"),

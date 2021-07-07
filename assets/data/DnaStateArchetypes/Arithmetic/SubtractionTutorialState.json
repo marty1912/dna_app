@@ -145,7 +145,7 @@
                 ,{
                     "type": "ActionMoveToAndPressComponent",
                     "target": "TutorialFinger",
-                    "target_button": "Button_3"
+                    "target_button": "KEY_3/Button_0"
                 }
                 ,{
                     "type": "ActionMoveToAndPressComponent",

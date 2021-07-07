@@ -8,7 +8,7 @@ Du hast ja schon alle Übungsaufgaben geschafft!
 
 3
 00:00:06,300 --> 00:00:08,300
-@001FF0000Toll Gemacht!@000
+Toll Gemacht!
 
 4
 00:00:08,700 --> 00:00:11,700
@@ -20,5 +20,5 @@ Bei diesen Aufgaben werde ich dir nicht mehr sagen, ob du sie korrekt beantworte
 
 6
 00:00:17,000 --> 00:00:21,500
-Also gib einfach dein Bestes! @001FF0000Viel Erfolg!@000
+Also gib einfach dein Bestes! Viel Erfolg!
 

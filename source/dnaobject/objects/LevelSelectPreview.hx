@@ -49,12 +49,12 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 		preview_obj.setAssetPath(trial_block.preview);
 		if (trial_block.done == true)
 		{
-			// done_overlay_obj.removeChild(done_overlay_obj.sprite);
-			// done_overlay_obj.addChild(done_overlay_obj.sprite);
-			done_overlay_obj.sprite.alpha = 1.0;
-			trace("set to 1:", done_overlay_obj.sprite.alpha);
-			done_overlay_obj.sprite.update(1);
+			done_overlay_obj.removeChild(done_overlay_obj.sprite);
+			done_overlay_obj.addChild(done_overlay_obj.sprite);
+			done_overlay_obj.visible = true;
+			done_overlay_obj.loadAsset();
 			button_obj.setNextState(new ButtonStateInactive());
+			trace(this.id, "done_overlay visible");
 		}
 		return trial_block;
 	}
@@ -88,8 +88,6 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 		button_obj.onPressCallback = onButtonPress;
 		this.preview_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview));
 		this.done_overlay_obj = cast this.getParent().getObjectByName(getNestedObjectName(done_overlay));
-		done_overlay_obj.sprite.alpha = 0.1;
-
 		this.preview_area_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview_area));
 	}
 

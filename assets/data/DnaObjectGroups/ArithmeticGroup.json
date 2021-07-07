@@ -3,20 +3,8 @@
 "objects":[
 
     
-        {
-            "type": "SpriteObject",
-            "name": "CenteredPosition",
-            "asset_path": "INVISIBLE_BOX",
-            "scale_x": 100,
-            "scale_y": 400,
-            "origin_where": "",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "Center",
-                "target": ""
-            }]
-        },
+        { "type": "SpriteObject", "name": "CenteredPosition", "asset_path": "INVISIBLE_BOX", "scale_x": 100, "scale_y": 400, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "" }] },
+
         { "type": "DependentGroupObject",
             "conditions": [
                 { "condition": "web",
@@ -27,36 +15,10 @@
                     "obj": { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/ArithmeticAdditionalButtonGroupPC.json" } }
             ] },
 
-        {
-            "type": "SpriteObject",
-            "name": "ProblemPosition",
-            "asset_path": "INVISIBLE_BOX",
-            "scale_from_screen_width": true,
-            "scale_x": 0.6,
-            "scale_y": 400,
-            "origin_where": "",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "LeftCenter",
-                "target": ""
-            }]
-        },
-        {
-            "type": "SpriteObject",
-            "name": "AnswerPosition",
-            "asset_path": "INVISIBLE_BOX",
-            "scale_from_screen_width": true,
-            "scale_x": 0.4,
-            "scale_y": 400,
-            "origin_where": "",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "RightCenter",
-                "target": ""
-            }]
-        },
+        { "type": "SpriteObject", "name": "Math_Area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 1, "scale_y": 0.8, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" }] },
+        { "type": "SpriteObject", "name": "ProblemPosition", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_x": 0.6, "scale_y": 400, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "Math_Area" }] },
+        { "type": "SpriteObject", "name": "AnswerPosition", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_x": 0.4, "scale_y": 400, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "Math_Area" }] },
+
 
         {
             "type": "StaticTextObject",

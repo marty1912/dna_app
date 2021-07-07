@@ -347,6 +347,18 @@ else if (type == 'LevelSelectGrid')
 	obj = new LevelSelectGrid();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/LevelSelectGrid.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'UnlockDisplay')
+{
+	obj = new UnlockDisplay();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/UnlockDisplay.json"));
+}
+// // AUTOMATICALLY GENERATED
+else if (type == 'KeyboardButton')
+{
+	obj = new KeyboardButton();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/KeyboardButton.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -360,6 +372,15 @@ else if (type == 'LevelSelectGrid')
 		return obj;
 	}
 }
+
+
+
+
+
+
+
+
+
 
 
 

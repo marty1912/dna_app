@@ -5,9 +5,9 @@
 "preview_area":"preview_area",
 "done_overlay":"done_overlay",
 "objects":[
-	{ "type": "SpriteObject", "name": "preview_area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.2, "scale_y": 0.2, "grid":[100,100,400,400], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "::pos_target::" }] },
+	{ "type": "SpriteObject", "name": "preview_area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.2, "scale_y": 0.2, "grid":[100,100,400,400], "components": [] },
 	{ "type": "SpriteObject", "name": "my_preview", "asset_path": "assets/gui_elements/textbox.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.2, "scale_y": 0.2, "grid":[100,100,400,400], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "preview_area" }] },
-	{ "type": "SpriteObject", "name": "done_overlay", "asset_path": "assets/images/level_preview/PreviewDoneOverlay.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.2, "scale_y": 0.2, "grid":[100,100,400,400], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "preview_area" }] },
-	{ "type": "EmptyButtonObject", "name":"my_button", "path": "assets/gui_elements/buttonAccept.png", "components": [{ "type": "PositionComponent", "position": "Center", "target": "preview_area","oneshot":false}, {"type":"UserButtonComponent"},{ "type":"ButtonScaleComponent", "target":"my_preview" ,"keep_ratio":false,"oneshot":false}] }
+	{ "type": "SpriteObject", "name": "done_overlay", "asset_path": "assets/images/level_preview/PreviewDoneOverlay.png","visible":false, "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.2, "scale_y": 0.2, "grid":[100,100,400,400], "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "preview_area" }] },
+	{ "type": "EmptyButtonObject", "name":"my_button", "path": "assets/gui_elements/buttonInvisible.png", "components": [{ "type": "PositionComponent", "position": "Center", "target": "preview_area","oneshot":false}, {"type":"UserButtonComponent"},{ "type":"ButtonScaleComponent", "target":"my_preview" ,"keep_ratio":false,"oneshot":false}] }
 ]
 }

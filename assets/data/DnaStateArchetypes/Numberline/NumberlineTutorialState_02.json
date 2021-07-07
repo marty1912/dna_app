@@ -145,12 +145,6 @@
                     "delay": 0.2
                 },
                 {
-                    "type": "ActionShrinkComponent",
-                    "target": "TutorialFinger",
-                    "to_x": 0.95,
-                    "to_y": 0.95
-
-                },{
                     "type":"ActionPlaySoundComponent",
                     "path" : "assets/sounds/kenney_interfacesounds/Audio/select_001.mp3"
                 },
@@ -172,13 +166,6 @@
                     "delay": 0.2
                 },
                 {
-                    "type": "ActionShrinkComponent",
-                    "target": "TutorialFinger",
-                    "to_x": 1,
-                    "to_y": 1
-
-                },
-                {
                     "type": "ActionMoveToComponent",
                     "target": "TutorialFinger",
                     "to_object": "AcceptButton",
@@ -191,13 +178,6 @@
                     "delay": 0.2
                 },
                 {
-                    "type": "ActionShrinkComponent",
-                    "target": "TutorialFinger",
-                    "to_x": 0.95,
-                    "to_y": 0.95
-
-                },
-                {
                     "type": "ActionSetButtonStateComponent",
                     "target": "AcceptButton",
                     "state":"PRESSED"
@@ -206,13 +186,6 @@
                     "type": "ActionDelayComponent",
                     "target": "TutorialFinger",
                     "delay": 0.2
-                },
-                {
-                    "type": "ActionShrinkComponent",
-                    "target": "TutorialFinger",
-                    "to_x": 1,
-                    "to_y": 1
-
                 },
                 {
                     "type": "ActionSetButtonStateComponent",

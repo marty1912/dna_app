@@ -7,49 +7,36 @@
             "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
 
 
-        { "type": "NineSliceSprite", "name": "background_1", "asset_path": "assets/gui_elements/buttonInvisible.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.3, "scale_y": 0.6, "grid":[100,100,300,200], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "" }] },
-        { "type": "SpriteObject", "name": "preview_1", "asset_path": "assets/gui_elements/buttonInvisible.png","keep_ratio":true, "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.2, "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "background_1" },{ "type": "InfiniteScrollComponent", "scroll_speed_x": 8, "scroll_speed_y": -4, "mode": "Circle" }] },
-        
-        { "type": "EmptyButtonObject", "name":"button_1", "path": "assets/gui_elements/buttonInvisible.png", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "background_1" }, {"type":"UserButtonComponent"},{ "type":"ButtonScaleComponent", "target":"background_1" },{ "type": "CmdEvtTrigComponent", "event_name": "PART_SELECTED" }] },
-        { "type": "UnlockDisplayController", "name": "unlock_ctrl_1", "preview":"preview_1", "button":"button_1", "monster":"monti_1", "background":"background_1" },
+        { "type": "SpriteObject", "name": "background_1", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.3, "scale_y": 0.6, "grid":[100,100,300,200], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "" }] },
+        {"type":"UnlockDisplay","pos_target":"background_1","name":"unlock_1"},
 
-        { "type": "NineSliceSprite", "name": "background_2", "asset_path": "assets/gui_elements/buttonInvisible.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.3, "scale_y": 0.6, "grid":[100,100,300,200], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" }] },
-        { "type": "SpriteObject", "name": "preview_2", "asset_path": "assets/gui_elements/buttonInvisible.png","keep_ratio":true, "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.2, "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "background_2" },{ "type": "InfiniteScrollComponent", "scroll_speed_x": 8, "scroll_speed_y": -4, "mode": "Circle" }] },
-        { "type": "EmptyButtonObject", "name":"button_2", "path": "assets/gui_elements/buttonInvisible.png", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "background_2" }, {"type":"UserButtonComponent"},{ "type":"ButtonScaleComponent", "target":"background_2" },{ "type": "CmdEvtTrigComponent", "event_name": "PART_SELECTED" }] },
-        { "type": "UnlockDisplayController", "name": "unlock_ctrl_2", "preview":"preview_2","button":"button_2", "monster":"monti_2", "background":"background_2" },
+        { "type": "SpriteObject", "name": "background_2", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.3, "scale_y": 0.6, "grid":[100,100,300,200], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" }] },
+        {"type":"UnlockDisplay","pos_target":"background_2","name":"unlock_2"},
 
 
-        { "type": "NineSliceSprite", "name": "background_3", "asset_path": "assets/gui_elements/buttonInvisible.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.3, "scale_y": 0.6, "grid":[100,100,300,200], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "" }] },
-        { "type": "SpriteObject", "name": "preview_3", "asset_path": "assets/gui_elements/buttonInvisible.png","keep_ratio":true , "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.2,"components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "background_3" },{ "type": "InfiniteScrollComponent", "scroll_speed_x": 8, "scroll_speed_y": -4, "mode": "Circle" }] },
-        { "type": "EmptyButtonObject", "name":"button_3", "path": "assets/gui_elements/buttonInvisible.png", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "background_3" }, {"type":"UserButtonComponent"},{ "type":"ButtonScaleComponent", "target":"background_3" },{ "type": "CmdEvtTrigComponent", "event_name": "PART_SELECTED" }] },
-        { "type": "UnlockDisplayController", "name": "unlock_ctrl_3","preview":"preview_3", "button":"button_3", "monster":"monti_3", "background":"background_3" },
+        { "type": "SpriteObject", "name": "background_3", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.3, "scale_y": 0.6, "grid":[100,100,300,200], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "" }] },
+        {"type":"UnlockDisplay","pos_target":"background_3","name":"unlock_3"},
 
-        { "type": "NineSliceSprite", "name": "glass_jar_3", "asset_path": "assets/images/glass_jar.resized.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.4, "scale_y": 0.7, "grid":[140,240,760,1000], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "background_1" }] },
-        { "type": "NineSliceSprite", "name": "glass_jar_1", "asset_path": "assets/images/glass_jar.resized.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.4, "scale_y": 0.7, "grid":[140,240,760,1000], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "background_2" }] },
-        { "type": "NineSliceSprite", "name": "glass_jar_2", "asset_path": "assets/images/glass_jar.resized.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.4, "scale_y": 0.7, "grid":[140,240,760,1000], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "background_3" }] },
-
-
-
-       { "type": "SrtPlayerTextObject", "name":"UnlockText1", "text":"NewUnlock", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target":"CenteredPosition" } ] },
-        { "type": "SrtPlayerTextObject", "name":"UnlockText2", "text":"UnlockSelected", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target":"CenteredPosition" } ] },
+       { "type": "SrtPlayerTextObject", "name":"UnlockText1", "text":"NewUnlock", "autostart":false, "settings":{ "fontsize":32, "width":0.5}, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target":"CenteredPosition" } ] },
+        { "type": "SrtPlayerTextObject", "name":"UnlockText2", "text":"UnlockSelected", "autostart":false, "settings":{ "fontsize":32, "width":0.5}, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target":"CenteredPosition" } ] },
         {
             "type": "ActionHandlerObject",
             "actions": [
-                { "type": "ActionSetButtonStateComponent", "on_event": "onCreate","state":"INACTIVE", "targets": ["button_1","button_2","button_3"] },
+                { "type": "ActionSetButtonStateComponent", "on_event": "onCreate","state":"INACTIVE", "targets": ["unlock_1/button_1","unlock_2/button_1","unlock_3/button_1"] },
                 { "type": "ActionShowTextComponent", "target":"UnlockText1", "on_event":"seq" },
-                { "type": "ActionSetButtonStateComponent", "on_event": "seq","state":"NORMAL", "targets": ["button_1","button_2","button_3"] }
+                { "type": "ActionSetButtonStateComponent", "on_event": "seq","state":"NORMAL", "targets": ["unlock_1/button_1","unlock_2/button_1","unlock_3/button_1"] }
 
             ]
         },
         { "type": "ActionHandlerObject",
             "actions": [
-                { "type": "ActionSetButtonStateComponent", "on_event": "PART_SELECTED","state":"INACTIVE", "targets": ["button_1","button_2","button_3"] },
+                { "type": "ActionSetButtonStateComponent", "on_event": "PART_SELECTED","state":"INACTIVE", "targets": ["unlock_1/button_1","unlock_2/button_1","unlock_3/button_1"] },
                 { "type": "ActionShowTextComponent", "target":"UnlockText2", "on_event":"seq" },
                 { "type": "ActionStateSwitchComponent", "on_event": "seq", "target": "", "next_state": "MainMenuState" }
             ] },
         { "type": "ActionHandlerObject",
             "actions": [ 
-                { "type": "ActionShowUnlockables", "on_event": "onCreate", "targets": ["unlock_ctrl_1","unlock_ctrl_2","unlock_ctrl_3"] } 
+                { "type": "ActionShowUnlockables", "on_event": "onCreate", "targets": ["unlock_1/unlock_ctrl_1","unlock_2/unlock_ctrl_1","unlock_3/unlock_ctrl_1"] } 
             ]
         }
     ]

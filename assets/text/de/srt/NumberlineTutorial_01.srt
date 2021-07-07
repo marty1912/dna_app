@@ -4,7 +4,7 @@ Herzlich Willkommen zur Zahlenstrahlaufgabe!
 
 2
 00:00:04,691 --> 00:00:08,594
-Hier siehst du einen sogenannten @001FF0000Zahlenstrahl@000
+Hier siehst du einen sogenannten Zahlenstrahl
 
 3
 00:00:08,681 --> 00:00:11,985

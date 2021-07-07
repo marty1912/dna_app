@@ -38,8 +38,9 @@ class ProgressBar implements DnaObject implements DnaEventSubscriber extends Dna
 	{
 		// setup our button
 		this.filled_bar_obj = cast this.getParent().getObjectByName(getNestedObjectName(filled_bar));
-		this.filled_bar_obj.width = 0;
+		this.filled_bar_obj.width = 1;
 		this.background_bar_obj = cast this.getParent().getObjectByName(getNestedObjectName(background_bar));
+		filled_bar_obj.moveTo(background_bar_obj.pos_x, background_bar_obj.pos_y);
 
 		this.set_progress(TaskTrials.instance.getProgress());
 		updateProgressBar(false);
@@ -76,9 +77,10 @@ class ProgressBar implements DnaObject implements DnaEventSubscriber extends Dna
 		if (!animated)
 		{
 			filled_bar_obj.width = new_width;
+			filled_bar_obj.moveTo(background_bar_obj.pos_x, background_bar_obj.pos_y);
 			return;
 		}
-		tween = FlxTween.tween(filled_bar_obj, {width: new_width}, 3);
+		tween = FlxTween.tween(filled_bar_obj, {width: new_width}, 2);
 	}
 
 	/**

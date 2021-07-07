@@ -9,16 +9,7 @@
     "saved": false,
     "trials": [
       [
-        {
-          "name": "ArithmeticHandler",
-          "params": {
-            "problem": "1+2=",
-            "solution": 3
-          }
-        },
-        {
-          "name": "TotalTime"
-        }
+        { "name": "ArithmeticHandler", "params": { "problem": "9+3=", "solution": 12 } }, { "name": "TotalTime" }
       ]
     ]
   },
@@ -514,5 +505,7 @@
 
     ] }, 
     { "name": "TaskDoneState", "type": "TaskDoneState", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "done": false, "saved": false, "trials": [ ] }, 
-    { "type": "SAVE", "done": false, "saved": false }, { "type": "REDIRECT", "done": false, "saved": false,
-    "to": { "type": "GotoNextState" } } ]
+    { "type": "SAVE", "done": false, "saved": false }, 
+	{ "type": "ShowProgressState", "done": false, "saved": false },
+	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "UnlockState" } }
+  ]

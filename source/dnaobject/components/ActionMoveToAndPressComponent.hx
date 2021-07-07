@@ -29,10 +29,10 @@ class ActionMoveToAndPressComponent implements DnaComponent extends DnaActionGro
 
 		this.addActionToQueue(action_move);
 		this.addActionToQueue(delay_before_press);
-		this.addActionToQueue(action_do_shrink);
+		// this.addActionToQueue(action_do_shrink);
 		this.addActionToQueue(action_press);
 		this.addActionToQueue(delay_press_time);
-		this.addActionToQueue(action_undo_shrink);
+		// this.addActionToQueue(action_undo_shrink);
 		this.addActionToQueue(action_release);
 	}
 

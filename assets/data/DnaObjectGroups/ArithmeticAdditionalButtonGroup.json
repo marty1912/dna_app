@@ -1,58 +1,21 @@
 {"type": "ArithmeticAdditionalButtonGroup",
 "objects":[
         
-        {
-            "type": "LeftArrowButtonObject",
-            "name": "BackspaceButton",
-            "components": [{
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "RightCenter",
-                    "target": ""
-                },
-                {
-                    "type": "CmdEvtTrigComponent",
-                    "event_name": "KEY_BACKSPACE"
-                }
-            ]
-        },
-                
-        {
-            "type": "AcceptButtonObject",
-            "name": "AcceptButton",
-            "active": false,
-            "components": [{
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "CenterBottom",
-                    "target": "CenteredPosition"
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state": "INACTIVE",
-                    "on_event": ""
-                }
-            ]
-        },
+
+        { "type": "SpriteObject", "name": "BackSpaceArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_y": 0.2, "scale_x": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "" }] },
+        { "type": "LeftArrowButtonObject", "name": "BackspaceButton", "components": [ { "type": "CmdEvtTrigComponent", "event_name": "KEY_BACKSPACE" } , { "type":"ButtonScaleComponent", "target":"BackSpaceArea" },{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BackSpaceArea" }] },
+
+        { "type": "SpriteObject", "name": "AcceptArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_y": 0.2, "scale_x": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "CenteredPosition" }] },
+        { "type": "AcceptButtonObject", "name": "AcceptButton", "active": false, "components": [{ "type":"ButtonScaleComponent", "target":"AcceptArea" },{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "AcceptArea" }, { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state": "INACTIVE", "on_event": "" } ] },
+
        {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_AcceptButtonACTIVATE",
             "actions": [
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state": "INACTIVE",
-                    "oneshot": false,
-                    "on_event": "TEXTINPUT_EMPTY"
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state": "NORMAL",
-                    "oneshot": false,
-                    "on_event": "TEXTINPUT_READY"
-                }]
+                { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state": "INACTIVE", "oneshot": false, "on_event": "TEXTINPUT_EMPTY" },
+                { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state": "NORMAL", "oneshot": false, "on_event": "TEXTINPUT_READY" }
+            ]
+
        },
 {
     "type": "ActionHandlerObject",
@@ -60,18 +23,10 @@
     "actions": [
         { "type": "ActionRemoveComponentComponent", "oneshot":false, "targets": [ "AcceptButton", "BackspaceButton"], "on_event":"ArithmeticButtons_REMOVE_USERBUTTON", "target_comp":"UserButtonComponent" },
         
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "targets": [ "AcceptButton"],
-            "components":[{"type": "UserButtonComponent" }],
-            "on_event":"ArithmeticButtons_ADD_USERBUTTON"
-        },
-        {
-            "type": "ActionAddComponentComponent", "oneshot":false,
-            "targets": [ "BackspaceButton"],
-            "components":[{"type": "UserButtonComponent" }],
-            "on_event":"ArithmeticButtons_ADD_USERBUTTON"
-        }        
+        { "type": "ActionAddComponentComponent", "oneshot":false, "targets": [ "AcceptButton"], "components":[{"type": "UserButtonComponent" }], "on_event":"ArithmeticButtons_ADD_USERBUTTON" },
+
+        { "type": "ActionAddComponentComponent", "oneshot":false, "targets": [ "BackspaceButton"], "components":[{"type": "UserButtonComponent" }], "on_event":"ArithmeticButtons_ADD_USERBUTTON" }        
+
         
 
     ]

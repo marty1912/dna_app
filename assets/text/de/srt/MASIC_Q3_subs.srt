@@ -1,6 +1,7 @@
 ﻿1
 00:00:00,000 --> 00:00:04,100
-Die nächste Behauptung ist: Ich rechne gerne an der Tafel vor.
+Die nächste Behauptung ist: 
+Ich rechne gerne an der Tafel vor.
 
 2
 00:00:04,500 --> 00:00:09,900

@@ -22,6 +22,9 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 	private var asset_height = 0;
 	private var asset_width = 0;
 
+	public var keep_ratio = true;
+	public var visible = true;
+
 	public var sprite:FlxSprite;
 
 	/**
@@ -39,11 +42,12 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 		var have_width:Float = this.getWidth();
 		if (have_width == 0)
 		{
-			have_width = 1;
 			// kind of a hack but it will probably do the trick.
-			sprite.scale.x = 0.001;
+			sprite.scale.x = 1;
+			have_width = this.getWidth();
 		}
 		this.sprite.scale.x = (value / have_width) * this.sprite.scale.x;
+		this.sprite.updateHitbox();
 		return value;
 	}
 
@@ -55,7 +59,16 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 	public function set_height(value:Float):Float
 	{
 		var have_height = this.getHeight();
+		if (have_height == 0)
+		{
+			// kind of a hack but it will probably do the trick.
+			sprite.scale.x = 1;
+			have_height = this.getHeight();
+		}
+
 		this.sprite.scale.y = (value / have_height) * this.sprite.scale.y;
+
+		this.sprite.updateHitbox();
 		return value;
 	}
 
@@ -126,11 +139,6 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 	 */
 	override public function getWidth():Int
 	{
-		if (this.m_asset_path == "INVISIBLE_BOX")
-		{
-			return Std.int(this.m_scale_x);
-		}
-
 		this.sprite.updateHitbox();
 		return Std.int(this.sprite.width);
 	}
@@ -140,11 +148,6 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 	 */
 	override public function getHeight():Int
 	{
-		if (this.m_asset_path == "INVISIBLE_BOX")
-		{
-			return Std.int(this.m_scale_y);
-		}
-
 		this.sprite.updateHitbox();
 		return Std.int(this.sprite.height);
 	}
@@ -156,7 +159,7 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 			var want_scale = FlxPoint.get();
 			want_scale.x = (x / sprite.width);
 			want_scale.y = (y / sprite.height);
-			if (want_scale.x != want_scale.y)
+			if (keep_ratio && want_scale.x != want_scale.y)
 			{
 				want_scale.x = want_scale.y;
 			}
@@ -218,12 +221,13 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 		{
 			sprite.makeGraphic(Std.int(m_scale_x), Std.int(m_scale_y), FlxColor.WHITE);
 
-			sprite.alpha = 0.1;
+			sprite.alpha = 0.0;
 		}
 		else
 		{
 			sprite.loadGraphic(m_asset_path, animated, asset_width, asset_height);
 			setScale(m_scale_x, m_scale_y);
+			sprite.visible = this.visible;
 		}
 		// this.addChild(sprite);
 	}
@@ -238,6 +242,14 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 	 */
 	override public function fromFile(jsonFile:Dynamic):Void
 	{
+		if (Reflect.hasField(jsonFile, "visible"))
+		{
+			this.visible = jsonFile.visible;
+		}
+		if (Reflect.hasField(jsonFile, "keep_ratio"))
+		{
+			this.keep_ratio = jsonFile.keep_ratio;
+		}
 		if (Reflect.hasField(jsonFile, "scale_from_screen_width"))
 		{
 			this.m_scale_from_screen_width = jsonFile.scale_from_screen_width;
@@ -293,6 +305,7 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 			var origin_where = jsonFile.origin_where;
 			this.setupOrigin(origin_where);
 		}
+
 		super.fromFile(jsonFile);
 	}
 }

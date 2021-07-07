@@ -1,6 +1,6 @@
 ﻿1
 00:00:00,000 --> 00:00:07,500
-Wie du siehst hat das prima geklappt. Jetzt bist wieder @001FF0000DU@000 dran!
+Wie du siehst hat das prima geklappt. Jetzt bist wieder DU dran!
 
 2
 00:00:07,600 --> 00:00:12,500

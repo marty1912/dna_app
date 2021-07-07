@@ -14,5 +14,9 @@
     ]
   },
     { "name": "ProbCodeStateDone", "type": "ProbCodeStateDone", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "done": false, "saved": false, "trials": [ ] }, 
-    { "type": "SAVE", "done": false, "saved": false }, { "type": "REDIRECT", "done": false, "saved": false,
-    "to": { "type": "GotoNextState" } } ]
+    { "type": "SAVE", "done": false, "saved": false }, 
+
+	{ "type": "ShowProgressState", "done": false, "saved": false },
+	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "UnlockState" } }
+     
+  ]
