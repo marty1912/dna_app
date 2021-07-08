@@ -103,71 +103,30 @@
         {
             "type": "ActionHandlerObject",
             "actions": [
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "on_event": "EVENT_SLIDERPOS_SET",
-                    "state":"NORMAL"
-                },
-                {
-                    "type": "ActionFinishTaskComponent",
-                    "on_event": "TaskEnd",
-                    "target": ""
-                },
-                {
-                    "type": "ActionStateSwitchComponent",
-                    "on_event": "seq",
-                    "target": "",
-                    "next_state": "NEXT_TASK"
-                },
-                {
-                    "type": "ActionEnterFullscreenComponent",
-                    "on_event": "BtnMainMenuPressed"
-                },
+                { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "on_event": "EVENT_SLIDERPOS_SET", "state":"NORMAL" },
 
-                {
-                    "type": "ActionCheckNumberlineComponent",
-                    "on_event": "AcceptButtonPressed",
-                    "target":"NumberlineObject",
-                    "tolerance":0.1,
-                    "oneshot":false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "on_event": "AcceptButtonPressed",
-                    "state":"INACTIVE"
-                },
-                {
-                    "type": "ActionRemoveComponentComponent",
-                    "target": "NumberlineObject",
-                    "on_event": "AcceptButtonPressed",
-                    "target_comp":"SliderComponent"
-                }  
+                { "type": "ActionFinishTaskComponent", "on_event": "TaskEnd", "target": "" },
+
+                { "type": "ActionStateSwitchComponent", "on_event": "seq", "target": "", "next_state": "NEXT_TASK" },
+
+
+                { "type": "ActionCheckNumberlineComponent", "on_event": "AcceptButtonPressed", "target":"NumberlineObject", "tolerance":0.1, "oneshot":false },
+
+                { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "on_event": "AcceptButtonPressed", "state":"INACTIVE" },
+
+                { "type": "ActionRemoveComponentComponent", "target": "NumberlineObject", "on_event": "AcceptButtonPressed", "target_comp":"SliderComponent" }  
+
             ]
         },
         {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_Correct",
             "actions": [
-                {
-                    "type": "ActionAddComponentComponent",
-                    "target":"NumberlineObject",
-                    "on_event": "TASK_CORRECT",
-                    "components":[{"type": "NumlineZoneComponent"}]
-                },
-                {
-                    "type": "ActionPlaySoundComponent",
-                    "path":"NumberlineFeedbackCorrect",
-                    "oneshot":false,
-                    "on_event": "TASK_CORRECT",
-                    "from_locale":true
-                },
-                {
-                    "type": "ActionShowTextComponent",
-                    "target":"FeedbackTextCorrect",
-                    "on_event": "TASK_CORRECT"
-                },
+                { "type": "ActionAddComponentComponent", "target":"NumberlineObject", "on_event": "TASK_CORRECT", "components":[{"type": "NumlineZoneComponent"}] },
+
+                { "type": "ActionPlaySoundComponent", "path":"NumberlineFeedbackCorrect", "oneshot":false, "on_event": "TASK_CORRECT", "from_locale":true },
+
+                { "type": "ActionShowTextComponent", "target":"FeedbackTextCorrect", "on_event": "TASK_CORRECT" },
 
                 { "type": "ActionFinishTaskComponent", "target": ""  },
                 { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }

@@ -14,8 +14,8 @@
 
         { "type": "NineSliceSprite", "name": "Banner", "asset_path": "assets/gui_elements/banner.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.35, "scale_y": 0.12, "grid":[200,20,400,30], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" }] },
         { "type": "SpriteObject", "name": "BannerCenter", "asset_path": "INVISIBLE_BOX", "scale_x": 500, "scale_y": 100, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "Banner" }] },
-
         { "type": "TextObject", "name": "Text_HEAD", "text": "LevelSelectHEAD", "autostart": true, "settings": { "char_per_sec": 24, "width": 500, "n_lines": 5, "append_before": "@041d8c50a", "append_after": "@040", "border": "OUTLINE", "border_color": "0x911315" }, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target": "BannerCenter" }] }, 
+
         { "type": "EmptyButtonObject", "path": "assets/gui_elements/buttonDecline.png", "name": "IncTrialsComponent", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftTop", "target": "" }, { "type": "UserButtonComponent" }, { "type": "CmdEvtTrigComponent", "event_name": "BACK_TO_MENU" } ] },
         { "type": "ActionHandlerObject", "actions": [ { "type": "ActionStateSwitchComponent", "on_event": "BACK_TO_MENU", "target": "", "next_state": "MainMenuState" } ] }
     ]

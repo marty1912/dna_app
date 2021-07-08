@@ -13,6 +13,52 @@ from os.path import isfile, join, basename ,splitext
 from os import walk
 
 
+def getPatternExtendTrials(symbols = ["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/rhombus.PNG"],choose_from=None):
+    '''
+    '''
+    def listToStringwithDoubleQuotes(mylist):
+        return '["'+ '","'.join(mylist)+'"]'
+
+    if choose_from is None:
+        choose_from = symbols
+    complete_patterns = [
+        [0,1,1,0,1,1] , #1 ABBABB
+        [0,1,0,2,0,1], #2 ABACAB
+        [0,1,2,2,1,0] , #3 ABCCBA
+        [0,1,0,1,1,0,1,1,1] , #4 ABABBABBB
+#        [0,1,2,3,0] , #5 AJDXNA TODO!!
+        [0,1,0,2,0,3,0,1,0,2,0,3] , #6 ABBBABBAB
+        [0,1,2,3,2,1,0] , #7 ABBBABBAB
+        [0,1,1,1,0,1,1,0,1] , #8 ABBBABBAB
+        ]
+    
+    pattern_trans_table= ["A","B","C","D"]
+    missing_pos = [0,-1]
+    trials = []
+
+    for pattern in complete_patterns:
+        for missing in missing_pos:
+            shuffled_sym = list(symbols)
+            random.shuffle(shuffled_sym)
+            solution = []
+            translation = []
+            for index in pattern:
+                solution.append(shuffled_sym[index])
+                translation.append(pattern_trans_table[index])
+
+            problem = solution
+            problem[missing] = ""
+            random.shuffle(choose_from)
+            problem = listToStringwithDoubleQuotes(problem)
+            solution= listToStringwithDoubleQuotes(solution)
+            choice = listToStringwithDoubleQuotes(choose_from)
+            translation = '"' + "".join(translation) + '"'
+            trials.append([problem,solution,choice,translation])
+
+    return trials
+        
+
+
 
 def nonSymbTrialGen(numbers=[i for i in range(5,22)], buckets = [{'min':1.18,'max':1.25},{'min':1.3,'max':1.32},{'min':1.9,'max':2.1},{'min':3,'max':3.4}]):
     '''
@@ -344,6 +390,8 @@ def main():
         trials = genNonSymbTrials()
     elif mode == "mathanxiety":
         trials = [[i] for i in range(1,14)]
+    elif mode == "pattern_extend":
+        trials = getPatternExtendTrials()
 
     template_file = sys.argv[2]
 

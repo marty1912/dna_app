@@ -148,6 +148,14 @@ class PatternExtendObject implements DnaObject implements TaskObject extends Dna
 	{
 		pattern_display_obj.setPattern(params.pattern);
 		correct_solution = params.solution;
+		if (Reflect.hasField(params, "choices"))
+		{
+			for (choice_index in 0...this.dragables_obj.length)
+			{
+				dragables_obj[choice_index].symbol_obj.setAssetPath(params.choices[choice_index]);
+			}
+		}
+
 		this.disabled = false;
 	}
 

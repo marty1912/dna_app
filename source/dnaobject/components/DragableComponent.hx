@@ -210,11 +210,15 @@ class DragStatePressed implements IState
 
 	public function update(elapsed:Float):Void
 	{
+		var mouse_pos = FlxPoint.get();
 		#if FLX_MOUSE
-		var mouse_pos = FlxG.mouse.getScreenPosition();
+		mouse_pos = FlxG.mouse.getScreenPosition();
 		#end
 		#if FLX_TOUCH
-		var mouse_pos = FlxG.touches.getFirst().getScreenPosition();
+		if (FlxG.touches.getFirst() != null)
+		{
+			mouse_pos = FlxG.touches.getFirst().getScreenPosition();
+		}
 		#end
 		var move_to_x = mouse_pos.x - (sprite_obj.width / 2);
 		var move_to_y = mouse_pos.y - (sprite_obj.height / 2);

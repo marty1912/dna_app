@@ -31,10 +31,17 @@ class TaskTrials
 	public final finalBlock:String = "assets/data/Trials/FinalStudentTrial.json";
 
 	public final task_block_paths:Array<String> = [
-		"assets/data/Trials/ArithmeticTrials.json", "assets/data/Trials/NonSymbolCompTrials.json", "assets/data/Trials/NumberlineTrials.json",
-		"assets/data/Trials/MathAnxietyTrials.json", "assets/data/Trials/OrdTrials.json", "assets/data/Trials/SymbolicCompTrials.json",
-		"assets/data/Trials/SpeedTrials.json", "assets/data/Trials/ProbCode.json", "assets/data/Trials/ezFinishTask.json",
-		"assets/data/Trials/PatternExtend.json", "assets/data/Trials/doneTask.json"
+		"assets/data/Trials/ArithmeticTrials.json",
+		"assets/data/Trials/NonSymbolCompTrials.json",
+		"assets/data/Trials/NumberlineTrials.json",
+		"assets/data/Trials/MathAnxietyTrials.json",
+		"assets/data/Trials/OrdTrials.json",
+		"assets/data/Trials/SymbolicCompTrials.json",
+		"assets/data/Trials/SpeedTrials.json",
+		"assets/data/Trials/ProbCode.json",
+		// "assets/data/Trials/ezFinishTask.json",
+		"assets/data/Trials/PatternExtend.json",
+		"assets/data/Trials/pExtendTest.json" // "assets/data/Trials/doneTask.json"
 	];
 
 	/**

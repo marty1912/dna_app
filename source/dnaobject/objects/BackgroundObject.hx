@@ -1,6 +1,8 @@
 package dnaobject.objects;
 
 import dnaobject.interfaces.Scrollable;
+import flixel.FlxG;
+import flixel.FlxSprite;
 import flixel.addons.display.FlxBackdrop;
 import flixel.math.FlxPoint;
 
@@ -14,7 +16,7 @@ class BackgroundObject implements DnaObject implements Scrollable extends DnaObj
 	/**
 	 * this is our backdrop object
 	 */
-	public var backdrop:FlxBackdrop;
+	public var backdrop:FlxSprite;
 
 	/**
 	 * this is the path to our background file.
@@ -27,7 +29,7 @@ class BackgroundObject implements DnaObject implements Scrollable extends DnaObj
 	public function new()
 	{
 		super('BackgroundObject');
-		backdrop = new FlxBackdrop();
+		backdrop = new FlxSprite();
 		addChild(backdrop);
 	}
 
@@ -50,6 +52,9 @@ class BackgroundObject implements DnaObject implements Scrollable extends DnaObj
 		{
 			m_background_asset_path = jsonFile.background_path;
 			backdrop.loadGraphic(m_background_asset_path);
+			backdrop.setGraphicSize(FlxG.width, FlxG.height);
+			backdrop.updateHitbox();
+			trace("backdrop size:", backdrop.width, backdrop.height);
 		}
 		super.fromFile(jsonFile);
 	}

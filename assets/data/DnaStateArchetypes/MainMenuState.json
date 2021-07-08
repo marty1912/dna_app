@@ -1,207 +1,47 @@
 {
     "type": "MainMenuState",
     "objects": [
-        {
-            "type": "BackgroundObject"
-        },
-        {
-            "type": "SpriteObject",
-            "name": "Banner",
-            "asset_path": "assets/gui_elements/banner.png",
-            "scale_x": 1,
-            "scale_y": 1,
-            "origin_where": "",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "CenterTop",
-                "target": ""
-            }]
-        },
-        {
-            "type": "SpriteObject",
-            "name": "BannerCenter",
-            "asset_path": "INVISIBLE_BOX",
-            "scale_x": 500,
-            "scale_y": 100,
-            "origin_where": "",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "Center",
-                "target": "Banner"
-            }]
-        },
-        {
-            "type":"TextObject",
-            "text":"MainMenu_HEAD",
-            "name":"HEading",
-            "autostart":true,
-            "settings":{"char_per_sec":24},
-            "components":[{
-                "type": "PositionComponent",
-                "oneshot": false,
-                "position": "CenterTop",
-                "target": "BannerCenter"
-            }
-            
-            ]
-        },
+        { "type": "BackgroundObject" },
 
-        {
-            "type": "SpriteObject",
-            "name": "CenteredPosition",
-            "asset_path": "INVISIBLE_BOX",
-            "scale_x": 500,
-            "scale_y": 200,
-            "origin_where": "",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "Center",
-                "target": ""
-            }]
-        },
-        {
-            "type": "PlayButtonObject",
-            "name": "PlayButton",
-            "components": [{
-                    "type": "UserButtonComponent"
-                },
-                {
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "CenterBottom",
-                    "target": "CenteredPosition"
-                }
-            ]
-        },
-        {
-            "type": "TrophyButtonObject",
-            "name": "TrophyButton",
-            "components": [{
-                    "type": "UserButtonComponent"
-                },
-                {
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "LeftCenter",
-                    "target": "CenteredPosition"
-                }
-            ]
-        },
-        {
-            "type": "ActionHandlerObject",
-            "name": "ActionHandler_Accept",
-            "actions": [{
-                "type": "ActionStateSwitchComponent",
-                "target": "",
-                "on_event": "TrophyButtonPressed",
-                "next_state": "MonsterEditorState"
-            }]
-        },
-        {
-            "type": "SettingsButtonObject",
-            "name": "SettingsButton",
-            "components": [{
-                    "type": "UserButtonComponent"
-                },
-                {
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "RightCenter",
-                    "target": "CenteredPosition"
-                }
-            ]
-        },
-        {
-            "type": "ActionHandlerObject",
-            "actions": [{
-                "type": "ActionStateSwitchComponent",
-                "on_event": "PlayButtonPressed",
-                "target": "",
-                "next_state": "LevelSelectState"
-            }]
-        },
-        {
-            "type": "MonsterObject",
-            "components": [{
-                    "type": "UserButtonComponent"
-                },
-                {
-                    "type": "PositionComponent",
-                    "oneshot": false,
-                    "position": "LeftBottom",
-                    "target": ""
-                }
-            ]
-        },
-        {
-            "type": "ActionHandlerObject",
-            "actions": [{
-                "type": "ActionStateSwitchComponent",
-                "on_event": "SettingsButtonPressed",
-                "target": "",
-                "next_state": "SettingsState"
-            }]
-        },
+
+        { "type": "NineSliceSprite", "name": "Banner", "asset_path": "assets/gui_elements/banner.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.35, "scale_y": 0.12, "grid":[200,20,400,30], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" }] },
+        { "type": "SpriteObject", "name": "BannerCenter", "asset_path": "INVISIBLE_BOX", "scale_x": 500, "scale_y": 100, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "Banner" }] },
+        { "type": "TextObject", "name": "Text_HEAD", "text": "MainMenu_HEAD", "autostart": true, "settings": { "char_per_sec": 24, "width": 500, "n_lines": 5, "append_before": "@041d8c50a", "append_after": "@040", "border": "OUTLINE", "border_color": "0x911315" }, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target": "BannerCenter" }] }, 
+
+
+
+        { "type": "SpriteObject", "name": "CenteredPosition", "asset_path": "INVISIBLE_BOX","scale_from_screen_width":true,"scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.5, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "" }] },
+
+
+        { "type": "SpriteObject", "name": "PlayPosition", "asset_path": "INVISIBLE_BOX","scale_from_screen_width":true,"scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "CenteredPosition" }] },
+        { "type": "PlayButtonObject", "name": "PlayButton", "components": [{"type":"ButtonScaleComponent","target":"PlayPosition"},{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "PlayPosition" } ] },
+
+        { "type": "SpriteObject", "name": "TrophyPosition", "asset_path": "INVISIBLE_BOX","scale_from_screen_width":true,"scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "CenteredPosition" }] },
+        { "type": "TrophyButtonObject", "name": "TrophyButton", "components": [{"type":"ButtonScaleComponent","target":"TrophyPosition"},{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "TrophyPosition" } ] },
+
+        { "type": "SpriteObject", "name": "SettingsPosition", "asset_path": "INVISIBLE_BOX","scale_from_screen_width":true,"scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "CenteredPosition" }] },
+        { "type": "SettingsButtonObject", "name": "SettingsButton", "components": [{"type":"ButtonScaleComponent","target":"SettingsPosition"},{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "SettingsPosition" } ] },
+
+        { "type": "ActionHandlerObject", "name": "ActionHandler_Accept", "actions": [{ "type": "ActionStateSwitchComponent", "target": "", "on_event": "TrophyButtonPressed", "next_state": "MonsterEditorState" }] },
+
+
+        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "PlayButtonPressed", "target": "", "next_state": "LevelSelectState" }] },
+
+        { "type": "MonsterObject", "components": [{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": false, "position": "LeftBottom", "target": "" } ] },
+
+        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "SettingsButtonPressed", "target": "", "next_state": "SettingsState" }] },
+
 
         
-        {
-            "type": "HelpButtonObject",
-            "name": "HelpButton",
-            "components": [{
-                    "type": "UserButtonComponent"
-                },
-                {
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "RightTop",
-                    "target": ""
-                },
-                {
-                    "type": "CmdEvtTrigComponent",
-                    "event_name": "HelpPressed"
-                }
-            ]
-        },
-        {
-            "type": "ActionHandlerObject",
-            "actions": [{
-                "type": "ActionStateSwitchComponent",
-                "on_event": "HelpPressed",
-                "target": "",
-                "next_state": "MainMenuTutorialState"
-            }]
-        }
+        { "type": "HelpButtonObject", "name": "HelpButton", "components": [{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": true, "position": "RightTop", "target": "" }, { "type": "CmdEvtTrigComponent", "event_name": "HelpPressed" } ] },
+
+        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "HelpPressed", "target": "", "next_state": "MainMenuTutorialState" }] }
+
         ,
-        {
-            "type": "InfoButtonObject",
-            "name": "InfoButton",
-            "components": [{
-                    "type": "UserButtonComponent"
-                },
-                {
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "LeftTop",
-                    "target": ""
-                },
-                {
-                    "type": "CmdEvtTrigComponent",
-                    "event_name": "InfoPressed"
-                }
-            ]
-        },
-        {
-            "type": "ActionHandlerObject",
-            "actions": [{
-                "type": "ActionStateSwitchComponent",
-                "on_event": "InfoPressed",
-                "target": "",
-                "next_state": "InfoState"
-            }]
-        }
+        { "type": "InfoButtonObject", "name": "InfoButton", "components": [{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": true, "position": "LeftTop", "target": "" }, { "type": "CmdEvtTrigComponent", "event_name": "InfoPressed" } ] },
+
+        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "InfoPressed", "target": "", "next_state": "InfoState" }] }
+
         
     ]
 }
