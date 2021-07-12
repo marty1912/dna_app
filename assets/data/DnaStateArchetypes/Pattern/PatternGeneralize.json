@@ -1,0 +1,10 @@
+{
+    "type": "PatternExtend",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+
+        { "type": "PatternGeneralizeObject", "name": "pgeneralize", "pos_target":""},
+        { "type": "PatternExtendRealTask", "name": "pctrl", "pattern_extend":"pextend"},
+        { "type": "TimerObject", "name": "TotalTime" }
+    ]
+}

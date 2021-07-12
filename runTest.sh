@@ -1,6 +1,6 @@
 #!/bin/sh
 
-source ./setup.sh
+source setup.sh
 
 echo "test build for android.."
 lime build android || echo "ERROR: ANDROID BUILD FAILED!!!"

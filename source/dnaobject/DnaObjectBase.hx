@@ -39,6 +39,7 @@ class DnaObjectBase implements IFlxDestroyable
 	public var nested_objects:Array<DnaObject> = new Array<DnaObject>();
 
 	public var json_file:Dynamic;
+	public var archetype_json_file:Dynamic = null;
 
 	/**
 	 * private constructor so nobody can create an actual instance of this class.
@@ -76,6 +77,10 @@ class DnaObjectBase implements IFlxDestroyable
 			return;
 		}
 		this.json_file = jsonFile;
+		if (this.archetype_json_file == null)
+		{
+			archetype_json_file = jsonFile;
+		}
 
 		if (Reflect.hasField(jsonFile, "name"))
 		{
@@ -616,11 +621,23 @@ class DnaObjectBase implements IFlxDestroyable
 
 				objects_str = name_replace_regex.replace(objects_str, ":\"" + nest_name + "\"");
 			}
-			var parent_field_ref_regex = ~/::(([A-Z0-9]|_)+)::/i;
+			var parent_field_ref_regex = ~/"::(([A-Z0-9]|_)+)::"/i;
 			while (parent_field_ref_regex.match(objects_str))
 			{
 				var replace_with = Reflect.field(this.json_file, parent_field_ref_regex.matched(1));
-				objects_str = parent_field_ref_regex.replace(objects_str, replace_with);
+				if (replace_with == null)
+				{
+					trace("field not found:", parent_field_ref_regex.matched(1), "using default from archetype.");
+					// hope that there is a default value..
+					replace_with = Reflect.field(this.archetype_json_file, parent_field_ref_regex.matched(1));
+				}
+
+				if (Std.isOfType(replace_with, String))
+				{
+					replace_with = "\"" + replace_with + "\"";
+				}
+				trace("value:", parent_field_ref_regex.matched(1), "replace with:", replace_with);
+				objects_str = parent_field_ref_regex.replace(objects_str, Std.string(replace_with));
 			}
 
 			objects_archetypes = Json.parse(objects_str);

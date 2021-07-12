@@ -167,13 +167,13 @@ class DragStateHighlight implements IState
 	public function enter():Void
 	{
 		var sprite_obj:SpriteObject = (cast this.parent.getParent());
-		sprite_obj.sprite.flipX = true;
+		// sprite_obj.sprite.flipX = true;
 	}
 
 	public function exit():Void
 	{
 		var sprite_obj:SpriteObject = (cast this.parent.getParent());
-		sprite_obj.sprite.flipX = false;
+		// sprite_obj.sprite.flipX = false;
 	}
 }
 

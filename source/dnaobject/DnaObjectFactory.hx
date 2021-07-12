@@ -359,6 +359,18 @@ else if (type == 'KeyboardButton')
 	obj = new KeyboardButton();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/KeyboardButton.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'PatternUnitOfRepeatObject')
+{
+	obj = new PatternUnitOfRepeatObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternUnitOfRepeatObject.json"));
+}
+// // AUTOMATICALLY GENERATED
+else if (type == 'PatternGeneralizeObject')
+{
+	obj = new PatternGeneralizeObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternGeneralizeObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -372,6 +384,14 @@ else if (type == 'KeyboardButton')
 		return obj;
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

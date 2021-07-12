@@ -5,8 +5,10 @@
 "pattern_area":"pattern_area",
 "pattern_assets":["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/triangle.PNG","","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/rhombus.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/rhombus.PNG"],
 "filled_bar":"my_filled_bar",
+"height":0.25,
+"width":0.9,
 "objects":[
-	{ "type": "SpriteObject", "name": "pattern_area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.9, "scale_y": 0.25, "grid":[50,35,500,75], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "::pos_target::" }] },
-        { "type":"RoundedRectangleObject", "scale_from_screen_width":true, "scale_from_screen_height":true, "width":0.9, "height":0.25, "components": [ { "type": "PositionComponent", "target": "pattern_area", "position": "Center" }            ] }
+	{ "type": "SpriteObject", "name": "pattern_area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "grid":[50,35,500,75], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "::pos_target::" }] },
+        { "type":"RoundedRectangleObject", "scale_from_screen_width":true, "scale_from_screen_height":true, "width":"::width::", "height":"::height::", "components": [ { "type": "PositionComponent", "target": "pattern_area", "position": "Center" }            ] }
 ]
 }

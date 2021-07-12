@@ -13,26 +13,35 @@ from os.path import isfile, join, basename ,splitext
 from os import walk
 
 
-def getPatternExtendTrials(symbols = ["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/rhombus.PNG"],choose_from=None):
-    '''
-    '''
-    def listToStringwithDoubleQuotes(mylist):
-        return '["'+ '","'.join(mylist)+'"]'
+def listToStringwithDoubleQuotes(mylist):
+    return '["'+ '","'.join(mylist)+'"]'
 
-    if choose_from is None:
-        choose_from = symbols
+def getPatternGeneralizeTrials(symbols = [
+ 'assets/images/pattern_symbols/triangle.PNG',
+ 'assets/images/pattern_symbols/tripleCircle.PNG',
+ 'assets/images/pattern_symbols/ArrowOverlay.PNG',
+ 'assets/images/pattern_symbols/ArrowLeft.PNG',
+ 'assets/images/pattern_symbols/square.PNG',
+ 'assets/images/pattern_symbols/robotface.PNG',
+ 'assets/images/pattern_symbols/circle.PNG',
+ 'assets/images/pattern_symbols/rhombus.PNG',
+ 'assets/images/pattern_symbols/ArrowRight.PNG']
+,choose_from=None,n_choices =4):
+    '''
+    '''
+
     complete_patterns = [
         [0,1,1,0,1,1] , #1 ABBABB
         [0,1,0,2,0,1], #2 ABACAB
         [0,1,2,2,1,0] , #3 ABCCBA
         [0,1,0,1,1,0,1,1,1] , #4 ABABBABBB
-#        [0,1,2,3,0] , #5 AJDXNA TODO!!
-        [0,1,0,2,0,3,0,1,0,2,0,3] , #6 ABBBABBAB
-        [0,1,2,3,2,1,0] , #7 ABBBABBAB
-        [0,1,1,1,0,1,1,0,1] , #8 ABBBABBAB
+      #  [0,1,2,3,4,0] , #5 AJDXNA  Not possible with only 4 choices..
+       # [0,1,0,2,0,3,0,1,0,2,0,3] , #6 ABACADABACAD
+       # [0,1,2,3,2,1,0] , #7 ABCDCDA
+       # [0,1,1,1,0,1,1,0,1] , #8 ABBBABBAB
         ]
     
-    pattern_trans_table= ["A","B","C","D"]
+    pattern_trans_table= ["A","B","C","D","E","F","G","H"]
     missing_pos = [0,-1]
     trials = []
 
@@ -46,9 +55,97 @@ def getPatternExtendTrials(symbols = ["assets/images/pattern_symbols/circle.PNG"
                 solution.append(shuffled_sym[index])
                 translation.append(pattern_trans_table[index])
 
-            problem = solution
-            problem[missing] = ""
+            problem = solution.copy()
+            # problem[missing] = ""
+
+            # get the choices.
+            # for the generalization we want anything that does not occur in the 
+            # original pattern
+            choose_from = []
+            while(len(choose_from) < n_choices):
+                next_symbol = random.choice(symbols)
+                if(next_symbol in problem):
+                    continue
+                if(next_symbol in choose_from):
+                    continue
+                choose_from.append(next_symbol)
+
+            # we also shuffle this so the correct choice is not always leftmost.
             random.shuffle(choose_from)
+
+            user_input = ["" for i in range(len(problem))]
+            problem = listToStringwithDoubleQuotes(problem)
+            user_input = listToStringwithDoubleQuotes(user_input)
+            solution= listToStringwithDoubleQuotes(solution)
+            choice = listToStringwithDoubleQuotes(choose_from)
+            translation = '"' + "".join(translation) + '"'
+            trials.append([problem,solution,choice,translation,user_input])
+
+    return trials
+ 
+
+def getPatternExtendTrials(symbols = [
+ 'assets/images/pattern_symbols/triangle.PNG',
+ 'assets/images/pattern_symbols/tripleCircle.PNG',
+ 'assets/images/pattern_symbols/ArrowOverlay.PNG',
+ 'assets/images/pattern_symbols/ArrowLeft.PNG',
+ 'assets/images/pattern_symbols/square.PNG',
+ 'assets/images/pattern_symbols/robotface.PNG',
+ 'assets/images/pattern_symbols/circle.PNG',
+ 'assets/images/pattern_symbols/rhombus.PNG',
+ 'assets/images/pattern_symbols/ArrowRight.PNG']
+,choose_from=None,n_choices =4):
+    '''
+    '''
+
+    complete_patterns = [
+        [0,1,1,0,1,1] , #1 ABBABB
+        [0,1,0,2,0,1], #2 ABACAB
+        [0,1,2,2,1,0] , #3 ABCCBA
+        [0,1,0,1,1,0,1,1,1] , #4 ABABBABBB
+        [0,1,2,3,4,0] , #5 AJDXNA 
+       # [0,1,0,2,0,3,0,1,0,2,0,3] , #6 ABACADABACAD
+       # [0,1,2,3,2,1,0] , #7 ABCDCDA
+       # [0,1,1,1,0,1,1,0,1] , #8 ABBBABBAB
+        ]
+    
+    pattern_trans_table= ["A","B","C","D","E","F","G","H"]
+    missing_pos = [0,-1]
+    trials = []
+
+    for pattern in complete_patterns:
+        for missing in missing_pos:
+            shuffled_sym = list(symbols)
+            random.shuffle(shuffled_sym)
+            solution = []
+            translation = []
+            for index in pattern:
+                solution.append(shuffled_sym[index])
+                translation.append(pattern_trans_table[index])
+
+            problem = solution.copy()
+            problem[missing] = ""
+
+            # get the choices.
+            choose_from = []
+            # we need to have the correct one for sure.
+            choose_from.append(solution[missing])
+            # now we use some others from the pattern.
+            unique_symbols = set(solution)
+            unique_symbols.remove(solution[missing])
+
+            while(len(choose_from) < n_choices and len(unique_symbols) > 0):
+                choose_from.append(unique_symbols.pop())
+            # if we still do not have enough choices we select them from the remaining symbols.
+            while(len(choose_from) < n_choices):
+                next_symbol = random.choice(symbols)
+                if(next_symbol in choose_from):
+                    continue
+                choose_from.append(next_symbol)
+
+            # we also shuffle this so the correct choice is not always leftmost.
+            random.shuffle(choose_from)
+
             problem = listToStringwithDoubleQuotes(problem)
             solution= listToStringwithDoubleQuotes(solution)
             choice = listToStringwithDoubleQuotes(choose_from)
@@ -392,6 +489,8 @@ def main():
         trials = [[i] for i in range(1,14)]
     elif mode == "pattern_extend":
         trials = getPatternExtendTrials()
+    elif mode == "pattern_generalize":
+        trials = getPatternGeneralizeTrials()
 
     template_file = sys.argv[2]
 

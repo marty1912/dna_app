@@ -41,7 +41,8 @@ class TaskTrials
 		"assets/data/Trials/ProbCode.json",
 		// "assets/data/Trials/ezFinishTask.json",
 		"assets/data/Trials/PatternExtend.json",
-		"assets/data/Trials/pExtendTest.json" // "assets/data/Trials/doneTask.json"
+		"assets/data/Trials/PatternGeneralize.json",
+		"assets/data/Trials/TEST_TASK.json" // "assets/data/Trials/doneTask.json"
 	];
 
 	/**

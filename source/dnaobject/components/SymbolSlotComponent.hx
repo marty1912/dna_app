@@ -387,6 +387,7 @@ class SymbolStateHiglight implements IState
 		sprite_obj.setAssetPath(asset_path);
 		sprite_obj.loadAsset();
 		sprite_obj.setMaxDimensions(old_width, old_height);
+		sprite_obj.sprite.alpha = 0.5;
 
 		// add a cross on top of the thing
 		cross_sprite = cast DnaObjectFactory.create("SpriteObject");
@@ -397,11 +398,14 @@ class SymbolStateHiglight implements IState
 		cross_sprite.moveTo(sprite_obj.getOrigin().x, sprite_obj.getOrigin().y);
 		cross_sprite.removeChild(cross_sprite.sprite);
 		cross_sprite.addChild(cross_sprite.sprite);
+		cross_sprite.sprite.alpha = 0.0;
 	}
 
 	public function exit():Void
 	{
 		// reset the sprite
+
+		sprite_obj.sprite.alpha = 1.0;
 		sprite_obj.setAssetPath(old_asset_path);
 		sprite_obj.loadAsset();
 		sprite_obj.setMaxDimensions(old_width, old_height);
@@ -460,6 +464,7 @@ class SymbolStatePressed implements IState
 		sprite_obj = (cast this.parent.getParent());
 		this.parent.setStateCallback = this.onButtonStateChanged;
 
+		sprite_obj.sprite.alpha = 0.5;
 		// add a cross on top of the thing
 		cross_sprite = cast DnaObjectFactory.create("SpriteObject");
 		cross_sprite.setAssetPath(cross_asset);
@@ -470,6 +475,9 @@ class SymbolStatePressed implements IState
 		cross_sprite.removeChild(cross_sprite.sprite);
 		cross_sprite.addChild(cross_sprite.sprite);
 
+		// added to basically remove the crosssprite as it caused confusion.
+		cross_sprite.sprite.alpha = 0.0;
+
 		sprite_obj.getParent().eventManager.broadcastEvent(DnaConstants.PATTERN_CHANGE);
 	}
 
@@ -477,6 +485,7 @@ class SymbolStatePressed implements IState
 	{
 		this.parent.setStateCallback = null;
 
+		sprite_obj.sprite.alpha = 1.0;
 		// remove the cross.
 		sprite_obj.getParent().removeObject(cross_sprite.id);
 	}
