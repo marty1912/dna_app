@@ -1,28 +1,13 @@
 [	
-{
-		"type": "PatternExtendTutorial_02",
-        "name":"SpeedTest",
-		"desc_head": "SpeedTest_HEAD",
-		"desc_body": "SHORTTASKS_BODY",
-		"preview":"assets/images/level_preview/PatternExtendPreview.png",
-		"done": false,
-		"saved": false,
-		"trials": [
-					]
-	},
+{ "type": "PatternExtendTutorial_01", "name":"pattern_tut1", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/PatternExtendPreview.png", "done": false, "saved": false, "trials": [ ] },
+{ "type": "PatternExtendTutorial_02", "name":"SpeedTest", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/PatternExtendPreview.png", "done": false, "saved": false, "trials": [ ] },
 	
-    {
-		"type": "PatternExtendPractice",
-        "name":"SpeedTest",
-		"desc_head": "SpeedTest_HEAD",
-		"desc_body": "SHORTTASKS_BODY",
-		"done": false,
-		"saved": false,
-		"trials": [
+    { "type": "PatternExtendPractice", "name":"SpeedTest", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": [
             [{ "name": "pextend", "params": { "pattern": ["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG",""], "solution":["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/triangle.PNG"]}} , { "name": "TotalTime" }],
             [{ "name": "pextend", "params": { "pattern": ["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG",""], "solution":["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG"]} }, { "name": "TotalTime" }]
 					]
 	},
+	{ "type": "SymbNumCompInstructionsState_02", "desc_head": "SymbolicNumberComparison_HEAD", "desc_body": "SymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": [ [{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }] ] },
 	{
 		"type": "PatternExtend",
         "name":"SpeedTest",
@@ -47,22 +32,9 @@
 			[{ "name": "pextend", "params": { "pattern": ["","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG"], "solution":["","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG"],"choices":["assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/rhombus.PNG"],"pattern_type":"ABBBABBAB"} }, { "name": "TotalTime" }],
 			[{ "name": "pextend", "params": { "pattern": ["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG",""], "solution":["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG",""],"choices":["assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/rhombus.PNG"],"pattern_type":"ABBBABBAB"} }, { "name": "TotalTime" }]
 
-
-	
 					]
 	},
 	{
-		"type": "SymbNumCompInstructionsState_02",
-		"desc_head": "SymbolicNumberComparison_HEAD",
-		"desc_body": "SymbolicNumberComparison_BODY",
-		"done": false,
-		"saved": false,
-		"trials": [
-			[{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }]
-		]
-	},
-	
-    {
 		"type": "SAVE",
 		"done": false,
 		"saved": false

@@ -394,6 +394,13 @@ else if (type == "PatternExtendTutorial_02")
 			state = new DnaState("PatternExtendTutorial_02");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternExtendTutorial_02.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PatternExtendTutorial_01")
+		{
+			state = new DnaState("PatternExtendTutorial_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternExtendTutorial_01.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -406,6 +413,12 @@ else if (type == "PatternExtendTutorial_02")
 		return state;
 	}
 }
+
+
+
+
+
+
 
 
 

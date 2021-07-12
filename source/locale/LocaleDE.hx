@@ -135,6 +135,7 @@ class LocaleDE implements Locale
 "MASIC_Q2_orange_subs" => ConfigFile.text("assets/text/de/MASIC_Q2_orange_subs.json"),
 "TEXTBOX_TEST" => ConfigFile.text("assets/text/de/TEXTBOX_TEST.txt"),
 "MASIC_TUT_Q1_orange_subs" => ConfigFile.text("assets/text/de/MASIC_TUT_Q1_orange_subs.json"),
+"PatternExtendTut_02" => ConfigFile.text("assets/text/de/PatternExtendTut_02.json"),
 "MASIC_Q10_subs" => ConfigFile.text("assets/text/de/MASIC_Q10_subs.json"),
 "test_srt_green" => ConfigFile.text("assets/text/de/test_srt_green.json"),
 "MASIC_TUT_Q1_red_subs" => ConfigFile.text("assets/text/de/MASIC_TUT_Q1_red_subs.json"),

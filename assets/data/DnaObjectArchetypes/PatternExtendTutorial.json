@@ -8,7 +8,7 @@
 "objects":[
 
         { "type": "SpriteObject", "name": "SubtitleArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.2, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
-        { "type": "SrtPlayerTextObject", "name":"tut_01", "text":"PatternExtendTut_01", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"tut_01", "text":"PatternExtendTut_02", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
         { "type": "SrtPlayerTextObject", "name":"tut_fin", "text":"PatternExtendTut_03", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
         { "type": "TutorialFingerObject", "name": "tutorial_finger", "components":[  { "type": "PositionComponent", "oneshot": true, "position": "LeftBottom" } ] },
  
