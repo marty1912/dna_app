@@ -42,6 +42,7 @@ class TaskTrials
 		// "assets/data/Trials/ezFinishTask.json",
 		"assets/data/Trials/PatternExtend.json",
 		"assets/data/Trials/PatternGeneralize.json",
+		"assets/data/Trials/PatternUnitOfRepeat.json",
 		"assets/data/Trials/TEST_TASK.json" // "assets/data/Trials/doneTask.json"
 	];
 

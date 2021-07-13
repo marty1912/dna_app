@@ -1,0 +1,26 @@
+{
+    "type": "PatternExtend",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+
+        { "type": "PatternUnitOfRepeatObject", "name": "punit", "pos_target":""},
+        { "type": "PatternExtendRealTask", "name": "pctrl", "pattern_extend":"punit","components":[{"type":"PatternExtendPracticeComponent","action_correct":"a_correct","action_incorrect":"a_incorrect"}]},
+
+        { "type": "SpriteObject", "name": "SubtitleArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.2, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
+        { "type": "SrtPlayerTextObject", "name":"fdbk_correct", "text":"NumberlineFeedbackCorrect", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"fdbk_incorrect", "text":"NumberlineFeedbackIncorrect", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+
+        { "type": "ActionHandlerObject", "name": "a_correct",
+            "actions": [
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "fdbk_correct", "on_event":"NO_EVENT" }
+             ] },
+        { "type": "ActionHandlerObject", "name": "a_incorrect",
+            "actions": [
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "fdbk_incorrect", "on_event":"NO_EVENT" }
+             ] },
+ 
+
+
+        { "type": "TimerObject", "name": "TotalTime" }
+    ]
+}

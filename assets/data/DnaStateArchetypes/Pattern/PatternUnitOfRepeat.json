@@ -1,0 +1,10 @@
+{
+    "type": "PatternExtend",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+
+        { "type": "PatternUnitOfRepeatObject", "name": "punit", "pos_target":""},
+        { "type": "PatternExtendRealTask", "name": "pctrl", "pattern_extend":"punit"},
+        { "type": "TimerObject", "name": "TotalTime" }
+    ]
+}

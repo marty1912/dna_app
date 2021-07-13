@@ -1,0 +1,10 @@
+{
+    "type": "PatternGeneralizeTutorial",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+
+        { "type": "PatternGeneralizeObject", "name": "pgeneralize", "pos_target":""},
+        { "type": "PatternGeneralizeTutorial", "name": "ptutorial", "pos_target":"","pattern_disp":"pgeneralize"}
+
+    ]
+}

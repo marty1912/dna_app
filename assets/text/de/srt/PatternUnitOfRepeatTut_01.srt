@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:06,000
+Du kennst dich mittlerweile ja schon richtig gut mit Mustern aus.
+
+2
+00:00:06,100 --> 00:00:12,100
+Du hast schon Muster vervollständigt und auch nachgebaut.
+
+3
+00:00:12,200 --> 00:00:18,200
+Als nächstes wollen wir noch mehr über die Muster herausfinden.
+
+4
+00:00:18,300 --> 00:00:24,300
+Dazu werde ich dir ein paar Muster zeigen.
+
+8
+00:00:24,300 --> 00:00:28,700
+Du sollst dann herausfinden, wo sich das Muster wiederholt.
+
+9
+00:00:28,700 --> 00:00:34,700
+Ich werde dir gleich erklären, wie das geht.
+

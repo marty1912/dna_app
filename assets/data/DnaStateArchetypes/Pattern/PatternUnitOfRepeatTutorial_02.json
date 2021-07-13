@@ -1,0 +1,10 @@
+{
+    "type": "PatternGeneralizeTutorial",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+
+        { "type": "PatternUnitOfRepeatObject", "name": "punit", "pos_target":""},
+        { "type": "PatternUnitOfRepeatTutorial", "name": "ptutorial", "pos_target":"","pattern_disp":"punit"}
+
+    ]
+}

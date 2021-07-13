@@ -46,7 +46,11 @@ class ButtonScaleComponent implements DnaComponent extends DnaComponentBase
 	override public function onHaveParent()
 	{
 		var target:DnaObject = getParent().getParent().getObjectByName(target_name);
-		// trace("target name:", target_name);
+		if (target == null)
+		{
+			trace("could not find target with name:", target_name, "all names:", getParent().getParent().getAllObjectNames());
+		}
+
 		var button:DnaButtonObject = cast this.getParent();
 		var want_width = target.getWidth();
 		var want_height = target.getHeight();

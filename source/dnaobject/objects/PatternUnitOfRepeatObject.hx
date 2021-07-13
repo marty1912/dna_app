@@ -33,22 +33,17 @@ class PatternUnitOfRepeatObject implements DnaObject implements TaskObject exten
 	public function onPatternChanged()
 	{
 		trace("the pattern changed.. ready:", patternReadyToSubmit());
-		if (patternReadyToSubmit())
-		{
-			button_obj.setNextState(new ButtonStateNormal());
-		}
-		else
-		{
-			button_obj.setNextState(new ButtonStateHidden());
-		}
+		if (patternReadyToSubmit()) {}
+		else {}
 	}
 
 	/**
 	 * called when the user presses the button
 	 */
-	public function onButtonPress()
+	public function onButtonPress(button_index:Int)
 	{
-		button_obj.setNextState(new ButtonStateHidden());
+		trace("button nr:", button_index, "pressed.");
+		this.choice = button_index;
 		this.disabled = true;
 		if (isCorrect() == DnaConstants.TASK_CORRECT)
 		{
@@ -70,9 +65,21 @@ class PatternUnitOfRepeatObject implements DnaObject implements TaskObject exten
 	public function set_disabled(value:Bool):Bool
 	{
 		pattern_display_obj.disabled = value;
-		for (obj in this.dragables_obj)
+		for (obj in this.pattern_choices_obj)
 		{
 			obj.disabled = value;
+		}
+
+		for (obj in this.choice_buttons_obj)
+		{
+			if (value)
+			{
+				obj.setNextState(new ButtonStateInactive());
+			}
+			else
+			{
+				obj.setNextState(new ButtonStateNormal());
+			}
 		}
 		return value;
 	}
@@ -97,21 +104,26 @@ class PatternUnitOfRepeatObject implements DnaObject implements TaskObject exten
 	{
 		pattern_display_obj = cast this.getParent().getObjectByName(getNestedObjectName(pattern_display));
 		pattern_display_obj.onPatternChanged = this.onPatternChanged;
-		button_obj = cast this.getParent().getObjectByName(getNestedObjectName(button));
-		button_obj.setNextState(new ButtonStateHidden());
-		button_obj.onPressCallback = this.onButtonPress;
-		for (drag in dragables)
+		for (pat in pattern_choices)
 		{
-			dragables_obj.push(cast this.getParent().getObjectByName(getNestedObjectName(drag)));
+			pattern_choices_obj.push(cast this.getParent().getObjectByName(getNestedObjectName(pat)));
+		}
+		for (but in choice_buttons)
+		{
+			choice_buttons_obj.push(cast this.getParent().getObjectByName(getNestedObjectName(but)));
+			var button_index = choice_buttons_obj.length - 1;
+			choice_buttons_obj[button_index].onPressCallback = this.onButtonPress.bind(button_index);
 		}
 	}
 
 	public var pattern_display:String;
-	public var dragables:Array<String> = new Array<String>();
+	public var pattern_choices:Array<String> = new Array<String>();
+	public var choice_buttons:Array<String> = new Array<String>();
 	public var pattern_display_obj:PatternDisplay;
-	public var button:String;
-	public var button_obj:DnaButtonObject;
-	public var dragables_obj:Array<SymbolDragable> = new Array<SymbolDragable>();
+
+	public var choice:Int = 0;
+	public var pattern_choices_obj:Array<PatternDisplay> = new Array<PatternDisplay>();
+	public var choice_buttons_obj:Array<DnaButtonObject> = new Array<DnaButtonObject>();
 
 	/**
 	 * override so we can have parameters like random order and stuff.
@@ -125,15 +137,15 @@ class PatternUnitOfRepeatObject implements DnaObject implements TaskObject exten
 		{
 			pattern_display = jsonFile.pattern_display;
 		}
-		if (Reflect.hasField(jsonFile, "button"))
-		{
-			button = jsonFile.button;
-		}
 
 		if (Reflect.hasField(jsonFile, "pattern_assets")) {}
-		if (Reflect.hasField(jsonFile, "dragables"))
+		if (Reflect.hasField(jsonFile, "pattern_choices"))
 		{
-			dragables = jsonFile.dragables;
+			pattern_choices = jsonFile.pattern_choices;
+		}
+		if (Reflect.hasField(jsonFile, "choice_buttons"))
+		{
+			choice_buttons = jsonFile.choice_buttons;
 		}
 	}
 
@@ -150,9 +162,9 @@ class PatternUnitOfRepeatObject implements DnaObject implements TaskObject exten
 		correct_solution = params.solution;
 		if (Reflect.hasField(params, "choices"))
 		{
-			for (choice_index in 0...this.dragables_obj.length)
+			for (choice_index in 0...this.pattern_choices_obj.length)
 			{
-				dragables_obj[choice_index].symbol_obj.setAssetPath(params.choices[choice_index]);
+				pattern_choices_obj[choice_index].setPattern(params.choices[choice_index]);
 			}
 		}
 
@@ -181,7 +193,11 @@ class PatternUnitOfRepeatObject implements DnaObject implements TaskObject exten
 	public function isCorrect():String
 	{
 		var all_same = true;
-		var answer = pattern_display_obj.getPattern();
+		var answer = pattern_choices_obj[choice].getPattern();
+		if (answer.length != correct_solution.length)
+		{
+			return DnaConstants.TASK_INCORRECT;
+		}
 		for (index in 0...correct_solution.length)
 		{
 			if (correct_solution[index] != answer[index])

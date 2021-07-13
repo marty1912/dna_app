@@ -616,9 +616,14 @@ class DnaObjectBase implements IFlxDestroyable
 				var nest_name = getNestedObjectName(obj.name);
 				// this regex should match only values.
 				// the json looks like this:
+
+				// "key" : "value/nested"
+				var nested_replace_regex = new EReg(": *\"" + name + "/", "g");
+				objects_str = nested_replace_regex.replace(objects_str, ":\"" + nest_name + "/");
+
+				// or like this:
 				// "key" : "value"
 				var name_replace_regex = new EReg(": *\"" + name + "\"", "g");
-
 				objects_str = name_replace_regex.replace(objects_str, ":\"" + nest_name + "\"");
 			}
 			var parent_field_ref_regex = ~/"::(([A-Z0-9]|_)+)::"/i;

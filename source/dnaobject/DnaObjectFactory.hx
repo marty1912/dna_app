@@ -371,6 +371,18 @@ else if (type == 'PatternGeneralizeObject')
 	obj = new PatternGeneralizeObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternGeneralizeObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'PatternGeneralizeTutorial')
+{
+	obj = new PatternGeneralizeTutorial();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternGeneralizeTutorial.json"));
+}
+// // AUTOMATICALLY GENERATED
+else if (type == 'PatternUnitOfRepeatTutorial')
+{
+	obj = new PatternUnitOfRepeatTutorial();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternUnitOfRepeatTutorial.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -384,6 +396,24 @@ else if (type == 'PatternGeneralizeObject')
 		return obj;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

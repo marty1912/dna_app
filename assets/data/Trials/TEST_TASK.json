@@ -1,6 +1,13 @@
 [	
+
+    { "type": "PatternUnitOfRepeatPractice", "name":"SpeedTest", "preview":"assets/images/level_preview/TestTask.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": [
+	[{ "name": "punit", "params": { "pattern": ["assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/triangle.PNG"], "solution":["assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/triangle.PNG"],"choices":[["assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/triangle.PNG"],["assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/ArrowRight.PNG"],["assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/triangle.PNG"]],"pattern_type":"ABBABB"} }, { "name": "TotalTime" }],
+	[{ "name": "punit", "params": { "pattern": ["assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/ArrowOverlay.PNG","assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/ArrowOverlay.PNG"], "solution":["assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/ArrowOverlay.PNG"],"choices":[["assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/ArrowOverlay.PNG"],["assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/ArrowOverlay.PNG"],["assets/images/pattern_symbols/ArrowRight.PNG","assets/images/pattern_symbols/ArrowRight.PNG"]],"pattern_type":"AABAAB"} }, { "name": "TotalTime" }],
+	[{ "name": "punit", "params": { "pattern": ["assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/robotface.PNG","assets/images/pattern_symbols/rhombus.PNG","assets/images/pattern_symbols/tripleCircle.PNG","assets/images/pattern_symbols/ArrowLeft.PNG","assets/images/pattern_symbols/triangle.PNG"], "solution":["assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/robotface.PNG","assets/images/pattern_symbols/rhombus.PNG","assets/images/pattern_symbols/tripleCircle.PNG","assets/images/pattern_symbols/ArrowLeft.PNG"],"choices":[["assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/robotface.PNG","assets/images/pattern_symbols/rhombus.PNG"],["assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/robotface.PNG","assets/images/pattern_symbols/rhombus.PNG","assets/images/pattern_symbols/tripleCircle.PNG","assets/images/pattern_symbols/ArrowLeft.PNG","assets/images/pattern_symbols/triangle.PNG"],["assets/images/pattern_symbols/triangle.PNG","assets/images/pattern_symbols/robotface.PNG","assets/images/pattern_symbols/rhombus.PNG","assets/images/pattern_symbols/tripleCircle.PNG","assets/images/pattern_symbols/ArrowLeft.PNG"]],"pattern_type":"ABCDEA"} }, { "name": "TotalTime" }]
+
+					] },
 {
-		"type": "PatternGeneralize",
+		"type": "PatternUnitOfRepeat",
 		"name":"SpeedTest",
 		"desc_head": "SpeedTest_HEAD",
 		"desc_body": "SHORTTASKS_BODY",
@@ -8,11 +15,7 @@
 		"done": false,
 		"saved": false,
 		"trials": [
-
-
-	[{ "name": "pgeneralize", "params": { "pattern": ["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG"], "solution":["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG"],"choices":["assets/images/pattern_symbols/ArrowLeft.PNG","assets/images/pattern_symbols/ArrowOverlay.PNG","assets/images/pattern_symbols/rhombus.PNG","assets/images/pattern_symbols/ArrowRight.PNG"],"pattern_type":"ABAB","input": ["","","",""]} }, { "name": "TotalTime" }]
-		
-
+	[{ "name": "punit", "params": { "pattern": ["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG"], "solution":["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG"],"choices":[["assets/images/pattern_symbols/ArrowLeft.PNG","assets/images/pattern_symbols/ArrowOverlay.PNG"],["assets/images/pattern_symbols/rhombus.PNG","assets/images/pattern_symbols/ArrowRight.PNG"],["",""]],"pattern_type":"ABAB","input": ["","","",""]} }, { "name": "TotalTime" }]
 				]
 	},
  

@@ -16,6 +16,85 @@ from os import walk
 def listToStringwithDoubleQuotes(mylist):
     return '["'+ '","'.join(mylist)+'"]'
 
+def getPatternUnitOfRepeatTrials(symbols = [
+ 'assets/images/pattern_symbols/triangle.PNG',
+ 'assets/images/pattern_symbols/tripleCircle.PNG',
+ 'assets/images/pattern_symbols/ArrowOverlay.PNG',
+ 'assets/images/pattern_symbols/ArrowLeft.PNG',
+ 'assets/images/pattern_symbols/square.PNG',
+ 'assets/images/pattern_symbols/robotface.PNG',
+ 'assets/images/pattern_symbols/circle.PNG',
+ 'assets/images/pattern_symbols/rhombus.PNG',
+ 'assets/images/pattern_symbols/ArrowRight.PNG']
+,choose_from=None,n_choices =3):
+    '''
+    '''
+
+    complete_patterns = [
+        ([0,1,1,0,1,1],[[0,1,1],[0,1,1,0],[0,1]]), #1 ABBABB
+        ([0,0,1,0,0,1],[[0,0,1],[0,0],[0,1]]), #1 AABAAB <- as in Rittle-Johnson et.al (2015)
+        #[0,1,0,2,0,1], #2 ABACAB
+       # [0,1,2,2,1,0] , #3 ABCCBA <- does not have one
+       # [0,1,0,1,1,0,1,1,1] , #4 ABABBABBB <- growing pattern does not have a single unit of repeat.
+        ([0,1,2,3,4,0],[[0,1,2,3,4],[0,1,2,3,4,0],[0,1,2]]) , #5 AJDXNA  
+       # [0,1,0,2,0,3,0,1,0,2,0,3] , #6 ABACADABACAD
+       # [0,1,2,3,2,1,0] , #7 ABCDCDA
+       # [0,1,1,1,0,1,1,0,1] , #8 ABBBABBAB
+        ]
+    
+    pattern_trans_table= ["A","B","C","D","E","F","G","H"]
+    trials = []
+
+    for pattern_tuple in complete_patterns:
+        
+        pattern = pattern_tuple[0]
+
+        choice_patterns = pattern_tuple[1]
+
+        shuffled_sym = list(symbols)
+        random.shuffle(shuffled_sym)
+        problem = []
+        translation = []
+        for index in pattern:
+            problem.append(shuffled_sym[index])
+            translation.append(pattern_trans_table[index])
+
+
+        choose_from = []
+        for choice in choice_patterns:
+            choose_from.append([])
+            for index in choice:
+                choose_from[-1].append(shuffled_sym[index])
+
+
+        solution = choose_from[0].copy()
+
+
+        # problem[missing] = ""
+
+        # we also shuffle this so the correct choice is not always leftmost.
+        random.shuffle(choose_from)
+
+        problem = listToStringwithDoubleQuotes(problem)
+        solution= listToStringwithDoubleQuotes(solution)
+        choose_from_strings = []
+        for my_list in choose_from:
+            string_list = listToStringwithDoubleQuotes(my_list)
+            print("-"*80)
+            print(string_list)
+            print("-"*80)
+            choose_from_strings.append(string_list)
+
+        choice = listToStringwithDoubleQuotes(choose_from_strings)
+        choice = choice.replace("\"[\"","[\"")
+        choice = choice.replace("\"]\"","\"]")
+        translation = '"' + "".join(translation) + '"'
+
+        trials.append([problem,solution,choice,translation])
+
+    return trials
+ 
+
 def getPatternGeneralizeTrials(symbols = [
  'assets/images/pattern_symbols/triangle.PNG',
  'assets/images/pattern_symbols/tripleCircle.PNG',
@@ -491,6 +570,8 @@ def main():
         trials = getPatternExtendTrials()
     elif mode == "pattern_generalize":
         trials = getPatternGeneralizeTrials()
+    elif mode == "pattern_uof":
+        trials = getPatternUnitOfRepeatTrials()
 
     template_file = sys.argv[2]
 
