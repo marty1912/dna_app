@@ -14,7 +14,71 @@ from os import walk
 
 
 def listToStringwithDoubleQuotes(mylist):
-    return '["'+ '","'.join(mylist)+'"]'
+    copy = mylist.copy()
+    return '["'+ '","'.join(copy)+'"]'
+
+def getNumberPatternTrials(base_path= 'assets/images/pattern_numbers/',n_choices =4):
+    '''
+    '''
+    #distances = [2,3,4]
+    distances = [1]
+    missing_index = [0,2,4]
+    direction = [1,-1]
+    problem_len = 5
+    choices_len= 4
+    min_num = 1
+    max_num = 30
+
+    def appendBasePath(my_list):
+        new_list = []
+        for i in range(0,len(my_list)):
+            item = base_path + str(my_list[i]) + ".PNG"
+            new_list.append(item)
+        return new_list
+
+    
+    trials = []
+    for dist in distances:
+        for missing in missing_index:
+            for dir in direction:
+                if(dir == 1):
+                    first_number = random.randint(min_num,max_num - (problem_len-1)*dist)
+                else:
+                    first_number = random.randint(min_num + (problem_len-1)*dist,max_num)
+                numbers = [first_number + i*dist*dir for i in range(problem_len)]
+                translation = "\"dist:"+str(dist)+",missing:"+str(missing)+",dir:"+str(dir) +"\""
+
+                choices = []
+                choices.append(numbers[missing])
+                max_offset = dist*2
+                while(len(choices) < choices_len):
+                    correct_solution = choices[0]
+                    guess = correct_solution+random.randint(-max_offset, max_offset)
+                    if(guess > max_num or guess < min_num):
+                        continue
+                    if(guess in choices):
+                        continue
+                    choices.append(guess)
+
+                
+                random.shuffle(choices)
+
+                numbers = appendBasePath(numbers)
+                choices = appendBasePath(choices)
+
+                solution = numbers.copy()
+                solution_str = listToStringwithDoubleQuotes(solution)
+                problem = numbers.copy()
+                problem[missing] = ""
+                problem_str = listToStringwithDoubleQuotes(problem)
+                choices_str = listToStringwithDoubleQuotes(choices)
+
+                trials.append([problem_str,solution_str,choices_str,translation])
+
+    return trials
+        
+
+
 
 def getPatternUnitOfRepeatTrials(symbols = [
  'assets/images/pattern_symbols/triangle.PNG',
@@ -572,6 +636,8 @@ def main():
         trials = getPatternGeneralizeTrials()
     elif mode == "pattern_uof":
         trials = getPatternUnitOfRepeatTrials()
+    elif mode == "pattern_num":
+        trials = getNumberPatternTrials()
 
     template_file = sys.argv[2]
 

@@ -318,72 +318,83 @@ class DnaObjectFactory
 			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolSlot.json"));
 		}
 		// // AUTOMATICALLY GENERATED
-else if (type == 'SymbolDragable')
-{
-	obj = new SymbolDragable();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolDragable.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'PatternExtendObject')
-{
-	obj = new PatternExtendObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'PatternExtendRealTask')
-{
-	obj = new PatternExtendRealTask();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendRealTask.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'PatternExtendTutorial')
-{
-	obj = new PatternExtendTutorial();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendTutorial.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'LevelSelectGrid')
-{
-	obj = new LevelSelectGrid();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/LevelSelectGrid.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'UnlockDisplay')
-{
-	obj = new UnlockDisplay();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/UnlockDisplay.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'KeyboardButton')
-{
-	obj = new KeyboardButton();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/KeyboardButton.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'PatternUnitOfRepeatObject')
-{
-	obj = new PatternUnitOfRepeatObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternUnitOfRepeatObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'PatternGeneralizeObject')
-{
-	obj = new PatternGeneralizeObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternGeneralizeObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'PatternGeneralizeTutorial')
-{
-	obj = new PatternGeneralizeTutorial();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternGeneralizeTutorial.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'PatternUnitOfRepeatTutorial')
-{
-	obj = new PatternUnitOfRepeatTutorial();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternUnitOfRepeatTutorial.json"));
-}
-// INSERT_HERE
+		else if (type == 'SymbolDragable')
+		{
+			obj = new SymbolDragable();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolDragable.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'PatternExtendObject')
+		{
+			obj = new PatternExtendObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'PatternExtendRealTask')
+		{
+			obj = new PatternExtendRealTask();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendRealTask.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'PatternExtendTutorial')
+		{
+			obj = new PatternExtendTutorial();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendTutorial.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'LevelSelectGrid')
+		{
+			obj = new LevelSelectGrid();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/LevelSelectGrid.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'UnlockDisplay')
+		{
+			obj = new UnlockDisplay();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/UnlockDisplay.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'KeyboardButton')
+		{
+			obj = new KeyboardButton();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/KeyboardButton.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'PatternUnitOfRepeatObject')
+		{
+			obj = new PatternUnitOfRepeatObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternUnitOfRepeatObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'PatternGeneralizeObject')
+		{
+			obj = new PatternGeneralizeObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternGeneralizeObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'PatternGeneralizeTutorial')
+		{
+			obj = new PatternGeneralizeTutorial();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternGeneralizeTutorial.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'PatternUnitOfRepeatTutorial')
+		{
+			obj = new PatternUnitOfRepeatTutorial();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternUnitOfRepeatTutorial.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'PatternNumbersTutorial')
+		{
+			obj = new PatternNumbersTutorial();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternNumbersTutorial.json"));
+		}
+		else if (type == 'PatternDisplayCupboard')
+		{
+			obj = new PatternDisplay();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternDisplayCupboard.json"));
+		}
+		// INSERT_HERE
 		else
 		{
 			// trace(type);
@@ -396,54 +407,3 @@ else if (type == 'PatternUnitOfRepeatTutorial')
 		return obj;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -1,0 +1,27 @@
+1
+00:00:00,000 --> 00:00:06,000
+Hallo! Schön, dass du da bist.
+
+2
+00:00:06,100 --> 00:00:12,100
+Ich habe gestern einige Proben für die Forschung gesammelt.
+
+3
+00:00:12,200 --> 00:00:18,200
+Im Labor war aber ein wildes Durcheinander. 
+
+4
+00:00:18,300 --> 00:00:24,300
+Deswegen sind ein paar Proben aus den Regalen gefallen.
+
+5
+00:00:24,300 --> 00:00:28,700
+Ich habe schon neue Proben genommen. 
+
+6
+00:00:28,700 --> 00:00:34,700
+Aber leider weiß ich nicht mehr, welche Probe an welche Stelle gehört..
+
+7
+00:00:34,700 --> 00:00:38,700
+Bitte hilf mit, Sie richtig einzuräumen!

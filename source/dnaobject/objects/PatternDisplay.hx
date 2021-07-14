@@ -32,6 +32,7 @@ class PatternDisplay implements DnaObject implements DnaEventSubscriber extends 
 
 	override public function onReady()
 	{
+		super.onReady();
 		this.getParent().eventManager.addSubscriberForEvent(this, DnaConstants.PATTERN_CHANGE);
 		this.pattern_area_obj = cast getParent().getObjectByName(getNestedObjectName(pattern_area));
 		setPattern(pattern_assets);
