@@ -74,6 +74,7 @@ class DnaDataManager
 		// trace(uuid);
 		if (uuid == null)
 		{
+			TaskTrials.instance.init();
 			setupUUID();
 			setupOsInfo();
 			setupRandomConditions();
@@ -82,6 +83,7 @@ class DnaDataManager
 		}
 		else
 		{
+			TaskTrials.instance.init();
 			loadTrials();
 		}
 	}

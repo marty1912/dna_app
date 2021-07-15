@@ -26,8 +26,7 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 	public var preview_area_obj:SpriteObject;
 	public var done_overlay_obj:SpriteObject;
 
-	@:isVar
-	public var trial_block(get, set):TrialBlock;
+	public var trial_block(default, set):TrialBlock;
 
 	/**
 	 * overwritten ctor.
@@ -37,18 +36,15 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 		super("LevelSelectPreview");
 	}
 
-	public function get_trial_block():TrialBlock
-	{
-		return trial_block;
-	}
-
 	public function set_trial_block(value:TrialBlock):TrialBlock
 	{
 		this.trial_block = value;
 		this.preview_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview));
 		preview_obj.setAssetPath(trial_block.preview);
+		trace("before iftrial block:", trial_block.locked);
 		if (trial_block.done == true)
 		{
+			trace("in iftrial block:");
 			done_overlay_obj.removeChild(done_overlay_obj.sprite);
 			done_overlay_obj.addChild(done_overlay_obj.sprite);
 			done_overlay_obj.visible = true;
@@ -56,6 +52,8 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 			button_obj.setNextState(new ButtonStateInactive());
 			trace(this.id, "done_overlay visible");
 		}
+
+		trace("after iftrial block:");
 		return trial_block;
 	}
 

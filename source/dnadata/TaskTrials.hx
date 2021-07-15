@@ -22,10 +22,46 @@ class TaskTrials
 	 */
 	public static final instance:TaskTrials = new TaskTrials();
 
+	private var trial_blocks:Array<TrialBlock> = null;
+
 	/**
 	 * private ctor so nobody can create another singleton
 	 */
 	private function new() {};
+
+	public function init()
+	{
+		// retrieveTrialBlocks();
+		if (trial_blocks == null)
+		{
+			trial_blocks = new Array<TrialBlock>();
+			for (path in task_block_paths)
+			{
+				var json = readTrialsFromFile(path);
+				var trial_block = new TrialBlock(json, path);
+				trial_blocks.push(trial_block);
+			}
+		}
+		storeTrialBlocks();
+	}
+
+	public final TRIALBLOCK_STORAGE_ID = "TRIALBLOCK_STORAGE_ID";
+
+	/**
+	 * stores the trialblocks in the Datamanager.
+	 */
+	public function storeTrialBlocks()
+	{
+		DnaDataManager.instance.storeData(TRIALBLOCK_STORAGE_ID, this.trial_blocks);
+	}
+
+	/**
+	 * gets the trial blocks from the manager.
+	 */
+	public function retrieveTrialBlocks()
+	{
+		// this.trial_blocks = cast DnaDataManager.instance.retrieveData(TRIALBLOCK_STORAGE_ID);
+	}
 
 	public final probCode:String = "assets/data/Trials/ProbCode.json";
 	public final finalBlock:String = "assets/data/Trials/FinalStudentTrial.json";
@@ -44,6 +80,7 @@ class TaskTrials
 		"assets/data/Trials/PatternGeneralize.json",
 		"assets/data/Trials/PatternUnitOfRepeat.json",
 		"assets/data/Trials/PatternNumbers.json",
+		"assets/data/Trials/lockedTask.json", // "assets/data/Trials/doneTask.json"
 		"assets/data/Trials/TEST_TASK.json" // "assets/data/Trials/doneTask.json"
 	];
 
@@ -97,14 +134,8 @@ class TaskTrials
 	 */
 	public function getTrialBlocks():Array<TrialBlock>
 	{
-		var blocks:Array<TrialBlock> = new Array<TrialBlock>();
-		for (path in task_block_paths)
-		{
-			var json = readTrialsFromFile(path);
-			var trial_block = new TrialBlock(json);
-			blocks.push(trial_block);
-		}
-		return blocks;
+		retrieveTrialBlocks();
+		return trial_blocks.copy();
 	}
 
 	/**
@@ -112,14 +143,13 @@ class TaskTrials
 	 */
 	public function getTrialBlocksTodo():Array<TrialBlock>
 	{
-		var blocks:Array<TrialBlock> = new Array<TrialBlock>();
-		for (path in task_block_paths)
+		retrieveTrialBlocks();
+		var blocks = new Array<TrialBlock>();
+		for (block in trial_blocks)
 		{
-			var json = readTrialsFromFile(path);
-			var trial_block = new TrialBlock(json);
-			if (trial_block.done == false)
+			if (block.done == false)
 			{
-				blocks.push(trial_block);
+				blocks.push(block);
 			}
 		}
 		return blocks;
