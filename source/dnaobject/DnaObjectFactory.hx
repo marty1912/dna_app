@@ -329,6 +329,12 @@ class DnaObjectFactory
 			obj = new PatternExtendObject();
 			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternExtendObject.json"));
 		}
+		else if (type == 'PatternNumbersObject')
+		{
+			obj = new PatternExtendObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternNumbersObject.json"));
+		}
+
 		// // AUTOMATICALLY GENERATED
 		else if (type == 'PatternExtendRealTask')
 		{
@@ -407,3 +413,10 @@ class DnaObjectFactory
 		return obj;
 	}
 }
+
+
+
+
+
+
+

@@ -456,6 +456,20 @@ else if (type == "PatternNumbersTutorial_01")
 			state = new DnaState("PatternNumbersTutorial_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternNumbersTutorial_01.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PatternNumbers")
+		{
+			state = new DnaState("PatternNumbers");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternNumbers.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PatternNumbersPractice")
+		{
+			state = new DnaState("PatternNumbersPractice");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternNumbersPractice.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -468,6 +482,13 @@ else if (type == "PatternNumbersTutorial_01")
 		return state;
 	}
 }
+
+
+
+
+
+
+
 
 
 

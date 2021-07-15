@@ -121,6 +121,8 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 
 	public override function onReady()
 	{
+		// TODO: the width is 1 in the cupboard stuff..
+		trace("onReady: asset path:", getAssetPath(), "w:", sprite.width, this.width);
 		super.onReady();
 		this.removeChild(sprite);
 		this.addChild(sprite);
@@ -228,6 +230,7 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 			sprite.loadGraphic(m_asset_path, animated, asset_width, asset_height);
 			setScale(m_scale_x, m_scale_y);
 			sprite.visible = this.visible;
+			sprite.alpha = 1.0;
 		}
 		// this.addChild(sprite);
 	}

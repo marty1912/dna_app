@@ -47,7 +47,6 @@ class ForegroundComponent implements DnaComponent extends DnaComponentBase
 
 		if (Reflect.hasField(jsonFile, "oneshot"))
 		{
-			// this is the wrong way around i know. but it works like this..
 			this.oneshot = jsonFile.oneshot;
 		}
 	}
@@ -56,7 +55,6 @@ class ForegroundComponent implements DnaComponent extends DnaComponentBase
 	{
 		var child_list = object.getChildren();
 		var to_add = new Array<FlxObject>();
-		trace("before childlist:", child_list.length);
 		for (child in child_list)
 		{
 			object.removeChild(child);

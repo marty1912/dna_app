@@ -3,7 +3,7 @@
     "objects": [
         { "type": "TaskBackgroundObject" },
 
-        { "type": "PatternExtendObject", "name": "pextend", "pos_target":""},
+        { "type": "PatternNumbersObject", "name": "pextend", "pos_target":""},
         { "type": "PatternNumbersTutorial", "name": "ptutorial", "pos_target":"","pattern_disp":"pextend"}
 
     ]

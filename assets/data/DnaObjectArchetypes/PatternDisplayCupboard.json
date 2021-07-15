@@ -7,9 +7,11 @@
 "filled_bar":"my_filled_bar",
 "height":0.25,
 "width":0.9,
+"board_height":0.3,
+"board_width":0.92,
 "objects":[
 	{ "type": "SpriteObject", "name": "pattern_area", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "grid":[50,35,500,75], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "::pos_target::" }] },
-        { "type":"SpriteObject", "asset_path": "assets/images/cupboard_back.png","asset_height":2000,"asset_width":4000,"keep_ratio":false, "scale_from_screen_width":true, "scale_from_screen_height":true, "width":"::width::", "height":"::height::", "components": [ { "type": "PositionComponent", "target": "pattern_area", "position": "Center" } ,{"type":"ForegroundComponent"}           ] },
-        { "type":"SpriteObject", "asset_path": "assets/images/cupboard_outside.png","asset_height":2000,"asset_width":4000,"keep_ratio":false, "scale_from_screen_width":true, "scale_from_screen_height":true, "width":"::width::", "height":"::height::", "components": [ { "type": "PositionComponent", "target": "pattern_area", "position": "Center" } ,{"type":"ForegroundComponent"}           ] }
+        { "type":"SpriteObject", "asset_path": "assets/images/cupboard.png","keep_ratio":false, "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x":"::board_width::", "scale_y":"::board_height::", "components": [ { "type": "PositionComponent", "target": "pattern_area", "position": "CenterBottom" }            ] },
+        { "type":"SpriteObject", "asset_path": "assets/images/cupboard_outside.png","keep_ratio":false, "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x":"::board_width::", "scale_y":"::board_height::", "components": [ { "type": "PositionComponent", "target": "pattern_area", "position": "CenterBottom" } ,{"type":"ForegroundComponent","oneshot":false}           ] }
 ]
 }
