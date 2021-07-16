@@ -20,6 +20,7 @@ import flixel.FlxG;
 import flixel.addons.plugin.taskManager.FlxTask;
 import flixel.math.FlxPoint;
 import flixel.system.debug.Window;
+import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import haxe.Json;
 
@@ -50,12 +51,12 @@ class PatternExtendTutorial implements DnaObject implements DnaEventSubscriber e
 		// obj 2 will be our circle that we need.
 		var to_x = symbol_to_drag.sprite.getMidpoint().x;
 		var to_y = symbol_to_drag.sprite.getMidpoint().y;
-		FlxTween.tween(finger_obj, {pos_x: to_x, pos_y: to_y}, 3, {onComplete: dragToSlot});
+		FlxTween.tween(finger_obj, {pos_x: to_x, pos_y: to_y}, 2, {onComplete: dragToSlot, ease: FlxEase.cubeInOut});
 	}
 
 	public function dragToSlot(tween:FlxTween)
 	{
-		var start_delay = 1.0;
+		var start_delay = 0;
 		var drag:DragableComponent = cast symbol_to_drag.getComponentByType("DragableComponent");
 		// drag.setNextState(new DragStatePressed());
 		rightmost = pattern_disp_obj.pattern_display_obj.symbols[pattern_disp_obj.pattern_display_obj.symbols.length - 1];
@@ -63,11 +64,11 @@ class PatternExtendTutorial implements DnaObject implements DnaEventSubscriber e
 
 		var to_x = rightmost.pos_x;
 		var to_y = rightmost.pos_y;
-		FlxTween.tween(finger_obj, {pos_x: to_x, pos_y: to_y}, 3, {startDelay: start_delay});
+		FlxTween.tween(finger_obj, {pos_x: to_x, pos_y: to_y}, 2, {startDelay: start_delay, ease: FlxEase.cubeInOut});
 		symbol_to_drag.setOrigin(symbol_to_drag.pos_x + (symbol_to_drag.width / 2), symbol_to_drag.pos_y + (symbol_to_drag.height / 2));
 		initial_dragable_pos = FlxPoint.get(symbol_to_drag.getOrigin().x, symbol_to_drag.getOrigin().y);
 		DragableComponent.currently_dragged_sprite = symbol_to_drag;
-		FlxTween.tween(symbol_to_drag, {pos_x: to_x, pos_y: to_y}, 3, {startDelay: start_delay, onComplete: releaseDrag});
+		FlxTween.tween(symbol_to_drag, {pos_x: to_x, pos_y: to_y}, 2, {startDelay: start_delay, onComplete: releaseDrag, ease: FlxEase.cubeInOut});
 	}
 
 	public function releaseDrag(tween:FlxTween)
@@ -82,7 +83,7 @@ class PatternExtendTutorial implements DnaObject implements DnaEventSubscriber e
 		var to_x = button_obj.button.getMidpoint().x;
 		var to_y = button_obj.button.getMidpoint().y;
 
-		FlxTween.tween(finger_obj, {pos_x: to_x, pos_y: to_y}, 2, {onComplete: pressButton});
+		FlxTween.tween(finger_obj, {pos_x: to_x, pos_y: to_y}, 1, {onComplete: pressButton, ease: FlxEase.cubeInOut});
 	}
 
 	public function pressButton(tween:FlxTween)
@@ -95,8 +96,8 @@ class PatternExtendTutorial implements DnaObject implements DnaEventSubscriber e
 		var to_x = FlxG.stage.stageWidth * 2;
 		var to_y = FlxG.stage.stageHeight * 2;
 
-		var start_delay = 1.0;
-		FlxTween.tween(finger_obj, {pos_x: to_x, pos_y: to_y}, 2, {startDelay: start_delay, onComplete: finishTutorial});
+		var start_delay = 0;
+		FlxTween.tween(finger_obj, {pos_x: to_x, pos_y: to_y}, 2, {startDelay: start_delay, onComplete: finishTutorial, ease: FlxEase.cubeInOut});
 	}
 
 	public function finishTutorial(tween:FlxTween)

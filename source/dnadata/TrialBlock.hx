@@ -37,6 +37,7 @@ class TrialBlock
 	 */
 	public function set_locked(value:Bool):Bool
 	{
+		trace("set locked on id:", this.id, "to:", value);
 		trials[0].locked = value;
 		TaskTrials.instance.storeTrialBlocks();
 		return value;
@@ -56,27 +57,64 @@ class TrialBlock
 	 */
 	public function get_done()
 	{
-		var all_trials = DnaDataManager.instance.getTrials();
-		var all_done = true;
-		for (my_trial in trials)
+		var stored_trials = DnaDataManager.instance.getTrials();
+		var my_trials = trials;
+		// trace("get_done lengths:", my_trials.length, stored_trials.length);
+		// if our trials are longer than all the trials they cannot be in there..
+		if (my_trials.length > stored_trials.length)
 		{
-			var trial_found = false;
-			for (stored_trial in all_trials)
+			return false;
+		}
+
+		/**
+		 * we have the stored trials:
+		 * | | | | | | | | | 
+		 * and ours:
+		 * | | | | 
+		 * now we move our trials with the shift to the right and 
+		 * check if the trials are in the stored ones
+		 */
+
+		for (shift in 0...(stored_trials.length - trials.length + 1))
+		{
+			// trace("get_done checking with shift:", shift);
+			var all_done = true;
+			for (trial_index in 0...my_trials.length)
 			{
-				if (matchTrial(my_trial, stored_trial) && stored_trial.done)
+				var stored_trial = stored_trials[trial_index + shift];
+				var my_trial = my_trials[trial_index];
+
+				if (!(matchTrial(my_trial, stored_trial) && stored_trial.done))
 				{
-					trial_found = true;
+					all_done = false;
 					break;
 				}
 			}
 
-			if (trial_found == false)
+			if (all_done == true)
 			{
-				all_done = false;
-				break;
+				return true;
 			}
 		}
-		return all_done;
+		return false;
+	}
+
+	public static function trialsFromStorage(stored:Dynamic):Array<Dynamic>
+	{
+		return stored.trials;
+	}
+
+	public static function idFromStorage(stored:Dynamic):String
+	{
+		return stored.id;
+	}
+
+	/**
+	 * re
+	 */
+	public function toStorageFormat():Dynamic
+	{
+		return {id: this.id, trials: this.trials};
 	}
 
 	/**
@@ -90,6 +128,7 @@ class TrialBlock
 	public function new(trials:Array<Dynamic>, id:String)
 	{
 		this.trials = trials;
+		this.id = id;
 		preview = trials[0].preview;
 		desc_body = trials[0].desc_body;
 		desc_head = trials[0].desc_head;

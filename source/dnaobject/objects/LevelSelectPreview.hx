@@ -20,11 +20,13 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 	public var preview:String = "";
 	public var preview_area:String = "";
 	public var done_overlay:String = "";
+	public var lock_overlay:String = "";
 
 	public var button_obj:DnaButtonObject;
 	public var preview_obj:SpriteObject;
 	public var preview_area_obj:SpriteObject;
 	public var done_overlay_obj:SpriteObject;
+	public var lock_overlay_obj:SpriteObject;
 
 	public var trial_block(default, set):TrialBlock;
 
@@ -41,19 +43,25 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 		this.trial_block = value;
 		this.preview_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview));
 		preview_obj.setAssetPath(trial_block.preview);
-		trace("before iftrial block:", trial_block.locked);
+
+		if (trial_block.locked == true)
+		{
+			trace("locked!");
+			lock_overlay_obj.removeChild(lock_overlay_obj.sprite);
+			lock_overlay_obj.addChild(lock_overlay_obj.sprite);
+			lock_overlay_obj.visible = true;
+			lock_overlay_obj.loadAsset();
+			button_obj.setNextState(new ButtonStateInactive());
+		}
 		if (trial_block.done == true)
 		{
-			trace("in iftrial block:");
 			done_overlay_obj.removeChild(done_overlay_obj.sprite);
 			done_overlay_obj.addChild(done_overlay_obj.sprite);
 			done_overlay_obj.visible = true;
 			done_overlay_obj.loadAsset();
 			button_obj.setNextState(new ButtonStateInactive());
-			trace(this.id, "done_overlay visible");
 		}
 
-		trace("after iftrial block:");
 		return trial_block;
 	}
 
@@ -86,6 +94,7 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 		button_obj.onPressCallback = onButtonPress;
 		this.preview_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview));
 		this.done_overlay_obj = cast this.getParent().getObjectByName(getNestedObjectName(done_overlay));
+		this.lock_overlay_obj = cast this.getParent().getObjectByName(getNestedObjectName(lock_overlay));
 		this.preview_area_obj = cast this.getParent().getObjectByName(getNestedObjectName(preview_area));
 	}
 
@@ -112,6 +121,10 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 		if (Reflect.hasField(jsonFile, "done_overlay"))
 		{
 			this.done_overlay = jsonFile.done_overlay;
+		}
+		if (Reflect.hasField(jsonFile, "lock_overlay"))
+		{
+			this.lock_overlay = jsonFile.lock_overlay;
 		}
 	}
 

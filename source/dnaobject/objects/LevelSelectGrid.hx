@@ -210,7 +210,7 @@ class LevelSelectGrid implements DnaObject extends DnaObjectBase
 		{
 			var preview:LevelSelectPreview = cast DnaObjectFactory.create("LevelSelectPreview");
 			this.getParent().addObject(preview);
-			Timer.measure(() -> preview.setupNestedObjects());
+			preview.setupNestedObjects();
 			preview.onReady();
 			preview.moveTo(FlxG.stage.width, FlxG.stage.height);
 			preview.setTrialBlock(trialBlocks[trial_block_index]);

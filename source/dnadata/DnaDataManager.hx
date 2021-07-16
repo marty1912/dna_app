@@ -26,6 +26,7 @@ class DnaDataManager
 	public static final ALL_MONTI_PARTS_KEY:String = "all_monti_parts";
 	public static final SAVE_ALL_BEFORE:String = "SAVE";
 	public static final REDIRECT:String = "REDIRECT";
+	public static final UNLOCK_TASK:String = "UNLOCK_TASK";
 
 	public static final SCREEN_W:String = "screen_w";
 	public static final SCREEN_H:String = "screen_h";
@@ -251,7 +252,6 @@ class DnaDataManager
 
 	/**
 	 * sets all trials that have come so far to finished = true
-	 * TODO: permanently store this stuff!
 	 * @param max_index - the index up to which we want to set finished
 	 */
 	public function saveAllBefore(max_index:Int):Void
@@ -265,6 +265,7 @@ class DnaDataManager
 			index++;
 		}
 		this.storeData(TRIALS_KEY, m_trials);
+		TaskTrials.instance.storeTrialBlocks();
 		return;
 	}
 
@@ -293,7 +294,7 @@ class DnaDataManager
 		while (index < m_trials.length)
 		{
 			var cur_trial:Dynamic = m_trials[index];
-			trace("current_trial:", cur_trial.type);
+			trace("current_trial:", cur_trial.type, "done:", cur_trial.done);
 			if (cur_trial.done == false)
 			{
 				if (cur_trial.type == SAVE_ALL_BEFORE)
@@ -310,6 +311,14 @@ class DnaDataManager
 					saveAllBefore(index);
 					return cur_trial.to;
 				}
+				else if (cur_trial.type == UNLOCK_TASK)
+				{
+					trace("now unlocking:", cur_trial.id);
+					cur_trial.done = true;
+					TaskTrials.instance.unlockTrialBlock(cur_trial.id);
+					return getNextTrials();
+				}
+
 				return cur_trial;
 			}
 			index++;

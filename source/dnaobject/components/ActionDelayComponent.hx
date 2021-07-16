@@ -60,11 +60,11 @@ class ActionDelayComponent implements DnaComponent extends DnaActionBase
 		params.push(this.m_delay_time);
 		this.getParent().getParent().eventManager.broadcastEvent(this.update_event_name, params);
 
-		trace("delay ", m_delay_time, "elapsed:", m_elapsed_time, "value:", (this.m_delay_time >= this.m_elapsed_time));
+		// trace("delay ", m_delay_time, "elapsed:", m_elapsed_time, "value:", (this.m_delay_time >= this.m_elapsed_time));
 		if (this.m_delay_time <= this.m_elapsed_time)
 		{
 			// reset time.
-			trace("delay fin");
+			// trace("delay fin");
 			this.finishAction();
 		}
 	}

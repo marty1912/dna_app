@@ -31,17 +31,7 @@ class TaskTrials
 
 	public function init()
 	{
-		// retrieveTrialBlocks();
-		if (trial_blocks == null)
-		{
-			trial_blocks = new Array<TrialBlock>();
-			for (path in task_block_paths)
-			{
-				var json = readTrialsFromFile(path);
-				var trial_block = new TrialBlock(json, path);
-				trial_blocks.push(trial_block);
-			}
-		}
+		retrieveTrialBlocks();
 		storeTrialBlocks();
 	}
 
@@ -52,7 +42,12 @@ class TaskTrials
 	 */
 	public function storeTrialBlocks()
 	{
-		DnaDataManager.instance.storeData(TRIALBLOCK_STORAGE_ID, this.trial_blocks);
+		var blocks_storage = new Array<Dynamic>();
+		for (block in trial_blocks)
+		{
+			blocks_storage.push(block.toStorageFormat());
+		}
+		DnaDataManager.instance.storeData(TRIALBLOCK_STORAGE_ID, {trial_blocks: this.trial_blocks});
 	}
 
 	/**
@@ -60,7 +55,32 @@ class TaskTrials
 	 */
 	public function retrieveTrialBlocks()
 	{
-		// this.trial_blocks = cast DnaDataManager.instance.retrieveData(TRIALBLOCK_STORAGE_ID);
+		var trials:Dynamic = DnaDataManager.instance.retrieveData(TRIALBLOCK_STORAGE_ID);
+
+		if (trials == null)
+		{
+			trace("creating new trialBlocks");
+			trial_blocks = new Array<TrialBlock>();
+			for (path in task_block_paths)
+			{
+				var json = readTrialsFromFile(path);
+				var trial_block = new TrialBlock(json, path);
+				trial_blocks.push(trial_block);
+			}
+		}
+		else
+		{
+			trace("using stored trialBlocks");
+			this.trial_blocks = new Array<TrialBlock>();
+			var stored_blocks:Array<Dynamic> = trials.trial_blocks;
+			for (stored in stored_blocks)
+			{
+				var id = TrialBlock.idFromStorage(stored);
+				var json = TrialBlock.trialsFromStorage(stored);
+				var block = new TrialBlock(json, id);
+				this.trial_blocks.push(block);
+			}
+		}
 	}
 
 	public final probCode:String = "assets/data/Trials/ProbCode.json";
@@ -83,6 +103,25 @@ class TaskTrials
 		"assets/data/Trials/lockedTask.json", // "assets/data/Trials/doneTask.json"
 		"assets/data/Trials/TEST_TASK.json" // "assets/data/Trials/doneTask.json"
 	];
+
+	/**
+	 * unlocks the trial block. 
+	 * @param id 
+	 * @return Bool true if unlocked
+	 * false if not found.
+	 */
+	public function unlockTrialBlock(id:String):Bool
+	{
+		for (block in this.trial_blocks)
+		{
+			if (block.id == id)
+			{
+				block.locked = false;
+				return true;
+			}
+		}
+		return false;
+	}
 
 	/**
 	 * this function returns all the trials in random order as a Dynamic .

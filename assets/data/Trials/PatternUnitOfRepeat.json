@@ -1,5 +1,5 @@
 [	
-    { "type": "PatternUnitOfRepeatTutorial_01", "name":"SpeedTest", "preview":"assets/images/level_preview/PatternUnitOfRepeatPreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
+    { "type": "PatternUnitOfRepeatTutorial_01", "name":"SpeedTest","locked":true, "preview":"assets/images/level_preview/PatternUnitOfRepeatPreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
     { "type": "PatternUnitOfRepeatTutorial_02", "name":"SpeedTest", "preview":"assets/images/level_preview/PatternUnitOfRepeatPreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
 
     { "type": "PatternUnitOfRepeatPractice", "name":"SpeedTest", "preview":"assets/images/level_preview/PatternUnitOfRepeatPreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": [

@@ -1,6 +1,6 @@
 [	
 	
-    { "type": "PatternGeneralizeTutorial_01", "name":"SpeedTest", "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
+    { "type": "PatternGeneralizeTutorial_01", "name":"SpeedTest","locked":true, "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
     { "type": "PatternGeneralizeTutorial_02", "name":"SpeedTest", "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
 
     { "type": "PatternGeneralizePractice", "name":"SpeedTest", "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": [
@@ -37,6 +37,7 @@
 		"saved": false
 	},
 
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/PatternUnitOfRepeat.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
 	{ "type": "ShowProgressState", "done": false, "saved": false },
 	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "UnlockState" } }
 ]
