@@ -73,6 +73,19 @@ class RoundedRectangleObject implements DnaObject extends DnaObjectBase
 	private var m_scale_from_screen_width:Bool = false;
 	private var m_scale_from_screen_height:Bool = false;
 
+	public var visible(get, set):Bool;
+
+	public function set_visible(value:Bool):Bool
+	{
+		this.shape.visible = value;
+		return value;
+	}
+
+	public function get_visible():Bool
+	{
+		return this.shape.visible;
+	}
+
 	public function setupShape()
 	{
 		this.removeChild(shape);

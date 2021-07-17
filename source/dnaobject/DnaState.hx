@@ -70,7 +70,10 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 		// this.fromFile(this.m_json_file);
 		for (obj in this.getObjectList())
 		{
-			obj.onReady();
+			if (!obj.ready)
+			{
+				obj.onReady();
+			}
 		}
 		eventManager.broadcastEvent("onCreate");
 		var t_end = Timer.stamp();
@@ -107,6 +110,19 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 				this.add(child);
 			}
 		 */
+	}
+
+	public function printAllObjectNames()
+	{
+		trace("---------------------------------------");
+		var index = 0;
+		for (name in getAllObjectNames())
+		{
+			trace(index, "name:", name);
+			index++;
+		}
+
+		trace("---------------------------------------");
 	}
 
 	public function getAllObjectNames():Array<String>
@@ -198,34 +214,39 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 	 * etc
 	 *
 	 */
-	public function fromFile(jsonString:String)
+	public function fromFile(jsonString:String):Array<DnaObject>
 	{
 		var jsonFile = Json.parse(jsonString);
 
 		// assert(jsonFile.type == this.state_type);
+		var created_objects = new Array<DnaObject>();
 		var objects:Array<Dynamic> = jsonFile.objects;
 		for (obj in objects)
 		{
-			objectFromFile(obj);
+			created_objects = created_objects.concat(objectFromFile(obj));
 		}
+		return created_objects;
 	}
 
 	/**
 	 * adds a object group from file
 	 * @param path 
 	 */
-	public function objectFromFile(obj:Dynamic)
+	public function objectFromFile(obj:Dynamic):Array<DnaObject>
 	{
+		var created_objects = new Array<DnaObject>();
 		if (obj.type == DnaConstants.OBJECT_GROUP)
 		{
-			fromFile(Assets.getText(obj.path));
+			created_objects = created_objects.concat(fromFile(Assets.getText(obj.path)));
 		}
 		else
 		{
 			var to_add = DnaObjectFactory.create(obj.type);
 			this.addObject(to_add);
 			to_add.fromFile(obj);
+			created_objects.push(to_add);
 		}
+		return created_objects;
 	}
 
 	private var m_onload_fired:Bool = false;

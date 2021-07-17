@@ -395,6 +395,22 @@ else if (type == 'ForegroundComponent')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/ForegroundComponent.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'StateMachineComponent')
+{
+	comp = new StateMachineComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/StateMachineComponent.json"));
+}
+
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'DotsCtrlPracticeComponent')
+{
+	comp = new DotsCtrlPracticeComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/DotsCtrlPracticeComponent.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -406,6 +422,14 @@ else if (type == 'ForegroundComponent')
 		return comp;
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

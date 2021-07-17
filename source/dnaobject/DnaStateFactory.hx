@@ -470,6 +470,13 @@ else if (type == "PatternNumbersPractice")
 			state = new DnaState("PatternNumbersPractice");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternNumbersPractice.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "TestState")
+		{
+			state = new DnaState("TestState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/TestState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -482,6 +489,14 @@ else if (type == "PatternNumbersPractice")
 		return state;
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

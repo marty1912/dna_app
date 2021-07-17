@@ -51,7 +51,8 @@ class LevelSelectPreview implements DnaObject implements DnaEventSubscriber impl
 			lock_overlay_obj.addChild(lock_overlay_obj.sprite);
 			lock_overlay_obj.visible = true;
 			lock_overlay_obj.loadAsset();
-			button_obj.setNextState(new ButtonStateInactive());
+			// DEBUG:
+			// button_obj.setNextState(new ButtonStateInactive());
 		}
 		if (trial_block.done == true)
 		{

@@ -400,7 +400,25 @@ class DnaObjectFactory
 			obj = new PatternDisplay();
 			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternDisplayCupboard.json"));
 		}
-		// INSERT_HERE
+		// // AUTOMATICALLY GENERATED
+else if (type == 'DotsDisplay')
+{
+	obj = new DotsDisplay();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsDisplay.json"));
+}
+// // AUTOMATICALLY GENERATED
+else if (type == 'DotsTaskObject')
+{
+	obj = new DotsTaskObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsTaskObject.json"));
+}
+// // AUTOMATICALLY GENERATED
+else if (type == 'DotsCompCtrl')
+{
+	obj = new DotsCompCtrl();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsCompCtrl.json"));
+}
+// INSERT_HERE
 		else
 		{
 			// trace(type);
@@ -413,6 +431,14 @@ class DnaObjectFactory
 		return obj;
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

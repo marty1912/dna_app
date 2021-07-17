@@ -23,6 +23,13 @@ class DnaObjectBase implements IFlxDestroyable
 {
 	public var log_color:String = "0xFFFFFF";
 
+	public var ready(get, null):Bool = false;
+
+	public function get_ready():Bool
+	{
+		return ready;
+	}
+
 	/**
 	 * this is the name of the object. it is used so we are able to find it
 	 * in case we need to do something with it
@@ -618,8 +625,8 @@ class DnaObjectBase implements IFlxDestroyable
 				// the json looks like this:
 
 				// "key" : "value/nested"
-				var nested_replace_regex = new EReg(": *\"" + name + "/", "g");
-				objects_str = nested_replace_regex.replace(objects_str, ":\"" + nest_name + "/");
+				// var nested_replace_regex = new EReg(": *\"" + name + "/", "g");
+				// objects_str = nested_replace_regex.replace(objects_str, ":\"" + nest_name + "/");
 
 				// or like this:
 				// "key" : "value"
@@ -632,7 +639,7 @@ class DnaObjectBase implements IFlxDestroyable
 				var replace_with = Reflect.field(this.json_file, parent_field_ref_regex.matched(1));
 				if (replace_with == null)
 				{
-					trace("field not found:", parent_field_ref_regex.matched(1), "using default from archetype.");
+					// trace("field not found:", parent_field_ref_regex.matched(1), "using default from archetype.");
 					// hope that there is a default value..
 					replace_with = Reflect.field(this.archetype_json_file, parent_field_ref_regex.matched(1));
 				}
@@ -641,7 +648,7 @@ class DnaObjectBase implements IFlxDestroyable
 				{
 					replace_with = "\"" + replace_with + "\"";
 				}
-				trace("value:", parent_field_ref_regex.matched(1), "replace with:", replace_with);
+				// trace("value:", parent_field_ref_regex.matched(1), "replace with:", replace_with);
 				objects_str = parent_field_ref_regex.replace(objects_str, Std.string(replace_with));
 			}
 
@@ -659,8 +666,14 @@ class DnaObjectBase implements IFlxDestroyable
 
 		for (obj in objects_archetypes)
 		{
-			this.getParent().objectFromFile(obj);
-			this.nested_objects.push(getParent().getObjectByName(obj.name));
+			var created_obj = this.getParent().objectFromFile(obj);
+
+			if (getParent().getObjectByName(obj.name) == null)
+			{
+				trace("object not found:", obj.name);
+				getParent().printAllObjectNames();
+			}
+			this.nested_objects = this.nested_objects.concat(created_obj);
 		}
 	}
 
@@ -674,9 +687,19 @@ class DnaObjectBase implements IFlxDestroyable
 	 */
 	public function onReady():Void
 	{
+		for (obj in this.nested_objects)
+		{
+			trace("set ready on:", obj.obj_name);
+			if (!obj.ready)
+			{
+				obj.onReady();
+			}
+		}
+
 		for (comp in this.m_component_list)
 		{
 			comp.onReady();
 		}
+		this.ready = true;
 	}
 }
