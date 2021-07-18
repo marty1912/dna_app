@@ -3,7 +3,6 @@
     "objects": [
         { "type": "TaskBackgroundObject" },
         { "type": "DotsTaskObject", "name": "TaskHandler", "pos_target":""},
-        { "type": "DotsCompCtrl", "name": "dotsctrl","dots_disp":"TaskHandler","fixation":"fixation", "pos_target":""}
-
+        { "type": "DotsCompTutorial", "name": "dotstut","dots_disp":"TaskHandler", "pos_target":""}
     ]
 }

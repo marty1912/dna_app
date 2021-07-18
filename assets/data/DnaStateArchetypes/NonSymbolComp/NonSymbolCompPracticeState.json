@@ -24,7 +24,7 @@
  
 
         { "type": "DotsTaskObject", "name": "TaskHandler", "pos_target":""},
-        { "type": "DotsCompCtrl", "name": "dotsctrl","dots_disp":"TaskHandler","fixation":"fixation", "pos_target":"","components":[{"type":"DotsCtrlPracticeComponent","action_correct":"a_correct","action_incorrect":"a_incorrect","action_timeout":"a_timeout"}]},
+        { "type": "DotsCompCtrl", "name": "dotsctrl","dots_disp":"TaskHandler","timer":"TotalTime","fixation":"fixation", "pos_target":"","components":[{"type":"DotsCtrlPracticeComponent","action_correct":"a_correct","action_incorrect":"a_incorrect","action_timeout":"a_timeout"}]},
  
         { "type": "TimerObject", "name": "TotalTime" }
 

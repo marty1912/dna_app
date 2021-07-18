@@ -477,6 +477,34 @@ else if (type == "TestState")
 			state = new DnaState("TestState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/TestState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NonSymbolCompTutorial_02")
+		{
+			state = new DnaState("NonSymbolCompTutorial_02");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbolCompTutorial_02.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NonSymbolCompTutorial_03")
+		{
+			state = new DnaState("NonSymbolCompTutorial_03");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbolCompTutorial_03.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NonSymbolCompPracticeStateNoTime")
+		{
+			state = new DnaState("NonSymbolCompPracticeStateNoTime");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbolCompPracticeStateNoTime.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NonSymbolCompTutorial_01")
+		{
+			state = new DnaState("NonSymbolCompTutorial_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbolCompTutorial_01.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -489,6 +517,25 @@ else if (type == "TestState")
 		return state;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -42,6 +42,7 @@ class DotsDisplay implements DnaObject extends DnaObjectBase
 		this.dots_obj = cast getParent().getObjectByName(getNestedObjectName(dots));
 		this.noise_obj = cast getParent().getObjectByName(getNestedObjectName(noise));
 		this.background_obj = cast getParent().getObjectByName(getNestedObjectName(background));
+		this.petri_dish_top_obj = cast getParent().getObjectByName(getNestedObjectName(petri_dish_top));
 		this.area_obj = cast getParent().getObjectByName(getNestedObjectName(area));
 
 		state_machine = cast DnaComponentFactory.create("StateMachineComponent");
@@ -91,6 +92,9 @@ class DotsDisplay implements DnaObject extends DnaObjectBase
 	public var background:String;
 	public var background_obj:SpriteObject;
 
+	public var petri_dish_top:String;
+	public var petri_dish_top_obj:SpriteObject;
+
 	/**
 	 * override so we can have parameters like random order and stuff.
 	 * @param jsonFile 
@@ -111,6 +115,10 @@ class DotsDisplay implements DnaObject extends DnaObjectBase
 		if (Reflect.hasField(jsonFile, "background"))
 		{
 			this.background = cast jsonFile.background;
+		}
+		if (Reflect.hasField(jsonFile, "petri_dish_top"))
+		{
+			this.petri_dish_top = cast jsonFile.petri_dish_top;
 		}
 		if (Reflect.hasField(jsonFile, "area"))
 		{
@@ -145,6 +153,7 @@ class DotsStateHidden implements IState
 	{
 		dots_disp.setDotsCallback = this.setDots;
 		dots_disp.background_obj.sprite.alpha = 0;
+		dots_disp.petri_dish_top_obj.sprite.alpha = 0;
 		dots_disp.dots_obj.sprite.alpha = 0;
 		dots_disp.noise_obj.sprite.alpha = 0;
 		dots_disp.area_obj.visible = false;
@@ -154,6 +163,7 @@ class DotsStateHidden implements IState
 	{
 		dots_disp.setDotsCallback = null;
 		dots_disp.background_obj.sprite.alpha = 1;
+		dots_disp.petri_dish_top_obj.sprite.alpha = 1;
 		dots_disp.dots_obj.sprite.alpha = 1;
 		dots_disp.noise_obj.sprite.alpha = 1;
 	}
@@ -189,6 +199,7 @@ class DotsStateVisible implements IState
 	{
 		dots_disp.setDotsCallback = this.setDots;
 		dots_disp.background_obj.sprite.alpha = 1;
+		dots_disp.petri_dish_top_obj.sprite.alpha = 1;
 		dots_disp.dots_obj.sprite.alpha = 1;
 		dots_disp.noise_obj.sprite.alpha = 0;
 		dots_disp.area_obj.visible = true;
@@ -198,6 +209,7 @@ class DotsStateVisible implements IState
 	{
 		dots_disp.setDotsCallback = null;
 		dots_disp.background_obj.sprite.alpha = 1;
+		dots_disp.petri_dish_top_obj.sprite.alpha = 1;
 		dots_disp.dots_obj.sprite.alpha = 1;
 		dots_disp.noise_obj.sprite.alpha = 1;
 	}
@@ -233,6 +245,7 @@ class DotsStateNoise implements IState
 	{
 		dots_disp.setDotsCallback = this.setDots;
 		dots_disp.background_obj.sprite.alpha = 0;
+		dots_disp.petri_dish_top_obj.sprite.alpha = 0;
 		dots_disp.dots_obj.sprite.alpha = 0;
 		dots_disp.noise_obj.sprite.alpha = 1;
 		dots_disp.area_obj.visible = true;
@@ -242,6 +255,7 @@ class DotsStateNoise implements IState
 	{
 		dots_disp.setDotsCallback = null;
 		dots_disp.background_obj.sprite.alpha = 1;
+		dots_disp.petri_dish_top_obj.sprite.alpha = 1;
 		dots_disp.dots_obj.sprite.alpha = 1;
 		dots_disp.noise_obj.sprite.alpha = 1;
 	}
@@ -277,6 +291,7 @@ class DotsStateAfterNoise implements IState
 	{
 		dots_disp.setDotsCallback = this.setDots;
 		dots_disp.background_obj.sprite.alpha = 0;
+		dots_disp.petri_dish_top_obj.sprite.alpha = 0;
 		dots_disp.dots_obj.sprite.alpha = 0;
 		dots_disp.noise_obj.sprite.alpha = 0;
 		dots_disp.area_obj.visible = true;
@@ -286,6 +301,7 @@ class DotsStateAfterNoise implements IState
 	{
 		dots_disp.setDotsCallback = null;
 		dots_disp.background_obj.sprite.alpha = 1;
+		dots_disp.petri_dish_top_obj.sprite.alpha = 1;
 		dots_disp.dots_obj.sprite.alpha = 1;
 		dots_disp.noise_obj.sprite.alpha = 1;
 	}

@@ -418,6 +418,18 @@ else if (type == 'DotsCompCtrl')
 	obj = new DotsCompCtrl();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsCompCtrl.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'DotsCompTutorial')
+{
+	obj = new DotsCompTutorial();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsCompTutorial.json"));
+}
+// // AUTOMATICALLY GENERATED
+else if (type == 'DotsCompTutorial_02')
+{
+	obj = new DotsCompTutorial_02();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsCompTutorial_02.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -431,6 +443,25 @@ else if (type == 'DotsCompCtrl')
 		return obj;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

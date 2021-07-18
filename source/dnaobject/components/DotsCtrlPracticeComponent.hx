@@ -54,8 +54,11 @@ class DotsCtrlPracticeComponent implements DnaComponent extends DnaComponentBase
 	{
 		if (dots_ctrl.dots_disp_obj.isCorrect() == DnaConstants.TASK_CORRECT)
 		{
-			dots_ctrl.loadTrial();
-			action_correct_obj.startQueue(callback);
+			action_correct_obj.startQueue(function()
+			{
+				dots_ctrl.loadTrial();
+				callback();
+			});
 		}
 		else if (dots_ctrl.dots_disp_obj.isCorrect() == DnaConstants.TASK_INCORRECT)
 		{

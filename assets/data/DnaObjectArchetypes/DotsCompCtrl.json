@@ -6,6 +6,7 @@
 "action_init":"ActionHandler_init",
 "action_fin":"ActionHandler_Fin",
 "trial_handler":"trialz",
+"timer":"TotalTime",
 "objects":[
         { "type": "TrialHandlerObject","name": "trialz"},
         { "type": "ActionHandlerObject", "name": "ActionHandler_Fin",

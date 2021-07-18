@@ -18,6 +18,7 @@ import dnaobject.objects.DnaButtonObject.ButtonStateInactive;
 import dnaobject.objects.DnaButtonObject.ButtonStateNormal;
 import dnaobject.objects.DotsTaskObject.DotsObjectStateHidden;
 import dnaobject.objects.DotsTaskObject;
+import dnaobject.objects.dotcompstates.no_time.Initial;
 import flixel.addons.plugin.taskManager.FlxTask;
 import flixel.addons.ui.FlxUIState;
 import flixel.math.FlxRandom;
@@ -100,14 +101,25 @@ class DotsCompCtrl implements DnaObject implements DnaEventSubscriber extends Dn
 
 		dots_disp_obj = cast this.getParent().getObjectByName((dots_disp));
 
+		timer_obj = cast this.getParent().getObjectByName((timer));
+
 		getParent().eventManager.addSubscriberForEvent(this, DnaConstants.TASK_ANSWERED_EVENT);
 		trial_handler_obj.loadNextTrial();
 
 		state_machine = cast DnaComponentFactory.create("StateMachineComponent");
 		this.addComponent(cast state_machine);
-		state_machine.setNextState(new InitialState());
+		if (this.states == "tutorial")
+		{
+			state_machine.setNextState(new Initial());
+		}
+		else
+		{
+			state_machine.setNextState(new InitialState());
+		}
 	}
 
+	public var states:String;
+	public var timer:String;
 	public var action_load:String;
 	public var action_fin:String;
 	public var action_init:String;
@@ -118,6 +130,7 @@ class DotsCompCtrl implements DnaObject implements DnaEventSubscriber extends Dn
 	public var action_init_obj:ActionHandlerObject;
 	public var trial_handler_obj:TrialHandlerObject;
 	public var dots_disp_obj:DotsTaskObject;
+	public var timer_obj:TimerObject;
 
 	/**
 	 * override so we can have parameters like random order and stuff.
@@ -146,6 +159,15 @@ class DotsCompCtrl implements DnaObject implements DnaEventSubscriber extends Dn
 		if (Reflect.hasField(jsonFile, "dots_disp"))
 		{
 			dots_disp = jsonFile.dots_disp;
+		}
+
+		if (Reflect.hasField(jsonFile, "states"))
+		{
+			states = jsonFile.states;
+		}
+		if (Reflect.hasField(jsonFile, "timer"))
+		{
+			timer = jsonFile.timer;
 		}
 	}
 }
@@ -266,6 +288,7 @@ class VisibleState implements IState
 		trace("visible State enter");
 		dots_ctrl.dots_disp_obj.state_machine.setNextState(new DotsObjectStateNormal());
 		timer.start(0.5);
+		dots_ctrl.timer_obj.resetTime();
 		dots_ctrl.onCorrectCallback = this.onAnswered;
 		dots_ctrl.onIncorrectCallback = this.onAnswered;
 	}
@@ -359,7 +382,9 @@ class AfterNoiseState implements IState
 	{
 		trace("afternoise State enter");
 		dots_ctrl.dots_disp_obj.state_machine.setNextState(new DotsObjectStateAfterNoise());
-		timer.start(0.5);
+		// timer.start(0.5);
+		// kids need more time i guess.
+		timer.start(1.5);
 		dots_ctrl.onCorrectCallback = this.onAnswered;
 		dots_ctrl.onIncorrectCallback = this.onAnswered;
 	}
@@ -399,6 +424,9 @@ class FeedbackState implements IState
 	public function enter():Void
 	{
 		trace("feedback State enter");
+
+		dots_ctrl.timer_obj.stopTime();
+
 		dots_ctrl.dots_disp_obj.state_machine.setNextState(new DotsObjectStateHidden());
 		if (dots_ctrl.feedbackCallback != null)
 		{

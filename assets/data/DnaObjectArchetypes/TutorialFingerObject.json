@@ -6,5 +6,6 @@
     "keep_ratio":true,
     "scale_from_screen_height":true,
     "scale_from_screen_width":true,
-    "origin_where":"mid_top"
+    "origin_where":"mid_top",
+    "components":[{"type":"ForegroundComponent","oneshot":false}]
 }

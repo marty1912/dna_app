@@ -31,9 +31,23 @@ import haxe.Timer;
 class TimerObject implements DnaObject implements TaskObject extends DnaObjectBase
 {
 	public var time_update_loop:Float = 0;
-	public var time_timer:Float = 0;
+	public var time_update_loop_stopped:Float = 0;
 	public var timestamp_start:Float = 0;
 	public var timestamp_end:Float = 0;
+
+	@:isVar
+	private var time_stopped(get, set):Bool = false;
+
+	private function get_time_stopped():Bool
+	{
+		return time_stopped;
+	}
+
+	private function set_time_stopped(value:Bool):Bool
+	{
+		time_stopped = value;
+		return value;
+	}
 
 	/**
 		* isCorrect()
@@ -49,11 +63,23 @@ class TimerObject implements DnaObject implements TaskObject extends DnaObjectBa
 	 */
 	public function getData():Dynamic
 	{
-		timestamp_end = Timer.stamp();
-		time_timer = timestamp_end - timestamp_start;
+		var t_update_loop:Float;
+		var t_timer:Float;
+		if (time_stopped)
+		{
+			t_timer = timestamp_end - timestamp_start;
+			t_update_loop = time_update_loop_stopped;
+		}
+		else
+		{
+			timestamp_end = Timer.stamp();
+
+			t_timer = timestamp_end - timestamp_start;
+			t_update_loop = time_update_loop;
+		}
 		var current_trial:Dynamic = {
-			time_update_loop: this.time_update_loop
-			// time_timer: this.time_timer
+			time_update_loop: t_update_loop,
+			time_timer: t_timer
 		};
 
 		return current_trial;
@@ -67,9 +93,7 @@ class TimerObject implements DnaObject implements TaskObject extends DnaObjectBa
 	 */
 	public function setParams(params:Dynamic):Void
 	{
-		time_update_loop = 0;
-		time_timer = 0;
-		timestamp_start = Timer.stamp();
+		resetTime();
 	}
 
 	/**
@@ -78,6 +102,20 @@ class TimerObject implements DnaObject implements TaskObject extends DnaObjectBa
 	public function new()
 	{
 		super('TimerObject');
+	}
+
+	public function resetTime()
+	{
+		time_update_loop = 0;
+		timestamp_start = Timer.stamp();
+		time_stopped = false;
+	}
+
+	public function stopTime()
+	{
+		time_update_loop_stopped = time_update_loop;
+		timestamp_end = Timer.stamp();
+		time_stopped = true;
 	}
 
 	/**
@@ -99,7 +137,7 @@ class TimerObject implements DnaObject implements TaskObject extends DnaObjectBa
 	 */
 	override public function update(elapsed):Void
 	{
-		time_update_loop += elapsed;
 		super.update(elapsed);
+		time_update_loop += elapsed;
 	}
 }

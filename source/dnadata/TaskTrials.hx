@@ -86,26 +86,24 @@ class TaskTrials
 	public final probCode:String = "assets/data/Trials/ProbCode.json";
 	public final finalBlock:String = "assets/data/Trials/FinalStudentTrial.json";
 
-	public final task_block_paths:Array<String> = ["assets/data/Trials/NonSymbolCompTrialsTest.json",];
+	public final task_block_paths:Array<String> = [
+		"assets/data/Trials/ArithmeticTrials.json",
+		"assets/data/Trials/NonSymbolCompTrials.json",
+		"assets/data/Trials/NumberlineTrials.json",
+		"assets/data/Trials/MathAnxietyTrials.json",
+		"assets/data/Trials/OrdTrials.json",
+		"assets/data/Trials/SymbolicCompTrials.json",
+		"assets/data/Trials/SpeedTrials.json",
+		"assets/data/Trials/ProbCode.json",
+		// "assets/data/Trials/ezFinishTask.json",
+		"assets/data/Trials/PatternExtend.json",
+		"assets/data/Trials/PatternGeneralize.json",
+		"assets/data/Trials/PatternUnitOfRepeat.json",
+		"assets/data/Trials/PatternNumbers.json",
+		"assets/data/Trials/lockedTask.json", // "assets/data/Trials/doneTask.json"
+		"assets/data/Trials/TEST_TASK.json" // "assets/data/Trials/doneTask.json"
+	];
 
-	/*
-			"assets/data/Trials/ArithmeticTrials.json",
-			"assets/data/Trials/NonSymbolCompTrials.json",
-			"assets/data/Trials/NumberlineTrials.json",
-			"assets/data/Trials/MathAnxietyTrials.json",
-			"assets/data/Trials/OrdTrials.json",
-			"assets/data/Trials/SymbolicCompTrials.json",
-			"assets/data/Trials/SpeedTrials.json",
-			"assets/data/Trials/ProbCode.json",
-			// "assets/data/Trials/ezFinishTask.json",
-			"assets/data/Trials/PatternExtend.json",
-			"assets/data/Trials/PatternGeneralize.json",
-			"assets/data/Trials/PatternUnitOfRepeat.json",
-			"assets/data/Trials/PatternNumbers.json",
-			"assets/data/Trials/lockedTask.json", // "assets/data/Trials/doneTask.json"
-			"assets/data/Trials/TEST_TASK.json" // "assets/data/Trials/doneTask.json"
-		];
-	 */
 	/**
 	 * unlocks the trial block. 
 	 * @param id 

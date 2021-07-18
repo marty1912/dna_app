@@ -3,7 +3,7 @@
     "objects": [
         { "type": "TaskBackgroundObject" },
         { "type": "DotsTaskObject", "name": "TaskHandler", "pos_target":""},
-        { "type": "DotsCompCtrl", "name": "dotsctrl","dots_disp":"TaskHandler","fixation":"fixation", "pos_target":""},
+        { "type": "DotsCompCtrl", "name": "dotsctrl","dots_disp":"TaskHandler","fixation":"fixation", "pos_target":"","timer":"TotalTime"},
 
         { "type": "TimerObject", "name": "TotalTime" }
 
