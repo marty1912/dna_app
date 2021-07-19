@@ -1,4 +1,15 @@
 [	
+	{ "type": "SymbolicNumberComparisonState", "preview":"assets/images/level_preview/TestTask.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "name":"DotComp", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": [
+			
+			[{ "name": "TaskHandler", "params": { "img_left": "assets/images/dots/id_0_dots_5.png", "img_right": "assets/images/dots/id_7_dots_12.png", "solution": "assets/images/dots/id_7_dots_12.png","additional_info": {"left_num": 5, "right_num": 12, "solution": 12, "direction": "Right", "distance": 7, "ratio": 2.4, "bucket": 4} } }, { "name": "TotalTime" }],
+			[{ "name": "TaskHandler", "params": { "img_left": "assets/images/dots/id_0_dots_5.png", "img_right": "assets/images/dots/id_8_dots_13.png", "solution": "assets/images/dots/id_8_dots_13.png","additional_info": {"left_num": 5, "right_num": 13, "solution": 13, "direction": "Right", "distance": 8, "ratio": 2.6, "bucket": 4} } }, { "name": "TotalTime" }],
+			[{ "name": "TaskHandler", "params": { "img_left": "assets/images/dots/id_0_dots_5.png", "img_right": "assets/images/dots/id_9_dots_14.png", "solution": "assets/images/dots/id_9_dots_14.png","additional_info": {"left_num": 5, "right_num": 14, "solution": 14, "direction": "Right", "distance": 9, "ratio": 2.8, "bucket": 4} } }, { "name": "TotalTime" }],
+			[{ "name": "TaskHandler", "params": { "img_left": "assets/images/dots/id_0_dots_5.png", "img_right": "assets/images/dots/id_10_dots_15.png", "solution": "assets/images/dots/id_10_dots_15.png","additional_info": {"left_num": 5, "right_num": 15, "solution": 15, "direction": "Right", "distance": 10, "ratio": 3.0, "bucket": 4} } }, { "name": "TotalTime" }],
+		[{ "name": "TaskHandler", "params": { "img_left": "assets/images/dots/id_15_dots_20.png", "img_right": "assets/images/dots/id_14_dots_19.png", "solution": "assets/images/dots/id_15_dots_20.png","additional_info": {"left_num": 20, "right_num": 19, "solution": 20, "direction": "Left", "distance": 1, "ratio": 1.0526315789473701, "bucket": 1} } }, { "name": "TotalTime" }]
+
+
+		]
+	},
 	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/lockedTask.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
 	{ "type": "SAVE", "done": false, "saved": false },
 	{ "type": "ShowProgressState", "done": false, "saved": false },

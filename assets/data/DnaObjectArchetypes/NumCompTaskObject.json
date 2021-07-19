@@ -1,0 +1,26 @@
+{"type":"DotsTaskObject",
+"name":"dots_disp",
+"pos_target":"",
+"dots_left":"dots_left",
+"dots_right":"dots_right",
+"button_left":"btn_left",
+"button_right":"btn_right",
+"fixation":"fixation",
+"objects":[
+
+
+        { "type": "SpriteObject", "name": "LeftScreenhalf", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "" }] },
+        { "type": "SpriteObject", "name": "RightScreenhalf", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "" }] },
+
+        { "type": "SpriteObject", "name": "LeftPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_x": 0.3, "scale_y": 400, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "LeftScreenhalf" }] },
+        { "type": "SpriteObject", "name": "RightPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_x": 0.3, "scale_y": 400, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "RightScreenhalf" }] },
+
+        { "type": "EmptyButtonObject", "name": "btn_left","path":"assets/gui_elements/buttonInvisible.png", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "LeftScreenhalf" }, { "type":"ButtonScaleComponent", "target":"LeftScreenhalf" } ,{"type":"UserButtonComponent"}] },
+        { "type": "EmptyButtonObject", "name": "btn_right","path":"assets/gui_elements/buttonInvisible.png", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "RightScreenhalf" }, { "type":"ButtonScaleComponent", "target":"RightScreenhalf" } ,{"type":"UserButtonComponent"}] },
+
+
+        { "type": "SpriteObject", "name": "fixation", "asset_path": "assets/images/fixation_cross.png", "scale_x": 1, "scale_y": 1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "" }] },
+        { "type": "NumberDisplay", "name": "dots_left", "pos_target":"LeftPos"},
+        { "type": "NumberDisplay", "name": "dots_right", "pos_target":"RightPos"}
+]
+}

@@ -406,11 +406,21 @@ else if (type == 'DotsDisplay')
 	obj = new DotsDisplay();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsDisplay.json"));
 }
+else if (type == 'NumberDisplay')
+{
+	obj = new DotsDisplay();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NumberDisplay.json"));
+}
 // // AUTOMATICALLY GENERATED
 else if (type == 'DotsTaskObject')
 {
 	obj = new DotsTaskObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsTaskObject.json"));
+}
+else if (type == 'NumCompTaskObject')
+{
+	obj = new DotsTaskObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NumCompTaskObject.json"));
 }
 // // AUTOMATICALLY GENERATED
 else if (type == 'DotsCompCtrl')
@@ -443,6 +453,11 @@ else if (type == 'DotsCompTutorial_02')
 		return obj;
 	}
 }
+
+
+
+
+
 
 
 

@@ -1,0 +1,28 @@
+{"type":"DotsDisplay",
+"name":"dots_disp",
+"pos_target":"",
+"width":0.25,
+"height":0.4,
+"dots":"dots",
+"noise":"noise",
+"area":"area",
+"background":"bg",
+"petri_dish_top":"petri_dish_top",
+"objects":[
+
+        { "type": "SpriteObject", "name": "BaseArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "::pos_target::" }] },
+
+        { "type":"RoundedRectangleObject","name":"area", "scale_from_screen_width":true, "scale_from_screen_height":true, "width":"::width::", "height":"::height::", "components": [ { "type": "PositionComponent", "target": "BaseArea", "position": "Center","oneshot":false }            ] },
+
+
+        { "type": "SpriteObject", "name": "bg", "asset_path":"assets/images/petri_dish_bottom.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::","keep_ratio":true, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "BaseArea" }] },
+
+        { "type": "SpriteObject", "name": "dots", "asset_path":"assets/images/dots/test_1.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::","keep_ratio":true, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "BaseArea" } ] },
+
+        { "type": "SpriteObject", "name": "noise", "asset_path":"assets/gui_elements/buttonInvisible.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::","keep_ratio":true, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "BaseArea" }] },
+
+        { "type": "SpriteObject", "name": "petri_dish_top", "asset_path":"assets/gui_elements/buttonInvisible.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::","keep_ratio":true, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "BaseArea" },{"type":"ForegroundComponent","oneshot":false}] }
+
+
+]
+}

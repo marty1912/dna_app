@@ -689,7 +689,6 @@ class DnaObjectBase implements IFlxDestroyable
 	{
 		for (obj in this.nested_objects)
 		{
-			trace("set ready on:", obj.obj_name);
 			if (!obj.ready)
 			{
 				obj.onReady();
