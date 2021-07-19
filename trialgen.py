@@ -396,6 +396,17 @@ def genSymbolicNumberCompareTrials(distances=[1,2,5,6],numbers=[1,2,3,4,5,6,7,8,
         print("have ",dist_poss_count,"for distance:",dist)
     return trials
 
+def getNewNumericalCompTrials():
+    trials = []
+    base_path = "assets/images/pattern_numbers/"
+    file_end = ".PNG"
+    for trial in genSymbolicNumberCompareTrials():
+        trials.append([base_path+str(trial[0])+file_end,base_path+str(trial[1])+file_end,base_path+str(trial[2])+file_end,"\"left:"+str(trial[0])+",right"+str(trial[1])+",dist"+str(trial[3])+"\""])
+
+    return trials
+
+
+
 def genOrdinalNumberVerificationTrials(distances=[1,2,3],numbers=[1,2,3,4,5,6,7,8,9]):
     '''
     our output tells us that we have:
@@ -620,7 +631,8 @@ def main():
     #random.seed(42)
     mode = sys.argv[1]
     if(mode == "symb"):
-        trials = genSymbolicNumberCompareTrials()
+#        trials = genSymbolicNumberCompareTrials()
+        trials = getNewNumericalCompTrials()
     elif mode == "ord":
         trials = genOrdinalNumberVerificationTrials()
     elif mode == "numline":
