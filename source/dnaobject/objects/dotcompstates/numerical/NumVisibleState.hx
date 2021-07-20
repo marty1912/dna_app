@@ -1,11 +1,11 @@
 package dnaobject.objects.dotcompstates.numerical;
-import dnaobject.objects.DotsTaskObject.DotsObjectStateNormal;
+
 import dnaobject.interfaces.IState;
 import dnaobject.interfaces.IStateMachine;
-import flixel.util.FlxTimer;
-
-import dnaobject.objects.dotcompstates.numerical.*;
 import dnaobject.objects.*;
+import dnaobject.objects.DotsTaskObject.DotsObjectStateNormal;
+import dnaobject.objects.dotcompstates.numerical.*;
+import flixel.util.FlxTimer;
 
 class NumVisibleState implements IState
 {
@@ -33,7 +33,7 @@ class NumVisibleState implements IState
 	{
 		if (timer.finished)
 		{
-			state_machine.setNextState(new NumFeedbackState());
+			// state_machine.setNextState(new NumFeedbackState());
 		}
 	}
 
@@ -51,6 +51,7 @@ class NumVisibleState implements IState
 
 	public function exit():Void
 	{
+		dots_ctrl.timer_obj.stopTime();
 		dots_ctrl.onCorrectCallback = null;
 		dots_ctrl.onIncorrectCallback = null;
 	}

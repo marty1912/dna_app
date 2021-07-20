@@ -505,6 +505,34 @@ else if (type == "NonSymbolCompTutorial_01")
 			state = new DnaState("NonSymbolCompTutorial_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbolCompTutorial_01.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SymbolicNumberComparisonTutorial_01")
+		{
+			state = new DnaState("SymbolicNumberComparisonTutorial_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbolicNumberComparisonTutorial_01.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SymbolicNumberComparisonTutorial_03")
+		{
+			state = new DnaState("SymbolicNumberComparisonTutorial_03");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbolicNumberComparisonTutorial_03.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SymbolicNumberComparisonTutorial_02")
+		{
+			state = new DnaState("SymbolicNumberComparisonTutorial_02");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbolicNumberComparisonTutorial_02.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SymbolicNumberComparisonPracticeStateNoTime")
+		{
+			state = new DnaState("SymbolicNumberComparisonPracticeStateNoTime");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbolicNumberComparisonPracticeStateNoTime.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -517,6 +545,10 @@ else if (type == "NonSymbolCompTutorial_01")
 		return state;
 	}
 }
+
+
+
+
 
 
 

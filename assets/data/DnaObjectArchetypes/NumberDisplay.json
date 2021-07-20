@@ -15,7 +15,7 @@
         { "type":"RoundedRectangleObject","name":"area", "scale_from_screen_width":true, "scale_from_screen_height":true, "width":"::width::", "height":"::height::", "components": [ { "type": "PositionComponent", "target": "BaseArea", "position": "Center","oneshot":false }            ] },
 
 
-        { "type": "SpriteObject", "name": "bg", "asset_path":"assets/images/petri_dish_bottom.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::","keep_ratio":true, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "BaseArea" }] },
+        { "type": "SpriteObject", "name": "bg", "asset_path":"assets/gui_elements/buttonInvisible.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::","keep_ratio":true, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "BaseArea" }] },
 
         { "type": "SpriteObject", "name": "dots", "asset_path":"assets/images/dots/test_1.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::","keep_ratio":true, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "BaseArea" } ] },
 

@@ -1,0 +1,32 @@
+1
+00:00:00,000 --> 00:00:06,000
+In der Forschung ist es wichtig eine gute Ordnung zu halten.
+
+2
+00:00:06,100 --> 00:00:12,100
+Sonst verliert man leicht den Überblick.
+
+3
+00:00:12,200 --> 00:00:18,200
+Ordnung ist leider nicht meine Stärke..
+
+4
+00:00:18,300 --> 00:00:24,300
+Ich war gerade dabei ein paar DNA-Proben zu untersuchen.
+
+5
+00:00:24,400 --> 00:00:28,400
+Aber die sind alle durcheinander!
+
+6
+00:00:28,500 --> 00:00:34,500
+Ich habe sie aber zum Glück vorher nummeriert.
+
+7
+00:00:34,600 --> 00:00:40,600
+Ich will immer die neuesten Proben untersuchen. 
+
+8
+00:00:40,700 --> 00:00:46,700
+Kannst du mir dabei helfen?
+

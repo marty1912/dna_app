@@ -1,0 +1,11 @@
+{
+    "type": "NonSymbolicCompState",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+        { "type": "NumCompTaskObject", "name": "TaskHandler", "pos_target":""},
+        { "type": "SymbolicCompTutorial", "name": "dotstut","dots_disp":"TaskHandler", "pos_target":""}
+
+
+    ]
+}
+

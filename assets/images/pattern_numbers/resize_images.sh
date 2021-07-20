@@ -11,7 +11,7 @@ for infile in *.PNG
 do
     outfile="${infile}"
     convert "$infile" \
-            -resize '256x256^' \
+            -resize '1024x1024^' \
             "$outfile"
 done
 

@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:06,000
+Du hast das ja schon super gemacht!
+
+2
+00:00:06,100 --> 00:00:12,100
+Damit wir noch mehr Proben schaffen machen wir das Ganze jetzt noch schneller.
+
+3
+00:00:12,200 --> 00:00:18,200
+Es wird jetzt vor den Proben ein Kreuz auf dem Bildschirm erscheinen. 
+
+4
+00:00:18,200 --> 00:00:22,200
+Das Kreuz bedeutet Achtung.
+
+5
+00:00:22,200 --> 00:00:26,200
+Danach kommen die Proben und du entscheidest so schnell wie du kannst.
+
+6
+00:00:26,200 --> 00:00:32,200
+Wähle immer die Probe mit der höheren Zahl!
+
+7
+00:00:32,200 --> 00:00:38,200
+Ich zeige dir das jetzt einmal vor.
+

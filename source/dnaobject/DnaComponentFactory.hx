@@ -427,6 +427,14 @@ else if (type == 'DotsCtrlStatesNumeric')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/DotsCtrlStatesNumeric.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'DotsCtrlStatesNumericNoTime')
+{
+	comp = new DotsCtrlStatesNumericNoTime();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/DotsCtrlStatesNumericNoTime.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -438,6 +446,10 @@ else if (type == 'DotsCtrlStatesNumeric')
 		return comp;
 	}
 }
+
+
+
+
 
 
 
