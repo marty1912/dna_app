@@ -37,6 +37,12 @@ class DnaButtonObject implements DnaObject implements CommandClient implements I
 	 */
 	private var m_asset_path:String;
 
+	public function setAssetPath(value:String)
+	{
+		this.m_asset_path = value;
+		this.initButton();
+	}
+
 	/**
 	 * parameter for button width
 	 */

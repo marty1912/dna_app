@@ -1,5 +1,6 @@
 package dnaobject.objects;
 
+import dnaobject.interfaces.IVisible;
 import flash.geom.Matrix;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -52,7 +53,7 @@ class RoundedRectShape extends FlxShape
  * class RoundedRectangleObject -
  *
  */
-class RoundedRectangleObject implements DnaObject extends DnaObjectBase
+class RoundedRectangleObject implements DnaObject implements IVisible extends DnaObjectBase
 {
 	private var width:Float = 0;
 	private var height:Float = 0;
@@ -84,6 +85,13 @@ class RoundedRectangleObject implements DnaObject extends DnaObjectBase
 	public function get_visible():Bool
 	{
 		return this.shape.visible;
+	}
+
+	public function setVisible(value:Bool):Bool
+	{
+		this.visible = value;
+
+		return visible;
 	}
 
 	public function setupShape()

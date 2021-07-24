@@ -1,5 +1,6 @@
 package dnaobject.objects;
 
+import Assertion.assert;
 import dnaEvent.DnaEventManager;
 import dnaEvent.DnaEventSubscriber;
 import dnadata.DnaDataManager;
@@ -187,10 +188,12 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		{
 			this.getTrialsFromManager();
 		}
+
 		if (this.trials == null)
 		{
 			this.getParent().eventManager.broadcastEvent(TRIALS_FIN);
 		}
+		assert(this.trials != null);
 		var trials_len = this.trials.length;
 
 		if (this.trial_index >= trials_len)
@@ -202,6 +205,8 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 				return loadNextTrial();
 			}
 			this.getParent().eventManager.broadcastEvent(TRIALS_FIN);
+
+			trace("WARNING: Trials end: ", trial_index);
 			return;
 		}
 		var current_trial:Array<Dynamic> = this.trials[trial_index];
@@ -214,11 +219,12 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 			}
 			catch (e)
 			{
-				// trace("WARNING: Failed to set Params for: ", params.name);
+				trace("WARNING: Failed to set Params for: ", params.name);
 				break;
 				return;
 			}
 		}
+
 		this.getParent().eventManager.broadcastEvent(LOAD_TRIAL_FIN);
 	}
 

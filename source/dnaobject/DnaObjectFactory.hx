@@ -452,6 +452,18 @@ else if (type == 'SymbolicCompTutorial')
 	obj = new SymbolicCompTutorial();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolicCompTutorial.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'OrdinalTaskObject')
+{
+	obj = new OrdinalTaskObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdinalTaskObject.json"));
+}
+// // AUTOMATICALLY GENERATED
+else if (type == 'OrdinalTaskCtrl')
+{
+	obj = new OrdinalTaskCtrl();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdinalTaskCtrl.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -465,6 +477,19 @@ else if (type == 'SymbolicCompTutorial')
 		return obj;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

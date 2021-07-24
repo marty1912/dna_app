@@ -2,7 +2,8 @@
     "type": "TestState",
     "objects": [
         { "type": "TaskBackgroundObject" },
-        { "type": "DotsTaskObject", "name": "TaskHandler", "pos_target":""},
-        { "type": "DotsCompTutorial", "name": "dotstut","dots_disp":"TaskHandler", "pos_target":""}
+        { "type": "OrdinalTaskObject", "name": "TaskHandler", "pos_target":""},
+        { "type": "TimerObject", "name": "TotalTime" },
+        { "type": "OrdinalTaskCtrl", "name": "ordctrl","ord_task":"TaskHandler","fixation":"fixation", "pos_target":"","timer":"TotalTime","components":[]}
     ]
 }

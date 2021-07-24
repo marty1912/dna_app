@@ -1,5 +1,6 @@
 package dnaobject.objects;
 
+import dnaobject.interfaces.IVisible;
 import dnaobject.interfaces.Scrollable;
 import flixel.FlxG;
 import flixel.FlxObject;
@@ -13,7 +14,7 @@ import flixel.util.FlxColor;
  * this class will be used for example to create the "Finger" in our tutorials.
  *
  */
-class SpriteObject implements DnaObject implements Scrollable extends DnaObjectBase
+class SpriteObject implements DnaObject implements Scrollable implements IVisible extends DnaObjectBase
 {
 	private var m_asset_path:String;
 	private var m_scale_x:Float = 1;
@@ -26,6 +27,21 @@ class SpriteObject implements DnaObject implements Scrollable extends DnaObjectB
 	public var visible = true;
 
 	public var sprite:FlxSprite;
+
+	public function setVisible(value:Bool):Bool
+	{
+		this.visible = value;
+		if (value)
+		{
+			this.sprite.alpha = 1.0;
+		}
+		else
+		{
+			this.sprite.alpha = 0;
+		}
+
+		return visible;
+	}
 
 	/**
 	 * properties to make tweens easy to use.

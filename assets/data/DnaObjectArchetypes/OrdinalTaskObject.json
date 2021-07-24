@@ -1,0 +1,51 @@
+{"type":"OrdinalTaskObject",
+"name":"ord_disp",
+"pos_target":"",
+"pattern_display":"pdisplay",
+"dots_right":"dots_right",
+"button_left":"btn_left",
+"button_right":"btn_right",
+
+"indicator_left":"indicator_left",
+"indicator_right":"indicator_right",
+"fixation":"fixation",
+"objects":[
+
+        { "type": "SpriteObject", "name": "BaseArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.8, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "::pos_target::" }] },
+
+        { "type": "SpriteObject", "name": "PatternArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.6, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "BaseArea" }] },
+
+        { "type": "SpriteObject", "name": "LeftArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftBottom", "target": "BaseArea" }] },
+        { "type": "SpriteObject", "name": "RightArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightBottom", "target": "BaseArea" }] },
+
+        { "type": "SpriteObject", "name": "BottomLeftLeft", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.25, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftBottom", "target": "LeftArea" }] },
+        { "type": "SpriteObject", "name": "BottomLeftRight", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.25, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightBottom", "target": "LeftArea" }] },
+
+        { "type": "SpriteObject", "name": "BottomRightLeft", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.25, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftBottom", "target": "RightArea" }] },
+        { "type": "SpriteObject", "name": "BottomRightRight", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.25, "scale_y": 0.3, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightBottom", "target": "RightArea" }] },
+
+        { "type": "PatternDisplayCupboard", "name": "pdisplay", "pos_target":"PatternArea","width":0.3,"height":0.2,"board_width":0.32,"board_height":0.25},
+ 
+
+        { "type": "SpriteObject", "name": "LeftScreenhalf", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "" }] },
+        { "type": "SpriteObject", "name": "RightScreenhalf", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "" }] },
+
+        { "type": "SpriteObject", "name": "LeftPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_x": 0.3, "scale_y": 400, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "LeftScreenhalf" }] },
+        { "type": "SpriteObject", "name": "RightPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_x": 0.3, "scale_y": 400, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "RightScreenhalf" }] },
+
+        { "type": "EmptyButtonObject", "name": "btn_left","path":"assets/gui_elements/buttonInvisible.png", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "LeftScreenhalf" }, { "type":"ButtonScaleComponent", "target":"LeftScreenhalf" } ,{"type":"UserButtonComponent"}] },
+        { "type": "EmptyButtonObject", "name": "btn_right","path":"assets/gui_elements/buttonInvisible.png", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "RightScreenhalf" }, { "type":"ButtonScaleComponent", "target":"RightScreenhalf" } ,{"type":"UserButtonComponent"}] },
+
+
+        { "type": "SpriteObject", "name": "Indicator_Base", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 0.35, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
+        { "type": "SpriteObject", "name": "LeftIndicatorPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftTop", "target": "Indicator_Base" }] },
+        { "type": "SpriteObject", "name": "RightIndicatorPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightTop", "target": "Indicator_Base" }] },
+
+
+        { "type": "EmptyButtonObject", "name": "indicator_left","path":"assets/gui_elements/buttonAccept.png", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "LeftIndicatorPos" }, { "type":"ButtonScaleComponent", "target":"LeftIndicatorPos" } ] },
+        { "type": "EmptyButtonObject", "name": "indicator_right","path":"assets/gui_elements/buttonAccept.png", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "RightIndicatorPos" }, { "type":"ButtonScaleComponent", "target":"RightIndicatorPos" }] },
+
+
+        { "type": "SpriteObject", "name": "fixation", "asset_path": "assets/images/fixation_cross.png", "scale_x": 1, "scale_y": 1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "" }] }
+]
+}

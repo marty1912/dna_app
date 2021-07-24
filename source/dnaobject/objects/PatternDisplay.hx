@@ -1,5 +1,6 @@
 package dnaobject.objects;
 
+import Assertion.assert;
 import constants.DnaConstants;
 import dnaEvent.DnaEventManager;
 import dnaEvent.DnaEventSubscriber;
@@ -10,6 +11,7 @@ import dnaobject.components.ActionStateSwitchComponent;
 import dnaobject.components.SymbolSlotComponent;
 import dnaobject.interfaces.ILevelPreview;
 import dnaobject.interfaces.IUnlockableItem;
+import dnaobject.interfaces.IVisible;
 import dnaobject.interfaces.TaskObject;
 import flixel.addons.plugin.taskManager.FlxTask;
 import flixel.tweens.FlxTween;
@@ -18,7 +20,7 @@ import haxe.Json;
 /**
  * this is the class that handles giving our trial parameters to the correct objects.
  */
-class PatternDisplay implements DnaObject implements DnaEventSubscriber extends DnaObjectBase
+class PatternDisplay implements DnaObject implements DnaEventSubscriber implements IVisible extends DnaObjectBase
 {
 	/**
 	 * overwritten ctor.
@@ -30,6 +32,19 @@ class PatternDisplay implements DnaObject implements DnaEventSubscriber extends 
 
 	override public function onHaveParent() {}
 
+	public function setVisible(value:Bool):Bool
+	{
+		for (vis in this.visibles_obj)
+		{
+			vis.setVisible(value);
+		}
+		for (sym in this.symbols)
+		{
+			sym.setVisible(value);
+		}
+		return value;
+	}
+
 	override public function onReady()
 	{
 		trace("pattern_display:onready");
@@ -37,7 +52,13 @@ class PatternDisplay implements DnaObject implements DnaEventSubscriber extends 
 		trace("looking for:", getNestedObjectName(pattern_area));
 		super.onReady();
 		this.getParent().eventManager.addSubscriberForEvent(this, DnaConstants.PATTERN_CHANGE);
+		for (vis in this.visibles)
+		{
+			visibles_obj.push(cast this.getParent().getObjectByName(getNestedObjectName(vis)));
+		}
+
 		this.pattern_area_obj = cast getParent().getObjectByName(getNestedObjectName(pattern_area));
+
 		setPattern(pattern_assets);
 	}
 
@@ -204,7 +225,15 @@ class PatternDisplay implements DnaObject implements DnaEventSubscriber extends 
 		{
 			this.pattern_assets = cast jsonFile.pattern_assets;
 		}
+
+		if (Reflect.hasField(jsonFile, "visibles"))
+		{
+			this.visibles = cast jsonFile.visibles;
+		}
 	}
+
+	public var visibles:Array<String> = new Array<String>();
+	public var visibles_obj:Array<IVisible> = new Array<IVisible>();
 
 	public override function update(elapsed:Float) {}
 }

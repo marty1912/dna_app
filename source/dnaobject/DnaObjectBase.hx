@@ -1,5 +1,6 @@
 package dnaobject;
 
+import Assertion.assert;
 import dnaobject.DnaComponent;
 import flixel.FlxObject;
 import flixel.FlxObject;
