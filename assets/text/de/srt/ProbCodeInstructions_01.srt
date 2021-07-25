@@ -1,20 +1,20 @@
 ﻿1
 00:00:00,000 --> 00:00:07,300
-Damit Ihre Daten anonymisiert abgespeichert werden können, werden Sie nun Ihren persönlichen Probandencode erstellen.
+Damit deine Daten anonymisiert abgespeichert werden können, werden wir jetzt gemeinsam deinen persönlichen Probandencode erstellen.
 
 2
 00:00:07,400 --> 00:00:11,900
-Dieser ist notwendig, damit Ihre Daten eindeutig zuordenbar sind.
+Der Probandencode ist notwendig, damit die Leute aus dem Forschungsteam deine Daten wiederfinden können.
 
 3
 00:00:12,000 --> 00:00:16,200
-Es ist aber damit nicht möglich, Ihre Identität festzustellen.
+Damit kann man aber nicht deine Identität, also zum Beispiel deinen Namen, feststellen.
 
 4
 00:00:16,300 --> 00:00:20,400
-Sie werden nun Ihren Probandencode Schritt für Schritt generieren.
+Wir werden nun deinen Probandencode Schritt für Schritt generieren.
 
 5
 00:00:20,600 --> 00:00:23,900
-Folgen Sie einfach den weiteren Anweisungen.
+Folge dazu einfach den weiteren Anweisungen.
 

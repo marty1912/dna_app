@@ -140,6 +140,35 @@ class ActionPlaySoundComponent implements DnaComponent extends DnaActionBase
 	}
 
 	/**
+	 * function to play a sound from an asset
+	 * @param asset_path 
+	 * @param path_from_locale 
+	 */
+	public static function playSound(asset_path:String, path_from_locale:Bool = true)
+	{
+		var path = asset_path;
+		if (path_from_locale)
+		{
+			path = LocaleManager.getInstance().getAudioPath(asset_path);
+		}
+
+		// we use this because the default sound does not work on ios browsers.
+		var sound = OsManager.get_instance().getSoundObject(path);
+		sound.play();
+	}
+
+	/**
+	 * function to stop playing any sounds.
+	 */
+	public static function stopAllSounds()
+	{
+		for (sound in FlxG.sound.list)
+		{
+			sound.stop();
+		}
+	}
+
+	/**
 	 * update - in this function we will put the object back to the screencenter, respecting the childrens offsets.
 	 * @param elapsed
 	 */

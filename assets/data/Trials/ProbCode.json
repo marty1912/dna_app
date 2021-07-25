@@ -8,15 +8,16 @@
     "done": false,
     "saved": false,
     "trials": [
-      [ { "name": "ArithmeticHandler", "params": { "problem": "ProbCodeText_01", "solution": 90,"field:":"geburtsjahr" } }, { "name": "TotalTime" } ],
-      [ { "name": "ArithmeticHandler", "params": { "problem": "ProbCodeText_02", "solution": 90,"field:":"plz_geburtsort" } }, { "name": "TotalTime" } ],
-      [ { "name": "ArithmeticHandler", "params": { "problem": "ProbCodeText_03", "solution": 90,"field:":"geburtsjahr_mutter" } }, { "name": "TotalTime" } ]
+      [ { "name": "ArithmeticHandler", "params": { "problem": "ProbCodeText_01", "solution": 90,"field:":"schuhgröße" } }, { "name": "TotalTime" } ],
+      [ { "name": "ArithmeticHandler", "params": { "problem": "ProbCodeText_02", "solution": 90,"field:":"geburtstag" } }, { "name": "TotalTime" } ],
+      [ { "name": "ArithmeticHandler", "params": { "problem": "ProbCodeText_03", "solution": 90,"field:":"hausnummer" } }, { "name": "TotalTime" } ],
+      [ { "name": "ArithmeticHandler", "params": { "problem": "ProbCodeText_04", "solution": 90,"field:":"geschwister" } }, { "name": "TotalTime" } ]
     ]
   },
     { "name": "ProbCodeStateDone", "type": "ProbCodeStateDone", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "done": false, "saved": false, "trials": [ ] }, 
     { "type": "SAVE", "done": false, "saved": false }, 
 
 	{ "type": "ShowProgressState", "done": false, "saved": false },
-	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "UnlockState" } }
+	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "LevelSelectState" } }
      
   ]

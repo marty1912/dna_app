@@ -1,1 +1,1 @@
-Wie lauten die letzten beiden Ziffern der Postleitzahl Ihres Geburtsortes? Beispiel: Graz 80@001FFFF4D10@000
+An welchen Tag hast du Geburtstag? Beispiel: Manuel hat am @001FFFF4D11@000. August 2013 Geburtstag.

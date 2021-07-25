@@ -1,11 +1,11 @@
 ﻿1
 00:00:00,000 --> 00:00:04,000
-Ihnen werden nun einige Fragen gestellt.
+Dir werden jetzt einige Fragen gestellt werden.
 
 2
 00:00:04,100 --> 00:00:11,100
-Bitte geben Sie Ihre Antworten, indem Sie die Zahlen mit der Tastatur unten am Bildschirm eintippen.
+Bitte gib deine Antworten, indem du die Zahlen mit der Tastatur unten am Bildschirm eintippst.
 
 3
 00:00:11,200 --> 00:00:15,200
-Bestätigen Sie Ihre Eingaben mit dem Button über der Zahlentastatur.
+Bestätige die Eingaben dann mit dem Häckchen in der Mitte.

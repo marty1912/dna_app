@@ -10,6 +10,7 @@
             { "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_01", "on_event":"onCreate" },
                 { "type": "ActionFinishTaskComponent", "target": "" },
                 { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
+
              ] }
 
     ]

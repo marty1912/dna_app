@@ -63,19 +63,37 @@
     },
     {
       "type": "SpriteObject",
-      "name": "AnswerPosition",
+      "name": "AnswerBasePosition",
       "asset_path": "INVISIBLE_BOX",
       "scale_from_screen_width": true,
       "scale_from_screen_height": true,
       "scale_x": 0.4,
-      "scale_y": 0.7,
+      "scale_y": 0.43,
       "origin_where": "",
       "components": [
         {
           "type": "PositionComponent",
           "oneshot": true,
-          "position": "Center",
+          "position": "CenterTop",
           "target": ""
+        }
+      ]
+    },
+    {
+      "type": "SpriteObject",
+      "name": "AnswerPosition",
+      "asset_path": "INVISIBLE_BOX",
+      "scale_from_screen_width": true,
+      "scale_from_screen_height": true,
+      "scale_x": 0.4,
+      "scale_y": 0.2,
+      "origin_where": "",
+      "components": [
+        {
+          "type": "PositionComponent",
+          "oneshot": true,
+          "position": "CenterBottom",
+          "target": "AnswerBasePosition"
         }
       ]
     },

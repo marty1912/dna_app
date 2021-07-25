@@ -6,6 +6,7 @@ import dnaEvent.DnaEventManager;
 import dnaEvent.DnaEventSubscriber;
 import dnadata.TaskTrials;
 import dnaobject.DnaObject;
+import dnaobject.components.ActionPlaySoundComponent;
 import dnaobject.interfaces.ITextBox;
 import dnaobject.interfaces.Slideable;
 import dnaobject.interfaces.TaskObject;
@@ -17,6 +18,7 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.math.FlxMath;
 import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
+import flixel.system.FlxSound;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
 import haxe.DynamicAccess;
@@ -88,6 +90,11 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject ext
 		solution = params.solution;
 		var answer_textbox:ITextBox = cast this.getParent().getObjectByName(target_answer);
 		answer_textbox.setText("", true);
+		if (params.audio != null)
+		{
+			ActionPlaySoundComponent.stopAllSounds();
+			ActionPlaySoundComponent.playSound(params.audio);
+		}
 	}
 
 	/**
