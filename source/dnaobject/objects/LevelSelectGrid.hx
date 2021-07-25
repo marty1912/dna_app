@@ -86,7 +86,7 @@ class Page
 		}
 	}
 
-	public function flyOut(to:FlxPoint)
+	public function flyOut(to:FlxPoint, fly_time = 0.5)
 	{
 		var preview_index = 0;
 		for (preview in this.previews)
@@ -212,7 +212,7 @@ class LevelSelectGrid implements DnaObject extends DnaObjectBase
 			this.getParent().addObject(preview);
 			preview.setupNestedObjects();
 			preview.onReady();
-			preview.moveTo(FlxG.stage.width, FlxG.stage.height);
+			preview.moveTo(FlxG.width * 2, FlxG.height * 2);
 			preview.setTrialBlock(trialBlocks[trial_block_index]);
 
 			if (pages.length == 0 || pages[pages.length - 1].full)
@@ -227,6 +227,12 @@ class LevelSelectGrid implements DnaObject extends DnaObjectBase
 			pages.push(new Page(this));
 		}
 		page_index = 0;
+		/*
+			for (page in pages)
+			{
+				page.flyOut(left);
+			}
+		 */
 		pages[page_index].flyIn(bottom);
 	}
 

@@ -212,6 +212,7 @@ class LocaleDE implements Locale
 "IntroText_01" => ConfigFile.text("assets/text/de/IntroText_01.json"),
 "2" => ConfigFile.text("assets/text/de/2.txt"),
 "SymbolicNumberComparison_HEAD" => ConfigFile.text("assets/text/de/SymbolicNumberComparison_HEAD.txt"),
+"Loading_Text" => ConfigFile.text("assets/text/de/Loading_Text.txt"),
 "ProbCodeText_03" => ConfigFile.text("assets/text/de/ProbCodeText_03.txt"),
 "8" => ConfigFile.text("assets/text/de/8.txt"),
 "MASIC_Q3_red_subs" => ConfigFile.text("assets/text/de/MASIC_Q3_red_subs.json"),

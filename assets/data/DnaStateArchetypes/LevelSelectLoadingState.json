@@ -1,0 +1,21 @@
+{
+    "type": "LevelSelectState",
+    "objects": [
+        { "type": "BackgroundObject" },
+
+        { "type": "ActionHandlerObject", "name": "a_initial",
+            "actions": [
+                { "type": "ActionStateSwitchComponent", "target": "", "next_state": "LevelSelectState","on_event":"onCreate" }
+             ] },
+
+
+        { "type": "SpriteObject", "name": "BottomPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.2, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
+
+
+        { "type": "ProgressBar", "name": "pbar", "pos_target":"BottomPos"},
+
+
+        { "type": "StaticTextObject", "name": "Text_Load", "text": "Loading_Text", "autostart": true, "settings": { "char_per_sec": 24, "width": 500, "n_lines": 5, "append_before": "@041d8c50a", "append_after": "@040", "border": "OUTLINE", "border_color": "0x911315" }, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "" }] }
+
+    ]
+}

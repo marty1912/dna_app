@@ -25,7 +25,7 @@
         { "type": "ActionHandlerObject", "name": "ActionHandler_Accept", "actions": [{ "type": "ActionStateSwitchComponent", "target": "", "on_event": "TrophyButtonPressed", "next_state": "MonsterEditorState" }] },
 
 
-        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "PlayButtonPressed", "target": "", "next_state": "LevelSelectState" }] },
+        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "PlayButtonPressed", "target": "", "next_state": "LevelSelectLoadingState" }] },
 
         { "type": "MonsterObject", "components": [{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": false, "position": "LeftBottom", "target": "" } ] },
 

@@ -561,6 +561,13 @@ else if (type == "OrdTaskTutorial_01")
 			state = new DnaState("OrdTaskTutorial_01");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdTaskTutorial_01.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "LevelSelectLoadingState")
+		{
+			state = new DnaState("LevelSelectLoadingState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/LevelSelectLoadingState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -573,6 +580,11 @@ else if (type == "OrdTaskTutorial_01")
 		return state;
 	}
 }
+
+
+
+
+
 
 
 
