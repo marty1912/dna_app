@@ -8,13 +8,21 @@ Jetzt bist du bereit für die richtigen Aufgaben.
 
 3
 00:00:07,300 --> 00:00:13,300
-Zur Erinnerung: Es geht darum, so viele Durchgänge wie möglich, in der vorgegebenen Zeit, richtig zu beantworten.
+Es geht jetzt darum, so viele Durchgänge wie möglich, in der vorgegebenen Zeit, richtig zu beantworten.
 
 4
 00:00:13,400 --> 00:00:18,600
-Überspringe keine Aufgaben!
+Es werden immer neue Aufgaben kommen, bis die Zeit abgelaufen ist.
 
 5
 00:00:18,700 --> 00:00:22,700
+Überspringe keine Aufgaben!
+
+6
+00:00:22,700 --> 00:00:28,700
 Du hast nun zwei Minuten Zeit.
+
+7
+00:00:28,700 --> 00:00:32,700
+Wenn du bereit bist, dann drücke das Häckchen.
 

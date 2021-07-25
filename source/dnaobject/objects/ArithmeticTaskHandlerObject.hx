@@ -10,6 +10,8 @@ import dnaobject.components.ActionPlaySoundComponent;
 import dnaobject.interfaces.ITextBox;
 import dnaobject.interfaces.Slideable;
 import dnaobject.interfaces.TaskObject;
+import dnaobject.objects.DnaButtonObject.ButtonStateInactive;
+import dnaobject.objects.DnaButtonObject.ButtonStateNormal;
 import flixel.FlxBasic;
 import flixel.FlxG;
 import flixel.FlxObject;
@@ -29,7 +31,7 @@ import haxe.DynamicAccess;
  * it is used to set and get parameters of the objects used in the arithmetic task
  *
  */
-class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject extends DnaObjectBase
+class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject implements DnaEventSubscriber extends DnaObjectBase
 {
 	/**
 	 * getData - this function collects the data we want to have from the ArithmeticTaskHandler object.
@@ -44,6 +46,32 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject ext
 		};
 
 		return current_trial;
+	}
+
+	public var accept_button_obj:DnaButtonObject;
+	public var accept_button:String = "AcceptButton";
+
+	override public function onReady()
+	{
+		accept_button_obj = cast this.getParent().getObjectByName(accept_button);
+		accept_button_obj.setNextState(new ButtonStateInactive());
+		for (i in 0...10)
+		{
+			this.getParent().eventManager.addSubscriberForEvent(this, "KEY_" + Std.string(i));
+		}
+		this.getParent().eventManager.addSubscriberForEvent(this, DnaConstants.KEY_BACKSPACE);
+	}
+
+	public function getNotified(event_key:String, params:Any = null):Void
+	{
+		if (this.getAnswer() != "")
+		{
+			accept_button_obj.setNextState(new ButtonStateNormal());
+		}
+		else
+		{
+			accept_button_obj.setNextState(new ButtonStateInactive());
+		}
 	}
 
 	public var solution:Int;
@@ -95,6 +123,7 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject ext
 			ActionPlaySoundComponent.stopAllSounds();
 			ActionPlaySoundComponent.playSound(params.audio);
 		}
+		accept_button_obj.setNextState(new ButtonStateInactive());
 	}
 
 	/**

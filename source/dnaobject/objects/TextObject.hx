@@ -48,7 +48,7 @@ class TextObject implements DnaObject implements ITextBox extends DnaObjectBase
 
 	public static final default_fontsize:Int = 32;
 	public static final default_width:Int = 320;
-	public static final default_char_per_sec:Int = 24;
+	public static final default_char_per_sec:Int = 124;
 	public static final default_n_lines:Int = 3;
 	public static final default_color:String = "0xFFFFFF";
 
@@ -145,11 +145,13 @@ class TextObject implements DnaObject implements ITextBox extends DnaObjectBase
 		if (Reflect.hasField(jsonFile, "settings"))
 		{
 			var char_per_sec = Reflect.hasField(jsonFile.settings, "char_per_sec") ? jsonFile.settings.char_per_sec : default_char_per_sec;
+			char_per_sec = 124;
 			var fontsize = Reflect.hasField(jsonFile.settings, "fontsize") ? jsonFile.settings.fontsize : default_fontsize;
 			// autoscale fontsize.
 			fontsize = cast Math.floor(fontsize * (FlxG.height / DnaConstants.DEFAULT_SCREEN_SIZE.y));
 			var width = Reflect.hasField(jsonFile.settings, "width") ? jsonFile.settings.width : default_width;
 			width = cast Math.floor(width * (FlxG.width / DnaConstants.DEFAULT_SCREEN_SIZE.x));
+			width = Math.floor(FlxG.width * 0.8);
 
 			var n_lines = Reflect.hasField(jsonFile.settings, "n_lines") ? jsonFile.settings.n_lines : default_n_lines;
 			var color = Reflect.hasField(jsonFile.settings, "color") ? jsonFile.settings.color : default_color;

@@ -1,6 +1,6 @@
 ﻿1
 00:00:00,000 --> 00:00:05,100
-Hallo! Herzlich Willkommen zur Additionsaufgabe!
+Hallo! Herzlich Willkommen zum Plusrechnen!
 
 2
 00:00:05,200 --> 00:00:10,200
@@ -16,7 +16,7 @@ Beim Addieren oder Plusrechnen zählst du einfach die beiden Zahlen links und re
 
 5
 00:00:20,500 --> 00:00:25,500
-Damit das auch Alles klar ist, habe ich ein Beispiel vorbereitet.
+Damit du weißt wie das geht, habe ich ein Beispiel vorbereitet.
 
 6
 00:00:25,600 --> 00:00:30,600

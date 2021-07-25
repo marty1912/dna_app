@@ -91,6 +91,7 @@ class LocaleDE implements Locale
 "NewUnlock" => ConfigFile.text("assets/text/de/NewUnlock.json"),
 "MainMenuTutorial_end" => ConfigFile.text("assets/text/de/MainMenuTutorial_end.json"),
 "MASIC_Q5_green_subs" => ConfigFile.text("assets/text/de/MASIC_Q5_green_subs.json"),
+"AdditionsTutorial_02" => ConfigFile.text("assets/text/de/AdditionsTutorial_02.json"),
 "MASIC_Q1_yellow_subs" => ConfigFile.text("assets/text/de/MASIC_Q1_yellow_subs.json"),
 "MASIC_Q2_red_subs" => ConfigFile.text("assets/text/de/MASIC_Q2_red_subs.json"),
 "MASIC_Q13" => ConfigFile.text("assets/text/de/MASIC_Q13.txt"),

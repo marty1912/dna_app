@@ -536,7 +536,8 @@ def genAdditionTrials(numbers=[2,3,4,5,6,7,8,9]):
     # no same operants
     trials = [i for i in trials if not i[0] == i[1]]
 
-    trials = trials + two_digit_trials
+# ignore 2 digit operants for kids.
+#    trials = trials + two_digit_trials
     return trials
 
 def genMultiplicationTrials(numbers = [2,3,4,5,6,7,8,9]):

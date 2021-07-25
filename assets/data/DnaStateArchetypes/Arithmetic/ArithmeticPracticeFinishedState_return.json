@@ -109,7 +109,7 @@
         {
           "condition": "desktop",
           "obj": {
-            "type": "TextObject",
+            "type": "StaticTextObject",
             "name": "Instructions_03",
             "text": "TaskInstructions_continue_PC_return",
             "autostart": false,
@@ -129,7 +129,7 @@
         {
           "condition": "web",
           "obj": {
-            "type": "TextObject",
+            "type": "StaticTextObject",
             "name": "Instructions_03",
             "text": "TaskInstructions_continue_PC_return",
             "autostart": false,
@@ -149,7 +149,7 @@
         {
           "condition": "android",
           "obj": {
-            "type": "TextObject",
+            "type": "StaticTextObject",
             "name": "Instructions_03",
             "text": "TaskInstructions_continue_button",
             "autostart": false,
@@ -212,11 +212,7 @@
           "target": "Instructions_01",
           "oneshot": false
         },
-        {
-          "type": "ActionShowTextComponent",
-          "target": "Instructions_03",
-          "oneshot": false
-        },
+        
         {
           "type": "ActionSetButtonStateComponent",
           "targets": [
