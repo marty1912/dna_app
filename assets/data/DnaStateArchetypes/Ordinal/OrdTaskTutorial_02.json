@@ -1,0 +1,12 @@
+{
+    "type": "NonSymbolicCompState",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+        { "type": "OrdinalTaskObject", "name": "TaskHandler", "pos_target":""},
+        { "type": "OrdTaskTutorial_01", "name": "ordstut","ord_task":"TaskHandler", "pos_target":""},
+        { "type": "TimerObject", "name": "TotalTime" }
+
+
+    ]
+}
+

@@ -533,6 +533,34 @@ else if (type == "SymbolicNumberComparisonPracticeStateNoTime")
 			state = new DnaState("SymbolicNumberComparisonPracticeStateNoTime");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbolicNumberComparisonPracticeStateNoTime.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "OrdinalTaskPracticeStateNoTime")
+		{
+			state = new DnaState("OrdinalTaskPracticeStateNoTime");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdinalTaskPracticeStateNoTime.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "OrdTaskTutorial_03")
+		{
+			state = new DnaState("OrdTaskTutorial_03");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdTaskTutorial_03.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "OrdTaskTutorial_02")
+		{
+			state = new DnaState("OrdTaskTutorial_02");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdTaskTutorial_02.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "OrdTaskTutorial_01")
+		{
+			state = new DnaState("OrdTaskTutorial_01");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdTaskTutorial_01.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -545,6 +573,27 @@ else if (type == "SymbolicNumberComparisonPracticeStateNoTime")
 		return state;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

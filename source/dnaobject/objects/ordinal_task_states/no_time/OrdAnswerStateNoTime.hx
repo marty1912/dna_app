@@ -1,4 +1,4 @@
-package dnaobject.objects.ordinal_task_states.real_task;
+package dnaobject.objects.ordinal_task_states.no_time;
 
 import dnaobject.interfaces.IState;
 import dnaobject.interfaces.IStateMachine;
@@ -9,7 +9,7 @@ import dnaobject.objects.ordinal_task_states.*;
 import flixel.math.FlxRandom;
 import flixel.util.FlxTimer;
 
-class OrdAnswerState implements IState
+class OrdAnswerStateNoTime implements IState
 {
 	public var ord_ctrl:OrdinalTaskCtrl;
 	public var state_machine:IStateMachine;
@@ -36,7 +36,7 @@ class OrdAnswerState implements IState
 	public function onAnswered()
 	{
 		ord_ctrl.timer_obj.stopTime();
-		state_machine.setNextState(new OrdFeedbackState());
+		state_machine.setNextState(new OrdFeedbackStateNoTime());
 	}
 
 	public function enter():Void
@@ -44,9 +44,9 @@ class OrdAnswerState implements IState
 		trace("Answer State enter");
 		ord_ctrl.ord_task_obj.state_machine.setNextState(new OrdinalObjectStateVisible());
 
+		ord_ctrl.timer_obj.resetTime();
 		var rand = new FlxRandom();
 		timer.start(rand.float(2, 3));
-		ord_ctrl.timer_obj.resetTime();
 
 		ord_ctrl.onCorrectCallback = this.onAnswered;
 		ord_ctrl.onIncorrectCallback = this.onAnswered;

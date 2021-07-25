@@ -1,153 +1,33 @@
 {
-    "type": "OrdinalTaskPracticeState",
+    "type": "OrdinalTaskState",
     "objects": [
+        { "type": "TaskBackgroundObject" },
+        { "type": "OrdinalTaskObject", "name": "TaskHandler", "pos_target":""},
 
-        {
-            "type": "TaskBackgroundObject"
-        },
-        { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/OrdinalVerificationGroup.json" },
-        { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/FeedbackGroup.json" },
-        { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/FeedbackControlGroupPractice.json" },
-        { "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/FixationAndBlankSubstates.json" },
 
-        {"type":"TaskTimeoutTimerObject",
-                "max_time":2},
-        {
-            "type": "ActionHandlerObject",
-            "name": "ActionHandler_onAnswer",
+        { "type": "SpriteObject", "name": "SubtitleArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.2, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
+        { "type": "SrtPlayerTextObject", "name":"fdbk_correct", "text":"NumberlineFeedbackCorrect", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"fdbk_incorrect", "text":"NumberlineFeedbackIncorrect", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"fdbk_timeout", "text":"NumberlineFeedbackTimeout", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+
+        { "type": "ActionHandlerObject", "name": "a_correct",
             "actions": [
-                {
-                    "type": "ActionFireEventComponent",
-                    "oneshot":false,
-                    "event_name":"test_EVENT01",
-                    "on_event": "EVT_TASK_ANSWERED"
-                },
-                {
-                    "type": "ActionCheckTaskComponent",
-                    "oneshot":false,
-                    "target":"TaskHandler"
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_LEFT",
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_RIGHT",
-                    "state": "INACTIVE",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "blank_overlay",
-                    "invert":false,
-                    "oneshot": false
-                },
-
-
-                {
-                    "type": "ActionSaveTrialComponent",
-                    "oneshot":false,
-                    "name":"mytrialsaver",
-                    "on_event": "TASK_CORRECT"
-                },
-                {
-                    "type": "ActionSwitchToSubStateComponent",
-                    "target":"blank",
-                    "oneshot":false,
-                    "duration_min":2000,
-                    "duration_max":3000,
-                    "on_event": "FEEDBACK_DONE"
-                },
-                {
-                    "type": "ActionLoadTrialComponent",
-                    "oneshot":false,
-                    "target":""
-                }
-                
-            ]
-        },
-        {
-            "type": "ActionHandlerObject",
-            "name": "ActionHandler_OnSuccessful_load",
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "fdbk_correct", "on_event":"NO_EVENT" }
+             ] },
+        { "type": "ActionHandlerObject", "name": "a_incorrect",
             "actions": [
-                {
-                    "type": "ActionSwitchToSubStateComponent",
-                    "oneshot":false,
-                    "target":"fixation",
-                    "duration":500,
-                    "on_event":"TrialHandler_load_fin"
-                },  
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_LEFT",
-                    "state": "NORMAL",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "Clickarea_RIGHT",
-                    "state": "NORMAL",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionFireEventComponent",
-                    "oneshot":false,
-                    "event_name":"EVT_START_TRIAL_TIME"
-                },
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "blank_overlay",
-                    "invert":true,
-                    "oneshot": false
-                }
-        ]
-        },
-        {
-            "type": "ActionHandlerObject",
-            "name": "ActionHandler_Setup",
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "fdbk_incorrect", "on_event":"NO_EVENT" }
+             ] },
+        { "type": "ActionHandlerObject", "name": "a_timeout",
             "actions": [
-                {
-                    "type": "ActionLoadTrialComponent",
-                    "oneshot":true,
-                    "target":"",
-                    "on_event":"onCreate"
-                },  
-                {
-                    "type": "ActionAppearComponent",
-                    "target": "blank_overlay",
-                    "invert":false,
-                    "oneshot":true 
-                }
-        ]
-        },
-        {
-            "type": "ActionHandlerObject",
-            "name": "ActionHandler_Finish",
-            "actions": [
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "targets": ["Clickarea_LEFT","Clickarea_RIGHT"],
-                    "state": "INACTIVE",
-                    "on_event":"TrialHandler_all_fin",
-                    "oneshot": false
-                },
-                {
-                    "type": "ActionFinishTaskComponent",
-                    "target":""
-                },
-                {
-                    "type": "ActionStateSwitchComponent",
-                    "target":"",
-                    "next_state":"NEXT_TASK"
-                }  
-        ] }
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "fdbk_timeout", "on_event":"NO_EVENT" }
+             ] },
+ 
 
+        { "type": "TimerObject", "name": "TotalTime" },
+        { "type": "OrdinalTaskCtrl", "name": "ordctrl","ord_task":"TaskHandler","fixation":"fixation", "pos_target":"","timer":"TotalTime","components":[{"type":"OrdCtrlPracticeComponent","action_correct":"a_correct","action_incorrect":"a_incorrect","action_timeout":"a_timeout"}]}
     ]
 }
+
+
+

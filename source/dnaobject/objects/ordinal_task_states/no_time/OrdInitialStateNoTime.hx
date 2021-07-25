@@ -1,15 +1,16 @@
-package dnaobject.objects.ordinal_task_states.real_task;
+package dnaobject.objects.ordinal_task_states.no_time;
 
+import Assertion.assert;
 import dnaobject.interfaces.IState;
 import dnaobject.interfaces.IStateMachine;
 import dnaobject.objects.*;
 import dnaobject.objects.OrdinalTaskObject.OrdinalObjectStateHidden;
-import dnaobject.objects.OrdinalTaskObject.OrdinalObjectStateVisible;
+import dnaobject.objects.OrdinalTaskObject.OrdinalObjectStateInactive;
 import dnaobject.objects.ordinal_task_states.*;
 import flixel.math.FlxRandom;
 import flixel.util.FlxTimer;
 
-class OrdAnswerState implements IState
+class OrdInitialStateNoTime implements IState
 {
 	public var ord_ctrl:OrdinalTaskCtrl;
 	public var state_machine:IStateMachine;
@@ -26,31 +27,15 @@ class OrdAnswerState implements IState
 		ord_ctrl = cast comp.getParent();
 	}
 
-	public function update(elapsed:Float):Void
-	{
-		if (timer.finished) {}
-	}
+	public function update(elapsed:Float):Void {}
 
 	public function setDots(path:String) {}
 
-	public function onAnswered()
-	{
-		ord_ctrl.timer_obj.stopTime();
-		state_machine.setNextState(new OrdFeedbackState());
-	}
-
 	public function enter():Void
 	{
-		trace("Answer State enter");
-		ord_ctrl.ord_task_obj.state_machine.setNextState(new OrdinalObjectStateVisible());
+		ord_ctrl.ord_task_obj.state_machine.setNextState(new OrdinalObjectStateInactive());
 
-		var rand = new FlxRandom();
-		timer.start(rand.float(2, 3));
-		ord_ctrl.timer_obj.resetTime();
-
-		ord_ctrl.onCorrectCallback = this.onAnswered;
-		ord_ctrl.onIncorrectCallback = this.onAnswered;
-		// dots_ctrl.loadTrial();
+		state_machine.setNextState(new OrdAnswerStateNoTime());
 	}
 
 	public function exit():Void {}

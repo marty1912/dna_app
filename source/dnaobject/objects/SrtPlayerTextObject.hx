@@ -210,7 +210,7 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 			text_width = jsonFile.settings.width;
 			if (text_width > 1)
 			{
-				text_width = 0.5;
+				text_width = 0.8;
 			}
 			text_width = cast Math.floor(text_width * (FlxG.width));
 		}

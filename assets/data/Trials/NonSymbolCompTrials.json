@@ -28,16 +28,7 @@
 [{ "name": "TaskHandler", "params": { "img_left": "assets/images/dots/id_17_dots_5.png", "img_right": "assets/images/dots/id_18_dots_6.png", "solution": "assets/images/dots/id_18_dots_6.png","additional_info": {"left_num": 5, "right_num": 6, "solution": 6, "ratio": 1.2, "bucket": 0} } }, { "name": "TotalTime" }]
 		]
 	},
-	{
-		"type": "SymbNumCompInstructionsState_02",
-		"desc_head": "SymbolicNumberComparison_HEAD",
-		"desc_body": "SymbolicNumberComparison_BODY",
-		"done": false,
-		"saved": false,
-		"trials": [
-			[{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }]
-		]
-	},
+	{ "type": "SymbNumCompInstructionsState_02", "desc_head": "SymbolicNumberComparison_HEAD", "desc_body": "SymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": [ [{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }] ] },
 	{
 
 		"type": "NonSymbolCompState",

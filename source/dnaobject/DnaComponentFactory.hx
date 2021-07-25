@@ -435,6 +435,22 @@ else if (type == 'DotsCtrlStatesNumericNoTime')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/DotsCtrlStatesNumericNoTime.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'OrdCtrlStatesNoTime')
+{
+	comp = new OrdCtrlStatesNoTime();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/OrdCtrlStatesNoTime.json"));
+}
+
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'OrdCtrlPracticeComponent')
+{
+	comp = new OrdCtrlPracticeComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/OrdCtrlPracticeComponent.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -446,6 +462,27 @@ else if (type == 'DotsCtrlStatesNumericNoTime')
 		return comp;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

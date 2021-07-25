@@ -401,73 +401,85 @@ class DnaObjectFactory
 			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PatternDisplayCupboard.json"));
 		}
 		// // AUTOMATICALLY GENERATED
-else if (type == 'DotsDisplay')
+		else if (type == 'DotsDisplay')
+		{
+			obj = new DotsDisplay();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsDisplay.json"));
+		}
+		else if (type == 'NumberDisplay')
+		{
+			obj = new DotsDisplay();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NumberDisplay.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'DotsTaskObject')
+		{
+			obj = new DotsTaskObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsTaskObject.json"));
+		}
+		else if (type == 'NumCompTaskObject')
+		{
+			obj = new DotsTaskObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NumCompTaskObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'DotsCompCtrl')
+		{
+			obj = new DotsCompCtrl();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsCompCtrl.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'DotsCompTutorial')
+		{
+			obj = new DotsCompTutorial();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsCompTutorial.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'DotsCompTutorial_02')
+		{
+			obj = new DotsCompTutorial_02();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsCompTutorial_02.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'SymbolicCompTutorial_02')
+		{
+			obj = new SymbolicCompTutorial_02();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolicCompTutorial_02.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'SymbolicCompTutorial')
+		{
+			obj = new SymbolicCompTutorial();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolicCompTutorial.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'OrdinalTaskObject')
+		{
+			obj = new OrdinalTaskObject();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdinalTaskObject.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'OrdinalTaskCtrl')
+		{
+			obj = new OrdinalTaskCtrl();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdinalTaskCtrl.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+		else if (type == 'OrdTaskTutorial_02')
+		{
+			obj = new OrdTaskTutorial_02();
+			file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdTaskTutorial_02.json"));
+		}
+		// // AUTOMATICALLY GENERATED
+else if (type == 'OrdTaskTutorial_01')
 {
-	obj = new DotsDisplay();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsDisplay.json"));
-}
-else if (type == 'NumberDisplay')
-{
-	obj = new DotsDisplay();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NumberDisplay.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'DotsTaskObject')
-{
-	obj = new DotsTaskObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsTaskObject.json"));
-}
-else if (type == 'NumCompTaskObject')
-{
-	obj = new DotsTaskObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/NumCompTaskObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'DotsCompCtrl')
-{
-	obj = new DotsCompCtrl();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsCompCtrl.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'DotsCompTutorial')
-{
-	obj = new DotsCompTutorial();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsCompTutorial.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'DotsCompTutorial_02')
-{
-	obj = new DotsCompTutorial_02();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DotsCompTutorial_02.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'SymbolicCompTutorial_02')
-{
-	obj = new SymbolicCompTutorial_02();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolicCompTutorial_02.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'SymbolicCompTutorial')
-{
-	obj = new SymbolicCompTutorial();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/SymbolicCompTutorial.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'OrdinalTaskObject')
-{
-	obj = new OrdinalTaskObject();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdinalTaskObject.json"));
-}
-// // AUTOMATICALLY GENERATED
-else if (type == 'OrdinalTaskCtrl')
-{
-	obj = new OrdinalTaskCtrl();
-	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdinalTaskCtrl.json"));
+	obj = new OrdTaskTutorial_01();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdTaskTutorial_01.json"));
 }
 // INSERT_HERE
 		else
 		{
-			// trace(type);
+			trace("unknown object:", type);
 			assert(false);
 		}
 		if (file != null)
@@ -477,55 +489,6 @@ else if (type == 'OrdinalTaskCtrl')
 		return obj;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

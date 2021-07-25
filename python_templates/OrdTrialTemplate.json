@@ -1,1 +1,1 @@
-[{ "name": "TaskHandler", "params": { "triplet": "INSERT_HERE_0-INSERT_HERE_1-INSERT_HERE_2", "solution": "INSERT_HERE_3" } }, { "name": "TotalTime" }],
+[{ "name": "TaskHandler", "params": { "pattern":["INSERT_HERE_0","INSERT_HERE_1","INSERT_HERE_2"], "solution": "INSERT_HERE_3","additional_info":"INSERT_HERE_4" } }, { "name": "TotalTime" }],

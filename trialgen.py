@@ -396,6 +396,12 @@ def genSymbolicNumberCompareTrials(distances=[1,2,5,6],numbers=[1,2,3,4,5,6,7,8,
         print("have ",dist_poss_count,"for distance:",dist)
     return trials
 
+def appendPathToNum(num,base_path= "assets/images/pattern_numbers/",file_end=".PNG"):
+    return base_path + str(num)+file_end
+
+
+
+
 def getNewNumericalCompTrials():
     trials = []
     base_path = "assets/images/pattern_numbers/"
@@ -406,6 +412,15 @@ def getNewNumericalCompTrials():
     return trials
 
 
+def genNewOrdinalNumberVerificationTrials(filename="python_templates/ord_trials.csv"):
+    df = pd.read_csv(filename, sep=",")
+    trial_dict = df.to_dict('records')
+    trials = []
+    for row in trial_dict:
+        trials.append([appendPathToNum(row['left']),appendPathToNum(row['middle']),appendPathToNum(row['right']),row['solution'],row])
+    
+    return trials
+    
 
 def genOrdinalNumberVerificationTrials(distances=[1,2,3],numbers=[1,2,3,4,5,6,7,8,9]):
     '''
@@ -634,7 +649,8 @@ def main():
 #        trials = genSymbolicNumberCompareTrials()
         trials = getNewNumericalCompTrials()
     elif mode == "ord":
-        trials = genOrdinalNumberVerificationTrials()
+       # trials = genOrdinalNumberVerificationTrials()
+        trials = genNewOrdinalNumberVerificationTrials()
     elif mode == "numline":
         trials = genNumLineTrials()
     elif mode == "add":

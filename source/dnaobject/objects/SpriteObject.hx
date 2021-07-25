@@ -121,6 +121,10 @@ class SpriteObject implements DnaObject implements Scrollable implements IVisibl
 	 */
 	public function setAssetPath(value:String)
 	{
+		if (value == null)
+		{
+			trace("WARNING: setting asset path to", null, "id:", this.id);
+		}
 		m_asset_path = value;
 		this.loadAsset();
 	}
