@@ -587,7 +587,15 @@ def genTypingTrials(numbers=[x for x in range(1,300)]):
     single 152 double 245 triple 55
     so we will do the same here.
     '''
+
     trials = []
+
+    numbers = [i for i in range(1,20)]
+    for num in numbers:
+        trials.append([num,num])
+    return trials
+
+
     n_singles = 152
     n_doubles = 245
     n_triple = 55

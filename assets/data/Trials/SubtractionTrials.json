@@ -1,0 +1,95 @@
+[
+ {
+    "name": "AdditionTutorial",
+    "type": "SubtractionTutorialState",
+    "desc_head": "ArithmeticState_HEAD",
+    "desc_body": "ArithmeticState_BODY",
+    "preview":"assets/images/level_preview/SubtractionPreview.png",
+    "done": false,
+    "saved": false,
+    "trials": [
+      [
+        { "name": "ArithmeticHandler", "params": { "problem": "9-3=", "solution": 6 } }, { "name": "TotalTime" }
+      ]
+    ]
+  },
+  { "type": "ArithmeticPracticeState", "name": "AdditionPractice", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "done": false, "saved": false,
+    "trials": [
+      [ { "name": "ArithmeticHandler", "params": { "problem": "9-2=", "solution": 7 } }, { "name": "TotalTime" } ],
+      [ { "name": "ArithmeticHandler", "params": { "problem": "12-8=", "solution": 4 } }, { "name": "TotalTime" } ]
+    ]
+  },
+  { "type": "ArithmeticPracticeFinishedState_return", "desc_head": "SymbolicNumberComparison_HEAD", "desc_body": "SymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": [
+      [ { "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2, "distance": 1 } }, { "name": "TotalTime" } ]
+    ]
+  },
+  {
+    "type": "ArithmeticState",
+    "name": "Addition",
+    "desc_head": "ArithmeticState_HEAD",
+    "desc_body": "ArithmeticState_BODY",
+    "done": false,
+    "saved": false,
+    "trials":  [
+      [{ "name": "ArithmeticHandler", "params": { "problem": "5-3=", "solution": 2 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "6-4=", "solution": 2 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "7-5=", "solution": 2 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "8-6=", "solution": 2 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "9-7=", "solution": 2 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "10-8=", "solution": 2 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "11-9=", "solution": 2 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "5-2=", "solution": 3 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "7-4=", "solution": 3 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "8-5=", "solution": 3 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "9-6=", "solution": 3 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "10-7=", "solution": 3 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "11-8=", "solution": 3 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "12-9=", "solution": 3 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "6-2=", "solution": 4 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "7-3=", "solution": 4 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "9-5=", "solution": 4 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "10-6=", "solution": 4 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "11-7=", "solution": 4 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "12-8=", "solution": 4 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "13-9=", "solution": 4 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "7-2=", "solution": 5 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "8-3=", "solution": 5 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "9-4=", "solution": 5 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "11-6=", "solution": 5 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "12-7=", "solution": 5 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "13-8=", "solution": 5 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "14-9=", "solution": 5 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "8-2=", "solution": 6 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "9-3=", "solution": 6 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "10-4=", "solution": 6 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "11-5=", "solution": 6 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "13-7=", "solution": 6 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "14-8=", "solution": 6 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "15-9=", "solution": 6 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "9-2=", "solution": 7 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "10-3=", "solution": 7 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "11-4=", "solution": 7 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "12-5=", "solution": 7 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "13-6=", "solution": 7 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "15-8=", "solution": 7 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "16-9=", "solution": 7 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "10-2=", "solution": 8 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "11-3=", "solution": 8 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "12-4=", "solution": 8 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "13-5=", "solution": 8 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "14-6=", "solution": 8 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "15-7=", "solution": 8 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "17-9=", "solution": 8 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "11-2=", "solution": 9 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "12-3=", "solution": 9 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "13-4=", "solution": 9 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "14-5=", "solution": 9 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "15-6=", "solution": 9 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "16-7=", "solution": 9 } }, { "name": "TotalTime" }],
+      [{ "name": "ArithmeticHandler", "params": { "problem": "17-8=", "solution": 9 } }, { "name": "TotalTime" }]
+    ] },
+  { "type": "SAVE", "done": false, "saved": false },
+	{ "type": "ShowProgressState", "done": false, "saved": false },
+  { "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "UnlockState" }
+  }
+]

@@ -219,7 +219,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 			}
 			catch (e)
 			{
-				trace("WARNING: Failed to set Params for: ", params.name);
+				trace("WARNING: Failed to set Params for: ", params.name, "params:", params);
 				break;
 				return;
 			}

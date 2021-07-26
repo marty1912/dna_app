@@ -568,6 +568,20 @@ else if (type == "LevelSelectLoadingState")
 			state = new DnaState("LevelSelectLoadingState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/LevelSelectLoadingState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SpeedTutorialState")
+		{
+			state = new DnaState("SpeedTutorialState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/SpeedTutorialState.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SpeedPracticeFinishedState_return")
+		{
+			state = new DnaState("SpeedPracticeFinishedState_return");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/SpeedPracticeFinishedState_return.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -580,6 +594,17 @@ else if (type == "LevelSelectLoadingState")
 		return state;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 

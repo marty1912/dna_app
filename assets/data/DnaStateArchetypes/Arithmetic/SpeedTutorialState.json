@@ -18,7 +18,7 @@
         {
             "type": "SrtPlayerTextObject",
             "name": "TutorialText_01",
-            "text": "SubtractionTutorial_01",
+            "text": "SpeedTutorial_01",
             "autostart": false,
             "settings": {
                 "fontsize": 32,
@@ -35,7 +35,7 @@
 {
             "type": "SrtPlayerTextObject",
             "name": "TutorialText_02",
-            "text": "ArithmeticTutorial_04",
+            "text": "SpeedTutorial_04",
             "autostart": false,
             "settings": {
                 "fontsize": 32,
@@ -128,8 +128,8 @@
                     "params": [{
                         "name": "ArithmeticHandler",
                         "params": {
-                            "problem": "5-2=",
-                            "solution": 3
+                            "problem": "17         ",
+                            "solution": 17
                         }
                     }, 
                     { "name": "TotalTime" }
@@ -145,7 +145,12 @@
                 ,{
                     "type": "ActionMoveToAndPressComponent",
                     "target": "TutorialFinger",
-                    "target_button": "KEY_3/Button_0"
+                    "target_button": "KEY_1/Button_0"
+                }
+                ,{
+                    "type": "ActionMoveToAndPressComponent",
+                    "target": "TutorialFinger",
+                    "target_button": "KEY_7/Button_0"
                 }
                 ,{
                     "type": "ActionMoveToAndPressComponent",
