@@ -21,18 +21,15 @@
         { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE", "on_event":"onCreate" },
         { "type": "ActionSetText", "oneshot":false, "target": "Text_Question", "text":"", "use_literal_text":true }
 
-        ,{ "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" }
-        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_01", "on_event":"same" }
+        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_01" }
 
-        ,{ "type": "ActionSetText", "oneshot":false, "target": "Text_Question", "text":"mathanxiety_tutorial_q01", "use_literal_text":false}
+        ,{ "type": "ActionSetText", "oneshot":false, "target": "Text_Question", "text":"", "use_literal_text":true}
 
-        ,{ "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" }
-        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_02", "on_event":"same" }
+        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_02" }
 
         ,{ "type": "ActionFireEventComponent", "event_name":"EXPLAIN_BUTTONS", "oneshot":false, "target":""}
         ,{ "type": "ActionDelayComponent", "oneshot":false, "delay":0.1, "on_event":"EXPLAIN_BUTTONS_DONE" }
-        ,{ "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" }
-        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_03", "on_event":"same" }
+        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_03" }
 
 
         ,{ "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"NORMAL", "on_event":"seq" }
@@ -43,13 +40,11 @@
 
 
         ,{ "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE" }
-        ,{ "type": "ActionSetText", "oneshot":false, "target": "Text_Question", "text":"mathanxiety_tutorial_q02", "use_literal_text":false}
+        ,{ "type": "ActionSetText", "oneshot":false, "target": "Text_Question", "text":"", "use_literal_text":true}
 
-        ,{ "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" }
-        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_04", "on_event":"same" }
+        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_04" }
 
-        ,{ "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" }
-        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_05", "on_event":"same" }
+        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_05" }
 
         ,{ "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"NORMAL", "on_event":"seq" }
         ,{ "type": "ActionAppearComponent", "target": "TutorialFinger" }
@@ -57,8 +52,7 @@
         ,{ "type": "ActionDelayComponent", "oneshot":false, "delay":1 }
         ,{ "type": "ActionAppearComponent","invert":true, "target": "TutorialFinger" }
 
-        ,{ "type": "ActionPlaySoundComponent", "oneshot":false, "from_locale":true,"path":"click_002" }
-        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_06", "on_event":"same" }
+        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_06" }
 
         ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_06", "on_event":"same" }
         ,{ "type": "ActionFinishTaskComponent", "target": "" }

@@ -17,7 +17,6 @@
     "type": "ActionHandlerObject",
     "actions": [            
         { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"INACTIVE","on_event":"EVT_TASK_ANSWERED" },
-        { "type": "ActionPlaySoundComponent", "oneshot":false, "target_resource": "feedback_audio", "on_event":"EVT_TASK_ANSWERED" },
         { "type": "ActionShowTextComponent", "oneshot":false, "target": "feedback_srt", "on_event":"EVT_TASK_ANSWERED" },
         { "type": "ActionSaveTrialComponent", "oneshot":false},
         { "type": "ActionLoadTrialComponent", "oneshot":false}
@@ -31,7 +30,6 @@
 
 { "type": "ActionHandlerObject",
     "actions": [            
-        { "type": "ActionPlaySoundComponent", "oneshot":false, "target_resource": "question_audio", "on_event":"TrialHandler_load_fin" },
         { "type": "ActionShowTextComponent", "oneshot":false, "target": "question_srt", "on_event":"TrialHandler_load_fin" },
         { "type": "ActionSetButtonStateComponent", "oneshot":false, "targets": [ "Button_Green","Button_Yellow","Button_Orange","Button_Red"], "state":"NORMAL" }
         ] }

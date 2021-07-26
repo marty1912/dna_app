@@ -1,5 +1,4 @@
 ﻿1
 00:00:00,000 --> 00:00:04,100
-Alles klar, du hast also keine Angst, 
-Fehler in Mathe zu machen.
+Alles klar, du hast also keine Angst, Fehler in Mathe zu machen.
 

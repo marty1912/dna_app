@@ -91,12 +91,11 @@ class FeedbackTaskHandlerObject implements DnaObject implements TaskObject imple
 	}
 
 	public var answer:String = "";
+	public var question:String = "";
 
 	public function getQuestion()
 	{
-		var textbox:ITextBox = cast this.getParent().getObjectByName(target_question);
-		var str:String = textbox.getText();
-		return str;
+		return this.question;
 	}
 
 	/**
@@ -114,8 +113,11 @@ class FeedbackTaskHandlerObject implements DnaObject implements TaskObject imple
 	public function setParams(params:Dynamic):Void
 	{
 		this.answer = "";
+
 		var textbox:ITextBox = cast this.getParent().getObjectByName(target_question);
-		textbox.setText(params.question, false);
+		textbox.setText("", true);
+		this.question = params.question;
+		// TODO: hide textbox!
 		var audio:IResourcePath = cast this.getParent().getObjectByName(question_audio);
 		audio.setResource(params.question_audio);
 		var question_subs:ITextBox = cast this.getParent().getObjectByName(question_srt);

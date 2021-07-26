@@ -1,9 +1,5 @@
 ﻿1
 00:00:00,000 --> 00:00:04,100
-Die nächste Behauptung ist: 
-Ich werde nervös, wenn wir etwas Neues in Mathe lernen sollen.
+Die nächste Behauptung ist: Ich werde nervös, wenn wir etwas Neues in Mathe lernen sollen.
 
-2
-00:00:04,500 --> 00:00:09,900
-Bitte drücke jetzt auf das Symbol, das am besten auf dich passt.
 
