@@ -11,6 +11,7 @@ import flixel.FlxObject;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxBackdrop;
 import flixel.animation.FlxAnimationController;
+import flixel.math.FlxRect;
 import flixel.ui.FlxButton;
 
 /**
@@ -41,6 +42,13 @@ class DnaButtonObject implements DnaObject implements CommandClient implements I
 	{
 		this.m_asset_path = value;
 		this.initButton();
+	}
+
+	public var rect(get, never):FlxRect;
+
+	public function get_rect():FlxRect
+	{
+		return FlxRect.get(this.button.x, this.button.y, this.button.width, this.button.height);
 	}
 
 	/**

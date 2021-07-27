@@ -476,6 +476,18 @@ else if (type == 'OrdTaskTutorial_01')
 	obj = new OrdTaskTutorial_01();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/OrdTaskTutorial_01.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'CorsiMachineDome')
+{
+	obj = new CorsiMachineDome();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/CorsiMachineDome.json"));
+}
+// // AUTOMATICALLY GENERATED
+else if (type == 'CorsiMachine')
+{
+	obj = new CorsiMachine();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/CorsiMachine.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -489,6 +501,13 @@ else if (type == 'OrdTaskTutorial_01')
 		return obj;
 	}
 }
+
+
+
+
+
+
+
 
 
 

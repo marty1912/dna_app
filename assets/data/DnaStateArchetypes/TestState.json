@@ -2,8 +2,6 @@
     "type": "TestState",
     "objects": [
         { "type": "TaskBackgroundObject" },
-        { "type": "OrdinalTaskObject", "name": "TaskHandler", "pos_target":""},
-        { "type": "TimerObject", "name": "TotalTime" },
-        { "type": "OrdinalTaskCtrl", "name": "ordctrl","ord_task":"TaskHandler","fixation":"fixation", "pos_target":"","timer":"TotalTime","components":[]}
+        { "type": "CorsiMachine", "name": "corsi", "pos_target":""}
     ]
 }
