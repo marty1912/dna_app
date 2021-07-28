@@ -2,6 +2,6 @@
     "type": "TestState",
     "objects": [
         { "type": "TaskBackgroundObject" },
-        { "type": "CorsiMachine", "name": "corsi", "pos_target":""}
+        { "type": "CorsiTaskObject", "name": "corsi", "pos_target":""}
     ]
 }

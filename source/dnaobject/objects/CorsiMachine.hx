@@ -1,10 +1,12 @@
 package dnaobject.objects;
 
+import Assertion.assert;
 import dnaEvent.DnaEventManager;
 import dnaEvent.DnaEventSubscriber;
 import dnadata.DnaDataManager;
 import dnadata.TrialBlock;
 import dnaobject.components.ActionStateSwitchComponent;
+import dnaobject.components.TutorialFingerComponent;
 import dnaobject.components.UserButtonComponent;
 import dnaobject.interfaces.ILevelPreview;
 import dnaobject.interfaces.IUnlockableItem;
@@ -17,6 +19,33 @@ import flixel.math.FlxRect;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import haxe.Json;
+
+class PressSequence
+{
+	public var sequence:Array<DnaButtonObject>;
+	public var finger:TutorialFingerComponent;
+	public var onDone:Void->Void;
+
+	public function new(seq:Array<DnaButtonObject>, fing:TutorialFingerComponent, onDone:Void->Void)
+	{
+		this.sequence = seq.copy();
+		this.finger = fing;
+		this.onDone = onDone;
+	}
+
+	public function present()
+	{
+		if (sequence.length == 0)
+		{
+			onDone();
+			return;
+		}
+
+		var next_btn = sequence[0];
+		sequence.remove(next_btn);
+		finger.moveToButtonAndPress(next_btn, this.present, 1);
+	}
+}
 
 /**
  * this is the class that handles giving our trial parameters to the correct objects.
@@ -44,6 +73,8 @@ class CorsiMachine implements DnaObject implements DnaEventSubscriber extends Dn
 		super.onReady();
 		dome_obj = cast this.getParent().getObjectByName(getNestedObjectName(dome));
 		front_obj = cast this.getParent().getObjectByName(getNestedObjectName(front));
+		finger_obj = cast this.getParent().getObjectByName(getNestedObjectName(finger));
+		finger_obj.sprite.alpha = 0;
 
 		// very hacky but we need to have the area on the front so no buttons are placed outside the box..
 		var buttons_pos_x:Float = front_obj.sprite.x + (front_obj.width * 0.05);
@@ -72,12 +103,33 @@ class CorsiMachine implements DnaObject implements DnaEventSubscriber extends Dn
 	public var dome:String;
 	public var base:String;
 	public var front:String;
+	public var finger:String;
 	public var back:String;
 
 	public var dome_obj:SpriteObject;
 	public var front_obj:SpriteObject;
+	public var finger_obj:SpriteObject;
 
 	public var button_area:FlxRect;
+
+	public function presentSequence(sequence:Array<DnaButtonObject>, onDoneCallback:Void->Void)
+	{
+		var tutFinger:TutorialFingerComponent = cast finger_obj.getComponentByType("TutorialFingerComponent");
+		var seq = new PressSequence(sequence, tutFinger, onDoneCallback);
+		seq.present();
+	}
+
+	/**
+	 * randomly chooses a Sequence to be pressed.
+	 */
+	public function generateSequence(len:Int):Array<DnaButtonObject>
+	{
+		assert(this.buttons != null && this.buttons.length != 0);
+		var sequence = buttons.copy();
+		sequence = Random.shuffle(sequence);
+		sequence = sequence.slice(0, len);
+		return sequence;
+	}
 
 	/**
 	 * randomly sets up buttons on the box.
@@ -234,6 +286,10 @@ class CorsiMachine implements DnaObject implements DnaEventSubscriber extends Dn
 		if (Reflect.hasField(jsonFile, "front"))
 		{
 			this.front = cast jsonFile.front;
+		}
+		if (Reflect.hasField(jsonFile, "finger"))
+		{
+			this.finger = cast jsonFile.finger;
 		}
 	}
 

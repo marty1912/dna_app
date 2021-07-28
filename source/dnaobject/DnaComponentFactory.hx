@@ -451,6 +451,14 @@ else if (type == 'OrdCtrlPracticeComponent')
 	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/OrdCtrlPracticeComponent.json"));
 }
 
+// // AUTOMATICALLY GENERATED
+
+else if (type == 'TutorialFingerComponent')
+{
+	comp = new TutorialFingerComponent();
+	file = Json.parse(ConfigFile.text("assets/data/DnaComponentArchetypes/TutorialFingerComponent.json"));
+}
+
 // INSERT_HERE
 		else
 		{
@@ -462,6 +470,10 @@ else if (type == 'OrdCtrlPracticeComponent')
 		return comp;
 	}
 }
+
+
+
+
 
 
 

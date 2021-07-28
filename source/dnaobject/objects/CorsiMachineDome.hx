@@ -5,10 +5,14 @@ import dnaEvent.DnaEventSubscriber;
 import dnadata.DnaDataManager;
 import dnadata.TrialBlock;
 import dnaobject.components.ActionStateSwitchComponent;
+import dnaobject.components.StateMachineComponent;
 import dnaobject.interfaces.ILevelPreview;
+import dnaobject.interfaces.IState;
+import dnaobject.interfaces.IStateMachine;
 import dnaobject.interfaces.IUnlockableItem;
 import dnaobject.interfaces.TaskObject;
 import flixel.addons.plugin.taskManager.FlxTask;
+import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import haxe.Json;
 
@@ -23,7 +27,11 @@ class CorsiMachineDome implements DnaObject implements DnaEventSubscriber extend
 	public function new()
 	{
 		super("CorsiMachineDome");
+		state_machine = cast DnaComponentFactory.create("StateMachineComponent");
+		this.addComponent(state_machine);
 	}
+
+	public var state_machine:StateMachineComponent;
 
 	/**
 	 * this is the function that gets called everytime an event we subscribed for is fired
@@ -48,6 +56,7 @@ class CorsiMachineDome implements DnaObject implements DnaEventSubscriber extend
 		helix_obj.sprite.animation.play("rotate");
 
 		var tween = FlxTween.angle(helix_obj.sprite, 0, 360, 20, {type: LOOPING});
+		this.state_machine.setNextState(new CorsiDomeFalse());
 	}
 
 	public var helix:String;
@@ -89,4 +98,31 @@ class CorsiMachineDome implements DnaObject implements DnaEventSubscriber extend
 	var first = true;
 
 	public override function update(elapsed:Float) {}
+}
+
+class CorsiDomeFalse implements IState
+{
+	public var corsi_dome:CorsiMachineDome;
+	public var state_machine:IStateMachine;
+
+	public var time_visible:Float = 1;
+
+	public function new() {}
+
+	public function setParent(parent:IStateMachine):Void
+	{
+		state_machine = parent;
+		var comp:DnaComponent = cast parent;
+		corsi_dome = cast comp.getParent();
+	}
+
+	public function update(elapsed:Float):Void {}
+
+	public function enter():Void
+	{
+		this.corsi_dome.back_obj.sprite.animation.play("red");
+		FlxTween.tween(this.corsi_dome.back_obj.sprite, {alpha: 0.2}, 1, {type: PINGPONG, ease: FlxEase.cubeInOut});
+	}
+
+	public function exit():Void {}
 }

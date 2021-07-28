@@ -12,13 +12,15 @@
 "back":"back",
 "front":"front",
 "dome":"dome",
+"finger":"tutorial_finger",
 "objects":[
 
         { "type": "SpriteObject", "name": "BaseArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "::pos_target::" }] },
         { "type": "SpriteObject", "name": "DomeArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::dome_width::", "scale_y": "::dome_height::", "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "BaseArea" }] },
 	{ "type": "SpriteObject", "name": "back", "asset_path": "assets/images/corsi_machine/walls.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" }] },
         { "type": "CorsiMachineDome", "name": "dome", "pos_target":"DomeArea"},
-	{ "type": "SpriteObject", "name": "front", "asset_path": "assets/images/corsi_machine/front.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" }] }
+	{ "type": "SpriteObject", "name": "front", "asset_path": "assets/images/corsi_machine/front.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" }] },
+        { "type": "TutorialFingerObject", "name": "tutorial_finger", "components":[  { "type": "PositionComponent", "oneshot": true, "position": "LeftBottom" } ] }
 
 ]
 }

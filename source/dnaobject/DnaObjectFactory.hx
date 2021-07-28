@@ -488,6 +488,12 @@ else if (type == 'CorsiMachine')
 	obj = new CorsiMachine();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/CorsiMachine.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'CorsiTaskObject')
+{
+	obj = new CorsiTaskObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/CorsiTaskObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -501,6 +507,10 @@ else if (type == 'CorsiMachine')
 		return obj;
 	}
 }
+
+
+
+
 
 
 

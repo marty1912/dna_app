@@ -1,0 +1,12 @@
+
+{"type":"CorsiTaskObject",
+"name":"pattern_ctrl",
+"pos_target":"",
+"corsi":"corsi",
+"action_init":"a_initial",
+"action_fin":"a_fin",
+"objects":[
+        { "type": "CorsiMachine", "name": "corsi", "pos_target":""}
+]
+}
+
