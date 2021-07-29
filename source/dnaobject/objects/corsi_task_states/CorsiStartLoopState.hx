@@ -6,7 +6,7 @@ import dnaobject.objects.*;
 import dnaobject.objects.DotsTaskObject.DotsObjectStateHidden;
 import dnaobject.objects.corsi_task_states.*;
 
-class CorsiInitialState implements IState
+class CorsiStartLoopState implements IState
 {
 	public var corsi_ctrl:CorsiTaskObject;
 	public var state_machine:IStateMachine;
@@ -30,11 +30,12 @@ class CorsiInitialState implements IState
 
 	public function enter():Void
 	{
-		trace("corsi initial state enter!");
-
-		this.corsi_ctrl.action_initial_obj.startQueue(function()
+		trace("corsi start loop state enter!");
+		// corsi_ctrl.corsi_obj.createButtons();
+		corsi_ctrl.sequence = corsi_ctrl.corsi_obj.generateSequence(corsi_ctrl.currentSequenceLen);
+		corsi_ctrl.corsi_obj.rearrangeButtons(1, function()
 		{
-			this.state_machine.setNextState(new CorsiStartLoopState());
+			this.state_machine.setNextState(new CorsiPresentState());
 		});
 	}
 

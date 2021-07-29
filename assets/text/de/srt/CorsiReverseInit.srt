@@ -1,0 +1,43 @@
+1
+00:00:00,000 --> 00:00:06,000
+Das hier ist meine DNA-Analyse Maschine.
+
+2
+00:00:06,000 --> 00:00:12,000
+Sieht ganz schön beeindruckend aus oder?
+
+3
+00:00:12,000 --> 00:00:18,000
+Ich habe sie selbst gebaut.
+
+4
+00:00:18,000 --> 00:00:24,000
+Sie ist sehr nützlich aber etwas kompliziert zu verwenden.
+
+5
+00:00:24,000 --> 00:00:30,000
+Ich erkläre dir das jetzt mal:
+
+6
+00:00:30,000 --> 00:00:36,000
+Man muss die Knöpfe in einer bestimmten Reihenfolge drücken.
+
+7
+00:00:36,000 --> 00:00:42,000
+Danach muss man die selbe Reihenfolge rückwärts eingeben, damit Alles funktioniert.
+
+8
+00:00:42,000 --> 00:00:48,000
+Aber für uns beide ist das doch ein Klacks!
+
+9
+00:00:48,000 --> 00:00:54,000
+Wir machen das so: Ich gebe die Reihenfolge ein, und du wiederholst sie dann RÜCKWÄRTS.
+
+10
+00:00:54,000 --> 00:01:00,000
+Aja, die Knöpfe verschieben sich ständig. Hatte ich fast vergessen.
+
+11
+00:01:00,000 --> 00:01:06,000
+Starten wir!

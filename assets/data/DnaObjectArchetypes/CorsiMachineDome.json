@@ -8,12 +8,14 @@
 "area":"area",
 "base":"BaseArea",
 "back":"back",
+"ground":"ground",
 "front":"front",
 "helix":"helix",
 "objects":[
 
         { "type": "SpriteObject", "name": "BaseArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "::pos_target::" }] },
-	{ "type": "SpriteObject", "name": "back", "asset_path": "assets/images/corsi_machine/dome_back.png","animated":true,"asset_height":700,"asset_width":1400, "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" }] },
+	{ "type": "SpriteObject", "name": "back", "asset_path": "assets/images/corsi_machine/dome_back.png","asset_height":700,"asset_width":1400, "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" }] },
+	{ "type": "SpriteObject", "name": "ground", "asset_path": "assets/images/corsi_machine/dome_ground.png","asset_height":700,"asset_width":1400, "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" }] },
 	{ "type": "SpriteObject", "name": "helix", "asset_path": "assets/images/dna_helix_animated.png","animated":true,"asset_height":256,"asset_width":128, "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.15, "scale_y": 0.15, "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" }] },
 	{ "type": "SpriteObject", "name": "front", "asset_path": "assets/images/corsi_machine/dome_front.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" }] }
 

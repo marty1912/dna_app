@@ -36,12 +36,13 @@ class CorsiAnswerState implements IState
 	public function saveTrial()
 	{
 		trace("save task.");
+		// TODO: save!!
 	}
 
 	public function endTask()
 	{
 		trace("End task.");
-		assert(false);
+		state_machine.setNextState(new CorsiFeedbackStateErrorOut());
 	}
 
 	public function increaseLevel()
@@ -70,7 +71,7 @@ class CorsiAnswerState implements IState
 			increaseLevel();
 		}
 
-		this.state_machine.setNextState(new CorsiInitialState());
+		this.state_machine.setNextState(new CorsiFeedbackStateContinue());
 		return;
 	}
 
@@ -85,7 +86,7 @@ class CorsiAnswerState implements IState
 			return;
 		}
 
-		this.state_machine.setNextState(new CorsiInitialState());
+		this.state_machine.setNextState(new CorsiFeedbackStateError());
 		return;
 	}
 
@@ -99,11 +100,13 @@ class CorsiAnswerState implements IState
 			if (correct_seq.length == pressed_seq.length)
 			{
 				onSequenceCorrect();
+				return;
 			}
 		}
 		else
 		{
 			onSequenceInCorrect();
+			return;
 		}
 	}
 

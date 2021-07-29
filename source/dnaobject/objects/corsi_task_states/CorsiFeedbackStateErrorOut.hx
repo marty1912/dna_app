@@ -3,15 +3,17 @@ package dnaobject.objects.corsi_task_states;
 import dnaobject.interfaces.IState;
 import dnaobject.interfaces.IStateMachine;
 import dnaobject.objects.*;
+import dnaobject.objects.CorsiMachineDome.CorsiDomeRainbow;
 import dnaobject.objects.DotsTaskObject.DotsObjectStateHidden;
 import dnaobject.objects.corsi_task_states.*;
 
-class CorsiInitialState implements IState
+class CorsiFeedbackStateErrorOut implements IState
 {
 	public var corsi_ctrl:CorsiTaskObject;
 	public var state_machine:IStateMachine;
 
-	public var time_visible:Float = 1;
+	public var time_visible:Float = 3.5;
+	public var time:Float = 0;
 
 	public function new() {}
 
@@ -22,6 +24,8 @@ class CorsiInitialState implements IState
 		corsi_ctrl = cast comp.getParent();
 	}
 
+	public var moving:Bool = false;
+
 	public function update(elapsed:Float):Void {}
 
 	public function onFeedbackFinished() {}
@@ -30,12 +34,10 @@ class CorsiInitialState implements IState
 
 	public function enter():Void
 	{
-		trace("corsi initial state enter!");
+		trace("corsi error out state enter!");
 
-		this.corsi_ctrl.action_initial_obj.startQueue(function()
-		{
-			this.state_machine.setNextState(new CorsiStartLoopState());
-		});
+		this.corsi_ctrl.corsi_obj.dome_obj.state_machine.setNextState(new CorsiDomeRainbow());
+		this.corsi_ctrl.action_error_out_obj.startQueue(function() {});
 	}
 
 	public function exit():Void {}

@@ -6,12 +6,13 @@ import dnaobject.objects.*;
 import dnaobject.objects.DotsTaskObject.DotsObjectStateHidden;
 import dnaobject.objects.corsi_task_states.*;
 
-class CorsiInitialState implements IState
+class CorsiMixingState implements IState
 {
 	public var corsi_ctrl:CorsiTaskObject;
 	public var state_machine:IStateMachine;
 
-	public var time_visible:Float = 1;
+	public var time_visible:Float = 3.5;
+	public var time:Float = 0;
 
 	public function new() {}
 
@@ -22,7 +23,25 @@ class CorsiInitialState implements IState
 		corsi_ctrl = cast comp.getParent();
 	}
 
-	public function update(elapsed:Float):Void {}
+	public var moving:Bool = false;
+
+	public function update(elapsed:Float):Void
+	{
+		if (!moving)
+		{
+			moving = true;
+			corsi_ctrl.corsi_obj.rearrangeButtons(1, function()
+			{
+				this.moving = false;
+			});
+		}
+
+		time += elapsed;
+		if (time > time_visible)
+		{
+			this.state_machine.setNextState(new CorsiStartLoopState());
+		}
+	}
 
 	public function onFeedbackFinished() {}
 
@@ -30,12 +49,9 @@ class CorsiInitialState implements IState
 
 	public function enter():Void
 	{
-		trace("corsi initial state enter!");
-
-		this.corsi_ctrl.action_initial_obj.startQueue(function()
-		{
-			this.state_machine.setNextState(new CorsiStartLoopState());
-		});
+		trace("corsi mixing state enter!");
+		// corsi_ctrl.corsi_obj.createButtons();
+		corsi_ctrl.sequence = corsi_ctrl.corsi_obj.generateSequence(corsi_ctrl.currentSequenceLen);
 	}
 
 	public function exit():Void {}

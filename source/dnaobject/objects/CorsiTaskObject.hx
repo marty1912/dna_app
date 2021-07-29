@@ -82,8 +82,26 @@ class CorsiTaskObject implements DnaObject implements TaskObject extends DnaObje
 	{
 		super.onReady();
 		corsi_obj = cast this.getParent().getObjectByName(getNestedObjectName(corsi));
+		action_correct_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_correct));
+		action_incorrect_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_incorrect));
+		action_error_out_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_error_out));
+
+		action_go_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_go));
+		action_initial_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_initial));
 		this.state_machine.setNextState(new CorsiInitialState());
 	}
+
+	public var action_correct:String;
+	public var action_correct_obj:ActionHandlerObject;
+	public var action_error_out:String;
+	public var action_error_out_obj:ActionHandlerObject;
+	public var action_incorrect:String;
+	public var action_incorrect_obj:ActionHandlerObject;
+
+	public var action_initial:String;
+	public var action_initial_obj:ActionHandlerObject;
+	public var action_go:String;
+	public var action_go_obj:ActionHandlerObject;
 
 	/**
 	 * override so we can have parameters like random order and stuff.
@@ -96,6 +114,26 @@ class CorsiTaskObject implements DnaObject implements TaskObject extends DnaObje
 		if (Reflect.hasField(jsonFile, "corsi"))
 		{
 			this.corsi = cast jsonFile.corsi;
+		}
+		if (Reflect.hasField(jsonFile, "action_correct"))
+		{
+			this.action_correct = cast jsonFile.action_correct;
+		}
+		if (Reflect.hasField(jsonFile, "action_incorrect"))
+		{
+			this.action_incorrect = cast jsonFile.action_incorrect;
+		}
+		if (Reflect.hasField(jsonFile, "action_go"))
+		{
+			this.action_go = cast jsonFile.action_go;
+		}
+		if (Reflect.hasField(jsonFile, "action_initial"))
+		{
+			this.action_initial = cast jsonFile.action_initial;
+		}
+		if (Reflect.hasField(jsonFile, "action_error_out"))
+		{
+			this.action_error_out = cast jsonFile.action_error_out;
 		}
 	}
 
@@ -118,5 +156,8 @@ class CorsiTaskObject implements DnaObject implements TaskObject extends DnaObje
 		return DnaConstants.TASK_CORRECT;
 	}
 
-	public override function update(elapsed:Float) {}
+	public override function update(elapsed:Float)
+	{
+		super.update(elapsed);
+	}
 }

@@ -32,7 +32,7 @@ class CorsiPresentState implements IState
 	public function onDone()
 	{
 		trace("present done");
-		this.state_machine.setNextState(new CorsiAnswerState());
+		this.state_machine.setNextState(new CorsiGoState());
 	}
 
 	public function setDots(path:String) {}

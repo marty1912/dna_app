@@ -75,6 +75,8 @@ class CorsiMachine implements DnaObject implements DnaEventSubscriber extends Dn
 		front_obj = cast this.getParent().getObjectByName(getNestedObjectName(front));
 		finger_obj = cast this.getParent().getObjectByName(getNestedObjectName(finger));
 		finger_obj.sprite.alpha = 0;
+		front_obj.removeChild(front_obj.sprite);
+		front_obj.addChild(front_obj.sprite);
 
 		// very hacky but we need to have the area on the front so no buttons are placed outside the box..
 		var buttons_pos_x:Float = front_obj.sprite.x + (front_obj.width * 0.05);
@@ -106,7 +108,7 @@ class CorsiMachine implements DnaObject implements DnaEventSubscriber extends Dn
 	public var finger:String;
 	public var back:String;
 
-	public var dome_obj:SpriteObject;
+	public var dome_obj:CorsiMachineDome;
 	public var front_obj:SpriteObject;
 	public var finger_obj:SpriteObject;
 
@@ -132,6 +134,62 @@ class CorsiMachine implements DnaObject implements DnaEventSubscriber extends Dn
 	}
 
 	/**
+	 * rearranges the buttons using FlxTweens to make it look nice.
+	 */
+	public function rearrangeButtons(duration:Float = 1, doneCallback:Void->Void = null)
+	{
+		var buttonPoss = getRandomButtonPositions();
+		for (i in 0...buttonPoss.length)
+		{
+			// only add the callback on the last tween.
+			if (i == buttonPoss.length - 1)
+			{
+				FlxTween.tween(this.buttons[i], {pos_x: buttonPoss[i].x, pos_y: buttonPoss[i].y}, duration, {
+					onComplete: function(tween:FlxTween)
+					{
+						if (doneCallback != null)
+						{
+							doneCallback();
+						}
+					}
+				});
+			}
+			else
+			{
+				FlxTween.tween(this.buttons[i], {pos_x: buttonPoss[i].x, pos_y: buttonPoss[i].y}, duration);
+			}
+		}
+	}
+
+	/**
+	 * returns non overlapping random button positions for our buttons list.
+	 * @return Array<FlxRect>
+	 */
+	public function getRandomButtonPositions():Array<FlxRect>
+	{
+		var free_rects = new Array<FlxRect>();
+		free_rects.push(this.button_area);
+		var used_rects = new Array<FlxRect>();
+
+		for (button in this.buttons)
+		{
+			var rand_rect = free_rects[Random.int(0, free_rects.length - 1)];
+			var pos = getRandomPosOnRect(rand_rect, button.rect);
+			// button.moveTo(pos.x, pos.y);
+			var currRect = new FlxRect(pos.x, pos.y, button.button.width, button.button.height);
+			used_rects.push(currRect);
+			var check_for_overlap = free_rects.copy();
+			for (rect in check_for_overlap)
+			{
+				free_rects.remove(rect);
+				var split = getFreeRects(rect, currRect);
+				free_rects = free_rects.concat(split);
+			}
+		}
+		return used_rects;
+	}
+
+	/**
 	 * randomly sets up buttons on the box.
 	 * @param n_buttons 
 	 */
@@ -151,22 +209,12 @@ class CorsiMachine implements DnaObject implements DnaEventSubscriber extends Dn
 			button.addChild(button.button);
 		}
 
-		var free_rects = new Array<FlxRect>();
-		free_rects.push(this.button_area);
-
-		for (button in this.buttons)
+		var buttonPoss = getRandomButtonPositions();
+		for (i in 0...buttonPoss.length)
 		{
-			var rand_rect = free_rects[Random.int(0, free_rects.length - 1)];
-			var pos = getRandomPosOnRect(rand_rect, button.rect);
-			button.moveTo(pos.x, pos.y);
-			var check_for_overlap = free_rects.copy();
-			for (rect in check_for_overlap)
-			{
-				free_rects.remove(rect);
-				var split = getFreeRects(rect, button.rect);
-				free_rects = free_rects.concat(split);
-			}
+			this.buttons[i].moveTo(buttonPoss[i].x, buttonPoss[i].y);
 		}
+
 		// visualizeRects(free_rects);
 	}
 
