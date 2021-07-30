@@ -22,7 +22,19 @@ class CorsiInitialState implements IState
 		corsi_ctrl = cast comp.getParent();
 	}
 
-	public function update(elapsed:Float):Void {}
+	public var moving:Bool = false;
+
+	public function update(elapsed:Float):Void
+	{
+		if (!moving)
+		{
+			moving = true;
+			corsi_ctrl.corsi_obj.rearrangeButtons(1, function()
+			{
+				this.moving = false;
+			});
+		}
+	}
 
 	public function onFeedbackFinished() {}
 

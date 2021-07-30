@@ -37,7 +37,8 @@ class StateMachineComponent implements DnaComponent implements IStateMachine ext
 		m_current_state.enter();
 	}
 
-	private var m_current_state:IState = null;
+	// read from outside, write only from this class
+	public var m_current_state(default, null):IState = null;
 
 	public function setState(state:StateEnum):Void
 		throw "not implemented! only here for legacy reasons!";

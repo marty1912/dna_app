@@ -282,7 +282,7 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 		m_current_state.enter();
 	}
 
-	private var m_current_state:IState;
+	public var m_current_state(default, null):IState;
 
 	public function setState(state:StateEnum):Void
 	{

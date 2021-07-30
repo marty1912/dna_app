@@ -221,7 +221,7 @@ class DnaButtonObject implements DnaObject implements CommandClient implements I
 		this.setNextState(new ButtonStateNormal());
 	}
 
-	private var m_current_state:IState = null;
+	public var m_current_state(default, null):IState;
 
 	/**
 	 * part of the statemachine interface. in here we set our next state.

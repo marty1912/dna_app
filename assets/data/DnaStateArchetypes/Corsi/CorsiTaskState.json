@@ -1,0 +1,7 @@
+{
+    "type": "CorsiTaskState",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+        { "type": "CorsiTaskObject", "name": "corsi", "pos_target":""}
+    ]
+}

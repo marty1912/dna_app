@@ -10,16 +10,8 @@
         { "type": "TrialHandlerObject","name": "trialz"},
         { "type": "ActionHandlerObject", "name": "ActionHandler_Fin",
             "actions": [
-                { 
-            "type": "ActionFinishTaskComponent",
-                "on_event":"NO_EVENT_HERE",
-            "target": ""
-          },
-          {
-            "type": "ActionStateSwitchComponent",
-            "target": "",
-            "next_state": "NEXT_TASK"
-          }
+                { "type": "ActionFinishTaskComponent", "on_event":"NO_EVENT_HERE", "target": "" },
+          { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
         ]
       },
  

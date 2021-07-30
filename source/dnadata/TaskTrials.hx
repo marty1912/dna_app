@@ -88,6 +88,7 @@ class TaskTrials
 
 	public final task_block_paths:Array<String> = [
 		// "assets/data/Trials/ArithmeticTrials.json",
+		"assets/data/Trials/Corsi.json",
 		"assets/data/Trials/AdditionTrials.json",
 		"assets/data/Trials/SubtractionTrials.json",
 		"assets/data/Trials/NonSymbolCompTrials.json",

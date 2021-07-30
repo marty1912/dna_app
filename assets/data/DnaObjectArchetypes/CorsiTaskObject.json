@@ -2,7 +2,8 @@
 {"type":"CorsiTaskObject",
 "name":"pattern_ctrl",
 "pos_target":"",
-"corsi":"corsi",
+"corsi":"corsi_mach",
+"trialhandler":"trialz",
 "action_correct":"a_correct",
 "action_incorrect":"a_incorrect",
 "action_error_out":"a_error_out",
@@ -10,7 +11,9 @@
 "action_go":"a_go",
 "action_initial":"a_initial",
 "objects":[
-        { "type": "CorsiMachine", "name": "corsi", "pos_target":""},
+        { "type": "CorsiMachine", "name": "corsi_mach", "pos_target":""},
+
+        { "type": "TrialHandlerObject","name": "trialz"},
 
         { "type": "SpriteObject", "name": "SubtitleArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.2, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
         { "type": "SrtPlayerTextObject", "name":"text_correct", "text":"CorsiReverseCorrectFeedback", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
@@ -38,7 +41,9 @@
              ] },
         { "type": "ActionHandlerObject", "name": "a_error_out",
             "actions": [
-            { "type": "ActionShowTextComponent", "oneshot":false, "target": "text_error_out", "on_event":"NO_EVENT" }
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "text_error_out", "on_event":"NO_EVENT" },
+                { "type": "ActionFinishTaskComponent", "target": "" },
+               { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
              ] }
 ]
 }

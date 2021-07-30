@@ -582,6 +582,13 @@ else if (type == "SpeedPracticeFinishedState_return")
 			state = new DnaState("SpeedPracticeFinishedState_return");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/SpeedPracticeFinishedState_return.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "CorsiTaskState")
+		{
+			state = new DnaState("CorsiTaskState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Corsi/CorsiTaskState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -594,6 +601,7 @@ else if (type == "SpeedPracticeFinishedState_return")
 		return state;
 	}
 }
+
 
 
 

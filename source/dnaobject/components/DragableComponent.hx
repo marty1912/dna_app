@@ -40,7 +40,7 @@ class DragableComponent implements DnaComponent implements IStateMachine extends
 		m_current_state.enter();
 	}
 
-	private var m_current_state:IState;
+	public var m_current_state(default, null):IState;
 
 	public var setStateCallback:StateEnum->Void = null;
 

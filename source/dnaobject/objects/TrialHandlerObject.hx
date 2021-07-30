@@ -17,6 +17,8 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	public static final SAVE_TRIAL_DATA_FIN = "TrialHandler_save_fin";
 	public static final TRIALS_FIN = "TrialHandler_all_fin";
 
+	public var base_trials:Array<Array<Dynamic>> = new Array<Array<Dynamic>>();
+
 	/**
 	 * overwritten ctor.
 	 */
@@ -45,7 +47,14 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 
 	public function getTrialsFromManager()
 	{
-		this.setTrials(DnaDataManager.instance.getNextTrials().trials);
+		// we need a copy of the base trials so we can append it in the resetTrials function
+		// this is a pointer to the real trials in the manager.
+		// everything we do with them will be done in the manager as well.
+		var trials_in_manager:Array<Dynamic> = DnaDataManager.instance.getNextTrials().trials;
+
+		this.base_trials = deepCopyTrials(cast trials_in_manager);
+
+		this.setTrials(trials_in_manager);
 	}
 
 	/**
@@ -69,18 +78,16 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	 */
 	public function collectData()
 	{
-		// //trace("\033[1;31m collectData", this.trials, "index", this.trial_index, "\033[0m");
 		if (this.trials == null)
 		{
 			return;
 		}
 		if (this.trial_index > this.trials.length - 1)
 		{
-			// //trace(this.trials);
 			Assertion.assert(false);
 			if (this.reload_on_fin)
 			{
-				resetTrials();
+				reappendTrials();
 				return collectData();
 			}
 			this.getParent().eventManager.broadcastEvent(TRIALS_FIN);
@@ -96,7 +103,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 			}
 			catch (e)
 			{
-				// trace("WARNING: failed to get Data for:", params.name);
+				trace("WARNING: failed to get Data for:", params.name);
 				continue;
 			}
 		}
@@ -129,14 +136,36 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 		super.fromFile(jsonFile);
 	}
 
-	/**
-	 * this function resets the trials and starts them again (we do the same trials another time)
-	 */
-	public function resetTrials()
+	static function deepCopyTrials(copy_me:Array<Array<Dynamic>>):Array<Array<Dynamic>>
 	{
-		// trace("reset Trials!!");
-		this.setTrials(this.trials);
-		this.trial_index = 0;
+		var copied = new Array<Array<Dynamic>>();
+		for (trial in copy_me)
+		{
+			var copy_trial = new Array<Dynamic>();
+			for (param in trial)
+			{
+				var copy_param = Reflect.copy(param);
+				copy_trial.push(copy_param);
+			}
+			copied.push(copy_trial);
+		}
+		return copied;
+	}
+
+	/**
+	 * this function appends the base trials and keeps going (we do the same trials another time)
+	 */
+	public function reappendTrials()
+	{
+		var copy_base = deepCopyTrials(this.base_trials);
+		// we want to edit trials inplace (because it is the pointer to the datamanager.)
+		for (trial in copy_base)
+		{
+			this.trials.push(trial);
+		}
+		//
+		// this.trials = this.trials.concat(copy_base);
+		// this.trial_index = 0;
 	}
 
 	public var all_trials_done(get, null):Bool;
@@ -201,7 +230,7 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 			// //trace(this.trials);
 			if (this.reload_on_fin)
 			{
-				resetTrials();
+				reappendTrials();
 				return loadNextTrial();
 			}
 			this.getParent().eventManager.broadcastEvent(TRIALS_FIN);

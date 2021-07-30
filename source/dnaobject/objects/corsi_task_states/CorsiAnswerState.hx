@@ -12,6 +12,7 @@ import flixel.FlxG;
 import flixel.graphics.tile.FlxGraphicsShader;
 import flixel.input.actions.FlxActionInputDigital.FlxActionInputDigitalMouseWheel;
 import flixel.math.FlxPoint;
+import haxe.Timer;
 
 class CorsiAnswerState implements IState
 {
@@ -36,7 +37,8 @@ class CorsiAnswerState implements IState
 	public function saveTrial()
 	{
 		trace("save task.");
-		// TODO: save!!
+		corsi_ctrl.trialhandler_obj.loadNextTrial();
+		this.corsi_ctrl.trialhandler_obj.saveCurrentTrial();
 	}
 
 	public function endTask()
@@ -52,7 +54,6 @@ class CorsiAnswerState implements IState
 		if (corsi_ctrl.currentSequenceLen >= corsi_ctrl.maxSequenceLen)
 		{
 			// max out
-			saveTrial();
 			endTask();
 			return;
 		}
@@ -64,6 +65,7 @@ class CorsiAnswerState implements IState
 	public function onSequenceCorrect()
 	{
 		// sequence correct!
+		saveTrial();
 		corsi_ctrl.correctTrials++;
 		corsi_ctrl.remainingTrials--;
 		if (corsi_ctrl.correctTrials >= corsi_ctrl.minCorrect)
@@ -77,11 +79,16 @@ class CorsiAnswerState implements IState
 
 	public function onSequenceInCorrect()
 	{
+		saveTrial();
 		corsi_ctrl.remainingTrials--;
+		if (corsi_ctrl.currentSequenceLen == corsi_ctrl.minSequenceLen)
+		{
+			// if somebody does not get the initial sequence len correct it is likely that the task was simply not understood..
+			corsi_ctrl.remainingTrials++;
+		}
 		if (corsi_ctrl.remainingTrials <= 0 || corsi_ctrl.remainingTrials + corsi_ctrl.correctTrials < corsi_ctrl.minCorrect)
 		{
 			// error out
-			saveTrial();
 			endTask();
 			return;
 		}
@@ -90,30 +97,57 @@ class CorsiAnswerState implements IState
 		return;
 	}
 
-	public function onButtonPress(btn:DnaButtonObject)
+	public var correct(get, null):Bool;
+
+	public function get_correct():Bool
 	{
-		pressed_seq.push(btn);
 		var correct_seq = corsi_ctrl.sequence;
 		var backwards = corsi_ctrl.backwards;
 		if (corsi_ctrl.answerCorrectSoFar(correct_seq, pressed_seq, backwards))
 		{
 			if (correct_seq.length == pressed_seq.length)
 			{
-				onSequenceCorrect();
-				return;
+				return true;
 			}
 		}
 		else
 		{
+			return false;
+		}
+		return null;
+	}
+
+	public function onButtonPress(btn:DnaButtonObject)
+	{
+		pressed_seq.push(btn);
+		if (correct == true)
+		{
+			onSequenceCorrect();
+			return;
+		}
+		else if (correct == false)
+		{
 			onSequenceInCorrect();
 			return;
 		}
+		// third case: correct is null. therefore we do not do anything yet.
 	}
+
+	public var time(get, never):Float;
+
+	public function get_time():Float
+	{
+		assert(timeStart != null);
+		return Timer.stamp() - timeStart;
+	}
+
+	public var timeStart:Float;
 
 	public function setDots(path:String) {}
 
 	public function enter():Void
 	{
+		timeStart = Timer.stamp();
 		trace("corsi answer state enter!");
 		for (btn in this.corsi_ctrl.corsi_obj.buttons)
 		{

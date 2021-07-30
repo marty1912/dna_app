@@ -1,5 +1,6 @@
 package dnaobject.objects.corsi_task_states;
 
+import dnadata.DnaDataManager;
 import dnaobject.interfaces.IState;
 import dnaobject.interfaces.IStateMachine;
 import dnaobject.objects.*;
@@ -37,7 +38,12 @@ class CorsiFeedbackStateErrorOut implements IState
 		trace("corsi error out state enter!");
 
 		this.corsi_ctrl.corsi_obj.dome_obj.state_machine.setNextState(new CorsiDomeRainbow());
-		this.corsi_ctrl.action_error_out_obj.startQueue(function() {});
+		this.corsi_ctrl.action_error_out_obj.startQueue(function()
+		{
+			trace("------------------------------------");
+			trace(DnaDataManager.instance.getAllData());
+			trace("------------------------------------");
+		});
 	}
 
 	public function exit():Void {}

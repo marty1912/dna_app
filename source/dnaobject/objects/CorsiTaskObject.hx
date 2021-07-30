@@ -11,6 +11,8 @@ import dnaobject.components.UserButtonComponent;
 import dnaobject.interfaces.ILevelPreview;
 import dnaobject.interfaces.IUnlockableItem;
 import dnaobject.interfaces.TaskObject;
+import dnaobject.objects.corsi_task_states.CorsiAnswerState;
+import dnaobject.objects.corsi_task_states.CorsiFeedbackStateContinue;
 import dnaobject.objects.corsi_task_states.CorsiInitialState;
 import flixel.FlxSprite;
 import flixel.addons.plugin.taskManager.FlxTask;
@@ -19,6 +21,7 @@ import flixel.math.FlxRandom;
 import flixel.math.FlxRect;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
+import flixel.util.FlxTimer;
 import haxe.Json;
 
 /**
@@ -35,8 +38,8 @@ class CorsiTaskObject implements DnaObject implements TaskObject extends DnaObje
 	// parameters
 	public var maxSequenceLen:Int = 9;
 	public var minSequenceLen:Int = 2;
-	public var trialsPerLen:Int = 3;
-	public var minCorrect:Int = 2;
+	public var trialsPerLen:Int = 2;
+	public var minCorrect:Int = 1;
 	public var backwards:Bool = true;
 
 	public var currentSequenceLen:Int;
@@ -85,6 +88,8 @@ class CorsiTaskObject implements DnaObject implements TaskObject extends DnaObje
 		action_correct_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_correct));
 		action_incorrect_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_incorrect));
 		action_error_out_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_error_out));
+		trialhandler_obj = cast this.getParent().getObjectByName(getNestedObjectName(trialhandler));
+		trialhandler_obj.reload_on_fin = true;
 
 		action_go_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_go));
 		action_initial_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_initial));
@@ -95,6 +100,9 @@ class CorsiTaskObject implements DnaObject implements TaskObject extends DnaObje
 	public var action_correct_obj:ActionHandlerObject;
 	public var action_error_out:String;
 	public var action_error_out_obj:ActionHandlerObject;
+
+	public var trialhandler:String;
+	public var trialhandler_obj:TrialHandlerObject;
 	public var action_incorrect:String;
 	public var action_incorrect_obj:ActionHandlerObject;
 
@@ -135,6 +143,10 @@ class CorsiTaskObject implements DnaObject implements TaskObject extends DnaObje
 		{
 			this.action_error_out = cast jsonFile.action_error_out;
 		}
+		if (Reflect.hasField(jsonFile, "trialhandler"))
+		{
+			this.trialhandler = cast jsonFile.trialhandler;
+		}
 	}
 
 	public function generateRandomSequence() {}
@@ -142,12 +154,26 @@ class CorsiTaskObject implements DnaObject implements TaskObject extends DnaObje
 	public function setParams(params:Dynamic)
 	{
 		// TODO: set the params like maxSequenceLen,.. etc.
+		trace("params set for corsi:", params);
+	}
+
+	public var correct(get, never):Bool;
+
+	public function get_correct():Bool
+	{
+		if (Std.is(this.state_machine.m_current_state, CorsiAnswerState))
+		{
+			var answerState:CorsiAnswerState = cast this.state_machine.m_current_state;
+			return answerState.correct;
+		}
+		return false;
 	}
 
 	public function getData():Dynamic
 	{
 		// we will break up our data structure a bit for this task.
-		return {};
+		var answerState:CorsiAnswerState = cast this.state_machine.m_current_state;
+		return {seqLen: this.currentSequenceLen, correct: this.correct, time: answerState.time};
 	}
 
 	public function isCorrect():String

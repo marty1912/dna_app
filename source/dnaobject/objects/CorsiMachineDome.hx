@@ -16,6 +16,7 @@ import flixel.addons.plugin.taskManager.FlxTask;
 import flixel.math.FlxPoint;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
+import flixel.util.FlxCollision;
 import flixel.util.FlxColor;
 import haxe.Json;
 
@@ -152,6 +153,8 @@ class CorsiDomeFalse implements IState
 	{
 		FlxTween.tween(this.corsi_dome.helix_obj, {pos_x: old_x, pos_y: old_y}, 1, {type: ONESHOT, ease: FlxEase.cubeInOut});
 		tween.cancel();
+
+		this.corsi_dome.ground_obj.sprite.color = FlxColor.WHITE;
 	}
 }
 
@@ -193,6 +196,7 @@ class CorsiDomeCorrect implements IState
 	{
 		FlxTween.tween(this.corsi_dome.helix_obj, {pos_x: old_x, pos_y: old_y}, 1, {type: ONESHOT, ease: FlxEase.cubeInOut});
 		tween.cancel();
+		this.corsi_dome.ground_obj.sprite.color = FlxColor.WHITE;
 	}
 }
 
@@ -220,6 +224,7 @@ class CorsiDomeDefault implements IState
 
 	public function enter():Void
 	{
+		this.corsi_dome.ground_obj.sprite.color = FlxColor.WHITE;
 		// FlxTween.tween(this.corsi_dome.back_obj.sprite, {alpha: 0.2}, 1, {type: PINGPONG, ease: FlxEase.cubeInOut});
 		//		tween = FlxTween.color(this.corsi_dome.ground_obj.sprite, 0.5, FlxColor.WHITE, FlxColor.GREEN, {type: PINGPONG, ease: FlxEase.cubeInOut});
 	}

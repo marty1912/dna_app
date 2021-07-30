@@ -36,7 +36,7 @@ class SymbolSlotComponent implements DnaComponent implements IStateMachine exten
 		m_current_state.enter();
 	}
 
-	private var m_current_state:IState;
+	public var m_current_state(default, null):IState;
 
 	public var setStateCallback:StateEnum->Void = null;
 
