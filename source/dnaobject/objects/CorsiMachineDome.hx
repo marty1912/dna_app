@@ -47,6 +47,8 @@ class CorsiMachineDome implements DnaObject implements DnaEventSubscriber extend
 
 	override public function onReady()
 	{
+		super.onReady();
+
 		helix_obj = cast this.getParent().getObjectByName(getNestedObjectName(helix));
 		ground_obj = cast this.getParent().getObjectByName(getNestedObjectName(ground));
 		back_obj = cast this.getParent().getObjectByName(getNestedObjectName(back));
@@ -57,10 +59,11 @@ class CorsiMachineDome implements DnaObject implements DnaEventSubscriber extend
 		], 25);
 		helix_obj.sprite.animation.play("rotate");
 
-		var tween = FlxTween.angle(helix_obj.sprite, 0, 360, 20, {type: LOOPING});
+		rotate_tween = FlxTween.angle(helix_obj.sprite, 0, 360, 20, {type: LOOPING});
 		this.state_machine.setNextState(new CorsiDomeDefault());
 	}
 
+	public var rotate_tween:FlxTween;
 	public var helix:String;
 	public var ground:String;
 	public var base:String;
@@ -224,6 +227,7 @@ class CorsiDomeDefault implements IState
 
 	public function enter():Void
 	{
+		trace("corsi dome default enter");
 		this.corsi_dome.ground_obj.sprite.color = FlxColor.WHITE;
 		// FlxTween.tween(this.corsi_dome.back_obj.sprite, {alpha: 0.2}, 1, {type: PINGPONG, ease: FlxEase.cubeInOut});
 		//		tween = FlxTween.color(this.corsi_dome.ground_obj.sprite, 0.5, FlxColor.WHITE, FlxColor.GREEN, {type: PINGPONG, ease: FlxEase.cubeInOut});
@@ -282,5 +286,140 @@ class CorsiDomeRainbow implements IState
 	public function exit():Void
 	{
 		this.corsi_dome.ground_obj.sprite.color = FlxColor.WHITE;
+	}
+}
+
+class CorsiDomeStopped implements IState
+{
+	public var corsi_dome:CorsiMachineDome;
+	public var state_machine:IStateMachine;
+
+	public var time_visible:Float = 1;
+
+	public function new() {}
+
+	public function setParent(parent:IStateMachine):Void
+	{
+		state_machine = parent;
+		var comp:DnaComponent = cast parent;
+		corsi_dome = cast comp.getParent();
+	}
+
+	var hue:Float = 0;
+
+	public function update(elapsed:Float):Void {}
+
+	var tween:FlxTween;
+
+	public function enter():Void
+	{
+		trace("corsi dome stopped enter");
+		this.corsi_dome.ground_obj.sprite.color = FlxColor.WHITE;
+		this.corsi_dome.rotate_tween.cancel();
+		// rotate_tween = FlxTween.angle(helix_obj.sprite, 0, 360, 20, {type: LOOPING});
+
+		// FlxTween.tween(this.corsi_dome.back_obj.sprite, {alpha: 0.2}, 1, {type: PINGPONG, ease: FlxEase.cubeInOut});
+		//		tween = FlxTween.color(this.corsi_dome.ground_obj.sprite, 0.5, FlxColor.WHITE, FlxColor.GREEN, {type: PINGPONG, ease: FlxEase.cubeInOut});
+	}
+
+	public function exit():Void
+	{
+		this.corsi_dome.ground_obj.sprite.color = FlxColor.WHITE;
+		this.corsi_dome.rotate_tween.start();
+	}
+}
+
+class CorsiDomeRotateRight implements IState
+{
+	public var corsi_dome:CorsiMachineDome;
+	public var state_machine:IStateMachine;
+
+	public var time_visible:Float = 1;
+
+	public function new() {}
+
+	public function setParent(parent:IStateMachine):Void
+	{
+		state_machine = parent;
+		var comp:DnaComponent = cast parent;
+		corsi_dome = cast comp.getParent();
+	}
+
+	var hue:Float = 0;
+
+	public function update(elapsed:Float):Void
+	{
+		if (this.tween.finished)
+		{
+			this.tween.start();
+		}
+	}
+
+	var tween:FlxTween;
+
+	public function enter():Void
+	{
+		this.corsi_dome.ground_obj.sprite.color = FlxColor.WHITE;
+		this.corsi_dome.rotate_tween.cancel();
+		tween = FlxTween.angle(corsi_dome.helix_obj.sprite, 0, 360, 2, {type: PERSIST});
+
+		// FlxTween.tween(this.corsi_dome.back_obj.sprite, {alpha: 0.2}, 1, {type: PINGPONG, ease: FlxEase.cubeInOut});
+		//		tween = FlxTween.color(this.corsi_dome.ground_obj.sprite, 0.5, FlxColor.WHITE, FlxColor.GREEN, {type: PINGPONG, ease: FlxEase.cubeInOut});
+	}
+
+	public function exit():Void
+	{
+		this.corsi_dome.ground_obj.sprite.color = FlxColor.WHITE;
+
+		FlxTween.completeTweensOf(corsi_dome.helix_obj.sprite);
+		// tween.cancel();
+		//		this.corsi_dome.rotate_tween.start();
+	}
+}
+
+class CorsiDomeRotateLeft implements IState
+{
+	public var corsi_dome:CorsiMachineDome;
+	public var state_machine:IStateMachine;
+
+	public var time_visible:Float = 1;
+
+	public function new() {}
+
+	public function setParent(parent:IStateMachine):Void
+	{
+		state_machine = parent;
+		var comp:DnaComponent = cast parent;
+		corsi_dome = cast comp.getParent();
+	}
+
+	var hue:Float = 0;
+
+	public function update(elapsed:Float):Void
+	{
+		if (this.tween.finished)
+		{
+			this.tween.start();
+		}
+	}
+
+	var tween:FlxTween;
+
+	public function enter():Void
+	{
+		this.corsi_dome.ground_obj.sprite.color = FlxColor.WHITE;
+		this.corsi_dome.rotate_tween.cancel();
+		tween = FlxTween.angle(corsi_dome.helix_obj.sprite, 360, 0, 2, {type: PERSIST});
+
+		// FlxTween.tween(this.corsi_dome.back_obj.sprite, {alpha: 0.2}, 1, {type: PINGPONG, ease: FlxEase.cubeInOut});
+		//		tween = FlxTween.color(this.corsi_dome.ground_obj.sprite, 0.5, FlxColor.WHITE, FlxColor.GREEN, {type: PINGPONG, ease: FlxEase.cubeInOut});
+	}
+
+	public function exit():Void
+	{
+		this.corsi_dome.ground_obj.sprite.color = FlxColor.WHITE;
+		FlxTween.completeTweensOf(corsi_dome.helix_obj.sprite);
+		// tween.cancel();
+		//	this.corsi_dome.rotate_tween.start();
 	}
 }

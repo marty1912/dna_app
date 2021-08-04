@@ -494,6 +494,18 @@ else if (type == 'CorsiTaskObject')
 	obj = new CorsiTaskObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/CorsiTaskObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'FlankerMachine')
+{
+	obj = new FlankerMachine();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/FlankerMachine.json"));
+}
+// // AUTOMATICALLY GENERATED
+else if (type == 'FlankerTaskObject')
+{
+	obj = new FlankerTaskObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/FlankerTaskObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -507,6 +519,16 @@ else if (type == 'CorsiTaskObject')
 		return obj;
 	}
 }
+
+
+
+
+
+
+
+
+
+
 
 
 

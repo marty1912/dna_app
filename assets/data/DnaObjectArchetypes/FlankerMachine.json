@@ -1,0 +1,30 @@
+{"type":"FlankerMachine",
+"name":"corsi",
+"pos_target":"",
+"width":0.8,
+"height":0.6,
+"dome_width":0.6,
+"dome_height":0.025,
+"dots":"dots",
+"noise":"noise",
+"area":"area",
+"base":"BaseArea",
+"back":"back",
+"front":"front",
+"dome":"dome",
+"finger":"tutorial_finger",
+"fixation":"fixation",
+"pattern_display":"pdisplay",
+"objects":[
+
+        { "type": "SpriteObject", "name": "BaseArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "::pos_target::" }] },
+        { "type": "SpriteObject", "name": "DomeArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::dome_width::", "scale_y": "::dome_height::", "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "BaseArea" }] },
+	{ "type": "SpriteObject", "name": "back", "asset_path": "assets/images/flanker_machine/walls.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" }] },
+        { "type": "CorsiMachineDome", "name": "dome", "pos_target":"DomeArea"},
+	{ "type": "SpriteObject", "name": "front", "asset_path": "assets/images/flanker_machine/front.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": "::width::", "scale_y": "::height::", "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" }] },
+	{ "type": "SpriteObject", "name": "display", "asset_path": "assets/images/flanker_machine/flanker_display.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.25,"keep_ratio":false, "grid":[50,35,830,80], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" }] },
+        { "type": "PatternDisplay", "name": "pdisplay", "pos_target":"front", "height":0.25, "width":0.4},
+        { "type": "SpriteObject", "name": "fixation", "asset_path": "assets/images/fixation_cross_black.png", "scale_x": 1, "scale_y": 1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BaseArea" },{"type":"ForegroundComponent","oneshot":false}] }
+
+]
+}

@@ -1,0 +1,71 @@
+
+{"type":"FlankerTaskObject",
+"name":"pattern_ctrl",
+"pos_target":"",
+"flanker":"corsi_mach",
+"trialhandler":"trialz",
+"action_correct":"a_correct",
+"action_incorrect":"a_incorrect",
+"action_error_out":"a_error_out",
+"action_fin":"a_fin",
+"action_go":"a_go",
+"action_initial":"a_initial",
+"btn_left":"btn_left",
+"btn_right":"btn_right",
+"objects":[
+        { "type": "FlankerMachine", "name": "corsi_mach", "pos_target":""},
+
+        { "type": "TrialHandlerObject","name": "trialz"},
+
+        { "type": "SpriteObject", "name": "LeftScreenhalf", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "" }] },
+        { "type": "SpriteObject", "name": "RightScreenhalf", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.5, "scale_y": 1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "" }] },
+
+        { "type": "SpriteObject", "name": "LeftPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_x": 0.3, "scale_y": 400, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "LeftScreenhalf" }] },
+        { "type": "SpriteObject", "name": "RightPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_x": 0.3, "scale_y": 400, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "RightScreenhalf" }] },
+
+        { "type": "EmptyButtonObject", "name": "btn_left","path":"assets/gui_elements/buttonInvisible.png", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "LeftScreenhalf" }, { "type":"ButtonScaleComponent", "target":"LeftScreenhalf" } ,{"type":"UserButtonComponent"}] },
+        { "type": "EmptyButtonObject", "name": "btn_right","path":"assets/gui_elements/buttonInvisible.png", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "RightScreenhalf" }, { "type":"ButtonScaleComponent", "target":"RightScreenhalf" } ,{"type":"UserButtonComponent"}] },
+
+
+
+        { "type": "SpriteObject", "name": "SubtitleArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.2, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
+        { "type": "SrtPlayerTextObject", "name":"text_correct", "text":"FlankerCorrectFeedback", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"text_incorrect", "text":"FlankerIncorrectFeedback", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"text_error_out", "text":"CorsiReverseErrorOut", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"text_go", "text":"CorsiReverseGo", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"text_fin", "text":"FlankerFinFeedback", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"text_initial", "text":"CorsiReverseInit", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+ 
+
+       { "type": "ActionHandlerObject", "name": "a_initial",
+            "actions": [
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "text_initial", "on_event":"NO_EVENT" }
+             ] },
+       { "type": "ActionHandlerObject", "name": "a_correct",
+            "actions": [
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "text_correct", "on_event":"NO_EVENT" }
+             ] },
+        { "type": "ActionHandlerObject", "name": "a_go",
+            "actions": [
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "text_go", "on_event":"NO_EVENT" }
+             ] },
+
+        { "type": "ActionHandlerObject", "name": "a_fin",
+            "actions": [
+                { "type": "ActionFinishTaskComponent", "on_event":"NO_EVENT", "target": "" },
+                { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
+             ] },
+
+        { "type": "ActionHandlerObject", "name": "a_incorrect",
+            "actions": [
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "text_incorrect", "on_event":"NO_EVENT" }
+             ] },
+        { "type": "ActionHandlerObject", "name": "a_error_out",
+            "actions": [
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "text_error_out", "on_event":"NO_EVENT" },
+                { "type": "ActionFinishTaskComponent", "target": "" },
+               { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
+             ] }
+]
+}
+

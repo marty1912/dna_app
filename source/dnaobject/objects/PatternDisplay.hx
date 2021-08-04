@@ -47,9 +47,6 @@ class PatternDisplay implements DnaObject implements DnaEventSubscriber implemen
 
 	override public function onReady()
 	{
-		trace("pattern_display:onready");
-		this.getParent().printAllObjectNames();
-		trace("looking for:", getNestedObjectName(pattern_area));
 		super.onReady();
 		this.getParent().eventManager.addSubscriberForEvent(this, DnaConstants.PATTERN_CHANGE);
 		for (vis in this.visibles)

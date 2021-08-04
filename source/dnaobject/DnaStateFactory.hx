@@ -589,6 +589,20 @@ else if (type == "CorsiTaskState")
 			state = new DnaState("CorsiTaskState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Corsi/CorsiTaskState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FlankerState")
+		{
+			state = new DnaState("FlankerState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Flanker/FlankerState.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FlankerPracticeState")
+		{
+			state = new DnaState("FlankerPracticeState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Flanker/FlankerPracticeState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -601,6 +615,16 @@ else if (type == "CorsiTaskState")
 		return state;
 	}
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
