@@ -1,0 +1,8 @@
+{
+    "type": "FlankerTutorialState",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+        { "type": "FlankerTaskObject", "name": "flanker", "pos_target":""}
+        ,{ "type": "FlankerTutorial", "flanker": "flanker", "pos_target":""}
+    ]
+}

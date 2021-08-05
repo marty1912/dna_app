@@ -506,6 +506,12 @@ else if (type == 'FlankerTaskObject')
 	obj = new FlankerTaskObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/FlankerTaskObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'FlankerTutorial')
+{
+	obj = new FlankerTutorial();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/FlankerTutorial.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -519,6 +525,10 @@ else if (type == 'FlankerTaskObject')
 		return obj;
 	}
 }
+
+
+
+
 
 
 

@@ -603,6 +603,13 @@ else if (type == "FlankerPracticeState")
 			state = new DnaState("FlankerPracticeState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Flanker/FlankerPracticeState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FlankerTutorialState")
+		{
+			state = new DnaState("FlankerTutorialState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Flanker/FlankerTutorialState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -615,6 +622,10 @@ else if (type == "FlankerPracticeState")
 		return state;
 	}
 }
+
+
+
+
 
 
 

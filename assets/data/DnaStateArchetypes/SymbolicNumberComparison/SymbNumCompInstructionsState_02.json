@@ -85,11 +85,6 @@
                     "target":"Instructions_01",
                     "oneshot":false
                 },
-                {
-                    "type": "ActionShowTextComponent",
-                    "target":"Instructions_03",
-                    "oneshot":false
-                },
                 { "type": "ActionAppearComponent", "target": "buttonAccept", "invert":false, "oneshot": false },
                 {
                     "type": "ActionSetButtonStateComponent",

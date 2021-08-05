@@ -10,3 +10,7 @@ Du hast schon alle Übungsaufgaben geschafft.
 00:00:06,400 --> 00:00:09,900
 Jetzt kommen die richtigen Aufgaben.
 
+4
+00:00:09,900 --> 00:00:14,900
+Wenn du bereit bist, dann drücke den Knopf.
+

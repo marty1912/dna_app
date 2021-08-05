@@ -1,0 +1,45 @@
+{"type":"FlankerTutorial",
+"name":"flanker_tut",
+"pos_target":"",
+"pattern_display":"pdisplay",
+"action_init":"a_initial",
+"action_fixation":"a_fixation",
+"action_present":"a_present",
+"action_fin":"a_fin",
+"finger":"tutorial_finger",
+"flanker":"flanker",
+"objects":[
+
+        { "type": "SpriteObject", "name": "SubtitleArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.2, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
+        { "type": "SrtPlayerTextObject", "name":"tut_01", "text":"FlankerTutorial_01", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"tut_02", "text":"FlankerTutorial_02", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"tut_03", "text":"FlankerTutorial_03", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "SrtPlayerTextObject", "name":"tut_fin", "text":"FlankerTutorial_04", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "TutorialFingerObject", "name": "tutorial_finger", "components":[  { "type": "PositionComponent", "oneshot": true, "position": "LeftBottom" } ] },
+ 
+
+        { "type": "ActionHandlerObject", "name": "a_fin",
+            "actions": [
+
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_fin", "on_event":"NO_EVENT" },
+                { "type": "ActionFinishTaskComponent", "on_event":"seq", "target": "" },
+                { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
+        ]
+      },
+ { "type": "ActionHandlerObject", "name": "a_fixation",
+            "actions": [
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_02", "on_event":"NO_EVENT" }
+             ] },
+ { "type": "ActionHandlerObject", "name": "a_present",
+            "actions": [
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_03", "on_event":"NO_EVENT" }
+             ] },
+
+
+
+        { "type": "ActionHandlerObject", "name": "a_initial",
+            "actions": [
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_01", "on_event":"NO_EVENT" }
+             ] }
+]
+}

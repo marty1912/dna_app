@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:06,000
+Hallo! Das hier ist eine Maschine, die ich entworfen habe.
+
+2
+00:00:06,100 --> 00:00:12,100
+Damit kann man die DNA-Stränge rotieren.
+
+3
+00:00:12,100 --> 00:00:18,100
+Das ist wichtig, damit man daran forschen kann.
+
+4
+00:00:18,100 --> 00:00:24,100
+Ich brauche aber deine Hilfe, denn die Maschine ist ein wenig kompliziert.
+
+5
+00:00:24,100 --> 00:00:30,100
+Sie zeigt immer viel zu viele Drehrichtungen an.
+
+6
+00:00:30,100 --> 00:00:36,100
+Du wirst gleich sehen was ich meine.
+
+7
+00:00:36,100 --> 00:00:42,100
+Ich zeige dir jetzt einmal vor, was zu tun ist.
+
