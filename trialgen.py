@@ -7,11 +7,15 @@ import subprocess
 import random
 import time
 import pandas as pd
+import argparse
+import copy
 
 
 from os import listdir
 from os.path import isfile, join, basename ,splitext
 from os import walk
+
+from pandas.core.frame import DataFrame
 
 
 def listToStringwithDoubleQuotes(mylist):
@@ -300,39 +304,107 @@ def getPatternExtendTrials(symbols = [
         
 
 def nonSymbTrialsFromFile():
+    """
+    here we use pre generated trials from a file. However to have less trials we randomly choose some subset of those trials.
+    """
     filename = "python_templates/dot_gen_trials.csv"
     df = pd.read_csv(filename, sep=",")
-    return df.to_dict('records')
+
+    lst = df.to_dict('records')
+    lst_left = lst[:len(lst)//2]
+    lst_buckets = [[],[],[],[]]
+
+    for row in (lst_left):
+        lst_buckets[row["bucket"]-1].append(row)
+
+    for i in range(0,len(lst_buckets)):
+        bucket = lst_buckets[i]
+        lst_buckets[i]= random.sample(bucket,5)
+
+    print("-"*80)
+    print("buckets len:",len(lst_buckets[0]))
+    print("-"*80)
+
+    lst_left = lst_buckets[0]
+    for i in range(1,len(lst_buckets)):
+        lst_left.extend(lst_buckets[i])
+
+    lst_right = copy.deepcopy(lst_left)
+    for row_index in range(0,len(lst_left)):
+        tmp = lst_left[row_index]["left_num"]
+        lst_left[row_index]["left_num"] = lst_left[row_index]["right_num"]
+        lst_left[row_index]["right_num"] =tmp 
+        lst_left[row_index]["direction"] ="Left"
+ 
+
+    lst_left.extend(lst_right)
+    nonSymbTrialsStats(lst_left)
+    return lst_left
 
 
 
-def nonSymbTrialGen(numbers=[i for i in range(5,22)], buckets = [{'min':1.18,'max':1.25},{'min':1.3,'max':1.32},{'min':1.9,'max':2.1},{'min':3,'max':3.4}]):
+def nonSymbTrialGen(numbers=[i for i in range(5,22)], buckets = [{'min':1,'max':1.3},{'min':1.3,'max':1.9},{'min':1.9,'max':3},{'min':3,'max':4}]):
     '''
     returns a dict with the fields that are needed. it does not however tell you the filename!
     '''
 
     all_matchings = []
-    for left_num in numbers:
-        for right_num in numbers:
+
+    print("starting..")
+    
+    for left_num in range(22,5,-1):
+        for right_num in range(5,22):
             # no same things.
-            if(left_num == right_num):
+            if(left_num <= right_num):
+                print("left:",left_num,"right",right_num, "BREAK")
+                break
                 continue
             higher_num = max(left_num,right_num)
             lower_num = min(left_num,right_num)
-            this_match = {"left_num":left_num,"right_num":right_num,"solution":higher_num,"ratio":round(higher_num/lower_num,2)}
+            this_match = {"left_num":left_num,"right_num":right_num,"solution":higher_num,"ratio":round(higher_num/lower_num,2),"solution":"RIGHT"}
             
             this_match['bucket'] = -1
             for bucket_index in range(0,len(buckets)):
                 bucket = buckets[bucket_index]
                 if this_match['ratio'] <= bucket['max'] and this_match['ratio'] >= bucket['min']:
                     this_match['bucket'] = bucket_index
+                    break
             # if it does not fit into a bucket we dont need it.
+            """
             if(this_match['bucket'] == -1):
                 continue
+            """
 
             all_matchings.append(this_match)
 
+    # until here left is always larger.
+    all_matchings = random.sample(all_matchings,20)
+    matchings_left = copy.deepcopy(all_matchings)
+    for row_index in range(0,len(matchings_left)):
+        tmp = matchings_left[row_index]["left_num"]
+        matchings_left[row_index]["left_num"] = matchings_left[row_index]["right_num"]
+        matchings_left[row_index]["right_num"] =tmp 
+        matchings_left[row_index]["solution"] ="LEFT"
+    all_matchings.extend(matchings_left) 
+    # debug:
+    df = DataFrame.from_records(all_matchings)
+    df.to_csv("generated_trials.csv")
     return all_matchings
+
+def nonSymbTrialsStats(data):
+    buckets_n = [0,0,0,0]
+    directions = [0,0]
+    for match_index in range(0,len(data)):
+        match = data[match_index]
+        #print("left:",match["left_num"],"right:",match["right_num"])
+        buckets_n[match["bucket"] -1] += 1
+
+    print(":-:"*20)
+    print("total len:",len(data))
+    print("buckets freq:",buckets_n)
+    print(":-:"*20)
+    
+    return
 
 
 def genNonSymbTrials():
@@ -341,6 +413,7 @@ def genNonSymbTrials():
     '''
     #all_matchings = nonSymbTrialGen()
     all_matchings = nonSymbTrialsFromFile()
+    nonSymbTrialsStats(all_matchings)
     ids_area_control = [i for i in range(0,17)]
     ids_radius_control = [i for i in range(17,34)]
     # we have each match 2 times. once for the area controlled and another time for the radius.
@@ -371,7 +444,7 @@ def genNonSymbTrials():
 
 
 
-def genSymbolicNumberCompareTrials(distances=[1,2,5,6],numbers=[1,2,3,4,5,6,7,8,9]):
+def genSymbolicNumberCompareTrials(distances=[1,2,3,4,5,6,7,8],numbers=[1,2,3,4,5,6,7,8,9]):
     '''
     our output tells us that we have:
     have  8 for distance: 1
@@ -380,9 +453,10 @@ def genSymbolicNumberCompareTrials(distances=[1,2,5,6],numbers=[1,2,3,4,5,6,7,8,
     have  3 for distance: 6
     so we use the distance 5 and 6 double to make it more balanced
     '''
-    trials = []
+    trials_per_dist = []
     for dist in distances:
         dist_poss_count = 0
+        cur_dist = []
         for num in numbers:
             left_num = num
             right_num = num+dist
@@ -390,10 +464,41 @@ def genSymbolicNumberCompareTrials(distances=[1,2,5,6],numbers=[1,2,3,4,5,6,7,8,
             if (not left_num in numbers) or (not right_num in numbers):
                 continue
             # append both directions
+            trials = []
             trials.append([left_num,right_num,solution,dist])
             trials.append([right_num,left_num,solution,dist])
             dist_poss_count +=1
+            cur_dist.append(trials)
+
+        trials_per_dist.append(cur_dist)
         print("have ",dist_poss_count,"for distance:",dist)
+
+    for i in range(0,len(trials_per_dist)):
+        n_per_dist = 4 
+        # the trials are longer than n_per_dist so we randomly select some trials.
+        if(len(trials_per_dist[i])>= n_per_dist):
+            trials_per_dist[i] = random.sample(trials_per_dist[i],n_per_dist)
+            continue
+
+        # the trials are shorter than n_per_dist so we use the trials multiple times. 
+        cur_dist = copy.deepcopy(trials_per_dist[i])
+        while(len(cur_dist)+len(trials_per_dist[i]) <= n_per_dist):
+            cur_dist.extend(trials_per_dist[i])
+        if(len(cur_dist) < n_per_dist):
+            diff =  n_per_dist - len(cur_dist)
+            cur_dist.extend(random.sample(trials_per_dist[i],diff))
+        trials_per_dist[i] = cur_dist
+
+
+
+    trials = []
+    for dist in trials_per_dist:
+        for d in dist:
+            for trial in d:
+                trials.append(trial)
+
+
+
     return trials
 
 def appendPathToNum(num,base_path= "assets/images/pattern_numbers/",file_end=".PNG"):
@@ -430,10 +535,11 @@ def genOrdinalNumberVerificationTrials(distances=[1,2,3],numbers=[1,2,3,4,5,6,7,
     have  3 for distance: 3
     so we use the distance 3 ones double to make it more balanced
     '''
-    trials = []
 
+    dist_lsts = []
     for dist in distances:
         dist_poss_count = 0
+        lst_per_dist = []
         for num in numbers:
             left_num = num
             mid_num = num+dist
@@ -441,23 +547,51 @@ def genOrdinalNumberVerificationTrials(distances=[1,2,3],numbers=[1,2,3,4,5,6,7,
             solution = "IN_ORDER"
             if (not left_num in numbers) or (not mid_num in numbers) or (not right_num in numbers):
                 continue
+
+            trials = []
             # append both directions
-            trials.append([left_num,mid_num,right_num,solution])
-            trials.append([right_num,mid_num,left_num,solution])
+            trials.append([appendPathToNum(left_num),appendPathToNum(mid_num),appendPathToNum(right_num),solution,"ASCENDING",dist])
+            trials.append([appendPathToNum(right_num),appendPathToNum(mid_num),appendPathToNum(left_num),solution,"DESCENDING",dist])
 
             solution = "MIXED_ORDER"
             # ascending mixed
-            trials.append([mid_num,right_num,left_num,solution])
+
+            trials.append([appendPathToNum(mid_num),appendPathToNum(right_num),appendPathToNum(left_num),solution,"ASCENDING",dist])
             #descending mixed
-            trials.append([mid_num,left_num,right_num,solution])
+            trials.append([appendPathToNum(mid_num),appendPathToNum(left_num),appendPathToNum(right_num),solution,"DESCENDING",dist])
+
+            lst_per_dist.append(trials)
             dist_poss_count +=1
+
         print("have ",dist_poss_count,"for distance:",dist)
+        dist_lsts.append(lst_per_dist)
         
+    for i in range(0,len(dist_lsts)):
+        n_per_dist = 4
+        if(len(dist_lsts[i])>= n_per_dist):
+            dist_lsts[i] = random.sample(dist_lsts[i],n_per_dist)
+            continue
+        trials_for_dist = copy.deepcopy(dist_lsts[i])
+        while(len(trials_for_dist)+len(dist_lsts[i]) <= n_per_dist):
+            trials_for_dist.extend(dist_lsts[i])
+        if(len(trials_for_dist) < n_per_dist):
+            diff =  n_per_dist - len(trials_for_dist)
+            trials_for_dist.extend(random.sample(dist_lsts[i],diff))
+        dist_lsts[i] = trials_for_dist
 
 
+    trials = []
+    for dist in dist_lsts:
+        for d in dist:
+            for trial in d:
+                trials.append(trial)
+
+    print("-"*80)
+    print(trials)
+    print("-"*80)
     return trials
 
-def genNumLineTrials(ranges=[x for x in range(32,64+1,6)],targets=[x for x in range(4,32+1,3)]):
+def genNumLineTrials(ranges=[x for x in range(32,64+1)],targets=[x for x in range(4,32+1)]):
     '''
     our output tells us that we have:
     so we use the distance 3 ones double to make it more balanced
@@ -467,6 +601,7 @@ def genNumLineTrials(ranges=[x for x in range(32,64+1,6)],targets=[x for x in ra
     for rang in ranges:
         for num in targets:
             trials.append([rang,num])
+    trials = random.sample(trials,24)
 
     return trials
 
@@ -642,51 +777,45 @@ def insertListIntoTemplate(template_string,numbers_list):
 
 
 
+def genMathAnxietyTrials():
+        return [[i] for i in range(1,14)]
+
 
 def main():
 
-    if (len(sys.argv) != 3):
-        print("invalid number of args. quitting...")
-        print("sys argv:",sys.argv)
-        quit()
+
+    generatorMap = {"symb":getNewNumericalCompTrials,
+    "ord":genOrdinalNumberVerificationTrials,#genNewOrdinalNumberVerificationTrials,
+    "numline":genNumLineTrials,
+    "add":genAdditionTrials,
+    "triple_add":getTripleAdditionTrials,
+    "sub":genSubtractionTrials,
+    "mult":genMultiplicationTrials,
+    "speed":genTypingTrials,
+    "nonsymb":genNonSymbTrials,
+    "mathanxiety":genMathAnxietyTrials,
+    "pattern_extend":getPatternExtendTrials,
+    "pattern_generalize":getPatternGeneralizeTrials,
+    "pattern_uof":getPatternUnitOfRepeatTrials,
+    "pattern_num":getNumberPatternTrials,
+    }
 
 
+    parser = argparse.ArgumentParser(description="Trial generator for DNA Tasks.")
+    parser.add_argument('task',choices=generatorMap.keys(),
+    help="this arg lets you choose the task you want to generate the trials for.")
+
+    parser.add_argument('template', help="path to template file.")
     # in order to get replicable results we use a random seed
     #random.seed(42)
-    mode = sys.argv[1]
-    if(mode == "symb"):
-#        trials = genSymbolicNumberCompareTrials()
-        trials = getNewNumericalCompTrials()
-    elif mode == "ord":
-       # trials = genOrdinalNumberVerificationTrials()
-        trials = genNewOrdinalNumberVerificationTrials()
-    elif mode == "numline":
-        trials = genNumLineTrials()
-    elif mode == "add":
-        trials = genAdditionTrials()
-    elif mode == "triple_add":
-        trials = getTripleAdditionTrials()
-    elif mode == "sub":
-        trials = genSubtractionTrials()
-    elif mode == "mult":
-        trials = genMultiplicationTrials()
-    elif mode == "speed":
-        trials = genTypingTrials()
-    elif mode == "nonsymb":
-        trials = genNonSymbTrials()
-    elif mode == "mathanxiety":
-        trials = [[i] for i in range(1,14)]
-    elif mode == "pattern_extend":
-        trials = getPatternExtendTrials()
-    elif mode == "pattern_generalize":
-        trials = getPatternGeneralizeTrials()
-    elif mode == "pattern_uof":
-        trials = getPatternUnitOfRepeatTrials()
-    elif mode == "pattern_num":
-        trials = getNumberPatternTrials()
+    args = parser.parse_args()
 
-    template_file = sys.argv[2]
+    trials = generatorMap[args.task]()
 
+    df = DataFrame.from_records(trials)
+    df.to_csv("generated_trials/"+args.task+".csv",sep=";")
+
+    template_file = args.template
     temp_string = ""
     with open(template_file) as tempfile:
         temp_string = tempfile.read()
@@ -696,6 +825,7 @@ def main():
         string_with_all_trials += insertListIntoTemplate(temp_string,trial)
     
     print(string_with_all_trials)
+
     
 
 

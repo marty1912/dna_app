@@ -97,9 +97,9 @@ class CorsiAnswerState implements IState
 		return;
 	}
 
-	public var correct(get, null):Bool;
+	public var correct(get, null):Null<Bool>;
 
-	public function get_correct():Bool
+	public function get_correct():Null<Bool>
 	{
 		var correct_seq = corsi_ctrl.sequence;
 		var backwards = corsi_ctrl.backwards;
@@ -137,7 +137,6 @@ class CorsiAnswerState implements IState
 
 	public function get_time():Float
 	{
-		assert(timeStart != null);
 		return Timer.stamp() - timeStart;
 	}
 
