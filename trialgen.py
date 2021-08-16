@@ -474,7 +474,7 @@ def genSymbolicNumberCompareTrials(distances=[1,2,3,4,5,6,7,8],numbers=[1,2,3,4,
         print("have ",dist_poss_count,"for distance:",dist)
 
     for i in range(0,len(trials_per_dist)):
-        n_per_dist = 4 
+        n_per_dist = 3 
         # the trials are longer than n_per_dist so we randomly select some trials.
         if(len(trials_per_dist[i])>= n_per_dist):
             trials_per_dist[i] = random.sample(trials_per_dist[i],n_per_dist)
