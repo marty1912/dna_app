@@ -512,6 +512,12 @@ else if (type == 'FlankerTutorial')
 	obj = new FlankerTutorial();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/FlankerTutorial.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'DnaProgressHelix')
+{
+	obj = new DnaProgressHelix();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DnaProgressHelix.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -525,6 +531,14 @@ else if (type == 'FlankerTutorial')
 		return obj;
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

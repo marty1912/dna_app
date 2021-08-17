@@ -1,0 +1,8 @@
+{
+    "type": "DnaProgressHelix",
+    "width": 0.9,
+    "height": 0.35,
+    "nodes":["nodetext_intro","nodetext_practice","nodetext_real_task","nodetext_done"],
+    "active_node_index":1,
+    "components": [ ]
+}

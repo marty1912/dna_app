@@ -1,0 +1,15 @@
+{
+    "type": "FourStep_0",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+
+        { "type": "ActionHandlerObject", "name": "ActionHandler_Finish", "actions": [
+
+                { "type": "ActionDelayComponent", "delay": 6 ,"on_event":"onCreate"},
+
+                { "type": "ActionFinishTaskComponent", "target": "" },
+                { "type": "ActionStateSwitchComponent", "target":"", "on_event":"seq", "next_state":"NEXT_TASK" }  
+        ] },
+        { "type": "DnaProgressHelix", "name": "helix","active_node_index":2 ,"nodes":["nodetext_intro","nodetext_practice","nodetext_real_task","nodetext_done"] , "components":[{"type":"PositionComponent","position":"Center"}]}
+    ]
+}

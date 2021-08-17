@@ -1,4 +1,6 @@
 [
+ { "name": "WithinStateProgress", "type": "FourStep_0", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "preview":"assets/images/level_preview/SubtractionPreview.png", "done": false, "saved": false, "trials": [ [ ] ] },
+ 
  {
     "name": "AdditionTutorial",
     "type": "SubtractionTutorialState",
@@ -13,16 +15,21 @@
       ]
     ]
   },
+
+ { "name": "WithinStateProgress", "type": "FourStep_1", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "preview":"assets/images/level_preview/SubtractionPreview.png", "done": false, "saved": false, "trials": [ [ ] ] },
   { "type": "ArithmeticPracticeState", "name": "AdditionPractice", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "done": false, "saved": false,
     "trials": [
       [ { "name": "ArithmeticHandler", "params": { "problem": "9-2=", "solution": 7 } }, { "name": "TotalTime" } ],
       [ { "name": "ArithmeticHandler", "params": { "problem": "12-8=", "solution": 4 } }, { "name": "TotalTime" } ]
     ]
   },
+
+ { "name": "WithinStateProgress", "type": "FourStep_2", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "preview":"assets/images/level_preview/SubtractionPreview.png", "done": false, "saved": false, "trials": [ [ ] ] },
   { "type": "ArithmeticPracticeFinishedState_return", "desc_head": "SymbolicNumberComparison_HEAD", "desc_body": "SymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": [
       [ { "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2, "distance": 1 } }, { "name": "TotalTime" } ]
     ]
   },
+
   {
     "type": "ArithmeticState",
     "name": "Addition",
@@ -88,6 +95,9 @@
       [{ "name": "ArithmeticHandler", "params": { "problem": "16-7=", "solution": 9 } }, { "name": "TotalTime" }],
       [{ "name": "ArithmeticHandler", "params": { "problem": "17-8=", "solution": 9 } }, { "name": "TotalTime" }]
     ] },
+
+ { "name": "WithinStateProgress", "type": "FourStep_3", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "preview":"assets/images/level_preview/SubtractionPreview.png", "done": false, "saved": false, "trials": [ [ ] ] },
+ { "name": "WithinStateProgress", "type": "ArithmeticEndState", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "preview":"assets/images/level_preview/SubtractionPreview.png", "done": false, "saved": false, "trials": [ [ ] ] },
   { "type": "SAVE", "done": false, "saved": false },
 	{ "type": "ShowProgressState", "done": false, "saved": false },
   { "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "UnlockState" }

@@ -2,6 +2,6 @@
     "type": "TestState",
     "objects": [
         { "type": "TaskBackgroundObject" },
-        { "type": "FlankerTaskObject", "name": "flank", "pos_target":""}
+        { "type": "DnaProgressHelix", "name": "helix","active_node_index":3, "components":[{"type":"PositionComponent","position":"Center"}]}
     ]
 }

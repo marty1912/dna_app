@@ -150,7 +150,8 @@
 
                 {"type":"ActionShowTextComponent", "target":"TutorialText_02"},
 
-                { "type": "ActionStateSwitchComponent", "target": "", "next_state": "ArithmeticPracticeState" }
+                { "type": "ActionFinishTaskComponent", "target": "", "next_state": "" },
+                { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
 
             ]
         },

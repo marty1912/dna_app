@@ -610,6 +610,48 @@ else if (type == "FlankerTutorialState")
 			state = new DnaState("FlankerTutorialState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Flanker/FlankerTutorialState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FourStep_3")
+		{
+			state = new DnaState("FourStep_3");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/FourStep_3.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FourStep_0")
+		{
+			state = new DnaState("FourStep_0");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/FourStep_0.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FourStep_1")
+		{
+			state = new DnaState("FourStep_1");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/FourStep_1.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FourStep_2")
+		{
+			state = new DnaState("FourStep_2");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/FourStep_2.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "ArithmeticEndState")
+		{
+			state = new DnaState("ArithmeticEndState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/ArithmeticEndState.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SpeedEndState")
+		{
+			state = new DnaState("SpeedEndState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/SpeedEndState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -622,6 +664,14 @@ else if (type == "FlankerTutorialState")
 		return state;
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

@@ -549,7 +549,7 @@ class DnaObjectBase implements IFlxDestroyable
 	/**
 	 * this is the origin point or anchor point for this object.
 	 */
-	private var origin:FlxPoint = FlxPoint.get();
+	private var origin:FlxPoint = new FlxPoint(0, 0);
 
 	/**
 	 * the component list.
