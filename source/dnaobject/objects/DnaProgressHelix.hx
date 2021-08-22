@@ -121,25 +121,35 @@ class DnaProgressHelix implements DnaObject extends DnaObjectBase
 			activate_helix = end_left_spr;
 		}
 		// make text and left helix and node go into active mode.
+		var activate_delay:Float = 0;
 		var activate_dur:Float = 2.0;
-		FlxTween.color(nodes_text_obj[idx - 1], activate_dur, inactive_color, active_color, {type: FlxTweenType.ONESHOT, ease: FlxEase.cubeInOut});
 		// if possible fade the old text from active to inactive
 		if (idx > 1)
 		{
+			// if we have something to fade out we want to do this before starting someting new.
+			// this should in general look nicer.. (see "12 rules of animation")
 			FlxTween.color(nodes_text_obj[idx - 2], activate_dur, active_color, inactive_color, {type: FlxTweenType.ONESHOT, ease: FlxEase.cubeInOut});
+			activate_delay = activate_dur;
 		}
 
-		FlxTween.color(activate_helix, activate_dur, inactive_color, active_color, {type: FlxTweenType.ONESHOT, ease: FlxEase.cubeInOut});
+		// fade in the new text
+		FlxTween.color(nodes_text_obj[idx - 1], activate_dur, inactive_color, active_color,
+			{type: FlxTweenType.ONESHOT, ease: FlxEase.cubeInOut, startDelay: activate_delay});
+		// fade in the now active helix
+		FlxTween.color(activate_helix, activate_dur, inactive_color, active_color,
+			{type: FlxTweenType.ONESHOT, ease: FlxEase.cubeInOut, startDelay: activate_delay});
+		// and the node
 		FlxTween.color(activate_node, activate_dur, inactive_color, active_color, {
 			type: FlxTweenType.ONESHOT,
 			ease: FlxEase.cubeInOut,
+			startDelay: activate_delay,
 			onComplete: function(tween:FlxTween)
 			{
 				var flash_dur:Float = 1;
 
 				for (flash in flashing_sprs)
 				{
-					FlxTween.color(flash, flash_dur, inactive_color, active_color, {type: FlxTweenType.PINGPONG, ease: FlxEase.linear});
+					FlxTween.color(flash, flash_dur, inactive_color, active_color, {type: FlxTweenType.PINGPONG, ease: FlxEase.linear, startDelay: 0.1});
 				}
 			}
 		});

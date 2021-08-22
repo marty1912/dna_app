@@ -4,7 +4,7 @@
         { "type": "TaskBackgroundObject" },
         { "type": "ActionHandlerObject", "name": "ActionHandler_Finish", "actions": [
 
-                { "type": "ActionDelayComponent", "delay": 6 ,"on_event":"onCreate"},
+                { "type": "ActionDelayComponent", "delay": 8 ,"on_event":"onCreate"},
 
                 { "type": "ActionFinishTaskComponent", "target": "" },
                 { "type": "ActionStateSwitchComponent", "target":"", "on_event":"seq", "next_state":"NEXT_TASK" }  

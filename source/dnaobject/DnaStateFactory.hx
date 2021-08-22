@@ -652,6 +652,13 @@ else if (type == "SpeedEndState")
 			state = new DnaState("SpeedEndState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Arithmetic/SpeedEndState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FlankerEndState")
+		{
+			state = new DnaState("FlankerEndState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Flanker/FlankerEndState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -664,6 +671,9 @@ else if (type == "SpeedEndState")
 		return state;
 	}
 }
+
+
+
 
 
 
