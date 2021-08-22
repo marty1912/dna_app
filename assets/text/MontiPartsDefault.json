@@ -1,121 +1,50 @@
 [
     {
         "type": "MonsterPartComponent",
-        "part_type": "hat",
-        "preview":"assets/images/monsterparts/resized/preview_hat.png",
+        "part_type": "body", "preview":"assets/images/monsterparts/Yeti/body.png",
         "unlocked":true,
-        "assets": [{
-            "name": "hat",
-            "path": "assets/images/monsterparts/resized/hat.png"
-        }]
+        "assets": [
+            { "name": "body", "path": "assets/images/monsterparts/Yeti/body.png" }
+    ]
     },
-    
     {
         "type": "MonsterPartComponent",
-        "part_type": "head",
-        "preview":"assets/images/monsterparts/resized/preview_head.png",
+        "part_type": "head", "preview":"assets/images/monsterparts/Yeti/head.png",
         "unlocked":true,
-        "assets": [{
-                "name": "nose",
-                "path": "assets/images/monsterparts/resized/nose.png"
-            },
-            {
-                "name": "head",
-                "path": "assets/images/monsterparts/resized/head.png"
-            },
-            {
-                "name": "mouth_normal",
-                "path": "assets/images/monsterparts/resized/mouth_normal.png"
-            },
-            {
-                "name": "mouth_open",
-                "path": "assets/images/monsterparts/resized/mouth_open.png"
-            },
-            {
-                "name": "mouth_closed",
-                "path": "assets/images/monsterparts/resized/mouth_closed.png"
-            },
-            {
-                "name": "eyes_normal",
-                "path": "assets/images/monsterparts/resized/eyes_normal.png"
-            },
-            {
-                "name": "eyes_closed",
-                "path": "assets/images/monsterparts/resized/eyes_closed.png"
-            }
-        ]
+        "assets": [
+            { "name": "head", "path": "assets/images/monsterparts/Yeti/head.png" }
+            ,{ "name": "mouth1", "path": "assets/images/monsterparts/Yeti/mouth1.png" }
+            ,{ "name": "mouth2", "path": "assets/images/monsterparts/Yeti/mouth2.png" }
+    ]
     },
-
-
-
-
-
     {
         "type": "MonsterPartComponent",
-        "part_type": "arms",
+        "part_type": "arms", "preview":"assets/images/monsterparts/Yeti/head.png",
         "unlocked":true,
-        "preview":"assets/images/monsterparts/resized/preview_arms.png",
-        "assets": [{
-                "name": "arm_l",
-                "path": "assets/images/monsterparts/resized/arm_l.png"
-            },
-            {
-                "name": "hand_l",
-                "path": "assets/images/monsterparts/resized/hand_l.png"
-            },
-            {
-                "name": "arm_r",
-                "path": "assets/images/monsterparts/resized/arm_r.png"
-            },
-            {
-                "name": "hand_r",
-                "path": "assets/images/monsterparts/resized/hand_r.png"
-            }
-        ]
-    },
-
-
-
-
+        "assets": [
+            { "name": "hand1", "path": "assets/images/monsterparts/Yeti/hand1.png" }
+            ,{ "name": "hand2", "path": "assets/images/monsterparts/Yeti/hand2.png" }
+            ,{ "name": "hand3", "path": "assets/images/monsterparts/Yeti/hand3.png" }
+            ,{ "name": "hand4", "path": "assets/images/monsterparts/Yeti/hand4.png" }
+            ,{ "name": "hand5", "path": "assets/images/monsterparts/Yeti/hand5.png" }
+            ,{ "name": "hand6", "path": "assets/images/monsterparts/Yeti/hand6.png" }
+            ,{ "name": "hand7", "path": "assets/images/monsterparts/Yeti/hand7.png" }
+    ]
+    },    
     {
         "type": "MonsterPartComponent",
-        "part_type": "body",
-        "preview":"assets/images/monsterparts/resized/preview_body.png",
+        "part_type": "legs", "preview":"assets/images/monsterparts/Yeti/head.png",
         "unlocked":true,
-        "assets": [{
-                "name": "body",
-                "path": "assets/images/monsterparts/resized/body.png"
-            }
-
-        ]
-    },
-    
-
-
-    {
-        "type": "MonsterPartComponent",
-        "part_type": "legs",
-        "unlocked":true,
-        "preview":"assets/images/monsterparts/resized/preview_legs.png",
-        "assets": [{
-                "name": "leg_l",
-                "path": "assets/images/monsterparts/resized/leg_l.png"
-            },
-            {
-                "name": "foot_l",
-                "path": "assets/images/monsterparts/resized/foot_l.png"
-            },
-            {
-                "name": "leg_r",
-                "path": "assets/images/monsterparts/resized/leg_r.png"
-            },
-            {
-                "name": "foot_r",
-                "path": "assets/images/monsterparts/resized/foot_r.png"
-            }
-        ]
+        "assets": [
+            { "name": "leg1", "path": "assets/images/monsterparts/Yeti/leg1.png" }
+            ,{ "name": "leg2", "path": "assets/images/monsterparts/Yeti/leg2.png" }
+            ,{ "name": "leg3", "path": "assets/images/monsterparts/Yeti/leg3.png" }
+            ,{ "name": "leg4", "path": "assets/images/monsterparts/Yeti/leg4.png" }
+            ,{ "name": "leg5", "path": "assets/images/monsterparts/Yeti/leg5.png" }
+            ,{ "name": "leg6", "path": "assets/images/monsterparts/Yeti/leg6.png" }
+    ]
     }
-
+    
 
 
 ]

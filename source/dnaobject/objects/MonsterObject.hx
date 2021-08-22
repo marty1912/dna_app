@@ -33,10 +33,16 @@ import openfl.Assets;
 class MonsterObject implements DnaObject implements IStateMachine extends DnaObjectBase
 {
 	private final slotMap:Map<String, Int> = [
-		"foot_l" => 0, "foot_r" => 1, "leg_r" => 2, "leg_l" => 3, "mouth_closed" => 4, "mouth_open" => 5, "eyes_closed" => 6, "body" => 7, "hand_l" => 8,
-		"hand_r" => 9, "head" => 10, "arm_r" => 11, "arm_l" => 12, "hat" => 13, "eyes_normal" => 14, "mouth_normal" => 15, "nose" => 16
+		"hand6" => 0, "hand5" => 1, "hand4" => 2, "hand3" => 3, "hand2" => 4, "hand1" => 5, "leg3" => 6, "leg2" => 7, "leg1" => 8, "leg6" => 9, "leg5" => 10,
+		"leg4" => 11, "body" => 12, "head" => 13, "mouth1" => 14, "mouth2" => 15, "hand7" => 16
 	];
 
+	/*
+		[
+			"foot_l" => 0, "foot_r" => 1, "leg_r" => 2, "leg_l" => 3, "mouth_closed" => 4, "mouth_open" => 5, "eyes_closed" => 6, "body" => 7, "hand_l" => 8,
+			"hand_r" => 9, "head" => 10, "arm_r" => 11, "arm_l" => 12, "hat" => 13, "eyes_normal" => 14, "mouth_normal" => 15, "nose" => 16
+		];
+	 */
 	/**
 	 * ctor.
 	 */
@@ -47,7 +53,13 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 		setupDragonBones();
 		getPartsFromData();
 		setNextState(new MontiStateIdle());
+		// scale * my_height == FlxG.height/2
+		var scl = (FlxG.height / 2) / my_height;
+		scale.x = scl;
+		scale.y = scl;
 	}
+
+	public final my_height = 1024;
 
 	private var _factory:FlixelFactory = new FlixelFactory();
 	private var armatureGroup:FlxTypedGroup<FlixelArmatureDisplay>;
@@ -62,10 +74,10 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 	 */
 	public function setupDragonBones()
 	{
-		var dragonBonesData:DragonBonesData = _factory.parseDragonBonesData(Json.parse(Assets.getText("assets/dragonbones/Monti_ske.json")));
+		var dragonBonesData:DragonBonesData = _factory.parseDragonBonesData(Json.parse(Assets.getText("assets/dragonbones/Dna_Project_ske.json")));
 
-		_factory.parseTextureAtlasData(Json.parse(Assets.getText("assets/dragonbones/Monti_tex.json")),
-			Assets.getBitmapData("assets/dragonbones/Monti_tex.png"));
+		_factory.parseTextureAtlasData(Json.parse(Assets.getText("assets/dragonbones/Dna_Project_tex.json")),
+			Assets.getBitmapData("assets/dragonbones/Dna_Project_tex.png"));
 		arm_collider = new FlixelArmatureCollider(250, 250, 27, 25, 0, 0);
 
 		armatureGroup = _factory.buildArmatureDisplay(arm_collider, dragonBonesData.armatureNames[0]);
@@ -230,8 +242,8 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 		var max_right_from_origin = Math.NEGATIVE_INFINITY;
 
 		// hardcoded values because the nice version does not work here..
-		max_left_from_origin = 0;
-		max_up_from_origin = 0;
+		max_left_from_origin = -(350 / 0.7) * scale.x;
+		max_up_from_origin = -(450 / 0.7) * scale.y;
 		max_down_from_origin = (450 / 0.7) * scale.y;
 		max_right_from_origin = (350 / 0.7) * scale.x;
 		return [
