@@ -20,6 +20,7 @@
     },
     {
         "type": "MonsterPartComponent",
+        "finger_asset":"assets/images/fingers/alien.png",
         "part_type": "arms", "preview":"assets/images/monsterparts/Alien/head.png",
         "unlocked":true,
         "assets": [
@@ -99,6 +100,8 @@
     },
     {
         "type": "MonsterPartComponent",
+
+        "finger_asset":"assets/images/fingers/panda.png",
         "part_type": "arms", "preview":"assets/images/monsterparts/Panda/head.png",
         "unlocked":true,
         "assets": [
@@ -177,6 +180,8 @@
     },
     {
         "type": "MonsterPartComponent",
+
+        "finger_asset":"assets/images/fingers/plant.png",
         "part_type": "arms", "preview":"assets/images/monsterparts/Plant/head.png",
         "unlocked":true,
         "assets": [
@@ -261,6 +266,7 @@
     },
     {
         "type": "MonsterPartComponent",
+        "finger_asset":"assets/images/fingers/cat.png",
         "part_type": "arms", "preview":"assets/images/monsterparts/Cat/head.png",
         "unlocked":true,
         "assets": [
@@ -326,6 +332,7 @@
     },
     {
         "type": "MonsterPartComponent",
+        "finger_asset":"assets/images/fingers/yeti.png",
         "part_type": "arms", "preview":"assets/images/monsterparts/Yeti/head.png",
         "unlocked":true,
         "assets": [
@@ -396,6 +403,7 @@
     },
     {
         "type": "MonsterPartComponent",
+        "finger_asset":"assets/images/fingers/lizard.png",
         "part_type": "arms", "preview":"assets/images/monsterparts/Lizard/head.png",
         "unlocked":true,
         "assets": [

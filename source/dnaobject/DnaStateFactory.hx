@@ -659,6 +659,55 @@ else if (type == "FlankerEndState")
 			state = new DnaState("FlankerEndState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Flanker/FlankerEndState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SixStep_3")
+		{
+			state = new DnaState("SixStep_3");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/SixStep_3.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SixStep_2")
+		{
+			state = new DnaState("SixStep_2");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/SixStep_2.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SixStep_0")
+		{
+			state = new DnaState("SixStep_0");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/SixStep_0.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SixStep_5")
+		{
+			state = new DnaState("SixStep_5");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/SixStep_5.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SixStep_4")
+		{
+			state = new DnaState("SixStep_4");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/SixStep_4.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SixStep_1")
+		{
+			state = new DnaState("SixStep_1");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/SixStep_1.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "NonSymbCompEndState")
+		{
+			state = new DnaState("NonSymbCompEndState");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbCompEndState.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -671,6 +720,7 @@ else if (type == "FlankerEndState")
 		return state;
 	}
 }
+
 
 
 

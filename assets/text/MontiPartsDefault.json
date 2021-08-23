@@ -19,6 +19,7 @@
     },
     {
         "type": "MonsterPartComponent",
+        "finger_asset":"assets/images/fingers/yeti.png",
         "part_type": "arms", "preview":"assets/images/monsterparts/Yeti/head.png",
         "unlocked":true,
         "assets": [

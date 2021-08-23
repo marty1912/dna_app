@@ -1,8 +1,11 @@
 [
 
 
-	{ "type": "NonSymbolCompTutorial_01", "name":"DotCompPractice", "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false},
+	{ "type": "SixStep_0", "name":"WithinStateProgress","locked":true, "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false},
+	{ "type": "NonSymbolCompTutorial_01", "name":"DotCompPractice","locked":true, "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false},
 	{ "type": "NonSymbolCompTutorial_02", "name":"DotCompPractice", "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false},
+
+	{ "type": "SixStep_1", "name":"WithinStateProgress","locked":true, "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false},
 	{ "type": "NonSymbolCompPracticeStateNoTime", "name":"DotCompPractice", "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false,
 	"trials":[
 
@@ -11,7 +14,11 @@
 			[{ "name": "TaskHandler", "params": { "img_left": "assets/images/dots/id_15_dots_20.png", "img_right": "assets/images/dots/id_13_dots_18.png", "solution": "assets/images/dots/id_15_dots_20.png","additional_info": {"left_num": 20, "right_num": 18, "solution": 20, "direction": "Left", "distance": 2, "ratio": 1.11111111111111, "bucket": 1} } }, { "name": "TotalTime" }]
 	]
 },
+
+	{ "type": "SixStep_2", "name":"WithinStateProgress","locked":true, "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false},
 	{ "type": "NonSymbolCompTutorial_03", "name":"DotCompPractice", "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false},
+
+	{ "type": "SixStep_3", "name":"WithinStateProgress","locked":true, "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false},
 	{
 		"type": "NonSymbolCompPracticeState",
         "name":"DotCompPractice",
@@ -28,6 +35,8 @@
 [{ "name": "TaskHandler", "params": { "img_left": "assets/images/dots/id_17_dots_5.png", "img_right": "assets/images/dots/id_18_dots_6.png", "solution": "assets/images/dots/id_18_dots_6.png","additional_info": {"left_num": 5, "right_num": 6, "solution": 6, "ratio": 1.2, "bucket": 0} } }, { "name": "TotalTime" }]
 		]
 	},
+
+	{ "type": "SixStep_4", "name":"WithinStateProgress","locked":true, "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false},
 	{ "type": "SymbNumCompInstructionsState_02", "desc_head": "SymbolicNumberComparison_HEAD", "desc_body": "SymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": [ [{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }] ] },
 	{
 
@@ -82,7 +91,9 @@
 
 		]
 	},
-	{ "name": "TaskDoneState", "type": "TaskDoneState", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "done": false, "saved": false, "trials": [ ] },
+
+	{ "type": "SixStep_5", "name":"WithinStateProgress","locked":true, "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false},
+	{ "type": "NonSymbCompEndState", "name":"WithinStateProgress","locked":true, "preview":"assets/images/level_preview/DotCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false},
 	{
 		"type": "SAVE",
 		"done": false,

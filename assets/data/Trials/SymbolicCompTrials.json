@@ -1,7 +1,7 @@
 
 [	
 
-	{ "type": "SymbolicNumberComparisonTutorial_01", "preview":"assets/images/level_preview/SymbNumCompPreview.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "name":"DotComp", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": []},
+	{ "type": "SymbolicNumberComparisonTutorial_01", "preview":"assets/images/level_preview/SymbNumCompPreview.png","locked":true, "desc_head": "NonSymbolicNumberComparison_HEAD", "name":"DotComp", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": []},
 	{ "type": "SymbolicNumberComparisonTutorial_02", "preview":"assets/images/level_preview/TestTask.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "name":"DotComp", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": []},
 	{ "type": "SymbolicNumberComparisonPracticeStateNoTime", "preview":"assets/images/level_preview/TestTask.png", "desc_head": "NonSymbolicNumberComparison_HEAD", "name":"DotComp", "desc_body": "NonSymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": [
 

@@ -1,1 +1,3 @@
-Welche Schuhgröße hast du? Beispiel: Maria hat Schuhgröße @001FFFF4D36@000.
+Welche Schuhgröße hast du? 
+Beispiel: Maria hat Schuhgröße 36.
+Sie schreibt: 36

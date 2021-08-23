@@ -98,7 +98,7 @@
       ]
     },
     {
-      "type": "TextObject",
+      "type": "StaticTextObject",
       "name": "Text_Problem",
       "text": "PROBLEM",
       "autostart": true,

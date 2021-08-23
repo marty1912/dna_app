@@ -1,1 +1,5 @@
-Wie viele Geschwister hast du? Beispiel: Anna hat einen Bruder. Sie schreibt: @001FFFF4D1@000. Hannah hat keine Geschwister. Deshalb schreibt sie: @001FFFF4D0@000.
+Wie viele Geschwister hast du? 
+Beispiel: Anna hat einen Bruder. 
+Sie schreibt: 1. 
+Hannah hat keine Geschwister. 
+Deshalb schreibt sie: 0.

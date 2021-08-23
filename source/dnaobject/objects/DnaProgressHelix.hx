@@ -145,7 +145,7 @@ class DnaProgressHelix implements DnaObject extends DnaObjectBase
 			startDelay: activate_delay,
 			onComplete: function(tween:FlxTween)
 			{
-				var flash_dur:Float = 1;
+				var flash_dur:Float = 0.5;
 
 				for (flash in flashing_sprs)
 				{
@@ -201,12 +201,13 @@ class DnaProgressHelix implements DnaObject extends DnaObjectBase
 		// we will create a kind of raster to arrange the dna helix.
 		// the helix uses 2 fields, the endpoints 1
 		var rasterDim = new FlxPoint(0, 0);
-		rasterDim.x = width / nodes.length;
+		rasterDim.x = width / ((nodes.length + 1) * 2);
 		// we use half of the height for text.
 		rasterDim.y = height / 2;
 		// we do not want to stretch our images so we have to get the correct width per raster here.
 		end_left_spr.setGraphicSize(Std.int(rasterDim.x));
 		end_left_spr.updateHitbox();
+
 		// now we check if we exceed our raster height
 		if (end_left_spr.height > rasterDim.y)
 		{

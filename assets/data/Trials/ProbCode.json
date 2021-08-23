@@ -17,6 +17,18 @@
     { "name": "ProbCodeStateDone", "type": "ProbCodeStateDone", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "done": false, "saved": false, "trials": [ ] }, 
     { "type": "SAVE", "done": false, "saved": false }, 
 
+
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/PatternExtend.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/PatternNumbers.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/Flanker.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/AdditionTrials.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/SubtractionTrials.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/MathAnxietyTrials.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/NonSymbolCompTrials.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/NumberlineTrials.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/OrdTrials.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/SymbolicCompTrials.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
+	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/Corsi.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
 	{ "type": "ShowProgressState", "done": false, "saved": false },
 	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "LevelSelectState" } }
      

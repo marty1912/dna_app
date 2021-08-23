@@ -1,0 +1,15 @@
+﻿1
+00:00:00,000 --> 00:00:04,100
+Juhuu!
+
+2
+00:00:04,200 --> 00:00:10,100
+Das hast du super gemacht!
+
+3
+00:00:10,200 --> 00:00:14,100
+Jetzt kann ich mit den Bakterien weiterforschen.
+
+4
+00:00:14,200 --> 00:00:18,100
+Du hast die Aufgabe geschafft!

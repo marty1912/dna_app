@@ -1,6 +1,6 @@
 [
 
-	{ "type": "NumberlineTutorialState", "desc_head": "NumberlineState_HEAD","preview":"assets/images/level_preview/NumberlinePreview.png", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
+	{ "type": "NumberlineTutorialState", "desc_head": "NumberlineState_HEAD","locked":true,"preview":"assets/images/level_preview/NumberlinePreview.png", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
 	{ "type": "NumberlinePracticeState_01", "desc_head": "NumberlineState_HEAD", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
 	
 	{ "type": "NumberlineTutorialState_02", "name":"NumberlinePractice", "desc_head": "NumberlineState_HEAD", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 31 } }, { "name": "TotalTime" }] ] },

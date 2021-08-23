@@ -1,5 +1,5 @@
 [	
-{ "type": "CorsiTaskState", "name":"corsi_reverse", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/CorsiPreview.png", "done": false, "saved": false, "trials": [ 
+{ "type": "CorsiTaskState", "name":"corsi_reverse","locked":true, "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/CorsiPreview.png", "done": false, "saved": false, "trials": [ 
 [{ "name": "corsi", "params": { } }]
 						]
 	},

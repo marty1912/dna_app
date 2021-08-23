@@ -1,7 +1,7 @@
 [
 
 
-{ "type": "OrdTaskTutorial_01", "name":"OrdinalTaskPractice", "preview":"assets/images/level_preview/OrdPreview.png", "desc_head": "OrdTask_HEAD", "desc_body": "OrdTask_BODY", "done": false, "saved": false, "trials": [ ] },
+{ "type": "OrdTaskTutorial_01", "name":"OrdinalTaskPractice","locked":true, "preview":"assets/images/level_preview/OrdPreview.png", "desc_head": "OrdTask_HEAD", "desc_body": "OrdTask_BODY", "done": false, "saved": false, "trials": [ ] },
 { "type": "OrdTaskTutorial_02", "name":"OrdinalTaskPractice", "preview":"assets/images/level_preview/OrdPreview.png", "desc_head": "OrdTask_HEAD", "desc_body": "OrdTask_BODY", "done": false, "saved": false, "trials": [ ] },
 { "type": "OrdinalTaskPracticeStateNoTime", "name":"OrdinalTaskPractice", "preview":"assets/images/level_preview/OrdPreview.png", "desc_head": "OrdTask_HEAD", "desc_body": "OrdTask_BODY", "done": false, "saved": false,
 		"trials": [

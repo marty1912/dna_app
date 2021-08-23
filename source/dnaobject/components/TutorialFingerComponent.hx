@@ -1,5 +1,6 @@
 package dnaobject.components;
 
+import dnadata.DnaDataManager;
 import dnaobject.objects.DnaButtonObject;
 import dnaobject.objects.SpriteObject;
 import flixel.math.FlxPoint;
@@ -25,6 +26,24 @@ class TutorialFingerComponent implements DnaComponent extends DnaActionBase
 	{
 		super.onHaveParent();
 		this.finger = cast this.getParent();
+		setFingerAssetFromMontiParts();
+	}
+
+	/**
+	 * this function will set the current finger based on the currently equipped monti part 
+	 * for the hands.
+	 */
+	public function setFingerAssetFromMontiParts()
+	{
+		var part_list:Array<Dynamic> = DnaDataManager.instance.getMontiPartData();
+		for (part in part_list)
+		{
+			if (part.finger_asset != null)
+			{
+				this.finger.setAssetPath(part.finger_asset);
+				break;
+			}
+		}
 	}
 
 	public function moveToButtonAndPress(btn:DnaButtonObject, onFinished:Void->Void, ?duration:Float = 2)

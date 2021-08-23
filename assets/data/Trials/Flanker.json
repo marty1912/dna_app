@@ -1,6 +1,6 @@
 [	
 
-{ "type": "FourStep_0", "name":"withinTaskProgress", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/FlankerPreview.png", "done": false, "saved": false, "trials": [ ]},
+{ "type": "FourStep_0", "name":"withinTaskProgress", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/FlankerPreview.png","locked":true, "done": false, "saved": false, "trials": [ ]},
 { "type": "FlankerTutorialState", "name":"flanker_task", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/FlankerPreview.png", "done": false, "saved": false, "trials": [ ]},
 { "type": "FourStep_1", "name":"withinTaskProgress", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/FlankerPreview.png", "done": false, "saved": false, "trials": [ ]},
 { "type": "FlankerPracticeState", "name":"flanker_task", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/FlankerPreview.png", "done": false, "saved": false, "trials": [ 
