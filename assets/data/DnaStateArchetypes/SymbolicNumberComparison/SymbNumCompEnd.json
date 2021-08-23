@@ -1,0 +1,16 @@
+{
+    "type": "ArithmeticEndState",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+
+        { "type": "SpriteObject", "name": "SubtitleArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.2, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
+        { "type": "SrtPlayerTextObject", "name":"tut_01", "text":"SymbNumCompEndText", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+        { "type": "ActionHandlerObject", "name": "a_initial",
+            "actions": [
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_01", "on_event":"onCreate" },
+                { "type": "ActionFinishTaskComponent", "target": "" },
+                { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
+             ] }
+
+    ]
+}

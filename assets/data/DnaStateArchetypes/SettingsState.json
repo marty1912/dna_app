@@ -77,82 +77,8 @@
             }]
         },
 
-        {
-            "type":"TextObject",
-            "text":"SettingsState_LANG",
-            "autostart":true,
-            "settings":{"char_per_sec":24},
-            "components":[{
-                "type": "PositionComponent",
-                "oneshot": false,
-                "position": "LeftCenter",
-                "target": "CenterTopPosition"
-            }
-            
-            ]
-        },
-        {
-            "type": "SpriteObject",
-            "name": "CenterTop_RightPosition",
-            "asset_path": "INVISIBLE_BOX",
-            "scale_x": 500,
-            "scale_y": 100,
-            "origin_where": "",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "RightCenter",
-                "target": "CenterTopPosition"
-            }]
-        },
-        {
-            "type":"TextObject",
-            "text":"LOCALE_NAME",
-            "autostart":true,
-            "settings":{"char_per_sec":24},
-            "components":[{
-                "type": "PositionComponent",
-                "oneshot": false,
-                "position": "Center",
-                "target": "CenterTop_RightPosition"
-            }
-            
-            ]
-        },
-        {
-            "type": "LeftArrowButtonObject",
-            "components":[
-                {"type":"UserButtonComponent"},
-                {
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "LeftCenter",
-                    "target": "CenterTop_RightPosition"
-                },
-                {
-                    "type": "CmdEvtTrigComponent",
-                    "event_name": "LANG_DEC"
-                }
-            ]
-        },
-        {
-            "type": "RightArrowButtonObject",
-            "components":[
-                {"type":"UserButtonComponent"},
-                {
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "RightCenter",
-                    "target": "CenterTop_RightPosition"
-                },
-                {
-                    "type": "CmdEvtTrigComponent",
-                    "event_name": "LANG_INC"
-                }
-            ]
-        },
-
-        {
+        { "type": "SpriteObject", "name": "CenterTop_RightPosition", "asset_path": "INVISIBLE_BOX", "scale_x": 500, "scale_y": 100, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "CenterTopPosition" }] },
+       {
             "type": "ActionHandlerObject",
             "name": "ActionHandler_Language_Select",
             "actions": [

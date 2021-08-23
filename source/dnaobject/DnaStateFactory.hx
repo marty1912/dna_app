@@ -708,6 +708,20 @@ else if (type == "NonSymbCompEndState")
 			state = new DnaState("NonSymbCompEndState");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/NonSymbolComp/NonSymbCompEndState.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PatternNumEnd")
+		{
+			state = new DnaState("PatternNumEnd");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternNumEnd.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "SymbNumCompEnd")
+		{
+			state = new DnaState("SymbNumCompEnd");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbNumCompEnd.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -720,6 +734,8 @@ else if (type == "NonSymbCompEndState")
 		return state;
 	}
 }
+
+
 
 
 

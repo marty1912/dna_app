@@ -104,8 +104,8 @@ class TaskTrials
 		"assets/data/Trials/PatternGeneralize.json",
 		"assets/data/Trials/PatternUnitOfRepeat.json",
 		"assets/data/Trials/PatternNumbers.json",
-		"assets/data/Trials/lockedTask.json", // "assets/data/Trials/doneTask.json"
-		"assets/data/Trials/TEST_TASK.json" // "assets/data/Trials/doneTask.json"
+		// "assets/data/Trials/lockedTask.json", // "assets/data/Trials/doneTask.json"
+		// "assets/data/Trials/TEST_TASK.json" // "assets/data/Trials/doneTask.json"
 	];
 
 	/**
