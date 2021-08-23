@@ -393,7 +393,7 @@ class MontiStateWave implements IState
 
 	public function enter():Void
 	{
-		parent.startAnimation("wave", 1);
+		// parent.startAnimation("talk", 1);
 	}
 
 	public function exit():Void
