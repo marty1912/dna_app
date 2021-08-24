@@ -5,6 +5,10 @@ import dnaEvent.DnaEventSubscriber;
 import dnadata.DnaDataManager;
 import dnaobject.interfaces.IUnlockableItem;
 import dnaobject.interfaces.TaskObject;
+import flixel.tweens.FlxEase;
+import flixel.tweens.FlxTween;
+import flixel.util.FlxColor;
+import flixel.util.FlxColor;
 
 /**
  * this is the class that handles giving our trial parameters to the correct objects.
@@ -105,6 +109,21 @@ class UnlockDisplayController implements DnaObject implements DnaEventSubscriber
 		super.fromFile(jsonFile);
 	}
 
+	public var choosen(never, set):Bool;
+
+	public function set_choosen(value:Bool):Bool
+	{
+		if (value)
+		{
+			FlxTween.color(preview_obj.sprite, 0.5, FlxColor.GRAY, FlxColor.WHITE, {type: PINGPONG, ease: FlxEase.cubeInOut});
+		}
+		else
+		{
+			FlxTween.color(preview_obj.sprite, 0.5, FlxColor.WHITE, FlxColor.BLACK, {type: ONESHOT, ease: FlxEase.cubeInOut});
+		}
+		return value;
+	}
+
 	/**
 	 * this unlocks the montipart
 	 * [Description]
@@ -113,6 +132,15 @@ class UnlockDisplayController implements DnaObject implements DnaEventSubscriber
 	{
 		trace("now unlocking montipart:", unlockable);
 		var unlocked = DnaDataManager.instance.unlockMontyPart(this.unlockable);
+		for (unlock in getParent().getObjectsByType("UnlockDisplayController"))
+		{
+			if (unlock != this)
+			{
+				var ul:UnlockDisplayController = cast unlock;
+				ul.choosen = false;
+			}
+		}
+		this.choosen = true;
 
 		trace("unlocked montipart:", unlocked);
 	}

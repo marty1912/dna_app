@@ -141,6 +141,25 @@ class DnaState extends FlxSubState implements IFlxDestroyable
 	 * getObjectFromParentByName - helper function to find an object by name
 	 * @param name
 	 */
+	public function getObjectsByType(type:String)
+	{
+		var all_children:Array<DnaObject> = getObjectList();
+		var children_with_type:Array<DnaObject> = new Array<DnaObject>();
+
+		for (obj in all_children)
+		{
+			if (obj.obj_type == type)
+			{
+				children_with_type.push(obj);
+			}
+		}
+		return children_with_type;
+	}
+
+	/**
+	 * getObjectFromParentByName - helper function to find an object by name
+	 * @param name
+	 */
 	public function getObjectByName(name:String)
 	{
 		var all_children:Array<DnaObject> = getObjectList();
