@@ -72,8 +72,18 @@ class OrdinalTaskCtrl implements DnaObject implements DnaEventSubscriber extends
 		}
 	}
 
+	public function onTimeout()
+	{
+		if (this.onTimeoutCallback != null)
+		{
+			onTimeoutCallback();
+			return;
+		}
+	}
+
 	public var onCorrectCallback:Void->Void = null;
 	public var onIncorrectCallback:Void->Void = null;
+	public var onTimeoutCallback:Void->Void = null;
 
 	public var feedbackCallback:(Void->Void) -> Void = null;
 	public var state_machine:StateMachineComponent = null;

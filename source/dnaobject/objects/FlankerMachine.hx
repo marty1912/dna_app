@@ -61,6 +61,7 @@ class FlankerMachine implements DnaObject implements DnaEventSubscriber extends 
 		// add buttons for cosmetic reasons.
 		button_left = cast DnaObjectFactory.create("EmptyButtonObject");
 		this.getParent().addObject(button_left);
+		button_left.setAssetPath("assets/gui_elements/buttonLeft.png");
 		button_left.button.setGraphicSize(Math.floor(pattern_display_obj.getWidth() * 0.1));
 		button_left.button.updateHitbox();
 		button_left.removeChild(button_left.button);
@@ -70,6 +71,7 @@ class FlankerMachine implements DnaObject implements DnaEventSubscriber extends 
 
 		button_right = cast DnaObjectFactory.create("EmptyButtonObject");
 		this.getParent().addObject(button_right);
+		button_right.setAssetPath("assets/gui_elements/buttonRight.png");
 		button_right.button.setGraphicSize(Math.floor(pattern_display_obj.getWidth() * 0.1));
 		button_right.button.updateHitbox();
 		button_right.moveTo(pattern_display_obj.pattern_area_obj.sprite.x
