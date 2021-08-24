@@ -103,7 +103,7 @@
                 {
                     "type": "PositionComponent",
                     "oneshot": true,
-                    "position": "RightBottom"
+                    "position": "CenterBottom"
                 },
                 {
                     "type": "ActionSetButtonStateComponent",

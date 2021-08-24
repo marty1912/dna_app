@@ -206,8 +206,8 @@ class DnaButtonObject implements DnaObject implements CommandClient implements I
 		{
 			clickarea_target = jsonFile.clickarea_target;
 		}
-		super.fromFile(jsonFile);
 		this.initButton();
+		super.fromFile(jsonFile);
 	}
 
 	/**
@@ -218,7 +218,11 @@ class DnaButtonObject implements DnaObject implements CommandClient implements I
 		// trace("initbutton:", m_asset_path);
 		button.loadGraphic(m_asset_path, m_btn_animated, m_btn_width, m_btn_height);
 		animCtrl = new FlxAnimationController(button);
-		this.setNextState(new ButtonStateNormal());
+
+		if (this.m_current_state == null)
+		{
+			this.setNextState(new ButtonStateNormal());
+		}
 	}
 
 	public var m_current_state(default, null):IState;
@@ -301,7 +305,9 @@ class ButtonStateInactive implements IState
 	{
 		parent.onSetStateCallback = this.onSetStateCallback;
 		// on 0 we will have normal behavior
+		parent.initButton();
 		parent.animCtrl.frameIndex = 3;
+		parent.button.updateFramePixels();
 	}
 
 	public function exit():Void

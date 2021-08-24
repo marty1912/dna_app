@@ -524,6 +524,12 @@ else if (type == 'ProbcodeHandlerObject')
 	obj = new ProbcodeHandlerObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ProbcodeHandlerObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'ScaledAcceptButtonObject')
+{
+	obj = new ScaledAcceptButtonObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ScaledAcceptButtonObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -537,6 +543,7 @@ else if (type == 'ProbcodeHandlerObject')
 		return obj;
 	}
 }
+
 
 
 

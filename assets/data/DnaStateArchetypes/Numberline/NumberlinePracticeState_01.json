@@ -6,6 +6,7 @@
             , "background_path": "assets/images/backdrop_tasks.png"
         },
 
+
         {
             "type": "SpriteObject",
             "name": "TextPosition",
@@ -20,6 +21,8 @@
                 "target": ""
             }]
         },
+
+        { "type": "AcceptButtonObject", "name": "AcceptButton", "active":false, "components": [ { "type": "PositionComponent", "oneshot": true, "position": "CenterBottom" }, {"type":"UserButtonComponent"}, { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE" } ] },
        {
             "type": "NumberlineObject",
             "name": "NumberlineObject",
@@ -100,14 +103,16 @@
             ]
                 
         },
-        {
-            "type": "ActionHandlerObject",
+
+        { "type": "ActionHandlerObject","name":"Actionsetup",
+            "actions": [
+
+                { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE","on_event":"OnCreate" }
+            ]
+        },
+        { "type": "ActionHandlerObject",
             "actions": [
                 { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "on_event": "EVENT_SLIDERPOS_SET", "state":"NORMAL" },
-
-                { "type": "ActionFinishTaskComponent", "on_event": "TaskEnd", "target": "" },
-
-                { "type": "ActionStateSwitchComponent", "on_event": "seq", "target": "", "next_state": "NEXT_TASK" },
 
 
                 { "type": "ActionCheckNumberlineComponent", "on_event": "AcceptButtonPressed", "target":"NumberlineObject", "tolerance":0.1, "oneshot":false },
@@ -115,6 +120,7 @@
                 { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "on_event": "AcceptButtonPressed", "state":"INACTIVE" },
 
                 { "type": "ActionRemoveComponentComponent", "target": "NumberlineObject", "on_event": "AcceptButtonPressed", "target_comp":"SliderComponent" }  
+
 
             ]
         },
@@ -124,12 +130,9 @@
             "actions": [
                 { "type": "ActionAddComponentComponent", "target":"NumberlineObject", "on_event": "TASK_CORRECT", "components":[{"type": "NumlineZoneComponent"}] },
 
-                { "type": "ActionPlaySoundComponent", "path":"NumberlineFeedbackCorrect", "oneshot":false, "on_event": "TASK_CORRECT", "from_locale":true },
-
-                { "type": "ActionShowTextComponent", "target":"FeedbackTextCorrect", "on_event": "TASK_CORRECT" },
-
-                { "type": "ActionFinishTaskComponent", "target": ""  },
-                { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
+                { "type": "ActionShowTextComponent", "target":"FeedbackTextCorrect", "on_event": "seq" },
+                { "type": "ActionFinishTaskComponent"   },
+                { "type": "ActionStateSwitchComponent", "next_state": "NEXT_TASK" }
             ]
         },
         {
@@ -142,17 +145,11 @@
                     "on_event": "TASK_INCORRECT",
                     "components":[{"type": "NumlineZoneComponent"}]
                 },
-                {
-                    "type": "ActionPlaySoundComponent",
-                    "oneshot":false,
-                    "path":"NumberlineFeedbackIncorrect",
-                    "on_event": "TASK_INCORRECT",
-                    "from_locale":true
-                },
+                
                 {
                     "type": "ActionShowTextComponent",
                     "target":"FeedbackTextIncorrect",
-                    "on_event": "TASK_INCORRECT"
+                    "on_event": "seq"
                 },
 
                 {
@@ -160,24 +157,6 @@
                     "target": "",
                     "next_state": "NumberlinePracticeState_01"
                 }   
-            ]
-        },
-        {
-            "type": "AcceptButtonObject",
-            "name": "AcceptButton",
-            "active":false,
-            "components": [
-                {
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "RightBottom"
-                },
-                {"type":"UserButtonComponent"},
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state":"INACTIVE"
-                }
             ]
         },
         {"type":"TimerObject","name":"TotalTime"}

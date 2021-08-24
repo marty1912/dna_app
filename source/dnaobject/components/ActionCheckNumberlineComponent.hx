@@ -31,14 +31,6 @@ class ActionCheckNumberlineComponent implements DnaComponent extends DnaActionBa
 	}
 
 	/**
-	 * dtor.
-	 */
-	override public function destroy()
-	{
-		super.destroy();
-	}
-
-	/**
 	 * fromFile function. reads from Dynamic field.
 	 * @param jsonFile
 	 */
@@ -64,7 +56,7 @@ class ActionCheckNumberlineComponent implements DnaComponent extends DnaActionBa
 	public function checkNumline(numline_name:String, tol:Float)
 	{
 		trace("now checking numline");
-		var numline:NumberlineObject = cast(getParent().getParent().getObjectByName(m_target_name));
+		var numline:NumberlineObject = cast getParent().getParent().getObjectByName(m_target_name);
 		var selected:Float = numline.getSliderNum();
 		var min:Float = numline.getNumZero();
 		var max:Float = numline.getNumMax();
@@ -81,6 +73,7 @@ class ActionCheckNumberlineComponent implements DnaComponent extends DnaActionBa
 		else if (selected >= target_num - deviation && selected <= target_num + deviation)
 		{
 			trace("correct");
+			// TODO: there is some weird thing happening on this call.. (makes the "blip" sound in debug mode.)
 			this.getParent().getParent().eventManager.broadcastEvent(DnaConstants.TASK_CORRECT);
 		}
 		else

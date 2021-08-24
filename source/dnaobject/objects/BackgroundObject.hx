@@ -54,7 +54,7 @@ class BackgroundObject implements DnaObject implements Scrollable extends DnaObj
 			backdrop.loadGraphic(m_background_asset_path);
 			backdrop.setGraphicSize(FlxG.width, FlxG.height);
 			backdrop.updateHitbox();
-			trace("backdrop size:", backdrop.width, backdrop.height);
+			// trace("backdrop size:", backdrop.width, backdrop.height);
 		}
 		super.fromFile(jsonFile);
 	}

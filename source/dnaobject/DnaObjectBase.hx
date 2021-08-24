@@ -141,12 +141,17 @@ class DnaObjectBase implements IFlxDestroyable
 	 */
 	public function removeComponentByType(type:String):Void
 	{
+		var to_remove:Array<Int> = new Array<Int>();
 		for (comp in this.m_component_list)
 		{
 			if (comp.comp_type == type)
 			{
-				this.removeComponent(comp.id);
+				to_remove.push(comp.id);
 			}
+		}
+		for (id in to_remove)
+		{
+			this.removeComponent(id);
 		}
 	}
 

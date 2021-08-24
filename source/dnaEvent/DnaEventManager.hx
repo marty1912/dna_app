@@ -105,8 +105,12 @@ class DnaEventManager
 	{
 		// trace("event fired:", event_name, " - params:", params);
 		assert(event_name != null);
-
+		if (!event_subscribers.exists(event_name))
+		{
+			return;
+		}
 		var subscribers:Array<DnaEventSubscriber> = event_subscribers.get(event_name);
+
 		if (subscribers == null)
 		{
 			return;

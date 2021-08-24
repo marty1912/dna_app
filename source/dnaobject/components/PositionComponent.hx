@@ -217,7 +217,8 @@ class PositionComponent implements DnaComponent extends DnaComponentBase
 
 		if (getParent().obj_name == "NumberlineObject")
 		{
-			trace("object name:", getParent().obj_name, "lrud:", leftrightupdown, "sec:", getParent().getMaxLeftRightUpDownFromOrigin());
+			// DEBUG
+			// trace("object name:", getParent().obj_name, "lrud:", leftrightupdown, "sec:", getParent().getMaxLeftRightUpDownFromOrigin());
 		}
 		switch m_position_type
 		{

@@ -96,8 +96,9 @@ class NumlineZoneComponent implements DnaComponent extends DnaComponentBase
 	 */
 	override public function destroy()
 	{
-		super.destroy();
+		return;
 
+		super.destroy();
 		FlxDestroyUtil.destroy(zone.sprite);
 	}
 
@@ -110,7 +111,7 @@ class NumlineZoneComponent implements DnaComponent extends DnaComponentBase
 		if (Reflect.hasField(jsonFile, "tol"))
 		{
 			this.tol = jsonFile.tol;
-			this.zone = new Zone(0, 0);
+			this.zone = new Zone(1, 1);
 		}
 	}
 

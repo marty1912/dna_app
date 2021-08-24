@@ -1,0 +1,15 @@
+{"type":"ScaledAcceptButtonObject",
+"name":"",
+"pos_target":"",
+"background_bar":"empty_bar",
+"filled_bar":"my_filled_bar",
+
+"path": "assets/gui_elements/buttonAccept.png",
+"triggers_event":"AcceptButtonPressed",
+"objects":[
+{ "type": "SpriteObject", "name": "KeyboardPosition_00", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_y": 0.2, "scale_x": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "::pos_target::" }] },
+{ "type": "SpriteObject", "name": "KeyboardPosition_00_text", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_y": 0.18, "scale_x": 0.09, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftTop", "target": "KeyboardPosition_00" }] }, 
+{ "type": "EmptyButtonObject","path":"::path::", "name": "Button", "components": [{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "KeyboardPosition_00" }, { "type": "CmdEvtTrigComponent", "event_name": "::triggers_event::" }, { "type":"ButtonScaleComponent", "target":"KeyboardPosition_00" } ] }
+
+]
+}

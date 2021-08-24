@@ -5,6 +5,8 @@
             "type": "BackgroundObject"
             , "background_path": "assets/images/backdrop_tasks.png"
         },
+
+        { "type": "AcceptButtonObject", "name": "AcceptButton", "active":false, "components": [ { "type": "PositionComponent", "oneshot": true, "position": "CenterBottom" }, {"type":"UserButtonComponent"}, { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE" } ] },
         {
             "type": "SpriteObject",
             "name": "TextPosition",
@@ -133,7 +135,8 @@
                     "type": "ActionLoadTrialComponent",
                     "target":"",
                     "on_event": "onCreate"
-                } 
+                },
+                { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE" }
             ]
         },
         {
@@ -199,24 +202,6 @@
                     "components":[{"type": "SliderComponent"}]
                 }
               
-            ]
-        },
-        {
-            "type": "AcceptButtonObject",
-            "name": "AcceptButton",
-            "active":false,
-            "components": [
-                {
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "RightBottom"
-                },
-                {"type":"UserButtonComponent"},
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state":"INACTIVE"
-                }
             ]
         },
         {"type":"TimerObject","name":"TotalTime"}
