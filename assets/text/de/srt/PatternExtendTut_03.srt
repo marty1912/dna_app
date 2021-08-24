@@ -1,7 +1,6 @@
 ﻿1
 00:00:00,000 --> 00:00:06,000
-So, jetzt hast du gesehen,
-wie das funktioniert
+So, jetzt hast du gesehen, wie das funktioniert
 
 2
 00:00:06,100 --> 00:00:10,100

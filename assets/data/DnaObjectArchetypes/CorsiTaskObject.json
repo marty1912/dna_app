@@ -7,10 +7,18 @@
 "action_correct":"a_correct",
 "action_incorrect":"a_incorrect",
 "action_error_out":"a_error_out",
+"action_practice_done":"a_practice_done",
 "action_fin":"a_fin",
 "action_go":"a_go",
 "action_initial":"a_initial",
 "objects":[
+
+        {"type":"SubStateObject", "name":"withinTaskProgress_0", "state":"FourStepSub_0"},
+        {"type":"SubStateObject", "name":"withinTaskProgress_1", "state":"FourStepSub_1"},
+        {"type":"SubStateObject", "name":"withinTaskProgress_2", "state":"FourStepSub_2"},
+        {"type":"SubStateObject", "name":"withinTaskProgress_3", "state":"FourStepSub_3"},
+
+
         { "type": "CorsiMachine", "name": "corsi_mach", "pos_target":""},
 
         { "type": "TrialHandlerObject","name": "trialz"},
@@ -25,7 +33,10 @@
 
        { "type": "ActionHandlerObject", "name": "a_initial",
             "actions": [
-            { "type": "ActionShowTextComponent", "oneshot":false, "target": "text_initial", "on_event":"NO_EVENT" }
+
+            { "type": "ActionSwitchToSubStateComponent", "oneshot":false,"duration":6000, "target": "withinTaskProgress_0", "on_event":"NO_EVENT" },
+            { "type": "ActionShowTextComponent", "oneshot":false, "target": "text_initial", "on_event":"NO_EVENT" },
+            { "type": "ActionSwitchToSubStateComponent", "oneshot":false,"duration":8000, "target": "withinTaskProgress_1", "on_event":"seq" }
              ] },
        { "type": "ActionHandlerObject", "name": "a_correct",
             "actions": [
@@ -39,8 +50,13 @@
             "actions": [
             { "type": "ActionShowTextComponent", "oneshot":false, "target": "text_incorrect", "on_event":"NO_EVENT" }
              ] },
+          { "type": "ActionHandlerObject", "name": "a_practice_done",
+            "actions": [
+            { "type": "ActionSwitchToSubStateComponent", "oneshot":false,"duration":8000, "target": "withinTaskProgress_2", "on_event":"NO_EVENT" }
+             ] },
         { "type": "ActionHandlerObject", "name": "a_error_out",
             "actions": [
+            { "type": "ActionSwitchToSubStateComponent", "oneshot":false,"duration":8000, "target": "withinTaskProgress_3", "on_event":"NO_EVENT" },
             { "type": "ActionShowTextComponent", "oneshot":false, "target": "text_error_out", "on_event":"NO_EVENT" },
                 { "type": "ActionFinishTaskComponent", "target": "" },
                { "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }

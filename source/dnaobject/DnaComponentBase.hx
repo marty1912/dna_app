@@ -119,4 +119,30 @@ class DnaComponentBase
 	 * as a type cant change during runtime it is final.
 	 */
 	public final comp_type:String;
+
+	public function findTargetInNames(target_name:String):DnaObject
+	{
+		if (target_name != "")
+		{
+			var target:DnaObject = getParent().getParent().getObjectByName(target_name);
+
+			if (target == null)
+			{
+				var all_names = getParent().getParent().getAllObjectNames();
+				trace("could not find target with name:", target_name, "all names:", all_names);
+				trace("trying to find name that matches:", target_name, " in all names:", all_names);
+				for (name in all_names)
+				{
+					if (name.indexOf(target_name) != -1)
+					{
+						// super hacky but it might work
+						target = getParent().getParent().getObjectByName(name);
+						break;
+					}
+				}
+			}
+			return target;
+		}
+		return null;
+	}
 }

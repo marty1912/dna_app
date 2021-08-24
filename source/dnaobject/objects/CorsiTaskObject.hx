@@ -87,6 +87,7 @@ class CorsiTaskObject implements DnaObject implements TaskObject extends DnaObje
 		corsi_obj = cast this.getParent().getObjectByName(getNestedObjectName(corsi));
 		action_correct_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_correct));
 		action_incorrect_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_incorrect));
+		action_practice_done_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_practice_done));
 		action_error_out_obj = cast this.getParent().getObjectByName(getNestedObjectName(action_error_out));
 		trialhandler_obj = cast this.getParent().getObjectByName(getNestedObjectName(trialhandler));
 		trialhandler_obj.reload_on_fin = true;
@@ -105,6 +106,9 @@ class CorsiTaskObject implements DnaObject implements TaskObject extends DnaObje
 	public var trialhandler_obj:TrialHandlerObject;
 	public var action_incorrect:String;
 	public var action_incorrect_obj:ActionHandlerObject;
+
+	public var action_practice_done:String;
+	public var action_practice_done_obj:ActionHandlerObject;
 
 	public var action_initial:String;
 	public var action_initial_obj:ActionHandlerObject;
@@ -131,6 +135,11 @@ class CorsiTaskObject implements DnaObject implements TaskObject extends DnaObje
 		{
 			this.action_incorrect = cast jsonFile.action_incorrect;
 		}
+		if (Reflect.hasField(jsonFile, "action_practice_done"))
+		{
+			this.action_practice_done = cast jsonFile.action_practice_done;
+		}
+
 		if (Reflect.hasField(jsonFile, "action_go"))
 		{
 			this.action_go = cast jsonFile.action_go;

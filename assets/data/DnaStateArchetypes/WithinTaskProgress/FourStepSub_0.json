@@ -1,0 +1,7 @@
+{
+    "type": "FourStep_0",
+    "objects": [
+        { "type": "TaskBackgroundObject" },
+        { "type": "DnaProgressHelix", "name": "helix","active_node_index":0 ,"nodes":["nodetext_intro","nodetext_practice","nodetext_real_task","nodetext_done"] , "components":[{"type":"PositionComponent","position":"Center"}]}
+    ]
+}

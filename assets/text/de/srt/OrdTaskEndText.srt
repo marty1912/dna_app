@@ -1,0 +1,16 @@
+﻿1
+00:00:00,000 --> 00:00:04,100
+Wow, du bist ja schnell wie der Blitz!
+
+2
+00:00:04,200 --> 00:00:10,100
+Das waren schon alle Regale.
+
+3
+00:00:10,200 --> 00:00:14,100
+Das hast du ganz toll gemacht! 
+
+4
+00:00:14,200 --> 00:00:18,100
+Danke für die Hilfe.
+

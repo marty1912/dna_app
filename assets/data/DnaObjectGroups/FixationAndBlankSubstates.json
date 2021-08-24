@@ -9,9 +9,7 @@
         {"type":"SubStateObject",
                 "name":"fixation",
                 "state":"FixationState"},
-        {"type":"SubStateObject",
-                "name":"blank",
-            "state":"BlankTaskState"}
+        {"type":"SubStateObject", "name":"blank", "state":"BlankTaskState"}
         
     ]
 }

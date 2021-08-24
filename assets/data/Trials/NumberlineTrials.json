@@ -1,14 +1,20 @@
 [
 
+	{ "type": "SixStep_0", "desc_head": "NumberlineState_HEAD","locked":true,"preview":"assets/images/level_preview/NumberlinePreview.png", "desc_body": "NumberlineState_BODY", "done": false, "saved": false  },
 	{ "type": "NumberlineTutorialState", "desc_head": "NumberlineState_HEAD","locked":true,"preview":"assets/images/level_preview/NumberlinePreview.png", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
+
+	{ "type": "SixStep_1", "desc_head": "NumberlineState_HEAD","locked":true,"preview":"assets/images/level_preview/NumberlinePreview.png", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
 	{ "type": "NumberlinePracticeState_01", "desc_head": "NumberlineState_HEAD", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
 	
+	{ "type": "SixStep_2", "desc_head": "NumberlineState_HEAD","locked":true,"preview":"assets/images/level_preview/NumberlinePreview.png", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
 	{ "type": "NumberlineTutorialState_02", "name":"NumberlinePractice", "desc_head": "NumberlineState_HEAD", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 62, "target": 31 } }, { "name": "TotalTime" }] ] },
+	{ "type": "SixStep_3", "desc_head": "NumberlineState_HEAD","locked":true,"preview":"assets/images/level_preview/NumberlinePreview.png", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
 	{ "type": "NumberlinePracticeState_02", "desc_head": "NumberlineState_HEAD", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [
 			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 24, "target": 9 } }, { "name": "TotalTime" }],
 			[{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 31, "target": 15 } }, { "name": "TotalTime" }]
 		]
 	},
+	{ "type": "SixStep_4", "desc_head": "NumberlineState_HEAD","locked":true,"preview":"assets/images/level_preview/NumberlinePreview.png", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
 	{ "type": "NumberlinePracticeDoneState", "desc_head": "SymbolicNumberComparison_HEAD", "desc_body": "SymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": [ [{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }] ] },
 
 	{ "type": "NumberlineState", "name":"Numberline", "desc_head": "NumberlineState_HEAD", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, 
@@ -40,6 +46,8 @@
 
 				]
 	},
+
+	{ "type": "SixStep_5", "desc_head": "NumberlineState_HEAD","locked":true,"preview":"assets/images/level_preview/NumberlinePreview.png", "desc_body": "NumberlineState_BODY", "done": false, "saved": false, "trials": [ [{ "name": "NumberlineObject", "params": { "zero": 0, "ref": 1, "max": 12, "target": 7 } }, { "name": "TotalTime" }] ] },
 	{ "name": "TaskDoneState", "type": "TaskDoneState", "desc_head": "ArithmeticState_HEAD", "desc_body": "ArithmeticState_BODY", "done": false, "saved": false, "trials": [ ] },
 	{ "type": "SAVE", "done": false, "saved": false },
 	{ "type": "ShowProgressState", "done": false, "saved": false },

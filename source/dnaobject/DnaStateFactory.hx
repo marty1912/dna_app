@@ -722,6 +722,62 @@ else if (type == "SymbNumCompEnd")
 			state = new DnaState("SymbNumCompEnd");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/SymbolicNumberComparison/SymbNumCompEnd.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "OrdTaskEnd")
+		{
+			state = new DnaState("OrdTaskEnd");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Ordinal/OrdTaskEnd.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PatternUOREnd")
+		{
+			state = new DnaState("PatternUOREnd");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternUOREnd.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PatternExtendEnd")
+		{
+			state = new DnaState("PatternExtendEnd");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternExtendEnd.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PatternGenEnd")
+		{
+			state = new DnaState("PatternGenEnd");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/Pattern/PatternGenEnd.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FourStepSub_3")
+		{
+			state = new DnaState("FourStepSub_3");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/FourStepSub_3.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FourStepSub_2")
+		{
+			state = new DnaState("FourStepSub_2");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/FourStepSub_2.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FourStepSub_0")
+		{
+			state = new DnaState("FourStepSub_0");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/FourStepSub_0.json");
+		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "FourStepSub_1")
+		{
+			state = new DnaState("FourStepSub_1");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/FourStepSub_1.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -734,6 +790,14 @@ else if (type == "SymbNumCompEnd")
 		return state;
 	}
 }
+
+
+
+
+
+
+
+
 
 
 

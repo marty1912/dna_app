@@ -32,13 +32,28 @@ class CorsiFeedbackStateContinue implements IState
 
 	public function setDots(path:String) {}
 
+	public static var practice = true;
+
 	public function enter():Void
 	{
 		trace("corsi FeedbackContinue state enter!");
 		this.corsi_ctrl.corsi_obj.dome_obj.state_machine.setNextState(new CorsiDomeCorrect());
+
 		this.corsi_ctrl.action_correct_obj.startQueue(function()
 		{
-			this.state_machine.setNextState(new CorsiMixingState());
+			if (practice)
+			{
+				practice = false;
+				this.corsi_ctrl.action_practice_done_obj.startQueue(function()
+				{
+					this.state_machine.setNextState(new CorsiMixingState());
+				});
+			}
+			else
+			{
+				this.state_machine.setNextState(new CorsiMixingState());
+			}
+			// todo show practice done stuff here but only once!
 		});
 		// corsi_ctrl.corsi_obj.createButtons();
 	}

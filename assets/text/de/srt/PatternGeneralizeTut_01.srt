@@ -16,6 +16,5 @@ Dazu werde ich dir ein paar Muster zeigen, die du nachbauen sollst.
 
 8
 00:00:24,300 --> 00:00:28,700
-Ich werde dir gleich erklären,
-wie das geht.
+Ich werde dir gleich erklären, wie das geht.
 

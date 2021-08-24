@@ -695,3 +695,11 @@ else if (type == 'TutorialFingerComponent')
 
 
 
+
+
+
+
+
+
+
+

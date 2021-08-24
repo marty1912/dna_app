@@ -1,11 +1,15 @@
 [	
 	
+    { "type": "FourStep_0", "name":"SpeedTest","locked":true, "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false},
     { "type": "PatternGeneralizeTutorial_01", "name":"SpeedTest","locked":true, "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
     { "type": "PatternGeneralizeTutorial_02", "name":"SpeedTest", "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
 
+    { "type": "FourStep_1", "name":"SpeedTest","locked":true, "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
     { "type": "PatternGeneralizePractice", "name":"SpeedTest", "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": [
 	[{ "name": "pgeneralize", "params": { "pattern": ["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG"], "solution":["assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG","assets/images/pattern_symbols/circle.PNG","assets/images/pattern_symbols/square.PNG"],"choices":["assets/images/pattern_symbols/ArrowLeft.PNG","assets/images/pattern_symbols/ArrowOverlay.PNG","assets/images/pattern_symbols/rhombus.PNG","assets/images/pattern_symbols/ArrowRight.PNG"],"pattern_type":"ABAB","input": ["","","",""]} }, { "name": "TotalTime" }]
 					] },
+
+    { "type": "FourStep_2", "name":"SpeedTest","locked":true, "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
 	{ "type": "SymbNumCompInstructionsState_02", "desc_head": "SymbolicNumberComparison_HEAD", "desc_body": "SymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": [ [{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }] ] },
 
 {
@@ -31,6 +35,9 @@
 
 				]
 	},
+
+    { "type": "FourStep_3", "name":"SpeedTest","locked":true, "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
+    { "type": "PatternGenEnd", "name":"SpeedTest","locked":true, "preview":"assets/images/level_preview/PatternGeneralizePreview.png", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "done": false, "saved": false, "trials": []},
 	{
 		"type": "SAVE",
 		"done": false,

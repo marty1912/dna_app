@@ -3,6 +3,7 @@ package dnadata;
 import haxe.Json;
 import openfl.Assets;
 import textparsemacro.ConfigFile;
+import thx.OrderedMap.StringOrderedMap;
 
 /**
  * this will be used to get a nice encapsulation of a trial block
@@ -45,11 +46,10 @@ class TrialBlock
 
 	static function matchTrial(my_trial:Dynamic, stored_trial:Dynamic)
 	{
-		return (my_trial.type == stored_trial.type
-			&& (stored_trial.trials == my_trial.trials
-				|| (stored_trial.trials == null && my_trial.trials != null)
-				|| stored_trial.trials.length == my_trial.trials.length)
-			&& my_trial.name == stored_trial.name);
+		var trials_same = ((stored_trial.trials == my_trial.trials))
+			|| ((my_trial.trials != null && stored_trial.trials != null) && (stored_trial.trials.length == my_trial.trials.length));
+
+		return (my_trial.type == stored_trial.type && trials_same && my_trial.name == stored_trial.name);
 	}
 
 	/**
