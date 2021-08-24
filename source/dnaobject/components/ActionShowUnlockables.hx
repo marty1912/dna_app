@@ -4,6 +4,7 @@ import Assertion.assert;
 import dnadata.DnaDataManager;
 import dnaobject.interfaces.IStateMachine;
 import dnaobject.interfaces.IUnlockableItem;
+import dnaobject.objects.ActionHandlerObject;
 import dnaobject.objects.DnaButtonObject;
 import haxe.Json;
 import textparsemacro.ConfigFile;
@@ -21,15 +22,6 @@ class ActionShowUnlockables implements DnaComponent extends DnaActionBase
 	public function new()
 	{
 		super("ActionShowUnlockables");
-	}
-
-	/**
-	 * in here we read our params from a file..
-	 * @param jsonFile - the jsonFile object to read from. should be the output of jsonParse.
-	 */
-	override public function fromFile(jsonFile:Dynamic):Void
-	{
-		super.fromFile(jsonFile);
 	}
 
 	/**
@@ -59,7 +51,42 @@ class ActionShowUnlockables implements DnaComponent extends DnaActionBase
 
 			target.setUnlockable(unlock);
 		}
-		this.finishAction();
+
+		var action:ActionHandlerObject;
+		var first_time = true;
+		if (DnaDataManager.instance.retrieveData("first_unlock_done") == null)
+		{
+			action = cast getParent().getParent().getObjectByName(action_long);
+			DnaDataManager.instance.storeData("first_unlock_done", true);
+		}
+		else
+		{
+			action = cast getParent().getParent().getObjectByName(action_short);
+		}
+		action.startQueue(function()
+		{
+			this.finishAction();
+		});
+	}
+
+	public var action_long:String;
+	public var action_short:String;
+
+	/**
+	 * in here we read our params from a file..
+	 * @param jsonFile - the jsonFile object to read from. should be the output of jsonParse.
+	 */
+	override public function fromFile(jsonFile:Dynamic):Void
+	{
+		if (Reflect.hasField(jsonFile, "action_long"))
+		{
+			action_long = jsonFile.action_long;
+		}
+		if (Reflect.hasField(jsonFile, "action_short"))
+		{
+			action_short = jsonFile.action_short;
+		}
+		super.fromFile(jsonFile);
 	}
 
 	/**

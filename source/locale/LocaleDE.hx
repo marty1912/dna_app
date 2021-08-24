@@ -262,6 +262,7 @@ class LocaleDE implements Locale
 "ProbCodeText_04" => ConfigFile.text("assets/text/de/ProbCodeText_04.json"),
 "PatternNumbersTut_02" => ConfigFile.text("assets/text/de/PatternNumbersTut_02.json"),
 "5" => ConfigFile.text("assets/text/de/5.txt"),
+"NewUnlock_short" => ConfigFile.text("assets/text/de/NewUnlock_short.json"),
 "NumberlineFeedbackCorrect" => ConfigFile.text("assets/text/de/NumberlineFeedbackCorrect.json"),
 "PatternNumEndText" => ConfigFile.text("assets/text/de/PatternNumEndText.json"),
 "mathanxiety_tutorial_q04" => ConfigFile.text("assets/text/de/mathanxiety_tutorial_q04.txt"),

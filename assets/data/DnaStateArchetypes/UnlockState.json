@@ -18,16 +18,17 @@
         {"type":"UnlockDisplay","pos_target":"background_3","name":"unlock_3"},
 
        { "type": "SrtPlayerTextObject", "name":"UnlockText1", "text":"NewUnlock", "autostart":false, "settings":{ "fontsize":32, "width":0.5}, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target":"CenteredPosition" } ] },
+       { "type": "SrtPlayerTextObject", "name":"UnlockText1_short", "text":"NewUnlock_short", "autostart":false, "settings":{ "fontsize":32, "width":0.5}, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target":"CenteredPosition" } ] },
         { "type": "SrtPlayerTextObject", "name":"UnlockText2", "text":"UnlockSelected", "autostart":false, "settings":{ "fontsize":32, "width":0.5}, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target":"CenteredPosition" } ] },
-        {
-            "type": "ActionHandlerObject",
+        { "type": "ActionHandlerObject","name":"action_long",
             "actions": [
-                { "type": "ActionSetButtonStateComponent", "on_event": "onCreate","state":"INACTIVE", "targets": ["unlock_1/button_1","unlock_2/button_1","unlock_3/button_1"] },
-                { "type": "ActionShowTextComponent", "target":"UnlockText1", "on_event":"seq" },
-                { "type": "ActionSetButtonStateComponent", "on_event": "seq","state":"NORMAL", "targets": ["unlock_1/button_1","unlock_2/button_1","unlock_3/button_1"] }
-
-            ]
-        },
+                { "type": "ActionShowTextComponent", "target":"UnlockText1", "on_event":"NO_EVENT" }
+            ] },
+   { "type": "ActionHandlerObject","name":"action_short",
+            "actions": [
+                { "type": "ActionShowTextComponent", "target":"UnlockText1_short", "on_event":"NO_EVENT" }
+            ] },
+      
         { "type": "ActionHandlerObject",
             "actions": [
                 { "type": "ActionSetButtonStateComponent", "on_event": "PART_SELECTED","state":"INACTIVE", "targets": ["unlock_1/button_1","unlock_2/button_1","unlock_3/button_1"] },
@@ -36,7 +37,9 @@
             ] },
         { "type": "ActionHandlerObject",
             "actions": [ 
-                { "type": "ActionShowUnlockables", "on_event": "onCreate", "targets": ["unlock_1/unlock_ctrl_1","unlock_2/unlock_ctrl_1","unlock_3/unlock_ctrl_1"] } 
+                { "type": "ActionSetButtonStateComponent", "on_event": "onCreate","state":"INACTIVE", "targets": ["unlock_1/button_1","unlock_2/button_1","unlock_3/button_1"] },
+                { "type": "ActionShowUnlockables", "on_event": "seq", "targets": ["unlock_1/unlock_ctrl_1","unlock_2/unlock_ctrl_1","unlock_3/unlock_ctrl_1"],"action_short":"action_short","action_long":"action_long" } ,
+                { "type": "ActionSetButtonStateComponent", "on_event": "seq","state":"NORMAL", "targets": ["unlock_1/button_1","unlock_2/button_1","unlock_3/button_1"] }
             ]
         }
     ]
