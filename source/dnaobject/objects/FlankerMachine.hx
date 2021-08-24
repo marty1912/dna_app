@@ -58,6 +58,29 @@ class FlankerMachine implements DnaObject implements DnaEventSubscriber extends 
 		pattern_display_obj = cast this.getParent().getObjectByName(getNestedObjectName(pattern_display));
 		this.dome_obj.state_machine.setNextState(new CorsiDomeStopped());
 
+		// add buttons for cosmetic reasons.
+		button_left = cast DnaObjectFactory.create("EmptyButtonObject");
+		this.getParent().addObject(button_left);
+		button_left.button.setGraphicSize(Math.floor(pattern_display_obj.getWidth() * 0.1));
+		button_left.button.updateHitbox();
+		button_left.removeChild(button_left.button);
+		button_left.addChild(button_left.button);
+		button_left.moveTo(pattern_display_obj.pattern_area_obj.sprite.x - (button_left.button.width * 2),
+			fixation_obj.sprite.getMidpoint().y - (button_left.getHeight() / 2));
+
+		button_right = cast DnaObjectFactory.create("EmptyButtonObject");
+		this.getParent().addObject(button_right);
+		button_right.button.setGraphicSize(Math.floor(pattern_display_obj.getWidth() * 0.1));
+		button_right.button.updateHitbox();
+		button_right.moveTo(pattern_display_obj.pattern_area_obj.sprite.x
+			+ pattern_display_obj.pattern_area_obj.sprite.width
+			+ (button_right.button.width),
+			fixation_obj.sprite.getMidpoint().y
+			- (button_right.getHeight() / 2));
+
+		button_right.removeChild(button_right.button);
+		button_right.addChild(button_right.button);
+
 		// very hacky but we need to have the area on the front so no buttons are placed outside the box..
 		var buttons_pos_x:Float = front_obj.sprite.x + (front_obj.width * 0.05);
 		var buttons_pos_y:Float = front_obj.sprite.y + (front_obj.height * 0.2);
@@ -69,6 +92,8 @@ class FlankerMachine implements DnaObject implements DnaEventSubscriber extends 
 
 	public var test:FlxSprite;
 	public var buttons:Array<DnaButtonObject> = new Array<DnaButtonObject>();
+	public var button_left:DnaButtonObject;
+	public var button_right:DnaButtonObject;
 
 	public var dome:String;
 	public var base:String;
