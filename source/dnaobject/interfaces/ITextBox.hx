@@ -8,6 +8,8 @@ interface ITextBox
 	 */
 	public function getEventFinName():String;
 
+	public var onFinCallback:Void->Void;
+
 	/**
 	 * start() - starts displaying the text.
 	 */

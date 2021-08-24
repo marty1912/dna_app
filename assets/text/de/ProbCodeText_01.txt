@@ -1,3 +1,0 @@
-Welche Schuhgröße hast du? 
-Beispiel: Maria hat Schuhgröße 36.
-Sie schreibt: 36

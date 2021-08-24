@@ -29,6 +29,8 @@ class TextObject implements DnaObject implements ITextBox extends DnaObjectBase
 	public var autostart:Bool = false;
 	public var use_literal_text:Bool = false;
 
+	public var onFinCallback:Void->Void;
+
 	/**
 	 * returns the name of the event that is fired when the whole text has been displayed.
 	 * @return String
@@ -122,6 +124,10 @@ class TextObject implements DnaObject implements ITextBox extends DnaObjectBase
 			if (newStatus == textbox.Status.DONE)
 			{
 				this.getParent().eventManager.broadcastEvent(this.getEventFinName());
+				if (this.onFinCallback != null)
+				{
+					onFinCallback();
+				}
 			}
 		});
 	}

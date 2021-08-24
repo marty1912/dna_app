@@ -1,3 +1,0 @@
-An welchen Tag hast du Geburtstag? 
-Beispiel: Manuel hat am 11. August 2013 Geburtstag.
-Er schreibt: 11

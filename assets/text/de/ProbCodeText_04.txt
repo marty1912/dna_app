@@ -1,5 +1,0 @@
-Wie viele Geschwister hast du? 
-Beispiel: Anna hat einen Bruder. 
-Sie schreibt: 1. 
-Hannah hat keine Geschwister. 
-Deshalb schreibt sie: 0.

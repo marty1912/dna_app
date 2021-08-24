@@ -1,3 +1,0 @@
-Wie lautet deine Hausnummer? 
-Beispiel: Paul wohnt in der Entenstraße 24.
-Er schreibt: 24

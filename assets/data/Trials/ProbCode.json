@@ -29,7 +29,7 @@
 	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/OrdTrials.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
 	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/SymbolicCompTrials.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
 	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/Corsi.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
-	{ "type": "ShowProgressState", "done": false, "saved": false },
+	{ "type": "ShowProgressStateFirst", "done": false, "saved": false },
 	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "LevelSelectState" } }
      
   ]

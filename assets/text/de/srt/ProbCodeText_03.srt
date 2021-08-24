@@ -1,0 +1,12 @@
+﻿1
+00:00:00,000 --> 00:00:04,100
+Wie viele Geschwister hast du?
+
+2
+00:00:04,200 --> 00:00:10,100
+Zum Beispiel: Anna hat am einen Bruder. Sie schreibt: 1.
+
+3
+00:00:10,200 --> 00:00:14,100
+Max hat keine Geschwister. Deshalb schreibt er: 0.
+

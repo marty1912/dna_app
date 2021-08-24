@@ -26,12 +26,12 @@ import flixel.util.FlxColor;
 import haxe.DynamicAccess;
 
 /**
- * class ArithmeticTaskHandlerObject
+ * class ProbcodeHandlerObject
  * this class represents our ArithmeticTaskHandler.
  * it is used to set and get parameters of the objects used in the arithmetic task
  *
  */
-class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject implements DnaEventSubscriber extends DnaObjectBase
+class ProbcodeHandlerObject implements DnaObject implements TaskObject implements DnaEventSubscriber extends DnaObjectBase
 {
 	/**
 	 * getData - this function collects the data we want to have from the ArithmeticTaskHandler object.
@@ -116,6 +116,11 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject imp
 		var problem_textbox:ITextBox = cast this.getParent().getObjectByName(target_problem);
 		problem_textbox.setText(params.problem, this.use_literal_text);
 		// start textbox.
+		this.getParent().eventManager.broadcastEvent("KeyboardButtons_INACTIVE");
+		problem_textbox.onFinCallback = function()
+		{
+			this.getParent().eventManager.broadcastEvent("KeyboardButtons_NORMAL");
+		};
 		problem_textbox.start();
 		solution = params.solution;
 		var answer_textbox:ITextBox = cast this.getParent().getObjectByName(target_answer);
@@ -156,7 +161,7 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject imp
 	 */
 	public function new()
 	{
-		super('ArithmeticTaskHandlerObject');
+		super('ProbcodeHandlerObject');
 	}
 
 	public var target_problem:String;

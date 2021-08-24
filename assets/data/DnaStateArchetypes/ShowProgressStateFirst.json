@@ -1,0 +1,32 @@
+{
+    "type": "ShowProgressState",
+    "objects": [
+        { "type": "BackgroundObject" },
+
+        { "type": "SpriteObject", "name": "LeftPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.5, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "" }] },
+        { "type": "SpriteObject", "name": "CenterPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.5, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "" }] },
+        { "type": "SpriteObject", "name": "RightPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.5, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "" }] },
+        { "type": "SpriteObject", "name": "BottomPos", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.2, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
+
+        { "type": "ProgressBar", "name": "pbar", "pos_target":"CenterPos"},
+
+
+
+        { "type": "SpriteObject", "name": "SubtitleArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 1, "scale_y": 0.2, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "" }] },
+        { "type": "SrtPlayerTextObject", "name":"tut_01", "text":"ShowProgressFirstText", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"SubtitleArea" } ] },
+
+        { "type": "NineSliceSprite", "name": "Banner", "asset_path": "assets/gui_elements/banner.png", "scale_from_screen_width":true, "scale_from_screen_height":true, "scale_x": 0.35, "scale_y": 0.12, "grid":[200,20,400,30], "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" }] },
+        { "type": "SpriteObject", "name": "BannerCenter", "asset_path": "INVISIBLE_BOX", "scale_x": 500, "scale_y": 100, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "Banner" }] },
+
+        { "type": "TextObject", "name": "Text_HEAD", "text": "ShowProgressHEAD", "autostart": true, "settings": { "char_per_sec": 24, "width": 500, "n_lines": 5, "append_before": "@041d8c50a", "append_after": "@040", "border": "OUTLINE", "border_color": "0x911315" }, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target": "BannerCenter" }] }, 
+
+        { "type": "ActionHandlerObject", "actions": [ 
+            { "type": "ActionDelayComponent", "on_event": "onCreate", "delay": 1.0 } ,
+            { "type": "ActionSetProgress",  "target": "pbar" } ,
+
+            { "type": "ActionShowTextComponent",  "target": "tut_01"} ,
+            { "type": "ActionFinishTaskComponent" } ,
+            { "type": "ActionStateSwitchComponent",  "next_state": "NEXT_TASK" } 
+            ] }
+    ]
+}

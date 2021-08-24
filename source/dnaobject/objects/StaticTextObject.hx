@@ -38,6 +38,8 @@ class StaticTextObject implements DnaObject implements ITextBox extends DnaObjec
 		return this.obj_type + "_" + this.obj_name + "_" + this.id + "_done";
 	}
 
+	public var onFinCallback:Void->Void;
+
 	/**
 	 * start() - starts displaying the text.
 	 */
@@ -45,6 +47,10 @@ class StaticTextObject implements DnaObject implements ITextBox extends DnaObjec
 	{
 		this.text_box.alpha = 1;
 		this.getParent().eventManager.broadcastEvent(this.getEventFinName());
+		if (this.onFinCallback != null)
+		{
+			onFinCallback();
+		}
 	}
 
 	public static final default_fontsize:Int = 32;

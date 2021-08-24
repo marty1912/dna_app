@@ -55,6 +55,8 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 		return this.obj_type + "_" + this.obj_name + "_" + this.id + "_done";
 	}
 
+	public var onFinCallback:Void->Void;
+
 	public function reset():Void
 	{
 		this.running = false;
@@ -126,7 +128,9 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 	}
 
 	public function getText():String
-		throw "NOT IMPLEMENTED!";
+	{
+		return this.text_from_file;
+	}
 
 	/**
 	 * setter for text
@@ -182,6 +186,10 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 		if (all_done)
 		{
 			this.getParent().eventManager.broadcastEvent(this.getEventFinName());
+			if (this.onFinCallback != null)
+			{
+				onFinCallback();
+			}
 			this.running = false;
 			this.reset();
 		}

@@ -518,6 +518,12 @@ else if (type == 'DnaProgressHelix')
 	obj = new DnaProgressHelix();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/DnaProgressHelix.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'ProbcodeHandlerObject')
+{
+	obj = new ProbcodeHandlerObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ProbcodeHandlerObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -531,6 +537,8 @@ else if (type == 'DnaProgressHelix')
 		return obj;
 	}
 }
+
+
 
 
 

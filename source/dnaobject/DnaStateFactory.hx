@@ -778,6 +778,13 @@ else if (type == "FourStepSub_1")
 			state = new DnaState("FourStepSub_1");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/WithinTaskProgress/FourStepSub_1.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "ShowProgressStateFirst")
+		{
+			state = new DnaState("ShowProgressStateFirst");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/ShowProgressStateFirst.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -790,6 +797,8 @@ else if (type == "FourStepSub_1")
 		return state;
 	}
 }
+
+
 
 
 

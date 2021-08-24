@@ -17,32 +17,11 @@
         }
       ]
     },
-    {
-      "type": "DependentGroupObject",
-      "conditions": [
-        {
-          "condition": "web",
-          "obj": {
-            "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/ArithmeticAdditionalButtonGroupPC.json"
-          }
-        },
-        {
-          "condition": "android",
-          "obj": {
+      {
             "type": "OBJECT_GROUP",
             "path": "assets/data/DnaObjectGroups/ArithmeticAdditionalButtonGroup.json"
-          }
-        },
-        {
-          "condition": "desktop",
-          "obj": {
-            "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/ArithmeticAdditionalButtonGroupPC.json"
-          }
-        }
-      ]
-    },
+          },
+      
     {
       "type": "SpriteObject",
       "name": "ProblemPosition",
@@ -98,9 +77,9 @@
       ]
     },
     {
-      "type": "StaticTextObject",
+      "type": "SrtPlayerTextObject",
       "name": "Text_Problem",
-      "text": "PROBLEM",
+      "text": "EMPTY",
       "autostart": true,
       "settings": {
         "width": 600,
@@ -157,7 +136,7 @@
       ]
     },
     {
-      "type": "ArithmeticTaskHandlerObject",
+      "type": "ProbcodeHandlerObject",
       "name": "ArithmeticHandler",
       "target_problem": "Text_Problem",
       "target_answer": "Text_Answer",
