@@ -44,6 +44,15 @@ class ActionMontiPlayAnimationComponent implements DnaComponent extends DnaActio
 		// might look confusing at first.
 		// with the first getParent we get the object. and with the 2nd the state.
 		var target:MonsterObject = cast getParent().getParent().getObjectByName(m_target_name);
+		// very hacky indeed..
+		if (animation == "talk")
+		{
+			target.setNextState(new MontiStateTalk());
+		}
+		else
+		{
+			target.setNextState(new MontiStateIdle());
+		}
 		target.startAnimation(animation, times);
 		// TODO: find a way to wait for this animation to finish..
 		this.finishAction();

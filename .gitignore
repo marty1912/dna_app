@@ -15,3 +15,4 @@ __MACOSX
 __pycache__
 csv_data
 assets/monster_files
+*.png~

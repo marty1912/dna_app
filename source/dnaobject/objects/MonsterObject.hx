@@ -21,6 +21,7 @@ import flixel.FlxState;
 import flixel.group.FlxGroup;
 import flixel.group.FlxSpriteGroup;
 import flixel.math.FlxPoint;
+import flixel.math.FlxRandom;
 import flixel.system.FlxAssets.FlxGraphicAsset;
 import haxe.Json;
 import openfl.Assets;
@@ -305,7 +306,7 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 			case StateEnum.HIGHLIGHT:
 			// setNextState(new ButtonStateHighlight());
 			case StateEnum.PRESSED:
-				setNextState(new MontiStateWave());
+				setNextState(new MontiStateWalk());
 			default:
 				assert(false);
 		}
@@ -387,13 +388,121 @@ class MontiStateWave implements IState
 
 		if (time > duration)
 		{
-			parent.setNextState(new MontiStateIdle());
+			// parent.setNextState(new MontiStateIdle());
 		}
 	}
 
 	public function enter():Void
 	{
-		// parent.startAnimation("talk", 1);
+		parent.startAnimation("wave", 1);
+	}
+
+	public function exit():Void
+	{
+		// this.getParent().eventManager.broadcastEvent("MONTI_EXIT_STATE");
+	}
+}
+
+/**
+ * the normal state for a button. here the first
+ */
+class MontiStateWalk implements IState
+{
+	public function new() {};
+
+	public var parent:MonsterObject = null;
+
+	public function setParent(parent:IStateMachine):Void
+	{
+		this.parent = cast(parent);
+	}
+
+	public final duration:Float = 2;
+
+	public var time:Float = 0;
+
+	/**
+	 * this is kind of a hack.. i do not know how to tell if the animation endet (yet)..
+	 * so we do it with timing..
+	 * @param elapsed
+	 */
+	public function update(elapsed:Float):Void
+	{
+		time += elapsed;
+
+		if (time > duration)
+		{
+			// parent.setNextState(new MontiStateIdle());
+		}
+	}
+
+	public function enter():Void
+	{
+		parent.startAnimation("walk", -1);
+	}
+
+	public function exit():Void
+	{
+		// this.getParent().eventManager.broadcastEvent("MONTI_EXIT_STATE");
+	}
+}
+
+/**
+ * the normal state for a button. here the first
+ */
+class MontiStateTalk implements IState
+{
+	public function new() {};
+
+	public var parent:MonsterObject = null;
+
+	public function setParent(parent:IStateMachine):Void
+	{
+		this.parent = cast(parent);
+	}
+
+	public var duration:Float = 0;
+	public var rand = new FlxRandom();
+
+	public var time:Float = 0;
+
+	/**
+	 * this is kind of a hack.. i do not know how to tell if the animation endet (yet)..
+	 * so we do it with timing..
+	 * @param elapsed
+	 */
+	public function update(elapsed:Float):Void
+	{
+		time += elapsed;
+
+		if (time > duration)
+		{
+			if (current_animation == "talk_open")
+			{
+				current_animation = "talk_closed";
+			}
+			else
+			{
+				current_animation = "talk_open";
+			}
+
+			parent.startAnimation(current_animation, -1);
+			duration = rand.float(0.01, 0.3);
+			time = 0;
+			// parent.setNextState(new MontiStateIdle());
+		}
+	}
+
+	public var current_animation = "talk_open";
+
+	public function enter():Void
+	{
+		parent.startAnimation(current_animation, -1);
+		duration = rand.float(0, 0.5);
+		// TODO: find a way to maybe get the slots names in the armaturegroup
+
+		// TODO: use something like in setASset()!!
+		//		parent.armatureGroup.forEach(function(display:FlixelArmatureDisplay) {});
 	}
 
 	public function exit():Void
