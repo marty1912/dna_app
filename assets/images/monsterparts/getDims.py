@@ -61,21 +61,11 @@ def get_pngs(path):
     print("+"*80)
     return filenames
 
-def main():
-
-    parser = argparse.ArgumentParser(description='get dimension of image.')
-    parser.add_argument('sizes_from_folder',help="folder to get dimensions from")
-    parser.add_argument('resize_folders',nargs="+",help="folder to set dimensions to")
-    args = parser.parse_args()
-
-    filenames = get_pngs(args.sizes_from_folder)
-
-
-
+def getFilesDimensionMap(folder_list):
     # we wil get the largest image dimensions in here
     file_map = {}
 
-    for folder in args.resize_folders:
+    for folder in folder_list:
         print("-"*80)
         print("now checking sizes in:",folder)
         for file in get_pngs(folder):
@@ -92,11 +82,28 @@ def main():
                 file_map[base_key] = (max_width,max_height)
 
         print("done.")
+    return file_map
+
+
+
+
+def main():
+
+    parser = argparse.ArgumentParser(description='get dimension of image.')
+    parser.add_argument('sizes_from_folder',help="folder to get dimensions from")
+    parser.add_argument('resize_folders',nargs="+",help="folder to set dimensions to")
+    args = parser.parse_args()
+
+    filenames = get_pngs(args.sizes_from_folder)
+
+
+    
+    file_map = getFilesDimensionMap([args.sizes_from_folder])
 
     # we will resize everything x2 so we can get all the models to look nice.
     for key in file_map:
         w,h = file_map[key]
-        file_map[key] = (w*2,h*2)
+        #file_map[key] = (w*2,h*2)
 
     print("map:",file_map)
     # then we will crop images (should then only enlarge by whitespace)
