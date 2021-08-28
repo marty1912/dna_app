@@ -28,7 +28,10 @@ class OrdAnswerState implements IState
 
 	public function update(elapsed:Float):Void
 	{
-		if (timer.finished) {}
+		if (timer.finished) {
+
+			onAnswered();
+		}
 	}
 
 	public function setDots(path:String) {}
@@ -45,7 +48,7 @@ class OrdAnswerState implements IState
 		ord_ctrl.ord_task_obj.state_machine.setNextState(new OrdinalObjectStateVisible());
 
 		var rand = new FlxRandom();
-		timer.start(rand.float(2, 3));
+		timer.start(3.5);
 		ord_ctrl.timer_obj.resetTime();
 
 		ord_ctrl.onCorrectCallback = this.onAnswered;

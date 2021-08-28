@@ -33,7 +33,7 @@ class NumVisibleState implements IState
 	{
 		if (timer.finished)
 		{
-			// state_machine.setNextState(new NumFeedbackState());
+			 state_machine.setNextState(new NumFeedbackState());
 		}
 	}
 
@@ -43,7 +43,7 @@ class NumVisibleState implements IState
 	{
 		trace("numerical visible State enter");
 		dots_ctrl.dots_disp_obj.state_machine.setNextState(new DotsObjectStateNormal());
-		timer.start(0.5);
+		timer.start(3.5);
 		dots_ctrl.timer_obj.resetTime();
 		dots_ctrl.onCorrectCallback = this.onAnswered;
 		dots_ctrl.onIncorrectCallback = this.onAnswered;

@@ -417,7 +417,7 @@ class MontiStateWalk implements IState
 		this.parent = cast(parent);
 	}
 
-	public final duration:Float = 2;
+	public final duration:Float = 4;
 
 	public var time:Float = 0;
 
@@ -432,7 +432,7 @@ class MontiStateWalk implements IState
 
 		if (time > duration)
 		{
-			// parent.setNextState(new MontiStateIdle());
+			parent.setNextState(new MontiStateIdle());
 		}
 	}
 
