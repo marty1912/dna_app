@@ -1,7 +1,8 @@
 [
     {
         "type": "MonsterPartComponent",
-        "part_type": "body", "preview":"assets/images/monsterparts/Yeti/body.png",
+        "part_type": "body", 
+        "preview":"assets/images/monsterparts/preview/Yeti/body.png",
         "unlocked":true,
         "assets": [
             { "name": "body", "path": "assets/images/monsterparts/Yeti/body.png" }
@@ -9,7 +10,8 @@
     },
     {
         "type": "MonsterPartComponent",
-        "part_type": "head", "preview":"assets/images/monsterparts/Yeti/head.png",
+        "part_type": "head", 
+        "preview":"assets/images/monsterparts/preview/Yeti/head.png",
         "unlocked":true,
         "assets": [
             { "name": "head", "path": "assets/images/monsterparts/Yeti/head.png" }
@@ -20,7 +22,8 @@
     {
         "type": "MonsterPartComponent",
         "finger_asset":"assets/images/fingers/yeti.png",
-        "part_type": "arms", "preview":"assets/images/monsterparts/Yeti/head.png",
+        "part_type": "arms", 
+        "preview":"assets/images/monsterparts/preview/Yeti/arms.png",
         "unlocked":true,
         "assets": [
             { "name": "hand1", "path": "assets/images/monsterparts/Yeti/hand1.png" }
@@ -34,7 +37,8 @@
     },    
     {
         "type": "MonsterPartComponent",
-        "part_type": "legs", "preview":"assets/images/monsterparts/Yeti/head.png",
+        "part_type": "legs", 
+        "preview":"assets/images/monsterparts/preview/Yeti/legs.png",
         "unlocked":true,
         "assets": [
             { "name": "leg1", "path": "assets/images/monsterparts/Yeti/leg1.png" }
@@ -45,7 +49,6 @@
             ,{ "name": "leg6", "path": "assets/images/monsterparts/Yeti/leg6.png" }
     ]
     }
-    
-
+  
 
 ]
