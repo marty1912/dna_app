@@ -2,199 +2,32 @@
     "type": "NumberlineTutorialState",
     "objects": [
 
-        {
-            "type": "BackgroundObject"
-        },
-        {
-            "type": "MonsterObject",
-            "name":"Monti",
-            "components": [
-                {
-                    "type": "PositionComponent",
-                    "oneshot": false,
-                    "position": "LeftBottom",
-                    "target": ""
-                }
-            ]
-        },
-        {
-            "type": "SpriteObject",
-            "name": "TextPosition",
-            "asset_path": "INVISIBLE_BOX",
-            "scale_x": 600,
-            "scale_y": 200,
-            "origin_where": "",
-            "components": [{
-                "type": "PositionComponent",
-                "oneshot": true,
-                "position": "CenterTop",
-                "target": ""
-            }]
-        },
+        { "type": "BackgroundObject" },
+        { "type": "MonsterObject", "name":"Monti", "components": [ { "type": "PositionComponent", "oneshot": false, "position": "LeftBottom", "target": "" } ] },
+        { "type": "SpriteObject", "name": "TextPosition", "asset_path": "INVISIBLE_BOX", "scale_x": 600, "scale_y": 200, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" }] },
         
-        {
-            "type": "SrtPlayerTextObject",
-            "name":"IntroText_01",
-            "text":"IntroText_01",
-            "autostart":false,
-            "settings":{
-                "fontsize":32,
-                "width":500
-            },
-            "components": [
-                {
-                    "type": "PositionComponent",
-                    "oneshot": false,
-                    "position": "Center",
-                    "target":"TextPosition"
-                }
-            ]
-                
-        },
-        {
-            "type": "SrtPlayerTextObject",
-            "name":"IntroText_02",
-            "text":"IntroText_02",
-            "autostart":false,
-            "settings":{
-                "fontsize":32,
-                "width":500
-            },
-            "components": [
-                {
-                    "type": "PositionComponent",
-                    "oneshot": false,
-                    "position": "Center",
-                    "target":"TextPosition"
-                }
-            ]
-                
-        },
-        {
-            "type": "AcceptButtonObject",
-            "name": "AcceptButton",
-            "active":false,
-            "components": [
-                {"type":"UserButtonComponent"},
-                {
-                    "type": "PositionComponent",
-                    "oneshot": true,
-                    "position": "Center"
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state":"INACTIVE"
-                }
-            ]
-        },
-        {
-            "type": "ActionHandlerObject",
-            "name" : "MontiAnimationHandler",
-            "actions": [
-                {
-                    "type": "ActionMontiPlayAnimationComponent",
-                    "on_event": "onStart",
-                    "target":"Monti",
-                    "animation":"wave",
-                    "times":1
-                },
-                {
-                    "type": "ActionDelayComponent",
-                    "delay": 2
-                },
-                {
-                    "type": "ActionMontiPlayAnimationComponent",
-                    "target":"Monti",
-                    "animation":"talk",
-                    "times":-1
-                }
-            ]
+        { "type": "SrtPlayerTextObject", "name":"IntroText_01", "text":"IntroText_01", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] },
+        { "type": "SrtPlayerTextObject", "name":"IntroText_02", "text":"IntroText_02", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] },
+        { "type": "AcceptButtonObject", "name": "AcceptButton", "active":false, "components": [ {"type":"UserButtonComponent"}, { "type": "PositionComponent", "oneshot": true, "position": "Center" }, { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE" } ] },
+        { "type": "ActionHandlerObject", "name" : "MontiAnimationHandler", "actions": [ 
+            { "type": "ActionMontiPlayAnimationComponent", "on_event": "onStart", "target":"Monti", "animation":"wave", "times":1 }, { "type": "ActionDelayComponent", "delay": 2 }, { "type": "ActionMontiPlayAnimationComponent", "target":"Monti", "animation":"talk", "times":-1 } 
+            ] },
 
-        },
-        {
-            "type": "ActionHandlerObject",
-            "actions": [
-                {
-                    "type": "ActionDelayComponent",
-                    "delay": 0.1,
-                    "on_event": "onStart"
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state":"INACTIVE"
-                },
-                {
-                    "type": "ActionPlaySoundComponent",
-                    "path":"IntroText_01",
-                    "from_locale":true
-                },
-                {
-                    "type": "ActionShowTextComponent",
-                    "on_event":"same",
-                    "target":"IntroText_01"
-                },
-                {
-                    "type": "ActionMontiPlayAnimationComponent",
-                    "target":"Monti",
-                    "animation":"idle",
-                    "times":-1
-                },
-                {
-                    "type": "ActionAddObjectComponent",
-                    "target":"",
-                    "objects":[
-                        {
-                        "type":"TextObject",
-                        "name":"TextIntroConfirm",
-                        "text":"IntroText_03",
-                        "autostart":true,
-                        "settings":{"char_per_sec":24},
-                        "components":[{
-                            "type": "PositionComponent",
-                            "oneshot": false,
-                            "position": "Center",
-                            "target": "TextPosition"
-                        }
-                        ]
-                    }]
-                },
-                {
-                    "type": "ActionSetButtonStateComponent",
-                    "target": "AcceptButton",
-                    "state":"NORMAL"
-                }
-            ]
+        { "type": "ActionHandlerObject", "actions": [ 
+            { "type": "ActionDelayComponent", "delay": 0.1, "on_event": "onStart" }, 
+            { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE" }, 
+            { "type": "ActionShowTextComponent", "on_event":"seq", "target":"IntroText_01" }, 
+            { "type": "ActionMontiPlayAnimationComponent", "target":"Monti", "animation":"idle", "times":-1 }, 
+            { "type": "ActionAddObjectComponent", "target":"", "objects":[ { "type":"TextObject", "name":"TextIntroConfirm", "text":"IntroText_03", "autostart":true, "settings":{"char_per_sec":24}, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "TextPosition" } ] } ] }, 
+            { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"NORMAL" } 
+            ] },
 
-        },
-        {
-            "type": "ActionHandlerObject",
-            "name": "ActionAcceptPressed",
-            "actions": [
-                {
-                    "type": "ActionRemoveObjectComponent",
-                    "target":"TextIntroConfirm",
-                    "on_event":"AcceptButtonPressed"
-                },
-                {
-                    "type": "ActionPlaySoundComponent",
-                    "path":"IntroText_02",
-                    "from_locale":true
-                },
-                {
-                    "type": "ActionShowTextComponent",
-                    "on_event":"same",
-                    "target":"IntroText_02"
-                },
-                {
-                    "type": "ActionStateSwitchComponent",
-                    "target": "",
-                    "next_state": "MainMenuTutorialState"
-                }
-            ]
-
-        }
+        { "type": "ActionHandlerObject", "name": "ActionAcceptPressed", "actions": [ 
+            { "type": "ActionRemoveObjectComponent", "target":"TextIntroConfirm", "on_event":"AcceptButtonPressed" }, 
+            { "type": "ActionMontiPlayAnimationComponent", "target":"Monti", "animation":"talk", "times":-1 }, 
+            { "type": "ActionShowTextComponent", "on_event":"seq", "target":"IntroText_02" }, 
+            { "type": "ActionStateSwitchComponent", "target": "", "next_state": "MainMenuTutorialState" } 
+            ] }
         
     ]
 }

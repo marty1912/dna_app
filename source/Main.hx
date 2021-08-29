@@ -16,12 +16,15 @@ import osspec.OsManager;
 
 class Main extends Sprite
 {
+
+	final intro_key = "intro_seen";
+
 	public function new()
 	{
 		// trace("starting...");
 		FlxAssets.FONT_DEFAULT = "assets/fonts/ttf-bitstream-vera-1.10/Vera.ttf";
 		OsManager.get_instance().toLandscapeMode();
-		DnaDataManager.instance.deleteAllData(); // debug
+		//DnaDataManager.instance.deleteAllData(); // debug
 		DnaDataManager.instance.init();
 
 		super();
@@ -64,6 +67,15 @@ class Main extends Sprite
 		// trace("now creating initial state.");
 		// FlxG.switchState(DnaStateFactory.create("NumberlineState"));
 		// FlxG.switchState(DnaStateFactory.create("StudentIntro"));
+		// first time show intro:
+		if(DnaDataManager.instance.retrieveData(intro_key) == true){
 		FlxG.switchState(DnaStateFactory.create("MainMenuState"));
+		}
+		else{
+			DnaDataManager.instance.storeData(intro_key,true);
+		FlxG.switchState(DnaStateFactory.create("IntroState"));
+
+
+		}
 	}
 }

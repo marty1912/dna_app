@@ -196,6 +196,33 @@ class MonsterObject implements DnaObject implements IStateMachine extends DnaObj
 	 * sets the asset to use for the right arm.
 	 * @param asset
 	 */
+	public function getSpriteInSlot(name:String):FlxSprite
+	{
+		var index = slotMap.get(name);
+		//this.removeAllSprites();
+		return armatureGroup.members[index].flxProxy;
+		//this.addAllSprites();
+	}
+
+
+	/**
+	 * sets the asset to use for the right arm.
+	 * @param asset
+	 */
+	public function getAsset(name:String):FlxGraphicAsset
+	{
+		var index = slotMap.get(name);
+		//this.removeAllSprites();
+		return armatureGroup.members[index].flxProxy.graphic;
+		//this.addAllSprites();
+	}
+
+
+
+	/**
+	 * sets the asset to use for the right arm.
+	 * @param asset
+	 */
 	public function setAsset(name:String, asset:FlxGraphicAsset)
 	{
 		var index = slotMap.get(name);
@@ -477,27 +504,31 @@ class MontiStateTalk implements IState
 
 		if (time > duration)
 		{
-			if (current_animation == "talk_open")
+			if (current_visible == "mouth1")
 			{
-				current_animation = "talk_closed";
+				current_visible = "mouth2";
+				parent.getSpriteInSlot("mouth1").alpha=0;
+				parent.getSpriteInSlot("mouth2").alpha=1;
 			}
 			else
 			{
-				current_animation = "talk_open";
+
+				current_visible = "mouth1";
+				parent.getSpriteInSlot("mouth2").alpha=0;
+				parent.getSpriteInSlot("mouth1").alpha=1;
 			}
 
-			parent.startAnimation(current_animation, -1);
 			duration = rand.float(0.01, 0.3);
 			time = 0;
 			// parent.setNextState(new MontiStateIdle());
 		}
 	}
 
-	public var current_animation = "talk_open";
+	public var current_visible= "mouth1";
 
 	public function enter():Void
 	{
-		parent.startAnimation(current_animation, -1);
+		parent.startAnimation("idle", -1);
 		duration = rand.float(0, 0.5);
 		// TODO: find a way to maybe get the slots names in the armaturegroup
 

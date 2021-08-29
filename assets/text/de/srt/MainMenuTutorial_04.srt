@@ -4,5 +4,5 @@ Dieser Punkt ist für die Einstellungen zuständig.
 
 2
 00:00:04,007 --> 00:00:09,907
-Dort kannst du beispielsweise die Sprache ändern oder die Lautstärke anpassen.
+Dort kannst du deine Daten hochladen oder auch die Lautstärke anpassen.
 

@@ -4,5 +4,10 @@ Nun weißt du über die wichtigsten Dinge bescheid.
 
 2
 00:00:04,007 --> 00:00:10,107
-Ich wünsche dir jetzt viel Erfolg und vor allem viel Spaß!
+Danke, dass du mitmachst!
+
+3
+00:00:10,007 --> 00:00:16,107
+Ich wünsche dir viel Spaß bei den Aufgaben!
+
 
