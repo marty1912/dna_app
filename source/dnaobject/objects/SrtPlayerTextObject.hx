@@ -1,5 +1,8 @@
 package dnaobject.objects;
 
+import osspec.OsManager;
+import locale.Locale;
+import dnaobject.interfaces.ISoundObject;
 import constants.DnaConstants;
 import dnadata.DnaDataManager;
 import dnaobject.interfaces.ITextBox;
@@ -27,7 +30,6 @@ class SrtEntry
 /**
  * class SrtPlayerTextObject -
  * this class will be used to show text to the user that runs from left to right
- * TODO: fix this class or something. apparently we cannot create a new Textbox at runtime (only in the create function??)
  *
  */
 class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaObjectBase
@@ -35,6 +37,8 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 	public static final CODE_NEXT_TRIAL_DESC = "NEXT_TRIAL_DESC";
 
 	public var text_box:FlxText;
+	public var audio_path:String;
+	public var audio_obj:ISoundObject = null;
 	public var autostart:Bool = false;
 	public var srt_text:String;
 	public var srt_list:Array<SrtEntry> = new Array<SrtEntry>();
@@ -71,6 +75,9 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 	{
 		// trace("started.");
 		this.running = true;
+		if(this.audio_obj != null){
+			audio_obj.play();
+		}
 	}
 
 	/**
@@ -185,6 +192,10 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 
 		if (all_done)
 		{
+
+			if(this.audio_obj != null){
+				// TODO: stop playing audio here??
+			}
 			this.getParent().eventManager.broadcastEvent(this.getEventFinName());
 			if (this.onFinCallback != null)
 			{
@@ -230,6 +241,11 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 			}
 			this.parseText(jsonFile.text);
 			this.text_from_file = jsonFile.text;
+			this.audio_path = LocaleManager.getInstance().getAudioPath(jsonFile.text);
+			if(audio_path != null){
+				this.audio_obj = OsManager.get_instance().getSoundObject(audio_path);
+			}
+			
 		}
 
 		super.fromFile(jsonFile);

@@ -43,19 +43,23 @@ class LocaleDE implements Locale
 	 * @param string_id  - the unique id of the audio asset.
 	 * @return String  - the path of the asset for the current locale.
 	 */
-	public function getAudioPath(string_id:String):String
-	{
-		if (string_id == null)
+	 public function getAudioPath(string_id:String):String
 		{
-			return ERROR_NOT_FOUND + string_id;
+			if (string_id == null)
+			{
+	
+				trace("[WARNING]: Audiopath null!:",string_id);
+				return null;
+			}
+			var string = audio_path_map.get(string_id);
+	
+			if (string == null)
+			{
+				trace("[WARNING]: Audio not found:",string_id);
+				return null;
+			}
+	
+			return string;
 		}
-		var string = audio_path_map.get(string_id);
 
-		if (string == null)
-		{
-			return ERROR_NOT_FOUND + string_id;
-		}
-
-		return string;
-	}
 }

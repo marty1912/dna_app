@@ -8,17 +8,21 @@ Deshalb werden wir die Aufgabe jetzt etwas schwieriger machen.
 
 3
 00:00:08,800 --> 00:00:14,000
-Wir nehmen alle Linien weg und es bleibt nur noch die 1 auf dem Zahlenstrahl stehen.
+Wir nehmen jetzt die Linien weg.
 
 4
 00:00:14,000 --> 00:00:18,000
-Die Länge von 1 ist in rot eingezeichnet.
+Jetzt ist der Bereich von 0 bis 1 in rot eingezeichnet.
 
 5
 00:00:18,000 --> 00:00:21,100
-Wo die gesuchte Zahl jetzt genau liegt musst du also schätzen!
+Die restlichen Zahlen sind nicht mehr zu sehen.
 
 6
 00:00:21,100 --> 00:00:28,100
+Du musst jetzt also schätzen wo die gesuchte Zahl liegt!
+
+7
+00:00:28,100 --> 00:00:34,100
 Klingt schon viel schwieriger. Mal sehen ob ich das schaffe. 
 

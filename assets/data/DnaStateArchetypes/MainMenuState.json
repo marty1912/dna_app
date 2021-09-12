@@ -29,15 +29,13 @@
 
         { "type": "MonsterObject", "components": [{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": false, "position": "LeftBottom", "target": "" } ] },
 
-        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "SettingsButtonPressed", "target": "", "next_state": "SettingsState" }] },
+        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "SettingsButtonPressed", "target": "", "next_state": "SettingsDataState" }] },
 
 
         
         { "type": "HelpButtonObject", "name": "HelpButton", "components": [{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": true, "position": "RightTop", "target": "" }, { "type": "CmdEvtTrigComponent", "event_name": "HelpPressed" } ] },
 
-        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "HelpPressed", "target": "", "next_state": "MainMenuTutorialState" }] }
-
-        ,
+        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "HelpPressed", "target": "", "next_state": "MainMenuTutorialState" }] } ,
         { "type": "InfoButtonObject", "name": "InfoButton", "components": [{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": true, "position": "LeftTop", "target": "" }, { "type": "CmdEvtTrigComponent", "event_name": "InfoPressed" } ] },
 
         { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "InfoPressed", "target": "", "next_state": "InfoState" }] }

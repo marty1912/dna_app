@@ -18,7 +18,7 @@ class Main extends Sprite
 {
 
 	final intro_key = "intro_seen";
-	final debugMode = true;
+	final debugMode = false;
 
 	public function new()
 	{
