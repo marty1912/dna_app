@@ -530,6 +530,12 @@ else if (type == 'ScaledAcceptButtonObject')
 	obj = new ScaledAcceptButtonObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/ScaledAcceptButtonObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'MonsterEditorTutorial')
+{
+	obj = new MonsterEditorTutorial();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/MonsterEditorTutorial.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -543,6 +549,12 @@ else if (type == 'ScaledAcceptButtonObject')
 		return obj;
 	}
 }
+
+
+
+
+
+
 
 
 

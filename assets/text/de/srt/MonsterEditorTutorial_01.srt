@@ -1,0 +1,24 @@
+﻿1
+00:00:00,000 --> 00:00:05,100
+Hallo! Das hier ist der Monti-Editor.
+
+2
+00:00:05,200 --> 00:00:10,200
+Hier kannst du für mich neue Körperteile auswählen. 
+
+3
+00:00:10,300 --> 00:00:15,300
+Um Körperteile zu ändern benutzt du die Pfeile.
+
+4
+00:00:15,400 --> 00:00:20,400
+Wenn du fertig bist, dann drückst du das Häckchen.
+
+5
+00:00:20,500 --> 00:00:25,500
+Du schaltest neue Körperteile frei, indem du Aufgaben löst.
+
+6
+00:00:25,600 --> 00:00:30,600
+Probier' jetzt gleich aus, was dir am besten gefällt!
+

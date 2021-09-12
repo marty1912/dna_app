@@ -538,6 +538,10 @@ class MontiStateTalk implements IState
 
 	public function exit():Void
 	{
+		// set everything back to normal.
+			parent.getSpriteInSlot("mouth1").alpha=1;
+			parent.getSpriteInSlot("mouth2").alpha=0;
+	
 		// this.getParent().eventManager.broadcastEvent("MONTI_EXIT_STATE");
 	}
 }
