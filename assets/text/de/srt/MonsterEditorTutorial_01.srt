@@ -8,7 +8,7 @@ Hier kannst du für mich neue Körperteile auswählen.
 
 3
 00:00:10,300 --> 00:00:15,300
-Um Körperteile zu ändern benutzt du die Pfeile.
+Um Körperteile zu ändern, benutzt du die Pfeile.
 
 4
 00:00:15,400 --> 00:00:20,400

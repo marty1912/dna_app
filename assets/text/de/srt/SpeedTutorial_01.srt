@@ -12,7 +12,7 @@ Deine Aufgabe ist es, so viele Zahlen wie möglich abzutippen.
 
 4
 00:00:15,400 --> 00:00:20,400
-Die Zahl die du eingeben sollst siehst du immer links.
+Die Zahl, die du eingeben sollst, siehst du immer links.
 
 5
 00:00:20,500 --> 00:00:25,500

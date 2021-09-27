@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:06,000
-Wie du vielleicht schon weißt gibt es Muster in meiner DNA.
+Wie du vielleicht schon weißt, gibt es Muster in meiner DNA.
 
 2
 00:00:06,100 --> 00:00:12,100

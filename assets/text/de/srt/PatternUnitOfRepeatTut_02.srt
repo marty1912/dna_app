@@ -8,7 +8,7 @@ Wir wollen jetzt den kleinst möglichen, wiederholten Teil davon herausfinden.
 
 3
 00:00:12,200 --> 00:00:18,200
-Wie du sehen kannst kommen hier immer ein Quadrat und ein Kreis nacheinander vor.
+Wie du sehen kannst, kommen hier immer ein Quadrat und ein Kreis nacheinander vor.
 
 4
 00:00:18,200 --> 00:00:22,200

@@ -4,7 +4,7 @@ So, jetzt hast du gesehen, wie das funktioniert
 
 2
 00:00:06,100 --> 00:00:10,100
-Das Muster ist das selbe, auch wenn die Symbole unterschiedlich sind.
+Das Muster ist dasselbe, auch wenn die Symbole unterschiedlich sind.
 
 3
 00:00:10,100 --> 00:00:13,100

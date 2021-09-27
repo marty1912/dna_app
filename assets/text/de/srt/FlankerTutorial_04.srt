@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:06,000
-Danach beginnt der DNA-Strang sich zu drehen. 
+Danach beginnt sich der DNA-Strang zu drehen. 
 
 2
 00:00:06,100 --> 00:00:12,100
@@ -12,4 +12,4 @@ Jetzt kannst du das mal versuchen.
 
 4
 00:00:18,100 --> 00:00:24,100
-Versuche, so schnell wie möglich zu antworten!
+Versuche so schnell wie möglich zu antworten!

@@ -4,7 +4,7 @@ Okay, Ich finde ich war schon ziemlich schnell.
 
 2
 00:00:06,100 --> 00:00:10,100
-Wie du gesehen hast ist die Reihenfolge 3-1-2 nicht geordnet.
+Wie du gesehen hast, ist die Reihenfolge 3-1-2 nicht geordnet.
 
 3
 00:00:10,100 --> 00:00:14,100

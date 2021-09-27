@@ -20,7 +20,7 @@ Beim Multiplizieren oder Malrechnen nimmst du die eine Zahl so oft, wie die ande
 
 6
 00:00:25,600 --> 00:00:30,600
-Also beispielsweise nimmst du bei 2x5 2 mal die 5 und zählst Alles zusammen.
+Also beispielsweise nimmst du bei 2x5 2 mal die 5 und zählst alles zusammen.
 
 7
 00:00:30,700 --> 00:00:35,700
@@ -28,7 +28,7 @@ Das Ergebnis wäre dann: 5+5=10.
 
 8
 00:00:35,800 --> 00:00:40,800
-Damit das auch Alles klar ist, habe ich ein Beispiel vorbereitet.
+Damit das auch alles klar ist, habe ich ein Beispiel vorbereitet.
 
 9
 00:00:40,900 --> 00:00:42,400

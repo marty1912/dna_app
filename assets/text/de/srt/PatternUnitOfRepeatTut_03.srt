@@ -4,7 +4,7 @@ So, jetzt hast du gesehen, wie das funktioniert
 
 2
 00:00:06,100 --> 00:00:10,100
-Es geht um den kleinsten Teil des Musters, bei dem das Muster sich wiederholt.
+Es geht um den kleinsten Teil des Musters, bei dem sich das Muster wiederholt.
 
 3
 00:00:10,100 --> 00:00:13,100

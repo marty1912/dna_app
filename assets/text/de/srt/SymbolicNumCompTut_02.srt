@@ -4,7 +4,7 @@ Hier sind jetzt zwei DNA-Proben zu sehen.
 
 2
 00:00:06,100 --> 00:00:12,100
-Je höher die Zahl auf der Probe desto frischer ist sie.
+Je höher die Zahl auf der Probe, desto frischer ist sie.
 
 3
 00:00:12,200 --> 00:00:18,200

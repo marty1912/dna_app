@@ -4,7 +4,7 @@ Dir werden jetzt einige Fragen gestellt werden.
 
 2
 00:00:04,100 --> 00:00:11,100
-Bitte gib deine Antworten, indem du die Zahlen mit der Tastatur unten am Bildschirm eintippst.
+Bitte gib deine Antworten ein, indem du die Zahlen mit der Tastatur unten am Bildschirm eintippst.
 
 3
 00:00:11,200 --> 00:00:15,200

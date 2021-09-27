@@ -4,11 +4,11 @@ Mit diesem Knopf kommst du zu den Aufgaben.
 
 2
 00:00:04,500 --> 00:00:11,300
-Wenn du Aufgaben löst hilfst du, meine DNA zu entschlüsseln.
+Wenn du Aufgaben löst, hilfst du, meine DNA zu entschlüsseln.
 
 3
 00:00:11,300 --> 00:00:17,400
-Und je mehr über meine DNA bekannt ist desto besser!
+Und je mehr über meine DNA bekannt ist, desto besser!
 
 4
 00:00:17,500 --> 00:00:25,500

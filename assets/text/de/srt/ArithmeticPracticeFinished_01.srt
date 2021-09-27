@@ -16,7 +16,7 @@ Es werden immer neue Aufgaben kommen, bis die Zeit abgelaufen ist.
 
 5
 00:00:18,700 --> 00:00:22,700
-Überspringe keine Aufgaben!
+Überspringe keine Aufgabe!
 
 6
 00:00:22,700 --> 00:00:28,700
