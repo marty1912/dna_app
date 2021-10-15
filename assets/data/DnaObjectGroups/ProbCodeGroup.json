@@ -1,150 +1,20 @@
 {
   "type": "ProbCodeGroup",
   "objects": [
-    {
-      "type": "SpriteObject",
-      "name": "CenteredPosition",
-      "asset_path": "INVISIBLE_BOX",
-      "scale_x": 100,
-      "scale_y": 400,
-      "origin_where": "",
-      "components": [
-        {
-          "type": "PositionComponent",
-          "oneshot": true,
-          "position": "Center",
-          "target": ""
-        }
-      ]
-    },
-      {
-            "type": "OBJECT_GROUP",
-            "path": "assets/data/DnaObjectGroups/ArithmeticAdditionalButtonGroup.json"
-          },
+    { "type": "SpriteObject", "name": "CenteredPosition", "asset_path": "INVISIBLE_BOX", "scale_x": 100, "scale_y": 400, "origin_where": "", "components": [
+        { "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "" } ] },
+      { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/ArithmeticAdditionalButtonGroup.json" },
       
-    {
-      "type": "SpriteObject",
-      "name": "ProblemPosition",
-      "asset_path": "INVISIBLE_BOX",
-      "scale_from_screen_width": true,
-      "scale_from_screen_height": true,
-      "scale_x": 0.6,
-      "scale_y": 0.3,
-      "origin_where": "",
-      "components": [
-        {
-          "type": "PositionComponent",
-          "oneshot": true,
-          "position": "CenterTop",
-          "target": ""
-        }
-      ]
-    },
-    {
-      "type": "SpriteObject",
-      "name": "AnswerBasePosition",
-      "asset_path": "INVISIBLE_BOX",
-      "scale_from_screen_width": true,
-      "scale_from_screen_height": true,
-      "scale_x": 0.4,
-      "scale_y": 0.43,
-      "origin_where": "",
-      "components": [
-        {
-          "type": "PositionComponent",
-          "oneshot": true,
-          "position": "CenterTop",
-          "target": ""
-        }
-      ]
-    },
-    {
-      "type": "SpriteObject",
-      "name": "AnswerPosition",
-      "asset_path": "INVISIBLE_BOX",
-      "scale_from_screen_width": true,
-      "scale_from_screen_height": true,
-      "scale_x": 0.4,
-      "scale_y": 0.2,
-      "origin_where": "",
-      "components": [
-        {
-          "type": "PositionComponent",
-          "oneshot": true,
-          "position": "CenterBottom",
-          "target": "AnswerBasePosition"
-        }
-      ]
-    },
-    {
-      "type": "SrtPlayerTextObject",
-      "name": "Text_Problem",
-      "text": "EMPTY",
-      "autostart": true,
-      "settings": {
-        "width": 600,
-        "fontsize":32 
-      },
-      "components": [
-        {
-          "type": "PositionComponent",
-          "oneshot": false,
-          "position": "Center",
-          "target": "ProblemPosition"
-        }
-      ]
-    },
-    {
-      "type": "StaticTextObject",
-      "name": "Text_Answer",
-      "use_literal_text": true,
-      "text": "",
-      "autostart": true,
-      "settings": {
-        "char_per_sec": 500,
-        "width": 400,
-        "color": "0xFFFF4D",
-        "fontsize": 124
-      },
-      "components": [
-        {
-          "type": "PositionComponent",
-          "oneshot": false,
-          "position": "Center",
-          "target": "AnswerPosition"
-        },
-        {
-          "type": "TextBoxInputComponent",
-          "max_input_len": 4
-        }
-      ]
-    },
-    {
-      "type": "SpriteObject",
-      "name": "TextPosition",
-      "asset_path": "INVISIBLE_BOX",
-      "scale_x": 600,
-      "scale_y": 200,
-      "origin_where": "",
-      "components": [
-        {
-          "type": "PositionComponent",
-          "oneshot": true,
-          "position": "CenterTop",
-          "target": ""
-        }
-      ]
-    },
-    {
-      "type": "ProbcodeHandlerObject",
-      "name": "ArithmeticHandler",
-      "target_problem": "Text_Problem",
-      "target_answer": "Text_Answer",
-      "use_literal_text":false
-    },
-    {
-      "type": "TimerObject",
-      "name": "TotalTime"
-    }
+    { "type": "SpriteObject", "name": "ProblemPosition", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.6, "scale_y": 0.3, "origin_where": "", "components": [ { "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" } ] },
+    { "type": "SpriteObject", "name": "AnswerBasePosition", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.4, "scale_y": 0.43, "origin_where": "", "components": [ { "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" } ] },
+    { "type": "SpriteObject", "name": "AnswerPosition", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.4, "scale_y": 0.2, "origin_where": "", "components": [ { "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "AnswerBasePosition" } ] },
+
+    { "type": "SrtPlayerTextObject", "name": "Text_Problem", "text": "EMPTY", "autostart": true, "settings": { "width": 600, "fontsize":32 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "ProblemPosition" } ] },
+    { "type": "StaticTextObject", "name": "Text_RepeatQuestion", "text": "EMPTY", "autostart": true, "settings": { "width": 600, "fontsize":32 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "ProblemPosition" } ] },
+
+    { "type": "StaticTextObject", "name": "Text_Answer", "use_literal_text": true, "text": "", "autostart": true, "settings": { "char_per_sec": 500, "width": 400, "color": "0xFFFF4D", "fontsize": 124 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "AnswerPosition" }, { "type": "TextBoxInputComponent", "max_input_len": 4 } ] },
+    { "type": "SpriteObject", "name": "TextPosition", "asset_path": "INVISIBLE_BOX", "scale_x": 600, "scale_y": 200, "origin_where": "", "components": [ { "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" } ] },
+    { "type": "ProbcodeHandlerObject", "name": "ArithmeticHandler", "target_repeat_question": "Text_RepeatQuestion", "target_problem": "Text_Problem", "target_answer": "Text_Answer", "use_literal_text":false },
+    { "type": "TimerObject", "name": "TotalTime" }
   ]
 }

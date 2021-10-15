@@ -107,6 +107,7 @@ class LocaleDE implements Locale
 "SymbNumCompInstructions_PracticeDone_01" => ConfigFile.text("assets/text/de/SymbNumCompInstructions_PracticeDone_01.json"),
 "PatternExtendTut_03" => ConfigFile.text("assets/text/de/PatternExtendTut_03.json"),
 "MainMenuTutorial_04" => ConfigFile.text("assets/text/de/MainMenuTutorial_04.json"),
+"ProbCodeQuestion_05" => ConfigFile.text("assets/text/de/ProbCodeQuestion_05.txt"),
 "NumberlinePracticeDone" => ConfigFile.text("assets/text/de/NumberlinePracticeDone.json"),
 "SETTINGS_DELETE_DATA" => ConfigFile.text("assets/text/de/SETTINGS_DELETE_DATA.txt"),
 "CorsiReverseInit" => ConfigFile.text("assets/text/de/CorsiReverseInit.json"),
@@ -254,11 +255,13 @@ class LocaleDE implements Locale
 "PatternExtEndText" => ConfigFile.text("assets/text/de/PatternExtEndText.json"),
 "StudentIntro_01" => ConfigFile.text("assets/text/de/StudentIntro_01.json"),
 "NonSymbCompTut_05" => ConfigFile.text("assets/text/de/NonSymbCompTut_05.json"),
+"ProbCodeQuestion_04" => ConfigFile.text("assets/text/de/ProbCodeQuestion_04.txt"),
 "MASIC_Q2_green_subs" => ConfigFile.text("assets/text/de/MASIC_Q2_green_subs.json"),
 "test_pipe" => ConfigFile.text("assets/text/de/test_pipe.json"),
 "MainMenuTutorial_02" => ConfigFile.text("assets/text/de/MainMenuTutorial_02.json"),
 "MASIC_Q3_green_subs" => ConfigFile.text("assets/text/de/MASIC_Q3_green_subs.json"),
 "MASIC_Q13_red_subs" => ConfigFile.text("assets/text/de/MASIC_Q13_red_subs.json"),
+"ProbCodeQuestion_03" => ConfigFile.text("assets/text/de/ProbCodeQuestion_03.txt"),
 "ArithmeticPracticeFinished_01" => ConfigFile.text("assets/text/de/ArithmeticPracticeFinished_01.json"),
 "LevelSelectHEAD" => ConfigFile.text("assets/text/de/LevelSelectHEAD.txt"),
 "MASIC_Q2_subs" => ConfigFile.text("assets/text/de/MASIC_Q2_subs.json"),
@@ -291,6 +294,7 @@ class LocaleDE implements Locale
 "SETTINGS_AUDIO_VOLUME" => ConfigFile.text("assets/text/de/SETTINGS_AUDIO_VOLUME.txt"),
 "MASIC_TUT_Q2_yellow_subs" => ConfigFile.text("assets/text/de/MASIC_TUT_Q2_yellow_subs.json"),
 "MASIC_Q6_subs" => ConfigFile.text("assets/text/de/MASIC_Q6_subs.json"),
+"ProbCodeQuestion_01" => ConfigFile.text("assets/text/de/ProbCodeQuestion_01.txt"),
 "UNLOCKSTATE_HEAD" => ConfigFile.text("assets/text/de/UNLOCKSTATE_HEAD.txt"),
 "FEEDBACK_MASIC_HEAD" => ConfigFile.text("assets/text/de/FEEDBACK_MASIC_HEAD.txt"),
 "StudentIntro_confirm_PC" => ConfigFile.text("assets/text/de/StudentIntro_confirm_PC.txt"),
@@ -308,7 +312,8 @@ class LocaleDE implements Locale
 "INFO_STATE_C_ART" => ConfigFile.text("assets/text/de/INFO_STATE_C_ART.txt"),
 "ProbCodeText_05" => ConfigFile.text("assets/text/de/ProbCodeText_05.json"),
 "PatternExtendTut_01" => ConfigFile.text("assets/text/de/PatternExtendTut_01.json"),
-"6" => ConfigFile.text("assets/text/de/6.txt")
+"6" => ConfigFile.text("assets/text/de/6.txt"),
+"ProbCodeQuestion_02" => ConfigFile.text("assets/text/de/ProbCodeQuestion_02.txt")
 ];
 
 	public final audio_path_map:Map<String, String> = [

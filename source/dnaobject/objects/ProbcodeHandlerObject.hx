@@ -33,6 +33,11 @@ import haxe.DynamicAccess;
  */
 class ProbcodeHandlerObject implements DnaObject implements TaskObject implements DnaEventSubscriber extends DnaObjectBase
 {
+
+	public var target_problem:String;
+	public var target_repeat_question:String;
+	public var target_answer:String;
+	public var use_literal_text:Bool = true;
 	/**
 	 * getData - this function collects the data we want to have from the ArithmeticTaskHandler object.
 	 * @return Dynamic - the
@@ -114,14 +119,20 @@ class ProbcodeHandlerObject implements DnaObject implements TaskObject implement
 	public function setParams(params:Dynamic):Void
 	{
 		var problem_textbox:ITextBox = cast this.getParent().getObjectByName(target_problem);
+		var repeat_question_textbox:ITextBox = cast this.getParent().getObjectByName(target_repeat_question);
 		problem_textbox.setText(params.problem, this.use_literal_text);
+		repeat_question_textbox.setText("",true);
 		// start textbox.
 		this.getParent().eventManager.broadcastEvent("KeyboardButtons_INACTIVE");
 		problem_textbox.onFinCallback = function()
 		{
+			trace("params:",params);
+			repeat_question_textbox.setText(params.repeat_question,this.use_literal_text);
+			repeat_question_textbox.start();
 			this.getParent().eventManager.broadcastEvent("KeyboardButtons_NORMAL");
 		};
 		problem_textbox.start();
+
 		solution = params.solution;
 		var answer_textbox:ITextBox = cast this.getParent().getObjectByName(target_answer);
 		answer_textbox.setText("", true);
@@ -164,9 +175,6 @@ class ProbcodeHandlerObject implements DnaObject implements TaskObject implement
 		super('ProbcodeHandlerObject');
 	}
 
-	public var target_problem:String;
-	public var target_answer:String;
-	public var use_literal_text:Bool = true;
 
 	/**
 		* fromFile()
@@ -177,6 +185,10 @@ class ProbcodeHandlerObject implements DnaObject implements TaskObject implement
 	 */
 	override public function fromFile(jsonFile:Dynamic):Void
 	{
+		if (Reflect.hasField(jsonFile, "target_repeat_question"))
+		{
+			this.target_repeat_question= jsonFile.target_repeat_question;
+		}
 		if (Reflect.hasField(jsonFile, "target_problem"))
 		{
 			this.target_problem = jsonFile.target_problem;
