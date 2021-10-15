@@ -115,13 +115,18 @@ class FeedbackTaskHandlerObject implements DnaObject implements TaskObject imple
 		this.answer = "";
 
 		var textbox:ITextBox = cast this.getParent().getObjectByName(target_question);
-		textbox.setText("", true);
 		this.question = params.question;
-		// TODO: hide textbox!
+		// hide the question textbox
+		textbox.setText("", true);
+
 		var audio:IResourcePath = cast this.getParent().getObjectByName(question_audio);
 		audio.setResource(params.question_audio);
 		var question_subs:ITextBox = cast this.getParent().getObjectByName(question_srt);
 		question_subs.setText(params.question_srt);
+		question_subs.onFinCallback = function() {
+			// show question
+			textbox.setText(question, false);
+		};
 
 		feedbacks_map[GREEN].srt = params.srt_green;
 		feedbacks_map[YELLOW].srt = params.srt_yellow;
