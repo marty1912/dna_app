@@ -14,7 +14,7 @@
 
 { "type": "FourStep_2", "name":"withinTaskProgress", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/FlankerPreview.png", "done": false, "saved": false, "trials": [ ]},
 	{ "type": "SymbNumCompInstructionsState_02", "desc_head": "SymbolicNumberComparison_HEAD", "desc_body": "SymbolicNumberComparison_BODY", "done": false, "saved": false, "trials": [ [{ "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2 ,"distance":1} }, { "name": "TotalTime" }] ] },
-{ "type": "FlankerState", "name":"flanker_task", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/FlankerPreview.png", "done": false, "saved": false, "trials": [ 
+{ "type": "FlankerState", "name":"flanker_taskREAL", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/FlankerPreview.png", "done": false, "saved": false, "trials": [ 
 
             [{ "name": "flanker", "params": { "pattern": ["assets/images/flanker_machine/arrow_left.png","assets/images/flanker_machine/arrow_left.png","assets/images/flanker_machine/arrow_left.png","assets/images/flanker_machine/arrow_left.png","assets/images/flanker_machine/arrow_left.png"], "solution":"LEFT","condition":"CONGRUENT"}} ],
             [{ "name": "flanker", "params": { "pattern": ["assets/images/flanker_machine/arrow_right.png","assets/images/flanker_machine/arrow_right.png","assets/images/flanker_machine/arrow_left.png","assets/images/flanker_machine/arrow_right.png","assets/images/flanker_machine/arrow_right.png"], "solution":"LEFT","condition":"INCONGRUENT"}} ],

@@ -35,7 +35,7 @@
       [ { "name": "TaskHandler", "params": { "num_left": "1", "num_right": "2", "solution": 2, "distance": 1 } }, { "name": "TotalTime" } ] ] },
   {
     "type": "ArithmeticState",
-    "name": "Addition",
+    "name": "ArithTRIALS_REAL",
     "desc_head": "ArithmeticState_HEAD",
     "desc_body": "ArithmeticState_BODY",
     "done": false,
