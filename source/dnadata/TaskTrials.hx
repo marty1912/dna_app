@@ -83,29 +83,29 @@ class TaskTrials
 		}
 	}
 
-	public final probCode:String = "assets/data/Trials/ProbCode.json";
-	public final finalBlock:String = "assets/data/Trials/FinalStudentTrial.json";
+	public final probCode:String = "assets/data/dna-trials/ProbCode.json";
+	public final finalBlock:String = "assets/data/dna-trials/FinalStudentTrial.json";
 
 	public final task_block_paths:Array<String> = [
-		// "assets/data/Trials/ArithmeticTrials.json",
-		"assets/data/Trials/ProbCode.json",
-		"assets/data/Trials/MathAnxietyTrials.json",
-		"assets/data/Trials/Flanker.json",
-		"assets/data/Trials/Corsi.json",
-		"assets/data/Trials/AdditionTrials.json",
-		"assets/data/Trials/SubtractionTrials.json",
-		"assets/data/Trials/NonSymbolCompTrials.json",
-		"assets/data/Trials/NumberlineTrials.json",
-		"assets/data/Trials/OrdTrials.json",
-		"assets/data/Trials/SymbolicCompTrials.json",
-		"assets/data/Trials/SpeedTrials.json",
-		// "assets/data/Trials/ezFinishTask.json",
-		"assets/data/Trials/PatternExtend.json",
-		"assets/data/Trials/PatternGeneralize.json",
-		"assets/data/Trials/PatternUnitOfRepeat.json",
-		"assets/data/Trials/PatternNumbers.json",
-		// "assets/data/Trials/lockedTask.json", // "assets/data/Trials/doneTask.json"
-		// "assets/data/Trials/TEST_TASK.json" // "assets/data/Trials/doneTask.json"
+		// "assets/data/dna-trials/ArithmeticTrials.json",
+		"assets/data/dna-trials/ProbCode.json",
+		"assets/data/dna-trials/MathAnxietyTrials.json",
+		"assets/data/dna-trials/Flanker.json",
+		"assets/data/dna-trials/Corsi.json",
+		"assets/data/dna-trials/AdditionTrials.json",
+		"assets/data/dna-trials/SubtractionTrials.json",
+		"assets/data/dna-trials/NonSymbolCompTrials.json",
+		"assets/data/dna-trials/NumberlineTrials.json",
+		"assets/data/dna-trials/OrdTrials.json",
+		"assets/data/dna-trials/SymbolicCompTrials.json",
+		"assets/data/dna-trials/SpeedTrials.json",
+		// "assets/data/dna-trials/ezFinishTask.json",
+		"assets/data/dna-trials/PatternExtend.json",
+		"assets/data/dna-trials/PatternGeneralize.json",
+		"assets/data/dna-trials/PatternUnitOfRepeat.json",
+		"assets/data/dna-trials/PatternNumbers.json",
+		// "assets/data/dna-trials/lockedTask.json", // "assets/data/dna-trials/doneTask.json"
+		// "assets/data/dna-trials/TEST_TASK.json" // "assets/data/dna-trials/doneTask.json"
 	];
 
 	/**
@@ -218,5 +218,5 @@ class TaskTrials
 		return json;
 	}
 
-	public static final Trials:String = ConfigFile.text("assets/data/Trials/Trials.json");
+	public static final Trials:String = ConfigFile.text("assets/data/dna-trials/Trials.json");
 }

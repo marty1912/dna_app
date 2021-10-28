@@ -4,3 +4,6 @@
 [submodule "dragonbones"]
 	path = dragonbones
 	url = https://github.com/openfl/dragonbones
+[submodule "assets/data/dna-trials"]
+	path = assets/data/dna-trials
+	url = git@github.com:marty1912/dna-trials.git

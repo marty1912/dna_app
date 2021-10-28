@@ -82,7 +82,7 @@
 { "type": "FourStep_3", "name":"withinTaskProgress", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/FlankerPreview.png", "done": false, "saved": false, "trials": [ ]},
 { "type": "FlankerEndState", "name":"withinTaskProgress", "desc_head": "SpeedTest_HEAD", "desc_body": "SHORTTASKS_BODY", "preview":"assets/images/level_preview/FlankerPreview.png", "done": false, "saved": false, "trials": [ ]},
 
-	{ "type": "UNLOCK_TASK","id":"assets/data/Trials/PatternGeneralize.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
+	{ "type": "UNLOCK_TASK","id":"assets/data/dna-trials/PatternGeneralize.json", "preview":"assets/images/level_preview/TestTask.png", "done": false, "saved": false }, 
 	{ "type": "ShowProgressState", "done": false, "saved": false },
 	{ "type": "REDIRECT", "done": false, "saved": false, "to": { "type": "UnlockState" } }
 ]
