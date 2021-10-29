@@ -158,6 +158,9 @@ class TrialHandlerObject implements DnaObject implements DnaEventSubscriber exte
 	public function reappendTrials()
 	{
 		var copy_base = deepCopyTrials(this.base_trials);
+		if(this.randomize){
+			copy_base = Random.shuffle(copy_base);
+		}
 		// we want to edit trials inplace (because it is the pointer to the datamanager.)
 		for (trial in copy_base)
 		{
