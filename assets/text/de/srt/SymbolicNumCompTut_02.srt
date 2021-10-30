@@ -1,16 +1,16 @@
 1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,000
 Hier sind jetzt zwei DNA-Proben zu sehen.
 
 2
-00:00:06,100 --> 00:00:12,100
+00:00:03,000 --> 00:00:06,700
 Je höher die Zahl auf der Probe, desto frischer ist sie.
 
 3
-00:00:12,200 --> 00:00:18,200
+00:00:06,700 --> 00:00:09,800
 Ich will natürlich immer die neuesten Proben untersuchen.
 
 4
-00:00:18,200 --> 00:00:22,200
+00:00:09,800 --> 00:00:13,800
 Deshalb wähle ich die Probe mit der höheren Zahl aus.
 

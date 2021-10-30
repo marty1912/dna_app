@@ -1,32 +1,32 @@
 1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:02,700
 Du hast das ja schon super gemacht!
 
 2
-00:00:06,100 --> 00:00:12,100
+00:00:02,700 --> 00:00:11,500
 Es gibt Reihenfolgen die größer werden, wie 1-2-3, und welche die kleiner werden, so wie 3-2-1.
 
 3
-00:00:12,200 --> 00:00:18,200
+00:00:11,500 --> 00:00:18,000
 Dann gibt es auch noch unsortierte Regale. Zum Beispiel mit den Zahlen 3-1-2.
 
 4
-00:00:18,200 --> 00:00:22,200
+00:00:18,000 --> 00:00:20,500
 Hier geht es jetzt um Schnelligkeit. 
 
 5
-00:00:22,200 --> 00:00:26,200
+00:00:20,500 --> 00:00:24,000
 Zuerst wirst du nichts sehen und dann kommt ein Kreuz.
 
 6
-00:00:26,200 --> 00:00:32,200
+00:00:24,000 --> 00:00:26,000
 Das Kreuz bedeutet Achtung.
 
 7
-00:00:32,200 --> 00:00:38,200
+00:00:26,000 --> 00:00:30,300
 Danach kommt das Regal und du entscheidest so schnell wie du kannst.
 
 8
-00:00:38,200 --> 00:00:42,200
+00:00:30,300 --> 00:00:33,200
 Ich zeige dir das jetzt einmal vor.
 

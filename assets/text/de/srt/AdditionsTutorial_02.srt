@@ -1,8 +1,12 @@
 ﻿1
-00:00:00,000 --> 00:00:07,500
-Wie du siehst hat das prima geklappt. Jetzt bist du dran!
+00:00:00,000 --> 00:00:02,700
+Wie du siehst hat das prima geklappt. 
 
 2
-00:00:07,600 --> 00:00:12,500
+00:00:02,700 --> 00:00:04,500
+Jetzt bist du dran!
+
+3
+00:00:04,500 --> 00:00:07,000
 Rechne das richtige Ergebnis aus!
 

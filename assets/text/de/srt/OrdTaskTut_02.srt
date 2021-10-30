@@ -1,23 +1,23 @@
 1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,000
 Oben ist jetzt ein Regal zu sehen.
 
 2
-00:00:06,100 --> 00:00:12,100
+00:00:03,000 --> 00:00:06,500
 Die Proben sind entweder aufsteigend oder absteigend sortiert.
 
 3
-00:00:12,200 --> 00:00:18,200
+00:00:06,500 --> 00:00:13,000
 Wie du siehst stehen die Proben 1-3-5 hier in einer aufsteigenden Reihenfolge.
 
 4
-00:00:18,200 --> 00:00:22,200
+00:00:13,000 --> 00:00:16,500
 Wenn ein Abstand zwischen den Zahlen ist, ist das in Ordnung. 
 
 5
-00:00:22,200 --> 00:00:26,200
+00:00:16,500 --> 00:00:18,500
 Es geht nur um die Reihenfolge.
 
 6
-00:00:26,200 --> 00:00:32,200
+00:00:18,500 --> 00:00:21,400
 Darum drücke ich auf das Häckchen.

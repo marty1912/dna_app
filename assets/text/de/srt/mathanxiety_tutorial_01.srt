@@ -1,11 +1,11 @@
 ﻿1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:07,500
 Ich werde dir jetzt ein paar Behauptungen vorlesen und hätte gerne, dass du die Antwort wählst, die am besten auf dich zutrifft. 
 
 2
-00:00:06,000 --> 00:00:12,000
+00:00:07,500 --> 00:00:10,000
 Ich erkläre dir gleich wie das geht.
 
 3
-00:00:12,000 --> 00:00:18,000
+00:00:10,000 --> 00:00:17,500
 Bei den meisten Behauptungen wird es um Mathematik gehen, aber zum Vorzeigen habe ich ein paar andere ausgesucht.

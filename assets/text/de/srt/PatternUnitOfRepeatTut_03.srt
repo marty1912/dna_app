@@ -1,12 +1,12 @@
 ﻿1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,500
 So, jetzt hast du gesehen, wie das funktioniert
 
 2
-00:00:06,100 --> 00:00:10,100
+00:00:03,500 --> 00:00:08,500
 Es geht um den kleinsten Teil des Musters, bei dem sich das Muster wiederholt.
 
 3
-00:00:10,100 --> 00:00:13,100
+00:00:08,500 --> 00:00:10,800
 Jetzt bist du dran!
 

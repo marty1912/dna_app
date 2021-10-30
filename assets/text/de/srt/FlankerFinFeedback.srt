@@ -1,9 +1,9 @@
 1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,300
 Super! Das hast du ausgezeichnet gemacht.
 
 2
-00:00:06,100 --> 00:00:12,100
+00:00:03,300 --> 00:00:07,400
 Die Maschine ist jetzt fertig und wir können weiterforschen!
 
 

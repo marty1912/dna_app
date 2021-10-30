@@ -1,12 +1,12 @@
 1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:02,000
 Vielen Dank für deine Hilfe!
 
 2
-00:00:06,100 --> 00:00:12,100
+00:00:02,000 --> 00:00:05,500
 Du hast das trotz der komplizierten Maschine super gemeistert!
 
 3
-00:00:12,100 --> 00:00:18,100
+00:00:05,500 --> 00:00:07,600
 Du hast die Aufgabe geschafft.
 

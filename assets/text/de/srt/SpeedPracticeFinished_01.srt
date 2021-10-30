@@ -1,28 +1,25 @@
 ﻿1
-00:00:00,000 --> 00:00:03,000
-Wow!
+00:00:00,000 --> 00:00:03,200
+Wow!  Du bist ja richtig schnell!
 
 2
-00:00:03,100 --> 00:00:07,200
-Du bist ja richtig schnell!
-
-3
-00:00:07,300 --> 00:00:13,300
+00:00:03,200 --> 00:00:06,000
 Jetzt werden noch viele Zahlen für dich erscheinen. 
 
-4
-00:00:13,400 --> 00:00:18,600
+3
+00:00:06,000 --> 00:00:10,500
 Du hast zwei Minuten Zeit, um so viele Zahlen wie möglich abzutippen. 
 
-5
-00:00:18,700 --> 00:00:22,700
+4
+00:00:10,500 --> 00:00:14,000
 Die restliche Zeit siehst du rechts oben am Bildschirm.
 
-6
-00:00:22,700 --> 00:00:28,700
+5
+00:00:14,000 --> 00:00:18,000
 Überspringe keine Zahlen und tippe so schnell du kannst!
 
-7
-00:00:28,700 --> 00:00:32,700
+6
+00:00:18,000 --> 00:00:21,200
 Wenn du bereit bist, dann drücke das Häckchen.
+
 

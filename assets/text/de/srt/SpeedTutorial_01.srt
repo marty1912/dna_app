@@ -1,28 +1,28 @@
 ﻿1
-00:00:00,000 --> 00:00:05,100
+00:00:00,000 --> 00:00:01,200
 Hallo! 
 
 2
-00:00:05,200 --> 00:00:10,200
+00:00:01,200 --> 00:00:07,000
 Die Leute aus dem Forschungsteam wollen wissen, wie schnell du mit der Tastatur Zahlen eingeben kannst.
 
 3
-00:00:10,300 --> 00:00:15,300
+00:00:07,000 --> 00:00:11,000
 Deine Aufgabe ist es, so viele Zahlen wie möglich abzutippen.
 
 4
-00:00:15,400 --> 00:00:20,400
+00:00:11,000 --> 00:00:15,000
 Die Zahl, die du eingeben sollst, siehst du immer links.
 
 5
-00:00:20,500 --> 00:00:25,500
+00:00:15,000 --> 00:00:17,000
 Hier ist jetzt ein Beispiel zu sehen.
 
 6
-00:00:25,600 --> 00:00:30,600
+00:00:17,000 --> 00:00:21,000
 Du tippst einfach die Zahl ab und drückst dann auf das Häckchen.
 
 7
-00:00:30,600 --> 00:00:36,600
+00:00:21,000 --> 00:00:24,600
 Schau mir mal zu!
 

@@ -1,12 +1,12 @@
 ﻿1
-00:00:00,000 --> 00:00:04,100
+00:00:00,000 --> 00:00:03,000
 An welchem Tag hast du Geburtstag? 
 
 2
-00:00:04,200 --> 00:00:10,100
+00:00:03,000 --> 00:00:09,100
 Hier noch ein Beispiel dazu: Manuel hat am 11. August 2013 Geburtstag.
 
 3
-00:00:10,200 --> 00:00:14,100
+00:00:09,100 --> 00:00:11,600
 Er schreibt: 11
 

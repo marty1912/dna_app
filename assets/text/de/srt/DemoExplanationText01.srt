@@ -1,8 +1,8 @@
 ﻿1
-00:00:00,000 --> 00:00:05,100
+00:00:00,000 --> 00:00:05,500
 An dieser Stelle würde nun das Hauptmenü der App erstmalig gezeigt und erklärt werden.
 
 2
-00:00:05,200 --> 00:00:11,200
+00:00:05,500 --> 00:00:13,200
 Für die Präsentation werden wir diesen Teil aber überspringen und gleich in eine Aufgabe (den Zahlenstrahl) starten.
 

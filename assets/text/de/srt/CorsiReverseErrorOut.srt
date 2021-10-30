@@ -1,12 +1,12 @@
 1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,500
 Super! Wir haben echt gute Arbeit geleistet.
 
 2
-00:00:06,100 --> 00:00:12,100
+00:00:03,500 --> 00:00:05,100
 Danke für deine Hilfe!
 
 3
-00:00:12,100 --> 00:00:16,100
+00:00:05,100 --> 00:00:8,000
 Alleine hätte ich das nie geschafft.
 

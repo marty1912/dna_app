@@ -1,4 +1,4 @@
 ﻿1
-00:00:00,000 --> 00:00:04,100
+00:00:00,000 --> 00:00:04,200
 Alles klar, du isst also gerne Schokolade.
 

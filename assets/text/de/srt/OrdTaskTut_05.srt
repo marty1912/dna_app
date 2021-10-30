@@ -1,19 +1,19 @@
 ﻿1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,500
 Okay, Ich finde ich war schon ziemlich schnell.
 
 2
-00:00:06,100 --> 00:00:10,100
+00:00:03,500 --> 00:00:08,500
 Wie du gesehen hast, ist die Reihenfolge 3-1-2 nicht geordnet.
 
 3
-00:00:10,100 --> 00:00:14,100
+00:00:08,500 --> 00:00:11,500
 Deshalb habe ich auf das Kreuzchen gedrückt.
 
 4
-00:00:14,100 --> 00:00:18,100
+00:00:11,500 --> 00:00:14,100
 Denkst du, du kannst das schneller als ich?
 
 5
-00:00:18,100 --> 00:00:22,100
+00:00:14,100 --> 00:00:16,100
 Probier' mal!

@@ -1,13 +1,13 @@
 ﻿1
-00:00:00,000 --> 00:00:03,907
+00:00:00,000 --> 00:00:03,707
 Nun weißt du über die wichtigsten Dinge bescheid.
 
 2
-00:00:04,007 --> 00:00:10,107
+00:00:03,707 --> 00:00:05,507
 Danke, dass du mitmachst!
 
 3
-00:00:10,007 --> 00:00:16,107
+00:00:05,507 --> 00:00:08,807
 Ich wünsche dir viel Spaß bei den Aufgaben!
 
 

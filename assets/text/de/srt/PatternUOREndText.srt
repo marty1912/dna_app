@@ -1,16 +1,16 @@
 ﻿1
-00:00:00,000 --> 00:00:04,100
+00:00:00,000 --> 00:00:02,000
 Ausgezeichnet!
 
 2
-00:00:04,200 --> 00:00:10,100
+00:00:02,000 --> 00:00:08,000
 Weil wir jetzt wissen, wo sich die Muster wiederholen, können wir sie so lang machen, wie wir wollen.
 
 3
-00:00:10,200 --> 00:00:14,100
+00:00:08,000 --> 00:00:11,000
 Das war eine große Hilfe. Dankeschön!
 
 4
-00:00:14,200 --> 00:00:18,100
+00:00:11,000 --> 00:00:11,600
 Du warst spitze!
 

@@ -3,14 +3,14 @@
 Ausgezeichnet!
 
 2
-00:00:02,100 --> 00:00:06,300
+00:00:02,100 --> 00:00:04,500
 Du hast schon alle Übungsaufgaben geschafft.
 
 3
-00:00:06,400 --> 00:00:09,900
+00:00:04,500 --> 00:00:06,200
 Jetzt kommen die richtigen Aufgaben.
 
 4
-00:00:09,900 --> 00:00:14,900
+00:00:06,200 --> 00:00:09,200
 Wenn du bereit bist, dann drücke den Knopf.
 

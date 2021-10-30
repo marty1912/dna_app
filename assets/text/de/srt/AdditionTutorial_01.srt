@@ -1,24 +1,37 @@
 ﻿1
-00:00:00,000 --> 00:00:05,100
-Hallo! Herzlich Willkommen zum Plusrechnen!
+00:00:00,000 --> 00:00:01,200
+Hallo!
 
 2
-00:00:05,200 --> 00:00:10,200
-Bei dieser Aufgabe sind deine Rechenkünste gefragt.
+00:00:01,200 --> 00:00:03,500
+Herzlich Willkommen zum Plusrechnen!
 
 3
-00:00:10,300 --> 00:00:15,300
-Die Rechnung siehst du hier. Deine Aufgabe ist es jetzt, das richtige Ergebnis auszurechnen.
+00:00:03,500 --> 00:00:06,500
+Bei dieser Aufgabe sind deine Rechenkünste gefragt.
 
 4
-00:00:15,400 --> 00:00:20,400
-Beim Addieren oder Plusrechnen zählst du einfach die beiden Zahlen links und rechts vom "+"-Zeichen zusammen.
+00:00:06,500 --> 00:00:08,500
+Die Rechnung siehst du hier. 
 
 5
-00:00:20,500 --> 00:00:25,500
-Damit du weißt wie das geht, habe ich ein Beispiel vorbereitet.
+00:00:08,500 --> 00:00:13,000
+Deine Aufgabe ist es jetzt, das richtige Ergebnis auszurechnen.
 
 6
-00:00:25,600 --> 00:00:30,600
-Hier ist die Rechnung "9+3" gegeben. Kennst du die Lösung?
+00:00:13,000 --> 00:00:20,000
+Beim Addieren oder Plusrechnen zählst du einfach die beiden Zahlen links und rechts vom "+"-Zeichen zusammen.
+
+7
+00:00:20,000 --> 00:00:24,000
+Damit du weißt wie das geht, habe ich ein Beispiel vorbereitet.
+
+8
+00:00:24,000 --> 00:00:27,000
+Hier ist die Rechnung "9+3" gegeben. 
+
+9
+00:00:27,000 --> 00:00:28,000
+Kennst du die Lösung?
+
 

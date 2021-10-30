@@ -1,20 +1,20 @@
 ﻿1
-00:00:00,000 --> 00:00:04,100
+00:00:00,000 --> 00:00:03,100
 Wie viele Buchstaben hat der Name deiner Mama?
 
 2
-00:00:04,200 --> 00:00:10,100
+00:00:03,100 --> 00:00:07,500
 Am besten du schreibst dir ihren Namen auf, und zählst dann die Buchstaben ab.
 
 3
-00:00:10,200 --> 00:00:14,100
+00:00:07,500 --> 00:00:12,100
 Wenn deine Mama zum Beispiel Julia heißt, sind das 5 Buchstaben.
 
 4
-00:00:14,200 --> 00:00:18,100
+00:00:12,100 --> 00:00:14,100
 Dann würdest du 5 schreiben.
 
 5
-00:00:18,200 --> 00:00:22,100
+00:00:14,100 --> 00:00:22,200
 Falls du nicht genau weißt, wie viele Buchstaben der Name deiner Mama hat, kannst du auch deine Lehrerin oder deinen Lehrer fragen.
 

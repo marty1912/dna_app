@@ -1,9 +1,9 @@
 ﻿1
-00:00:00,000 --> 00:00:05,100
+00:00:00,000 --> 00:00:04,100
 Super! Du hast gerade die erste Aufgabe fertig gemacht.
 
 2
-00:00:05,200 --> 00:00:10,200
+00:00:04,100 --> 00:00:09,000
 Dieser Balken zeigt dir nach jeder Aufgabe an, wie viel du schon geschafft hast.
 
 

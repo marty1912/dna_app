@@ -1,12 +1,12 @@
 ﻿1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,500
 Super! Damit sind diese Proben schon wieder vollständig.
 
 2
-00:00:06,100 --> 00:00:10,100
+00:00:03,500 --> 00:00:05,600
 Zum Glück sind die Proben nummeriert.
 
 3
-00:00:10,100 --> 00:00:13,100
+00:00:05,600 --> 00:00:07,600
 Jetzt bist du dran!
 

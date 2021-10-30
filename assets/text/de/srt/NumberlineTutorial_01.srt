@@ -1,36 +1,36 @@
 ﻿1
-00:00:00,000 --> 00:00:04,507
+00:00:00,000 --> 00:00:03,507
 Herzlich Willkommen zur Zahlenstrahlaufgabe!
 
 2
-00:00:04,691 --> 00:00:08,594
+00:00:03,507 --> 00:00:06,594
 Hier siehst du einen sogenannten Zahlenstrahl
 
 3
-00:00:08,681 --> 00:00:11,985
+00:00:06,594 --> 00:00:10,085
 Auf einem Zahlenstrahl werden Zahlen aufgetragen.
 
 4
-00:00:12,015 --> 00:00:17,919
+00:00:10,085 --> 00:00:14,019
 Die Zahlen werden von links nach rechts der Größe nach geordnet.
 
 5
-00:00:18,079 --> 00:00:24,213
+00:00:14,019 --> 00:00:20,513
 Das bedeutet, links sind kleine Zahlen und weiter rechts sind größere Zahlen zu finden.
 
 6
-00:00:24,313 --> 00:00:29,713
+00:00:20,513 --> 00:00:25,013
 Die gesuchte Zahl steht immer oben über dem Zahlenstrahl.
 
 7
-00:00:29,813 --> 00:00:34,213
+00:00:25,013 --> 00:00:29,213
 Hier ist die gesuchte Zahl beispielsweise 7.
 
 8
-00:00:34,300 --> 00:00:39,604
+00:00:29,213 --> 00:00:34,504
 Deine Aufgabe ist es nun, die gesuchte Zahl auf dem Zahlenstrahl zu markieren.
 
 9
-00:00:39,704 --> 00:00:46,704
+00:00:34,504 --> 00:00:37,404
 Ich werde dir das jetzt vorzeigen.
 

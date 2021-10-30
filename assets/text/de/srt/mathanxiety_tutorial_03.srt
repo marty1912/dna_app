@@ -1,7 +1,7 @@
 ﻿1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:02,500
 Ich höre wahnsinnig gerne Musik. 
 
 2
-00:00:06,000 --> 00:00:12,000
+00:00:02,500 --> 00:00:07,100
 Deswegen klicke ich den grünen Daumen, der nach oben zeigt, an.

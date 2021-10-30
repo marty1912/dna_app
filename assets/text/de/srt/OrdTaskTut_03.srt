@@ -1,8 +1,8 @@
 ﻿1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,500
 So, jetzt kannst du das auch mal versuchen. 
 
 2
-00:00:06,100 --> 00:00:10,100
+00:00:03,500 --> 00:00:08,600
 Noch ein Tipp: Auch Reihenfolgen, die kleiner werden, sind sortiert.
 

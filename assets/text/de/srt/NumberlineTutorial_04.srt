@@ -1,8 +1,8 @@
 ﻿1
-00:00:00,000 --> 00:00:07,500
+00:00:00,000 --> 00:00:05,500
 Wie du siehst hat das prima geklappt. Jetzt bist wieder DU dran!
 
 2
-00:00:07,600 --> 00:00:12,500
+00:00:05,500 --> 00:00:07,800
 Schätze so genau wie möglich!
 

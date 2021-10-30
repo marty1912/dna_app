@@ -1,28 +1,28 @@
 ﻿1
-00:00:00,000 --> 00:00:03,000
+00:00:00,000 --> 00:00:01,200
 Super!
 
 2
-00:00:03,100 --> 00:00:07,200
+00:00:01,200 --> 00:00:03,800
 Jetzt bist du bereit für die richtigen Aufgaben.
 
 3
-00:00:07,300 --> 00:00:13,300
+00:00:03,800 --> 00:00:10,300
 Es geht jetzt darum, so viele Durchgänge wie möglich, in der vorgegebenen Zeit, richtig zu beantworten.
 
 4
-00:00:13,400 --> 00:00:18,600
+00:00:10,300 --> 00:00:14,500
 Es werden immer neue Aufgaben kommen, bis die Zeit abgelaufen ist.
 
 5
-00:00:18,700 --> 00:00:22,700
+00:00:14,500 --> 00:00:16,700
 Überspringe keine Aufgabe!
 
 6
-00:00:22,700 --> 00:00:28,700
+00:00:16,700 --> 00:00:19,000
 Du hast nun zwei Minuten Zeit.
 
 7
-00:00:28,700 --> 00:00:32,700
+00:00:19,000 --> 00:00:22,500
 Wenn du bereit bist, dann drücke das Häckchen.
 

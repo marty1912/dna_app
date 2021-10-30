@@ -1,12 +1,12 @@
 1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,300
 Danach erscheinen am Bildschirm die Pfeile. 
 
 2
-00:00:06,100 --> 00:00:12,100
+00:00:03,300 --> 00:00:08,500
 Der mittlere Pfeil zeigt die korrekte Drehrichtung an, die anderen sind unwichtig.
 
 3
-00:00:12,100 --> 00:00:18,100
+00:00:08,500 --> 00:00:15,600
 Sobald du den Pfeil siehst kannst du auf die Seite, auf die er zeigt, drücken um den DNA-Strang zu drehen.
 

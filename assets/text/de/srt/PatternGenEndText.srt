@@ -1,16 +1,13 @@
 ﻿1
-00:00:00,000 --> 00:00:04,100
-Super! 
+00:00:00,000 --> 00:00:04,000
+Super!  Das waren alle Muster, die wir nachbauen wollten.
 
 2
-00:00:04,200 --> 00:00:10,100
-Das waren alle Muster, die wir nachbauen wollten.
-
-3
-00:00:10,200 --> 00:00:14,100
+00:00:04,000 --> 00:00:05,500
 Danke für deine Hilfe!
 
-4
-00:00:14,200 --> 00:00:18,100
+3
+00:00:05,500 --> 00:00:07,600
 Du hast das toll gemacht!
+
 

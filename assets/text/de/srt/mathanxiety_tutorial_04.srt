@@ -1,11 +1,11 @@
 ﻿1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,500
 Auujaa, das macht ja richtig Spaß. 
 
 2
-00:00:06,000 --> 00:00:12,000
+00:00:03,500 --> 00:00:05,800
 Ich bin direkt noch einmal dran. 
 
 3
-00:00:12,000 --> 00:00:18,000
+00:00:05,800 --> 00:00:09,000
 Die nächste Behauptung ist: ‚Ich mag Spinat‘

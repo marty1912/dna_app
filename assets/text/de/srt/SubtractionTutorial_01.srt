@@ -1,28 +1,28 @@
 ﻿1
-00:00:00,000 --> 00:00:05,100
+00:00:00,000 --> 00:00:03,200
 Hallo! Herzlich Willkommen zum Minusrechnen!
 
 2
-00:00:05,200 --> 00:00:10,200
+00:00:03,200 --> 00:00:06,300
 Bei dieser Aufgabe sind deine Rechenkünste gefragt.
 
 3
-00:00:10,300 --> 00:00:15,300
+00:00:06,300 --> 00:00:12,000
 Deine Aufgabe ist es, für einige Minusrechungen das richtige Ergebnis für auszurechnen.
 
 4
-00:00:15,400 --> 00:00:20,400
+00:00:12,000 --> 00:00:19,000
 Beim Subtrahieren oder Minusrechnen ziehst du die Zahl rechts vom "-" Symbol von der linken Zahl ab.
 
 5
-00:00:20,500 --> 00:00:25,500
+00:00:19,000 --> 00:00:22,500
 Ich habe für dich hier ein Beispiel vorbereitet.
 
 6
-00:00:25,600 --> 00:00:30,600
+00:00:22,500 --> 00:00:29,000
 Hier ist die Rechnung "5-2" gegeben, also muss ich 2 von 5 wegnehmen.
 
 7
-00:00:30,600 --> 00:00:36,600
+00:00:29,000 --> 00:00:31,200
 Kennst du die Lösung?
 

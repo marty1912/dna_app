@@ -1,28 +1,28 @@
 ﻿1
-00:00:00,000 --> 00:00:04,500
+00:00:00,000 --> 00:00:03,000
 Du bist anscheinend schon ein richtiger Profi!
 
 2
-00:00:04,600 --> 00:00:08,800
+00:00:03,000 --> 00:00:06,500
 Deshalb werden wir die Aufgabe jetzt etwas schwieriger machen.
 
 3
-00:00:08,800 --> 00:00:14,000
+00:00:06,500 --> 00:00:09,000
 Wir nehmen jetzt die Linien weg.
 
 4
-00:00:14,000 --> 00:00:18,000
+00:00:09,000 --> 00:00:13,000
 Jetzt ist der Bereich von 0 bis 1 in rot eingezeichnet.
 
 5
-00:00:18,000 --> 00:00:21,100
+00:00:13,000 --> 00:00:16,100
 Die restlichen Zahlen sind nicht mehr zu sehen.
 
 6
-00:00:21,100 --> 00:00:28,100
+00:00:16,100 --> 00:00:20,100
 Du musst jetzt also schätzen wo die gesuchte Zahl liegt!
 
 7
-00:00:28,100 --> 00:00:34,100
+00:00:20,100 --> 00:00:24,500
 Klingt schon viel schwieriger. Mal sehen, ob ich das schaffe. 
 

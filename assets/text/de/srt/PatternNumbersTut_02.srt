@@ -1,12 +1,12 @@
 1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,000
 Oben siehst du die Proben, die noch im Regal waren.
 
 2
-00:00:06,100 --> 00:00:12,100
+00:00:03,000 --> 00:00:07,200
 Unten sind die neuen. Eine von denen muss da doch hineinpassen!
 
 3
-00:00:12,200 --> 00:00:18,200
+00:00:07,200 --> 00:00:10,200
 Ich denke ich weiß auch schon welche.. 
 

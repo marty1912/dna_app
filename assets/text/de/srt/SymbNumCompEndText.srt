@@ -1,12 +1,9 @@
 ﻿1
-00:00:00,000 --> 00:00:04,100
-Toll! 
+00:00:00,000 --> 00:00:03,100
+Toll! Das waren schon alle Proben.  
 
 2
-00:00:04,200 --> 00:00:10,100
-Das waren schon alle Proben.
-
-3
-00:00:10,200 --> 00:00:14,100
+00:00:03,100 --> 00:00:05,700
 Du hast das wirklich gut gemacht! 
+
 

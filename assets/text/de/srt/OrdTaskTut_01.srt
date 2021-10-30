@@ -1,24 +1,24 @@
 1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:04,500
 Wie du wahrscheinlich weißt, ist gute Ordnung im Leben sehr wichtig.
 
 2
-00:00:06,100 --> 00:00:12,100
+00:00:04,500 --> 00:00:07,500
 Ohne Ordnung verliert man leicht den Überblick.
 
 3
-00:00:12,200 --> 00:00:18,200
+00:00:07,500 --> 00:00:11,500
 Ich habe ein paar Proben genommen und sie in Regale geräumt.
 
 4
-00:00:18,300 --> 00:00:24,300
+00:00:11,500 --> 00:00:17,000
 Da war ich aber etwas ungenau und so sind einige Proben durcheinander gekommen.
 
 5
-00:00:24,400 --> 00:00:28,400
+00:00:17,000 --> 00:00:21,400
 Bei ein paar Regalen sind die Proben sortiert und bei anderen nicht.
 
 6
-00:00:28,500 --> 00:00:34,500
+00:00:21,400 --> 00:00:24,000
 Kannst du mir da helfen?
 

@@ -1,23 +1,23 @@
 1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:02,500
 Hier oben siehst du das Muster.
 
 2
-00:00:06,100 --> 00:00:12,100
+00:00:02,500 --> 00:00:07,000
 Wir wollen jetzt den kleinst möglichen, wiederholten Teil davon herausfinden.
 
 3
-00:00:12,200 --> 00:00:18,200
+00:00:07,000 --> 00:00:12,500
 Wie du sehen kannst, kommen hier immer ein Quadrat und ein Kreis nacheinander vor.
 
 4
-00:00:18,200 --> 00:00:22,200
+00:00:12,500 --> 00:00:15,000
 Danach wiederholt sich das Ganze. 
 
 5
-00:00:22,200 --> 00:00:26,200
+00:00:15,000 --> 00:00:19,500
 Es kommt immer wieder: Quadrat, Kreis und so weiter.
 
 6
-00:00:26,200 --> 00:00:32,200
+00:00:19,500 --> 00:00:25,500
 Darum wähle ich jetzt das Quadrat und den Kreis als kleinste mögliche Einheit aus.

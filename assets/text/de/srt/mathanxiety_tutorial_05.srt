@@ -1,8 +1,8 @@
 ﻿1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,000
 Ich mag Spinat überhaupt nicht gerne essen. 
 
 2
-00:00:06,000 --> 00:00:12,000
+00:00:03,000 --> 00:00:06,800
 Deswegen klicke ich den roten Daumen, der nach unten zeigt, an.
 

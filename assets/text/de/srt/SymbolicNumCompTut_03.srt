@@ -1,8 +1,8 @@
 ﻿1
-00:00:00,000 --> 00:00:06,000
+00:00:00,000 --> 00:00:03,000
 So, ich denke, jetzt bist du bereit. 
 
 2
-00:00:06,100 --> 00:00:10,100
+00:00:03,000 --> 00:00:06,600
 Such immer die Probe mit der größeren Zahl aus!
 

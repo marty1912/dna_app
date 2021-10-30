@@ -1,4 +1,4 @@
 ﻿1
-00:00:00,000 --> 00:00:03,907
+00:00:00,000 --> 00:00:04,507
 Das ist leider nicht ganz richtig. Versuch es noch einmal!
 
