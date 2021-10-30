@@ -31,8 +31,8 @@ class WebSpecific implements OsSpecific
 	public function getServerUrl():String
 	{
 		// return "http://localhost:8000/student_data/api/";
-
-		return "https://143.50.35.159/student_data/api/";
+		return "https://dna-backend.casacam.net/student_data/api/";
+		//return "https://143.50.35.159/student_data/api/";
 	}
 
 	/**
