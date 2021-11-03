@@ -81,6 +81,19 @@ class DesktopSpecific implements OsSpecific
 	}
 
 	/**
+	 * deleteStorage- this function saves data to storage.
+	 * @param data - the data to store
+	 * @param filename - the filename to use
+	 */
+	public function eraseStorage(filename:String):Void
+	{
+		// we dont actually do anything here atm..
+		return;
+	}
+
+
+
+	/**
 	 * returns a howler sound object that will work on every available browser. 
 	 * @param path 
 	 * @return ISoundObject

@@ -57,10 +57,13 @@ class DnaDataManager
 		var stored_data:Dynamic = OsManager.get_instance().readFromStorage(save_slot_name);
 		if (stored_data == null)
 		{
+
+			trace("[initStorage] - could not find stored data.");
 			persistent_storage = {data: {}};
 		}
 		else
 		{
+			trace("[initStorage] - found stored data.");
 			persistent_storage = {data: stored_data}
 		}
 	}
@@ -70,11 +73,18 @@ class DnaDataManager
 	 */
 	public function init()
 	{
+
+			trace("[init] - now initializing storage.");
 		initStorage();
+
+			trace("[init] - now getting uuid.");
 		var uuid:String = retrieveData(PART_UUID);
+
 		// trace(uuid);
 		if (uuid == null)
 		{
+
+			trace("[init] - could not find uuid.. generating one");
 			TaskTrials.instance.init();
 			setupUUID();
 			setupOsInfo();
@@ -84,6 +94,8 @@ class DnaDataManager
 		}
 		else
 		{
+
+			trace("[init] - found uuid.");
 			TaskTrials.instance.init();
 			loadTrials();
 		}
@@ -151,7 +163,8 @@ class DnaDataManager
 	public function deleteAllData()
 	{
 		// persistent_storage.erase();
-		OsManager.get_instance().saveToStorage({}, save_slot_name);
+		OsManager.get_instance().eraseStorage(save_slot_name);
+		persistent_storage = {data: {}};
 		// get default values loaded.
 		init();
 	}

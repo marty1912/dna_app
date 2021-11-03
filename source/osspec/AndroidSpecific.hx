@@ -107,6 +107,19 @@ class AndroidSpecific implements OsSpecific
 		Reflect.setProperty(save_slot.data, filename, data);
 		save_slot.flush();
 	}
+	/**
+	 * deleteStorage- this function saves data to storage.
+	 * @param data - the data to store
+	 * @param filename - the filename to use
+	 */
+	public function eraseStorage(filename:String):Void
+	{
+		var save_slot:FlxSave = new FlxSave();
+		save_slot.bind(filename);
+		save_slot.erase();
+	}
+
+
 
 	/**
 	 * read from Storage - this function reads data from storage.

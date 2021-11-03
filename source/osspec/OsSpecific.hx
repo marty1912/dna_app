@@ -58,6 +58,15 @@ interface OsSpecific
 	public function saveToStorage(data:Dynamic, filename:String):Void;
 
 	/**
+	 * eraseStorage- this function deletes the data at the given slot.
+	 * @param data - the data to store
+	 * @param filename - the filename to use
+	 */
+	public function eraseStorage( filename:String):Void;
+
+
+
+	/**
 	 * read from Storage - this function reads data from storage.
 	 * @param filename - the filename where your data is stored.
 	 * @return Dynamic - returns the data stored at the specified location.

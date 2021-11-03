@@ -1,5 +1,6 @@
 package osspec;
 
+import js.Syntax;
 import flixel.system.FlxSound;
 import dnaobject.classes.HowlerSoundWrapper;
 import dnaobject.interfaces.ISoundObject;
@@ -142,6 +143,32 @@ class WebSpecific implements OsSpecific
 		Reflect.setProperty(save_slot.data, filename, data);
 		save_slot.flush();
 	}
+
+	/**
+	 * deleteStorage- this function saves data to storage.
+	 * @param data - the data to store
+	 * @param filename - the filename to use
+	 */
+	public function eraseStorage(filename:String):Void
+	{
+		trace("[WebSpecific] - now erasing storage..");
+
+		var save_slot:FlxSave = new FlxSave();
+		save_slot.bind(filename);
+		save_slot.erase();
+		save_slot.close();
+		// delete local storage and refresh page.
+		Syntax.code("localStorage.clear();");
+		Syntax.code('document.cookie.split(";").forEach(function(c) { document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/"); });');
+		Syntax.code('sessionStorage.clear();');
+		Syntax.code('caches.keys().then(keys => { keys.forEach(key => caches.delete(key)) })');
+		//Syntax.code('indexedDB.databases().then(dbs => { dbs.forEach(db => indexedDB.deleteDatabase(db.name)) })');
+
+		Syntax.code("location.reload(true);");
+
+	}
+
+
 
 	/**
 	 * read from Storage - this function reads data from storage.
