@@ -136,11 +136,7 @@ class ProbcodeHandlerObject implements DnaObject implements TaskObject implement
 		solution = params.solution;
 		var answer_textbox:ITextBox = cast this.getParent().getObjectByName(target_answer);
 		answer_textbox.setText("", true);
-		if (params.audio != null)
-		{
-			ActionPlaySoundComponent.stopAllSounds();
-			ActionPlaySoundComponent.playSound(params.audio);
-		}
+		
 		accept_button_obj.setNextState(new ButtonStateInactive());
 	}
 

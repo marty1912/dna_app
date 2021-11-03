@@ -25,6 +25,7 @@ class Main extends Sprite
 
 		// trace("starting...");
 		FlxAssets.FONT_DEFAULT = "assets/fonts/ttf-bitstream-vera-1.10/Vera.ttf";
+
 		OsManager.get_instance().toLandscapeMode();
 		if(debugMode){
 			DnaDataManager.instance.deleteAllData(); // debug
@@ -58,6 +59,7 @@ class Main extends Sprite
 		// FlxG.sound.cacheAll();
 		#end
 		FlxG.autoPause = false;
+		FlxG.sound.cacheAll();
 		/*
 
 			* these settings are used so the update loops will get the 

@@ -1,15 +1,17 @@
 package dnaobject.classes;
 
+
+import flixel.FlxG;
 import dnaobject.interfaces.ISoundObject;
 import flixel.system.FlxSound;
 
 class FlxSoundWrapper implements ISoundObject
 {
-	public var sound:FlxSound;
+	public var soundPath:String;
 
-	public function new(snd:FlxSound)
+	public function new(snd:String)
 	{
-		sound = snd;
+		soundPath = snd;
 	}
 
 	/**
@@ -17,6 +19,9 @@ class FlxSoundWrapper implements ISoundObject
 	 */
 	public function play():Void
 	{
-		sound.play();
+		//sound.play();
+		try{
+			FlxG.sound.play(soundPath);
+		}
 	}
 }

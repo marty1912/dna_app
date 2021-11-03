@@ -8,19 +8,19 @@
         { "type": "SpriteObject", "name": "BannerCenter", "asset_path": "INVISIBLE_BOX", "scale_x": 500, "scale_y": 100, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "Banner" }] },
         { "type": "TextObject", "name": "Text_HEAD", "text": "MainMenu_HEAD", "autostart": true, "settings": { "char_per_sec": 24, "width": 500, "n_lines": 5, "append_before": "@041d8c50a", "append_after": "@040", "border": "OUTLINE", "border_color": "0x911315" }, "components": [{ "type": "PositionComponent", "oneshot": false, "position": "CenterTop", "target": "BannerCenter" }] }, 
         
-        { "type": "MonsterObject","name":"Monti", "components": [{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": false, "position": "LeftBottom", "target": "" } ] },
+        { "type": "MonsterObject","name":"Monti", "components": [ { "type": "PositionComponent", "oneshot": false, "position": "LeftBottom", "target": "" } ] },
 
         { "type": "SpriteObject", "name": "CenteredPosition", "asset_path": "INVISIBLE_BOX","scale_from_screen_width":true,"scale_from_screen_height":true, "scale_x": 0.5, "scale_y": 0.5, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "" }] },
 
 
         { "type": "SpriteObject", "name": "PlayPosition", "asset_path": "INVISIBLE_BOX","scale_from_screen_width":true,"scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "CenteredPosition" }] },
-        { "type": "PlayButtonObject", "name": "PlayButton", "components": [{"type":"ButtonScaleComponent","target":"PlayPosition"},{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "PlayPosition" } ] },
+        { "type": "PlayButtonObject", "name": "PlayButton", "components": [{"type":"ButtonScaleComponent","target":"PlayPosition"} ,{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "PlayPosition" } ] },
 
         { "type": "SpriteObject", "name": "TrophyPosition", "asset_path": "INVISIBLE_BOX","scale_from_screen_width":true,"scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "LeftCenter", "target": "CenteredPosition" }] },
-        { "type": "TrophyButtonObject", "name": "TrophyButton", "components": [{"type":"ButtonScaleComponent","target":"TrophyPosition"},{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "TrophyPosition" } ] },
+        { "type": "TrophyButtonObject", "name": "TrophyButton", "components": [{"type":"ButtonScaleComponent","target":"TrophyPosition"}, { "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "TrophyPosition" } ] },
 
         { "type": "SpriteObject", "name": "SettingsPosition", "asset_path": "INVISIBLE_BOX","scale_from_screen_width":true,"scale_from_screen_height":true, "scale_x": 0.1, "scale_y": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "CenteredPosition" }] },
-        { "type": "SettingsButtonObject", "name": "SettingsButton", "components": [{"type":"ButtonScaleComponent","target":"SettingsPosition"},{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "SettingsPosition" } ] },
+        { "type": "SettingsButtonObject", "name": "SettingsButton", "components": [{"type":"ButtonScaleComponent","target":"SettingsPosition"}, { "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "SettingsPosition" } ] },
 
 
 

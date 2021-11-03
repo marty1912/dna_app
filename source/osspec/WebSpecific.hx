@@ -1,5 +1,6 @@
 package osspec;
 
+import flixel.system.FlxSound;
 import dnaobject.classes.HowlerSoundWrapper;
 import dnaobject.interfaces.ISoundObject;
 import flixel.FlxG;
@@ -12,6 +13,8 @@ import howler.Howl;
 import js.FullScreenApi;
 import js.html.FileSaver;
 import osspec.OsSpecific;
+import dnaobject.classes.FlxSoundWrapper;
+import openfl.utils.Assets;
 
 /**
  * class WebSpecific
@@ -83,6 +86,15 @@ class WebSpecific implements OsSpecific
 		{
 			path = path.substring(0, file_ext_index) + ".mp3";
 		}
+
+
+		// trying to use the default sound for now.
+		/*
+		var sound:FlxSound = new FlxSound();
+		sound.loadEmbedded(Assets.getSound(path));
+		*/
+		return new FlxSoundWrapper(path);
+		// trying to use the default sound for now.
 
 		var options:HowlOptions = {};
 		options.src = [path];

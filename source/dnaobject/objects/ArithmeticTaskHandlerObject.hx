@@ -6,7 +6,6 @@ import dnaEvent.DnaEventManager;
 import dnaEvent.DnaEventSubscriber;
 import dnadata.TaskTrials;
 import dnaobject.DnaObject;
-import dnaobject.components.ActionPlaySoundComponent;
 import dnaobject.interfaces.ITextBox;
 import dnaobject.interfaces.Slideable;
 import dnaobject.interfaces.TaskObject;
@@ -120,11 +119,6 @@ class ArithmeticTaskHandlerObject implements DnaObject implements TaskObject imp
 		solution = params.solution;
 		var answer_textbox:ITextBox = cast this.getParent().getObjectByName(target_answer);
 		answer_textbox.setText("", true);
-		if (params.audio != null)
-		{
-			ActionPlaySoundComponent.stopAllSounds();
-			ActionPlaySoundComponent.playSound(params.audio);
-		}
 		accept_button_obj.setNextState(new ButtonStateInactive());
 	}
 

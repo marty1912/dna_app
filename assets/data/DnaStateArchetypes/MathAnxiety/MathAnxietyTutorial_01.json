@@ -53,8 +53,6 @@
         ,{ "type": "ActionAppearComponent","invert":true, "target": "TutorialFinger" }
 
         ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_06" }
-
-        ,{ "type": "ActionShowTextComponent", "oneshot":false, "target": "tut_06", "on_event":"same" }
         ,{ "type": "ActionFinishTaskComponent", "target": "" }
         ,{ "type": "ActionStateSwitchComponent", "target": "", "next_state": "NEXT_TASK" }
         ]

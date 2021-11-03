@@ -132,6 +132,10 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 	{
 		this.parseText(value);
 		this.text_from_file = value;
+		this.audio_path = LocaleManager.getInstance().getAudioPath(value);
+		if(audio_path != null){
+			this.audio_obj = OsManager.get_instance().getSoundObject(audio_path);
+		}
 	}
 
 	public function getText():String
@@ -239,13 +243,8 @@ class SrtPlayerTextObject implements DnaObject implements ITextBox extends DnaOb
 			{
 				jsonFile.text = DnaDataManager.instance.getNextTrials().desc_head;
 			}
-			this.parseText(jsonFile.text);
-			this.text_from_file = jsonFile.text;
-			this.audio_path = LocaleManager.getInstance().getAudioPath(jsonFile.text);
-			if(audio_path != null){
-				this.audio_obj = OsManager.get_instance().getSoundObject(audio_path);
-			}
-			
+			this.setText(jsonFile.text);
+		
 		}
 
 		super.fromFile(jsonFile);

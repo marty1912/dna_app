@@ -46,9 +46,11 @@ class AndroidSpecific implements OsSpecific
 			path = path.substring(0, file_ext_index) + ".ogg";
 		}
 
+		/*
 		var sound:FlxSound = new FlxSound();
 		sound.loadEmbedded(Assets.getSound(path));
-		return new FlxSoundWrapper(sound);
+		*/
+		return new FlxSoundWrapper(path);
 	}
 
 	/**
