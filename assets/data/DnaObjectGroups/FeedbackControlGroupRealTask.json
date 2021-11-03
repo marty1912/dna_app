@@ -7,13 +7,6 @@
             "actions": [
 
                 {
-                    "type": "ActionPlaySoundComponent",
-                    "path":"NumberlineFeedbackRealTask",
-                    "oneshot":false,
-                    "on_event":"SHOW_FEEDBACK",
-                    "from_locale":true
-                },
-                {
                     "type": "ActionShowTextComponent",
                     "target":"FeedbackText",
                     "oneshot":false,

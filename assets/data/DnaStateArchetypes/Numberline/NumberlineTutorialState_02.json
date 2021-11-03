@@ -98,13 +98,7 @@
                     "on_event": "onStart"
                 },
                 {
-                    "type": "ActionPlaySoundComponent",
-                    "path":"NumberlineTutorial_03",
-                    "from_locale":true
-                },
-                {
                     "type": "ActionShowTextComponent",
-                    "on_event":"same",
                     "target":"TutorialText_01"
                 },
                 
@@ -179,13 +173,7 @@
                     "components":[{"type": "NumlineZoneComponent"}]
                 },
                 {
-                    "type": "ActionPlaySoundComponent",
-                    "path":"NumberlineTutorial_04",
-                    "from_locale":true
-                },
-                {
                     "type": "ActionShowTextComponent",
-                    "on_event":"same",
                     "target":"TutorialText_02"
                 },
                 { "type": "ActionFinishTaskComponent", "target": ""  },

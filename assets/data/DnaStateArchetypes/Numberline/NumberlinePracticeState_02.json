@@ -152,7 +152,6 @@
             "name": "ActionHandler_Correct",
             "actions": [
                 { "type": "ActionAddComponentComponent", "target":"NumberlineObject", "on_event": "TASK_CORRECT", "oneshot":false, "components":[{"type": "NumlineZoneComponent"}] },
-                { "type": "ActionPlaySoundComponent", "oneshot":false, "path":"NumberlineFeedbackCorrect", "on_event": "TASK_CORRECT", "from_locale":true },
                 { "type": "ActionShowTextComponent", "target":"FeedbackTextCorrect", "oneshot":false, "on_event": "TASK_CORRECT" }, 
                 { "type": "ActionSaveTrialComponent", "oneshot":false, "target":"" },
                 { "type": "ActionRemoveComponentComponent", "target":"NumberlineObject", "oneshot":false, "target_comp":"NumlineZoneComponent" },
@@ -170,13 +169,6 @@
                     "on_event": "TASK_INCORRECT",
                     "oneshot":false,
                     "components":[{"type": "NumlineZoneComponent"}]
-                },
-                {
-                    "type": "ActionPlaySoundComponent",
-                    "oneshot":false,
-                    "path":"NumberlineFeedbackIncorrect",
-                    "on_event": "TASK_INCORRECT",
-                    "from_locale":true
                 },
                 {
                     "type": "ActionShowTextComponent",
