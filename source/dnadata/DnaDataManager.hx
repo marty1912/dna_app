@@ -163,8 +163,11 @@ class DnaDataManager
 	public function deleteAllData()
 	{
 		// persistent_storage.erase();
-		OsManager.get_instance().eraseStorage(save_slot_name);
 		persistent_storage = {data: {}};
+		m_trials = null;
+		storeData(TaskTrials.instance.TRIALBLOCK_STORAGE_ID,null);
+
+		OsManager.get_instance().eraseStorage(save_slot_name);
 		// get default values loaded.
 		init();
 	}

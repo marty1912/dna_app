@@ -9,13 +9,17 @@
         { "type": "SrtPlayerTextObject", "name":"IntroText_01", "text":"IntroText_01", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] },
         { "type": "SrtPlayerTextObject", "name":"IntroText_02", "text":"IntroText_02", "autostart":false, "settings":{ "fontsize":32, "width":500 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target":"TextPosition" } ] },
         { "type": "AcceptButtonObject", "name": "AcceptButton", "active":false, "components": [ {"type":"UserButtonComponent"}, { "type": "PositionComponent", "oneshot": true, "position": "Center" }, { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE" } ] },
+
+        { "type": "EmptyButtonObject", "name": "StartIntroButton", "path": "assets/gui_elements/buttonPlay.png", "active":true, "components": [ {"type":"UserButtonComponent"}, { "type": "PositionComponent", "oneshot": true, "position": "Center" } ,{ "type": "CmdEvtTrigComponent", "event_name": "StartIntroButtonPressed" }
+            ] },
+
         { "type": "ActionHandlerObject", "name" : "MontiAnimationHandler", "actions": [ 
-            { "type": "ActionMontiPlayAnimationComponent", "on_event": "onStart", "target":"Monti", "animation":"wave", "times":1 }, { "type": "ActionDelayComponent", "delay": 2 }, { "type": "ActionMontiPlayAnimationComponent", "target":"Monti", "animation":"talk", "times":-1 } 
+            { "type": "ActionMontiPlayAnimationComponent", "on_event": "StartIntroButtonPressed", "target":"Monti", "animation":"wave", "times":1 }, { "type": "ActionDelayComponent", "delay": 2 }, { "type": "ActionMontiPlayAnimationComponent", "target":"Monti", "animation":"talk", "times":-1 } 
             ] },
 
         { "type": "ActionHandlerObject", "actions": [ 
-            { "type": "ActionDelayComponent", "delay": 0.1, "on_event": "onStart" }, 
-            { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE" }, 
+            { "type": "ActionDelayComponent", "delay": 0.1, "on_event": "StartIntroButtonPressed" }, 
+            { "type": "ActionRemoveObjectComponent", "target": "StartIntroButton" }, 
             { "type": "ActionShowTextComponent", "on_event":"seq", "target":"IntroText_01" }, 
             { "type": "ActionMontiPlayAnimationComponent", "target":"Monti", "animation":"idle", "times":-1 }, 
             { "type": "ActionAddObjectComponent", "target":"", "objects":[ { "type":"TextObject", "name":"TextIntroConfirm", "text":"IntroText_03", "autostart":true, "settings":{"char_per_sec":24}, "components":[{ "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "TextPosition" } ] } ] }, 
@@ -24,6 +28,7 @@
 
         { "type": "ActionHandlerObject", "name": "ActionAcceptPressed", "actions": [ 
             { "type": "ActionRemoveObjectComponent", "target":"TextIntroConfirm", "on_event":"AcceptButtonPressed" }, 
+            { "type": "ActionSetButtonStateComponent", "target": "AcceptButton", "state":"INACTIVE" }, 
             { "type": "ActionMontiPlayAnimationComponent", "target":"Monti", "animation":"talk", "times":-1 }, 
             { "type": "ActionShowTextComponent", "on_event":"seq", "target":"IntroText_02" }, 
             { "type": "ActionStateSwitchComponent", "target": "", "next_state": "MainMenuTutorialState" } 

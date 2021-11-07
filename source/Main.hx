@@ -1,5 +1,6 @@
 package;
 
+import dnadata.TaskTrials;
 import dnadata.DnaDataManager;
 import dnaobject.DnaState;
 import dnaobject.DnaStateFactory;
@@ -17,7 +18,6 @@ import osspec.OsManager;
 class Main extends Sprite
 {
 
-	final intro_key = "intro_seen";
 	final debugMode = false;
 
 	public function new()
@@ -74,17 +74,21 @@ class Main extends Sprite
 		// FlxG.switchState(DnaStateFactory.create("NumberlineState"));
 		// FlxG.switchState(DnaStateFactory.create("StudentIntro"));
 		// first time show intro:
-		if(!debugMode){
-			if(DnaDataManager.instance.retrieveData(intro_key) == true){
-				FlxG.switchState(DnaStateFactory.create("MainMenuState"));
-			}
-			else{
-				DnaDataManager.instance.storeData(intro_key,true);
-				FlxG.switchState(DnaStateFactory.create("IntroState"));
-			}
+		if(debugMode){
+			FlxG.switchState(DnaStateFactory.create("MainMenuState"));
+			return;
+		}
+
+		// check if we want the intro to be played:
+		// we want it played as long as no trials have been completed..
+		var playIntro = TaskTrials.instance.getTrialBlocks().length == TaskTrials.instance.getTrialBlocksTodo().length; 
+
+		if(playIntro){
+			FlxG.switchState(DnaStateFactory.create("IntroState"));
 		}
 		else{
 			FlxG.switchState(DnaStateFactory.create("MainMenuState"));
 		}
+
 	}
 }

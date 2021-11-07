@@ -1,0 +1,25 @@
+Dieser Test wurde im Rahmen einer Masterarbeit 
+an der Karl-Franzens Universität von Martin Bauer, BSc und Silas Dargel, BSc
+unter Betreuung von Assoz.-Prof. Mag. Stephan E. Vogel, PhD 
+und mit Unterstützung von:
+
+- Prof. Mag. Dr. rer. nat. Karl-Heinz Graß 
+- Frieder Schillinger, PhD
+- Alina Jasmin Hohensinger, BSc 
+- Dennis Wambacher, BSc Ing.
+
+geplant und implementiert.
+
+--------------------------------
+Stimme von Monti:
+
+--------------------------------
+2D Artwork:
+ansel_decals  https://www.fiverr.com/ansel_decals 
+pzUH   	      https://opengameart.org/content/free-game-gui 
+Rattel        https://opengameart.org/content/dna-helix-animated 
+Sound effekte:
+Kenney        www.kenney.nl
+--------------------------------
+Danke!
+--------------------------------
