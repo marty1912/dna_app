@@ -785,6 +785,13 @@ else if (type == "ShowProgressStateFirst")
 			state = new DnaState("ShowProgressStateFirst");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/ShowProgressStateFirst.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "LockScreen")
+		{
+			state = new DnaState("LockScreen");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/LockScreen.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -797,6 +804,7 @@ else if (type == "ShowProgressStateFirst")
 		return state;
 	}
 }
+
 
 
 

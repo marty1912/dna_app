@@ -29,7 +29,7 @@
 
         { "type": "MonsterObject", "components": [{ "type": "UserButtonComponent" }, { "type": "PositionComponent", "oneshot": false, "position": "LeftBottom", "target": "" } ] },
 
-        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "SettingsButtonPressed", "target": "", "next_state": "SettingsDataState" }] },
+        { "type": "ActionHandlerObject", "actions": [{ "type": "ActionStateSwitchComponent", "on_event": "SettingsButtonPressed", "target": "", "next_state": "LockScreen" }] },
 
 
         

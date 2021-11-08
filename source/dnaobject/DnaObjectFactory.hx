@@ -536,6 +536,12 @@ else if (type == 'MonsterEditorTutorial')
 	obj = new MonsterEditorTutorial();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/MonsterEditorTutorial.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'LockScreenObject')
+{
+	obj = new LockScreenObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/LockScreenObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -549,6 +555,7 @@ else if (type == 'MonsterEditorTutorial')
 		return obj;
 	}
 }
+
 
 
 

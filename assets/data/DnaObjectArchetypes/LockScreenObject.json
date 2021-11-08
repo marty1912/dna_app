@@ -1,0 +1,26 @@
+{"type":"LockScreenObject",
+"name":"lockscreen",
+"pos_target":"",
+"action_fin":"a_fin",
+"answer_text":"Text_Answer",
+"backspace":"BackspaceButton",
+"objects":[
+
+    { "type": "OBJECT_GROUP", "path": "assets/data/DnaObjectGroups/KeyboardGroup.json" },
+
+    { "type": "SpriteObject", "name": "BackSpaceArea", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_y": 0.2, "scale_x": 0.1, "origin_where": "", "components": [{ "type": "PositionComponent", "oneshot": true, "position": "RightCenter", "target": "" }] },
+    { "type": "LeftArrowButtonObject", "name": "BackspaceButton", "components": [  { "type":"ButtonScaleComponent", "target":"BackSpaceArea" },{ "type": "PositionComponent", "oneshot": true, "position": "Center", "target": "BackSpaceArea" }, {"type":"UserButtonComponent"}] },
+
+    { "type": "SpriteObject", "name": "AnswerBasePosition", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.4, "scale_y": 0.43, "origin_where": "", "components": [ { "type": "PositionComponent", "oneshot": true, "position": "CenterTop", "target": "" } ] },
+    { "type": "SpriteObject", "name": "AnswerPosition", "asset_path": "INVISIBLE_BOX", "scale_from_screen_width": true, "scale_from_screen_height": true, "scale_x": 0.4, "scale_y": 0.2, "origin_where": "", "components": [ { "type": "PositionComponent", "oneshot": true, "position": "CenterBottom", "target": "AnswerBasePosition" } ] },
+
+    { "type": "StaticTextObject", "name": "Text_Answer", "use_literal_text": true, "text": "", "autostart": true, "settings": { "char_per_sec": 500, "width": 400, "color": "0xFFFF4D", "fontsize": 124 }, "components": [ { "type": "PositionComponent", "oneshot": false, "position": "Center", "target": "AnswerPosition" } ] },
+
+    { "type": "ActionHandlerObject", "name": "ActionHandler_SetupKeyboardButtons", "actions": [ { "type": "ActionFireEventComponent", "target": "", "oneshot": false, "event_name": "KeyboardButtons_ADD_USERBUTTON","on_event":"onCreate" } ] },
+
+        { "type": "ActionHandlerObject", "name": "a_fin", "actions": [ { "type": "ActionStateSwitchComponent", "target": "", "next_state": "SettingsDataState","on_event":"NO_EVENT" } ]
+      } 
+ 
+
+]
+}
