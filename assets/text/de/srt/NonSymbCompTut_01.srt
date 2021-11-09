@@ -1,32 +1,32 @@
 1
-00:00:00,000 --> 00:00:04,500
+00:00:00,000 --> 00:00:04,000
 Ich habe begonnen ein paar Bakterien in kleinen Schalen zu züchten.
 
 2
-00:00:04,500 --> 00:00:09,500
+00:00:04,000 --> 00:00:08,500
 Keine Angst, die sind nicht gefährlich. Du kannst davon nicht krank werden.
 
 3
-00:00:09,500 --> 00:00:12,000
+00:00:08,500 --> 00:00:11,000
 Ich will sie für die Forschung verwenden.
 
 4
-00:00:12,000 --> 00:00:17,000
+00:00:11,000 --> 00:00:16,000
 Ich möchte die Bakterien so schnell wie möglich züchten, damit ich weitermachen kann.
 
 5
-00:00:17,000 --> 00:00:20,400
+00:00:16,000 --> 00:00:19,000
 Die Bakterien wachsen aber unterschiedlich schnell.
 
 6
-00:00:20,400 --> 00:00:24,500
+00:00:19,000 --> 00:00:22,500
 Deshalb möchte ich nur die, die schnell wachsen, behalten.
 
 7
-00:00:24,500 --> 00:00:27,000
+00:00:22,500 --> 00:00:25,000
 Kannst du mir beim Sortieren helfen?
 
 8
-00:00:27,000 --> 00:00:30,000
+00:00:25,000 --> 00:00:28,500
 Ich werde dir gleich zeigen, wie du helfen kannst.
 

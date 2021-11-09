@@ -3,21 +3,21 @@
 Hier siehst du zwei Schalen mit Bakterien.
 
 2
-00:00:03,000 --> 00:00:07,000
+00:00:03,000 --> 00:00:06,000
 Die schwarzen Punkte sind Ansammlungen von Bakterien.
 
 3
-00:00:07,000 --> 00:00:11,000
+00:00:06,000 --> 00:00:11,500
 Es ist hier die Anzahl der Punkte wichtig und nicht ihre Größe.
 
 4
-00:00:11,000 --> 00:00:14,500
+00:00:11,500 --> 00:00:14,500
 Also je mehr Punkte in einer Schale sind, desto besser.
 
 5
-00:00:14,500 --> 00:00:19,200
+00:00:14,500 --> 00:00:19,500
 Wie ich schon gesagt habe möchte ich die Schalen mit mehr Bakterien behalten.
 
 6
-00:00:19,200 --> 00:00:23,500
+00:00:19,500 --> 00:00:24,500
 Ich berühre jetzt die rechte Schale, weil dort mehr Punkte sind.

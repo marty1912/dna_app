@@ -3,6 +3,6 @@
 So, jetzt weißt du, wie das funktioniert
 
 2
-00:00:03,000 --> 00:00:04,400
+00:00:03,000 --> 00:00:04,600
 Jetzt bist du dran!
 
