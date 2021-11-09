@@ -191,6 +191,15 @@
                 { "type": "ActionStateSwitchComponent", "target":"", "on_event": "AcceptButtonPressed", "next_state":"MainMenuState" } 
             ]
         },
+        { "type": "EmptyButtonObject", "components":[ {"type":"UserButtonComponent"}, { "type": "PositionComponent", "oneshot": true, "position": "RightTop" }, { "type": "CmdEvtTrigComponent", "event_name": "SAVE_JSON_DATA" } ] },
+        {
+            "type": "ActionHandlerObject",
+            "actions": [
+                { "type": "ActionSaveDataComponent", "target":"", "on_event": "SAVE_JSON_DATA" } 
+            ]
+        },
+
+
         { "type": "MainMenuButtonObject", "components":[ {"type":"UserButtonComponent"} ] },
         {
             "type": "ActionHandlerObject",

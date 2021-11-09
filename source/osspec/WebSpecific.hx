@@ -110,7 +110,30 @@ class WebSpecific implements OsSpecific
 	 */
 	public function toFullscreen():Void
 	{
-		FullScreenApi.requestFullScreen(js.Browser.window.document.getElementById("openfl-content"));
+//		FullScreenApi.requestFullScreen(js.Browser.window.document.getElementById("openfl-content"));
+
+		// request fullscreen
+		js.Syntax.code("
+		try{
+		/* Get the element you want displayed in fullscreen mode (a video in this example): */
+		var elem = document.getElementById('openfl-content');
+
+		/* When the openFullscreen() function is executed, open the video in fullscreen.
+		Note that we must include prefixes for different browsers, as they don't support the requestFullscreen property yet */
+		function openFullscreen() {
+			if (elem.requestFullscreen) {
+				elem.requestFullscreen();
+			} else if (elem.webkitRequestFullscreen) { /* Safari */
+				elem.webkitRequestFullscreen();
+			} else if (elem.msRequestFullscreen) { /* IE11 */
+				elem.msRequestFullscreen();
+			}
+		} 
+		openFullscreen();
+	}
+	catch(error){
+	}
+		");
 		js.Syntax.code("var lockFunction =  window.screen.orientation.lock;
 			if (lockFunction.call(window.screen.orientation, 'landscape')) {
            		console.log('Orientation locked')
