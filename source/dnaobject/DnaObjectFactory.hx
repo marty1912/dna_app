@@ -542,6 +542,12 @@ else if (type == 'LockScreenObject')
 	obj = new LockScreenObject();
 	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/LockScreenObject.json"));
 }
+// // AUTOMATICALLY GENERATED
+else if (type == 'PPTestCodeScreenObject')
+{
+	obj = new PPTestCodeScreenObject();
+	file = Json.parse(ConfigFile.text("assets/data/DnaObjectArchetypes/PPTestCodeScreenObject.json"));
+}
 // INSERT_HERE
 		else
 		{
@@ -555,6 +561,11 @@ else if (type == 'LockScreenObject')
 		return obj;
 	}
 }
+
+
+
+
+
 
 
 

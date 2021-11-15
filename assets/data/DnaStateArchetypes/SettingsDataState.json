@@ -199,6 +199,13 @@
             ]
         },
 
+        { "type": "EmptyButtonObject", "path":"assets/gui_elements/buttonCode.png", "components":[ {"type":"UserButtonComponent"}, { "type": "PositionComponent", "oneshot": true, "position": "RightCenter" }, { "type": "CmdEvtTrigComponent", "event_name": "CodeButtonPressed" } ] },
+
+        { "type": "ActionHandlerObject", "name": "ActionHandler_PPCODE", "actions": [
+                { "type": "ActionStateSwitchComponent", "target":"", "on_event": "CodeButtonPressed", "next_state":"PPTestCodeScreen" } 
+            ] },
+ 
+
 
         { "type": "MainMenuButtonObject", "components":[ {"type":"UserButtonComponent"} ] },
         {

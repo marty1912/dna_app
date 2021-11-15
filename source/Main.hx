@@ -75,7 +75,7 @@ class Main extends Sprite
 		// FlxG.switchState(DnaStateFactory.create("StudentIntro"));
 		// first time show intro:
 		if(debugMode){
-			FlxG.switchState(DnaStateFactory.create("MainMenuState"));
+			FlxG.switchState(DnaStateFactory.create("SettingsDataState"));
 			return;
 		}
 

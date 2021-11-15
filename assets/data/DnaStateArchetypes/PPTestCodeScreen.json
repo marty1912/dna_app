@@ -1,0 +1,9 @@
+{
+    "type": "TestState",
+    "objects": [
+        { "type": "TaskBackgroundObject"},
+        { "type": "MainMenuButtonObject", "components":[ {"type":"UserButtonComponent"} ] },
+        { "type": "ActionHandlerObject", "name": "ActionHandler_MainMenuButton", "actions": [ { "type": "ActionStateSwitchComponent", "target":"", "on_event": "BtnMainMenuPressed", "next_state":"MainMenuState" } ] },
+        {"type":"PPTestCodeScreenObject"}
+    ]
+}

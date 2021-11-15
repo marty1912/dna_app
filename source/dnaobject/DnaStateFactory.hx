@@ -792,6 +792,13 @@ else if (type == "LockScreen")
 			state = new DnaState("LockScreen");
 			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/LockScreen.json");
 		}
+		// // AUTOMATICALLY GENERATED
+
+else if (type == "PPTestCodeScreen")
+		{
+			state = new DnaState("PPTestCodeScreen");
+			state.m_json_file = ConfigFile.text("assets/data/DnaStateArchetypes/PPTestCodeScreen.json");
+		}
 		// INSERT_HERE
 		else
 		{
@@ -804,6 +811,11 @@ else if (type == "LockScreen")
 		return state;
 	}
 }
+
+
+
+
+
 
 
 
